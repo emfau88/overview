@@ -5,11 +5,14 @@ from __future__ import annotations
 
 import argparse
 import base64
+import hashlib
 import json
 import re
 import sys
+from datetime import datetime
 from pathlib import Path, PurePosixPath
 from typing import Any
+from urllib.parse import urlsplit
 
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -110,6 +113,72 @@ def document_title(path: Path, content: str) -> str:
     return path.name
 
 
+def public_screenshots(project_id: str, capture_directory: Path) -> list[dict[str, Any]]:
+    """Bundle only explicit, provenance-checked public browser captures."""
+    manifest_path = capture_directory / "manifest.json"
+    if not manifest_path.is_file():
+        return []
+    manifest = read_json(manifest_path)
+    if manifest.get("kind") != "public_browser_capture":
+        return []  # Historical Mirror captures keep their existing handling.
+    captures = manifest.get("captures")
+    if not isinstance(captures, list):
+        raise BuildError(f"Screenshot-Manifest benötigt captures-Liste: {manifest_path.relative_to(ROOT)}")
+    bundled = []
+    seen = set()
+    for capture in captures:
+        if not isinstance(capture, dict):
+            raise BuildError(f"Ungültiger Screenshot-Eintrag: {manifest_path.relative_to(ROOT)}")
+        name = capture.get("file", "")
+        if not isinstance(name, str) or not name or len(PurePosixPath(name).parts) != 1 or "\\" in name:
+            raise BuildError(f"Screenshot-Datei muss direkt im zugehörigen screenshots-Ordner liegen: {name}")
+        path = local_path((capture_directory.relative_to(ROOT) / name).as_posix())
+        if path in seen:
+            raise BuildError(f"Doppelter Screenshot im Manifest: {name}")
+        seen.add(path)
+        if not path.is_file():
+            raise BuildError(f"Screenshot-Datei fehlt: {path.relative_to(ROOT)}")
+        payload = path.read_bytes()
+        mime = IMAGE_MIME_TYPES.get(path.suffix.lower())
+        signatures = {
+            "image/jpeg": payload.startswith(b"\xff\xd8\xff"),
+            "image/png": payload.startswith(b"\x89PNG\r\n\x1a\n"),
+            "image/webp": payload[:4] == b"RIFF" and payload[8:12] == b"WEBP",
+        }
+        if not signatures.get(mime, False):
+            raise BuildError(f"Screenshot-Endung und Bildformat passen nicht: {name}")
+        expected = capture.get("sha256", "")
+        digest = hashlib.sha256(payload).hexdigest()
+        if not isinstance(expected, str) or not re.fullmatch(r"[a-fA-F0-9]{64}", expected) or digest != expected.lower():
+            raise BuildError(f"Screenshot-Prüfsumme stimmt nicht mit dem Manifest überein: {name}")
+        for field in ("title", "url", "capturedAt", "note"):
+            if not isinstance(capture.get(field), str) or not capture[field].strip():
+                raise BuildError(f"Screenshot-Herkunft fehlt ({field}): {name}")
+        url = urlsplit(capture["url"])
+        if url.scheme not in {"http", "https"} or not url.netloc:
+            raise BuildError(f"Screenshot benötigt eine nachvollziehbare Browser-URL: {name}")
+        try:
+            datetime.fromisoformat(capture["capturedAt"].replace("Z", "+00:00"))
+        except ValueError as exc:
+            raise BuildError(f"Ungültiges Screenshot-Aufnahmedatum: {name}") from exc
+        viewport = capture.get("viewport")
+        if not isinstance(viewport, dict) or any(type(viewport.get(side)) is not int or viewport[side] <= 0 for side in ("width", "height")):
+            raise BuildError(f"Screenshot benötigt viewport.width und viewport.height als positive Pixelwerte: {name}")
+        bundled.append({
+            "projectId": project_id,
+            "kind": "public_browser_capture",
+            "path": path.relative_to(ROOT).as_posix(),
+            "title": capture["title"],
+            "note": capture["note"],
+            "url": capture["url"],
+            "capturedAt": capture["capturedAt"],
+            "viewport": viewport,
+            "sha256": digest,
+            "dataUrl": f"data:{mime};base64," + base64.b64encode(payload).decode("ascii"),
+        })
+    return bundled
+
+
 def validate_references(
     value: Any,
     project_ids: set[str],
@@ -195,7 +264,8 @@ def build_data() -> dict[str, Any]:
     capture_titles = ["Startseite", "Clarity Scan", "Scan-Ergebnis", "Nächster Schritt", "Home mit letzter Lesung", "Daily Tarot"]
     for project_id in projects:
         capture_directory = ROOT / "analysen" / project_id / "screenshots"
-        for number, path in enumerate(sorted(capture_directory.glob("bestand-ui-*.png"))):
+        historical_paths = sorted(capture_directory.glob("bestand-ui-*.png")) if project_id == "mirror" else []
+        for number, path in enumerate(historical_paths):
             screenshots.append({
                 "projectId": project_id,
                 "path": path.relative_to(ROOT).as_posix(),
@@ -203,6 +273,7 @@ def build_data() -> dict[str, Any]:
                 "note": "Lokale UI-Preview vom 07.10.2026 mit Testdaten; kein heutiger Laufzeit- oder Play-Release-Beleg.",
                 "dataUrl": "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii"),
             })
+        screenshots.extend(public_screenshots(project_id, capture_directory))
     if any(not isinstance(date, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) for date in dates):
         raise BuildError("Alle Dashboard-Daten benötigen updatedAt im Format YYYY-MM-DD")
     return {

@@ -180,11 +180,11 @@
       const project = allProjects.get(analysis.projectId);
       return '<li class="completed-analysis">' + (project ? productLabel(project, '#results/' + analysis.id + '/review') : '<a href="#results/' + escape(analysis.id) + '/review">' + escape(analysis.title) + '</a>') + '<span>Analyse abgeschlossen</span></li>';
     }).join('');
-    const nextTitle = nextProject ? nextProject.name + (running.includes(nextProject) ? ': Prüfung abschließen' : ': nächste Produktprüfung') : 'Nächsten kleinen Schritt festlegen';
-    const nextDescription = nextProject ? 'Produkt, Bedienung, Store und verfügbare Daten zusammen prüfen. Ergebnisse und Grenzen anschließend hier ergänzen.' : 'Die abgeschlossenen Analysen in wenige konkrete nächste Maßnahmen übersetzen. Native Gegenprüfungen und Prioritäten sind noch offen.';
+    const nextTitle = nextProject ? nextProject.name + (running.includes(nextProject) ? ': Prüfung abschließen' : ': nächste Produktprüfung') : context.nextStep?.title || 'Nächsten kleinen Schritt festlegen';
+    const nextDescription = nextProject ? 'Produkt, Bedienung und verfügbare Daten zusammen prüfen. Ergebnisse und Grenzen anschließend hier ergänzen.' : context.nextStep?.detail || 'Die abgeschlossenen Analysen in wenige konkrete nächste Maßnahmen übersetzen. Native Gegenprüfungen und Prioritäten sind noch offen.';
     const openRows = [
       'Browsergames einzeln spielen und auf Qualität prüfen.',
-      'Vorhandene Onlineauftritte vergleichen und die zentrale Landingpage entscheiden.',
+      'Die zentrale Landingpage nach den vorliegenden Webchecks und dem Gesamtvergleich entscheiden.',
       'Vorgeschlagene Appverbesserungen und native Gegenprüfungen priorisieren.',
       'ZeroHero und Mirror später monetarisieren, sobald zunächst Nutzer gewonnen sind.'
     ];
@@ -244,26 +244,39 @@
 
   function findingsView(analysis) {
     const project = allProjects.get(analysis.projectId);
-    return `<div class="note">Befunde sind nach Belegtyp markiert. „Im Webtest reproduziert“ bezeichnet die dokumentierte Testkopie; native und veröffentlichte Builds sind separat abzugleichen.</div>` +
+    const isWebsite = project?.area === 'web';
+    const runtimeNote = isWebsite
+      ? 'Befunde sind nach Belegtyp markiert. „Im Browser beobachtet“ bezeichnet die dokumentierte Prüfung des tatsächlichen Webauftritts. Lokale Quellen und veröffentlichter Stand bleiben getrennt; die konkreten Ansichten und Prüfgrenzen stehen im Bericht.'
+      : 'Befunde sind nach Belegtyp markiert. „Im Webtest reproduziert“ bezeichnet die dokumentierte Testkopie; native und veröffentlichte Builds sind separat abzugleichen.';
+    const evidenceLabel = (finding) => isWebsite && finding.evidenceType === 'runtime' ? 'Im Browser beobachtet' : evidenceLabels[finding.evidenceType] || finding.evidenceType;
+    return `<div class="note">${escape(runtimeNote)}</div>` +
       section('Stärken und vorhandene Grundlage', `<div class="grid two">${array(analysis.strengths).map((strength) => `<article class="panel"><div class="card-scope">${productLabel(project)}</div><div class="strength-item">${svg('check')}<div><strong>${escape(strength.title)}</strong><p>${escape(strength.detail)}</p></div></div></article>`).join('')}</div>`) +
-      section('Ausführliche Befunde', array(analysis.findings).map((finding) => `<details class="finding"><summary><span class="finding-summary-title">${productLabel(project, '', true)}<strong>${escape(finding.title)}</strong></span>${badge(finding.evidenceType, evidenceLabels[finding.evidenceType] || finding.evidenceType)}${finding.priority ? badge(finding.priority, priorityLabels[finding.priority] || finding.priority) : ''}</summary><div class="finding-body">${field('Befund', finding.detail)}${field('Beleg / Beobachtung', finding.evidence)}${field('Aussagegrenze', finding.limitation)}${field('Empfehlung', finding.recommendation)}${sources(finding.sourceDocs)}</div></details>`).join(''), `${array(analysis.findings).length} dokumentierte Befunde`) +
+      section('Ausführliche Befunde', array(analysis.findings).map((finding) => `<details class="finding"><summary><span class="finding-summary-title">${productLabel(project, '', true)}<strong>${escape(finding.title)}</strong></span>${badge(finding.evidenceType, evidenceLabel(finding))}${finding.priority ? badge(finding.priority, priorityLabels[finding.priority] || finding.priority) : ''}</summary><div class="finding-body">${field('Befund', finding.detail)}${field('Beleg / Beobachtung', finding.evidence)}${field('Aussagegrenze', finding.limitation)}${field('Empfehlung', finding.recommendation)}${sources(finding.sourceDocs)}</div></details>`).join(''), `${array(analysis.findings).length} dokumentierte Befunde`) +
       section('Noch offene Fragen', `<div class="panel"><div class="card-scope">${productLabel(project)}</div>${list(analysis.openQuestions)}</div>`);
   }
 
   function metricsView(analysis) {
     const metrics = array(analysis.metrics);
-    return `<div class="note amber">Auswahlzeitraum und tatsächliche Datenabdeckung sind getrennt. Installationsklicks sind keine bestätigten Installationen; fehlende Werte sind nicht null. Zahlen aus unterschiedlichen Berichten ergeben keinen gemeinsamen Funnel.</div>` +
+    const isWebsite = allProjects.get(analysis.projectId)?.area === 'web';
+    const note = isWebsite
+      ? 'Für die Web-Grundanalyse wurden keine Besucher-, Anfrage-, Kauf- oder Umsatzdaten ausgewertet. Die Bewertung der Gestaltung und Bedienung belegt keine Conversionwirkung. Fehlende Kennzahlen sind nicht null.'
+      : 'Auswahlzeitraum und tatsächliche Datenabdeckung sind getrennt. Installationsklicks sind keine bestätigten Installationen; fehlende Werte sind nicht null. Zahlen aus unterschiedlichen Berichten ergeben keinen gemeinsamen Funnel.';
+    return `<div class="note amber">${escape(note)}</div>` +
       (metrics.length ? `<div class="table-wrap"><table class="metric-table"><thead><tr><th>Kennzahl</th><th>Wert / Einheit</th><th>Auswahl</th><th>Tatsächliche Abdeckung</th><th>Definition und Grenze</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td>${escape(metric.label)}</td><td><strong>${escape(metric.value == null ? '—' : typeof metric.value === 'number' ? new Intl.NumberFormat('de-DE').format(metric.value) : metric.value)}</strong><p>${escape(metric.unit)}</p></td><td>${escape(metric.selectedPeriod)}</td><td>${escape(metric.availablePeriod)}</td><td>${escape(metric.definition)}<p>${escape(metric.caveat)}</p></td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">Für diese Analyse sind keine Kennzahlen dokumentiert.</div>') + sources(analysis.documents);
   }
 
   function screenshotsView(analysis) {
     const images = array(data.screenshots).filter((image) => image.projectId === analysis.projectId);
     if (!images.length) return '';
+    const project = allProjects.get(analysis.projectId);
     const mirrorNote = analysis.projectId === 'mirror'
       ? 'Historische lokale UI-Preview vom 07.10.2026. Diese Bilder sind keine heutigen Aufnahmen und keine Belege eines Tests des veröffentlichten Play-Binaries. Der aktuelle Laufzeittest und seine Grenzen stehen gesondert im Bericht.'
-      : 'Visuelle Referenzen mit dokumentierter Herkunft. Die Notizen je Bild bestimmen ihren Prüfstand und ihre Aussagegrenzen.';
+      : 'Aufnahmen des tatsächlich im Browser geprüften Webauftritts. Datum, URL und Ansichtsgröße sind je Bild dokumentiert. Einzelne Bilder belegen die jeweilige Ansicht; die weiteren Prüfungen und Grenzen stehen im Bericht.';
     const validImage = (value) => /^data:image\/(png|webp|jpeg|gif);base64,[a-z0-9+/=\s]+$/i.test(value || '');
-    return section('Visuelle Referenzen', `<div class="note">${escape(mirrorNote)}</div><div class="screenshot-grid">${images.map((image) => `<details class="screenshot"><summary>${validImage(image.dataUrl) ? `<img class="screenshot-thumb" src="${escape(image.dataUrl)}" alt="Preview: ${escape(image.title || 'Produktansicht')}" loading="lazy">` : '<span class="muted">Bild nicht im Snapshot verfügbar</span>'}<span>${escape(image.title || 'Produktansicht')}</span><small>Ansicht vergrößern</small></summary><div class="screenshot-body">${validImage(image.dataUrl) ? `<img class="screenshot-full" src="${escape(image.dataUrl)}" alt="${escape(image.title || 'Produktansicht')}" loading="lazy">` : ''}<p>${escape(image.note || mirrorNote)}</p><p class="path-reference">${escape(image.path || '')}</p></div></details>`).join('')}</div>`, `${images.length} dokumentierte Bilder`);
+    const captureInfo = (image) => image.kind === 'public_browser_capture'
+      ? `<p>Browseraufnahme vom ${escape(dateLabel(image.capturedAt))} · ${escape(image.viewport?.width)} × ${escape(image.viewport?.height)} Pixel</p><p>${link('Geprüfte Website öffnen ↗', image.url)}</p>`
+      : '';
+    return section('Visuelle Referenzen', `<div class="note">${escape(mirrorNote)}</div><div class="screenshot-grid">${images.map((image) => `<details class="screenshot"><summary>${validImage(image.dataUrl) ? `<img class="screenshot-thumb" src="${escape(image.dataUrl)}" alt="${image.kind === 'public_browser_capture' ? 'Browseraufnahme' : 'Preview'}: ${escape(image.title || 'Produktansicht')}" loading="lazy">` : '<span class="muted">Bild nicht im Snapshot verfügbar</span>'}<span>${project ? productLabel(project, '', true) : ''} ${escape(image.title || 'Produktansicht')}</span><small>Ansicht vergrößern</small></summary><div class="screenshot-body">${validImage(image.dataUrl) ? `<img class="screenshot-full" src="${escape(image.dataUrl)}" alt="${escape(image.title || 'Produktansicht')}" loading="lazy">` : ''}<p>${escape(image.note || mirrorNote)}</p>${captureInfo(image)}<p class="path-reference">${escape(image.path || '')}</p></div></details>`).join('')}</div>`, `${images.length} dokumentierte Bilder`);
   }
 
   function actionsView(analysis) {
@@ -282,8 +295,13 @@
     const selectedTab = ['review', 'metrics', 'actions', 'scope'].includes(tab) ? tab : 'review';
     const tabs = { review: 'Bewertung & Befunde', metrics: 'Kennzahlen', actions: 'Maßnahmen', scope: 'Prüfumfang & Quellen' };
     const project = allProjects.get(analysis.projectId);
-    const selection = analyses.length > 1 ? `<nav class="analysis-picker" aria-label="Produktanalyse auswählen">${analyses.map((item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}</a>`; }).join('')}</nav>` : '';
-    return selection + intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + `<div class="pill-row">${analyses.length === 1 ? productLabel(project) : ''}${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div><nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
+    const choice = (item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}</a>`; };
+    const selection = analyses.length > 1 ? ['apps', 'web', 'games'].map((area) => {
+      const members = analyses.filter((item) => allProjects.get(item.projectId)?.area === area);
+      return members.length ? `<div><h3 class="muted">${escape(areaLabels[area])}</h3><nav class="analysis-picker" aria-label="${escape(areaLabels[area])}: Produktanalyse auswählen">${members.map(choice).join('')}</nav></div>` : '';
+    }).join('') : '';
+    const comparison = project?.area === 'web' ? `<p>${link('Alle sieben Webauftritte vergleichen →', 'analysen/onlineauftritt/Grundanalyse-Vergleich.md')}</p>` : '';
+    return selection + intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + comparison + `<div class="pill-row">${analyses.length === 1 ? productLabel(project) : ''}${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div><nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
   }
 
   function pendingView() {

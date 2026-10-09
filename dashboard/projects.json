@@ -188,8 +188,8 @@
       "name": "LandingGame",
       "area": "web",
       "description": "emfau-Anbieterwebsite für individuelle Websites für kleine Unternehmen, Gastronomie und Vereine aus der Region Karlsruhe. Enthält drei Farb-/Gestaltungsvarianten, einen eigenständigen Studio-Entwurf sowie eine Kundenreferenz und fiktive Branchenkonzepte.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/LandingGame",
       "paths": [
         "C:\\Users\\madde\\Documents\\Landing Page"
@@ -197,29 +197,33 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
-        "Drei Farb-/Gestaltungsvarianten und ein separater Studio-Entwurf sind vorhanden; die beste Grundlage wurde noch nicht ausgewählt."
+        "Drei Farb-/Gestaltungsvarianten und ein separater Studio-Entwurf sind vorhanden; die beste Grundlage wurde noch nicht ausgewählt.",
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
-        "Soll die zentrale Seite vor allem Website-Verkauf unterstützen oder auch Games und Apps sichtbar machen?"
+        "Welcher OMF-Projektstatus ist sachlich korrekt und vom Kunden zur öffentlichen Darstellung freigegeben?",
+        "Soll Studio die Hauptfassung werden, oder bevorzugt der Nutzer eine der Farbvergleichsvarianten?",
+        "Welche echte geschäftliche Kontaktmöglichkeit und welcher einfache Anfrageweg sollen hinterlegt werden?",
+        "Soll die zentrale emfau-Seite Webleistungen priorisieren und Games/Apps ergänzend verlinken, oder mehrere Zielgruppen gleichberechtigt ansprechen?"
       ],
-      "nextStep": "Die vorhandenen Landingpage-Varianten und den Studio-Entwurf tatsächlich ansehen; anschließend mit shop und den Portfolio-Entwürfen vergleichen.",
+      "nextStep": "Die bereits ruhige Studio-Struktur gegen die übrigen Webauftritte vergleichen und entscheiden, ob der zentrale Einstieg Webleistungen priorisiert. Games und Apps können danach als ergänzende Produktseite oder knapper Bereich eingeordnet werden; die Strategie bleibt ausdrücklich offen.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/landinggame/Grundanalyse.md",
+        "analysen/landinggame/Quellenpruefung.md",
+        "analysen/landinggame/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "landinggame"
     },
     {
       "id": "shop",
       "name": "shop",
       "area": "web",
       "description": "Verkaufspräsentation für Unternehmenswebsites mit eigenem Anbieterauftritt und fünf fiktiven Branchenkonzepten: Maler, Metallbau, Garten-/Landschaftsbau, Sportverein und Gastronomie. Jedes Konzept besitzt eine mehrseitige Core-Website und eine zusätzliche Signature-Homepage.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/shop",
       "paths": [
         "C:\\Users\\madde\\Documents\\Ebay Websites"
@@ -227,29 +231,33 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab. Die Anwendung liegt unter website/.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
-        "Das eigentliche Webprojekt befindet sich im Unterordner website; fünf fiktive Branchenkonzepte sind Teil der Verkaufspräsentation."
+        "Das eigentliche Webprojekt befindet sich im Unterordner website; fünf fiktive Branchenkonzepte sind Teil der Verkaufspräsentation.",
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
-        "Wie lässt sich das Angebot gegenüber LandingGame abgrenzen oder gemeinsam nutzen?"
+        "Soll shop ein ergänzender Showroom der emfau-Hauptseite werden oder selbst den zentralen Verkaufseinstieg bilden?",
+        "Welche tatsächlich verfügbaren Arbeitsbeispiele sollen Interessenten zuerst sehen: Core, Signature oder eine kurze Auswahl beider?",
+        "Welcher Zeit- und Korrekturaufwand ist für das geplante 699€-Referenzkundenangebot realistisch?",
+        "Welche echte Kontaktstrecke und welche Anbieteridentität sollen über LandingGame und shop hinweg einheitlich verwendet werden?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Im Vergleich aller sieben Webauftritte entscheiden, ob shop verlinkte Konzeptbibliothek oder Hauptseite wird. Bei Integration Markenbezeichnung, Referenzen und Kontaktweg eindeutig verbinden; keine zweite widersprüchliche Anbieteridentität schaffen.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/shop/Grundanalyse.md",
+        "analysen/shop/Quellenpruefung.md",
+        "analysen/shop/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "shop"
     },
     {
       "id": "keyofsolomon",
       "name": "keyofsolomon",
       "area": "web",
       "description": "Einzelprodukt-Verkaufsseite unter Solomon Archive für eine restaurierte Ausgabe von The Key of Solomon auf Grundlage der Mathers-Ausgabe von 1889. Präsentiert ein Hardcover mit historischem Text und Tafeln sowie Produktinformationen und Whop-Bestellzugang.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/keyofsolomon",
       "paths": [
         "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon"
@@ -257,56 +265,68 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt. Weitere lokale Entwürfe liegen im übergeordneten Ordner.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
-        "Im übergeordneten Ordner BOOK KEY OF SOLOMON liegen zusätzlich keyofsolomon_repo_ready, solomon_archive_highend_site und solomon-umami-whop. Diese Entwürfe sind nicht als weitere Hauptprodukte gezählt."
+        "Im übergeordneten Ordner BOOK KEY OF SOLOMON liegen zusätzlich keyofsolomon_repo_ready, solomon_archive_highend_site und solomon-umami-whop. Diese Entwürfe sind nicht als weitere Hauptprodukte gezählt.",
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
-        "Welche Verbindung soll die Einzelproduktseite zur eigenen zentralen Onlinepräsenz haben?"
+        "Wie sehen tatsächliches Druckprodukt und finaler Erfüllungs-/Supportablauf aus?",
+        "Ist der Vertrieb nur für die USA gedacht oder welche weiteren Länder können mit welchen Gesamtkosten beliefert werden?",
+        "Welche tatsächliche Anbieter-/Kontaktinformation soll fertig und öffentlich dargestellt werden?",
+        "Wie funktionieren später eine bewusst freigegebene Bestellung, Zahlung und tatsächliche Lieferung?",
+        "Welche Verbindung soll diese spezialisierte Produktseite zur späteren zentralen emfau-Präsenz erhalten?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Tatsächliche Verantwortlichkeit und erreichbaren geschäftlichen Kontakt festlegen; die sichtbaren Entwurfsinformationen passend zum realen Ablauf fertigstellen.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/keyofsolomon/Grundanalyse.md",
+        "analysen/keyofsolomon/Quellenpruefung.md",
+        "analysen/keyofsolomon/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "keyofsolomon"
     },
     {
       "id": "portfolio3",
       "name": "Portfolio3",
       "area": "web",
       "description": "Persönliches emfau-Portfolio und Projektarchiv für Android-Apps, Browsergames und frühere Experimente. Die aktuelle Startseite stellt unter anderem Mirror, ZeroHero, between und MewTrack sowie spielbare Games, verwendete Technologien und Entwicklungsgeschichten vor.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/Portfolio3",
       "paths": [],
       "variants": [],
       "notes": [
         "Öffentliches Repository bestätigt. Unter Documents wurde kein eindeutig zugeordnetes lokales Checkout gefunden; Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
-        "Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git und kein bestätigter lokaler Checkout von Portfolio3. Der fehlende lokale Checkout ist kein Qualitätsurteil."
+        "Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git und kein bestätigter lokaler Checkout von Portfolio3. Der fehlende lokale Checkout ist kein Qualitätsurteil.",
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+        "Soll Portfolio3 die zentrale emfau-Homepage, ein eigener Apps-/Games-Bereich oder eine reine Referenzseite werden?",
+        "Welche Besuchergruppe soll zuerst angesprochen werden: Produktnutzer, Spieleinteressierte oder potenzielle Webkunden?",
+        "Welche tatsächliche Releasefassung und Bildbasis soll pro App gezeigt werden?",
+        "Bleibt eine bewusst abweichende Sprachauswahl nach Neuladen im Live-Browser erhalten?",
+        "Welche externen Bilder/Spiel- und App-Links sind für einen späteren gepflegten Hauptauftritt tatsächlich erreichbar und aktuell?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Vorhandene Struktur als Apps-/Games-Portfolio nutzen oder bei Webverkauf als Ziel einen kurzen Leistungszugang und Kontakt ergänzen. Entscheidung anhand des gemeinsamen Vergleichs.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/portfolio3/Grundanalyse.md",
+        "analysen/portfolio3/Quellenpruefung.md",
+        "analysen/portfolio3/screenshots/manifest.json",
+        "analysen/portfolio3/runtime/README.md",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "portfolio3"
     },
     {
       "id": "blueyard",
       "name": "blueyard",
       "area": "web",
       "description": "Zweisprachige emfau-Landingpage, die Webentwicklung, Browsergames und technische Werkzeuge unter Web / Games / Labs verbindet. Die Navigation verwendet eine scrollgesteuerte Three.js-Szene mit Bereichsauswahl.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/blueyard",
       "paths": [
         "C:\\Users\\madde\\Documents\\bluebyte"
@@ -314,27 +334,33 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+        "Soll blueyard der gemeinsame emfau-Hub oder ein ergänzender kreativer Einstieg werden?",
+        "Welche zwei bis drei tatsächlichen Referenzen oder klar als fiktiv gekennzeichneten Webkonzepte zeigen die Leistung am besten?",
+        "Welche Games-/Appziele gehören bewusst in den Hub, statt den vollständigen Bestand ungefiltert aufzunehmen?",
+        "Wie funktionieren übrige Szenen, EN-Fassung, Tastatur und reduzierte Bewegung auf echten Zielgeräten?",
+        "Welcher lokale Arbeitsstand soll einer späteren Veröffentlichung zugrunde liegen?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Echte Anfrageaktion, zwei bis drei passende Webbeispiele und wenige veröffentlichte Produktziele anschließen. Referenz, fiktives Konzept und Entwicklungsvorschau klar kennzeichnen.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/blueyard/Grundanalyse.md",
+        "analysen/blueyard/Quellenpruefung.md",
+        "analysen/blueyard/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "blueyard"
     },
     {
       "id": "phantom",
       "name": "phantom",
       "area": "web",
       "description": "EMFAU Spatial Portfolio: ein interaktives Portfolio mit schwarzer, räumlich gebogener Projektwand, Projektfiltern und Detailseiten. Die lokale README beschreibt einen Katalog mit 20 Projekten und einen React-/Three.js-Aufbau.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/phantom",
       "paths": [
         "C:\\Users\\madde\\Documents\\phantom"
@@ -342,27 +368,33 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+        "Soll phantom primär persönliches Produktportfolio oder auch Websiteanbieterauftritt werden?",
+        "Welche realen Webreferenzen beziehungsweise ausdrücklich fiktiven Konzepte würden den Webbereich substanziell ergänzen?",
+        "Welche Produktversionen sollen die Case Studies genau beschreiben?",
+        "Ist der Indexzugang für erste Besucher auf schmalen Geräten sofort erkennbar?",
+        "Wie zuverlässig funktionieren restliche Details, Tastatur und WebGL-Fallback im gezielten Folgetest?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Echte Mail-/Anfrageaktion verbinden; Headerbutton und Contact-Sheet zum gleichen klaren Ziel führen.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/phantom/Grundanalyse.md",
+        "analysen/phantom/Quellenpruefung.md",
+        "analysen/phantom/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "phantom"
     },
     {
       "id": "basement",
       "name": "basement",
       "area": "web",
       "description": "EMFAU Virtual Studio: ein begehbares beziehungsweise per Kamera navigiertes 3D-Portfolio für Games, Apps und archivierte Experimente. Ein virtueller Raum verbindet die Bereiche Studio, Games, Web, Projects und Archive mit Projektbildschirmen und HTML-Detailansichten.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "status": "reviewed",
+      "statusLabel": "Grundanalyse abgeschlossen · Umsetzung offen",
       "repository": "https://github.com/emfau88/basement",
       "paths": [
         "C:\\Users\\madde\\Documents\\basement"
@@ -370,19 +402,25 @@
       "variants": [],
       "notes": [
         "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
-        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+        "Öffentlicher Desktop-/Mobil-Browsercheck und aktive Quellen am 09.10.2026 geprüft. Vollständige Prüfgrenzen, echter Quellstand und Bilder stehen in der Grundanalyse; Originalwebsite unverändert."
       ],
       "openQuestions": [
-        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
-        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
-        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+        "Soll basement ergänzender kreativer Produktshowcase oder zentrale Anbieterhomepage werden?",
+        "Welche wenigen Projekte sollen direkt erreichbar sein und welche gehören bewusst ins Archive?",
+        "Wie lassen sich Apps/Webleistungen eindeutig trennen, ohne die Raumidee aufzugeben?",
+        "Welche Produkttexte beschreiben die tatsächlichen veröffentlichten beziehungsweise bewusst gezeigten lokalen Versionen?",
+        "Wie funktionieren restliche Kamera-/Inspektionswege, Tastatur und Start ohne WebGL im gezielten Folgetest?"
       ],
-      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "nextStep": "Apps eindeutig benennen; Hero und wichtige Detailtexte an Anbieter-/Produktnutzen ausrichten. Tatsächlichen Kontaktzugang ergänzen, sofern zentrale Anbieterrolle gewünscht.",
       "sourceFiles": [
         "online-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/basement/Grundanalyse.md",
+        "analysen/basement/Quellenpruefung.md",
+        "analysen/basement/screenshots/manifest.json",
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "basement"
     },
     {
       "id": "zerohero",
@@ -654,7 +692,7 @@
     "17 Hauptprodukte: 6 im vorhandenen Spiele-Dashboard registrierte Games, 7 ausdrücklich genannte Web-Repositories und 4 Android-Apps. MewTrack zählt trotz drei lokaler Varianten als ein Produkt.",
     "Das vorhandene Repository https://github.com/emfau88/dashboard und der lokale Ordner C:\\Users\\madde\\Documents\\dashboard dienen als Registerquelle, nicht als zusätzliches Produkt. Das Register data.json hat Stand 07.10.2026.",
     "Die fünf ergänzenden Spiele-Repositories sind verwandte Versionen oder Ableger; ihre Rolle als aktive Produkte wurde noch nicht geprüft. Sie werden separat geführt.",
-    "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Spiele, Onlineauftritte und die übrigen Apps sind bisher nicht im Betrieb bewertet.",
+    "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Sieben Web-Grundanalysen mit öffentlichen Browserprüfungen sind abgeschlossen. Browsergames und Between sind bisher nicht qualitativ im Betrieb geprüft.",
     "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten analysiert. Native Prüfgrenzen unterscheiden sich und sind je Analyse dokumentiert.",
     "Pfad- und Namensunterschiede sind Identitätsfragen, keine negativen Qualitätsurteile. Kein lokaler Checkout gefunden bedeutet nicht, dass das Produkt schlecht oder aufgegeben ist.",
     "Eine öffentliche Gesamtliste mit 65 Repositories ist als github-repositories.json gespeichert. Sie ist noch nicht vollständig klassifiziert; private Repositories und alle übrigen lokalen Ordner sind nicht systematisch erfasst.",

@@ -1433,6 +1433,1015 @@
         "analysen/mewtrack/Bestand-und-Zuordnung.md",
         "analysen/mewtrack/TEST-UMGEBUNG.md"
       ]
+    },
+    {
+      "id": "landinggame",
+      "projectId": "landinggame",
+      "title": "LandingGame – abgeschlossene Grundanalyse",
+      "status": "reviewed",
+      "summary": "LandingGame ist ein bereits überzeugender Entwurf für den Verkauf persönlicher Webleistungen. Der Studio-Einstieg wirkt im Desktop- und Mobilvergleich ruhiger und direkter als die weiterhin vorhandenen Farbvergleichsvarianten und ist ein enger Kandidat für die spätere zentrale Anbieterwebsite. Zielgruppe, Region, Arbeiten und persönlicher Ablauf sind verständlich. Vor tatsächlicher Akquise fehlen jedoch Anfragezustellung und echte Kontakt-/Anbieterangaben. Außerdem widerspricht sich der OMF-Referenzstatus zwischen Standardseite und Studio. Die begrenzte Grundanalyse ist abgeschlossen; eine endgültige Entscheidung über die zentrale Homepage und die Rolle von Games/Apps ist damit noch nicht getroffen. Originalprojekt und veröffentlichter Auftritt wurden nicht verändert.",
+      "scope": {
+        "checked": [
+          "Rein lesender aktueller Checkout C:\\Users\\madde\\Documents\\Landing Page; Repository emfau88/LandingGame, GitHEAD 01b8ce40798a41b3922cbb02635e0d65b21a4e43, Commit vom 07.10.2026. Git-Status ohne lokale Änderungen.",
+          "Aktive direkt ausgelieferte HTML/CSS/JS-Quelle emfau-site/dist: Standardstartseite, Designauswahl und eigenständige Studio-Variante, Kontakt-, Referenz- und mobile Navigationspfade.",
+          "Öffentliche Live-Browserprüfung am 09.10.2026: Standard Clean Blau bei Desktopbreite 1281 Pixeln; Dark-Gestaltung gewählt, Gastronomie-Branchentab und Kontaktanker bedient.",
+          "Standard-Dark bei Mobilbreite 391 Pixeln: kein horizontaler Seitenüberlauf in der geprüften Ansicht; Hamburger-Menü geöffnet.",
+          "Studio bei 1281 und 391 Pixeln tatsächlich angesehen: emfau-Marke, Hero-CTA, große OMF-Referenzdarstellung und klar als fiktiv bezeichnete Konzepte; mobile Hierarchie/CTAs und OMF-Bild passen in die Ansicht, Menü öffnet.",
+          "Kontaktstrecke und sichtbarer Vorschauhinweis gelesen; OMF-Status Standard in Entwicklung versus Studio abgeschlossen im Liveauftritt und im Quellcode abgeglichen.",
+          "Zwei echte Studio-Browserbilder, Desktop und Mobile, werden mit URL, Aufnahmedatum, Ansichtsgröße und SHA256 im Screenshot-Manifest dokumentiert. Sie zeigen den öffentlichen Webauftritt, keine neu erfundenen Designmockups."
+        ],
+        "notChecked": [
+          "Nicht alle drei Farbvarianten vollständig geprüft; Clean Grün wurde nicht als eigene vollständige Variante bedient. Keine erschöpfende Prüfung jedes Breakpoints oder aller vier verlinkten Signature-Demos.",
+          "Keine Formulareingaben abgeschickt, keine Nachricht an andere Menschen gesendet und keine echte Anfragezustellung getestet. Die aktuell fehlende Versandlösung wurde nur anhand sichtbarer Hinweise und aktiven Codes festgestellt.",
+          "Der tatsächliche kundenfreigegebene OMF-Projektstatus wurde nicht beim Kunden oder Nutzer bestätigt. Die widersprüchlichen Bezeichnungen sind belegt; der richtige Status bleibt offen.",
+          "Keine vollständige Gleichheit zwischen lokalem Gitstand und veröffentlichten Dateien per Hashvergleich nachgewiesen; lokale Quelle und Livebeobachtungen sind getrennt dokumentiert.",
+          "Kein vollständiger Security-, SEO-, Performance-, Accessibility- oder rechtlicher Audit, keine Browser-/Gerätematrix und kein Test der optionalen Eule.",
+          "Keine Besucher-, Lead-, Conversion-, Umsatz- oder Kostendaten ausgewertet. Die Bewertung der Website-Eignung ist eine begrenzte Außenperspektive und kein belegter Verkaufserfolg.",
+          "Keine Entscheidung oder Umsetzung einer endgültigen Homepage, keine Änderung an Originalquelle, Deployment, Kontaktsystem, Anbieterangaben oder Indexierung."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Verständlicher Verkaufseinstieg",
+          "detail": "Webdesign für Betriebe und Vereine aus Karlsruhe und Umgebung, persönliche Planung/Gestaltung/Entwicklung und ein erkennbarer nächster Schritt. Besucher müssen die eigentliche Leistung nicht erst aus einem Projektarchiv ableiten."
+        },
+        {
+          "title": "Studio wirkt ruhig und professionell",
+          "detail": "Im tatsächlich betrachteten Desktop- und Mobilauftritt entsteht eine klare Hierarchie aus Marke, Website-Angebot, Kontakt-CTA und konkreter OMF-Arbeit. Die Referenz ist groß sichtbar; Mobilmenü und Darstellung funktionieren in der geprüften schmalen Ansicht."
+        },
+        {
+          "title": "Echte Arbeit und Konzepte sind unterscheidbar",
+          "detail": "OMF wird als Kundenarbeit präsentiert; vier weitere Studio-Websites sind ausdrücklich fiktive, bedienbare Konzeptarbeiten und verlinken die Signature-Demos aus shop. Das ist nachvollziehbarer als eine erfundene Kundenliste."
+        }
+      ],
+      "findings": [
+        {
+          "id": "landinggame-contact-preview",
+          "title": "Interessenten können noch keine echte Anfrage über die Website übermitteln",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Die prominent wiederholten Kontakt-CTA führen zwar korrekt zum Anfragebereich, dieser endet jedoch ausschließlich in einer lokalen Textvorbereitung. Es fehlt ein tatsächlicher Zustellweg beziehungsweise eine erreichbare geschäftliche Kontaktadresse. Für den Entwurfsvergleich ist das transparent; für den eigentlichen Zweck als Anbieterwebsite ist es der zentrale offene Schritt.",
+          "evidence": "Root öffnete im öffentlichen Auftritt den Kontaktanker. Der Abschnitt erklärte ausdrücklich, dass kein direkter Versand eingerichtet ist. Der aktuelle Code verhindert den Formularversand und bietet lediglich Text, Zwischenablage und Download an. Beide Anbieterhinweise nennen fehlende tatsächliche Kontakt- und Personenangaben.",
+          "limitation": "Kein Formular wurde abgesendet und keine fremde Kommunikation ausgelöst. Das ist eine Beobachtung des offen benannten Vorschauzustands, kein Nachweis verlorener konkreter Kundenanfragen und keine rechtliche Vollprüfung.",
+          "recommendation": "Bei Wahl dieser Website als Anbieterauftritt einen einfachen tatsächlich erreichbaren Kontaktweg und nachvollziehbare Zustellbestätigung schaffen. Danach die sichtbaren Vorschau- und Anbieterhinweise passend zum wirklichen Betrieb vervollständigen.",
+          "sourceDocs": [
+            "analysen/landinggame/Grundanalyse.md",
+            "analysen/landinggame/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "landinggame-omf-status",
+          "title": "Die OMF-Referenz hat zwischen den Varianten widersprüchliche Statusangaben",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Die Standardstartseite schreibt Kundenprojekt in Entwicklung und spricht von der Vorschau vor dem offiziellen Start; Studio nennt dasselbe Projekt abgeschlossen. Der Unterschied wurde sowohl live gesehen als auch im sauberen aktuellen Checkout bestätigt. Ein Besucher kann dadurch verschiedene Entwicklungsstände derselben Referenz erkennen.",
+          "evidence": "emfau-site/dist/index.html:47–48 enthält Kundenprojekt · in Entwicklung und laufende Arbeit; studio/index.html:31 enthält Abgeschlossenes Kundenprojekt. README:71 erklärt, dass die alten Varianten ihre früheren Texte behalten haben. Livebeobachtung entspricht diesem Quellbefund.",
+          "limitation": "Der tatsächliche OMF-Abschluss beziehungsweise die Freigabe wurde nicht unabhängig bestätigt. Keine Behauptung, dass eine der Angaben absichtlich falsch ist oder die Kundenarbeit tatsächlich unfertig bleibt.",
+          "recommendation": "Den sachlich richtigen, freigegebenen Projektstatus klären und über die erreichbaren Varianten hinweg konsistent darstellen. Das direkte Referenzbild und die saubere Trennung von fiktiven Arbeiten behalten.",
+          "sourceDocs": [
+            "analysen/landinggame/Grundanalyse.md",
+            "analysen/landinggame/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "landinggame-studio-candidate",
+          "title": "Studio ist ein enger Kandidat für die spätere Anbieter-Landingpage",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Studio setzt die Webleistung, die Region, den direkten Ansprechpartner und eine konkrete Arbeit in eine ruhige Reihenfolge. Im Desktop- und Mobilvergleich wirkt der Einstieg klar und professionell; die Haupt-CTA sind erkennbar. Damit bietet es eine starke vorhandene Grundlage für den Verkauf von Websites, ohne einen zusätzlichen Neuaufbau vorauszusetzen.",
+          "evidence": "Tatsächliche Liveansichten bei 1281 und 391 Pixeln: emfau-Logo/Wortmarke, Websites mit klarer Linie, Leistungsbeschreibung und Projekt besprechen neben beziehungsweise vor der großen OMF-Darstellung. Mobile Texte, CTA und Bild bleiben innerhalb der Ansicht; das Menü wurde geöffnet.",
+          "limitation": "Visuelles Urteil ohne Nutzerbefragung oder Conversiontest. Es ist noch kein endgültiges Ranking aller sieben Kandidaten und entscheidet nicht, ob Games/Apps später einen ergänzenden Bereich erhalten. Beide Varianten bleiben ein Produkt.",
+          "recommendation": "Studio in den gemeinsamen Sieben-Seiten-Vergleich als ernsthaften Hauptseitenkandidaten aufnehmen. Zuerst die vorhandene Struktur nutzen; zusätzliche Produktinhalte erst nach der Positionierungsentscheidung gezielt einordnen.",
+          "sourceDocs": [
+            "analysen/landinggame/Grundanalyse.md",
+            "analysen/landinggame/Quellenpruefung.md",
+            "analysen/landinggame/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "landinggame-design-comparison",
+          "title": "Die aktive Designauswahl ist noch ein Abstimmungswerkzeug",
+          "evidenceType": "assessment",
+          "priority": "low",
+          "detail": "Blau, Grün, Dark und Studio stehen als sichtbare Entwürfe nebeneinander. Die Standardseite speichert die Farbwahl, sodass derselbe Link unterschiedlich erscheinen kann. Für die jetzige Auswahl ist das sinnvoll. Eine spätere Hauptseite sollte hingegen eine bewusste Hauptrichtung und einheitliche Referenz-/Kontaktangaben bekommen.",
+          "evidence": "Root wechselte im Liveauftritt von Blau zu Dark; Designtoolbar und Studio-Vergleichslinks sind sichtbar. design.js setzt die Variante aus direktem URL-Parameter oder gespeicherter Auswahl. Studio ist eine eigene Route und die optionale Eule bleibt ohne Parameter ausgeschaltet.",
+          "limitation": "Kein gemessener Nachteil für Anfragen oder Ladezeit. Clean Grün und die Eule wurden in diesem Grundcheck nicht eigenständig getestet; es wird keine technische Fehlfunktion der Auswahl behauptet.",
+          "recommendation": "Die Varianten während der Entscheidung erhalten, später eine Hauptfassung festlegen und öffentliche Abstimmungscontrols entsprechend reduzieren. Der jetzige Auftrag nimmt diese Entscheidung oder Änderung nicht vorweg.",
+          "sourceDocs": [
+            "analysen/landinggame/Grundanalyse.md",
+            "analysen/landinggame/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "landinggame-action-direction",
+          "order": 1,
+          "title": "Studio im Gesamtvergleich als vorhandene Hauptseitenbasis prüfen",
+          "detail": "Die bereits ruhige Studio-Struktur gegen die übrigen Webauftritte vergleichen und entscheiden, ob der zentrale Einstieg Webleistungen priorisiert. Games und Apps können danach als ergänzende Produktseite oder knapper Bereich eingeordnet werden; die Strategie bleibt ausdrücklich offen.",
+          "status": "proposed",
+          "validation": "Die zentrale Leistungsbotschaft, Arbeiten und Kontakt mit wenigen passenden Interessenten ansehen lassen. Sie sollen erklären können, was angeboten wird und welcher nächste Schritt vorgesehen ist; keine Erfolgsbehauptung ohne tatsächliche Rückmeldung."
+        },
+        {
+          "id": "landinggame-action-contact",
+          "order": 2,
+          "title": "Einen echten einfachen Anfrageweg vor Akquise vervollständigen",
+          "detail": "Bei Auswahl als Anbieterwebsite eine reale Kontaktmöglichkeit und verlässliche Anfragezustellung einrichten; Identität, Anbieter-/Datenschutzhinweise und Indexierung am tatsächlichen Betrieb ausrichten. Der aktuelle Grundcheck verändert davon nichts.",
+          "status": "proposed",
+          "validation": "Später eine ausdrücklich freigegebene Testanfrage mit eigenen Testdaten Ende zu Ende prüfen: verständlicher Kontaktweg, tatsächlicher Eingang und korrekte Bestätigung. Vorher keine Anzeige als einsatzbereiter Versand."
+        },
+        {
+          "id": "landinggame-action-reference",
+          "order": 3,
+          "title": "OMF-Status und erreichbare Varianten vereinheitlichen",
+          "detail": "Den tatsächlichen freigegebenen OMF-Stand klären, dieselbe korrekte Bezeichnung in Standard und Studio verwenden und nach Designentscheidung eine eindeutige Hauptroute vorsehen. Fiktive Konzepte klar gekennzeichnet lassen.",
+          "status": "proposed",
+          "validation": "Alle weiterhin erreichbaren OMF-Karten und Referenztexte gegen den bestätigten Stand lesen; direkte und mobile Aufrufe sowie Referenzlinks danach kurz prüfen."
+        }
+      ],
+      "openQuestions": [
+        "Welcher OMF-Projektstatus ist sachlich korrekt und vom Kunden zur öffentlichen Darstellung freigegeben?",
+        "Soll Studio die Hauptfassung werden, oder bevorzugt der Nutzer eine der Farbvergleichsvarianten?",
+        "Welche echte geschäftliche Kontaktmöglichkeit und welcher einfache Anfrageweg sollen hinterlegt werden?",
+        "Soll die zentrale emfau-Seite Webleistungen priorisieren und Games/Apps ergänzend verlinken, oder mehrere Zielgruppen gleichberechtigt ansprechen?"
+      ],
+      "documents": [
+        "analysen/landinggame/Grundanalyse.md",
+        "analysen/landinggame/Quellenpruefung.md",
+        "analysen/landinggame/screenshots/manifest.json"
+      ]
+    },
+    {
+      "id": "shop",
+      "projectId": "shop",
+      "title": "shop – abgeschlossene Grundanalyse",
+      "status": "reviewed",
+      "summary": "shop hat eine klare Verkaufsrolle: konkrete persönliche Unternehmenswebsites mit transparentem Umfang und einem breiten, ehrlich als fiktiv gekennzeichneten Showroom. Der geplante 699€-Referenzkundenpreis ist verständlich eingeordnet, aber weder buchbar noch auf Rentabilität geprüft. Als Showroom ergänzt das Projekt LandingGame gut; als zentrale emfau-Homepage fehlen einheitliche Anbieteridentität und echte Anfragezustellung. Die fünf Signature-Seiten existieren, werden in den zentralen Übersichten jedoch nicht als Auswahl angeboten. Die begrenzte Grundanalyse ist abgeschlossen, keine Verbesserung umgesetzt und keine endgültige Homepage-Entscheidung getroffen.",
+      "scope": {
+        "checked": [
+          "Rein lesender Checkout C:\\Users\\madde\\Documents\\Ebay Websites mit Anwendung website/; Repository emfau88/shop, GitHEAD 7ea941e5745c78bca9fbfa3eeb547f34111a96d4 vom 23.09.2026, Git-Status ohne lokale Änderungen.",
+          "Aktive Anbieter- und Konzeptquellen, generische Anbieter-Wortmarke, Angebotsumfang/699€-Vorschau, Kontaktformular, Demo-Leiste und Pages-Exportzuordnung.",
+          "Öffentliche Live-Browserprüfung am 09.10.2026 bei Desktopbreite 1281 Pixeln: Anbieter-Hero mit erkennbarem Webdienstleistungsangebot, mehr Inhaltsumfang als Studio, Angebot und sichtbare Vorschaugrenzen.",
+          "Live-Showroom /konzepte/ tatsächlich angesehen und sichtbare Linkziele per DOM geprüft: fünf Core-Ziele, keine Signature-Links in dieser zentralen Übersicht; Source-Abgleich bestätigt denselben Aufbau.",
+          "Anbieter-Mobilansicht bei 391 Pixeln: lesbarer erster Heroabschnitt und kein horizontaler Seitenüberlauf in der geprüften Ansicht.",
+          "Kontaktbereich gelesen: Versand explizit nicht eingerichtet, keine Formularabgabe. 699€ sind ausdrücklich geplanter Referenzkundenpreis für die ersten zwei Kunden und noch kein buchbares Angebot.",
+          "Vorhandener statischer Export pages-dist wurde nur gelesen. Öffentliche Pages-Interaktionen sind die tatsächliche Prüfbasis, weil der Export Framework-Skripte durch eigene Laufzeitmodule ersetzt.",
+          "Anbieter-Mobilmenü bei 391 Pixeln tatsächlich geöffnet: vier Navigationslinks sichtbar; Unverbindlich anfragen gewählt und erfolgreich zum Kontaktanker #anfrage navigiert.",
+          "Exemplarisch AUFSCHLAG-Core und die direkt aus Studio bekannte AUFSCHLAG-Signature-URL öffentlich bei 1281 Pixeln besucht. Beide enthalten transparente Hinweise auf fiktive Konzepte und besitzen erkennbar unterschiedliche Hero-Kompositionen.",
+          "AUFSCHLAG-Core: Tennis geklickt, danach ändern sich Hero-Bild, Titel, CTA und Trainingsfilter. AUFSCHLAG-Signature: 02 Badminton geklickt, danach ändern sich Bild, Court-/Zeitdarstellung, CTA und Filter. Änderungen im sichtbaren beziehungsweise zugänglichen Seitenzustand bestätigt.",
+          "Drei tatsächliche Browser-JPEGs unter screenshots/: Anbieterstart Desktop 1281×721, mobiler Anbieter-Ausschnitt 391×844 und AUFSCHLAG-Signature im Badmintonzustand 1281×721. Herkunft und SHA256 im Manifest, keine erfundenen Mockups."
+        ],
+        "notChecked": [
+          "Kein vollständiger Test aller 30 exportierten Pfade oder aller zehn Core-/Signature-Demos und ihrer Unterseiten. Keine vollständige mobile Bedienprüfung der Demoseiten; exemplarisch AUFSCHLAG wurde auf Desktop geprüft.",
+          "Keine Formulare abgesendet, keine Angebote gekauft, keine Nachricht an Unternehmen oder andere Personen gesendet und keine tatsächliche Anfragezustellung geprüft.",
+          "Kein neuer Build-/Lintlauf im Originalcheckout, kein vollständiger Hashabgleich zwischen Source, vorhandenen lokalen Exportdateien und öffentlichem Pages-Stand.",
+          "Kein vollständiger Performance-, SEO-, Security-, Accessibility-, Geräte- oder rechtlicher Audit. Keine 3D-Leistung auf älteren Geräten oder dauerhaften Interaktions-/Fokusgrenzfälle untersucht.",
+          "Keine Besucher-, Lead-, Conversion- oder Umsatzkennzahlen; keine Marktpreis- oder Rentabilitätsprüfung des vorgesehenen 699€-Angebots.",
+          "Die Rolle als zentrale Anbieterhomepage versus verlinkter Showroom ist noch offen. Das Projekt wurde nicht verändert, kein Preis veröffentlicht und keine Versandfunktion eingeführt."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Konkreter Leistungsrahmen",
+          "detail": "Bis zu vier Inhaltsseiten, eine Sprache, Text- und Bildumfang, eine Korrekturrunde, dokumentierte Übergabe und abgegrenzte Zusatzleistungen machen das Angebot nachvollziehbarer als eine allgemeine Entwicklerbeschreibung."
+        },
+        {
+          "title": "Breiter ehrlich gekennzeichneter Showroom",
+          "detail": "Fünf Branchen besitzen eigene Core-Seitenwelten und zusätzliche Signature-Entwürfe. Beide tatsächlich besuchten AUFSCHLAG-Fassungen sind transparent fiktiv gekennzeichnet und zeigen kräftige Blau-/Creme-Gestaltung, eigenständige Bilder und Typografie. Ihre Sportart-Wechsel wurden bedient und ändern die passenden Inhalte; das eignet sich als konkreter Fähigkeitsnachweis."
+        },
+        {
+          "title": "Klarer Webverkauf statt unklarer Projektmix",
+          "detail": "Der tatsächlich betrachtete Einstieg erklärt persönliche Unternehmenswebsites und führt zu Beispielen, Leistungsrahmen und Anfrage. Die mobile Ansicht zeigt keinen horizontalen Seitenüberlauf; das Menü öffnet mit vier Links und Unverbindlich anfragen führt korrekt zum Kontaktanker."
+        }
+      ],
+      "findings": [
+        {
+          "id": "shop-inquiry-preview",
+          "title": "Die Anbieterstrecke endet bei einer Formularsimulation",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Die Website führt sichtbar zu einer Anfrage, erklärt dort aber, dass kein Versand eingerichtet ist. Ohne einen tatsächlich erreichbaren Kontaktweg kann der Auftritt seine Akquiserolle noch nicht erfüllen. Die Vorschau ist dabei ehrlich gekennzeichnet.",
+          "evidence": "Root las den öffentlichen Kontaktbereich und seinen ausdrücklichen Versandhinweis. InquiryForm und die tatsächlich ausgelieferte Pages-Laufzeit verhindern den Versand, validieren Beispiele lokal und zeigen nur Beispiel vollständig. Die Anbieterhinweise nennen fehlende reale Kontaktdaten.",
+          "limitation": "Keine Formularsendung durchgeführt und keine tatsächlichen Kundendaten verwendet. Kein Beleg für konkret verlorene Leads; keine rechtliche Vollprüfung.",
+          "recommendation": "Wenn shop als aktiver Vertriebseinstieg genutzt wird, eine einfache reale Kontaktmöglichkeit und verlässliche Zustellung mit ehrlicher Bestätigung ergänzen. Andernfalls gezielt zur echten Kontaktstrecke einer zentralen emfau-Seite führen.",
+          "sourceDocs": [
+            "analysen/shop/Grundanalyse.md",
+            "analysen/shop/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "shop-signature-discovery",
+          "title": "Die Signature-Entwürfe sind in den zentralen Übersichten nicht auswählbar",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Die Anbieter-Karten und der Showroom führen zu den fünf Core-Homepages. Die zusätzlichen Signature-Homepages sind eigene vorhandene Exportpfade, erhalten in diesen Übersichten aber keine gleich erkennbare Auswahl. Ein Teil der aufwendigeren Präsentationsarbeit bleibt so aus dem normalen Einstieg schlechter erschließbar.",
+          "evidence": "Root prüfte im Live-Showroom die tatsächlichen Linkziele im DOM: fünf Core-Routen, keine Signature-Links. Source-Ziele in app/page.tsx und app/konzepte/page.tsx bestätigen den Befund; export-pages.mjs enthält dagegen fünf Signature-Pfade. Die direkt über die aus Studio bekannte URL besuchte AUFSCHLAG-Signature war erreichbar, hatte eine sichtbar andere Hero-Rahmung und reagierte auf 02 Badminton; die AUFSCHLAG-Core-Seite reagierte auf Tennis. Das bestätigt eine tatsächlich vorhandene zusätzliche Variante, die in der zentralen Auswahl dennoch nicht erscheint.",
+          "limitation": "Die direkte Erreichbarkeit zusätzlicher URLs ist von ihrer Auffindbarkeit zu unterscheiden. Exemplarisch wurden AUFSCHLAG-Core und -Signature auf Desktop bedient, nicht alle zehn Demos oder sämtliche Unterseiten. Keine gemessene Nutzerverwirrung oder Conversionwirkung.",
+          "recommendation": "Pro Konzept einen verständlichen Weg zu vollständiger Core-Website und zusätzlichem Signature-Einstieg zeigen. Aus der Darstellung soll erkennbar sein, dass es Varianten desselben Konzepts sind.",
+          "sourceDocs": [
+            "analysen/shop/Grundanalyse.md",
+            "analysen/shop/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "shop-brand-role",
+          "title": "Als Showroom brauchbar; die zentrale Anbieterrolle ist noch nicht einheitlich emfau",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die Website präsentiert eigenständige Webleistungen, nutzt als Absender jedoch die generische Wortmarke webdesign für lokale Betriebe. LandingGame hat bereits eine emfau-Marke und eine echte OMF-Referenz. Für den gemeinsamen Onlineauftritt ist deshalb eine einfache Verbindung sinnvoller als mehrere getrennte Anbieteridentitäten mit ähnlichen Leistungen.",
+          "evidence": "Im Live-Hero wurde die generische Webdesign-Marke gesehen; navigation.tsx und shared.tsx enthalten denselben Absender. Alle Konzeptkarten sind fiktiv gekennzeichnet; die OMF-Kundenarbeit aus LandingGame ist in dieser Anbieterstrecke bisher nicht enthalten.",
+          "limitation": "Dies ist eine Einordnung des aktuellen Inhaltsaufbaus, keine endgültige Homepage- oder Markenentscheidung. Es wurde keine Befragung potenzieller Kunden durchgeführt und der vollständige Sieben-Seiten-Vergleich bleibt die gemeinsame Entscheidungsbasis.",
+          "recommendation": "shop entweder als verlinkten Branchen-Showroom unter der emfau-Anbieterwebsite nutzen oder bei Wahl als Hauptseite Marke/Absender vereinheitlichen. Echte Kundenarbeit und fiktive Konzepte weiterhin getrennt zeigen.",
+          "sourceDocs": [
+            "analysen/shop/Grundanalyse.md",
+            "analysen/shop/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "shop-price-scope",
+          "title": "Der geplante Referenzpreis ist klar, seine Tragfähigkeit ist noch offen",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "699€ sind als geplanter Einführungspreis für die ersten zwei Referenzkunden beschriftet. Umfang und Zusatzleistungen sind explizit abgegrenzt; gleichzeitig ist es noch kein buchbares Angebot. Der Preis ist damit ein vorhandener Angebotsentwurf, kein in diesem Review bestätigter wirtschaftlicher Rahmen.",
+          "evidence": "app/page.tsx beschreibt bis zu vier Inhaltsseiten, ca. 700 Wörter Textüberarbeitung, acht gelieferte Bilder, eine gebündelte Korrekturrunde und 30 Tage technische Fehlerhilfe. Domain/Hosting, CMS-Selbstpflege, Shops und Buchungssysteme sind gesondert. Die sichtbare 699€-Karte nennt geplanter Endpreis und noch kein buchbares Angebot.",
+          "limitation": "Kein Zeitaufwand je Auftrag, keine Kosten, Steuern, Akquisekosten oder Marktnachfrage analysiert. Keine Aussage, dass 699€ zu hoch, zu niedrig oder rentabel sind.",
+          "recommendation": "Vor echtem Angebot einen kleinen realistischen Aufwandsrahmen samt Korrekturen, Textarbeit und Übergabe kalkulieren. Erst dann Preis und Angebotsgrenzen verbindlich festlegen.",
+          "sourceDocs": [
+            "analysen/shop/Grundanalyse.md",
+            "analysen/shop/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "shop-action-role",
+          "order": 1,
+          "title": "shop als Showroom mit einer gemeinsamen emfau-Anbieterstrecke verbinden",
+          "detail": "Im Vergleich aller sieben Webauftritte entscheiden, ob shop verlinkte Konzeptbibliothek oder Hauptseite wird. Bei Integration Markenbezeichnung, Referenzen und Kontaktweg eindeutig verbinden; keine zweite widersprüchliche Anbieteridentität schaffen.",
+          "status": "proposed",
+          "validation": "Vom zentralen Einstieg ein Branchenbeispiel öffnen und zurück zu Angebot/Kontakt gelangen. Ein neuer Besucher soll Anbieter, echte Kundenarbeit und fiktive Demo unterscheiden können."
+        },
+        {
+          "id": "shop-action-signature",
+          "order": 2,
+          "title": "Core und Signature pro Konzept sichtbar auswählbar machen",
+          "detail": "Die fünf existierenden Signature-Routen in den zentralen Übersichten als zusätzliche Gestaltungsvariante desselben Konzepts verlinken, mit knapper Erklärung und Rückweg zur vollständigen Core-Website. Die heutigen Befunde haben noch keine Änderung ausgelöst.",
+          "status": "proposed",
+          "validation": "Desktop und Mobile vom Anbieterstart über Showroom zu Core und Signature prüfen, einschließlich zurück zum Anbieter. Alle Konzeptkennzeichnungen und korrekten /shop-Pfade erhalten."
+        },
+        {
+          "id": "shop-action-offer",
+          "order": 3,
+          "title": "Vor Akquise Kontaktweg und begrenztes Angebot tatsächlich abschließen",
+          "detail": "Eine reale Anfragezustellung beziehungsweise Verlinkung zur gewählten Hauptkontaktstrecke einrichten. Den vorgesehenen Referenzpreis und die zugesagte Leistung anhand realistischen Aufwands prüfen; Anbieter-/Vorschauangaben dann passend vervollständigen.",
+          "status": "proposed",
+          "validation": "Später eine ausdrücklich freigegebene Testanfrage mit eigenen Daten Ende zu Ende prüfen; verbindlichen Leistungsrahmen und Ausschlüsse gegen tatsächlichen Aufwand abgleichen. Keine Zustellung oder Wirtschaftlichkeit als erledigt darstellen, solange ungeprüft."
+        }
+      ],
+      "openQuestions": [
+        "Soll shop ein ergänzender Showroom der emfau-Hauptseite werden oder selbst den zentralen Verkaufseinstieg bilden?",
+        "Welche tatsächlich verfügbaren Arbeitsbeispiele sollen Interessenten zuerst sehen: Core, Signature oder eine kurze Auswahl beider?",
+        "Welcher Zeit- und Korrekturaufwand ist für das geplante 699€-Referenzkundenangebot realistisch?",
+        "Welche echte Kontaktstrecke und welche Anbieteridentität sollen über LandingGame und shop hinweg einheitlich verwendet werden?"
+      ],
+      "documents": [
+        "analysen/shop/Grundanalyse.md",
+        "analysen/shop/Quellenpruefung.md",
+        "analysen/shop/screenshots/manifest.json"
+      ]
+    },
+    {
+      "id": "keyofsolomon",
+      "projectId": "keyofsolomon",
+      "title": "keyofsolomon – abgeschlossene Grundanalyse",
+      "status": "reviewed",
+      "summary": "Solomon Archive ist eine stimmige, spezialisierte Hardcover-Verkaufsseite mit klarer Produktbeschreibung, Preis und Kaufweg. Desktop und Mobilansicht sowie Öffnen/Schließen des realen Whop-Checkouts wurden geprüft. Die Anbieterinformation enthält live unfertige Kontakt-/Betreiberfelder; reale Druckqualität, Bestellabschluss und Erfüllung bleiben ungeprüft. Als eigene Nischenprodukt-Landingpage brauchbar, als zentrale Homepage für sämtliche emfau-Angebote zu eng. Drei kleine nächste Maßnahmen sind vorgeschlagen; Website, Checkout und Veröffentlichungen wurden nicht verändert.",
+      "scope": {
+        "checked": [
+          "Aktiver lokaler und Remote-Stand 63a9f4c3f637c7e2670dd6afc0e2e9117e179d90 vom 04.10.2026; 42 versionierte Dateien per Git-Blob ohne Inhaltsabweichung, Textzeilenenden normalisiert.",
+          "Öffentliche Startseite https://emfau88.github.io/keyofsolomon/ am 09.10.2026 auf Desktop bei ungefähr 1281 Pixeln und mobil bei ungefähr 391 Pixeln Breite; kein horizontaler Seitenüberlauf in der geprüften schmalen Ansicht.",
+          "Produktangebot, 49,95 USD, US-Versandhinweis, ungefähr zwei Wochen, Innenansichten, FAQ und Kaufbuttons im Live-Auftritt beziehungsweise aktiven DOM.",
+          "Order Now öffnet das echte Whop-Modal mit geladenem Checkoutformular; vorausgewählte Deutschlandansicht zeigt Produkt 49,95 USD, geschätzte Steuer 9,49 USD und Gesamt 59,44 USD. Keine Daten eingegeben; Modal schließen geprüft.",
+          "Anbieterinformation über Footer live geöffnet; Entwurfsstatus und Betreiber-/Kontaktplatzhalter gesehen. Aktive Legal-/Privacy-/Danke-/Messquellen lesend gegengeprüft.",
+          "Startseitenbilder auf Desktop/Mobil als datierte Websiteaufnahmen mit Herkunftsnachweis dokumentiert."
+        ],
+        "notChecked": [
+          "Keine Bestellung abgeschlossen, Zahlung ausgelöst, persönlichen Bestelldaten eingegeben oder Personen kontaktiert. Geladenes Formular ist kein bestandener Kauf-/Erfüllungstest.",
+          "Kein physisches Buch, Probeexemplar, tatsächliche Druck- oder Restaurationsqualität, Herstellung, Lieferung, Rückerstattung oder Bestellsupport geprüft.",
+          "Kein US-Endpreis und keine tatsächliche Lieferbarkeit nach Deutschland bestätigt. Die Deutschlandanzeige ist eine begrenzte Länderansicht mit geschätzter Steuer.",
+          "Keine Besucher-, Bestell-, Umsatz- oder Conversiondaten, kein Nutzertest und keine vollständige Performanceprofilierung.",
+          "Keine Rechts-, Datenschutz- oder historische Editionsprüfung; unfertige Angaben sind ein Vollständigkeitsbefund.",
+          "Nicht alle historischen HTML-Entwürfe live geprüft; keine Homepage-Strategie beschlossen und keine Originalquelle verändert."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Konkretes, verständliches Produkt",
+          "detail": "Historische Vorlage, heutiges Hardcover, Format, Preis und Print-on-Demand erklären dasselbe Angebot; die FAQ trennt die neue Ausgabe von einem Originalexemplar von 1889."
+        },
+        {
+          "title": "Stimmige Buchgestaltung",
+          "detail": "Ruhige Serifentypografie, Schwarz und Gold sowie Buch- und Innenbilder passen zum spezialisierten Sammler-/Archivauftritt. Ein visueller Neubau ist aus der Grundanalyse nicht begründet."
+        },
+        {
+          "title": "Klare Handlungswege",
+          "detail": "Kaufbuttons und feste mobile Kaufleiste sind erkennbar. Das reale Whop-Checkoutmodal öffnet, lädt und schließt im geprüften Ablauf."
+        },
+        {
+          "title": "Nützliche Kaufvorbereitung",
+          "detail": "FAQ und Angaben zu Vorlage, Bindung, Papier und Herstellung bieten mehr Orientierung als reine Bildwerbung. Die tatsächliche Erfüllung ist davon getrennt zu prüfen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "keyofsolomon-operator-draft",
+          "title": "Anbieter- und Kontaktinformation bleibt live ein Entwurf",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Der visuell fertige Verkaufsauftritt führt zu einer Anbieterinformation mit unfertigen Namen-, Adress- und Kontaktfeldern. Für Bestell- und Lieferfragen fehlt damit ein konkret fertig dargestellter Supportweg.",
+          "evidence": "Legal Notice über den Footer geöffnet: sichtbarer Draft-Hinweis und Betreiber-/Kontaktplatzhalter. legal-notice.html 22–40 sowie privacy-policy.html bestätigen die unfertigen Felder.",
+          "limitation": "Vollständigkeits-/Vertrauensbefund, keine juristische Bewertung. Es wurden keine privaten Anbieterangaben recherchiert oder ergänzt.",
+          "recommendation": "Tatsächliche Verantwortlichkeit und geschäftlichen Bestellsupport festlegen; verlinkte Informationen passend zum realen Betrieb vervollständigen.",
+          "sourceDocs": [
+            "analysen/keyofsolomon/Grundanalyse.md",
+            "analysen/keyofsolomon/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "keyofsolomon-fulfilment-verification",
+          "title": "Gedrucktes Produkt und Erfüllungsablauf sind noch zu bestätigen",
+          "evidenceType": "inference",
+          "priority": "high",
+          "detail": "Die Website nennt konkrete Produkt- und Liefermerkmale, während die gelesene Vorbereitungsliste reale Druckkonfiguration, Muster und Versandablauf offenlässt. Ein kontrollierter Abgleich ist vor Verkauf sinnvoll.",
+          "evidence": "Startseite49,95 USD inklusive US-Versand und ungefähr zwei Wochen; Quelle ohne automatische Lulu-Bestellerstellung. Lokale SITE_PREPARATION.md nennt Produkt-/Erfüllungsprüfung als offen.",
+          "limitation": "Kein Nachweis unmöglicher manueller Erfüllung oder schlechter Druckqualität. Keine Bestellung und kein physisches Produkt geprüft.",
+          "recommendation": "Druckkonfiguration/Muster, Erfüllungsverantwortung, Lieferländer, Gesamtkosten und Support als kurzen tatsächlichen Ablauf prüfen.",
+          "sourceDocs": [
+            "analysen/keyofsolomon/Grundanalyse.md",
+            "analysen/keyofsolomon/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "keyofsolomon-checkout-country",
+          "title": "Lieferländer und Checkout-Anzeige bewusst zusammenführen",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Die Startseite betont US-Versand, der geöffnete Checkout zeigte eine vorausgewählte Deutschlandansicht mit zusätzlicher geschätzter Steuer. Zielgebiete und tatsächlich erfüllbare Bestellungen sind zu klären.",
+          "evidence": "Geladenes Whop-Formular zeigte Produkt 49,95 USD, geschätzte Steuer 9,49 USD und Gesamt 59,44 USD sowie Versand-/Zahlungsfelder. Keine Eingabe oder Zahlung; Modal wieder geschlossen.",
+          "limitation": "Kein verbindlicher Endpreis, kein US-Preischeck und keine bestätigte Deutschland-Lieferbarkeit. Eine Länderanzeige beweist nicht den kompletten Verkaufsablauf.",
+          "recommendation": "Gewünschte Länder und tatsächliche Kosten bei einem kontrollierten Checkout-/Erfüllungscheck mit Websitehinweisen abgleichen.",
+          "sourceDocs": [
+            "analysen/keyofsolomon/Grundanalyse.md",
+            "analysen/keyofsolomon/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "keyofsolomon-mobile-product-order",
+          "title": "Mobil liegt das erste große Buchbild unter dem Preis und Kaufweg",
+          "evidenceType": "runtime",
+          "priority": "low",
+          "detail": "Der schmale Einstieg bleibt nutzbar und ohne beobachteten horizontalen Überlauf. Große Überschrift, Preis und CTA dominieren; ein früheres reales Buchdetail wäre eine kleine Gestaltungsoption.",
+          "evidence": "Live-Mobilansicht ungefähr 391 Pixel: großer Titel, Angebot,49,95 USD und CTA; Produktbild darunter, zusätzliche feste Kaufleiste sichtbar.",
+          "limitation": "Kein nachgewiesenes Bedienproblem oder Conversionverlust; ein Bild früher zu zeigen ist ein Gestaltungsvorschlag, keine belegte Erfolgswirkung.",
+          "recommendation": "Bestehende Grundlage erhalten und bei späterer Einstiegsarbeit ein echtes Buchdetail früher sichtbar machen; mit schmaler Ansicht prüfen.",
+          "sourceDocs": [
+            "analysen/keyofsolomon/Grundanalyse.md",
+            "analysen/keyofsolomon/screenshots/manifest.json"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "keyofsolomon-action-support",
+          "order": 1,
+          "title": "Anbieter und Bestellsupport konkretisieren",
+          "detail": "Tatsächliche Verantwortlichkeit und erreichbaren geschäftlichen Kontakt festlegen; die sichtbaren Entwurfsinformationen passend zum realen Ablauf fertigstellen.",
+          "status": "proposed",
+          "validation": "Verlinkte Informationen als Besucher prüfen; keine Platzhalter als vollständige Anbieterinformation werten. Rechtsfragen bei einer tatsächlichen Verkaufsfreigabe separat behandeln."
+        },
+        {
+          "id": "keyofsolomon-action-fulfilment",
+          "order": 2,
+          "title": "Produkt, Checkout und Erfüllung begrenzt abgleichen",
+          "detail": "Druckkonfiguration beziehungsweise reales Muster, manuelle/automatische Erfüllung, Liefergebiete, Kosten und Support zusammenbringen. Geladenes Checkoutformular reicht als Abschlussnachweis nicht.",
+          "status": "proposed",
+          "validation": "Späteren Bestell-/Versandtest bewusst begrenzen und tatsächlich zuordnen; ohne erfolgreiche Prüfung keine Kaufbarkeit, Versandqualität oder bindenden Endpreis behaupten."
+        },
+        {
+          "id": "keyofsolomon-action-role",
+          "order": 3,
+          "title": "Als eigene Produktseite einordnen und klein weiterpflegen",
+          "detail": "Nischenprodukt-Landingpage erhalten; Verbindung zur späteren zentralen Homepage bestimmen. Bei Bedarf mobiles Buchdetail früher zeigen und Messpunkte von bestätigten Bestellungen trennen.",
+          "status": "proposed",
+          "validation": "Gemeinsamen Siebenseitenvergleich abwarten; keine zentrale Homepage daraus beschließen. Änderungen anschließend mobil/desktop prüfen; keine Conversiongarantie."
+        }
+      ],
+      "openQuestions": [
+        "Wie sehen tatsächliches Druckprodukt und finaler Erfüllungs-/Supportablauf aus?",
+        "Ist der Vertrieb nur für die USA gedacht oder welche weiteren Länder können mit welchen Gesamtkosten beliefert werden?",
+        "Welche tatsächliche Anbieter-/Kontaktinformation soll fertig und öffentlich dargestellt werden?",
+        "Wie funktionieren später eine bewusst freigegebene Bestellung, Zahlung und tatsächliche Lieferung?",
+        "Welche Verbindung soll diese spezialisierte Produktseite zur späteren zentralen emfau-Präsenz erhalten?"
+      ],
+      "documents": [
+        "analysen/keyofsolomon/Grundanalyse.md",
+        "analysen/keyofsolomon/Quellenpruefung.md",
+        "analysen/keyofsolomon/screenshots/manifest.json"
+      ]
+    },
+    {
+      "id": "portfolio3",
+      "projectId": "portfolio3",
+      "title": "Portfolio3 – abgeschlossene Grundanalyse",
+      "status": "reviewed",
+      "summary": "Portfolio3 ist eine brauchbare, unmittelbar lesbare Grundlage für eine Apps-/Games-Präsenz mit realen Produktbildern und direkten Produktwegen. Desktop, schmaler Appbereich und Sprung zur korrekten MewTrack-Karte wurden geprüft. Für Website-Verkauf fehlen Angebot und Kontaktweg; mobile Bildhöhe und lange Techniktexte erschweren den schnellen Überblick. Releasebilder/-versprechen und Sprachpersistenz benötigen kleine gezielte Gegenchecks. Die Seite oder ein eigener Produktbereich ist eine Vergleichsoption, keine bereits entschiedene zentrale Homepage. Keine Originalquelle verändert; alle Maßnahmen bleiben Vorschläge.",
+      "scope": {
+        "checked": [
+          "Aktuelle öffentliche GitHub-Quelle am 09.10.2026: HEAD 056fad1b33c9dc11501dd60ab2432dd8278da2c9 vom 30.08.2026, index.html 1.730.691 Bytes; unveränderte Kopie ausschließlich in ignorierter lokaler Prüfablage.",
+          "Live-Website https://emfau88.github.io/Portfolio3/ auf Desktop bei ungefähr 1281 Pixeln Breite und Appbereich mobil bei ungefähr 391 Pixeln; kein horizontaler Seitenüberlauf in der geprüften schmalen Ansicht.",
+          "Einstieg, Produktmotive, Appbereich und sichtbare Navigation. MewTrack-Motiv/-Button führte zur korrekten MewTrack-Produktkarte; Next-App-Navigation bedient.",
+          "Aktive Quellenrouten für Apps, Games, Technik,12 Archivkarten,8 Appkarten, War Stories und eingebettetes Logbuch. Spiel-/App-Links als Websitewege erfasst.",
+          "Package-Links der vier erfassten Apps gegen Bestand und Texte gegen vorhandene Appberichte abgeglichen; sechs Dashboardgames im Hauptbereich/Archiv zugeordnet.",
+          "Desktopstart und mobile Appansicht als datierte Websiteaufnahmen mit Herkunftsnachweis dokumentiert."
+        ],
+        "notChecked": [
+          "Nicht alle acht Appkarten, alle zwölf Archiveinträge oder sämtliche Logbuch-/War Stories-Ansichten vollständig im Browser geprüft.",
+          "Keine native App bedient und kein verlinktes Browsergame in diesem Auftrag gespielt. Portfolio-Testtexte ersetzen keine ausgeführten Produkttests.",
+          "Sprachwechsel mit anschließender Neuladung nicht ausgeführt; fehlendes Lesen der gespeicherten Auswahl ist ein Codebefund.",
+          "Kein ursprünglicher lokaler Portfolio3-Checkout bestätigt; Documents/portfolio bleibt ein verwandter älterer Entwurf. GitHub-Quelle ist keine Garantie vollständiger Identität aller Live-Ressourcen.",
+          "Keine vollständige externe Bild-/Linkmatrix, Performanceprofilierung, Suchrankingprüfung, Nutzerstudie, Analytics-/Conversionauswertung oder Rechts-/Datenschutzprüfung.",
+          "Keine Homepage-Strategie beschlossen, kein neuer Kundenkontakt hergestellt und keine Originalquelle/App-/Storeseite geändert."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Nachvollziehbarer Apps-/Games-Fokus",
+          "detail": "Einstieg und Produktbereiche zeigen vorhandene Entwicklungsarbeit mit Beschreibungen, Bildern und Produktlinks. Archiv und Hintergrundgeschichten bilden ergänzende Ebenen."
+        },
+        {
+          "title": "Erkennbare Produktzuordnung",
+          "detail": "Große Typografie und Telefonfächer geben eine eigene visuelle Identität. Der MewTrack-Einstieg führte im Live-Test zur korrekten Karte."
+        },
+        {
+          "title": "Brauchbare normale Lesestruktur",
+          "detail": "Scrollbare HTML-Grundlage ohne begehbare WebGL-Navigation. Mobil sind Navigation und Appkarte grundsätzlich lesbar; kein horizontaler Überlauf in der geprüften Breite."
+        },
+        {
+          "title": "Reale Arbeitsgrundlagen vorhanden",
+          "detail": "Appansichten, Spielbilder, direkte Links und ehrliche Beschreibung praktischer Technik-/Workflow-Erfahrung lassen sich für ein begrenztes Pflegeupdate weiterverwenden."
+        }
+      ],
+      "findings": [
+        {
+          "id": "portfolio3-contact-role",
+          "title": "Websiteangebot und Anfrageweg fehlen für mögliche Webkunden",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Die Seite stellt Produkte vor, bietet aber keine erkennbare Website-Dienstleistung und keinen direkten Kontakt-/Anfrageweg. Relevant, wenn sie künftig Websiteverkauf als Hauptzweck erfüllen soll.",
+          "evidence": "Aktive Navigation und Footer ohne Kontaktoption; kein mailto oder Kontaktabschnitt im gesamten Startseitenquelltext. Einstieg spricht von Android-Apps und kleinen digitalen Produkten.",
+          "limitation": "Für ein reines Produktportfolio kein pauschaler Fehler. Zentrale Rolle ist noch nicht beschlossen; kein rechtlicher Vollständigkeitsnachweis.",
+          "recommendation": "Im Vergleich entscheiden, ob ein kurzer Leistungszugang und Kontakt hier ergänzt oder mit einer eigenen Website-Verkaufsseite verbunden werden.",
+          "sourceDocs": [
+            "analysen/portfolio3/Grundanalyse.md",
+            "analysen/portfolio3/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "portfolio3-information-density",
+          "title": "Große Bilder und lange Techniktexte verzögern den schnellen Produktüberblick",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Der Desktopauftritt ist auffällig und klar zugeordnet. Mobil nimmt das Produktbild viel Höhe ein; Nutzenbeschreibung und Link können darunter liegen. Umfangreiche Techniktexte richten sich stärker an technische Leser.",
+          "evidence": "Live-Appbereich ungefähr 391 Pixel: lesbare Karte, großes Bild, Beschreibung weiter unten; vier Navigationspills Apps / Spiele / War Stories / Dev Log sichtbar. Desktop mit großer Typografie und Telefonfächer.",
+          "limitation": "Nicht alle Karten vollständig bedient, kein gemessener Abbruch oder nachgewiesener Conversionverlust. Bewertung des ersten Überblicks, keine Nutzerstudie.",
+          "recommendation": "Nutzen, Status und Produktlink früh sichtbar staffeln; technische Details und Geschichten als zusätzliche Ebene erhalten.",
+          "sourceDocs": [
+            "analysen/portfolio3/Grundanalyse.md",
+            "analysen/portfolio3/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "portfolio3-release-promises",
+          "title": "Produktversprechen und Bilder mit der gemeinten Releasefassung abgleichen",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Package-Links stimmen zum Bestand. ZeroHero wird mit Quests beworben, während die aktuelle lokale Reviewbasis Quests deaktiviert. Privatversprechen und Mirror-/RelateLens-Fassung müssen ebenfalls zum tatsächlich gemeinten Produktstand passen.",
+          "evidence": "Portfolioindex 1303–1304 nennt XP/quests. ZeroHero-Codeprüfung belegt flags.dart:1: Quests deaktiviert. MewTracks stabile Pose/automatischer Countdown ist dagegen im bestehenden nativen Codebericht belegt; Kameraqualität wurde nicht bedient.",
+          "limitation": "Abweichung zur lokalen Quelle beweist kein Fehlversprechen des veröffentlichten Binary; gleiche Version beweist keine Quellenidentität. Keine Apps in diesem Webauftrag erneut geprüft.",
+          "recommendation": "Aktive Releasefunktion, Bildherkunft und Produkttexte gezielt zuordnen; vorhandene Quests/Privacy-/Relaunchprüfgrenzen sichtbar halten, keine neuen Funktionen nur wegen alter Werbung bauen.",
+          "sourceDocs": [
+            "analysen/portfolio3/Grundanalyse.md",
+            "analysen/portfolio3/Quellenpruefung.md",
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/mewtrack/MewTrack-code-review.md"
+          ]
+        },
+        {
+          "id": "portfolio3-resource-history",
+          "title": "Externe Bilder und historisches Logbuch getrennt pflegen",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Viele Bilder stammen aus portfolio2 oder README-/Marketingpfaden anderer Projekte. Das historische Logbuch ist eingebettet, ebenso Medien; HTML beträgt 1,73 MB vor Zusatzressourcen.",
+          "evidence": "Aktive Bild-URLs verweisen auf portfolio2 und raw.githubusercontent.com; Logbuchtext nennt Stand 25.08.2026. Die aktuelle HTML-Blobgröße ist1.730.691 Bytes.",
+          "limitation": "Keine behauptete schlechte Ladezeit, kein vollständiger Linkcheck. Historische Aktivität ist kein aktueller Produktstatus; keine Analytics gelesen.",
+          "recommendation": "Später eigene eindeutig zugeordnete Bildablage erwägen und Logbuch weiter als Historie kennzeichnen; tatsächliche Ladewirkung erst bei Bedarf messen.",
+          "sourceDocs": [
+            "analysen/portfolio3/Grundanalyse.md",
+            "analysen/portfolio3/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "portfolio3-language-persistence",
+          "title": "Gespeicherte Sprachauswahl wird beim Start nicht wiederhergestellt",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Der Code schreibt emfau-lang in localStorage, bestimmt die Initialsprache aber aus navigator.languages/navigator.language. Eine bewusste abweichende Auswahl könnte nach Reload verloren gehen.",
+          "evidence": "index.html 2275–2285 setzt localStorage, danach wird initialLang nur aus Browsersprache bestimmt; kein localStorage.getItem im aktiven Quelltext.",
+          "limitation": "In diesem Erstdurchlauf kein abweichender Sprachwechsel mit Reload bedient. Codebefund, kein behaupteter reproduzierter Laufzeitfehler.",
+          "recommendation": "Kurzen Browsergegencheck ausführen und bei Bestätigung gespeicherte Auswahl gültig wiederherstellen; vorhandene Zweisprachigkeit erhalten.",
+          "sourceDocs": [
+            "analysen/portfolio3/Grundanalyse.md",
+            "analysen/portfolio3/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "portfolio3-action-role",
+          "order": 1,
+          "title": "Rolle und ersten nächsten Schritt festlegen",
+          "detail": "Vorhandene Struktur als Apps-/Games-Portfolio nutzen oder bei Webverkauf als Ziel einen kurzen Leistungszugang und Kontakt ergänzen. Entscheidung anhand des gemeinsamen Vergleichs.",
+          "status": "proposed",
+          "validation": "Erste Ansicht muss verständlich machen, was Besucher hier finden und wie sie zum passenden Produkt beziehungsweise Kontakt kommen. Keine zentrale Strategie vorwegnehmen."
+        },
+        {
+          "id": "portfolio3-action-cards",
+          "order": 2,
+          "title": "Produktkarten für den schnellen Überblick staffeln",
+          "detail": "Nutzen, Produktstatus und Link früh zeigen; große Bilder, Technik und Geschichten als ergänzende Inhalte erhalten. Kleine Anpassung statt vollständigem Neubau.",
+          "status": "proposed",
+          "validation": "Desktop und 391 Pixel-Ansicht mit gezielten Sprüngen/Karussell prüfen. Keine Verbesserung der Nutzerzahlen ohne Messung behaupten."
+        },
+        {
+          "id": "portfolio3-action-freshness",
+          "order": 3,
+          "title": "Aktualität und kleine Bedienrisiken prüfen",
+          "detail": "Releasebilder/-versprechen, externe Bildpfade und Sprache nach Reload abgleichen. Historische Texte historisch kennzeichnen und nur bestätigte Probleme in begrenztem Pflegeupdate ändern.",
+          "status": "proposed",
+          "validation": "Gemeinte Appreleasefassung benennen, tote Ressourcen erst nach tatsächlichem Check melden; Sprachauswahl abweichend von Browser setzen/reloaden. Maßnahmen derzeit nicht umgesetzt."
+        }
+      ],
+      "openQuestions": [
+        "Soll Portfolio3 die zentrale emfau-Homepage, ein eigener Apps-/Games-Bereich oder eine reine Referenzseite werden?",
+        "Welche Besuchergruppe soll zuerst angesprochen werden: Produktnutzer, Spieleinteressierte oder potenzielle Webkunden?",
+        "Welche tatsächliche Releasefassung und Bildbasis soll pro App gezeigt werden?",
+        "Bleibt eine bewusst abweichende Sprachauswahl nach Neuladen im Live-Browser erhalten?",
+        "Welche externen Bilder/Spiel- und App-Links sind für einen späteren gepflegten Hauptauftritt tatsächlich erreichbar und aktuell?"
+      ],
+      "documents": [
+        "analysen/portfolio3/Grundanalyse.md",
+        "analysen/portfolio3/Quellenpruefung.md",
+        "analysen/portfolio3/screenshots/manifest.json",
+        "analysen/portfolio3/runtime/README.md"
+      ]
+    },
+    {
+      "id": "blueyard",
+      "projectId": "blueyard",
+      "title": "blueyard – abgeschlossene Web-Grundanalyse",
+      "status": "reviewed",
+      "summary": "blueyard ist ein plausibler Entwurf für einen gemeinsamen emfau-Hub mit Web / Games / Labs: eigenständige Partikelgestaltung, klare Hauptbotschaft und funktionierende Menüsprünge. Im geprüften Live-Stand führt Web-Projekte ansehen jedoch nur zur Vorbereitungsvorschau und Kontakt aufnehmen ist kein ausführbarer Anfrageweg. In der schmalen Kontaktansicht liegt eine dunkle Kugelfläche hinter schwarzem Text. Erst Kontakt und wenige konkrete Ziele verbinden sowie diese Lesbarkeit korrigieren, dann die Hubrolle im Vergleich der sieben Auftritte bestimmen. Kein pauschaler Redesignbedarf und keine finale Homepagewahl. Grundanalyse abgeschlossen; Originalwebsite, Quellen und Veröffentlichung unverändert.",
+      "scope": {
+        "checked": [
+          "Veröffentlichte deutsche Startseite https://emfau88.github.io/blueyard/ am 09.10.2026 bei Desktopbreite 1281 und schmaler Browserbreite 391 Pixel angesehen.",
+          "Desktopstart, Menü mit sieben Stationen, Web-Menüsprung mit #web und tatsächlicher Web-CTA auf /web/ geprüft. Unterseite zeigt reale Vorbereitungsvorschau statt Projekten.",
+          "Schmales Menü und Kontaktstation mit #contact geprüft; nicht ausführbarer Kontakttext und sichtbare dunkle Kugelfläche hinter schwarzer Headline/Fließtext dokumentiert.",
+          "Zwei echte Browseraufnahmen gespeichert und visuell gelesen: Desktopstart und schmale Kontaktstation. Browseransichten, kein physisches Handy.",
+          "Lokaler Checkout C:\\Users\\madde\\Documents\\bluebyte ausschließlich lesend: main, HEAD fe70c409a3e28c6b7cf5b42e4e3844804fe07521 vom 01.10.2026, 13 modifizierte und fünf unversionierte Status-Einträge. Aktive Routen, Inhalte, Kontakt-Markup, Eingabe- und Fallbackpfade gegengeprüft."
+        ],
+        "notChecked": [
+          "Keine nachgewiesene Gleichheit des aktuellen geänderten lokalen Arbeitsbaums mit dem ausgelieferten Live-Bundle. Versions-/Gitmetadaten getrennt von Livebeobachtung.",
+          "Englische Fassung, Games-/Labs-Unterseiten und alle Animationen nicht vollständig live durchgeklickt; entsprechende Routen und Platzhalter ergänzend aus aktiven Quellen geprüft.",
+          "Kein physisches Handy, vollständiger Tastatur-/Screenreadercheck, künstlicher WebGL-/Netzwerkausfall oder Browservergleich.",
+          "Keine gemessenen Ladezeiten, FPS, Besucher-, Anfrage- oder Conversionwerte. Kurzer beobachteter Loader ist kein Performancebenchmark.",
+          "Keine Builds, Dependency-Installationen, automatisierten Tests oder Veränderungen des Originalauftritts. Historische QA-Berichte nicht als neu bestandene Tests übernommen.",
+          "Kein vollständiger SEO-, Rechts- oder Sicherheitsaudit; Qualität verlinkter Apps/Games nicht neu analysiert. Endgültige zentrale Website und Rolle von Games/Apps offen."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Erkennbare Gestaltung und verständlicher Einstieg",
+          "detail": "Die geprüfte Desktopansicht zeigt große Typografie, großzügige Flächen, eine farbige Partikelkugel und die direkt verständliche Hauptbotschaft Websites, Spiele und digitale Werkzeuge."
+        },
+        {
+          "title": "Ein gemeinsamer Hub ist strukturell angelegt",
+          "detail": "Web, Games und Labs sind klar getrennt benannt; das Menü und geprüfte direkte Sprünge funktionieren. Der Quelltext beschreibt konkrete Web-Zielgruppen."
+        },
+        {
+          "title": "Technische Hilfen statt reinem Canvaszugang",
+          "detail": "Quellen berücksichtigen reduzierte Bewegung, Tastaturstationen, semantische Menüpunkte, Skip-Link und CSS-Fallback. Ihre vollständige Geräte-/Barrierefreiheitsqualität ist noch nicht nachgewiesen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "blueyard-contact",
+          "title": "Kontakt ist erreichbar, aber die Anfrageaktion fehlt",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Kontakt aufnehmen sieht wie ein nächster Schritt aus, führt aber im geprüften Live-Stand noch nicht zu Mail, Formular oder einem anderen ausführbaren Anfrageziel.",
+          "evidence": "Schmaler Menüsprung setzt #contact und öffnet die Kontaktstation. Die Aktion ist deaktivierter Text; aktiver lokaler Code rendert einen span mit aria-disabled. Deutscher Text fordert zur Vorhabenbeschreibung auf, ohne Kontaktadresse bereitzustellen.",
+          "limitation": "Konkrete Livebeobachtung mit Codeabgleich; keine Anfrage abgeschickt und kein gemessener Nachweis verlorener Kunden. Aktueller lokaler Arbeitsbaum ist nicht als identisch zum Livebundle bewiesen.",
+          "recommendation": "Einen echten Anfragelink verbinden und bis dahin den Vorschauzustand ehrlich benennen.",
+          "sourceDocs": [
+            "analysen/blueyard/Grundanalyse.md",
+            "analysen/blueyard/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "blueyard-placeholder-destinations",
+          "title": "Web-Projekte ansehen führt zur Vorbereitungsvorschau",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Die Route funktioniert, liefert aber noch keine Websitebeispiele oder Referenzprüfung. Die aktuellen lokalen Games-/Labs-Ziele sind ebenfalls Vorschauseiten.",
+          "evidence": "Live-CTA öffnet /web/ mit wird gerade vorbereitet. SectorGateway gibt Bereichstitel, gemeinsamen Vorschautext und deaktivierten Interessenhinweis aus; vorhandene ausführlichere Leistungsfelder werden dort nicht gerendert.",
+          "limitation": "Webziel live geprüft; weitere Sektoren und EN aus Quellen gegengeprüft, nicht vollständig live durchgeklickt. Kein bewiesener Conversionverlust.",
+          "recommendation": "Zwei bis drei passende Webbeispiele und wenige konkrete Games-/Toolziele anschließen. Nur aktiv ausgegebenen Inhalt als vorhandenes Angebot zählen.",
+          "sourceDocs": [
+            "analysen/blueyard/Grundanalyse.md",
+            "analysen/blueyard/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "blueyard-mobile-contact-readability",
+          "title": "Dunkle Kugelfläche erschwert mobile Kontakttexte",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "In der schmalen Kontaktansicht treffen schwarze Überschrift und Fließtext auf eine große dunkle Kugelfläche. Links sinkt die Lesbarkeit deutlich.",
+          "evidence": "Browseransicht 391 Pixel und gespeicherte Aufnahme screenshots/contact-mobile.jpg zeigen Ein Projekt oder eine Frage? und Teile der Erläuterung vor der dunklen Kugel. Der rechte helle Textbereich ist deutlich besser lesbar.",
+          "limitation": "Ein echter beobachteter Browserzustand; keine physische Handy-, sämtliche Szenen umfassende oder vollständige Konformitätsprüfung. Keine quantifizierte Kontrastmessung.",
+          "recommendation": "Auf schmalen Breiten die Szene aus der Textfläche verschieben oder eine ruhige lesbare Textzone anbieten; alle Stationen danach auch mit großer Schrift prüfen.",
+          "sourceDocs": [
+            "analysen/blueyard/Grundanalyse.md",
+            "analysen/blueyard/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "blueyard-scene-role",
+          "title": "Angebot und Anfrage sollten direkt erreichbar bleiben",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die Szenenführung eignet sich zur kreativen Vorstellung. Für konkrete Websiteanfragen ist ein kurzer Weg zu Angebot, Belegen und Kontakt sinnvoller als die Erwartung, alle Stationen zu durchlaufen.",
+          "evidence": "Menü bietet direkte Stationssprünge. Bereichsordner öffnen zuerst die jeweilige Szene; erst deren CTA führt zur Unterseite. Eigenes Wheel-/Touch-System steuert die Vollbildbühne.",
+          "limitation": "Bewertung auf beobachteter Bedienung und Quellenbasis, keine gemessene Absprungrate oder Nutzungsbefragung. Kein Beweis allgemeiner Unbedienbarkeit und keine Festlegung gegen Games/Apps auf einer gemeinsamen Homepage.",
+          "recommendation": "Bei Weiterverwendung deutlich sichtbare Direktwege für Websiteinteressenten erhalten; Hubrolle erst anhand des Siebenervergleichs festlegen.",
+          "sourceDocs": [
+            "analysen/blueyard/Grundanalyse.md",
+            "analysen/blueyard/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "blueyard-action-connect",
+          "order": 1,
+          "title": "Kontakt und wenige konkrete Ziele vervollständigen",
+          "detail": "Echte Anfrageaktion, zwei bis drei passende Webbeispiele und wenige veröffentlichte Produktziele anschließen. Referenz, fiktives Konzept und Entwicklungsvorschau klar kennzeichnen.",
+          "status": "proposed",
+          "validation": "Auf Desktop und schmaler Ansicht prüfen, dass die sichtbare Aktion zum erwarteten Ziel führt. Keine automatische Nachricht an Dritte und keine Veröffentlichung durch diese Analyse."
+        },
+        {
+          "id": "blueyard-action-mobile-text",
+          "order": 2,
+          "title": "Mobile Textebenen lesbar halten",
+          "detail": "Beobachtete Kugel-/Textüberschneidung im Kontakt beheben; Markenoptik und Animation können erhalten bleiben.",
+          "status": "proposed",
+          "validation": "Kontakt und alle Stationen bei schmalen Breiten sowie vergrößerter Schrift visuell prüfen; tatsächliche Korrektur erst nach Umsetzung als behoben kennzeichnen."
+        },
+        {
+          "id": "blueyard-action-role",
+          "order": 3,
+          "title": "Die Hubrolle im Gesamtvergleich bestimmen",
+          "detail": "Gemeinsamer Web/Games/Labs-Einstieg ist plausibel. Mit den anderen sechs Auftritten klären, ob dieser Hub zentral oder ergänzend wird; schnelle Direktwege zu Angebot und Anfrage vorsehen.",
+          "status": "proposed",
+          "validation": "Kein abschließender Homepageentscheid allein aus Partikeloptik. Inhaltsstand, Lesbarkeit und Anfrageweg zusammen vergleichen; keine Umsatz- oder Besucherwirkung versprechen."
+        }
+      ],
+      "openQuestions": [
+        "Soll blueyard der gemeinsame emfau-Hub oder ein ergänzender kreativer Einstieg werden?",
+        "Welche zwei bis drei tatsächlichen Referenzen oder klar als fiktiv gekennzeichneten Webkonzepte zeigen die Leistung am besten?",
+        "Welche Games-/Appziele gehören bewusst in den Hub, statt den vollständigen Bestand ungefiltert aufzunehmen?",
+        "Wie funktionieren übrige Szenen, EN-Fassung, Tastatur und reduzierte Bewegung auf echten Zielgeräten?",
+        "Welcher lokale Arbeitsstand soll einer späteren Veröffentlichung zugrunde liegen?"
+      ],
+      "documents": [
+        "analysen/blueyard/Grundanalyse.md",
+        "analysen/blueyard/Quellenpruefung.md",
+        "analysen/blueyard/screenshots/manifest.json"
+      ]
+    },
+    {
+      "id": "phantom",
+      "projectId": "phantom",
+      "title": "phantom – abgeschlossene Web-Grundanalyse",
+      "status": "reviewed",
+      "summary": "phantom ist ein inhaltlich ausgearbeitetes persönliches Produktportfolio: räumliche schwarze Projektwand, 20 Projekte, lesbarer semantischer Index, funktionierende Filter und direkte Detailrouten. ZeroHero ließ sich aus dem Index öffnen und hatte ein korrektes Play-Ziel. Für Websiteverkauf fehlen echter Anfrageweg und passende Webbeispiele; Contact nennt noch anzuschließende Kontaktdaten, der Webfilter zeigt nur Portfolio3. Mobile Projektwand wirkt dicht, der vorhandene Index ist die verständlichere Alternative. Produktbehauptungen müssen mit der gemeinten Version abgeglichen werden. Gute mögliche Showcase-/Produktportfolio-Rolle, keine finale Homepagewahl. Originale und Veröffentlichung unverändert.",
+      "scope": {
+        "checked": [
+          "Veröffentlichte Website https://emfau88.github.io/phantom/ am 09.10.2026 bei Desktopbreite 1281 und schmaler Browserbreite 391 Pixel angesehen.",
+          "Desktop-Projektwand und PROJECT INDEX mit 20 Projektzeilen; ZeroHero-Auswahl öffnet Detailroute #project/zerohero mit Google-Play-Ziel com.energycrafted.zerohero.",
+          "Projekt anfragen öffnet Contact-Sheet mit Hinweis auf noch anzuschließende endgültige Kontaktdaten/Anfragelinks; keine tatsächliche Kontaktaktion gefunden.",
+          "Schmaler Browse-/Zählerzugang öffnet lesbaren Index; Live-Webfilter reduziert auf ein Projekt, Portfolio3.",
+          "Zwei echte Browseraufnahmen gespeichert und visuell gelesen: Desktopwand und schmaler Projektindex.",
+          "Lokaler sauberer main-Checkout C:\\Users\\madde\\Documents\\phantom, HEAD b1571d37df44a0b8cb7d7cd2a8c9c3ba574f7f9e vom 02.10.2026. Aktive Daten, Hash-/Historypfade, Fallback, Texte und Projektziele ausschließlich lesend geprüft."
+        ],
+        "notChecked": [
+          "Lokale Quelle und Live-Bundle nicht per Bundle-/Binaryvergleich als identisch nachgewiesen.",
+          "Nicht alle 20 Detailseiten, alle Medien oder externen Ziele geprüft; keine vollständige Canvas-Drag-/Pickingprüfung.",
+          "WebGL-Fallback und reduzierte Bewegung aus Quellen bestätigt, künstlicher Ausfall und vollständige Tastatur-/Screenreaderprüfung nicht ausgeführt.",
+          "Schmale Browseransicht ist kein physischer Handytest; keine Geräte-/Performancebenchmarks oder gemessenen Lade-/FPS-Werte.",
+          "Keine App erneut nativ bedient und kein verlinktes Game vollständig gespielt. Portfolioaussagen sind keine neuen Produktprüfungen.",
+          "Keine Builds, Installationen oder automatisierten Tests ausgeführt; historische QA nicht als neue bestandene Tests übernommen. Originale und Veröffentlichung unverändert.",
+          "Kein vollständiger SEO-, Rechts- oder Sicherheitsaudit; keine Besucher-, Anfrage- oder Conversionkennzahlen. Homepagewahl und Inhaltsstrategie offen."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Eine eigenständige Produktportfolio-Gestaltung",
+          "detail": "Die tatsächlich geladene schwarze gebogene Wand mit echten Produktansichten schafft einen erkennbaren Showcase für eigene digitale Arbeit."
+        },
+        {
+          "title": "Index und Filter machen gezieltes Finden möglich",
+          "detail": "PROJECT INDEX und schmaler Browse-Zugang öffnen einen lesbaren Katalog; Webfilter und ZeroHero-Detailroute funktionierten im geprüften Weg."
+        },
+        {
+          "title": "Eine ausgearbeitete redaktionelle Basis",
+          "detail": "20 Datensätze mit Beschreibungen, Medien, aktiven Case-Study-Pfaden und Produkt-/Repositoryzielen liegen vor. Dies belegt Inhaltsumfang, nicht erneute Qualität aller Produkte."
+        },
+        {
+          "title": "Alternativer Zugriff statt reiner Wandpflicht",
+          "detail": "Code enthält semantischen Index, WebGL-Erkennung und DOM-Fallback sowie reduzierte Bewegung. Vollständige Ausfall-/Barrierefreiheitsqualität bleibt gezielt nachzuprüfen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "phantom-contact",
+          "title": "Projekt anfragen endet ohne tatsächliche Anfrageaktion",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Der prominente Anfragebutton öffnet eine Kontaktansicht, deren endgültige Kontaktdaten und Links noch fehlen.",
+          "evidence": "Live-Contact-Sheet nennt Final contact details and inquiry links can be connected here before release. Aktiver SectionSheet rendert nur Titel, Text, Fußtext und Close-Button; kein Mail-/Formularziel.",
+          "limitation": "Keine Anfrage versandt; keine gemessene Zahl verlorener Aufträge. Lokaler Quellstand nicht per Bundlevergleich mit Live identifiziert.",
+          "recommendation": "Echten Anfragelink verbinden und bis dahin den Zustand eindeutig benennen.",
+          "sourceDocs": [
+            "analysen/phantom/Grundanalyse.md",
+            "analysen/phantom/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "phantom-web-proof",
+          "title": "Der Webfilter zeigt bisher nur das eigene Portfolio3",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die Headerbotschaft verspricht Websites, Apps & Playable Worlds, aber der Bestand belegt eigene Games/Apps deutlich stärker als Unternehmenswebsites.",
+          "evidence": "Live-Webfilter reduziert auf Portfolio3. Lokaler Katalog zählt 13 GAME, sechs APP und ein WEB. Keine Kundenwebsites oder shop-Branchenkonzepte in diesem aktiven Katalog.",
+          "limitation": "Eine eigene Portfoliowebsite ist ebenfalls ein Gestaltungsbeleg. Keine abschließende Entscheidung gegen einen gemischten Auftritt; keine Nachfrage- oder Conversionmessung.",
+          "recommendation": "Für eine Websiteverkaufsrolle zwei bis drei passende Webbeispiele und einen verständlichen Ablauf ergänzen; reale Referenz und fiktives Konzept unterscheiden.",
+          "sourceDocs": [
+            "analysen/phantom/Grundanalyse.md",
+            "analysen/phantom/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "phantom-mobile-index",
+          "title": "Den schnelleren Projektindex mobil eindeutig sichtbar halten",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die räumliche Bildwand ist ein auffälliger Showcase, aber in der schmalen Ansicht als vollständiger Katalog schwerer zu überblicken. Der bereits vorhandene Index bietet die verständlichere gezielte Auswahl.",
+          "evidence": "391-Pixel-Prüfung: Browse-/Zählerzugang öffnet gut lesbaren Index mit Kategorien und Projektnamen; Desktopwand zeigt eine dichte gebogene Bildsammlung.",
+          "limitation": "Bewertung der gesehenen Oberfläche, kein gemessener Nachweis von Unbedienbarkeit, Absprüngen oder fehlender Entdeckung des Indexzugangs. Nicht alle Drag-/Pickingwege getestet.",
+          "recommendation": "Index dauerhaft als Projekte ansehen beziehungsweise Projektindex kennzeichnen und Angebot/Anfrage ohne Verständnis der Wandsteuerung erreichbar halten.",
+          "sourceDocs": [
+            "analysen/phantom/Grundanalyse.md",
+            "analysen/phantom/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "phantom-product-claims",
+          "title": "ZeroHero-Texte mit der gemeinten Version abgleichen",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Lokale Portfoliotexte nennen Quests und 100% offline; der vorhandene ZeroHero-Pilot dokumentiert deaktivierte Quests und aktive Analytics-Pfade im aktuellen lokalen Appstand.",
+          "evidence": "projects.ts beschreibt ZeroHero mit quests; caseStudies.ts nennt Storage: 100% offline. Bestehende ZeroHero-Code-/Pilotberichte unterscheiden deaktivierte Quests, lokale Speicherung und Analytics-Verhalten.",
+          "limitation": "Keine bestätigte identische Quelle des veröffentlichten Play-Releases. Kein Beweis, dass jede Aussage über ein historisches Release falsch ist, und kein Datenschutzverstoß daraus abgeleitet.",
+          "recommendation": "Gemeinte Produktversion festlegen und nur belegte aktive Funktionen sowie präzise Speicher-/Dienstaussagen veröffentlichen. Andere Published-/Privacy-Behauptungen ebenso bewusst zuordnen.",
+          "sourceDocs": [
+            "analysen/phantom/Grundanalyse.md",
+            "analysen/phantom/Quellenpruefung.md",
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "phantom-action-contact",
+          "order": 1,
+          "title": "Den Anfrageweg vervollständigen",
+          "detail": "Echte Mail-/Anfrageaktion verbinden; Headerbutton und Contact-Sheet zum gleichen klaren Ziel führen.",
+          "status": "proposed",
+          "validation": "Desktop und schmale Ansicht einschließlich Rückkehr prüfen. Keine Nachricht an Dritte und keine Veröffentlichung durch diese Analyse."
+        },
+        {
+          "id": "phantom-action-content",
+          "order": 2,
+          "title": "Inhalte und Produktaussagen zur Rolle passend machen",
+          "detail": "Bei Websiteverkaufsrolle wenige Webbeispiele und Ablauf ergänzen. ZeroHero-/weitere Apptexte auf belegte Produktversionen und tatsächlich aktive Funktionen abgleichen.",
+          "status": "proposed",
+          "validation": "Referenz versus Konzept klar kennzeichnen; keine unbestätigten Privacy-/Featureversprechen übernehmen. Gesamtvergleich abwarten, bevor ein zentraler Auftritt gewählt wird."
+        },
+        {
+          "id": "phantom-action-index",
+          "order": 3,
+          "title": "Den schnellen Indexzugang hervorheben und gezielt gegenprüfen",
+          "detail": "Lesbaren Projektindex mobil und per Tastatur direkt auffindbar halten. Wenige repräsentative Details und vorhandenen Fallback prüfen.",
+          "status": "proposed",
+          "validation": "Tatsächliche schmale Bedienung, Tastatur und bewusst ausgelösten Fallback separat dokumentieren; keinen vollständigen Wandneubau aus dieser Grundanalyse ableiten."
+        }
+      ],
+      "openQuestions": [
+        "Soll phantom primär persönliches Produktportfolio oder auch Websiteanbieterauftritt werden?",
+        "Welche realen Webreferenzen beziehungsweise ausdrücklich fiktiven Konzepte würden den Webbereich substanziell ergänzen?",
+        "Welche Produktversionen sollen die Case Studies genau beschreiben?",
+        "Ist der Indexzugang für erste Besucher auf schmalen Geräten sofort erkennbar?",
+        "Wie zuverlässig funktionieren restliche Details, Tastatur und WebGL-Fallback im gezielten Folgetest?"
+      ],
+      "documents": [
+        "analysen/phantom/Grundanalyse.md",
+        "analysen/phantom/Quellenpruefung.md",
+        "analysen/phantom/screenshots/manifest.json"
+      ]
+    },
+    {
+      "id": "basement",
+      "projectId": "basement",
+      "title": "basement – abgeschlossene Web-Grundanalyse",
+      "status": "reviewed",
+      "summary": "basement ist ein eigenständiger räumlicher Showcase mit tatsächlich geladenem Studio, Produktmonitoren und funktionierenden HTML-Details. Desktop-Webnavigation zeigt Apps; Mirror-Preview öffnet passenden Dialog, mobil funktionieren Sheet und MewTrack-Auswahl mit direktem Play-Ziel. Als alleinige Websiteverkaufsseite fehlen konkreter Geschäftskundennutzen, Webbeispiele und Anfrageweg. Einige Texte erklären eher die Showcase-Rolle, mehrere Produktlinks gehen über Portfolio3, Details sind nicht direkt teilbar und der WebGL-Startfallback bietet nur einen Hinweis. Plausible ergänzende Erlebnis-/Produktportfolio-Rolle, keine finale Homepageentscheidung. Analyse abgeschlossen; Originale und Veröffentlichung unverändert.",
+      "scope": {
+        "checked": [
+          "Veröffentlichte Website https://emfau88.github.io/basement/ am 09.10.2026 bei Desktopbreite 1281 und schmaler Browserbreite 391 Pixel angesehen.",
+          "Desktopstart mit Loader und Raum; Navigation 02 Web zur Appwand mit Mirror, ZeroHero, between, ChargeGeist und MewTrack.",
+          "Große Mirror-Preview öffnet HTML-Dialog mit Showcase-Beschreibung, Published concept und einzigem Portfolio3-Link.",
+          "Schmales auf-/zuklappbares DOM-Sheet, MewTrack auswählen und Details öffnen: richtige Projektbeschreibung und direkter Google-Play-Link.",
+          "Bei geprüften Bereichs-/Detailwechseln keine URLänderung. Kein Contact-/Anfragezugang im geprüften Auftritt gefunden.",
+          "Zwei echte Browserbilder gespeichert und visuell gelesen: Desktopraum und schmaler Mirror-Dialog. project-mobile.jpg zeigt Mirror, nicht MewTrack.",
+          "Lokaler Checkout C:\\Users\\madde\\Documents\\basement ausschließlich lesend: Branch mobile/scene-first-ux, HEAD 60485a6107c3405d765d342a2506f1952eb9fc0c vom 30.09.2026, nur docs/preview/ unversioniert. Aktive Katalog-, State-, Kamera-, Dialog- und Fallbackpfade geprüft."
+        ],
+        "notChecked": [
+          "Lokaler Branch ist nicht main; Gleichheit mit dem Live-Bundle nicht bewiesen.",
+          "Nicht alle 19 unterschiedlichen Projekte, alle Kamera-/Inspektionswege oder Fremdlinks geprüft. 22 Platzierungen sind keine 22 unterschiedlichen Produkte.",
+          "Keine vollständige Browser-Zurück-/Reload-, Tastatur-/Screenreader- oder künstliche GPU-/WebGL-Ausfallprüfung.",
+          "Schmale Browseransicht statt physischem Handy. Kein Performancebenchmark oder gemessener Lade-/FPS-Wert.",
+          "Keine App nativ neu bedient und kein Game vollständig gespielt. Showcase-Statusfelder sind keine neuen Release-/Qualitätsnachweise.",
+          "Keine Builds, Dependency-Installationen oder automatisierten Tests ausgeführt. Historische QA-Berichte nicht als neue bestandene Tests übernommen; Originale und Veröffentlichung unverändert.",
+          "Kein vollständiger SEO-, Rechts- oder Sicherheitsaudit; keine Besucher-, Anfrage- oder Conversiondaten. Zentrale Homepagewahl noch offen."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Ein eigenständiger tatsächlich funktionierender Raum",
+          "detail": "Produktmonitore, Möbel, Pflanzen, Bereichsmarker und Kamerawechsel bilden einen zusammenhängenden kreativen Showcase im geprüften Browser."
+        },
+        {
+          "title": "Echte Detail- und Produktanschlüsse",
+          "detail": "Mirrors Desktopdialog lässt sich öffnen; mobiles Sheet und Auswahl funktionieren im geprüften Weg. MewTrack besitzt ein korrektes direktes Play-Ziel."
+        },
+        {
+          "title": "Kuratiertes Portfolio mit Entwicklungsgeschichte",
+          "detail": "Aktive Daten umfassen 19 unterschiedliche Games, Apps und Archiveprojekte. Featured-/Bereichslisten setzen bewusst Schwerpunkte, statt den gesamten GitHub-Bestand automatisch zu spiegeln."
+        },
+        {
+          "title": "Mobile DOM-Hilfen und HTML-Dialoge",
+          "detail": "Der schmale Mirror-Dialog passt und zeigt erreichbar Text/Metadaten/Buttons. Code bietet responsive Sheets, Bildfallbacks, Dialogfokus und reduzierte Bewegung; kein vollständiger Barrierefreiheitsnachweis."
+        }
+      ],
+      "findings": [
+        {
+          "id": "basement-contact",
+          "title": "Ein Anbieter- oder Anfrageweg fehlt",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Der Auftritt lädt zum Erkunden des Studios ein, führt möglichen Websitebedarf jedoch nicht zu einer tatsächlichen Anfrageaktion.",
+          "evidence": "Im geprüften Live-Einstieg, Bereichs-/Detailweg kein Contact-Ziel gefunden; aktive HTML-/TypeScript-Quellen enthalten keinen Mail-/Telefon-/Formularzugang.",
+          "limitation": "Keine Anfrage versandt, keine Besucher-/Conversionmessung und kein vollständiger Rechtsaudit. Aus fehlendem Kontakt folgt keine gemessene Zahl verlorener Aufträge.",
+          "recommendation": "Falls die Website zentral als Anbieterauftritt dienen soll, klares Angebot und echten Kontaktzugang ergänzen.",
+          "sourceDocs": [
+            "analysen/basement/Grundanalyse.md",
+            "analysen/basement/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "basement-labels-copy",
+          "title": "Webbereich und Texte erklären den eigentlichen Nutzen noch ungleichmäßig",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Web zeigt Android-Apps; Hero und manche Details erklären vor allem Studio-/Darstellungsfunktionen oder die Showcase-Rolle statt Geschäftskunden- beziehungsweise Produktnutzen.",
+          "evidence": "Live 02 Web fährt zu fünf Apps. Hero nennt Inspectable screens, context-aware HUD placement and calibrated project displays. Geöffneter Mirror-Text beschreibt, wie die App den Showcase breiter macht; Quellen bestätigen dieselben Labels und Appzuordnung.",
+          "limitation": "Klare beobachtete Texte, ihre Wirkung auf Besucher ist eine Bewertung, keine Befragung. Der Auftritt darf bewusst ein kreatives Studioportfolio sein; kein Beweis grundsätzlicher Unbrauchbarkeit.",
+          "recommendation": "Apps eindeutig benennen und wichtige Einstiegs-/Detailtexte zuerst am tatsächlichen Nutzer-/Anbieternutzen ausrichten; Entwicklungs- und Showcase-Kontext als Zusatz erhalten.",
+          "sourceDocs": [
+            "analysen/basement/Grundanalyse.md",
+            "analysen/basement/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "basement-product-links",
+          "title": "Mehrere Produktdetails führen nur zum zweiten Portfolio",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Direkte vorhandene Spiel-/Storeziele sind nicht einheitlich gepflegt. Mirror bietet nur Portfolio3, während MewTrack bereits direkt zum Store führt.",
+          "evidence": "Geprüfter Mirror-Dialog zeigt einziges externes Portfolioziel; MewTrack-Mobilweg hat korrekten direkten Play-Link. Quellen zeigen Portfolio3-Umwege auch bei ZeroHero, between, Core Arena, Pocket Pier und Kessel-Krawall.",
+          "limitation": "Nicht alle Fremdziele durchgeklickt oder Produkte erneut analysiert. Kein generelles Fehlen der Detailfunktion; beobachtete ungleichmäßige Linkliste.",
+          "recommendation": "Direkte vorhandene Ziele ergänzen, CTA nach Spiel/Store/Projektziel benennen und Portfolio3 bei Bedarf als zusätzliche Referenz erhalten.",
+          "sourceDocs": [
+            "analysen/basement/Grundanalyse.md",
+            "analysen/basement/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "basement-deep-links",
+          "title": "Geöffnete Produktansichten besitzen noch keine teilbaren Detailadressen",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Einzelne Produkte lassen sich auswählen, aber der geöffnete Detailzustand erhält im geprüften Weg keine eindeutige URL.",
+          "evidence": "Bei geprüften Bereichs-/Detailwechseln unveränderte Adresse. Aktive Quellen speichern Studio-/Projektzustand intern und implementieren keine Projekt-Hashrouten.",
+          "limitation": "Keine vollständige Browser-Zurück-/Reloadprüfung; daraus wird kein zusätzlicher Historyfehler behauptet. Für bloßes Erkunden kein zwingender Defekt.",
+          "recommendation": "Bei Bedarf stabile Projekt-Deep-Links für gezieltes Zeigen und Wiederaufrufen ergänzen.",
+          "sourceDocs": [
+            "analysen/basement/Grundanalyse.md",
+            "analysen/basement/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "basement-start-fallback",
+          "title": "Der Start-Fallback ohne WebGL bietet noch keinen Projektindex",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Scheitert die Studioinitialisierung, zeigt der aktive Fallback nur den WebGL-/Hardwarebeschleunigungshinweis statt eines nutzbaren Katalogs oder Anfragewegs.",
+          "evidence": "showFallback erzeugt The studio needs WebGL und Browser-/Hardwaretext. Contextverlust während des Betriebs besitzt einen separaten Recoveryhinweis; mobile DOM-Hilfen und HTML-Dialoge sind im normalen Startpfad vorhanden.",
+          "limitation": "Kein GPU-Ausfall praktisch provoziert und keine Zahl betroffener Besucher gemessen. Vorhandene mobile Hilfen sind damit nicht als funktionslos bezeichnet.",
+          "recommendation": "Einfachen DOM-Projektkatalog mit Kontakt als Alternative anbieten, besonders wenn das Studio die einzige zentrale Anlaufstelle werden soll.",
+          "sourceDocs": [
+            "analysen/basement/Grundanalyse.md",
+            "analysen/basement/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "basement-action-role-copy",
+          "order": 1,
+          "title": "Rolle, Bereichsnamen und Nutzen verständlich machen",
+          "detail": "Apps eindeutig benennen; Hero und wichtige Detailtexte an Anbieter-/Produktnutzen ausrichten. Tatsächlichen Kontaktzugang ergänzen, sofern zentrale Anbieterrolle gewünscht.",
+          "status": "proposed",
+          "validation": "Mit wenigen repräsentativen Seiten prüfen, ob Inhalt und Label zusammenpassen. Gesamtvergleich abwarten; keinen kompletten Raumumbau als Voraussetzung setzen."
+        },
+        {
+          "id": "basement-action-links",
+          "order": 2,
+          "title": "Produktziele und Teilen vereinheitlichen",
+          "detail": "Direkte vorhandene Spiel-/Storelinks nachtragen und stabile Projekt-Deep-Links vorsehen; Portfolio3 bei Bedarf zusätzlich verlinken.",
+          "status": "proposed",
+          "validation": "Ausgewählte App-/Game-Details, erwartete Zieladresse, direkten Wiederaufruf und Rückkehr prüfen. Kein erneuter Gameplay-/Appqualitätsnachweis allein durch funktionierenden Link."
+        },
+        {
+          "id": "basement-action-index",
+          "order": 3,
+          "title": "Eine schlichte Projektalternative ergänzen",
+          "detail": "DOM-Index mit Kontakt für schnellen Zugriff und Start ohne WebGL anbieten; vorhandene mobile Sheets und Raumgestaltung können erhalten bleiben.",
+          "status": "proposed",
+          "validation": "Schmale Ansichten, Tastatur und bewusst ausgelösten Fallback separat prüfen. Tatsächliche Fehlerbehebung erst nach Umsetzung als abgeschlossen markieren."
+        }
+      ],
+      "openQuestions": [
+        "Soll basement ergänzender kreativer Produktshowcase oder zentrale Anbieterhomepage werden?",
+        "Welche wenigen Projekte sollen direkt erreichbar sein und welche gehören bewusst ins Archive?",
+        "Wie lassen sich Apps/Webleistungen eindeutig trennen, ohne die Raumidee aufzugeben?",
+        "Welche Produkttexte beschreiben die tatsächlichen veröffentlichten beziehungsweise bewusst gezeigten lokalen Versionen?",
+        "Wie funktionieren restliche Kamera-/Inspektionswege, Tastatur und Start ohne WebGL im gezielten Folgetest?"
+      ],
+      "documents": [
+        "analysen/basement/Grundanalyse.md",
+        "analysen/basement/Quellenpruefung.md",
+        "analysen/basement/screenshots/manifest.json"
+      ]
     }
   ],
   "decisions": [
@@ -1526,6 +2535,38 @@
       "status": "established",
       "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json",
       "scopeLabel": "Repository OVERVIEW · Sicherung und Prüfreihenfolge"
+    },
+    {
+      "id": "breadth-first-review-order",
+      "scopeLabel": "Gesamtes Vorhaben · Grundanalysen",
+      "title": "Erst die Basis vervollständigen, danach priorisieren",
+      "detail": "Drei Android-Piloten liegen vor. Sieben Web-Grundanalysen sind nun abgeschlossen. Empfohlen folgen die sechs Spiele; danach gemeinsame Priorisierung und wenige Umsetzungen. Die Spielearbeit wurde in dieser Etappe noch nicht begonnen.",
+      "status": "established",
+      "source": "Nutzerfrage breadth-first-baseline und Auftrag web-baseline-request; dashboard/context.json"
+    },
+    {
+      "id": "web-role-shortlist",
+      "projectIds": [
+        "landinggame",
+        "shop",
+        "portfolio3"
+      ],
+      "area": "web",
+      "title": "Vorläufiger Vorschlag: Studio als Anbieterbasis, Portfolio3 als Produktbereich",
+      "detail": "Falls Website-Aufträge Vorrang erhalten, bietet LandingGame/Studio einen verständlichen vorhandenen Einstieg; shop liefert Angebote und Branchenkonzepte, Portfolio3 Apps/Games. Die Rolle der Hauptseite ist weiterhin offen. Keine endgültige Auswahl, Zusammenführung oder Umsetzung.",
+      "status": "proposed",
+      "source": "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+    },
+    {
+      "id": "solomon-separate-product",
+      "projectIds": [
+        "keyofsolomon"
+      ],
+      "area": "web",
+      "title": "Solomon Archive als eigenständige Produkt-Landingpage behandeln",
+      "detail": "Buchkauf, Webauftrag und Appinstallation haben unterschiedliche Besucherziele. Die Buchseite eignet sich im Grundcheck als eigenständiger Produktauftritt; eine spätere Verlinkung vom persönlichen Einstieg ist denkbar. Checkoutöffnung beweist keine abgeschlossene Zahlung, Lieferung oder Wirtschaftlichkeit.",
+      "status": "proposed",
+      "source": "analysen/keyofsolomon/Grundanalyse.md; analysen/onlineauftritt/Grundanalyse-Vergleich.md"
     }
   ],
   "pending": [
@@ -1574,15 +2615,7 @@
       "area": "games",
       "projectId": null,
       "title": "Browser-Spiele einzeln auf Qualität prüfen",
-      "detail": "Die anhand des dashboard-Repos erfassten Spiele und relevanten Varianten nacheinander prüfen. Spielbarkeit, erste Minuten, Optik, UX und konkrete Qualitätsprobleme bewerten; bisher besteht die Bestandsaufnahme, keine abgeschlossene Spielanalyse.",
-      "kind": "analysis"
-    },
-    {
-      "id": "online-presence-product-review",
-      "area": "web",
-      "projectId": null,
-      "title": "Vorhandene Online-Auftritte vergleichen",
-      "detail": "LandingGame / lokaler Ordner Landing Page sowie shop, keyofsolomon, portfolio3, blueyard, phantom und basement anhand der realen Produkte prüfen. Ausgangsfrage: Ist schon eine vorhandene Seite als eigener Einstieg geeignet?",
+      "detail": "Empfohlene nächste Grundanalyseetappe: sechs im dashboard-Register geführte Spiele tatsächlich spielen. Erste Minuten, Steuerung, Optik, Verständlichkeit, Zuverlässigkeit und Wiederholungsreiz bewerten. Verwandte Varianten nur gezielt einbeziehen. Bisher keine abgeschlossene Spielanalyse.",
       "kind": "analysis"
     },
     {
@@ -1590,7 +2623,7 @@
       "area": "web",
       "projectId": null,
       "title": "Rolle und Aufbau der eigenen Landing Page entscheiden",
-      "detail": "Nach Vergleich beraten, welche eigene Landing Page sinnvoll ist und wie sie aussehen sollte: Website-Verkauf, persönliche Homepage, Games als Referenzen oder eigener Bereich. Ziel, Ansprache und Verbindung der Produkte sind noch keine entschiedene Strategie.",
+      "detail": "Die sieben Web-Grundanalysen samt Vergleich liegen vor. Nach den empfohlenen sechs Spiele-Grundanalysen entscheiden, ob die zentrale Seite Webleistungen priorisiert, Produkte präsentiert oder Bereiche verbindet. Studio als Anbieterbasis und Portfolio3 als Produktbereich sind vorläufige Vorschläge; keine gewählte oder umgesetzte Architektur.",
       "kind": "strategy"
     },
     {
@@ -1648,6 +2681,62 @@
       "title": "MewTrack: Console-Hinweise zuordnen",
       "detail": "API-Warnung bis 01.11.2026 gezielt älterem Track oder Artefakt zuordnen: aktiver Produktionsrelease 13 hat bereits SDK36. Kontoweiten Zahlungskonto-Hinweis separat prüfen; Ursache und Wirkung noch nicht geprüft.",
       "kind": "verification"
+    },
+    {
+      "id": "landinggame-web-followup",
+      "projectId": "landinggame",
+      "area": "web",
+      "kind": "verification",
+      "title": "Kontaktweg und OMF-Stand vor Akquise klären",
+      "detail": "Bei Auswahl als Hauptseite Anfragezustellung und echte Kontaktmöglichkeit vervollständigen; sachlich bestätigten OMF-Stand in allen erreichbaren Varianten vereinheitlichen. Studio ist ein Kandidat, keine bereits gewählte Homepage."
+    },
+    {
+      "id": "shop-web-followup",
+      "projectId": "shop",
+      "area": "web",
+      "kind": "verification",
+      "title": "Anbieterrolle, Signature-Auswahl und Angebot abstimmen",
+      "detail": "Entscheiden, wie shop mit LandingGame zusammenhängt. Signature-Konzepte auffindbar machen und den tatsächlichen Leistungs-/Preisrahmen erst vor Verkaufsstart festlegen; 699 Euro ist derzeit ein ausdrücklich geplanter Referenzkundenpreis."
+    },
+    {
+      "id": "keyofsolomon-web-followup",
+      "projectId": "keyofsolomon",
+      "area": "web",
+      "kind": "verification",
+      "title": "Anbieterangaben und tatsächlichen Kaufweg vervollständigen",
+      "detail": "Der Checkout lädt, der Kauf wurde nicht ausgeführt. Anbieter-/Kontaktentwürfe vervollständigen und später freigegebenen Kaufablauf, Produktions-/Versandabwicklung und Kalkulation separat prüfen. Keine erfolgreiche Lieferung oder Wirtschaftlichkeit belegt."
+    },
+    {
+      "id": "portfolio3-web-followup",
+      "projectId": "portfolio3",
+      "area": "web",
+      "kind": "verification",
+      "title": "Produkttexte an Release und Zielgruppe ausrichten",
+      "detail": "ZeroHero-Quests sowie verwendete Produktansichten mit dem tatsächlich beworbenen Release abstimmen. Produktnutzen und direkte Ziele vor lange Technikdetails stellen; später die Verbindung zur Anbieterhauptseite entscheiden."
+    },
+    {
+      "id": "blueyard-web-followup",
+      "projectId": "blueyard",
+      "area": "web",
+      "kind": "verification",
+      "title": "Nutzbare Bereichsziele und mobile Lesbarkeit schaffen",
+      "detail": "Web/Games/Labs-Unterseiten mit tatsächlichen Inhalten verknüpfen, Kontakt aktivieren und dunkle Kugel hinter schwarzem Kontakttext auf Mobilbreite korrigieren. Nichtcommittete lokale Quelle vor Umsetzung einem Veröffentlichungsstand zuordnen."
+    },
+    {
+      "id": "phantom-web-followup",
+      "projectId": "phantom",
+      "area": "web",
+      "kind": "verification",
+      "title": "Kontaktstrecke und ergänzende Showcase-Rolle klären",
+      "detail": "Anfragebereich enthält noch Platzhalter. Bei Weiterverwendung echte Kontaktmöglichkeit ergänzen und Produkttexte mit Releases abgleichen. Projektindex und Filter erhalten; primäre Anbieterrolle bisher kein Beschluss."
+    },
+    {
+      "id": "basement-web-followup",
+      "projectId": "basement",
+      "area": "web",
+      "kind": "verification",
+      "title": "Web-/App-Zuordnung und direkte Produktziele klären",
+      "detail": "Unter Web werden Apps gezeigt. Kategorien, nutzerbezogene Beschreibung und direkte Store-/Spiellinks abstimmen; Kontakt und teilbare Projektziele bei Weiterverwendung ergänzen. Lokalen Branch separat vom Liveauftritt behandeln."
     }
   ]
 }

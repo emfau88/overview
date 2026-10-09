@@ -1,0 +1,42 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "shop",
+  "captures": [
+    {
+      "file": "start-desktop.jpg",
+      "title": "Anbieterauftritt · Desktop",
+      "url": "https://emfau88.github.io/shop/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "cc69e97a5520d9192209b7f0289d023b0b65cdeaa08cce5a4c0f775efeb6b159"
+    },
+    {
+      "file": "start-mobile.jpg",
+      "title": "Anbieterauftritt · Ausschnitt auf Mobilbreite",
+      "url": "https://emfau88.github.io/shop/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "0ed92236008838da794325787b2d1d7b6644da5afe2f7a97a33e297c136cb8fe"
+    },
+    {
+      "file": "signature-demo-desktop.jpg",
+      "title": "Aufschlag Signature · Badminton ausgewählt",
+      "url": "https://emfau88.github.io/shop/konzept/sportverein/signature/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "0efc102f5c470f2dd5b4de29c0a3b90c799e94ed53ac13d4e174b2f438a32cfe"
+    }
+  ]
+}

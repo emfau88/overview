@@ -35,7 +35,7 @@
     {
       "id": "monetization-after-users",
       "title": "ZeroHero und Mirror sollen später Einnahmen erzielen",
-      "text": "Der Nutzer hat ausdrücklich festgehalten, dass ZeroHero und Mirror grundsätzlich monetarisiert werden sollen, sobald sie zunächst tatsächliche Nutzer gewinnen. Das langfristige wirtschaftliche Ziel ist damit gesetzt. Vorrang haben weiterhin Nutzergewinnung, erkennbarer Nutzen und Wiederkehr; ein bestimmtes Preismodell, eine Paywall oder die Einführung eines Kaufsystems sind dadurch nicht entschieden. Die nächste beauftragte Reihenfolge lautet: aktuellen Dashboard- und Mirror-Stand committen und zu GitHub pushen, anschließend MewTrack als nächstes analysieren und danach erneut committen und pushen. Als Zuordnungshinweis nennt der Nutzer für MewTrack die Play-Console-Version Release 13 (0.9.4).",
+      "text": "Der Nutzer hat ausdrücklich festgehalten, dass ZeroHero und Mirror grundsätzlich monetarisiert werden sollen, sobald sie zunächst tatsächliche Nutzer gewinnen. Das langfristige wirtschaftliche Ziel ist damit gesetzt. Vorrang haben weiterhin Nutzergewinnung, erkennbarer Nutzen und Wiederkehr; ein bestimmtes Preismodell, eine Paywall oder die Einführung eines Kaufsystems sind dadurch nicht entschieden. Die inzwischen abgeschlossene frühere Prüfreihenfolge lautete: aktuellen Dashboard- und Mirror-Stand committen und zu GitHub pushen, anschließend MewTrack als nächstes analysieren und danach erneut committen und pushen. Als Zuordnungshinweis nennt der Nutzer für MewTrack die Play-Console-Version Release 13 (0.9.4).",
       "source": "Usernachricht monetization-and-next-review"
     },
     {
@@ -78,7 +78,7 @@
         "Die Rolle von Games, Apps, Portfolio und Websiteverkauf ist noch offen; keine dieser Optionen ist bereits beschlossen.",
         "keyofsolomon ist als angefragtes Einzelprodukt beziehungsweise Verkaufsseite Bestandteil der Bestandsaufnahme, aber nicht automatisch die künftige zentrale Homepage.",
         "Vorhandene Seiten sollen angesehen und verglichen werden, bevor eine neue zentrale Landingpage empfohlen oder gebaut wird.",
-        "Bisher sind die sieben angefragten Web-Repositories und verwandte lokale Entwürfe inventarisiert; eine gemeinsame UX- oder Designbewertung steht noch aus."
+        "Die sieben angefragten Web-Repositories sind inventarisiert und ihre begrenzten Grundanalysen mit öffentlichem Browsercheck, Quellen, Bildern und gemeinsamem Vergleich abgeschlossen. Die endgültige Homepage-Strategie ist weiterhin offen."
       ]
     },
     {
@@ -118,12 +118,12 @@
     "Wenige konkrete Maßnahmen mit erkennbarem Nutzen priorisieren; keinen umfassenden Neubau allein aus dem Wunsch nach mehr Downloads ableiten.",
     "Vorhandene Entwürfe und Produktstärken weiterverwenden, wenn sie sich bei der Prüfung bewähren.",
     "Das Dashboard hält Bestand, ausführliche Ergebnisse, Quellen, Grenzen, offene Fragen und nächste Schritte zusammen; Detailberichte bleiben verlinkte Arbeitsgrundlagen.",
-    "Aktuellen Prüfstatus sichtbar halten: ZeroHero, Mirror und MewTrack sind als Piloten untersucht. Spiele und Onlineauftritte sind bisher inventarisiert.",
+    "Aktuellen Prüfstatus sichtbar halten: ZeroHero, Mirror und MewTrack sind als Piloten untersucht; die sieben Webauftritte haben abgeschlossene begrenzte Grundanalysen. Sechs Spiele und Between sind bisher inventarisiert.",
     "Neue Entscheidungen, Analysen und Umsetzungen im Dashboard ergänzen, damit spätere Arbeit an den dokumentierten Stand anknüpft.",
     "Das Repository https://github.com/emfau88/overview als zentralen Sammelpunkt verwenden und Dashboard, Inventar, Kontext und ausführliche Ergebnisse so verknüpfen, dass die Informationen zuverlässig auffindbar bleiben.",
     "Echte Produkticons sparsam zur Orientierung einsetzen, soweit verfügbar; klare Struktur und verständliche Navigation haben Vorrang. Das vorhandene Spiele-Dashboard kann als Gestaltungsreferenz dienen.",
     "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden. Zuerst müssen sie tatsächliche Nutzer gewinnen; Monetarisierung ist das langfristige Ziel, kein bereits umgesetztes oder wirtschaftlich validiertes System.",
-    "Die aktuell beauftragte Reihenfolge einhalten: Dashboard und Mirror-Ergebnisse vollständig festhalten und committen/pushen, danach MewTrack als nächstes prüfen und den ergänzten Stand erneut committen/pushen.",
+    "Die frühere Reihenfolge Dashboard/Mirror sichern, MewTrack prüfen und erneut sichern wurde abgeschlossen. Die nun beauftragte Etappe umfasst die sieben Webauftritte. Für die vollständige Basis folgen empfohlen die sechs Spiele, danach Priorisierung und Umsetzung.",
     "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben.",
     "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen: erledigte Analysen, aktueller nächster Schritt und noch offene große Bereiche. Die ausführlichen Informationen bleiben erhalten. Ruhiges, gedämpftes warmes Design mit neutralem Anthrazit-Dunkelmodus ohne grüne Akzente und einem Schalter bevorzugt; kleine Produkticons und eindeutige Namen helfen beim Erfassen."
   ],
@@ -181,7 +181,7 @@
       "order": 9,
       "title": "Weitere Einzelprüfungen und Entscheidungen",
       "status": "pending",
-      "detail": "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten dokumentiert. Umsetzungen, native Gegenprüfungen, einzelne Browsergame-Analysen und Vergleich der vorhandenen Onlineauftritte bleiben offen. Die nächste Auswahl wird aus den dokumentierten Vorschlägen getroffen."
+      "detail": "Drei Android-Piloten und sieben Web-Grundanalysen sind im dokumentierten Umfang abgeschlossen. Empfohlen folgen die sechs Browsergame-Grundanalysen, danach Gesamtpriorisierung und Entscheidung zur Homepage. Native Gegenprüfungen und Umsetzungen bleiben offen."
     },
     {
       "id": "mirror-preview-screenshots",
@@ -245,6 +245,36 @@
       "title": "Projektzuordnung und augenfreundliche Darstellung präzisiert",
       "status": "completed",
       "detail": "Offene Schritte nach Produkt gebündelt, Entscheidungen mit explizitem Geltungsbereich und kleinen Produkticons versehen. Gedämpften warmen Modus und neutralen Anthrazit-Dunkelmodus mit gespeichertem Schalter ergänzt; sämtliche Analyseinhalte und offenen Punkte bleiben erhalten. Im Browser auf Desktop und schmaler Ansicht geprüft: 15 offene Schritte und 9 Entscheidungen erhalten, Projektsprünge und Analysewechsel funktionieren, Moduswahl bleibt nach Neuladen erhalten."
+    },
+    {
+      "id": "dashboard-second-push",
+      "order": 15,
+      "title": "MewTrack und kompakter Projektkompass veröffentlicht",
+      "status": "completed",
+      "detail": "Commit 1f9e80aab46c649bf556a48246eeb19e286af11b in emfau88/overview; Pages-Run 37980639913 mit Build und Deploy erfolgreich. Drei Android-Piloten, vollständige Dokumente, Kompaktstatus und neutraler Dunkelmodus öffentlich geprüft."
+    },
+    {
+      "id": "breadth-first-baseline",
+      "order": 16,
+      "title": "Erst die gemeinsame Basis vervollständigen",
+      "status": "documented",
+      "detail": "Der Nutzer fragte nach ersten Grundanalysen auch der Homepages und Browsergames, um zunächst die komplette Basis zu haben. Empfohlen wurde: sieben Webauftritte, sechs Spiele, danach vergleichende Priorisierung und wenige Verbesserungen. Anschließend beauftragte der Nutzer ausdrücklich Schritt 1 mit den sieben Webauftritten."
+    },
+    {
+      "id": "web-baselines-completed",
+      "order": 17,
+      "title": "Sieben Web-Grundanalysen abgeschlossen",
+      "status": "completed",
+      "projectIds": [
+        "landinggame",
+        "shop",
+        "keyofsolomon",
+        "portfolio3",
+        "blueyard",
+        "phantom",
+        "basement"
+      ],
+      "detail": "LandingGame mit Studio, shop, keyofsolomon, Portfolio3, blueyard, phantom und basement öffentlich im Browser auf Desktop-/Mobilbreite angesehen und anhand aktiver Quellen geprüft. 15 echte Browserbilder mit Herkunft eingebettet; ausführliche Einzelbefunde, Grenzen und gemeinsamer Vergleich gespeichert. Keine Originalwebsite verändert, keine Anfrage/Bestellung versandt. Homepage-Endentscheidung bleibt offen; die sechs Spiele sind die empfohlene nächste Grundanalyseetappe."
     }
   ],
   "originalMessages": [
@@ -307,6 +337,22 @@
       "id": "neutral-dark-theme",
       "label": "Dunkelmodus in Anthrazit statt Grün",
       "text": "du kannst den darkmode von mir aus auch anthrazit oder schwarz machen, das grün mag ich nicht."
+    },
+    {
+      "id": "breadth-first-baseline",
+      "label": "Zuerst die vollständige Analysebasis in allen Bereichen",
+      "text": "also nicht erst auch mal bei den homepages oder browsergames die ersten grundanalysen oder so machen? dass wir erstmal die komplette basis haben? nur info"
+    },
+    {
+      "id": "web-baseline-request",
+      "label": "Schritt 1: sieben Webauftritte analysieren",
+      "text": "beginne mit schritt 1, die sieben webauftritte"
     }
-  ]
+  ],
+  "nextStep": {
+    "title": "Grundanalyse der sechs Browsergames",
+    "detail": "Empfohlene nächste Etappe: die sechs Spiele aus dem dashboard-Register tatsächlich spielen und nach demselben Grundraster bewerten. Danach Apps, Games und Webauftritte gemeinsam priorisieren und die Homepage-Rolle entscheiden. Diese Spieleprüfungen wurden noch nicht begonnen.",
+    "area": "games",
+    "status": "proposed"
+  }
 }

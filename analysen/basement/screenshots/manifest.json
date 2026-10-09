@@ -1,0 +1,30 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "basement",
+  "captures": [
+    {
+      "file": "start-desktop.jpg",
+      "title": "Virtuelles Studio · Desktop",
+      "url": "https://emfau88.github.io/basement/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "a861188b03cc7885ab2074ddc2d3af753b10ec1e4bd8f9ace3e78b1c9a0c479a"
+    },
+    {
+      "file": "project-mobile.jpg",
+      "title": "Mirror-Detail im Studio · Mobilbreite",
+      "url": "https://emfau88.github.io/basement/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "1743f4349fe73b1bd99bd98ef480fed2a181152ea69341e11de1a75a89497c44"
+    }
+  ]
+}

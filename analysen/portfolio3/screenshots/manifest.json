@@ -1,0 +1,30 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "portfolio3",
+  "captures": [
+    {
+      "file": "start-desktop.jpg",
+      "title": "Appportfolio · Einstieg auf Desktop",
+      "url": "https://emfau88.github.io/Portfolio3/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "15681fb353f568aaeb6430a1352b03720840b3c0193fb87d57785b567174172a"
+    },
+    {
+      "file": "apps-mobile.jpg",
+      "title": "MewTrack im Appbereich · Mobilbreite",
+      "url": "https://emfau88.github.io/Portfolio3/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "90e0f7ca76bb29bdd26998e6a9cd051250c9b07e9f77b213b1f1bb0892dec7b8"
+    }
+  ]
+}

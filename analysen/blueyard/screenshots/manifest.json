@@ -1,0 +1,30 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "blueyard",
+  "captures": [
+    {
+      "file": "start-desktop.jpg",
+      "title": "Web / Games / Labs · Einstieg",
+      "url": "https://emfau88.github.io/blueyard/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "8ab4ec01b51c5f9329211d5ea4b890f7ec0967e3212755d9346f9048297fe914"
+    },
+    {
+      "file": "contact-mobile.jpg",
+      "title": "Kontaktbereich · Mobilbreite",
+      "url": "https://emfau88.github.io/blueyard/#contact",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "93a4904f151aa507030641d70c1c5883557acc7d916fb114c79c7a26c71b7052"
+    }
+  ]
+}

@@ -1,0 +1,30 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "phantom",
+  "captures": [
+    {
+      "file": "start-desktop.jpg",
+      "title": "Räumliche Projektwand · Desktop",
+      "url": "https://emfau88.github.io/phantom/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 721
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "d44a66de09c4e4ed6481ef91ebbe81f406f80c1985a6ea8126c040d4896da101"
+    },
+    {
+      "file": "index-mobile.jpg",
+      "title": "Projektindex · Mobilbreite",
+      "url": "https://emfau88.github.io/phantom/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte Aufnahme der öffentlichen Website im Codex-Browser am 09.10.2026. Die angegebene Größe ist die gemessene CSS-Ansicht; das Bild kann die Scrollbar aussparen. Mobilbreite ist ein Layouttest und kein Test auf einem physischen Smartphone. Keine Conversion-, Leistungs- oder App-Laufzeitmessung.",
+      "sha256": "3180124461a776b596a61bc58a4f37c9a10f9f97914f130ccad8eb2bec71116a"
+    }
+  ]
+}

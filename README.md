@@ -8,7 +8,9 @@ Der Projektkompass ist der zentrale Arbeitsstand: ursprüngliche Ziele und Nachr
 
 Stand: **09.10.2026**. Grobe Bestandsaufnahme der angefragten Projekte: Spiele aus dem Dashboard, die sieben genannten Web-Repositories und vier Android-Apps. Enthalten sind kurze Beschreibungen, Repository-Zuordnungen und lokale Pfade. Die Bewertungen werden schrittweise ergänzt.
 
-**Produktchecks:** [ZeroHero](analysen/zerohero/ZeroHero-Pilotanalyse.md) und [Mirror / RelateLens](analysen/mirror/Mirror-Pilotanalyse.md) mit lokaler visueller UX-Prüfung, Store-Prüfung, Code-Gegenprüfung und Play-Console-Kennzahlen. Konkrete kleine nächste Schritte sind vorgeschlagen. Der lokale Mirror-Relaunch 1.1.0+16 ist vom veröffentlichten Mirror 1.0.13 getrennt dokumentiert. Appcode und Store wurden nicht verändert. [MewTrack](analysen/mewtrack/MewTrack-Pilotanalyse.md) ist ebenfalls abgeschlossen: native Produkt- und Layoutquellen, Store und Console wurden geprüft, Release **13 (0.9.4)** ist zugeordnet. Kamera und native UI wurden noch nicht bedient; zwei isolierte Testversuche endeten vor Testausführung an der Buildumgebung. Die fünf gezielten Android-Kernprüfungen bleiben offen; Spiele und Onlineauftritte sind inventarisiert und später separat zu bewerten.
+**Android-Produktchecks:** [ZeroHero](analysen/zerohero/ZeroHero-Pilotanalyse.md) und [Mirror / RelateLens](analysen/mirror/Mirror-Pilotanalyse.md) mit lokaler visueller UX-Prüfung, Store-Prüfung, Code-Gegenprüfung und Play-Console-Kennzahlen. Konkrete kleine nächste Schritte sind vorgeschlagen. Der lokale Mirror-Relaunch 1.1.0+16 ist vom veröffentlichten Mirror 1.0.13 getrennt dokumentiert. Appcode und Store wurden nicht verändert. [MewTrack](analysen/mewtrack/MewTrack-Pilotanalyse.md) ist ebenfalls abgeschlossen: native Produkt- und Layoutquellen, Store und Console wurden geprüft, Release **13 (0.9.4)** ist zugeordnet. Kamera und native UI wurden noch nicht bedient; zwei isolierte Testversuche endeten vor Testausführung an der Buildumgebung. Die fünf gezielten Android-Kernprüfungen bleiben offen. Die drei Piloten sind durch die anschließenden Websiteprüfungen nicht verändert worden; Between bleibt inventarisiert.
+
+**Sieben Web-Grundanalysen abgeschlossen:** Die öffentlichen Onlineauftritte wurden auf Desktop und in schmaler Mobilansicht angesehen, mit ihren Quellen abgeglichen und in begrenzten Navigationsabläufen geprüft. **15 neue JPEG-Screenshots** mit Herkunftsnachweisen ergänzen die Berichte. Zweck, Einstieg, Optik, Bedienung, konkrete Befunde und wenige nächste Maßnahmen sind im [Vergleich der Onlineauftritte](analysen/onlineauftritt/Grundanalyse-Vergleich.md) sowie den sieben Einzelanalysen festgehalten. Keine Originalwebsite wurde verändert, keine Zahlung ausgelöst und kein Formular abgesendet. Ein vollständig geprüfter Kauf-/Lieferablauf, Performance-, Markt- oder Rechtsaudit ist damit nicht behauptet. Die sechs Dashboardspiele sind weiterhin ohne Qualitätscheck.
 
 **Ziel:** zunächst Nutzer und wiederkehrende Nutzung gewinnen. ZeroHero und Mirror sollen anschließend grundsätzlich auch monetarisiert werden; ein konkretes Preismodell ist noch offen. Eine Veröffentlichung allein ist kein garantierter Algorithmus-Schub.
 
@@ -60,7 +62,19 @@ Verwandte lokale Entwürfe:
 - [Documents/portfolio](C:/Users/madde/Documents/portfolio) enthält einen älteren zweisprachigen Game-&-App-Developer-Auftritt mit zwei HTML-Dateien. Ohne Git-Konfiguration ist eine Zuordnung zu Portfolio3 **nicht bestätigt**.
 - Im [übergeordneten Solomon-Ordner](<C:/Users/madde/Documents/BOOK KEY OF SOLOMON>) liegen außerdem `keyofsolomon_repo_ready`, `solomon_archive_highend_site` und `solomon-umami-whop`.
 
-In [online-bestand.json](online-bestand.json) stehen die aus Projektquellen übernommenen Onlineadressen und die Quellnachweise. Die Seiten wurden nicht auf Erreichbarkeit, Nutzererlebnis oder Veröffentlichungsstand geprüft.
+In [online-bestand.json](online-bestand.json) stehen die aus Projektquellen übernommenen Onlineadressen und Quellnachweise der ursprünglichen groben Bestandsaufnahme. Dieser Snapshot bleibt als ursprüngliche Quelle erhalten; die späteren Live-Beobachtungen und Prüfgrenzen stehen in den abgeschlossenen Grundanalysen.
+
+| Webprojekt | Grundanalyse | Dashboard |
+|---|---|---|
+| LandingGame / Landing Page | [Bericht](analysen/landinggame/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/landinggame/review) |
+| shop | [Bericht](analysen/shop/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/shop/review) |
+| keyofsolomon | [Bericht](analysen/keyofsolomon/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/keyofsolomon/review) |
+| Portfolio3 | [Bericht](analysen/portfolio3/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/portfolio3/review) |
+| blueyard | [Bericht](analysen/blueyard/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/blueyard/review) |
+| phantom | [Bericht](analysen/phantom/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/phantom/review) |
+| basement | [Bericht](analysen/basement/Grundanalyse.md) | [Analyse öffnen](https://emfau88.github.io/overview/#results/basement/review) |
+
+Die endgültige Rolle der zentralen Homepage bleibt offen: Websiteverkauf, persönliche Apps-/Games-Präsenz oder eine verständliche Verbindung beider Aufgaben. Die [vergleichende Grundanalyse](analysen/onlineauftritt/Grundanalyse-Vergleich.md) bildet dafür eine Grundlage, keine bereits umgesetzte Strategie.
 
 ## Android-Apps
 
@@ -83,17 +97,19 @@ In dieser Tabelle wurden Projektidentität und Pfade festgehalten. Die Versionen
 
 Die vorhandenen Ziele reichen für den Einstieg: Bei Android-Apps mehr Downloads und wiederkehrende Nutzer; bei Spielen eine ehrliche Qualitätsprüfung; beim Onlineauftritt die Entscheidung für eine geeignete zentrale Website. Eine große vorgeschaltete Zielklärung ist dafür nicht nötig.
 
-1. **Ein Produkt als Pilot prüfen:** tatsächliche Bedienung und Optik, Nutzen, Store-Auftritt und verfügbare Nutzungsdaten zusammen betrachten. Für ZeroHero, Mirror und MewTrack im dokumentierten Umfang abgeschlossen; native Prüfgrenzen bleiben sichtbar.
-2. **Wenige Maßnahmen priorisieren:** belegte Probleme, Chancen und offene Fragen unterscheiden. Ein kleiner sinnvoller Updateumfang folgt aus den Befunden; Umsetzung ist ein eigener Schritt.
-3. **Android-Piloten vertiefen:** gezielte native Gegenprüfungen und wenige kleine Verbesserungs- und Nutzerversuche aus den drei Analysen auswählen. Between ist bisher nur inventarisiert.
-4. **Browsergames spielen und bewerten:** Einstieg, Verständlichkeit, Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz untersuchen; danach Aufwand und Chancen vergleichen.
-5. **Onlineauftritte vergleichen:** vorhandene Entwürfe tatsächlich ansehen und daraus eine Empfehlung für die zentrale Landingpage ableiten. Die Rolle von Webverkauf, Games und Apps erst anhand dieses Vergleichs festlegen.
+Der Nutzer hat die Reihenfolge präzisiert: zuerst eine breite qualitative Grundlage ergänzen, danach gezielt priorisieren und umsetzen.
 
-Spiele und Onlineauftritte sind noch nicht qualitativ analysiert. Es wurden keine Verbesserungen veröffentlicht. Fehlende Daten und unbestätigte Nutzerwirkungen werden ausdrücklich als offen behandelt.
+1. **Android-Piloten:** ZeroHero, Mirror und MewTrack sind im dokumentierten Umfang abgeschlossen; native Prüfgrenzen bleiben sichtbar. Between ist bisher nur inventarisiert.
+2. **Sieben Webauftritte:** Grundanalysen und erster Vergleich sind abgeschlossen. Die endgültige Homepage-Rolle und Umsetzung bleiben offen.
+3. **Sechs Dashboardgames:** als nächsten sinnvollen Analyseschritt tatsächlichen Einstieg, Spielgefühl, Optik, Verständlichkeit und offensichtliche Probleme prüfen. Dieser Folgeauftrag wurde noch nicht begonnen; Links in einem Webportfolio sind kein Spieltest.
+4. **Gesamtvergleich und wenige Prioritäten:** vorhandene Stärken, belegte Probleme, offene Fragen und Aufwand zusammenführen. Erst dann kleine konkrete Maßnahmen auswählen, statt alles gleichzeitig umzubauen.
+5. **Ausgewählte Umsetzungen:** native App-Gegenchecks, begrenzte Qualitätsupdates, passende Nutzerversuche oder eine zentrale Website anhand der Prioritäten konkret angehen. Keine Empfehlung ist allein durch ihre Dokumentation umgesetzt.
+
+Es wurden keine Verbesserungen an Originalprodukten oder Stores veröffentlicht. Fehlende Daten und unbestätigte Nutzerwirkungen werden ausdrücklich als offen behandelt; der nächste Spieleauftrag ist eine Empfehlung, keine automatisch gestartete Arbeit.
 
 ## Quellen und Umfang
 
-Die ursprünglichen Bestandsbeschreibungen beruhen auf README-Dateien und Startseitentexten. Repository-/Ordnerzuordnungen beruhen auf lokalen Git-Remotes beziehungsweise öffentlichen GitHub-Metadaten. Ergänzend wurden ZeroHero, Mirror und MewTrack wie oben verlinkt untersucht. Spiele, Onlineauftritte und Between wurden noch nicht im Betrieb geprüft; Originalprojekte und Store-Einträge wurden nicht verändert.
+Die ursprünglichen Bestandsbeschreibungen beruhen auf README-Dateien und Startseitentexten. Repository-/Ordnerzuordnungen beruhen auf lokalen Git-Remotes beziehungsweise öffentlichen GitHub-Metadaten. Ergänzend wurden drei Android-Piloten und anschließend sieben Web-Grundanalysen mit öffentlichen Browseransichten und Quellenprüfung dokumentiert. Die Browsergames und Between haben weiterhin keinen Qualitätscheck. Originalprojekte und Store-Einträge wurden nicht verändert; sämtliche Maßnahmen bleiben Vorschläge. Aus einer Website-Navigation folgt kein App-/Spieltest, aus einem geladenen Checkout kein erfolgreicher Kauf.
 
 - [spiele-bestand.json](spiele-bestand.json): sechs Dashboard-Spiele und fünf ergänzende Repositories mit Quellnachweisen.
 - [online-bestand.json](online-bestand.json): sieben Web-Repositories und verwandte lokale Entwürfe.
