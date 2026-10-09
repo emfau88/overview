@@ -4,7 +4,7 @@ Das Dashboard verbindet die ursprünglichen Anliegen, den Projektbestand, ausfü
 
 Die Startansicht ist eine **Kompaktübersicht**: „Erledigt“, „Als Nächstes“ und „Noch offen“, automatische Zähler für Bestand und abgeschlossene Analysen sowie kurze Produktstände nach Bereich. Der dokumentierte Verlauf zeigt die zuletzt festgehaltenen Schritte und lässt sich vollständig aufklappen. Abschlusszahlen beruhen auf dem Analyse- beziehungsweise Verlaufsstatus; vorgeschlagene Maßnahmen werden dadurch nicht als umgesetzt gezählt. Die ausführlichen Befunde, Kennzahlen, Quellen und Originalnachrichten bleiben in den übrigen Ansichten vollständig erhalten. [KOMPAKTUEBERSICHT.md](../KOMPAKTUEBERSICHT.md) ergänzt den kurzen Stand als Repository-Dokument.
 
-Die Darstellung verwendet gedämpfte warme Grautöne, zurückhaltendes Salbeigrün und einen umschaltbaren neutralen Anthrazitmodus ohne grüne Flächen. Die Moduswahl wird lokal im Browser gespeichert; Produktbilder und ausgeschriebene Namen helfen bei der Zuordnung. Es gibt keine externen Schriften, Bibliotheken oder Laufzeitabrufe.
+Die Darstellung verwendet gedämpfte warme Grautöne und einen umschaltbaren neutralen Anthrazitmodus. Dezente grüne Markierungen zeigen auf ausdrücklichen Nutzerwunsch erledigte Arbeit; die Grundflächen bleiben neutral. Die Moduswahl wird lokal im Browser gespeichert; Produktbilder und ausgeschriebene Namen helfen bei der Zuordnung. Es gibt keine externen Schriften, Bibliotheken oder Laufzeitabrufe.
 
 **Offene Schritte** sind zuerst nach Bereich und anschließend nach Produkt gruppiert. So stehen die Schritte einer App zusammen, statt zwischen anderen Apps verteilt zu erscheinen. Bereichsweite Aufgaben tragen eine eigene Kennzeichnung. Sprunglinks führen direkt zu den Produkten, zu den Bereichen und zum Abschnitt mit Entscheidungen; direkte Links wie `#pending/zerohero` oder `#pending/decisions` bleiben teilbar. Diese Gruppierung legt keine neue Priorität fest.
 
@@ -13,6 +13,14 @@ Die Darstellung verwendet gedämpfte warme Grautöne, zurückhaltendes Salbeigr�
 Die **Ergebnis-Auswahl** zeigt die analysierten Produkte als Links mit Bild und Namen. Beim Wechsel bleibt der gewählte Teilbereich (Bewertung, Kennzahlen, Maßnahmen oder Prüfumfang) erhalten. Kleine Produktkennzeichnungen ergänzen außerdem den Erledigt-Überblick, konkrete nächste Produkte, Befund- und Maßnahmenkacheln, den Verlauf bei expliziter Zuordnung und den Kopf zugeordneter Analyseberichte im Dokumentenleser. Dokumentzuordnungen stammen aus den `documents`-Referenzen der Analysen, nicht aus Dateinamen.
 
 Nach dem Build lässt sich `index.html` im Repository-Hauptordner **direkt per Doppelklick** öffnen. Daten, Oberfläche und vorhandene Produktbilder liegen in dieser einzelnen Datei; ein lokaler Server, externe Bibliotheken oder eine Anmeldung sind dafür nicht erforderlich. Der GitHub-Pages-Workflow veröffentlicht dieselbe Datei unter [emfau88.github.io/overview](https://emfau88.github.io/overview/), sobald Pages für GitHub Actions eingerichtet ist.
+
+## Zusätzlicher Arbeitsfortschritt
+
+Die ursprünglichen Inhalte bleiben bestehen. Eine ergänzende Anzeige unterscheidet drei Arbeitsphasen: **Bestand erfasst → begrenzte Analyse dokumentiert → Maßnahmen umgesetzt und geprüft**. Produktkarten, Produktdialoge, Ergebnis-Untermenüs, Bereichsübersicht, produktbezogene offene Gruppen und zugeordnete Dokumente zeigen denselben aus den zentralen Daten berechneten Stand. Die Ergebniswahl markiert fertige Analysen grün, mit Statuswort statt allein durch Farbe.
+
+Aktuell sind **15 Produkte bei 2/3 Phasen**, Between und das zurückgestellte MORE THAN WOMBAT bei **1/3**. Die beauftragte Analyserunde ist mit **15/15** abgeschlossen; der gesamte Hauptbestand umfasst weiterhin 17 Produkte. **0/49 dokumentierte Vorschläge** sind als umgesetzt geführt. Diese Maßnahmenzahl ist ein anderer Zähler als die 26 gebündelten offenen Einträge. Vorschläge bilden eine Auswahlbasis, keinen verpflichtenden Gesamtplan.
+
+Die Maßnahmenphase ist erst abgeschlossen, wenn alle zugehörigen dokumentierten Aktionen als umgesetzt/geprüft geführt werden. Teilweise umgesetzte Aktionen bleiben als eigene Zahl sichtbar. Bestandsprodukte und zurückgestellte Varianten erhalten durch eine Phasenanzeige keinen neuen Prüfauftrag. Prozent- oder Phasenwerte sind keine Aufwandsschätzung, vollständige Produktprüfung oder wirtschaftliche Erfolgsgarantie.
 
 ## Welche Dateien den Arbeitsstand tragen
 
@@ -54,6 +62,14 @@ GitHub Actions prüft JavaScript, baut das Dashboard, prüft die erzeugte Datei 
 
 Ein späterer Schritt kann zusätzliche Produkte prüfen oder einen vorhandenen Befund umsetzen. Das Dashboard selbst erteilt dafür keine neue Veröffentlichungsfreigabe und erzeugt keine Nutzer- oder Erfolgsaussage ohne Belege.
 
-## Prüfung dieses Darstellungsstands
+## Frühere Prüfung der Darstellung mit drei App-Piloten
 
-Am 09.10.2026 wurden die gedämpfte warme und die neutrale Anthrazitdarstellung im Browser geprüft, einschließlich schmaler Ansicht um 390 Pixel, gespeicherter Moduswahl nach Neuladen, Produkt-Sprungziel und Analysewechsel mit erhaltenem Kennzahlen-Teilbereich. Alle 15 offenen Schritte und 9 Entscheidungen waren vorhanden; die Seitenbreite lief nicht über den sichtbaren Bereich hinaus. Originalicons bleiben als Produktmerkmale erhalten. Die drei abgeschlossenen Analysen enthalten zusammen 34 Befunde, 60 Kennzahlen und 13 vorgeschlagene Maßnahmen; ihre jeweiligen Prüfgrenzen bleiben maßgeblich.
+Am 09.10.2026 wurden die gedämpfte warme und die neutrale Anthrazitdarstellung im Browser geprüft, einschließlich schmaler Ansicht um 390 Pixel, gespeicherter Moduswahl nach Neuladen, Produkt-Sprungziel und Analysewechsel mit erhaltenem Kennzahlen-Teilbereich. Im damaligen Drei-Pilot-Stand waren alle 15 offenen Schritte und 9 Entscheidungen vorhanden; die Seitenbreite lief nicht über den sichtbaren Bereich hinaus. Originalicons bleiben als Produktmerkmale erhalten. Die drei damaligen Appanalysen enthalten zusammen 34 Befunde, 60 Kennzahlen und 13 vorgeschlagene Maßnahmen; ihre jeweiligen Prüfgrenzen bleiben maßgeblich.
+
+## Aktueller Quellenstand nach der ausgewählten Grundrunde
+
+Am 09.10.2026 umfasst die gemeinsame Grundlage 15 begrenzte Analysen (3 Apps, 7 Webauftritte, 5 Games), 86 Befunde, 60 Kennzahlen, 49 vorgeschlagene Maßnahmen mit 0 Umsetzungen, 26 offene Einträge und 16 festgehaltene Entscheidungen/Vorschläge. 27 neue Spielbilder ergänzen die 15 Websitebilder und sechs historischen Mirror-Previews. KESSELKRAWALLs sieben Bilder stammen aus der gesonderten lokalen Testkopie; der öffentlich ausgelieferte Spielstand ist damit nicht als identisch bestätigt. Bildmetadaten nennen den Browser-Viewport in CSS-Pixeln; die gespeicherte JPEG-Breite kann durch Rundung davon abweichen.
+
+Die älteren Bestandsquellen, Originalnachrichten und historischen Etappen bleiben erhalten. Aktuelle Prinzipien, Produktstände, Entscheidungen und nächste Schritte werden bei einer neuen Etappe abgeglichen; historische Momentaufnahmen werden nicht auf heutige Zahlen umgeschrieben. Analyseabschluss, Umsetzung und nachgewiesene Wirkung bleiben unterschiedliche Stände.
+
+Die ergänzten Fortschrittsanzeigen wurden am 09.10.2026 in beiden Themes und in der schmalen Browseransicht geprüft: Übersicht, Produktkarten/-dialoge, Analysewahl sowie Kennzahlen-/Maßnahmen-Untermenüs, offene Produktgruppen und gemeinsamer Dokumentenleser zeigen konsistente Stände. 15 grün markierte Analysen, 15 Produkte mit 2/3 und Between/Wombat mit 1/3 Phasen; keine Maßnahmen fälschlich als umgesetzt. Keine unbeabsichtigte horizontale Seitenvergrößerung in den geprüften Ansichten.

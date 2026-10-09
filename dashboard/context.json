@@ -60,7 +60,8 @@
         "Ausgangspunkt der Bestandsaufnahme ist das Repository dashboard; weitere gefundene Varianten sind ergänzend aufgeführt.",
         "Sechs Kernspiele sind inventarisiert: HEXFRONT/hexwars, GALALAXY/galalaxy, ROOSTER RAGE/RoosterRage, KESSELKRAWALL/KesselKrawall, CORE ARENA/CTF-3.0 und MORE THAN WOMBAT/MoreThanWombat.",
         "Die ursprüngliche Anweisung verlangte ausdrücklich zunächst keine Qualitätsanalyse. Die Bestandsbeschreibungen ersetzen daher kein Spielen oder Testen.",
-        "Noch nicht geprüfte Spiele dürfen nicht als bereits bewertet dargestellt werden; die geplanten Einzelprüfungen sind ein eigener Schritt."
+        "Noch nicht geprüfte Spiele dürfen nicht als bereits bewertet dargestellt werden; die geplanten Einzelprüfungen sind ein eigener Schritt.",
+        "Aktuelle Nutzerfreigabe: fünf Spiele prüfen. HEXFRONT, GALALAXY, ROOSTER RAGE, KESSELKRAWALL und CORE ARENA sind als begrenzte Grundanalysen abgeschlossen. Vier öffentliche Fassungen, KESSELKRAWALL als isolierter frischer main-Export. MORE THAN WOMBAT und übrige Games/Varianten vorerst nicht testen. CORE-Meinungen bleiben Prüffragen und ersetzen keine Evidenz; keine vollständige Kampagnen-, Touch-, Audio-, Balance- oder Langzeitprüfung behaupten."
       ]
     },
     {
@@ -118,14 +119,14 @@
     "Wenige konkrete Maßnahmen mit erkennbarem Nutzen priorisieren; keinen umfassenden Neubau allein aus dem Wunsch nach mehr Downloads ableiten.",
     "Vorhandene Entwürfe und Produktstärken weiterverwenden, wenn sie sich bei der Prüfung bewähren.",
     "Das Dashboard hält Bestand, ausführliche Ergebnisse, Quellen, Grenzen, offene Fragen und nächste Schritte zusammen; Detailberichte bleiben verlinkte Arbeitsgrundlagen.",
-    "Aktuellen Prüfstatus sichtbar halten: ZeroHero, Mirror und MewTrack sind als Piloten untersucht; die sieben Webauftritte haben abgeschlossene begrenzte Grundanalysen. Sechs Spiele und Between sind bisher inventarisiert.",
+    "Aktuellen Prüfstatus überall sichtbar halten: 15 begrenzte Analysen sind abgeschlossen – drei Android-Piloten, sieben Webauftritte und fünf ausgewählte Spiele. Between ist nur inventarisiert; MORE THAN WOMBAT sowie verwandte und übrige Games bleiben auf Nutzerwunsch zurückgestellt. Prüfgrenzen und noch offene Umsetzung pro Produkt erhalten.",
     "Neue Entscheidungen, Analysen und Umsetzungen im Dashboard ergänzen, damit spätere Arbeit an den dokumentierten Stand anknüpft.",
     "Das Repository https://github.com/emfau88/overview als zentralen Sammelpunkt verwenden und Dashboard, Inventar, Kontext und ausführliche Ergebnisse so verknüpfen, dass die Informationen zuverlässig auffindbar bleiben.",
     "Echte Produkticons sparsam zur Orientierung einsetzen, soweit verfügbar; klare Struktur und verständliche Navigation haben Vorrang. Das vorhandene Spiele-Dashboard kann als Gestaltungsreferenz dienen.",
     "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden. Zuerst müssen sie tatsächliche Nutzer gewinnen; Monetarisierung ist das langfristige Ziel, kein bereits umgesetztes oder wirtschaftlich validiertes System.",
-    "Die frühere Reihenfolge Dashboard/Mirror sichern, MewTrack prüfen und erneut sichern wurde abgeschlossen. Die nun beauftragte Etappe umfasst die sieben Webauftritte. Für die vollständige Basis folgen empfohlen die sechs Spiele, danach Priorisierung und Umsetzung.",
+    "Die frühere Reihenfolge Dashboard/Mirror sichern, MewTrack prüfen und erneut sichern wurde abgeschlossen. Auch die ausgewählte gemeinsame Grundlage aus drei App-Piloten, sieben Webauftritten und fünf Spielen ist dokumentiert. Jetzt Befunde vergleichen und wenige Maßnahmen priorisieren; weitere Games nicht ohne neue Freigabe testen.",
     "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben.",
-    "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen: erledigte Analysen, aktueller nächster Schritt und noch offene große Bereiche. Die ausführlichen Informationen bleiben erhalten. Ruhiges, gedämpftes warmes Design mit neutralem Anthrazit-Dunkelmodus ohne grüne Akzente und einem Schalter bevorzugt; kleine Produkticons und eindeutige Namen helfen beim Erfassen.",
+    "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen; aktuellen Stand in allen relevanten Untermenüs konsistent zeigen. Detailinformationen erhalten. Gedämpfte warme beziehungsweise neutrale Anthrazitflächen mit Schalter bleiben; gezielte grüne Erledigtmarker sind auf aktuellen Nutzerwunsch erwünscht. Fortschritt zusätzlich als Bestand, Analyse und Maßnahmen sowie tatsächliche Maßnahmenzahl zeigen. Farben ergänzen eindeutige Statuswörter; Analyseabschluss ist keine vollständige Produktprüfung oder Umsetzung.",
     "Unvoreingenommen und unabhängig bewerten: zuerst ein eigenes Urteil anhand tatsächlicher Bedienung bilden. README-Texte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen. Stärken, Schwächen, Quelle und subjektive Einschätzung nachvollziehbar unterscheiden; kurze Spielsitzungen belegen keine Langzeitmotivation."
   ],
   "chronology": [
@@ -283,6 +284,58 @@
       "title": "Unvoreingenommene eigene Bewertung ausdrücklich festgelegt",
       "status": "documented",
       "detail": "Der Nutzer verlangt ausdrücklich eine unabhängige Bewertung ohne Vorprägung durch Repositorytexte oder andere Aussagen. Die eigene Bedienbeobachtung bildet das Urteil; Code prüft konkrete Beobachtungen gegen. Behauptete Testerfolge sind ohne eigene Ausführung kein bestandener Test. Bei Spielen sind kurze praktische Spielsitzungen und gezielte Quellenprüfung vorgesehen; Langzeitmotivation und echte Spielerreaktionen bleiben gesonderte Grenzen. Die Spieleprüfungen wurden noch nicht begonnen."
+    },
+    {
+      "id": "first-two-games-request",
+      "title": "Erste zwei Spiele zur eigenen Grundprüfung beauftragt",
+      "status": "documented",
+      "projectIds": [
+        "hexfront",
+        "galalaxy"
+      ],
+      "detail": "HEXFRONT und GALALAXY aus der Registerreihenfolge tatsächlich spielen, unabhängig beurteilen und Ergebnisse samt Quellen und Screenshots in overview festhalten.",
+      "order": 19
+    },
+    {
+      "id": "five-games-scope",
+      "title": "Prüfrunde auf fünf Spiele begrenzt; übrige zurückgestellt",
+      "status": "established",
+      "area": "games",
+      "detail": "Zusätzlich ROOSTER RAGE, KESSELKRAWALL und CORE ARENA beauftragt. MORE THAN WOMBAT und übrige Games/Varianten vorerst nicht testen. CORE-Hinweise zu Bots, Menüs und Drops sind unbestätigte Prüffragen des Nutzers, keine übernommenen Befunde.",
+      "order": 20
+    },
+    {
+      "id": "first-two-games-complete",
+      "title": "HEXFRONT und GALALAXY im begrenzten Spielumfang analysiert",
+      "status": "completed",
+      "projectIds": [
+        "hexfront",
+        "galalaxy"
+      ],
+      "detail": "Öffentlicher Einstieg, eigene kurze Spielrunden, Bewegungen/Angriffe, Niederlage und Neustart sowie schmale Ansichten praktisch geprüft. Gezielt Quellen gegenprüft und neun echte Bilder aufgenommen. Keine vollständige Kampagnen-/Boss-, KI-Balance-, Touch-, Audio- oder Langzeitprüfung; keine Produktfixes umgesetzt. Damit liegen zwölf abgeschlossene Produktanalysen vor.",
+      "order": 21
+    },
+    {
+      "id": "five-games-baseline-complete",
+      "title": "Ausgewählte fünf Spiele grundlegend analysiert – gemeinsame Basis erreicht",
+      "status": "completed",
+      "projectIds": [
+        "hexfront",
+        "galalaxy",
+        "rooster-rage",
+        "kesselkrawall",
+        "core-arena"
+      ],
+      "detail": "ROOSTER RAGE, KESSELKRAWALL und CORE ARENA nach HEXFRONT/GALALAXY ergänzt. Eigene kurze Bedienung, aktive Quellengegenprüfung, 27 echte Aufnahmen und gemeinsamer Spielvergleich dokumentiert. KESSELKRAWALL als separate lokale Testkopie; bestehender öffentlicher Run erhalten. Damit 15 begrenzte Analysen (3 Apps, 7 Web, 5 Games); Between nur Bestand, MORE THAN WOMBAT und übrige Games zurückgestellt. Empfehlungen noch nicht umgesetzt.",
+      "order": 22
+    },
+    {
+      "id": "overview-progress-display-complete",
+      "title": "Dashboard durchgängig aktualisiert und Arbeitsphasen sichtbar ergänzt",
+      "status": "completed",
+      "scopeLabel": "Gesamtes Dashboard",
+      "detail": "Aktuelle Prinzipien, Produktstände, nächste Schritte und Entscheidungen abgeglichen. Zusätzliche grüne Erledigtmarker und drei Arbeitsphasen auf Übersicht, Produktkarten/-dialogen, Analyse-Untermenüs, offenen Gruppen und zugeordneten Dokumenten ergänzt. Browsercheck beider Themes und schmaler Ansicht ohne Seitenüberlauf; 15 Produkte 2/3, Between/Wombat 1/3, 0/49 Vorschläge umgesetzt. Originalberichte und historische Etappen erhalten; keine Produktfixes daraus abgeleitet.",
+      "order": 23
     }
   ],
   "originalMessages": [
@@ -360,12 +413,32 @@
       "id": "independent-review-rule",
       "label": "Unvoreingenommen und unabhängig bewerten",
       "text": "Lass dich nicht von den repos oder andern Aussagen beeinflussen, sei unvoreingenommen und unabhängig"
+    },
+    {
+      "id": "first-two-games-request",
+      "label": "Erste zwei Spiele prüfen",
+      "text": "ok dann fang mit den ersten beiden spielen an"
+    },
+    {
+      "id": "five-games-scope",
+      "label": "Weitere drei Spiele und Rückstellung der übrigen",
+      "text": "ok danach kannst du dann auch noch rooster rage prüfen und kesselkrawall. core arena kannst du auch noch prüfen, da bin ich aber noch nicht zufrieden damit, hat meiner meinung nach grßes potenzial (meine meinung auch nicht als die wahrheit nehmen) aber irgendwie bin ich damit einfach noch nicht zufrieden, bots sind meiner meinung nach zu schwer, die menüs (vor allem die untermenüs) sind mir fast zu spacig-sci-fi, waffendrops und muniton auf den maps irgendwie noch nicht ausgereift durchdacht genug usw. die anderen spiele sind sowieso noch in arbeit und werden vielleicht sogar verworfen, also diese erstmal nicht testen"
+    },
+    {
+      "id": "overview-progress-request",
+      "label": "Dashboard überall aktuell halten und zusätzliche Fortschrittsanzeigen ergänzen",
+      "text": "ok bitte dann unser overview an allen stellen wo es nötig ist auf den neusten stand bringen, dass wir nicht nur punktuell aktualisieren, sondern eben an allen stellen/untermenüs den aktuellsten stand vermerken wo nötig, dass wir wirklich top aktuell sind. gerne kannst du auch farblich zeigen wo die nötigen analysen vorhanden sind durch z.b. grün einfärben (denke du weißt was ich meine), dass man jeweils an farben schon sieht wo etwas schon erledigt ist und wo nicht. gerne auch etwas detaillierter den fortschritt jeweils zeigen wenn z.b. teil 1/3 von etwas schon abgeschlossen ist dass man das auch zusätzlich kompakt irgendwo leicht erfassen kann als nutzer der seite (aber das wie gesagt nur zusätzlich, nicht was anderes dafür entfernen)."
+    },
+    {
+      "id": "push-updated-overview",
+      "label": "Aktualisierten Überblick committen und pushen",
+      "text": "dann comitten und pushen"
     }
   ],
   "nextStep": {
-    "title": "Grundanalyse der sechs Browsergames",
-    "detail": "Empfohlene nächste Etappe: die sechs Spiele aus dem dashboard-Register tatsächlich spielen und nach demselben Grundraster bewerten. Danach Apps, Games und Webauftritte gemeinsam priorisieren und die Homepage-Rolle entscheiden. Diese Spieleprüfungen wurden noch nicht begonnen.",
-    "area": "games",
+    "title": "Aus der gemeinsamen Grundlage wenige Prioritäten wählen",
+    "detail": "15 begrenzte Analysen liegen vor: drei App-Piloten, sieben Webauftritte und fünf Spiele. Jetzt Befunde, Stärken und offene Prüfgrenzen gemeinsam ansehen; Homepage-Rolle entscheiden und wenige erste Maßnahmen für Apps/Games auswählen. Nur die dafür nötigen Lücken gezielt prüfen. Übrige Games bleiben zurückgestellt; bisher keine Produktverbesserungen umgesetzt.",
+    "area": "overall",
     "status": "proposed"
   }
 }

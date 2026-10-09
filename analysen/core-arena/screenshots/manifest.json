@@ -1,0 +1,78 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "core-arena",
+  "captures": [
+    {
+      "file": "menu-desktop.jpg",
+      "title": "Hauptmenü und drei Einstiege",
+      "url": "https://emfau88.github.io/CTF-3.0/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Bestehende Karriere nicht fortgesetzt oder zurückgesetzt.",
+      "sha256": "773b34d07288d98eff1d614facca2546560e526852cb3e1cacb6c96e4b6f0ce3"
+    },
+    {
+      "file": "training-result-desktop.jpg",
+      "title": "Trainingsabschluss nach passiver Beobachtung",
+      "url": "https://emfau88.github.io/CTF-3.0/?scene=v2&mode=tdm&map=helix-canopy-v2&players=bot&teamSize=2&blueBots=1&redBots=2&blueBotDifficulty=casual&redBotDifficulty=casual&controls=keyboard&skin=alien-runner&sfx=on&entryPoint=qualifier&qualifier=1&training=1",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Teamergebnis blau 12 zu rot 15, eigene Zeile 0 Eliminierungen/2 Tode, dennoch qualifiziert. Kein eigener Gameplayversuch und keine Zeitangabe.",
+      "sha256": "74cbbbfc595eacf4a345cea1aee9eb75be0d3c63e7d87bd1968dcedcb736fa40"
+    },
+    {
+      "file": "training-result-active-desktop.jpg",
+      "title": "Trainingsabschluss nach eigenen Eingaben",
+      "url": "https://emfau88.github.io/CTF-3.0/?scene=v2&mode=tdm&map=helix-canopy-v2&players=bot&teamSize=2&blueBots=1&redBots=2&blueBotDifficulty=casual&redBotDifficulty=casual&controls=keyboard&skin=alien-runner&sfx=on&entryPoint=qualifier&qualifier=1&training=1",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Teamergebnis blau 7 zu rot 16, eigene Zeile 0 Eliminierungen/5 Tode, dennoch qualifiziert. Guide zuvor 4/5 mit Pickup offen; dieses Ergebnisbild zeigt den Guide selbst nicht.",
+      "sha256": "97eee634084aaf7e35bcce58ed4049a013d19f9106c82bd8825b2cffe94eeedc"
+    },
+    {
+      "file": "setup-desktop.jpg",
+      "title": "Custom-Setup: Moduskarten",
+      "url": "https://emfau88.github.io/CTF-3.0/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Vierstufige Auswahl; angeschnittener Modusregeltext im Desktop geprüft.",
+      "sha256": "dbb78f439b5ec66577fb6d47358cccf17df943aad6b7589c2f5faadc94764a6c"
+    },
+    {
+      "file": "setup-mobile.jpg",
+      "title": "Custom-Setup in schmaler Ansicht",
+      "url": "https://emfau88.github.io/CTF-3.0/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Nur Setup, kein mobiles Match oder physischer Touchtest.",
+      "sha256": "2cd9a53fbdb00a13a4100118a35c947ce71da843137360aea7f15a2f815d38f8"
+    },
+    {
+      "file": "battle-desktop.jpg",
+      "title": "Eigenes Custom-TDM: Respawn und Waffenbestand",
+      "url": "https://emfau88.github.io/CTF-3.0/?scene=v2&mode=tdm&map=helix-canopy-v2&players=bot&teamSize=1&blueBots=0&redBots=1&blueBotDifficulty=normal&redBotDifficulty=casual&controls=auto&skin=alien-runner&sfx=on&entryPoint=custom-match",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Einfacher Gegnerbot, Helix Canopy, eigene Bewegung/Angriff/Sprung bedient. Aufnahme-/Schusswirkung von Pulse nicht gesichert; Bild zeigt Respawn, leere Munition und Pad-Timer.",
+      "sha256": "a8d543db80f5b641bb411d6a2d0f9f7780570036ab30a350fd58452443266771"
+    }
+  ]
+}

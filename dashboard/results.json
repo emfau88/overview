@@ -2442,6 +2442,778 @@
         "analysen/basement/Quellenpruefung.md",
         "analysen/basement/screenshots/manifest.json"
       ]
+    },
+    {
+      "id": "hexfront",
+      "projectId": "hexfront",
+      "title": "HEXFRONT – abgeschlossene begrenzte Grundanalyse",
+      "status": "reviewed",
+      "summary": "HEXFRONT bietet einen tatsächlich spielbaren Echtzeitkern mit einem konkret erklärten, vor dem ersten Zug geschützten Einstieg und einer eigenständigen Landschaftsgestaltung. Mission I wurde öffentlich auf Desktop und bei 391 Pixeln bedient; Drags, Eroberungen, ein echtes DEFEAT, Neustart und Kampagnenrückkehr funktionierten im geprüften Ablauf. Die ersten Verbesserungsansätze sind mobile Regel-/Versorgungsinformationen, ungestörtes Nachlesen und ein kleiner horizontaler Überlauf im Ergebnisdialog. Zehn Kampagnenstationen sind sichtbar, main gibt neun Karten frei und kennzeichnet X als Coming Soon. Keine vollständige Kampagnen-, KI- oder Balancebewertung: Werkzeugpausen liefen im Echtzeitkampf weiter; Victory und spätere Missionen wurden nicht gespielt. Lokaler Branch, aktueller main und öffentliche Laufzeit sind ausdrücklich getrennt. Keine Originalquelle oder Veröffentlichung wurde geändert.",
+      "scope": {
+        "checked": [
+          "Lokale Identität rein lesend: C:\\Users\\madde\\Documents\\ChatGPT\\hexwars, origin emfau88/hexwars; sauberer Branch codex/improve-mobile-onboarding-copy, HEAD 5f5f35049b1900971fece81dc3365923e5a9c2c1; lokale Paketversion 0.1.0 und Vite-/Pages-Auslieferpfad dist.",
+          "Öffentliche Pages-Erstbeobachtung am 09.10.2026 unter https://emfau88.github.io/hexwars/: Kampagneneinstieg und Mission I bei 1281 × 800, mehrere gültige Drags/Eroberungen, tatsächliches DEFEAT mit Grund, Try Again und Kampagnenrückkehr.",
+          "Schmale Browseransicht 391 × 844: Mission-I-Einstieg, ein per Drag erobertes neutrales Feld (eigene Zellenzahl 1 → 2), Restart und Map; obere Feld-/Einheitenzähler und separate Mobilebar gesehen. Das ist keine Bedienung auf einem physischen Touchgerät.",
+          "Desktop-Dock ein-/ausgeklappt, Auto-Supply ON → OFF bedient; zusätzliche tatsächliche Live-Gegenprüfung nach RESTART zeigt wieder ON/aktiv und Zeit 0:00. Ein alter Toasttext im DOM wurde ausdrücklich nicht als persistierender Schalterzustand oder sichtbarer Fehler gewertet.",
+          "Gezielte Mechanikquellen aus dem am Prüftag festgehaltenen öffentlichen main-Commit 29ff12d6897db9b994b97be980efb0037e54d476: Startgatter, Eingabe, Reise-/Kampfrückmeldung, Versorgung, aktive Pausenpfade, mobile HUD-Darstellung, Ergebnisdialog, Neustart und Freischaltung.",
+          "Vier echte öffentliche Browser-JPEGs: Kampagne, laufender Kampf, Niederlage und schmaler Mission-I-Einstieg. Screenshot-Manifest dokumentiert URL, Datum, Viewport, Hinweis und SHA256."
+        ],
+        "notChecked": [
+          "Keine vollständige Gleichheit von lokalem Branch, aktuellem main und ausgeliefertem Pages-Bundle nachgewiesen. Identische Texte beziehungsweise passende Mechaniken sind kein vollständiger Deployment-Nachweis.",
+          "Kein tatsächlicher Sieg, keine Freischaltung oder Bedienung von Mission II–IX, 50 %, Gruppe oder Guardian. Code beschreibt diese Abläufe; sie sind nicht als gespielt oder bestanden ausgewiesen.",
+          "Keine komplette Kampagnen-, KI-, Schwierigkeit- oder Balancebewertung. Lange Werkzeugaktionen und Beobachtung liefen im Echtzeitkampf weiter; eine Niederlage begründet keine menschliche Erfolgsquote.",
+          "Kein physisches Touchgerät, keine Androidprüfung, keine Browser-/Gerätematrix, keine bestätigte Audio-/Haptik- oder Fullscreenprüfung. Fokus-/Hintergrundtab- und lange Sessions bleiben offen.",
+          "Keine aktuellen Builds oder automatischen Tests ausgeführt, keine Debug-Siege, Debug-Freigaben oder Autoplay-Simulation verwendet. Keine früheren Testscores oder Qualitätsberichte als aktuelle Ergebnisse übernommen.",
+          "Kein vollständiger Performance-, Accessibility-, Security- oder Portal-SDK-Audit; konkrete Ursache des Resultüberlaufs nicht vermessen, kein Fix umgesetzt.",
+          "Keine Spieler-, Akquisitions-, Retention-, Reichweiten- oder Umsatzdaten. Angezeigte Rundendauer/Captures gehören nur zu diesem Bedienversuch und werden nicht als Produkt-KPI geführt."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Geschützter, konkret erklärter Ersteinzug",
+          "detail": "Kampagne und Tutorial benennen blaue Zielbasis, orange Quelle und Zahlenfelder. Mission I wartet bis zum ersten gültigen Befehl; ein tatsächlicher Drag setzte den Echtzeitkampf in Gang."
+        },
+        {
+          "title": "Eigenständige Optik und erkennbare Besitzfarben",
+          "detail": "Die betrachtete Küsten-/Wiesenkarte verbindet detailreiche Landschaft mit orange/blauen Feldern und gut zuordenbaren Zahlen. Desktop-Dossier und Kampagnenatlas geben dem einfachen Taktikkern eine ausgearbeitete Rahmung; die schmale Ansicht lässt das Brett groß sichtbar."
+        },
+        {
+          "title": "Bedienbarer Rundenkern mit nachvollziehbarem Neustart",
+          "detail": "Truppenbewegung, Eroberungen, laufende Zähler, Niederlage mit Grund und neu aufgebaute Startwerte wurden tatsächlich erlebt. Restart und Map funktionierten im geprüften Ablauf. Das belegt diesen Pfad, nicht die gesamte Kampagne."
+        }
+      ],
+      "findings": [
+        {
+          "id": "hexfront-mobile-info",
+          "title": "Mobile Spieler verlieren Regel- und Versorgungskontrolle",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Die schmale Ansicht ist bedienbar, verbirgt aber die Sidebar mit Ziel/Regel, Zeit/Phase und Feldtypen. Der standardmäßig aktive Auto-Supply-Schalter und seine Erklärung sind während des mobilen Kampfes nicht zugänglich; obere Truppen-/Feldzähler bleiben sichtbar.",
+          "evidence": "Live bei 391 × 844: 100 %, Restart, Map und Fullscreen in separater Mobilebar; keine Sidebar und kein Versorgungsschalter. main styles.css:269–280 blendet Sidebar aus; Desktop-Dock liegt in Mediaquery ab Zeile 726; index.html:230–236 hat keine Auto-Supply-Kontrolle.",
+          "limitation": "Schmale Browserbedienung, kein physisches Touchgerät und keine Nutzerbefragung. Es fehlen nicht sämtliche Statuswerte; Kampagne und erster Tutorialhinweis erklären bereits den Einstieg.",
+          "recommendation": "Eine kurze erreichbare Info-/Steuerungsansicht für Ziel, Feldtypen und Versorgung anbieten und den aktiven Versorgungsstatus mobil erkennbar beziehungsweise kontrollierbar halten.",
+          "sourceDocs": [
+            "analysen/hexfront/Grundanalyse.md",
+            "analysen/hexfront/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "hexfront-reading-pause",
+          "title": "Nach dem ersten Zug läuft der Kampf beim Nachlesen weiter",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die reale Orientierung konkurriert nach dem ersten Zug mit Gegner, Wachstum und Versorgung. Normales HUD-Lesen beziehungsweise Dock-Zuklappen pausiert nicht; eine allgemeine Pause-/Weiter-Funktion wurde in den gezielt gelesenen aktiven Pfaden nicht gefunden.",
+          "evidence": "Öffentliche Beobachtung mit fortlaufendem Echtzeitkampf. main HexfrontApp.ts:208–228 pausiert nur über waitingForFirstMove oder waitingForBriefing; CampaignUI.ts:59–60 klappt lediglich CSS um. Map/Escape setzt running=false und kehrt zur Kampagne zurück.",
+          "limitation": "Besonders lange Werkzeugrundreisen verstärken diesen Effekt. Daraus folgt keine Bewertung der KI oder normalen menschlichen Schwierigkeit. Das spätere Guardian-Briefing als Sonderpause wurde nur aus Quelle beschrieben.",
+          "recommendation": "Kurze Regeln vor dem ersten Zug beziehungsweise einen klaren Pause-/Infozustand als kleinen Kandidaten prüfen. Wenige neue Spieler sollen ohne Hilfe starten; Balanceänderungen nicht aus dem Werkzeugtest ableiten.",
+          "sourceDocs": [
+            "analysen/hexfront/Grundanalyse.md",
+            "analysen/hexfront/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "hexfront-troop-feedback",
+          "title": "Truppenzahlen verbinden mehrere Mechanismen, die knapper erklärt werden können",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Manueller Befehl zieht Einheiten sofort ab, Reise und Kampf folgen später. Gleichzeitig wirken Wachstum und Auto-Supply. Feedback ist vorhanden; die sichtbare Kurzform hinten 20 % / vorne 36 % benennt nicht die tatsächliche Bezugsgröße Geländekapazität und Mindestreserve 6.",
+          "evidence": "main GameState.ts:74–82; MovementSystem.ts:39–47; CombatSystem.ts:21–30/64–83; SupplySystem.ts:36–46/120–132. BoardRenderer.ts:197–200/568–572 zeichnet reisende Armeen und Zahlen. Prozentwerte beziehen sich auf terrainCapacity, nicht aktuelle Truppen.",
+          "limitation": "Kein belegter Eingabe-/Rechenfehler und keine bestätigte Verwirrung echter Nutzer. Hörbarkeit und reale Touch-Rückmeldung bleiben ungeprüft. Der öffentliche Deployment-Commit wurde nicht als identisch zum gelesenen main bewiesen.",
+          "recommendation": "Die vorhandenen Bewegungs-/Zahlenhinweise kurz erklären: Truppen reisen, Versorgung verteilt Überschuss durch eigene Felder und Reserven richten sich nach Kapazität. Verständnis mit wenigen Erstspielern prüfen, ohne umfassenden Umbau abzuleiten.",
+          "sourceDocs": [
+            "analysen/hexfront/Grundanalyse.md",
+            "analysen/hexfront/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "hexfront-result-overflow",
+          "title": "Der Desktop-Niederlagendialog zeigt horizontalen Überlauf",
+          "evidenceType": "runtime",
+          "priority": "low",
+          "detail": "Ein horizontaler Scrollbalken erscheint am unteren Rand des tatsächlichen Niederlagendialogs bei 1281 × 800. Grund, Zeit, Captures und Try Again/Map bleiben lesbar; Retry funktionierte.",
+          "evidence": "Echte Aufnahme screenshots/defeat-desktop.jpg. main styles.css:1119–1124 verwendet overflow:auto; überstehende Dekoration bei100–103 ist ein Diagnoseansatz. Verursachendes Element wurde nicht vermessen.",
+          "limitation": "Ein begrenzter Layoutbefund; kein belegter Abbruch oder verlorener Fortschritt. Siegdialog, mobile Resultansicht, Übersetzungen und alle Querformate wurden nicht geprüft. Kein Fix ist umgesetzt.",
+          "recommendation": "Überlauf gezielt eingrenzen und klein korrigieren; Niederlage und später Sieg bei beiden Ansichtsgrößen sowie Try Again/Map erneut prüfen.",
+          "sourceDocs": [
+            "analysen/hexfront/Grundanalyse.md",
+            "analysen/hexfront/Quellenpruefung.md",
+            "analysen/hexfront/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "hexfront-campaign-count",
+          "title": "Zehn Stationen werden gezeigt, main gibt neun Karten frei",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Kampagne zeigt 10 MAPS und Gesamtfortschritt 0/10. Level X ist SOON; der gelesene main enthält zehn Leveldefinitionen, begrenzt normale Freigabe auf neun und deaktiviert den Start der zehnten Station.",
+          "evidence": "Öffentlicher Kampagneneinstieg und Coming-Soon-Anzeige gesehen. main levels/index.ts:13 enthält zehn Definitionen; CampaignAtlas.ts:8 RELEASED_CAMPAIGN_LEVELS = 9; CampaignUI.ts:228–237 zeigt Coming Soon und disabled Play.",
+          "limitation": "Neun freigegeben bedeutet nicht neun qualitativ fertig geprüfte oder fehlerfreie Karten. Der Grundcheck hat die spätere Kampagne nicht erreicht und bestätigt die Bundlegleichheit nicht.",
+          "recommendation": "Den tatsächlichen Veröffentlichungsumfang klar als neun spielbare Karten plus eine angekündigte Station benennen, solange dies dem aktuellen Deployment entspricht.",
+          "sourceDocs": [
+            "analysen/hexfront/Grundanalyse.md",
+            "analysen/hexfront/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "hexfront-action-entry",
+          "order": 1,
+          "title": "Mobile Orientierung und Versorgungsverständnis kurz ergänzen",
+          "detail": "Missionsziel/Regeln und Versorgungsstatus mobil erreichbar machen; Reise, Wachstum und automatische Verteilung knapp erklären. Einen Pause-/Infozustand als kleinen Kandidaten prüfen. Bestehende Optik und Spielfeldhierarchie als Grundlage nutzen.",
+          "status": "proposed",
+          "validation": "Nach tatsächlicher Umsetzung neue Desktop-/schmale Runde starten; Versorgung mobil erkennen/steuern, Pause und Weiter gezielt prüfen. Wenige neue Spieler sollen ohne Erklärung gültig ziehen und den Zweck der Zahlen/Versorgung beschreiben können. Keine Balanceänderung aus dem langsamen Werkzeugtest ableiten."
+        },
+        {
+          "id": "hexfront-action-presentation",
+          "order": 2,
+          "title": "Resultüberlauf und Kartenumfang präzisieren",
+          "detail": "Die konkrete überlaufende Resultbox diagnostizieren, klein korrigieren und neun freigegebene Karten gegenüber der angekündigten zehnten klar benennen. Keine Reparatur ist bisher erfolgt.",
+          "status": "proposed",
+          "validation": "Niederlage/Sieg bei 1281 × 800 und 391 × 844 ohne unbeabsichtigten horizontalen Dialogüberlauf prüfen. Retry/Map weiter bedienbar; Coming-Soon-Station bleibt zutreffend gekennzeichnet und nicht versehentlich startbar."
+        },
+        {
+          "id": "hexfront-action-win-path",
+          "order": 3,
+          "title": "Echten Sieg- und Fortschrittsweg gezielt nachprüfen",
+          "detail": "Mission-I-Victory, Freischaltung/erster 50-%-Befehl in II und gespeicherten Fortschritt nach Reload tatsächlich bedienen. Später Gruppe/Guardian und weitere Kampagnenkarten getrennt ergänzen.",
+          "status": "proposed",
+          "validation": "Ohne Debug-Sieg/Debug-Freigabe gewinnen; Ergebnis/Weiter, Karte II, 50-%-Auswirkung und Reload-Fortschritt prüfen. Sourcebefund und tatsächlichen Durchlauf weiterhin getrennt halten; Schwierigkeit unter menschlichem Echtzeittempo beurteilen."
+        }
+      ],
+      "openQuestions": [
+        "Welcher Deployment-Commit beziehungsweise welches Bundle wurde auf Pages tatsächlich gespielt?",
+        "Verstehen neue Spieler Reisezeit, automatisches Wachstum, Versorgung und Kapazitätsreserven ohne Hilfe?",
+        "Funktionieren ein echter Sieg, Freischaltung von II und gespeicherter Fortschritt nach Reload?",
+        "Wie verhält sich das Spiel auf einem tatsächlichen kleinen Touchgerät, einschließlich Versorgungskontrolle und Zielinformationen?",
+        "Wie funktionieren spätere Modi/Guardian, Karten II–IX, Audio, Fokus-/Hintergrundfälle und längere Sessions?",
+        "Welches Element verursacht den Ergebnisdialogüberlauf, und bleibt ein späterer kleiner Fix in Sieg/Niederlage und beiden Ansichtsgrößen stabil?"
+      ],
+      "documents": [
+        "analysen/hexfront/Grundanalyse.md",
+        "analysen/hexfront/Quellenpruefung.md",
+        "analysen/hexfront/runtime/README.md",
+        "analysen/hexfront/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
+      ]
+    },
+    {
+      "id": "galalaxy",
+      "projectId": "galalaxy",
+      "title": "GALALAXY – abgeschlossene begrenzte Spiel-Grundanalyse",
+      "status": "reviewed",
+      "summary": "Der kurze öffentliche Lauf zeigte einen funktionierenden Kern aus Bewegung, Autofeuer, XP und einer konkret sichtbaren Upgradeentscheidung. Pause, Fortsetzen, Ergebnis und Neustart wurden tatsächlich bedient. Kleine HUD-Schriften und die erste Zielorientierung sind die sinnvollsten begrenzten Ansatzpunkte; unvollständige Tastaturmenüs sind ein zusätzlicher statischer Codebefund. Ein eigener Lauf endete nach 0:52 in Sektor I. Boss, spätere Sektoren, physischer Touch und Audio wurden nicht geprüft; aus dem Ende wird kein Balance- oder Langzeiturteil abgeleitet. Originalspiel und Portalpakete unverändert, Maßnahmen offen.",
+      "scope": {
+        "checked": [
+          "Öffentliches Browsergame https://emfau88.github.io/galalaxy/ am 09.10.2026 bei 1281×800 sowie in schmaler Ansicht 391×844; kein horizontaler Überlauf bei 391 Pixeln.",
+          "Tatsächlicher Start, gehaltene WASD-Bewegung, sehr kurzer Drag, Autofeuer, erste konkrete Upgradeauswahl und deren sichtbare Wirkung.",
+          "Multi Cannon gewählt: Schiffbild und zwei parallele Schussbahnen danach beobachtet. Pause und Resume geklickt, eigener kurzer Lauf bis SHIP DESTROYED, danach Play Again mit frischen Startwerten.",
+          "Eigene Sitzung endete bei 0:52, Score 597, 18 Kills, Sektor I, 0/4 abgeschlossenen Sektoren. Bereits vorhandener Bestwert 2334 bleibt getrennt und ist kein Testergebnis.",
+          "Gezielte statische Gegenprüfung nach der Bedienung am eingefrorenen öffentlichen main-Commit f3a261cff049f5f94b03019c72f5047be2bf91c2: Inputs, XP/Upgradeeffekt, Ressourcen, Pause/Neustart, frühe Spawnphasen, HUD und Tastaturmenüpfade.",
+          "Lokaler HEAD 24c96c595bb62905e2e1594824b489378c5d2e3b, Branch codex/y8-integration und sechs vorhandene Änderungen separat dokumentiert. 18 öffentliche Quelldateien ausschließlich in ignorierter Prüfablage; Originalprojekt unverändert.",
+          "Fünf unveränderte öffentliche Browseraufnahmen mit Datum, Viewport und SHA256 im Screenshotmanifest."
+        ],
+        "notChecked": [
+          "Bosskampf/-abschluss, Sektoren II–IV, Keystones, alle Upgradeoptionen, Sieg und vollständige Kampagne nicht gespielt.",
+          "Kein physisches Touchgerät, keine längere Fingerführung, keine gemessene Eingabelatenz; die schmale Browseransicht ist kein nativer Gerätetest.",
+          "Audio nicht gehört, Fullscreen nicht bedient, reine Tastaturmenüs sowie Blur-/Tabwechselpause nicht praktisch geprüft. Menübefund ist statisch.",
+          "Keine Langzeitmotivation, Nutzerreaktionen, belastbare Schwierigkeits-/Balancemessung, Markt- oder Monetarisierungsbewertung.",
+          "Keine kalten Netz-/Cachemessungen, Geräteperformanceprofilierung oder vollständige Ressourcenprüfung. Keine automatischen Tests ausgeführt.",
+          "Byteidentität aller Live-Ressourcen mit dem öffentlichen main-Commit nicht vollständig bewiesen; abweichender lokaler Arbeitsstand nicht als Live-Quelle ausgegeben.",
+          "Keine Originalspielquelle, Portalpakete oder Stores geändert; keine Verbesserungen umgesetzt. Sitzungsscore ist kein Nutzungs-KPI."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Funktionierender Kern im eigenen Lauf",
+          "detail": "WASD-Bewegung, kurzer Pointerkontakt und Autofeuer waren tatsächlich wirksam; ein langer vorgeschalteter Ablauf war für den bedienten Start nicht nötig."
+        },
+        {
+          "title": "Upgrade mit unmittelbar sichtbarer Wirkung",
+          "detail": "Die Auswahl zeigte konkrete Vorher-/Nachher-Werte und Schiffbilder. Gewählte Multi Cannon erzeugte eine zweite parallele Schussbahn und ein verändertes Schiffbild."
+        },
+        {
+          "title": "Unterscheidbarer Kampf und eigener Stil",
+          "detail": "Eigene und gegnerische Schüsse waren farblich unterscheidbar, Gegner hatten verschiedene Spriteformen. Neonrahmen und Portraitfeld ergeben eine konsistente visuelle Richtung; dichte spätere Kämpfe bleiben offen."
+        },
+        {
+          "title": "Unterbrechung und Neustart bedienbar",
+          "detail": "Pause und Tap To Resume funktionierten im bedienten Weg. Ergebnis benennt Ursache/Sektor/Module; Play Again setzte den Lauf auf frische Startwerte zurück."
+        }
+      ],
+      "findings": [
+        {
+          "id": "galalaxy-hud-readability",
+          "title": "Kleine Statusdetails erschweren den schnellen Blick in der schmalen Ansicht",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Shield, Hull, XP, Zeit und Bestwert sind im oberen HUD sehr kompakt. Bei391 Pixeln benötigen die kleinen Labels und Detailzahlen einen gezielten Blick; die wichtigste Überlebensinformation sollte beim Ausweichen leichter erfassbar sein.",
+          "evidence": "Eigene schmale Browseransicht und battle-mobile-Aufnahme; Quellengegenprüfung hudRenderer.js:38,53,85,93,135,164 zeigt 8–11 Designpixel. Die Spielfläche skaliert proportional statt diese Texte unabhängig zu vergrößern.",
+          "limitation": "Keine vollständige Kontrast-/Accessibilitymessung, kein physischer Touchtest und kein nachgewiesener Spielerabbruch. Bosswarnung nicht im echten Bosskampf erlebt.",
+          "recommendation": "Hull/Shield und kritischen Zustand deutlicher priorisieren, XP verständlich sichtbar halten und sekundäre Zahlen ruhiger ordnen. Zuerst kleines HUD-Update prüfen; vorhandenen Grafikstil erhalten.",
+          "sourceDocs": [
+            "analysen/galalaxy/Grundanalyse.md",
+            "analysen/galalaxy/Quellenpruefung.md",
+            "analysen/galalaxy/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "galalaxy-first-goal",
+          "title": "Die erste kurze Zielorientierung bleibt hinter der konkreten Upgradeauswahl zurück",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Der Start vermittelt Bewegung, Autofeuer und Überleben. Sektornamen, große Rahmen und Fleet-Spruch geben Atmosphäre; Zweck von XP und nächstes kurzes Fortschrittsziel sind weniger unmittelbar erklärt als die später sichtbaren Upgradevorschauen.",
+          "evidence": "Eigener Titelstart mit Drag/WASD/Auto-fire/Survive und vier Sektornamen; danach konkrete erste Upgradeauswahl mit sichtbarem Multi-Cannon-Effekt. Im Code bereits gestaffelter Sektor-I-Einstieg, frühe Feuersperre und späteres Bossziel vorhanden.",
+          "limitation": "Gestaltungs-/UX-Einschätzung aus erstem Eindruck, keine Nutzerstudie. Kein vollständiges fehlendes Tutorial behauptet und kein Urteil über die vorhandene Schwierigkeit.",
+          "recommendation": "Einen kurzen Hinweis XP sammeln → Upgrade wählen → Sektorboss erreichen und eine klar lesbare nächste Zielanzeige prüfen. Greifbare Vorher-/Nachher-Karten erhalten; kein langes Tutorial aus dem Ersttest ableiten.",
+          "sourceDocs": [
+            "analysen/galalaxy/Grundanalyse.md",
+            "analysen/galalaxy/Quellenpruefung.md",
+            "analysen/galalaxy/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "galalaxy-keyboard-menus",
+          "title": "WASD funktioniert, Tastaturmenüs sind im geprüften Code nicht vollständig abgedeckt",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Space/Enter setzt nur einen Tap an der festen Canvasmitte. Diese Koordinate trifft weder Titelstart noch Play Again und bei Upgrades nur die mittlere Karte. Die gezeichneten Menüs besitzen im betrachteten Einstieg keine individuellen semantischen HTML-Buttons.",
+          "evidence": "input.js:121–126 erzeugt 210/380; game.js:723–726 erwartet Titel-Y 500–610 beziehungsweise Play-Again-Rechteck; menuRenderer.js:5 setzt Play Again auf Y 554–620. upgrades.js:20–29,457–465 behandelt drei Klickrechtecke ohne freie Tastaturauswahl. Live-Browserstruktur zeigt Canvasbild.",
+          "limitation": "Start/Upgradeauswahl/Neustart ausschließlich per Tastatur in dieser Sitzung nicht ausgeführt. Gezielter statischer Befund, kein behaupteter reproduzierter Komplettausfall oder vollständiger Accessibilityaudit.",
+          "recommendation": "Kleine Tastaturgegenprüfung ausführen; bei Bestätigung eindeutige Aktionen für Start, drei Upgrades, Pause/Resume und Neustart beziehungsweise semantische Menübuttons ergänzen.",
+          "sourceDocs": [
+            "analysen/galalaxy/Grundanalyse.md",
+            "analysen/galalaxy/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "galalaxy-desktop-format",
+          "title": "Portraitformat funktioniert, auf Desktop bleibt eine schmale Spielbühne",
+          "evidenceType": "assessment",
+          "priority": "low",
+          "detail": "Bei 1281×800 war das Spielfeld ungefähr 440 Pixel breit, umgeben von großen Seitenflächen. Mobil passte es ohne horizontalen Überlauf. Konsistentes Portraitformat ist nachvollziehbar; freie Desktopfläche könnte bei Bedarf für ruhige Orientierung dienen.",
+          "evidence": "Eigene Desktopstart-/Upgradeansicht und mobile Ansicht; game.js:184–213 passt das 420×760-Design proportional in den Viewport ein.",
+          "limitation": "Gestaltungsabwägung, kein technischer Defekt und kein nachgewiesener Conversionverlust. Fullscreen nicht geprüft. Breiteres Spielfeld würde die Spielgeometrie verändern und ist nicht automatisch besser.",
+          "recommendation": "Zuerst Lesbarkeit und kurzen Zweckhinweis verbessern. Erst danach bei Bedarf Desktopgrößenwirkung beziehungsweise wenige Hinweise außerhalb der Kampfzone prüfen; mobile Geometrie erhalten und gegenprüfen.",
+          "sourceDocs": [
+            "analysen/galalaxy/Grundanalyse.md",
+            "analysen/galalaxy/Quellenpruefung.md",
+            "analysen/galalaxy/screenshots/manifest.json"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "galalaxy-action-readability",
+          "order": 1,
+          "title": "Lesbarkeit und ersten Fortschritt konkretisieren",
+          "detail": "Kleines HUD-/Hinweisupdate skizzieren: Überleben, XP-Nutzen und nächstes Sektorziel. Die konkreten Vorher-/Nachher-Upgradevorschauen und sichtbare Schusswirkung erhalten.",
+          "status": "proposed",
+          "validation": "Erste 30 Sekunden bei Desktop und 391 Pixeln vergleichen: Hull/Shield-Zustand, XP-Zweck und nächstes Ziel müssen schnell erfassbar sein. Keine Nutzerwirkung ohne echte Nutzermessung behaupten."
+        },
+        {
+          "id": "galalaxy-action-keyboard",
+          "order": 2,
+          "title": "Menüwege ausschließlich per Tastatur gegenprüfen",
+          "detail": "Start, freie Wahl der drei Upgrades, Pause/Resume und Neustart praktisch testen. Nur bestätigte Lücken anschließend mit eindeutigen Aktionen beziehungsweise kleinen semantischen Menübuttons schließen.",
+          "status": "proposed",
+          "validation": "Alle genannten Schritte ohne Mouse/Touch erreichen und Auswahl sichtbar/fokussiert prüfen. Statischer Befund derzeit noch keine reproduzierte Menüprüfung und kein umgesetzter Fix."
+        },
+        {
+          "id": "galalaxy-action-touch-boss",
+          "order": 3,
+          "title": "Echte Touchführung und ersten Boss prüfen",
+          "detail": "Begrenzter Test auf einem echten Handy und ein Lauf bis zum ersten Boss: längere Fingerführung, schnelle Richtungswechsel, Ressourcenverständnis, Warnung, Bossphase und gegebenenfalls Sektorwechsel; Audio tatsächlich hören.",
+          "status": "proposed",
+          "validation": "Gerät, Spielstand und Beobachtungen festhalten. Erst danach konkrete Balancefragen auswählen; kein Schwierigkeit-, Langzeit- oder Monetarisierungsurteil aus Werkzeugpausen ableiten."
+        }
+      ],
+      "openQuestions": [
+        "Wie gut funktionieren längere Fingerführung, Fingerabdeckung und schnelle Richtungswechsel auf einem echten Touchgerät?",
+        "Wie verständlich sind Heilung, Shield-Erholung und XP-Nutzen für neue Spieler während aktiven Ausweichens?",
+        "Wie gut sind erste Bosswarnung, Angriffsmuster, Belohnung und Sektorwechsel tatsächlich im Spiel lesbar?",
+        "Bestätigen sich fehlende freie Tastaturwege für Titelstart, alle drei Upgrades und Neustart im Live-Gegencheck?",
+        "Welche späteren Builds, Sektoren und Herausforderungen tragen Wiederkehr über den ersten kurzen Lauf hinaus?",
+        "Welche konkrete Veröffentlichung entspricht vollständig dem gelesenen öffentlichen main und wie soll der abweichende lokale Y8-Arbeitsstand weitergeführt werden?"
+      ],
+      "documents": [
+        "analysen/galalaxy/Grundanalyse.md",
+        "analysen/galalaxy/Quellenpruefung.md",
+        "analysen/galalaxy/runtime/README.md",
+        "analysen/galalaxy/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
+      ]
+    },
+    {
+      "id": "rooster-rage",
+      "projectId": "rooster-rage",
+      "title": "ROOSTER RAGE – abgeschlossene begrenzte Spiel-Grundanalyse",
+      "status": "reviewed",
+      "summary": "Ein eigenständiger Cartoon-Survivor mit im kurzen öffentlichen Lauf funktionierenden Grundpfaden: WASD, Autofeuer, XP, erste Upgradeentscheidung und sichtbar gewählter Support-Chick-Begleiter. Pause/Continue, Ergebnisbelohnung, Return to Henhouse und neuer Run waren bedienbar. Sinnvolle kleine Ansatzpunkte sind die Henhouse-/Upgradehierarchie und eine optionale erweiterte Settingsgruppe. Das bereits vorhandene Profil begrenzt das Urteil zum frischen Einstieg. Der eigene Lauf endete nach angezeigten 0:47 mit 45 Kills und +5 kernels; daraus folgt kein Härte-/Balanceurteil. Boss, physischer Touch, Audio und Langzeitwirkung bleiben offen; keine Verbesserungen umgesetzt.",
+      "scope": {
+        "checked": [
+          "Öffentliche Browserfassung https://emfau88.github.io/RoosterRage/ am 09.10.2026 bei 1281×800 und in schmaler Ansicht 391×844.",
+          "Tatsächlicher Standard Run mit Barnyard Ace in Harvest Yard: Start 100 HP/Welle 1, gehaltene WASD-Bewegung, Kameraführung und Autofeuer; erste Upgradeauswahl um 0:31/Welle 2/28 Kills/100 HP.",
+          "Support Chick R1 gewählt: sichtbarer Begleiter, Ace L2, zwei aktive Einträge und New-Ability-Bestätigung. Target Egg R1→R2 mit Twin Lock nur angeboten, nicht gewählt.",
+          "Pause/Settings stoppte im bedienten Weg Kampf und angezeigte Zeit; Continue setzte fort. Schmaler Settingsdialog scrollbar, Continue/Main menu erreichbar.",
+          "Eigener Lauf bis Game Over bei 0:47/45 Kills: +5 kernels, Balance 131 und +45 XP bei Mastery 3; Return to Henhouse und neuer Start mit 100 HP/Zeit 0/Welle 1 bedient.",
+          "Bereits vorhandene 126 kernels, Mastery 3/5, First clear complete und Best Hunt 1131 ausdrücklich vom heutigen Ergebnis getrennt. Kein Profilreset oder Talentkauf; regulärer neuer Rundenzuwachs entstand im Spiel.",
+          "Kurzer Browser-Pointerdrag am Joystick bewegte geringfügig; zweiter Start bei 0:17 mit 100 HP und 15 Kills beobachtet.",
+          "Gezielte aktive Quellengegenprüfung nach dem Spielen: 16 Spieldateien ohne Diff zum öffentlichen master-Commit 328843a042f19f551f53e9ea17e9922a7100417e. Tatsächlich ausgelieferte build-info.json, master-HEAD und erfolgreicher Pages-Deploylauf entsprechen diesem Commit.",
+          "Primärer lokaler Branch codex/portal-feedback-polish mit gleichem HEAD, fünf bestehenden Änderungen und fünf unversionierten Y8-Dateien getrennt. Zweiter Checkout ROOSTER mit älterem HEAD und vielen Änderungen nur zugeordnet.",
+          "Fünf neue unveränderte öffentliche Browseraufnahmen: Henhouse, Upgrades, mobile Settings, mobiler Kampf, mobiles Ergebnis; Herkunft und Hashes im Manifest."
+        ],
+        "notChecked": [
+          "Keine frische Erstbenutzerführung: Profil bereits fortgeschritten; vorhandene Talentränge nicht vollständig erhoben. Keine Härte-/Balancebewertung aus dem kurzen bewusst gesteuerten Lauf.",
+          "Bosskampf/-abschluss, spätere Wellen, Sieg, vollständige Karten-/Expeditionsrunde, alle Upgrades/Evolutionen und Talentkauf nicht gespielt.",
+          "Kein physisches Touchgerät oder längere Fingerführung. Schmale Browseransicht und kurzer Pointerkontakt sind kein echter Touchtest.",
+          "Audio nicht gehört; Fullscreen, reine Tastaturmenüs, vollständige Focus-/Tabwechselpause und Diagnoseexport nicht praktisch geprüft.",
+          "Keine Langzeitmotivation, echten Nutzerreaktionen, Produkt-KPIs, Markt-/Monetarisierungsbewertung, Performance-/Netz-/Cachemessung oder komplette Ressourcenprüfung.",
+          "Keine automatischen Tests oder lokalen Builds ausgeführt. Kein ursprünglicher Spielcode, Portalpaket oder Store verändert; kein Fix umgesetzt und kein Profil künstlich verändert.",
+          "Buildmetadaten und 16 gezielt gleiche Spieldateien beweisen nicht Byteidentität sämtlicher Live-Ressourcen mit dem gesamten dirty lokalen Arbeitsstand.",
+          "Kurzzeitig rote Trefferframes nach Schaden sind nach normalem Ergebnis und Neustart kein belegter bleibender mobiler Renderfehler."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Eigenständiger visueller Charakter",
+          "detail": "Cartoonhahn, Hof, Gegner und goldene UI-Rahmen bilden im betrachteten Start/Kampf eine wiedererkennbare Produktwelt."
+        },
+        {
+          "title": "Wirksamer Kampfgrundweg",
+          "detail": "WASD, Kameraführung und Autofeuer funktionierten im eigenen Lauf; Desktop-HUD machte HP, Zeit, Welle und Kills erfassbar."
+        },
+        {
+          "title": "Konkrete und sichtbar wirksame erste Wahl",
+          "detail": "Lesbare DOM-Upgradebuttons benennen Rang und Nutzen. Der tatsächlich gewählte Support Chick wurde anschließend als Begleiter im Kampf sichtbar."
+        },
+        {
+          "title": "Unterbrechung, Ergebnis und Rückkehr bedienbar",
+          "detail": "Pause/Continue, scrollbare mobile Settings und Result/Return to Henhouse arbeiteten im geprüften Weg. +5 kernels und +45 XP wurden nach dem eigenen Verlust sichtbar; ein neuer Run setzte Laufwerte zurück."
+        }
+      ],
+      "findings": [
+        {
+          "id": "rooster-rage-hub-hierarchy",
+          "title": "Der Henhouse zeigt viele Systeme neben dem deutlichen Startbutton",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "START RUN ist klar hervorgehoben. Gleichzeitig stehen vier Hubtabs, Hahn-/Masteryinformationen, Kartenwechsel, vier Expeditionen, Best Hunt und Belohnungen in der Startansicht. Für das betrachtete bestehende Profil wirkt dies relativ beschäftigt.",
+          "evidence": "Heutige öffentliche Henhouse-Desktopaufnahme; aktives HUD.js:559 ordnet Play/Roosters/Talents/Archive. arenaDefinitions.js:9 definiert drei Karten, challengeDefinitions.js:3 vier Expeditionen.",
+          "limitation": "UX-Einschätzung, kein nachgewiesener Abbruch. Neues Profil und dessen frühe Freischaltungen wurden nicht geprüft; vorhandene Breite kann erfahreneren Spielern helfen.",
+          "recommendation": "Standard Run und gewählten Hahn als ruhigen Standardweg betonen; zusätzliche Karten-/Expeditionsinformation nachgeordnet erreichbar halten. Vor Änderungen am frischen Profil gegenprüfen.",
+          "sourceDocs": [
+            "analysen/rooster-rage/Grundanalyse.md",
+            "analysen/rooster-rage/Quellenpruefung.md",
+            "analysen/rooster-rage/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "rooster-rage-upgrade-hierarchy",
+          "title": "Evolutionsrezepte konkurrieren schon bei der ersten lesbaren Upgradeauswahl",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die drei großen Karten nennen konkrete Zahlen und klaren unmittelbaren Nutzen. Gleichzeitig bringen Rangfolgen, Twin Lock, Kategorien und EVO-Rezepte zusätzliche Systembegriffe in die erste schnelle Entscheidung.",
+          "evidence": "Heutige erste Upgradeaufnahme mit Target Egg R1→R2 und Support Chick R1. HUD.js:354 ergänzt Evolutionsrezepte; upgradeDefinitions.js:256 enthält Begleiter und 17 Schaden auf Rang 1. Support Chick tatsächlich gewählt und sichtbar, Target Egg R2 nicht gewählt.",
+          "limitation": "Kein Upgradefehler und keine gemessene Verständnisquote. Rezepte können Builds planbar machen; Evolutionen und spätere Ränge wurden nicht gespielt.",
+          "recommendation": "Unmittelbare Wirkung und nächster Rang zuerst; Evolutionsplan als zusätzliche beziehungsweise aufklappbare Information prüfen. Genaue Zahlen und bestätigte sichtbare Begleiterwirkung erhalten.",
+          "sourceDocs": [
+            "analysen/rooster-rage/Grundanalyse.md",
+            "analysen/rooster-rage/Quellenpruefung.md",
+            "analysen/rooster-rage/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "rooster-rage-settings-advanced",
+          "title": "Diagnose und Detailaudio lassen sich optional ruhiger gruppieren",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Der bediente mobile Settingsdialog ist scrollbar und hat erreichbare Hauptaktionen. Fünf Audiokanäle und der im normalen Spielmenü eingebundene Pickup report verlängern trotzdem allgemeine Einstellungen.",
+          "evidence": "Mobile Settingsbedienung und Aufnahme; HUD.js:1226 erzeugt Master/Sound effects/UI/Music/Ambience, HUD.js:1274 die normale Diagnosegruppe mit Exportbutton; GameScene.js:331 verbindet den Export.",
+          "limitation": "Aktiver Quellcodebefund mit tatsächlich geprüftem Settingsweg, kein kaputtes Menü. Audio nicht gehört, Diagnoseexport nicht ausgeführt, kein nachgewiesener Nutzerverlust.",
+          "recommendation": "Häufige Einstellungen direkt belassen; Diagnose und optional Detailaudio unter Erweitert anbieten. Komfortschalter für Shake, Hit flashes und Vibration sowie Continue schnell zugänglich halten.",
+          "sourceDocs": [
+            "analysen/rooster-rage/Grundanalyse.md",
+            "analysen/rooster-rage/Quellenpruefung.md",
+            "analysen/rooster-rage/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "rooster-rage-fresh-profile-boundary",
+          "title": "Bestehender Fortschritt lässt frischen Einstieg und Basisschwierigkeit offen",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Vor dem Test bestanden 126 kernels, Mastery 3/5, First clear complete und Best Hunt 1131. Das Profil wurde nicht zurückgesetzt. Daher zeigt die heutige Sitzung nicht den kompletten Erstbenutzerweg.",
+          "evidence": "Henhouseaufnahme vor Testbeginn; MetaProgressionSystem.js:174 lädt Fortschritt und :408/:419 berechnet und verwendet gespeicherte Talentboni. RunStateSystem.js:264 zeigt mindestens einen Versorgungshinweis nur einmal.",
+          "limitation": "Prüfgrenze, kein Produktfehler oder behauptetes fehlendes Tutorial. Mastery/Kernbestand beweisen keine gekauften Talente; konkrete Talentränge wurden nicht vollständig erhoben. Der kurze Gang in Gegner ergibt kein Härteurteil.",
+          "recommendation": "Getrennten leeren Testkontext nutzen, ohne bestehenden Spielstand zu löschen. Fünf bis zehn Minuten echte Erstführung, XP/Versorgung, erste Wahl, Verlust und erneuten Start beobachten; Schwierigkeit erst danach gezielt fragen.",
+          "sourceDocs": [
+            "analysen/rooster-rage/Grundanalyse.md",
+            "analysen/rooster-rage/Quellenpruefung.md",
+            "analysen/rooster-rage/runtime/README.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "rooster-rage-action-fresh-touch",
+          "order": 1,
+          "title": "Frischen Einstieg und echten Handyweg begrenzt prüfen",
+          "detail": "Getrennten neuen Browserkontext verwenden, ohne vorhandenes Profil zu löschen. Erste fünf bis zehn Minuten plus längere Joystickführung und kurze Unterbrechung auf einem echten Handy beobachten.",
+          "status": "proposed",
+          "validation": "Spielstand und Gerät festhalten; verstehen neue Spieler Bewegung, Autofeuer, XP, Versorgung und erste Wahl? Fingerabdeckung/Richtungswechsel tatsächlich prüfen. Erst danach konkrete Härtefragen wählen; keine Langzeitwirkung aus kurzem Test ableiten."
+        },
+        {
+          "id": "rooster-rage-action-hierarchy",
+          "order": 2,
+          "title": "Henhouse und erste Upgradehierarchie konkretisieren",
+          "detail": "Kleines UX-Update skizzieren: ruhiger Standardstart, unmittelbare Upgradezahl vor Zusatzrezept. Vorhandene Spielsysteme und zugängliche Buildvorschau erhalten.",
+          "status": "proposed",
+          "validation": "Vorher/nachher bei Desktop und 391 Pixeln mit frischem Profil prüfen. Standardstart und erster Nutzen müssen schnell auffindbar bleiben; Rezepte bei Bedarf weiter erreichbar. Keine Verbesserung ohne Umsetzung als erledigt markieren."
+        },
+        {
+          "id": "rooster-rage-action-settings-boss",
+          "order": 3,
+          "title": "Erweiterte Einstellungen ordnen und Folgelauf bis zum Boss prüfen",
+          "detail": "Diagnose/Detailaudio optional gruppieren, häufige Komfortschalter und Continue direkt lassen. In begrenzter Folgeprüfung Audio tatsächlich hören sowie erste Bosswarnung, Muster und Ergebnis spielen.",
+          "status": "proposed",
+          "validation": "Pause/Continue und mobile Scrollbarkeit erhalten. Diagnoseexport nur bei konkretem Anlass prüfen. Boss-/Audiourteil erst nach Bedienung; weder Fix noch vollständige Kampagne derzeit behauptet."
+        }
+      ],
+      "openQuestions": [
+        "Wie sehen Erstführung und Freischaltungen in einem wirklich neuen Profil aus, und verstehen Neulinge XP und Versorgung?",
+        "Welche gespeicherten Talentränge waren im bestehenden Profil aktiv, und wie verändert ein leerer Einstieg das Kampfgefühl?",
+        "Wie gut funktionieren längere Joystickführung, Fingerabdeckung und schnelle Richtungswechsel auf einem echten Touchgerät?",
+        "Wie helfen Soundeffekte, Musik und Trefferfeedback bei tatsächlichem Hören während des Kampfs?",
+        "Wie verständlich sind erste Bosswarnung und Angriffsmuster, und tragen weitere Karten/Expeditionen die Wiederkehr?",
+        "Welcher lokale Portal-/Y8-Arbeitsstand soll später gegenüber dem aktuell geprüften master veröffentlicht werden?"
+      ],
+      "documents": [
+        "analysen/rooster-rage/Grundanalyse.md",
+        "analysen/rooster-rage/Quellenpruefung.md",
+        "analysen/rooster-rage/runtime/README.md",
+        "analysen/rooster-rage/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
+      ]
+    },
+    {
+      "id": "kesselkrawall",
+      "projectId": "kesselkrawall",
+      "title": "KESSELKRAWALL – abgeschlossene begrenzte Spiel-Grundanalyse",
+      "status": "reviewed",
+      "runtimeKind": "local_copy",
+      "summary": "Die ersten beiden tatsächlich gespielten Runden zeigen eine zusammenhängende Fantasy-Autobattler-Basis: geführter Einstieg, wirksame Käufe/Merges, lesbare Kampfbeiträge und sehr ordentliche schmale Darstellung. Zwei Siege, Marktbeginn Runde 3 und Reload/Fortsetzen wurden in einer sauberen lokalen main-Testkopie geprüft; vorhandener öffentlicher Save und Originalquelle blieben unangetastet. Ein kleiner praktischer Befund: Kauf ohne genug Gold wird korrekt abgelehnt, aber der Markt zeigt den gesetzten Fehlertext nicht. Mergelevel/Familienpunkte könnten knapper erklärt werden. Keine Gesamtbalance-, Langzeit- oder Monetarisierungsbewertung und keine Fixes umgesetzt.",
+      "scope": {
+        "checked": [
+          "Sauberer isolierter Export des öffentlichen main-Commits 83d17ab14ff265559b58652e9040eecef7d7ad51, gespielt auf http://127.0.0.1:8768/KesselKrawall/. Eigenständiger Loopback-HTTP-Helfer liefert die Exportdateien unverändert aus.",
+          "Quellen und Assets gegen Git-Blob-SHA1/SHA256 zugeordnet; 205 ausgewählte Dateien. Erfolgreiche isolierte Next-16.2.6-Kompilierung, TypeScript-Phase und statischer Export; ausgewählte Quelldateien nach Build unverändert.",
+          "Frischer Start bei Desktop 1281×800: Spielen, Einführung/Gegner, Markt, Chili und Egg kaufen, Itemdetail, erster automatischer Kampf, 1x/4x und Pause/Fortsetzen, tatsächlicher eigener Sieg in Runde 1.",
+          "Runde 2: Chili I→II automatisch gemergt mit konkretem Vorher-/Nachher-Overlay; Goldlöffel gekauft, Itemdetail und markierter Schutz-Nachbar in schmaler Ansicht 391×844; kein horizontaler Überlauf.",
+          "Zweiter tatsächlicher Sieg gegen Moor Martha bei 4x; Ergebnisbeiträge und Belohnung gesehen. Markt Runde 3: Egg II, aktiver Schutz-/Feuerbonus und zusätzliches Chili I neben vorhandenem II.",
+          "Tatsächlicher Drei-Gold-Kaufversuch bei einem Gold: keine gesehene visuelle/AX-Erklärung, kein Gold-/Itemverlust. Gratis-Neuwurf bedient; anschließender Preis 1 angezeigt.",
+          "Menüwechsel, Reload und Fortsetzen stellten Runde 3, drei Siegel, ein Gold, vier Zutaten und Synergien sichtbar wieder her.",
+          "Gezielte aktive Codegegenprüfung nach den Bedienbeobachtungen: Kaufgrenze/Feedback, Merge und Familiengewicht, Itemnachbarschaft, Beschleunigung/Pause und Speicherung.",
+          "Sieben unveränderte JPEG-Aufnahmen der lokalen Testfassung mit Herkunftsnachweis; ursprünglicher öffentlicher Runde-2-Save unverändert."
+        ],
+        "notChecked": [
+          "Runde-3-Kampf, alle acht Kampfrunden, Kampagnensieg, Niederlage/Siegelverlust, Vitrine und spätere Familien nicht gespielt.",
+          "Verkauf und Positionstausch nur als sichtbare Bedienwege/Preise betrachtet, nicht ausgeführt; Reserve und gesamte Item-/Merge-/Kampfmatrix nicht geprüft.",
+          "Kein physisches Touchgerät, kein gehörtes Audio, keine vollständigen Tastatur-/Accessibilityprüfungen, Netz-/Geräteperformance oder echte Spielerreaktionen.",
+          "Kein Langzeitmotivations-, Gesamtbalance-, Markt- oder Monetarisierungsurteil. Zwei Einstiegssiege beweisen weder zu leichte noch vollständig passende Schwierigkeit.",
+          "Nicht alle Speicher-Randfälle, alte Save-Migrationen, blockierter Speicher, Gerätewechsel oder Kampfwiederaufnahme geprüft.",
+          "Lokaler Export ist keine lückenlose Byteidentitätsbestätigung zur öffentlichen Pages-Auslieferung; lokaler Originalcheckout enthält bestehende Änderungen trotz gleichen HEADs.",
+          "Keine automatisierte Spieltestsuite, kein neuer Lintlauf und keine Balanceanalyse ausgeführt; der erfolgreiche Export ist ein technischer Buildnachweis.",
+          "Keine Originalspielquelle, Portalpakete oder öffentliche Spielstände verändert; keine Produktfixes umgesetzt. Ergebniszahlen sind Sitzungsbelege, keine Nutzungs-KPIs."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Eigenständiger Fantasyauftritt",
+          "detail": "Charakterkessel, Zutatenillustrationen und Markt-/Kampfumgebung ergeben einen zusammenhängenden Stil. Der eigene Aufbau bleibt dabei gut erkennbar."
+        },
+        {
+          "title": "Geführter Start und greifbare Merges",
+          "detail": "Einführung, Käufe, ausgegraute Angebote und Mergeoverlay reagierten im eigenen Lauf. Chili I→II zeigte konkret Schaden 4→9 und Takt 3,2→3,0 Sekunden."
+        },
+        {
+          "title": "Sehr ordentliche schmale Oberfläche",
+          "detail": "Drei kompakte Marktkarten, erreichbare feste Hauptaktionen und brauchbares Detail-Sheet bei 391×844. Goldlöffel zeigte Takt, 16-Prozent-Nachbarbonus und das betroffene Egg; kein horizontaler Überlauf."
+        },
+        {
+          "title": "Lesbare automatische Kampfbeiträge",
+          "detail": "Beschleunigung und Pause/Fortsetzen funktionierten. Beide eigenen Siege zeigten danach Auslösungen und Beiträge der Zutaten, wodurch die Wirkung des Aufbaus nachvollziehbar wurde."
+        },
+        {
+          "title": "Konkreter Aufbau nach Reload erhalten",
+          "detail": "Runde 3 mit drei Siegeln, vier Zutaten, aktiven Familien und einem Gold wurde nach Menüwechsel und Reload/Fortsetzen sichtbar wiederhergestellt."
+        }
+      ],
+      "findings": [
+        {
+          "id": "kesselkrawall-gold-feedback",
+          "title": "Kauf mit zu wenig Gold wird korrekt abgelehnt, aber im Markt nicht sichtbar erklärt",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Das Drei-Gold-Chili blieb bei einem Gold anklickbar. Der konkrete Klick änderte weder Gold noch Zutaten und zeigte keine gesehene visuelle/AX-Erklärung. Die Ursache des wirkungslosen Klicks bleibt dadurch unklar.",
+          "evidence": "Eigener Runde-3-Kaufversuch; state.ts:403–405 gibt unveränderten State mit Nicht genug Gold zurück. Game.tsx:2512–2514/2441–2452 setzt Feedback. Dessen einziger Ausgabeort bei 3887–3889 liegt in der Arena, die bei Shopphase nicht gerendert wird (3722). Karten-disable prüft nur bought/busy (4176).",
+          "limitation": "Kleiner Rückmeldungsbefund der lokalen Testfassung, kein Datenverlust oder kaputtes Merge-/Savesystem. Fehler-Sound im Code vorhanden, aber nicht gehört. Öffentliche Byteidentität nicht lückenlos bestätigt.",
+          "recommendation": "Kurzen sichtbaren Markt-Hinweis beziehungsweise erklärte Geldgrenze am Angebot ergänzen. Die nützliche Mergevorschau erhalten; Desktop und schmale Ansicht mit zu wenig und ausreichend Gold prüfen. Noch kein Fix umgesetzt.",
+          "sourceDocs": [
+            "analysen/kesselkrawall/Grundanalyse.md",
+            "analysen/kesselkrawall/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "kesselkrawall-merge-family-rule",
+          "title": "Eine knappe Grundregel könnte Mergelevel und Familienpunkte schneller erklären",
+          "evidenceType": "assessment",
+          "priority": "low",
+          "detail": "Vorhandene Kaufvorschau und konkrete Mergeoverlays helfen. Für den ersten Aufbau ist trotzdem nicht ganz selbstverständlich, warum Chili I neben Chili II liegen bleibt und ein späterer Kauf bis III führen kann oder warum Level II zwei Familienpunkte beiträgt.",
+          "evidence": "Eigener I→II-Merge in Runde 2, später zusätzlicher Chili I neben II und sichtbare III-Vorschau. state.ts:267–367 prüft gleiche Zutat/gleiches Level und Mergeketten; 177–193 zählt I=1, II=2, III=4 mit Synergie ab 3. Itemdetails enthalten bereits Beitragsangaben.",
+          "limitation": "Gestaltungs-/UX-Einschätzung, kein belegtes Nutzerverständnisproblem und kein fehlerhaftes Mergeverhalten. Regeln sind bereits teilweise erklärt; kein Anlass für umfassenden Tutorialumbau.",
+          "recommendation": "Gleiche Levels und Stufenpunkte als kurze gut sichtbare Grundregel präzisieren und mit vorhandenem Preview verbinden. Vorher-/Nachher-Overlay und Itemdetails erhalten.",
+          "sourceDocs": [
+            "analysen/kesselkrawall/Grundanalyse.md",
+            "analysen/kesselkrawall/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "kesselkrawall-mobile-structure",
+          "title": "Kompakter Markt und konkrete Itemdetails funktionieren in der schmalen Ansicht gut",
+          "evidenceType": "runtime",
+          "priority": "low",
+          "detail": "Marktkarten, Detail-Sheet und feste Hauptaktionen waren bei 391×844 gut erreichbar. Der Goldlöffel markierte den passenden direkten Egg-Nachbarn sichtbar und semantisch. Das vorhandene Layout unterstützt tatsächliche Aufbauentscheidungen.",
+          "evidence": "Eigene schmale Markt-/Kampfprüfung; scrollWidth 391 bei Viewport 391. Goldlöffel-Detail zeigte 4,6-Sekunden-Takt, 16-Prozent-Bonus und Verkauf +2. Markierung des Zielslots tatsächlich gesehen.",
+          "limitation": "Kein physisches Touchgerät, keine komplette Detailmatrix, älterer Android-Browser oder vollständiger Accessibilitytest. Verkauf nicht ausgeführt. Schmale Browseransicht allein beweist keine Tauglichkeit aller Geräte.",
+          "recommendation": "Diese Struktur beim kleinen Feedback-/Textupdate erhalten und später kurz auf echtem Handy bestätigen; kein Mobile-Neubau aus diesem positiven Befund nötig.",
+          "sourceDocs": [
+            "analysen/kesselkrawall/Grundanalyse.md",
+            "analysen/kesselkrawall/Quellenpruefung.md",
+            "analysen/kesselkrawall/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "kesselkrawall-resume",
+          "title": "Der konkrete Runde-3-Aufbau bleibt nach Reload und Fortsetzen erhalten",
+          "evidenceType": "runtime",
+          "priority": "low",
+          "detail": "Nach zwei Siegen und Aufbau in Runde 3 führten Menü, Reload und Fortsetzen wieder zu vier Zutaten, aktiven Synergien, drei Siegeln und einem Gold. Der eigene Aufbau musste nicht neu zusammengestellt werden.",
+          "evidence": "Tatsächlich bedienter Reload-/Fortsetzen-Fall der lokalen Origin. storage.ts:19–40 lädt/sanitisiert/persistiert; Game.tsx:1830–1878/2021–2026 stellt Zustand wieder her und speichert; Menüweg 2804–2811.",
+          "limitation": "Positiver Nachweis nur für diesen lokalen Laufzustand. Keine Cloud-/Gerätewechsel-, alte Migration-, blockierter Speicher- oder Kampfwiederaufnahmeprüfung. Öffentlicher vorhandener Save unangetastet.",
+          "recommendation": "Funktionsfähigen Fortsetzungsweg erhalten und bei späterer Änderung denselben kleinen Persistenzfall erneut prüfen. Zusätzliche Zuverlässigkeitsaussagen erst nach passenden Randfalltests.",
+          "sourceDocs": [
+            "analysen/kesselkrawall/Grundanalyse.md",
+            "analysen/kesselkrawall/Quellenpruefung.md",
+            "analysen/kesselkrawall/runtime/README.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "kesselkrawall-action-gold",
+          "order": 1,
+          "title": "Kaufgrenze im tatsächlich gerenderten Markt erklären",
+          "detail": "Kurze sichtbare Rückmeldung für zu wenig Gold und gegebenenfalls fehlenden Betrag ergänzen. Angebot-/Mergevorschau bleibt informativ; kein Gold oder Item darf bei Ablehnung verloren gehen.",
+          "status": "proposed",
+          "validation": "Zu teures Angebot bei einem Gold klicken: klarer Markt-/AX-Hinweis, unveränderte Gold-/Itemwerte. Gegenprobe mit ausreichendem Gold; Desktop und 391-Pixel-Ansicht prüfen. Noch nicht umgesetzt."
+        },
+        {
+          "id": "kesselkrawall-action-rule",
+          "order": 2,
+          "title": "Merge- und Familiengrundregel knapp präzisieren",
+          "detail": "Gleiche Zutaten gleichen Levels und I=1/II=2/III=4 Familienpunkte mit vorhandenem Preview erklären. Greifbare Mergeoverlays, Nachbarmarkierung und kompakte mobile Karten erhalten.",
+          "status": "proposed",
+          "validation": "Ein neuer Spieler soll erklären können, warum I neben II liegt, wann III entsteht und wann die Drei-Punkte-Synergie aktiv wird. Kleine Verständlichkeitsprobe; kein großes Tutorial ohne belegten Bedarf."
+        },
+        {
+          "id": "kesselkrawall-action-followup",
+          "order": 3,
+          "title": "Wenige noch fehlende Spielsituationen prüfen",
+          "detail": "Echtes Handy, einmal Niederlage/Siegelverlust und ein späterer Kampf beziehungsweise Kampagnenende als begrenzten Folgecheck planen. Optional beobachten, ob neue Spieler aus der vorhandenen Gegnervorschau einen Plan ableiten; derzeit kein belegter Gegenstrategie- oder Balancefehler.",
+          "status": "proposed",
+          "validation": "Tatsächliche Runde, Gerät und Ablauf dokumentieren. Verkauf/Positionstausch und relevante Speichergrenzen bei Bedarf gezielt bedienen. Zwei einfache Siege nicht zu Gesamtbalance oder Langzeitmotivationsurteil verallgemeinern."
+        }
+      ],
+      "openQuestions": [
+        "Wird eine sichtbare Shop-Kaufgrenze von neuen Spielern sofort verstanden, während Preis und Mergevorschau hilfreich bleiben?",
+        "Wie schnell verstehen neue Spieler gleiche Mergelevel und Familienpunkte ohne zusätzliche lange Erklärung?",
+        "Wie gut funktionieren Detail-Sheet, feste Aktionen, Nachbarmarkierung und Kampf auf einem echten Touchgerät?",
+        "Wie verständlich sind Niederlage, Siegelverlust, Rückkehr und ein späterer stärkerer Gegner tatsächlich?",
+        "Tragen die späteren Runden, Familien und Kampagnenbelohnungen echte Wiederkehr über die ersten zwei Siege hinaus?",
+        "Wie verhalten sich Verkauf, Positionstausch, Reserve und Save-Randfälle in gezielten praktischen Gegenchecks?"
+      ],
+      "documents": [
+        "analysen/kesselkrawall/Grundanalyse.md",
+        "analysen/kesselkrawall/Quellenpruefung.md",
+        "analysen/kesselkrawall/runtime/README.md",
+        "analysen/kesselkrawall/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
+      ]
+    },
+    {
+      "id": "core-arena",
+      "projectId": "core-arena",
+      "title": "CORE ARENA – abgeschlossene begrenzte Grundanalyse",
+      "status": "reviewed",
+      "summary": "CORE ARENA hat einen bedienbaren Shooterkern und ein stimmiges futuristisches Menü. Training und ein eigenes TDM-Match auf Helix Canopy wurden mit eigener Bewegung, Zielen/Feuer und Sprung bedient; Menüpause, Resume und Restart funktionierten. Der zentrale Befund ist die unverlässliche Kampfprüfung: Qualifiziert/Bestanden erscheint auch bei Niederlage und offenen Lernaufgaben. Der aktuelle main-Code bestätigt außerdem, dass Botaktionen menschliche Tutorialaufgaben abhaken können. Kleine weitere Kandidaten sind ein sichererer Lernabschnitt, lesbare Moduskarten und konkretere Waffen-/Pickuphinweise. Keine KI-/Balancenote oder vollständige Karrierebewertung; lange Werkzeugabstände begrenzen das Gefechtsurteil. Lokaler veränderter Branch, eingefrorener main und öffentliche Laufzeit bleiben getrennt. Keine Originalquelle oder Veröffentlichung geändert.",
+      "scope": {
+        "checked": [
+          "Identität des bestätigten Originalcheckouts C:\\Users\\madde\\Documents\\CTF-3.0 rein lesend: origin emfau88/CTF-3.0, Branch codex/league-result-dialog-viewport, HEAD 6353e7f3bc09d9ff9f194462b6175240cc9c636b; veränderter Arbeitsbaum mit vier tracked Änderungen und weiteren untracked Dateien. Paket nennt keine eigene Produktversion; Vite-/Phaser- und Pages-Ausliefermetadaten dokumentiert.",
+          "Eigene öffentliche Browserprüfung am 09.10.2026 unter https://emfau88.github.io/CTF-3.0/, Desktop 1281 × 800: Hauptmenü, Hilfe, wiederholbares Training, Custom-Setup und tatsächlich gestartetes TDM-Match auf Helix Canopy.",
+          "Erstes Training ausschließlich passive Laufzeitbeobachtung ohne eigene Spieleingabe; Teamergebnis Blau 12 zu Rot 15 (Punktestand, keine Dauer), eigene Zeile 0 Eliminierungen/2 Tode und Qualifiziert. Diese Beobachtung ist kein eigener Gameplayversuch oder Leistungsmaß.",
+          "Zweites Training mit eigenen WASD-/Maus-/Feuer-/Sprungeingaben: anfangs Bewegung/Zielen bereits 2/5, später live vor dem Ergebnis 4/5 mit Pickup offen; Teamergebnis Blau 7 zu Rot 16 (Punktestand, keine Dauer), eigene Zeile 0 Eliminierungen/5 Tode, trotzdem Qualifiziert/Kampfprüfung bestanden. Angezeigte Werte gehören nur zu diesem Versuch, nicht in KPI-Felder.",
+          "Custom-Konfiguration Modus/Arena/Teams/Übersicht angesehen; 0 blaue/1 roter Bot mit Einfach tatsächlich gewählt und gestartet. TDM zeigt 2:00/First to 10. Eigene Kernsteuerung bedient; Menüpause, Resume und Restart funktionieren im geprüften Ablauf.",
+          "Kontrollierter Lauf mit Zwischenpausen: Rüstungsstation mit sichtbar 25 Rüstung, anschließend Nähe unterer Pulse-Station erreicht. Pad-Timer und gleichzeitiger Tod/Respawn ergeben keinen bestätigten eigenen Pulse-Aufnahme-/Feuernachweis.",
+          "Schmale Browseransicht 391 × 844 des Custom-Setups: Seitenbreite/scrollWidth 391 ohne horizontalen Überlauf, lange gestapelte Übersicht. Kein mobiles Gameplay oder physisches Touchgerät bedient.",
+          "Gezielte Code-Gegenprüfung von 27 aktiven Dateien des festgehaltenen öffentlichen main-Commits 9794575fa6241f47845fb85352316564789e8d1c: Qualifier-Abschluss, Guide-Eingabedetektor, Bot-/Player-Frames, Pause/Countdown, ausgewählte Botparameter, Custom-Difficulty, Pickup und Waffenfeedback. Keine alten QA-Bewertungen übernommen.",
+          "Sechs echte Browser-JPEGs: Hauptmenü, Desktop-/schmales Setup, getrennte passive und bediente Trainingsergebnisse, Custom-Kampf mit Respawn/leerem Waffenbestand. Screenshot-Manifest enthält Herkunft, Datum, Viewport und SHA256. training-result-active-desktop.jpg belegt Teamergebnis Blau 7 zu Rot 16, eigene 0 Eliminierungen/5 Tode und Qualifiziert; die offene Pickup-Aufgabe/4/5 ist separate vorausgehende Livebeobachtung, kein unabhängig sichtbarer Ergebnisbildbefund."
+        ],
+        "notChecked": [
+          "Öffentlicher Deployment-Commit und Gleichheit von Pages-Bundle, aktuellem main, lokalem veränderten Branch sowie vorhandenem dist nicht unabhängig nachgewiesen. Keine Produktreleaseversion aus Abhängigkeiten oder Paketmetadaten erfunden.",
+          "Vorhandene Karriere mit Proving Circuit Match 2 von 3 weder zurückgesetzt noch weitergespielt. Keine Karriere-/Saison-/Fortschritts- oder lokale-Multiplayer-Prüfung.",
+          "Kein CTF-/Flaggentragen-/One-Flag-Spiel und kein Gameplay auf den anderen zwei sichtbaren Karten. Menüoptionen sind kein ausgeführter Spieltest.",
+          "Keine gesicherte eigene Pulse-Aufnahme mit Munitionsanstieg und anschließender Feuerwirkung. Pad-Timer, Nähe und Munition 0 nach Tod bestimmen nicht sicher den Sammler; kein unerreichbares oder defektes Pickup behauptet.",
+          "Keine allgemeine Bot-/KI-/Schwierigkeits-/Spawncamp- oder Trefferquotenbewertung. Langsame Werkzeugabstände begrenzen die Gefechtsbeobachtung; Casual-Parameter sind Quellwerte, keine empirische Balance.",
+          "Kein mobiles Gameplay, kein echter Touch-Test, keine Audio-/Fullscreenfunktion oder komplette Fokus-/Hintergrundtabprüfung. Mobile Startaktion nicht bedient.",
+          "Keine Installation, Builds oder automatischen Tests ausgeführt, keine Debug-Siege oder künstliche Aufgabenfreigaben. Keine historische QA, alte Testscores oder Nutzermeinung als aktuelles Ergebnis übernommen.",
+          "Kein vollständiger Performance-, Accessibility-, Security- oder Browsermatrix-Audit; keine belegte langfristige Motivation, Reichweite, Nutzergewinnung oder Wirtschaftlichkeit. Fehlende Nutzerkennzahlen sind unbekannt, nicht null.",
+          "Kein Fehler behoben, kein Originalprodukt umgebaut und kein Release veröffentlicht."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Drei klare Einstiege und ein angeschlossenes Custom-Setup",
+          "detail": "Karriere, Quick Play und eigenes Match sind benannt. Die vier Schritte Modus/Arena/Teams/Übersicht und Zusammenfassung ordnen die Auswahl; Einfach/Botzahl wurden bei einem echten Custom-Start übernommen."
+        },
+        {
+          "title": "Stimmige Arena-Gestaltung",
+          "detail": "Futuristische Panels, Embleme und die ausgearbeitete Helix-Landschaft passen zum Setting. Diese vorhandene Richtung bietet eine Grundlage; die kompakte Schrift/Kleinteile verdienen kleine Lesbarkeitskorrekturen, keinen pauschalen Designwechsel."
+        },
+        {
+          "title": "Reale Kernsteuerung und funktionierende Pause",
+          "detail": "Eigene Bewegung, Zielen/Feuer, Nahwaffe und Sprung wurden bedient. Menüpause, Resume und Restart funktionierten; Hilfe und wiederholbares Training sind vorhanden. Langfristiges Spielgefühl bleibt offen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "core-arena-qualifier-pass",
+          "title": "Kampfprüfung meldet bestanden trotz offener Aufgabe",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Die tatsächlichen Trainingsläufe endeten auch bei Niederlage als qualifiziert. Im zweiten bedienten Versuch blieb Pulse-Pickup offen und der Guide bei 4/5. main bestätigt jedes beendete Qualifier-Match, ohne Sieg, erfüllte Aufgaben oder tatsächliche menschliche Eingabe zu prüfen.",
+          "evidence": "Runtime: zweites Training mit Teamergebnis Blau 7 zu Rot 16 (Team-Punktestand, keine Dauer), eigener Zeile 0 Eliminierungen/5 Tode und dennoch Qualifiziert/Kampfprüfung bestanden; 4/5 Aufgaben/Pickup offen wurde live vor dem Ergebnis gelesen. training-result-active-desktop.jpg belegt Punktestand, Player-Zeile und Qualifiziert, nicht unabhängig die vorherige Aufgabenanzeige. main.ts:464–490 ruft complete() bei jeder beendeten Qualifier-Runde; qualifier.ts:125–133 setzt qualified; main.ts:509–519 wählt immer den Erfolgswortlaut.",
+          "limitation": "Ein Siegzwang wird nicht als richtige Produktregel vorausgesetzt; ein Lernmatch darf ohne Sieg abschließbar sein. Gemeint ist die Diskrepanz zwischen bestätigter Prüfung und ungeprüften Bedienaufgaben. Pages und main nicht vollständig als identische Version nachgewiesen.",
+          "recommendation": "Festlegen, ob wirklich erlernte Bedienung oder nur ein absolviertes Kennenlernmatch bestätigt werden soll. Entweder eigene Aufgaben zuverlässig verlangen oder den Abschluss ehrlich als beendetes Lernmatch formulieren. Kein Fix wurde umgesetzt.",
+          "sourceDocs": [
+            "analysen/core-arena/Grundanalyse.md",
+            "analysen/core-arena/Quellenpruefung.md",
+            "analysen/core-arena/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "core-arena-guide-bot-actions",
+          "title": "Botaktionen können menschliche Tutorialaufgaben abhaken",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Spieler- und Botaktionen werden zusammengeführt; der Guide erkennt Bewegung, Arc Lash und Sprung ohne actorId-Filter. Ein Bot kann dadurch einen menschlichen Bewegungshaken erzeugen. Pickup prüft dagegen blue-player und pulse ausdrücklich.",
+          "evidence": "GameplayV2Scene.ts:287–293/361–370; AugmentedInputAdapter.ts:23–30; qualifier.ts:231–249; TdmBotController.ts:292–306 liefert Botbewegung mit eigenem actorId. Laufzeit zeigte Bewegung/Zielen bereits 2/5 vor eigener Bewegung.",
+          "limitation": "Zielen hat einen separaten Pointerweg ab 8 Pixel (Scene:471–479); dessen früher Liveauslöser wurde nicht isoliert bewiesen. Nicht behauptet, alle Haken seien im beobachteten Versuch durch Bots entstanden. Eigene F-/Sprungeingaben wurden bedient, die Haken aber nicht exklusiv diesen Eingaben zugeordnet.",
+          "recommendation": "Aufgabendetektor konsequent auf den gesteuerten Menschen begrenzen. Frisches Training getrennt mit keinen Eingaben und dann jeder eigenen Aktion prüfen; frühere Mausbewegung beim Eintritt gezielt von sinnvoller Zielaufgabe unterscheiden.",
+          "sourceDocs": [
+            "analysen/core-arena/Grundanalyse.md",
+            "analysen/core-arena/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "core-arena-training-pressure",
+          "title": "Lernaufgaben laufen mitten im Gegnerkampf",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Training startet nach allgemeinem zweisekündigem Countdown als normaler TDM-Lauf, während Guide-Aufgaben noch offen sind. Bots kämpfen, Player stirbt/respawnt während der Orientierung. Eine Menüpause besteht und funktioniert; sie ist kein aufgabengesteuerter sicherer Einstieg.",
+          "evidence": "Eigene Trainingsbeobachtung mit laufenden Bots/Guide. qualifier.ts:31–37: 90 Sekunden/20 Punkte; GameplayV2Scene.ts:213–236; GameplayRuntimeTiming.ts:6–8: Countdown 2000 ms; GameplayCoreRuntime.ts:259–275 geht automatisch running. main.ts:339–350 und Scene:345–354 bieten echte Pause.",
+          "limitation": "UX-Hypothese, keine nachgewiesene Überforderung realer Menschen. Lange Werkzeugabstände verfälschen Reaktion/Gefechtskontakt; keine KI-/Balance- oder pauschale Casual-Abschwächung abgeleitet. Fokus-/Hintergrundfälle nicht vollständig geprüft.",
+          "recommendation": "Einen kurzen sicheren Lernabschnitt beziehungsweise wenige aufgabenweise Hinweise als kleinen Kandidaten prüfen und danach ins normale Match übergehen. Mit wenigen Erstspielern bei normalem Tempo gegenprüfen.",
+          "sourceDocs": [
+            "analysen/core-arena/Grundanalyse.md",
+            "analysen/core-arena/Quellenpruefung.md"
+          ]
+        },
+        {
+          "id": "core-arena-mode-card-clipping",
+          "title": "Moduskarten schneiden wichtige Regeltexte ab",
+          "evidenceType": "runtime",
+          "priority": "low",
+          "detail": "Im Desktop-Custom-Setup wird die TDM-10-Eliminierungen-Beschreibung rechts abgeschnitten; CTF-Erklärung erscheint mit Auslassung. Das Panel hat zugleich viel freie Höhe. Auswahl/Weiter und Zusammenfassung funktionieren; die Grundstruktur aus vier Schritten bleibt verständlich.",
+          "evidence": "Tatsächliche Desktopansicht und setup-desktop.jpg. Schmale Setupansicht 391 × 844 hat scrollWidth 391 ohne Seitenüberlauf, aber lange Karten-/Bildstapelung und Start weiter unten.",
+          "limitation": "Mobile Startaktion und Gameplay wurden nicht bedient. Keine komplette Breakpoint-/Übersetzungsmatrix und keine gemessene Aufgabenabbruchrate. Konkrete CSS-Ursache nicht als bewiesen ausgegeben.",
+          "recommendation": "Regeltexte vollständig lesbar machen und Fläche/Typografie gezielt entspannen. Die bestehende futuristische Richtung behalten; mobile Reihenfolge und Start-Erreichbarkeit nach tatsächlicher Änderung prüfen.",
+          "sourceDocs": [
+            "analysen/core-arena/Grundanalyse.md",
+            "analysen/core-arena/Quellenpruefung.md",
+            "analysen/core-arena/screenshots/manifest.json"
+          ]
+        },
+        {
+          "id": "core-arena-weapon-pickup-clarity",
+          "title": "Waffen-/Pickuphinweise verlangen frühes Symbolverständnis",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Waffenstreifen zeigt Icons, Buchstaben und Munition, Bodendarstellung Pad/Icon/Timer; ausgeschriebene Waffen-/Stationsnamen fehlen im aktiven Pfad. Munition 0 ist erkennbar, aber Verbindung von geforderter Pulse-Aufnahme zur Station und R-Taste bleibt für einen Neuling knapper erklärt.",
+          "evidence": "Live und battle-desktop.jpg zeigen Icon-/Buchstaben-/Munitionsstreifen. PhaserDiagnosticInputAdapter.ts:206–213/610–648; PhaserArenaPickupRenderer.ts:66–98. Pickup wird durch aktiven Actor-Kontakt gesammelt (updatePickups.ts:70–108); Tutorial verlangt eigene pulse-Aufnahme (qualifier.ts:243–249).",
+          "limitation": "Keine gesicherte eigene Pulse-Aufnahme oder Feuerwirkung. Pad-Timer bei gleichzeitigem Tod nennt den Sammler nicht; kein defekter Zähler oder unerreichbares Pickup behauptet. Verständnis echter Erstnutzer bislang nicht gemessen.",
+          "recommendation": "Im Ersteinstieg kurze Namen oder eine konkrete Pulse-Zielmarkierung sowie eigene Aufnahmebestätigung ergänzen. Aufnahme, Munitionsanstieg und Nutzung später ohne überlagernden Tod kontrolliert prüfen; vorhandene Icons/Zahlen als Grundlage erhalten.",
+          "sourceDocs": [
+            "analysen/core-arena/Grundanalyse.md",
+            "analysen/core-arena/Quellenpruefung.md"
+          ]
+        }
+      ],
+      "metrics": [],
+      "actions": [
+        {
+          "id": "core-arena-action-qualifier",
+          "order": 1,
+          "title": "Trainingsbestätigung und menschliche Aufgabenprüfung verlässlich machen",
+          "detail": "Die Qualifiziert-/Bestanden-Regel präzisieren und Bewegung/Waffen/Sprung konsequent dem gesteuerten Menschen zuordnen. Einen Sieg nur verlangen, falls dies bewusst als Produktregel gewählt wird. Keine Umsetzung erfolgt.",
+          "status": "proposed",
+          "validation": "Frische eigene Testbasis verwenden; bestehende Karriere nicht ungefragt zurücksetzen. Ohne Spieleingabe keine Bot-Haken als menschliche Lernleistung zählen. Jede Aufgabe selbst separat ausführen; bei offenen Aufgaben Abschlusswortlaut/-Status gegen die bewusst gewählte Regel prüfen."
+        },
+        {
+          "id": "core-arena-action-first-pickup",
+          "order": 2,
+          "title": "Erste Waffen-/Pickup-Erfahrung kurz erleichtern und gegenprüfen",
+          "detail": "Einen kurzen sicheren Lernabschnitt, knappe Namen/konkrete Pulse-Zielstation und eigene Aufnahmebestätigung als begrenzten Kandidaten prüfen. Die vorhandene Pause und Gestaltung nutzen.",
+          "status": "proposed",
+          "validation": "Ohne gleichzeitigen Tod eine eigene Pulse-Aufnahme, eindeutigen Munitionsanstieg und tatsächliche Nutzung kontrolliert erleben; danach wenige neue Spieler ohne Hilfe beobachten. Kein Test des bisherigen Pad-Timers wird als erfolgreiche eigene Aufnahme umgedeutet."
+        },
+        {
+          "id": "core-arena-action-readable-setup",
+          "order": 3,
+          "title": "Modusregeln und kompakte Kleinteile lesbarer machen",
+          "detail": "Abgeschnittene Modusbeschreibungen gezielt korrigieren und Typografie/Flächennutzung wenig entspannen. Schmale Setup-Reihenfolge und Start-Erreichbarkeit prüfen; keine komplette Neuerfindung des Designs.",
+          "status": "proposed",
+          "validation": "Nach tatsächlicher Umsetzung Desktop 1281 × 800 und schmal 391 × 844 ansehen; Regeltexte vollständig, Auswahl/Summary/Start erreichbar und übernommene Botwerte korrekt. Den bedienten Start-/Pause-/Resume-/Restartpfad kurz erneut prüfen."
+        }
+      ],
+      "openQuestions": [
+        "Welcher öffentliche Deployment-Commit lief auf Pages und welcher aktuelle Quellstand ist für spätere Änderungen maßgeblich?",
+        "Soll der Qualifier eigene erlernte Aufgaben oder lediglich ein abgeschlossenes Kennenlernmatch bestätigen? Ein Siegzwang ist noch keine dokumentierte Entscheidung.",
+        "Wie erleben reale Erstnutzer das Training bei normalem Reaktionstempo und zuverlässigen menschlichen Aufgabenhaken?",
+        "Wie funktioniert eine gesicherte eigene Pulse-Aufnahme mit Munitionsanstieg und anschließender Feuerwirkung?",
+        "Wie funktionieren CTF/One Flag, die anderen zwei Karten, Karrierefortsetzung und längerfristiger Spielfortschritt?",
+        "Wie funktionieren mobile Gameplay-/Touchsteuerung, Audio/Fullscreen und gezielte Fokus-/Hintergrundfälle?"
+      ],
+      "documents": [
+        "analysen/core-arena/Grundanalyse.md",
+        "analysen/core-arena/Quellenpruefung.md",
+        "analysen/core-arena/runtime/README.md",
+        "analysen/core-arena/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
+      ]
     }
   ],
   "decisions": [
@@ -2452,6 +3224,23 @@
       "detail": "Ausdrückliche Nutzerregel: zuerst anhand tatsächlicher Bedienung ein eigenes Urteil bilden. Repositorytexte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen; subjektive Eindrücke und kurze Testgrenzen kennzeichnen.",
       "status": "established",
       "source": "Usernachricht independent-review-rule; dashboard/context.json"
+    },
+    {
+      "id": "five-games-scope",
+      "scopeLabel": "Browsergames · aktuelle Prüfrunde",
+      "area": "games",
+      "projectIds": [
+        "hexfront",
+        "galalaxy",
+        "rooster-rage",
+        "kesselkrawall",
+        "core-arena",
+        "more-than-wombat"
+      ],
+      "title": "Fünf Spiele prüfen, übrige vorerst zurückstellen",
+      "detail": "HEXFRONT/GALALAXY und anschließend ROOSTER RAGE/KESSELKRAWALL/CORE ARENA sind beauftragt. MORE THAN WOMBAT und ergänzende Spiele bleiben im Bestand, werden vorerst nicht getestet. Nutzerhinweise zu CORE ARENA sind unbestätigte Fragen; unabhängige Bedienbeobachtung geht vor.",
+      "status": "established",
+      "source": "Usernachricht five-games-scope; dashboard/context.json"
     },
     {
       "id": "scope-inventory-before-evaluation",
@@ -2538,9 +3327,9 @@
     },
     {
       "id": "push-then-mewtrack-then-push",
-      "title": "Aktuellen Stand sichern, danach MewTrack prüfen und erneut sichern",
-      "detail": "Der Nutzer beauftragt zuerst Commit und GitHub-Push des aktuellen Dashboard- und Mirror-Stands. Anschließend ist MewTrack die nächste Analyse; danach folgt erneut Commit und Push. Der genannte Play-Console-Release 13 (0.9.4) ist ein Zuordnungshinweis, der mit den lokalen Projektständen abzugleichen ist.",
-      "status": "established",
+      "title": "Frühere Sicherungs- und MewTrack-Reihenfolge abgeschlossen",
+      "detail": "Die beauftragte Reihenfolge wurde abgeschlossen: Dashboard-/Mirror-Stand gesichert, MewTrack mit Releasezuordnung 13 (0.9.4) als begrenzter Pilot geprüft und anschließend erneut gesichert. Die ursprüngliche Anweisung bleibt im Kontext erhalten. MewTrack ist heute keine ausstehende nächste Grundanalyse; native Kernprüfungen und Umsetzung bleiben gesondert offen.",
+      "status": "completed",
       "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json",
       "scopeLabel": "Repository OVERVIEW · Sicherung und Prüfreihenfolge"
     },
@@ -2548,7 +3337,7 @@
       "id": "breadth-first-review-order",
       "scopeLabel": "Gesamtes Vorhaben · Grundanalysen",
       "title": "Erst die Basis vervollständigen, danach priorisieren",
-      "detail": "Drei Android-Piloten liegen vor. Sieben Web-Grundanalysen sind nun abgeschlossen. Empfohlen folgen die sechs Spiele; danach gemeinsame Priorisierung und wenige Umsetzungen. Die Spielearbeit wurde in dieser Etappe noch nicht begonnen.",
+      "detail": "Die ausgewählte gemeinsame erste Basis ist dokumentiert: drei Android-Piloten, sieben Web-Grundanalysen und fünf beauftragte Spiel-Grundanalysen. MORE THAN WOMBAT und übrige Games bleiben zurückgestellt; Between nur Bestand. Als Nächstes Befunde vergleichen, die Homepage-Rolle entscheiden und wenige Maßnahmen wählen. Vollständige Produktprüfung und Umsetzung sind damit nicht behauptet.",
       "status": "established",
       "source": "Nutzerfrage breadth-first-baseline und Auftrag web-baseline-request; dashboard/context.json"
     },
@@ -2575,6 +3364,30 @@
       "detail": "Buchkauf, Webauftrag und Appinstallation haben unterschiedliche Besucherziele. Die Buchseite eignet sich im Grundcheck als eigenständiger Produktauftritt; eine spätere Verlinkung vom persönlichen Einstieg ist denkbar. Checkoutöffnung beweist keine abgeschlossene Zahlung, Lieferung oder Wirtschaftlichkeit.",
       "status": "proposed",
       "source": "analysen/keyofsolomon/Grundanalyse.md; analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+    },
+    {
+      "id": "five-games-baseline-complete",
+      "scopeLabel": "Fünf abgeschlossene Spiel-Grundanalysen",
+      "area": "games",
+      "projectIds": [
+        "hexfront",
+        "galalaxy",
+        "rooster-rage",
+        "kesselkrawall",
+        "core-arena"
+      ],
+      "title": "Ausgewählte Spielebasis ist dokumentiert; Maßnahmen bleiben Vorschläge",
+      "detail": "Eigene Browserbedienung und gezielte Quellengegenprüfung für fünf Spiele abgeschlossen. Vier öffentliche Fassungen, KESSELKRAWALL als unveränderte isolierte main-Testkopie; 27 neue echte Aufnahmen mit Herkunft. Gemeinsamer Vergleich vorhanden. Kurze Sessions beweisen keine Langzeitwirkung oder Bot-Balance. Die übrigen Games bleiben zurückgestellt; kein Produktfix umgesetzt.",
+      "status": "documented",
+      "source": "analysen/spiele/Grundvergleich.md"
+    },
+    {
+      "id": "overview-progress-display",
+      "scopeLabel": "Gesamtes Dashboard · Arbeitsfortschritt",
+      "title": "Fortschritt zusätzlich und überall konsistent darstellen",
+      "detail": "Originalberichte bleiben erhalten. Erfasster Bestand, dokumentierte begrenzte Analyse und tatsächlich umgesetzte/geprüfte Maßnahmen sind drei getrennte Arbeitsphasen. Grüne Marker zeigen erledigte Arbeit mit Statuswort; 2/3 bedeutet Analyse dokumentiert, keine fertige Produktverbesserung. Vorschläge sind eine Auswahlbasis; 0/49 umgesetzt ist kein verpflichtender Gesamtplan. Between und zurückgestellte Games erhalten dadurch keinen neuen Prüfauftrag.",
+      "status": "established",
+      "source": "dashboard/context.json"
     }
   ],
   "pending": [
@@ -2617,14 +3430,6 @@
       "title": "Begrenzten nächsten Update- und Nutzerversuch konkretisieren",
       "detail": "Die fünf vorgeschlagenen Schritte in einen kleinen tatsächlichen Umfang übersetzen. Testerkanal, Aufwandgrenze, Nutzerfragen und vergleichbare Messzeiträume festlegen; derzeit keine Umsetzung oder Veröffentlichung erfolgt.",
       "kind": "strategy"
-    },
-    {
-      "id": "browser-games-quality-analysis",
-      "area": "games",
-      "projectId": null,
-      "title": "Browser-Spiele einzeln auf Qualität prüfen",
-      "detail": "Empfohlene nächste Grundanalyseetappe: sechs im dashboard-Register geführte Spiele tatsächlich spielen. Erste Minuten, Steuerung, Optik, Verständlichkeit, Zuverlässigkeit und Wiederholungsreiz bewerten. Verwandte Varianten nur gezielt einbeziehen. Bisher keine abgeschlossene Spielanalyse.",
-      "kind": "analysis"
     },
     {
       "id": "online-presence-strategy",
@@ -2745,6 +3550,55 @@
       "kind": "verification",
       "title": "Web-/App-Zuordnung und direkte Produktziele klären",
       "detail": "Unter Web werden Apps gezeigt. Kategorien, nutzerbezogene Beschreibung und direkte Store-/Spiellinks abstimmen; Kontakt und teilbare Projektziele bei Weiterverwendung ergänzen. Lokalen Branch separat vom Liveauftritt behandeln."
+    },
+    {
+      "id": "hexfront-game-followup",
+      "projectId": "hexfront",
+      "area": "games",
+      "kind": "verification",
+      "title": "Mobile Orientierung, Resultdialog und Siegpfad gezielt nachprüfen",
+      "detail": "Missions-/Versorgungsinfo mobil und kurze Pause prüfen; Ergebnisüberlauf eingrenzen. Echten Sieg, Freischaltung und gespeicherten Fortschritt später bedienen. Analyse abgeschlossen, alle Maßnahmen noch vorgeschlagen."
+    },
+    {
+      "id": "galalaxy-game-followup",
+      "projectId": "galalaxy",
+      "area": "games",
+      "kind": "verification",
+      "title": "HUD, Menübedienung und weitere Spielpfade gezielt nachprüfen",
+      "detail": "HUD in kleiner Ansicht lesbarer machen und Canvas-Menüzugang prüfen. Boss/Sektorfortschritt und echte Touchführung separat testen. Analyse abgeschlossen, alle Maßnahmen noch vorgeschlagen."
+    },
+    {
+      "id": "games-priorities",
+      "area": "games",
+      "projectId": null,
+      "scopeLabel": "Fünf geprüfte Browsergames",
+      "title": "Wenige Spielmaßnahmen aus der abgeschlossenen Basis wählen",
+      "detail": "Alle fünf beauftragten Grundchecks sind dokumentiert. Den gemeinsamen Vergleich nutzen und höchstens ein kleines erstes Maßnahmenpaket auswählen; Vertiefungen nur für die dafür nötigen offenen Wege. MORE THAN WOMBAT und übrige Spiele bleiben zurückgestellt. Keine Verbesserungen umgesetzt.",
+      "kind": "decision"
+    },
+    {
+      "id": "rooster-rage-game-followup",
+      "projectId": "rooster-rage",
+      "area": "games",
+      "kind": "verification",
+      "title": "Frischen Einstieg prüfen und Informationshierarchie klein verbessern",
+      "detail": "Neuen getrennten Spielstand und echten Handyweg ansehen, bevor Henhouse/Upgradeinformationen verändert werden. Diagnose und Detailaudio optional ordnen; Boss und Audio bleiben separate Prüfgrenzen. Grundanalyse abgeschlossen, Vorschläge noch offen."
+    },
+    {
+      "id": "kesselkrawall-game-followup",
+      "projectId": "kesselkrawall",
+      "area": "games",
+      "kind": "verification",
+      "title": "Sichtbaren Hinweis zur Kaufgrenze und knappe Regeln vorsehen",
+      "detail": "Kauf ohne genug Gold wird korrekt abgelehnt, aber im Shop nicht sichtbar erklärt. Kleinen Shop-/AX-Hinweis sowie knappe Merge-/Familienregel prüfen; kompakte mobile Struktur erhalten. Niederlage/Siegel und echtes Handy bei Bedarf gesondert testen. Noch keine Umsetzung."
+    },
+    {
+      "id": "core-arena-game-followup",
+      "projectId": "core-arena",
+      "area": "games",
+      "kind": "verification",
+      "title": "Trainingsbestätigung verlässlich machen und erste Waffenaufnahme prüfen",
+      "detail": "Menschliche Aufgaben von Botaktionen trennen und Abschlusswortlaut/-regel präzisieren. Eigene Pulse-Aufnahme, Munitionsanstieg und Nutzung kontrolliert nachprüfen; Modusregeln vollständig zeigen. Bot-Balance und CTF/Karriere bleiben offen; Nutzermeinungen sind keine übernommenen Befunde. Noch keine Umsetzung."
     }
   ]
 }

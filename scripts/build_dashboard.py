@@ -113,13 +113,14 @@ def document_title(path: Path, content: str) -> str:
     return path.name
 
 
-def public_screenshots(project_id: str, capture_directory: Path) -> list[dict[str, Any]]:
-    """Bundle only explicit, provenance-checked public browser captures."""
+def browser_screenshots(project_id: str, capture_directory: Path) -> list[dict[str, Any]]:
+    """Bundle explicit browser captures while preserving public/local provenance."""
     manifest_path = capture_directory / "manifest.json"
     if not manifest_path.is_file():
         return []
     manifest = read_json(manifest_path)
-    if manifest.get("kind") != "public_browser_capture":
+    kind = manifest.get("kind")
+    if kind not in {"public_browser_capture", "local_browser_capture"}:
         return []  # Historical Mirror captures keep their existing handling.
     captures = manifest.get("captures")
     if not isinstance(captures, list):
@@ -157,6 +158,11 @@ def public_screenshots(project_id: str, capture_directory: Path) -> list[dict[st
         url = urlsplit(capture["url"])
         if url.scheme not in {"http", "https"} or not url.netloc:
             raise BuildError(f"Screenshot benötigt eine nachvollziehbare Browser-URL: {name}")
+        if kind == "local_browser_capture":
+            if url.scheme != "http" or url.hostname not in {"127.0.0.1", "localhost"} or url.username or url.password:
+                raise BuildError(f"Lokale Browseraufnahme benötigt eine HTTP-Testadresse auf 127.0.0.1 oder localhost: {name}")
+        elif url.hostname in {"127.0.0.1", "localhost", "::1"}:
+            raise BuildError(f"Loopback-Aufnahme muss als local_browser_capture ausgewiesen sein: {name}")
         try:
             datetime.fromisoformat(capture["capturedAt"].replace("Z", "+00:00"))
         except ValueError as exc:
@@ -166,7 +172,7 @@ def public_screenshots(project_id: str, capture_directory: Path) -> list[dict[st
             raise BuildError(f"Screenshot benötigt viewport.width und viewport.height als positive Pixelwerte: {name}")
         bundled.append({
             "projectId": project_id,
-            "kind": "public_browser_capture",
+            "kind": kind,
             "path": path.relative_to(ROOT).as_posix(),
             "title": capture["title"],
             "note": capture["note"],
@@ -273,7 +279,7 @@ def build_data() -> dict[str, Any]:
                 "note": "Lokale UI-Preview vom 07.10.2026 mit Testdaten; kein heutiger Laufzeit- oder Play-Release-Beleg.",
                 "dataUrl": "data:image/png;base64," + base64.b64encode(path.read_bytes()).decode("ascii"),
             })
-        screenshots.extend(public_screenshots(project_id, capture_directory))
+        screenshots.extend(browser_screenshots(project_id, capture_directory))
     if any(not isinstance(date, str) or not re.fullmatch(r"\d{4}-\d{2}-\d{2}", date) for date in dates):
         raise BuildError("Alle Dashboard-Daten benötigen updatedAt im Format YYYY-MM-DD")
     return {

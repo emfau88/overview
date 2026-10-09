@@ -1,0 +1,66 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "galalaxy",
+  "captures": [
+    {
+      "file": "title-desktop.jpg",
+      "title": "Startansicht vor eigener Runde",
+      "url": "https://emfau88.github.io/galalaxy/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest. Der bereits vorhandene Bestwert 2334 ist kein Ergebnis dieses Tests.",
+      "sha256": "a3957460abe1ce082c464c50d93f2e22594503c4385ad87ad2b15b39915204f7"
+    },
+    {
+      "file": "upgrades-desktop.jpg",
+      "title": "Erste Upgrade-Auswahl im eigenen Lauf",
+      "url": "https://emfau88.github.io/galalaxy/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest. Der bereits vorhandene Bestwert 2334 ist kein Ergebnis dieses Tests.",
+      "sha256": "8fe8662c4a8081d832be8ff2393e8a727e7a1a38cf8a6692a5016de82d78f69e"
+    },
+    {
+      "file": "paused-desktop.jpg",
+      "title": "Pausierter eigener Lauf",
+      "url": "https://emfau88.github.io/galalaxy/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest. Der bereits vorhandene Bestwert 2334 ist kein Ergebnis dieses Tests.",
+      "sha256": "b2550fc5f8d7c08ca9fbe267d9d0509b824a17eb43a9c1fb8f279f289e61e496"
+    },
+    {
+      "file": "battle-mobile.jpg",
+      "title": "Eigener Lauf mit gewähltem Multi-Cannon-Upgrade",
+      "url": "https://emfau88.github.io/galalaxy/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest. Der bereits vorhandene Bestwert 2334 ist kein Ergebnis dieses Tests.",
+      "sha256": "6f36c4fc5b2eca9c4e74801e42a33e88ef9e28ada161cc0a3c01ffbaeb6bf94d"
+    },
+    {
+      "file": "result-mobile.jpg",
+      "title": "Ergebnis des eigenen kurzen Laufs",
+      "url": "https://emfau88.github.io/galalaxy/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest. Der bereits vorhandene Bestwert 2334 ist kein Ergebnis dieses Tests.",
+      "sha256": "6ad76b793f2fedf7d0f01b7fdd626b99954577d6fa6e2161c3b8b00d24b8f5b6"
+    }
+  ]
+}

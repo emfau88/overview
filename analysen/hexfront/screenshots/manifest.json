@@ -1,0 +1,54 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "hexfront",
+  "captures": [
+    {
+      "file": "campaign-desktop.jpg",
+      "title": "Kampagnenkarte und Einstieg",
+      "url": "https://emfau88.github.io/hexwars/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest.",
+      "sha256": "70409da8be7aeeb1d8d3447c792fb16a48e3d9aa67aa3f1ae01c40e41509405f"
+    },
+    {
+      "file": "battle-desktop.jpg",
+      "title": "Mission I: eigene Eroberungen und laufender Kampf",
+      "url": "https://emfau88.github.io/hexwars/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest.",
+      "sha256": "15e9eea09d7a126bf65662f2f124c55a4ac8f63aa6bedfda050ee8be5172b0be"
+    },
+    {
+      "file": "defeat-desktop.jpg",
+      "title": "Mission I: Niederlage nach eigener Runde",
+      "url": "https://emfau88.github.io/hexwars/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest.",
+      "sha256": "a9c0743c7c69addd5a0739e5db0c1728de13555cad05c77f66619ab723406178"
+    },
+    {
+      "file": "mission-mobile.jpg",
+      "title": "Mission I vor erstem Zug in schmaler Ansicht",
+      "url": "https://emfau88.github.io/hexwars/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Unveränderte JPEG-Aufnahme des tatsächlich bedienten öffentlichen Browsergames. Gemessene CSS-Viewportbreite; ein sichtbarer Scrollbalken kann Bildinhalt etwas schmaler machen. Kurze eigene Spielsitzung, kein Nachweis von Langzeitmotivation oder Geräteperformance. Schmale Ansicht ist kein physischer Touchtest.",
+      "sha256": "a2c4a26fea54b2eae12834988893d84f1e88bcb298189339cda81879bdc94d6b"
+    }
+  ]
+}

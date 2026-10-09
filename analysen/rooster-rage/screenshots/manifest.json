@@ -1,0 +1,66 @@
+{
+  "kind": "public_browser_capture",
+  "projectId": "rooster-rage",
+  "captures": [
+    {
+      "file": "henhouse-desktop.jpg",
+      "title": "Henhouse im bereits vorhandenen Profil",
+      "url": "https://emfau88.github.io/RoosterRage/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "126 kernels und Mastery 3/5 bestanden vor der Prüfung; kein frischer Erststart.",
+      "sha256": "51c4ae146ff0746eef6ad6758b329ce739a4752aced37604eb9ae3c49195592d"
+    },
+    {
+      "file": "upgrades-desktop.jpg",
+      "title": "Erste eigene Upgradeauswahl",
+      "url": "https://emfau88.github.io/RoosterRage/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Im eigenen Standard Run angebotene drei Upgrades; anschließend Support Chick tatsächlich gewählt.",
+      "sha256": "3ed983e64db1e429d6d7da98fe107e6b9c90db036df75b0bf63401beb9037d8b"
+    },
+    {
+      "file": "settings-mobile.jpg",
+      "title": "Pause und Einstellungen in schmaler Ansicht",
+      "url": "https://emfau88.github.io/RoosterRage/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Scrollbarer Settingsdialog; echte Touchhardware und Audio nicht geprüft.",
+      "sha256": "68efb7be8ed849e5b80743794e2a61e5894ea036ecbabe3f2d9a3174b3990d5c"
+    },
+    {
+      "file": "battle-mobile.jpg",
+      "title": "Neuer eigener Run in schmaler Ansicht",
+      "url": "https://emfau88.github.io/RoosterRage/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Zweiter normaler Start mit 100 HP, Welle 1; kein vollständiger mobiler Touchtest.",
+      "sha256": "bfec5de4e2f1c7113ce0a3020e60044ef6edff00ab449a4e899bdb7b8cadd57a"
+    },
+    {
+      "file": "result-mobile.jpg",
+      "title": "Ergebnis des eigenen kurzen Runs",
+      "url": "https://emfau88.github.io/RoosterRage/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "0:47, 45 Kills, +5 kernels; diese Runde erhöht den vorhandenen Kontostand regulär von 126 auf 131. Kein Balanceurteil.",
+      "sha256": "86d97be3f54f0c7553c07c382479d0cca57cea0b2ea35f5115eb5251d0d8729a"
+    }
+  ]
+}

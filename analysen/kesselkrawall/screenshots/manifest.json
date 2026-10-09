@@ -1,0 +1,90 @@
+{
+  "kind": "local_browser_capture",
+  "projectId": "kesselkrawall",
+  "captures": [
+    {
+      "file": "menu-desktop.jpg",
+      "title": "Frischer Einstieg der isolierten Testkopie",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Unveränderter Export des öffentlichen main 83d17ab14ff265559b58652e9040eecef7d7ad51. Bestehender öffentlicher Save nicht zurückgesetzt; Live-Bundle-Identität nicht nachgewiesen.",
+      "sha256": "5c5e148e81e315c8bb7111123d2f0b876cba1776b71757cd75246135062633d0"
+    },
+    {
+      "file": "market-desktop.jpg",
+      "title": "Erster eigener Marktaufbau",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Runde 1 nach Kauf von Chilischote und Eierschale; ein Gold verbleibt.",
+      "sha256": "10bacaf6d0bda4df39ce82578eba0812f6c21b46e8467b4a31a832d919e67abc"
+    },
+    {
+      "file": "battle-desktop.jpg",
+      "title": "Erster Kampf pausiert",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Echte Pause bei gegnerischen 8 HP, eigenen 93 HP/6 Schild und gewähltem Tempo 4×; kein manipulierter Sieg.",
+      "sha256": "81dcc6b6005fd75cf2e61b21c8b7fc30778b9cbb22e75fdea4e94282c6bcdb61"
+    },
+    {
+      "file": "result-desktop.jpg",
+      "title": "Erster eigener Sieg und Kampfbeiträge",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 1281,
+        "height": 800
+      },
+      "note": "Zischbert besiegt; eigene 82 HP. Chilischote 20 Schaden, Eierschale 24 Schild; Belohnung +6 Gold für Runde 2.",
+      "sha256": "50bccca477b61b4e02ec1f065ac685d262e003fc4a5f041ee165256454d4e8b2"
+    },
+    {
+      "file": "market-mobile.jpg",
+      "title": "Markt in schmaler Ansicht",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Runde 2 nach eigener Chilischoten-Verschmelzung auf Stufe II; Gold 4. Browserbreite 391, kein beobachteter horizontaler Überlauf.",
+      "sha256": "e8ef20c4702cad5d4554bc360018393295b2c40df3983481c09683cbf665dfe3"
+    },
+    {
+      "file": "battle-mobile.jpg",
+      "title": "Zweiter eigener Kampf in schmaler Ansicht",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Runde 2 gegen Moor-Martha; Chilischote II, Eierschale I und Goldlöffel I. Kein physischer Touchtest.",
+      "sha256": "a6997925795425d9e90b5cbcff0905e6611a24efde697d8b235908f66b31ab5d"
+    },
+    {
+      "file": "result-mobile.jpg",
+      "title": "Zweiter eigener Sieg und Beiträge",
+      "url": "http://127.0.0.1:8768/KesselKrawall/",
+      "capturedAt": "2026-10-09",
+      "viewport": {
+        "width": 391,
+        "height": 844
+      },
+      "note": "Moor-Martha besiegt: Chilischote 86 Schaden, Eierschale 49 Schild, Goldlöffel 17 Heilung; +7 Gold für Runde 3. Keine vollständige Achtkampf-Kampagne.",
+      "sha256": "d6cab7717ddbb2c0f43b6ec07e43edaf6220b7452079d0ec174f286e3f02eae2"
+    }
+  ]
+}

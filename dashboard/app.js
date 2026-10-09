@@ -17,7 +17,7 @@
   const allProjects = new Map([...projects, ...related].map((item) => [item.id, item]));
   const areaLabels = { games: 'Browsergames', apps: 'Android-Apps', web: 'Onlineauftritt' };
   const areaAlias = (area) => ({ android: 'apps', online: 'web' })[area] || area;
-  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft' };
+  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft', deferred: 'Zurückgestellt' };
   const evidenceLabels = { runtime: 'Im Webtest reproduziert', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung', data: 'Kennzahlenbefund', hypothesis: 'Hypothese' };
   const priorityLabels = { high: 'Hohe Priorität', medium: 'Mittlere Priorität', low: 'Niedrige Priorität' };
   const filterState = { query: '', area: '', status: '' };
@@ -97,6 +97,44 @@
   const intro = (eyebrow, title, description) => `<div class="page-intro"><div class="eyebrow">${escape(eyebrow)}</div><h1>${escape(title)}</h1><p>${escape(description)}</p></div>`;
   const section = (title, body, note = '') => `<div class="section-head"><h2>${escape(title)}</h2>${note ? `<span>${escape(note)}</span>` : ''}</div>${body}`;
   const field = (label, value) => `<p><span class="label">${escape(label)}</span>${escape(text(value))}</p>`;
+  const analysisComplete = (analysis) => ['reviewed', 'completed'].includes(analysis?.status);
+  const actionComplete = (action) => ['completed', 'implemented'].includes(action?.status);
+  function projectProgress(project) {
+    const analysis = analyses.find((item) => item.projectId === project.id);
+    const actions = array(analysis?.actions);
+    const doneActions = actions.filter(actionComplete).length;
+    const reviewed = analysisComplete(analysis);
+    const implemented = reviewed && actions.length > 0 && doneActions === actions.length;
+    return { reviewed, implemented, actions: actions.length, doneActions, phases: 1 + Number(reviewed) + Number(implemented) };
+  }
+  function phaseProgress(project, compact = false) {
+    if (!project) return '';
+    const progress = projectProgress(project);
+    const deferred = project.status === 'deferred';
+    const underway = ['in_progress', 'review_in_progress', 'analysis_in_progress', 'analyzing'].includes(project.status);
+    const analysisDetail = progress.reviewed ? 'Dokumentiert; Prüfgrenzen bleiben offen' : deferred ? 'Bewusst zurückgestellt' : underway ? 'Prüfung läuft' : 'Nur Bestand; derzeit kein Prüfauftrag';
+    const actionDetail = progress.actions ? progress.doneActions + ' von ' + progress.actions + ' Vorschlägen umgesetzt' : 'Noch kein Maßnahmenpaket dokumentiert';
+    const steps = [
+      { label: 'Bestand', detail: 'Produkt und Zuordnung erfasst', state: 'done', status: 'Erledigt' },
+      { label: 'Analyse', detail: analysisDetail, state: progress.reviewed ? 'done' : underway ? 'current' : 'waiting', status: progress.reviewed ? 'Erledigt im dokumentierten Umfang' : deferred ? 'Zurückgestellt' : underway ? 'In Arbeit' : 'Nicht beauftragt' },
+      { label: 'Maßnahmen', detail: actionDetail, state: progress.implemented ? 'done' : progress.doneActions ? 'current' : 'waiting', status: progress.implemented ? 'Erledigt' : 'Offen' }
+    ];
+    const description = project.name + ': ' + progress.phases + ' von 3 Arbeitsphasen; ' + actionDetail;
+    const track = '<div class="phase-track" aria-hidden="true">' + steps.map((step) => '<span class="' + step.state + '"></span>').join('') + '</div>';
+    return '<section class="phase-progress' + (compact ? ' compact' : '') + '" aria-label="' + escape(description) + '"><div class="phase-progress-heading"><strong>Arbeitsphasen</strong><span class="phase-count">' + progress.phases + '/3 erledigt</span></div>' + track + '<ol class="phase-steps">' + steps.map((step, index) => '<li class="phase-step ' + step.state + '" title="' + escape(step.label + ': ' + step.status + ' · ' + step.detail) + '"><span class="phase-dot" aria-hidden="true">' + (step.state === 'done' ? '✓' : index + 1) + '</span><span><span class="phase-label">' + step.label + '</span>' + (compact ? '' : '<span class="phase-detail">' + escape(step.status + ' · ' + step.detail) + '</span>') + '</span></li>').join('') + '</ol><p class="phase-meta">' + escape(actionDetail) + (deferred ? ' · Analyse zurückgestellt' : '') + '</p></section>';
+  }
+  function overallProgress() {
+    const completed = analyses.filter(analysisComplete);
+    const eligible = projects.filter((project) => project.analysisId || ['in_progress', 'review_in_progress', 'analysis_in_progress', 'analyzing'].includes(project.status));
+    const allActions = analyses.flatMap((analysis) => array(analysis.actions));
+    const doneActions = allActions.filter(actionComplete).length;
+    const states = [
+      { label: 'Bestand erfasst', count: projects.length + '/' + projects.length, detail: 'Hauptprodukte zugeordnet; verwandte Repos separat', done: true },
+      { label: 'Analysen dokumentiert', count: completed.length + '/' + eligible.length, detail: 'Aktuell beauftragte Grundanalysen; ' + (projects.length - eligible.length) + ' Produkte nur im Bestand oder zurückgestellt', done: eligible.length > 0 && completed.length === eligible.length },
+      { label: 'Maßnahmen umgesetzt', count: doneActions + '/' + allActions.length, detail: 'Dokumentierte Vorschläge; Auswahl und Priorität noch offen', done: allActions.length > 0 && doneActions === allActions.length }
+    ];
+    return section('Fortschritt auf einen Blick', '<div class="phase-progress"><ol class="phase-steps">' + states.map((step, index) => '<li class="phase-step ' + (step.done ? 'done' : 'waiting') + '"><span class="phase-dot" aria-hidden="true">' + (step.done ? '✓' : index + 1) + '</span><span><strong class="phase-label">' + step.label + ' · ' + step.count + '</strong><span class="phase-detail">' + escape(step.detail) + '</span></span></li>').join('') + '</ol><p class="phase-meta">Grün markiert erledigte Arbeit. Analyseabschluss gilt nur für den dokumentierten Prüfumfang. Phasen sind keine Aufwandsschätzung oder Erfolgsgarantie; Vorschläge sind kein verpflichtender Gesamtplan.</p></div>');
+  }
   let toastTimer;
   const toast = (message) => { $('toast').textContent = message; $('toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3500); };
 
@@ -170,11 +208,12 @@
     const nextProject = running[0] || (queued ? allProjects.get(queued.projectId) : null);
     const actualChanges = analyses.flatMap((analysis) => array(analysis.actions)).filter((action) => ['completed', 'implemented'].includes(action.status));
     const compactDoc = paths.get(normalize('KOMPAKTUEBERSICHT.md'));
-    const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse fertig' : running.includes(project) ? 'Prüfung läuft' : 'Bestand erfasst';
+    const gamesComparison = paths.get(normalize('analysen/spiele/Grundvergleich.md'));
+    const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse fertig' : project.status === 'deferred' ? 'Zurückgestellt' : running.includes(project) ? 'Prüfung läuft' : 'Bestand erfasst';
     const areaCards = Object.entries(areaLabels).map(([id, title]) => {
       const members = projects.filter((project) => areaAlias(project.area) === id);
       const reviewed = members.filter((project) => completedIds.has(project.id)).length;
-      return '<article class="panel area-summary"><div class="section-head"><h2>' + escape(title) + '</h2><span>' + members.length + ' Produkte · ' + reviewed + ' geprüft</span></div><div class="compact-products">' + members.map((project) => '<div class="compact-product">' + productIcon(project) + '<button class="link-button" data-project="' + escape(project.id) + '">' + escape(project.name) + '</button><span class="compact-status' + (completedIds.has(project.id) ? ' done' : running.includes(project) ? ' running' : '') + '">' + shortStatus(project) + '</span></div>').join('') + '</div><a class="area-link" href="#projects/' + id + '">Pfade und Details →</a></article>';
+      return '<article class="panel area-summary"><div class="section-head"><h2>' + escape(title) + '</h2><span>' + members.length + ' Produkte · ' + reviewed + ' geprüft</span></div><div class="compact-products">' + members.map((project) => '<div class="compact-product">' + productIcon(project) + '<button class="link-button" data-project="' + escape(project.id) + '">' + escape(project.name) + '</button><span class="compact-status' + (completedIds.has(project.id) ? ' done' : running.includes(project) ? ' running' : '') + '">' + shortStatus(project) + ' · ' + projectProgress(project).phases + '/3 Phasen</span></div>').join('') + '</div><a class="area-link" href="#projects/' + id + '">Pfade und Details →</a></article>';
     }).join('');
     const completedRows = completed.map((analysis) => {
       const project = allProjects.get(analysis.projectId);
@@ -182,8 +221,12 @@
     }).join('');
     const nextTitle = nextProject ? nextProject.name + (running.includes(nextProject) ? ': Prüfung abschließen' : ': nächste Produktprüfung') : context.nextStep?.title || 'Nächsten kleinen Schritt festlegen';
     const nextDescription = nextProject ? 'Produkt, Bedienung und verfügbare Daten zusammen prüfen. Ergebnisse und Grenzen anschließend hier ergänzen.' : context.nextStep?.detail || 'Die abgeschlossenen Analysen in wenige konkrete nächste Maßnahmen übersetzen. Native Gegenprüfungen und Prioritäten sind noch offen.';
+    const remainingGames = projects.filter((project) => areaAlias(project.area) === 'games' && project.status !== 'deferred' && !completedIds.has(project.id));
+    const deferredGames = projects.filter((project) => areaAlias(project.area) === 'games' && project.status === 'deferred');
     const openRows = [
-      'Browsergames einzeln spielen und auf Qualität prüfen.',
+      ...(remainingGames.length ? [`${remainingGames.length} Browsergame${remainingGames.length === 1 ? '' : 's'} noch grundlegend prüfen: ${remainingGames.map((project) => project.name).join(', ')}.`] : []),
+      ...(deferredGames.length ? [`Vorerst zurückgestellt: ${deferredGames.map((project) => project.name).join(', ')}; übrige Varianten bleiben ebenfalls ohne neuen Prüfauftrag.`] : []),
+      ...(completed.some((analysis) => areaAlias(allProjects.get(analysis.projectId)?.area) === 'games') ? ['Aus den abgeschlossenen Spielchecks wenige sinnvolle Verbesserungen wählen; Vertiefungen nach Bedarf.'] : []),
       'Die zentrale Landingpage nach den vorliegenden Webchecks und dem Gesamtvergleich entscheiden.',
       'Vorgeschlagene Appverbesserungen und native Gegenprüfungen priorisieren.',
       'ZeroHero und Mirror später monetarisieren, sobald zunächst Nutzer gewonnen sind.'
@@ -193,11 +236,12 @@
     const historyRows = (entries) => entries.map((entry) => '<details class="history-entry"><summary><span>' + escape(entry.title) + '</span><small class="history-status">' + escape(statusLabels[entry.status] || entry.status || 'Offen') + '</small></summary>' + (scopedProjects(entry).length ? '<div class="card-scope">' + scopeMark(entry) + '</div>' : '') + '<p>' + escape(entry.detail) + '</p></details>').join('');
     return intro('Projektkompass', 'Der aktuelle Arbeitsstand.', 'Was erledigt ist, welche Analysen vorliegen und was als Nächstes fehlt. Die ausführlichen Ergebnisse und ursprünglichen Ziele bleiben in den übrigen Ansichten erhalten.') +
       '<div class="numbers"><div class="number"><strong>' + projects.length + '</strong><span>Produkte im Bestand</span></div><div class="number"><strong>' + completed.length + '</strong><span>Analysen abgeschlossen</span></div><div class="number"><strong>' + Object.keys(areaLabels).length + '</strong><span>Bereiche</span></div><div class="number"><strong>' + related.length + '</strong><span>verwandte Spiele-Repos</span></div></div>' +
+      overallProgress() +
       '<div class="grid three work-summary"><section class="panel"><h2>Erledigt</h2><p class="small-text muted">Bestand mit Produkten, Repositories und lokalen Pfaden erfasst.</p><ul class="status-list">' + (completedRows || '<li>Noch keine Produktanalyse abgeschlossen.</li>') + '</ul><a class="area-link" href="#results">Ausführliche Ergebnisse →</a></section><section class="panel"><h2>Als Nächstes</h2>' + (nextProject ? productLabel(nextProject) : '') + '<strong class="next-title">' + escape(nextTitle) + '</strong><p class="muted">' + escape(nextDescription) + '</p><a class="area-link" href="#pending">Offene Schritte ansehen →</a></section><section class="panel"><h2>Noch offen</h2>' + list(openRows) + '</section></div>' +
       '<p class="completion-note"><strong>Analyse abgeschlossen bedeutet nicht: Verbesserungen umgesetzt.</strong> ' + (actualChanges.length ? actualChanges.length + ' Maßnahmen sind als umgesetzt dokumentiert; weitere Vorschläge bleiben offen.' : 'Die dokumentierten Maßnahmen sind Vorschläge. Appupdates und Storeänderungen wurden damit noch nicht umgesetzt.') + '</p>' +
       section('Produkte nach Bereich', '<div class="grid three">' + areaCards + '</div>') +
       section('Zuletzt dokumentiert', '<div class="panel compact-history">' + historyRows(recentHistory) + '<details class="history-more"><summary>Gesamten Verlauf anzeigen (' + history.length + ')</summary>' + historyRows(history) + '</details></div>') +
-      '<div class="overview-links"><a href="#context">Ausgangslage und Ziele</a><a href="#docs">Alle Dokumente</a>' + (compactDoc ? '<a href="' + escape(docRoute(compactDoc)) + '">Kompaktübersicht als Dokument</a>' : '') + '</div>';
+      '<div class="overview-links"><a href="#context">Ausgangslage und Ziele</a><a href="#docs">Alle Dokumente</a>' + (compactDoc ? '<a href="' + escape(docRoute(compactDoc)) + '">Kompaktübersicht als Dokument</a>' : '') + (gamesComparison ? '<a href="' + escape(docRoute(gamesComparison)) + '">Spielvergleich als Dokument</a>' : '') + '</div>';
   }
 
   function contextView() {
@@ -211,7 +255,7 @@
 
   function projectCard(project) {
     const repoName = project.repository?.split('/').filter(Boolean).pop();
-    return `<article class="project-card"><div class="project-head">${productIcon(project)}<div><h3>${escape(project.name)}</h3><small>${escape(areaLabels[areaAlias(project.area)] || 'Verwandtes Repository')}</small></div></div><p>${escape(project.description)}</p><div class="project-meta">${repoName ? `Repo <code>${escape(repoName)}</code>` : 'Lokales Projekt'} · ${array(project.paths).length} ${array(project.paths).length === 1 ? 'Pfad' : 'Pfade'}</div>${badge(project.status || 'inventoried', project.statusLabel || 'Bestand erfasst')}<div class="card-bottom"><button class="button" data-project="${escape(project.id)}">Details & Pfade</button>${project.analysisId ? `<a href="#results/${escape(project.analysisId)}/review">Analyse →</a>` : '<span class="muted small-text">Prüfung steht aus</span>'}</div></article>`;
+    return `<article class="project-card"><div class="project-head">${productIcon(project)}<div><h3>${escape(project.name)}</h3><small>${escape(areaLabels[areaAlias(project.area)] || 'Verwandtes Repository')}</small></div></div><p>${escape(project.description)}</p><div class="project-meta">${repoName ? `Repo <code>${escape(repoName)}</code>` : 'Lokales Projekt'} · ${array(project.paths).length} ${array(project.paths).length === 1 ? 'Pfad' : 'Pfade'}</div>${badge(project.status || 'inventoried', project.statusLabel || 'Bestand erfasst')}${phaseProgress(project, true)}<div class="card-bottom"><button class="button" data-project="${escape(project.id)}">Details & Pfade</button>${project.analysisId ? `<a href="#results/${escape(project.analysisId)}/review">Analyse →</a>` : '<span class="muted small-text">' + (project.status === 'deferred' ? 'Prüfung vorerst zurückgestellt' : 'Bisher nur im Bestand') + '</span>'}</div></article>`;
   }
 
   function updateProjectCards() {
@@ -238,17 +282,26 @@
     const project = allProjects.get(id);
     if (!project) { toast('Dieses Produkt ist im Snapshot nicht enthalten.'); return; }
     const icon = data.icons?.[id];
-    $('dialog-content').innerHTML = `<div class="dialog-header"><div><div class="project-head">${productIcon(project)}<div><h2 id="dialog-title">${escape(project.name)}</h2><small>${escape(areaLabels[areaAlias(project.area)] || 'Verwandtes Spiele-Repository')}</small></div></div>${badge(project.status || 'inventoried', project.statusLabel || 'Bestand erfasst')}</div><button class="dialog-close" data-close-dialog aria-label="Dialog schließen">×</button></div><div class="dialog-body"><p>${escape(project.description)}</p>${project.repository ? link('GitHub-Repository öffnen ↗', project.repository, 'button quiet') : '<p class="muted">Kein App-Quellcode-Repository zugeordnet.</p>'}<h3>Bestätigte lokale Pfade</h3>${pathRows(project.paths)}${array(project.variants).length ? `<h3>Varianten und Identität</h3>${project.variants.map((variant) => `<section class="variant"><h4>${escape(variant.name)}</h4><p>${escape([variant.framework, variant.packageId, variant.version].filter(Boolean).join(' · '))}</p>${variant.path ? pathRows([variant.path]) : ''}<p>${escape(variant.note || '')}</p></section>`).join('')}` : ''}<h3>Hinweise</h3>${list(project.notes || (project.note ? [project.note] : []))}${array(project.openQuestions).length ? `<h3>Offene Fragen</h3>${list(project.openQuestions)}` : ''}${project.nextStep ? `<h3>Nächster Schritt</h3><p>${escape(project.nextStep)}</p>` : ''}${project.analysisId ? `<a class="button primary" data-close-dialog href="#results/${escape(project.analysisId)}/review">Vollständige Analyse lesen</a>` : ''}<h3>Quellen</h3>${sources(project.sourceFiles)}${icon ? `<details class="original"><summary>Produktbild: Herkunft und Grenze</summary><p>${escape(icon.note || '')}</p><p class="path-reference">${escape(icon.source || '')}</p></details>` : '<p class="small-text muted">Monogramm zur Orientierung; kein erfundenes Produktlogo.</p>'}</div>`;
+    $('dialog-content').innerHTML = `<div class="dialog-header"><div><div class="project-head">${productIcon(project)}<div><h2 id="dialog-title">${escape(project.name)}</h2><small>${escape(areaLabels[areaAlias(project.area)] || 'Verwandtes Spiele-Repository')}</small></div></div>${badge(project.status || 'inventoried', project.statusLabel || 'Bestand erfasst')}</div><button class="dialog-close" data-close-dialog aria-label="Dialog schließen">×</button></div><div class="dialog-body">${phaseProgress(project)}<p>${escape(project.description)}</p>${project.repository ? link('GitHub-Repository öffnen ↗', project.repository, 'button quiet') : '<p class="muted">Kein App-Quellcode-Repository zugeordnet.</p>'}<h3>Bestätigte lokale Pfade</h3>${pathRows(project.paths)}${array(project.variants).length ? `<h3>Varianten und Identität</h3>${project.variants.map((variant) => `<section class="variant"><h4>${escape(variant.name)}</h4><p>${escape([variant.framework, variant.packageId, variant.version].filter(Boolean).join(' · '))}</p>${variant.path ? pathRows([variant.path]) : ''}<p>${escape(variant.note || '')}</p></section>`).join('')}` : ''}<h3>Hinweise</h3>${list(project.notes || (project.note ? [project.note] : []))}${array(project.openQuestions).length ? `<h3>Offene Fragen</h3>${list(project.openQuestions)}` : ''}${project.nextStep ? `<h3>Nächster Schritt</h3><p>${escape(project.nextStep)}</p>` : ''}${project.analysisId ? `<a class="button primary" data-close-dialog href="#results/${escape(project.analysisId)}/review">Vollständige Analyse lesen</a>` : ''}<h3>Quellen</h3>${sources(project.sourceFiles)}${icon ? `<details class="original"><summary>Produktbild: Herkunft und Grenze</summary><p>${escape(icon.note || '')}</p><p class="path-reference">${escape(icon.source || '')}</p></details>` : '<p class="small-text muted">Monogramm zur Orientierung; kein erfundenes Produktlogo.</p>'}</div>`;
     $('project-dialog').showModal();
   }
 
   function findingsView(analysis) {
     const project = allProjects.get(analysis.projectId);
     const isWebsite = project?.area === 'web';
+    const isGame = project?.area === 'games';
+    const isLocalGame = isGame && analysis.runtimeKind === 'local_copy';
+    const gameRuntimeLabel = isLocalGame ? 'In isolierter Spielkopie beobachtet' : 'Im öffentlichen Spiel beobachtet';
     const runtimeNote = isWebsite
       ? 'Befunde sind nach Belegtyp markiert. „Im Browser beobachtet“ bezeichnet die dokumentierte Prüfung des tatsächlichen Webauftritts. Lokale Quellen und veröffentlichter Stand bleiben getrennt; die konkreten Ansichten und Prüfgrenzen stehen im Bericht.'
+      : isGame
+      ? isLocalGame
+      ? 'Befunde sind nach Belegtyp markiert. „In isolierter Spielkopie beobachtet“ bezeichnet eine getrennte lokale Testfassung mit eigenem Spielstand. Das ist kein Nachweis des öffentlich ausgelieferten Live-Bundles. Kurze Spielsitzungen sind kein Langzeittest und kein echtes Spielerfeedback; Herkunft und konkrete Prüfgrenzen stehen im Bericht.'
+      : 'Befunde sind nach Belegtyp markiert. „Im öffentlichen Spiel beobachtet“ bezeichnet die dokumentierte Prüfung des tatsächlichen Browsergames. Kurze Spielsitzungen sind kein Langzeittest und kein echtes Spielerfeedback. Quellenbefunde und veröffentlichter Spielstand bleiben getrennt; der konkrete Umfang steht im Bericht.'
       : 'Befunde sind nach Belegtyp markiert. „Im Webtest reproduziert“ bezeichnet die dokumentierte Testkopie; native und veröffentlichte Builds sind separat abzugleichen.';
-    const evidenceLabel = (finding) => isWebsite && finding.evidenceType === 'runtime' ? 'Im Browser beobachtet' : evidenceLabels[finding.evidenceType] || finding.evidenceType;
+    const evidenceLabel = (finding) => finding.evidenceType === 'runtime' && (isWebsite || isGame)
+      ? isGame ? gameRuntimeLabel : 'Im Browser beobachtet'
+      : evidenceLabels[finding.evidenceType] || finding.evidenceType;
     return `<div class="note">${escape(runtimeNote)}</div>` +
       section('Stärken und vorhandene Grundlage', `<div class="grid two">${array(analysis.strengths).map((strength) => `<article class="panel"><div class="card-scope">${productLabel(project)}</div><div class="strength-item">${svg('check')}<div><strong>${escape(strength.title)}</strong><p>${escape(strength.detail)}</p></div></div></article>`).join('')}</div>`) +
       section('Ausführliche Befunde', array(analysis.findings).map((finding) => `<details class="finding"><summary><span class="finding-summary-title">${productLabel(project, '', true)}<strong>${escape(finding.title)}</strong></span>${badge(finding.evidenceType, evidenceLabel(finding))}${finding.priority ? badge(finding.priority, priorityLabels[finding.priority] || finding.priority) : ''}</summary><div class="finding-body">${field('Befund', finding.detail)}${field('Beleg / Beobachtung', finding.evidence)}${field('Aussagegrenze', finding.limitation)}${field('Empfehlung', finding.recommendation)}${sources(finding.sourceDocs)}</div></details>`).join(''), `${array(analysis.findings).length} dokumentierte Befunde`) +
@@ -257,26 +310,42 @@
 
   function metricsView(analysis) {
     const metrics = array(analysis.metrics);
-    const isWebsite = allProjects.get(analysis.projectId)?.area === 'web';
+    const project = allProjects.get(analysis.projectId);
+    const isWebsite = project?.area === 'web';
+    const isGame = project?.area === 'games';
     const note = isWebsite
       ? 'Für die Web-Grundanalyse wurden keine Besucher-, Anfrage-, Kauf- oder Umsatzdaten ausgewertet. Die Bewertung der Gestaltung und Bedienung belegt keine Conversionwirkung. Fehlende Kennzahlen sind nicht null.'
+      : isGame
+      ? 'Spielerzahlen, Spielsitzungen und Wiederkehr sind unterschiedliche Kennzahlen. Kurze Spielbeobachtungen belegen keine langfristige Nutzung oder wirtschaftliche Wirkung. Datenzeiträume und Definitionen stehen beim jeweiligen Wert; fehlende Kennzahlen sind nicht null.'
       : 'Auswahlzeitraum und tatsächliche Datenabdeckung sind getrennt. Installationsklicks sind keine bestätigten Installationen; fehlende Werte sind nicht null. Zahlen aus unterschiedlichen Berichten ergeben keinen gemeinsamen Funnel.';
+    const emptyNote = isGame
+      ? 'Für diesen begrenzten Spielcheck sind keine Spieler-, Session- oder Retentionskennzahlen dokumentiert.'
+      : 'Für diese Analyse sind keine Kennzahlen dokumentiert.';
     return `<div class="note amber">${escape(note)}</div>` +
-      (metrics.length ? `<div class="table-wrap"><table class="metric-table"><thead><tr><th>Kennzahl</th><th>Wert / Einheit</th><th>Auswahl</th><th>Tatsächliche Abdeckung</th><th>Definition und Grenze</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td>${escape(metric.label)}</td><td><strong>${escape(metric.value == null ? '—' : typeof metric.value === 'number' ? new Intl.NumberFormat('de-DE').format(metric.value) : metric.value)}</strong><p>${escape(metric.unit)}</p></td><td>${escape(metric.selectedPeriod)}</td><td>${escape(metric.availablePeriod)}</td><td>${escape(metric.definition)}<p>${escape(metric.caveat)}</p></td></tr>`).join('')}</tbody></table></div>` : '<div class="empty">Für diese Analyse sind keine Kennzahlen dokumentiert.</div>') + sources(analysis.documents);
+      (metrics.length ? `<div class="table-wrap"><table class="metric-table"><thead><tr><th>Kennzahl</th><th>Wert / Einheit</th><th>Auswahl</th><th>Tatsächliche Abdeckung</th><th>Definition und Grenze</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td>${escape(metric.label)}</td><td><strong>${escape(metric.value == null ? '—' : typeof metric.value === 'number' ? new Intl.NumberFormat('de-DE').format(metric.value) : metric.value)}</strong><p>${escape(metric.unit)}</p></td><td>${escape(metric.selectedPeriod)}</td><td>${escape(metric.availablePeriod)}</td><td>${escape(metric.definition)}<p>${escape(metric.caveat)}</p></td></tr>`).join('')}</tbody></table></div>` : `<div class="empty">${escape(emptyNote)}</div>`) + sources(analysis.documents);
   }
 
   function screenshotsView(analysis) {
     const images = array(data.screenshots).filter((image) => image.projectId === analysis.projectId);
     if (!images.length) return '';
     const project = allProjects.get(analysis.projectId);
-    const mirrorNote = analysis.projectId === 'mirror'
+    const isGame = project?.area === 'games';
+    const hasLocalCaptures = images.some((image) => image.kind === 'local_browser_capture');
+    const referenceNote = analysis.projectId === 'mirror'
       ? 'Historische lokale UI-Preview vom 07.10.2026. Diese Bilder sind keine heutigen Aufnahmen und keine Belege eines Tests des veröffentlichten Play-Binaries. Der aktuelle Laufzeittest und seine Grenzen stehen gesondert im Bericht.'
+      : hasLocalCaptures
+      ? 'Lokale Browseraufnahmen zeigen eine separate isolierte Testkopie mit eigenem Spielstand. Sie sind kein Nachweis des öffentlich ausgelieferten Live-Bundles. Datum, lokale Testadresse und Ansichtsgröße stehen je Bild; die Herkunft und Prüfgrenzen sind im Bericht dokumentiert.'
+      : isGame
+      ? 'Aufnahmen des tatsächlich im Browser geprüften öffentlichen Spiels. Datum, URL und Ansichtsgröße sind je Bild dokumentiert. Bilder belegen ausgewählte Spielzustände, keinen Langzeittest oder Rückmeldungen echter Spieler; die konkreten Spielsitzungen und Grenzen stehen im Bericht.'
       : 'Aufnahmen des tatsächlich im Browser geprüften Webauftritts. Datum, URL und Ansichtsgröße sind je Bild dokumentiert. Einzelne Bilder belegen die jeweilige Ansicht; die weiteren Prüfungen und Grenzen stehen im Bericht.';
     const validImage = (value) => /^data:image\/(png|webp|jpeg|gif);base64,[a-z0-9+/=\s]+$/i.test(value || '');
-    const captureInfo = (image) => image.kind === 'public_browser_capture'
-      ? `<p>Browseraufnahme vom ${escape(dateLabel(image.capturedAt))} · ${escape(image.viewport?.width)} × ${escape(image.viewport?.height)} Pixel</p><p>${link('Geprüfte Website öffnen ↗', image.url)}</p>`
+    const captureLabel = (image) => image.kind === 'local_browser_capture' ? 'Lokale Browseraufnahme' : image.kind === 'public_browser_capture' ? 'Browseraufnahme' : 'Preview';
+    const captureInfo = (image) => image.kind === 'local_browser_capture'
+      ? `<p>Lokale Browseraufnahme vom ${escape(dateLabel(image.capturedAt))} · Browser-Viewport ${escape(image.viewport?.width)} × ${escape(image.viewport?.height)} CSS-Pixel</p><p>Separate Testkopie; kein Nachweis des öffentlich ausgelieferten Live-Bundles.</p><p class="path-reference">Lokale Testadresse: ${escape(image.url)}</p>`
+      : image.kind === 'public_browser_capture'
+      ? `<p>Browseraufnahme vom ${escape(dateLabel(image.capturedAt))} · Browser-Viewport ${escape(image.viewport?.width)} × ${escape(image.viewport?.height)} CSS-Pixel</p><p>${link(isGame ? 'Geprüftes Spiel öffnen ↗' : 'Geprüfte Website öffnen ↗', image.url)}</p>`
       : '';
-    return section('Visuelle Referenzen', `<div class="note">${escape(mirrorNote)}</div><div class="screenshot-grid">${images.map((image) => `<details class="screenshot"><summary>${validImage(image.dataUrl) ? `<img class="screenshot-thumb" src="${escape(image.dataUrl)}" alt="${image.kind === 'public_browser_capture' ? 'Browseraufnahme' : 'Preview'}: ${escape(image.title || 'Produktansicht')}" loading="lazy">` : '<span class="muted">Bild nicht im Snapshot verfügbar</span>'}<span>${project ? productLabel(project, '', true) : ''} ${escape(image.title || 'Produktansicht')}</span><small>Ansicht vergrößern</small></summary><div class="screenshot-body">${validImage(image.dataUrl) ? `<img class="screenshot-full" src="${escape(image.dataUrl)}" alt="${escape(image.title || 'Produktansicht')}" loading="lazy">` : ''}<p>${escape(image.note || mirrorNote)}</p>${captureInfo(image)}<p class="path-reference">${escape(image.path || '')}</p></div></details>`).join('')}</div>`, `${images.length} dokumentierte Bilder`);
+    return section('Visuelle Referenzen', `<div class="note">${escape(referenceNote)}</div><div class="screenshot-grid">${images.map((image) => `<details class="screenshot"><summary>${validImage(image.dataUrl) ? `<img class="screenshot-thumb" src="${escape(image.dataUrl)}" alt="${escape(captureLabel(image))}: ${escape(image.title || 'Produktansicht')}" loading="lazy">` : '<span class="muted">Bild nicht im Snapshot verfügbar</span>'}<span>${project ? productLabel(project, '', true) : ''} ${escape(image.title || 'Produktansicht')}</span><small>Ansicht vergrößern</small></summary><div class="screenshot-body">${validImage(image.dataUrl) ? `<img class="screenshot-full" src="${escape(image.dataUrl)}" alt="${escape(image.title || 'Produktansicht')}" loading="lazy">` : ''}<p>${escape(image.note || referenceNote)}</p>${captureInfo(image)}<p class="path-reference">${escape(image.path || '')}</p></div></details>`).join('')}</div>`, `${images.length} dokumentierte Bilder`);
   }
 
   function actionsView(analysis) {
@@ -286,7 +355,12 @@
 
   function scopeView(analysis) {
     const project = allProjects.get(analysis.projectId);
-    return `<div class="grid two"><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Tatsächlich geprüft</h2>${list(analysis.scope?.checked)}</article><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Grenzen und nicht geprüft</h2>${list(analysis.scope?.notChecked)}</article></div>` + screenshotsView(analysis) + section('Vollständige Detaildokumente', `<div class="content-stack">${array(analysis.documents).map((path) => { const doc = paths.get(normalize(path)); return `<article class="panel list-row"><div class="grow"><div class="card-scope">${productLabel(project)}</div><h3>${escape(doc?.title || path.split('/').pop())}</h3><p class="path-reference">${escape(path)}</p></div>${link('Lesen →', path, 'button small')}</article>`; }).join('')}</div>`);
+    const scopeNote = project?.area === 'games'
+      ? analysis.runtimeKind === 'local_copy'
+      ? '<div class="note">Der Spielcheck beobachtet eine isolierte lokale Spielkopie mit eigenem Spielstand und trennt diese von Quellenbefunden sowie der öffentlichen Veröffentlichung. Er belegt nicht das öffentlich ausgelieferte Live-Bundle. Kurze Spielsitzungen zeigen den dokumentierten Einstieg und einzelne Abläufe; Langzeitmotivation, Wiederkehr und echtes Spielerfeedback sind damit nicht belegt.</div>'
+      : '<div class="note">Der Spielcheck trennt Beobachtungen am öffentlichen Browsergame von Quellenbefunden. Kurze Spielsitzungen zeigen den dokumentierten Einstieg und einzelne Abläufe; Langzeitmotivation, Wiederkehr und echtes Spielerfeedback sind damit nicht belegt.</div>'
+      : '';
+    return scopeNote + `<div class="grid two"><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Tatsächlich geprüft</h2>${list(analysis.scope?.checked)}</article><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Grenzen und nicht geprüft</h2>${list(analysis.scope?.notChecked)}</article></div>` + screenshotsView(analysis) + section('Vollständige Detaildokumente', `<div class="content-stack">${array(analysis.documents).map((path) => { const doc = paths.get(normalize(path)); return `<article class="panel list-row"><div class="grow"><div class="card-scope">${productLabel(project)}</div><h3>${escape(doc?.title || path.split('/').pop())}</h3><p class="path-reference">${escape(path)}</p></div>${link('Lesen →', path, 'button small')}</article>`; }).join('')}</div>`);
   }
 
   function resultsView(id, tab) {
@@ -295,18 +369,18 @@
     const selectedTab = ['review', 'metrics', 'actions', 'scope'].includes(tab) ? tab : 'review';
     const tabs = { review: 'Bewertung & Befunde', metrics: 'Kennzahlen', actions: 'Maßnahmen', scope: 'Prüfumfang & Quellen' };
     const project = allProjects.get(analysis.projectId);
-    const choice = (item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}</a>`; };
+    const choice = (item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}${analysisComplete(item) ? badge('reviewed', 'fertig') : badge(item.status)}${member ? `<span class="phase-count" title="Arbeitsphasen: Bestand, Analyse, Maßnahmen">${projectProgress(member).phases}/3</span>` : ''}</a>`; };
     const selection = analyses.length > 1 ? ['apps', 'web', 'games'].map((area) => {
       const members = analyses.filter((item) => allProjects.get(item.projectId)?.area === area);
       return members.length ? `<div><h3 class="muted">${escape(areaLabels[area])}</h3><nav class="analysis-picker" aria-label="${escape(areaLabels[area])}: Produktanalyse auswählen">${members.map(choice).join('')}</nav></div>` : '';
     }).join('') : '';
-    const comparison = project?.area === 'web' ? `<p>${link('Alle sieben Webauftritte vergleichen →', 'analysen/onlineauftritt/Grundanalyse-Vergleich.md')}</p>` : '';
-    return selection + intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + comparison + `<div class="pill-row">${analyses.length === 1 ? productLabel(project) : ''}${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div><nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
+    const comparison = project?.area === 'web' ? `<p>${link('Alle sieben Webauftritte vergleichen →', 'analysen/onlineauftritt/Grundanalyse-Vergleich.md')}</p>` : project?.area === 'games' ? `<p>${link('Die fünf geprüften Spiele vergleichen →', 'analysen/spiele/Grundvergleich.md')}</p>` : '';
+    return selection + intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + comparison + `<div class="pill-row">${analyses.length === 1 ? productLabel(project) : ''}${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div>${phaseProgress(project, true)}<nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
   }
 
   function pendingView() {
     const entries = array(results.pending);
-    const kinds = { verification: 'Gegenprüfung offen', analysis: 'Analyse offen', strategy: 'Entscheidung offen' };
+    const kinds = { verification: 'Gegenprüfung offen', analysis: 'Analyse offen', strategy: 'Entscheidung offen', decision: 'Entscheidung offen' };
     const card = (entry) => `<article class="panel pending-card" data-pending="${escape(entry.id)}"><div class="card-scope">${scopeMark(entry)}${badge('pending', kinds[entry.kind] || 'Offen')}</div><h4>${escape(entry.title)}</h4><p>${escape(entry.detail)}</p></article>`;
     const orderedAreas = ['apps', 'games', 'web'];
     const jumpLinks = orderedAreas.map((area) => {
@@ -321,10 +395,10 @@
       const groups = ids.map((id) => {
         const project = allProjects.get(id);
         const items = members.filter((entry) => entry.projectId === id);
-        return `<section class="pending-group" id="pending-${escape(id)}" aria-label="Offene Schritte für ${escape(project?.name || id)}"><div class="pending-group-head"><h3>${project ? productLabel(project) : escape(id)}</h3><span class="small-text muted">${items.length} offene Schritte</span>${project?.analysisId ? `<a href="#results/${escape(project.analysisId)}/review">Analyse lesen →</a>` : ''}</div><div class="pending-grid">${items.map(card).join('')}</div></section>`;
+        return `<section class="pending-group" id="pending-${escape(id)}" aria-label="Offene Schritte für ${escape(project?.name || id)}"><div class="pending-group-head"><h3>${project ? productLabel(project) : escape(id)}</h3><span class="small-text muted">${items.length} ${items.length === 1 ? 'offener Schritt' : 'offene Schritte'}</span>${project ? `<span class="phase-count">${projectProgress(project).phases}/3 Arbeitsphasen</span>` : ''}${project?.analysisId ? `<a href="#results/${escape(project.analysisId)}/review">Analyse lesen →</a>` : ''}</div><div class="pending-grid">${items.map(card).join('')}</div></section>`;
       }).join('');
       const generalGroup = general.length ? `<section class="pending-group"><div class="pending-group-head"><h3>Bereichsweite Schritte</h3><span class="small-text muted">${general.length} offen</span></div><div class="pending-grid">${general.map(card).join('')}</div></section>` : '';
-      return `<section class="pending-area" id="pending-${area}">${section(areaLabels[area], groups + generalGroup || '<p class="muted">Kein weiterer Schritt dokumentiert.</p>', `${members.length} offene Schritte`)}</section>`;
+      return `<section class="pending-area" id="pending-${area}">${section(areaLabels[area], groups + generalGroup || '<p class="muted">Kein weiterer Schritt dokumentiert.</p>', `${members.length} ${members.length === 1 ? 'offener Schritt' : 'offene Schritte'}`)}</section>`;
     }).join('');
     const otherEntries = entries.filter((entry) => !orderedAreas.includes(areaAlias(entry.area)));
     const decisionGroups = new Map();
@@ -353,7 +427,7 @@
     if (json) { try { content = JSON.stringify(JSON.parse(content), null, 2); } catch (_) { /* Preserve original text. */ } }
     const members = documentProjects(doc.path);
     return intro('Alle Arbeitsinformationen', 'Dokumente und vollständige Quellen.', 'Die Berichte und Bestandsdateien sind vollständig eingebettet. Lesen, herunterladen und exportieren funktionieren auch ohne Server; Links zu bekannten Quellen führen hierher.') +
-      `<div class="doc-layout"><nav class="doc-list" aria-label="Dokumentauswahl">${documents.map((entry) => `<a href="${escape(docRoute(entry))}"${entry.path === doc.path ? ' class="active" aria-current="page"' : ''}>${escape(entry.title || entry.path.split('/').pop())}<br><span class="small-text">${escape(entry.path)}</span></a>`).join('')}</nav><article class="doc-reader"><div class="doc-heading"><div>${members.length ? `<div class="scope-row doc-project">${members.map((project) => productLabel(project)).join('')}</div>` : ''}<span>${escape(doc.path)}</span></div><div class="top-actions"><button class="button small" data-download-doc="${escape(doc.path)}">Original herunterladen</button><button class="button small quiet" data-print>Drucken</button></div></div>${json ? `<pre><code>${escape(content)}</code></pre>` : markdown(content, doc.path)}</article></div>`;
+      `<div class="doc-layout"><nav class="doc-list" aria-label="Dokumentauswahl">${documents.map((entry) => `<a href="${escape(docRoute(entry))}"${entry.path === doc.path ? ' class="active" aria-current="page"' : ''}>${escape(entry.title || entry.path.split('/').pop())}<br><span class="small-text">${escape(entry.path)}</span></a>`).join('')}</nav><article class="doc-reader"><div class="doc-heading"><div>${members.length ? `<div class="scope-row doc-project">${members.map((project) => productLabel(project)).join('')}</div>` : ''}<span>${escape(doc.path)}</span>${members.length ? `<div class="pill-row">${members.filter((member) => projectProgress(member).reviewed).length ? badge('reviewed', members.length === 1 ? 'Zugeordnete Analyse dokumentiert' : 'Zugeordnete Analysen dokumentiert') : ''}<span class="phase-meta">${members.map((member) => escape(member.name) + ': ' + projectProgress(member).phases + '/3 Phasen').join(' · ')}</span></div>` : ''}</div><div class="top-actions"><button class="button small" data-download-doc="${escape(doc.path)}">Original herunterladen</button><button class="button small quiet" data-print>Drucken</button></div></div>${json ? `<pre><code>${escape(content)}</code></pre>` : markdown(content, doc.path)}</article></div>`;
   }
 
   function download(name, content, mime) {

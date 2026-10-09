@@ -6,8 +6,8 @@
       "name": "HEXFRONT",
       "area": "games",
       "description": "Echtzeit-Taktikspiel auf Hexfeldern: Gebiet ausbauen, Truppen verteilen und die gegnerische Basis erobern.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "reviewed",
+      "statusLabel": "Begrenzte Spiel-Grundanalyse abgeschlossen",
       "repository": "https://github.com/emfau88/hexwars",
       "paths": [
         "C:\\Users\\madde\\Documents\\ChatGPT\\hexwars"
@@ -17,24 +17,30 @@
         "Produktname HEXFRONT unterscheidet sich vom Repository-Namen hexwars."
       ],
       "openQuestions": [
-        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
-        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
-        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+        "Welcher Deployment-Commit beziehungsweise welches Bundle wurde auf Pages tatsächlich gespielt?",
+        "Verstehen neue Spieler Reisezeit, automatisches Wachstum, Versorgung und Kapazitätsreserven ohne Hilfe?",
+        "Funktionieren ein echter Sieg, Freischaltung von II und gespeicherter Fortschritt nach Reload?",
+        "Wie verhält sich das Spiel auf einem tatsächlichen kleinen Touchgerät, einschließlich Versorgungskontrolle und Zielinformationen?",
+        "Wie funktionieren spätere Modi/Guardian, Karten II–IX, Audio, Fokus-/Hintergrundfälle und längere Sessions?",
+        "Welches Element verursacht den Ergebnisdialogüberlauf, und bleibt ein späterer kleiner Fix in Sieg/Niederlage und beiden Ansichtsgrößen stabil?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Wenige vorgeschlagene Verbesserungen nach dem Gesamtvergleich wählen; offene Sieg-/Fortschritts-/Touch-/Langzeitpfade bei Bedarf separat prüfen.",
       "sourceFiles": [
-        "spiele-bestand.json",
-        "README.md"
+        "analysen/hexfront/Grundanalyse.md",
+        "analysen/hexfront/Quellenpruefung.md",
+        "analysen/hexfront/runtime/README.md",
+        "analysen/hexfront/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "hexfront"
     },
     {
       "id": "galalaxy",
       "name": "GALALAXY",
       "area": "games",
       "description": "Mobile-orientierter Weltraum-Arcade-Survivor mit automatisch feuerndem Schiff, Gegnerflotten, Bossen und Upgrades.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "reviewed",
+      "statusLabel": "Begrenzte Spiel-Grundanalyse abgeschlossen",
       "repository": "https://github.com/emfau88/galalaxy",
       "paths": [
         "C:\\Users\\madde\\Documents\\galaxy"
@@ -44,24 +50,30 @@
         "Lokaler Ordner galaxy unterscheidet sich vom Repository-Namen galalaxy."
       ],
       "openQuestions": [
-        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
-        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
-        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+        "Wie gut funktionieren längere Fingerführung, Fingerabdeckung und schnelle Richtungswechsel auf einem echten Touchgerät?",
+        "Wie verständlich sind Heilung, Shield-Erholung und XP-Nutzen für neue Spieler während aktiven Ausweichens?",
+        "Wie gut sind erste Bosswarnung, Angriffsmuster, Belohnung und Sektorwechsel tatsächlich im Spiel lesbar?",
+        "Bestätigen sich fehlende freie Tastaturwege für Titelstart, alle drei Upgrades und Neustart im Live-Gegencheck?",
+        "Welche späteren Builds, Sektoren und Herausforderungen tragen Wiederkehr über den ersten kurzen Lauf hinaus?",
+        "Welche konkrete Veröffentlichung entspricht vollständig dem gelesenen öffentlichen main und wie soll der abweichende lokale Y8-Arbeitsstand weitergeführt werden?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Wenige vorgeschlagene Verbesserungen nach dem Gesamtvergleich wählen; offene Boss-/Sektor-/Touch-/Langzeitpfade bei Bedarf separat prüfen.",
       "sourceFiles": [
-        "spiele-bestand.json",
-        "README.md"
+        "analysen/galalaxy/Grundanalyse.md",
+        "analysen/galalaxy/Quellenpruefung.md",
+        "analysen/galalaxy/runtime/README.md",
+        "analysen/galalaxy/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "galalaxy"
     },
     {
       "id": "rooster-rage",
       "name": "ROOSTER RAGE",
       "area": "games",
       "description": "Top-down-Bullet-Heaven/Action-Roguelite: drei Kampf-Hähne, weiterentwickelbare Eierwaffen und Wellen von Gegnern.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "reviewed",
+      "statusLabel": "Begrenzte Spiel-Grundanalyse abgeschlossen",
       "repository": "https://github.com/emfau88/RoosterRage",
       "paths": [
         "C:\\Users\\madde\\Documents\\ChatGPT\\Rooster\\RoosterRage",
@@ -87,54 +99,72 @@
       ],
       "notes": [
         "Zwei lokale Checkouts desselben Repositories. ChatGPT\\Rooster\\RoosterRage: letzter lokaler Commit 2026-10-05; ROOSTER: letzter lokaler Commit 2026-08-09. Aktualität etwaiger uncommitteter Änderungen wurde nicht untersucht.",
-        "Der übergeordnete Ordner ChatGPT\\Rooster besitzt ebenfalls .git, aber keinen origin-Remote; das Spielrepository liegt im Unterordner RoosterRage."
+        "Der übergeordnete Ordner ChatGPT\\Rooster besitzt ebenfalls .git, aber keinen origin-Remote; das Spielrepository liegt im Unterordner RoosterRage.",
+        "Eigene begrenzte öffentliche Browserprüfung und gezielte Quellengegenprüfung am 09.10.2026 abgeschlossen. Aktive Quelle und vorhandene lokale Änderungen sind im Laufzeitbericht getrennt dokumentiert; keine vollständige Kampagnen-, Balance-, Audio- oder Touchprüfung."
       ],
       "openQuestions": [
-        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
-        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
-        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+        "Wie sehen Erstführung und Freischaltungen in einem wirklich neuen Profil aus, und verstehen Neulinge XP und Versorgung?",
+        "Welche gespeicherten Talentränge waren im bestehenden Profil aktiv, und wie verändert ein leerer Einstieg das Kampfgefühl?",
+        "Wie gut funktionieren längere Joystickführung, Fingerabdeckung und schnelle Richtungswechsel auf einem echten Touchgerät?",
+        "Wie helfen Soundeffekte, Musik und Trefferfeedback bei tatsächlichem Hören während des Kampfs?",
+        "Wie verständlich sind erste Bosswarnung und Angriffsmuster, und tragen weitere Karten/Expeditionen die Wiederkehr?",
+        "Welcher lokale Portal-/Y8-Arbeitsstand soll später gegenüber dem aktuell geprüften master veröffentlicht werden?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Wenige Maßnahmen nach gemeinsamem Vergleich auswählen; vorgeschlagene Änderungen sind noch nicht umgesetzt.",
       "sourceFiles": [
         "spiele-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/rooster-rage/Grundanalyse.md",
+        "analysen/rooster-rage/Quellenpruefung.md",
+        "analysen/rooster-rage/runtime/README.md",
+        "analysen/rooster-rage/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "rooster-rage"
     },
     {
       "id": "kesselkrawall",
       "name": "KESSELKRAWALL",
       "area": "games",
       "description": "Magischer Browser-Autobattler: Zutaten kaufen, kombinieren und verschmelzen; der aufgebaute Kessel kämpft anschließend automatisch.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "reviewed",
+      "statusLabel": "Begrenzte Spiel-Grundanalyse abgeschlossen",
       "repository": "https://github.com/emfau88/KesselKrawall",
       "paths": [
         "C:\\Users\\madde\\Documents\\kesselkrawall"
       ],
       "variants": [],
       "notes": [
-        "Englischer Produktname Cauldron Rumble; im Dashboard bei Y8 als Cauldron Rumble: Merge & Battle geführt."
+        "Englischer Produktname Cauldron Rumble; im Dashboard bei Y8 als Cauldron Rumble: Merge & Battle geführt.",
+        "Eigener frischer lokaler Export des öffentlichen main 83d17ab14ff265559b58652e9040eecef7d7ad51: zwei tatsächliche Siege, Vorbereitung Runde 3 und Reload/Fortsetzen geprüft. Öffentlicher bestehender Save unangetastet. Live-Bundle-Identität nicht bewiesen; keine vollständige Kampagnen-/Balance-/Audio-/Touchprüfung."
       ],
       "openQuestions": [
-        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
-        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
-        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+        "Wird eine sichtbare Shop-Kaufgrenze von neuen Spielern sofort verstanden, während Preis und Mergevorschau hilfreich bleiben?",
+        "Wie schnell verstehen neue Spieler gleiche Mergelevel und Familienpunkte ohne zusätzliche lange Erklärung?",
+        "Wie gut funktionieren Detail-Sheet, feste Aktionen, Nachbarmarkierung und Kampf auf einem echten Touchgerät?",
+        "Wie verständlich sind Niederlage, Siegelverlust, Rückkehr und ein späterer stärkerer Gegner tatsächlich?",
+        "Tragen die späteren Runden, Familien und Kampagnenbelohnungen echte Wiederkehr über die ersten zwei Siege hinaus?",
+        "Wie verhalten sich Verkauf, Positionstausch, Reserve und Save-Randfälle in gezielten praktischen Gegenchecks?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Kleinen Shop-Hinweis und knappe Grundregel nach gemeinsamem Vergleich auswählen; Folgeprüfungen bei Bedarf. Noch keine Änderungen umgesetzt.",
       "sourceFiles": [
         "spiele-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/kesselkrawall/Grundanalyse.md",
+        "analysen/kesselkrawall/Quellenpruefung.md",
+        "analysen/kesselkrawall/runtime/README.md",
+        "analysen/kesselkrawall/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "kesselkrawall"
     },
     {
       "id": "core-arena",
       "name": "CORE ARENA",
       "area": "games",
       "description": "2D-Top-down-Arena-/CTF-Shooter mit Bewegung, Zielen, Waffen und Spielzielen; die dokumentierte Browserfassung spielt gegen Bots.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "reviewed",
+      "statusLabel": "Begrenzte Spiel-Grundanalyse abgeschlossen",
       "repository": "https://github.com/emfau88/CTF-3.0",
       "paths": [
         "C:\\Users\\madde\\Documents\\CTF-3.0"
@@ -142,27 +172,37 @@
       "variants": [],
       "notes": [
         "Produktname CORE ARENA unterscheidet sich vom Repository-Namen CTF-3.0.",
-        "Der ähnlich benannte Ordner C:\\Users\\madde\\Documents\\CTF 3.0 wird in Codex als CTF 3.0 falscher ordner geführt; er hat keinen origin-Remote und enthält kein gefundenes README/package.json. Für diese Bestandsaufnahme ist CTF-3.0 der bestätigte Pfad."
+        "Der ähnlich benannte Ordner C:\\Users\\madde\\Documents\\CTF 3.0 wird in Codex als CTF 3.0 falscher ordner geführt; er hat keinen origin-Remote und enthält kein gefundenes README/package.json. Für diese Bestandsaufnahme ist CTF-3.0 der bestätigte Pfad.",
+        "Nutzerhinweise als unbestätigte Prüffragen: mögliche zu schwere Bots, zu viel Sci-Fi besonders in Untermenüs, noch nicht überzeugende Waffen-/Munitionsdrops. Potenzial und Unzufriedenheit sind persönliche Einschätzungen; sie dürfen das unabhängige Ersturteil nicht vorwegnehmen.",
+        "Eigene begrenzte öffentliche Browserprüfung und gezielte Quellengegenprüfung am 09.10.2026 abgeschlossen. Aktive Quelle und vorhandene lokale Änderungen sind im Laufzeitbericht getrennt dokumentiert; keine vollständige Kampagnen-, Balance-, Audio- oder Touchprüfung."
       ],
       "openQuestions": [
-        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
-        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
-        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+        "Welcher öffentliche Deployment-Commit lief auf Pages und welcher aktuelle Quellstand ist für spätere Änderungen maßgeblich?",
+        "Soll der Qualifier eigene erlernte Aufgaben oder lediglich ein abgeschlossenes Kennenlernmatch bestätigen? Ein Siegzwang ist noch keine dokumentierte Entscheidung.",
+        "Wie erleben reale Erstnutzer das Training bei normalem Reaktionstempo und zuverlässigen menschlichen Aufgabenhaken?",
+        "Wie funktioniert eine gesicherte eigene Pulse-Aufnahme mit Munitionsanstieg und anschließender Feuerwirkung?",
+        "Wie funktionieren CTF/One Flag, die anderen zwei Karten, Karrierefortsetzung und längerfristiger Spielfortschritt?",
+        "Wie funktionieren mobile Gameplay-/Touchsteuerung, Audio/Fullscreen und gezielte Fokus-/Hintergrundfälle?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Wenige Maßnahmen nach gemeinsamem Vergleich auswählen; vorgeschlagene Änderungen sind noch nicht umgesetzt.",
       "sourceFiles": [
         "spiele-bestand.json",
-        "README.md"
+        "README.md",
+        "analysen/core-arena/Grundanalyse.md",
+        "analysen/core-arena/Quellenpruefung.md",
+        "analysen/core-arena/runtime/README.md",
+        "analysen/core-arena/screenshots/manifest.json",
+        "analysen/spiele/Grundvergleich.md"
       ],
-      "analysisId": null
+      "analysisId": "core-arena"
     },
     {
       "id": "more-than-wombat",
       "name": "MORE THAN WOMBAT",
       "area": "games",
       "description": "Comicartiger 2.5D-Arcade-Brawler mit kurzen Sessions, Spezialangriffen und Begegnungen in einer Schrottplatz-Stage.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "status": "deferred",
+      "statusLabel": "Bestand erfasst · auf Nutzerwunsch zurückgestellt",
       "repository": "https://github.com/emfau88/MoreThanWombat",
       "paths": [
         "C:\\Users\\madde\\Documents\\New project 9"
@@ -176,7 +216,7 @@
         "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
         "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
       ],
-      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "nextStep": "Vorerst nicht testen. In Arbeit; mögliche spätere Verwerfung ist eine offene Nutzeroption, kein Qualitätsurteil.",
       "sourceFiles": [
         "spiele-bestand.json",
         "README.md"
@@ -692,7 +732,7 @@
     "17 Hauptprodukte: 6 im vorhandenen Spiele-Dashboard registrierte Games, 7 ausdrücklich genannte Web-Repositories und 4 Android-Apps. MewTrack zählt trotz drei lokaler Varianten als ein Produkt.",
     "Das vorhandene Repository https://github.com/emfau88/dashboard und der lokale Ordner C:\\Users\\madde\\Documents\\dashboard dienen als Registerquelle, nicht als zusätzliches Produkt. Das Register data.json hat Stand 07.10.2026.",
     "Die fünf ergänzenden Spiele-Repositories sind verwandte Versionen oder Ableger; ihre Rolle als aktive Produkte wurde noch nicht geprüft. Sie werden separat geführt.",
-    "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Sieben Web-Grundanalysen mit öffentlichen Browserprüfungen sind abgeschlossen. Browsergames und Between sind bisher nicht qualitativ im Betrieb geprüft.",
+    "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Die ausgewählte erste Grundlage umfasst 15 begrenzte Analysen: drei Android-Piloten, sieben Webauftritte und fünf Games. Vier Games wurden öffentlich gespielt; KESSELKRAWALL als isolierter frischer main-Export. MORE THAN WOMBAT und übrige Spiele bleiben vorerst zurückgestellt; Between ist nur inventarisiert. Analyseabschluss bedeutet keine vollständige Produktprüfung oder Umsetzung.",
     "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten analysiert. Native Prüfgrenzen unterscheiden sich und sind je Analyse dokumentiert.",
     "Pfad- und Namensunterschiede sind Identitätsfragen, keine negativen Qualitätsurteile. Kein lokaler Checkout gefunden bedeutet nicht, dass das Produkt schlecht oder aufgegeben ist.",
     "Eine öffentliche Gesamtliste mit 65 Repositories ist als github-repositories.json gespeichert. Sie ist noch nicht vollständig klassifiziert; private Repositories und alle übrigen lokalen Ordner sind nicht systematisch erfasst.",

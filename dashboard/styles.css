@@ -35,3 +35,49 @@ dialog{color:var(--ink);background:var(--panel);border:1px solid var(--accent-bo
 
 .pending-card h4,.decision h4{font-size:15px;line-height:1.45;margin:0 0 8px}.finding-summary-title{display:flex;flex-direction:column;gap:6px;flex:1;min-width:0}.finding-summary-title>.project-label{font-size:11px;color:var(--muted)}.finding-summary-title strong{flex:initial!important;overflow-wrap:anywhere}.finding-summary-title .product-icon,.finding-summary-title .monogram{width:21px;height:21px;border-radius:5px;font-size:8px}
 @media(max-width:720px){.finding-summary-title{min-width:65%;order:-1}}
+
+/* Green is reserved for completed work and small progress indicators. */
+:root{--done-ink:#28573b;--done-surface:#d8e2d4;--done-border:#56835f;--done-solid:#3c6b47;--on-done:#f7faf6}
+:root[data-theme="dark"]{--done-ink:#9ecba8;--done-surface:#2a372d;--done-border:#86ad90;--done-solid:#85b48f;--on-done:#17221a}
+.badge.green{color:var(--done-ink);background:var(--done-surface);border-color:var(--done-border);font-weight:600}
+.badge.green::before{content:"✓";font-weight:700}
+.compact-status.done{color:var(--done-ink);font-weight:600}
+.phase-progress{min-width:0;margin:18px 0;padding:18px 20px;border:1px solid var(--line);border-radius:var(--radius);background:var(--panel)}
+.phase-progress-heading{display:flex;align-items:baseline;justify-content:space-between;gap:8px 14px;flex-wrap:wrap;margin-bottom:10px}
+.phase-progress-heading>h2,.phase-progress-heading>h3,.phase-progress-heading>strong{margin:0;font-size:14px;line-height:1.4;font-weight:600}
+.phase-count{font-size:11px;color:var(--muted);font-variant-numeric:tabular-nums;white-space:nowrap}
+.phase-meta{display:block;margin:8px 0 0;font-size:12px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
+.phase-steps{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px;list-style:none;padding:0;margin:12px 0 0}
+.phase-step{display:grid;grid-template-columns:24px minmax(0,1fr);align-items:start;gap:3px 9px;min-width:0;padding:12px;border:1px solid var(--subtle-line);border-radius:8px;background:var(--panel2)}
+.phase-dot{display:inline-grid;place-items:center;grid-row:1/span 2;width:24px;height:24px;border:1px solid var(--line);border-radius:50%;background:var(--panel);color:var(--muted);font-size:11px;line-height:1;font-weight:600;flex-shrink:0}
+.phase-label{display:block;min-width:0;margin:0;font-size:12px;line-height:1.45;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.phase-detail{display:block;margin:3px 0 0;font-size:11px;line-height:1.5;color:var(--muted);overflow-wrap:anywhere}
+.phase-step>.phase-label,.phase-step>.phase-detail{grid-column:2}
+.phase-step.done{box-shadow:inset 0 -2px 0 var(--done-solid)}
+.phase-step.done .phase-dot{background:var(--done-solid);border-color:var(--done-solid);color:var(--on-done)}
+.phase-step.done .phase-label{color:var(--done-ink)}
+.phase-step.current{border-color:var(--accent-border)}
+.phase-step.current .phase-dot{border-color:var(--ink);color:var(--ink);border-width:2px}
+.phase-step.waiting .phase-label{color:var(--muted)}
+.phase-track{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:6px;list-style:none;padding:0;margin:10px 0 0;min-width:0}
+.phase-track>span{display:block;min-width:0;height:4px;border-radius:2px;background:var(--line)}
+.phase-track>span.done{background:var(--done-solid)}
+.phase-track>span.current{background:var(--muted)}
+.phase-progress.compact{margin:12px 0 0;padding:10px 0 0;border:0;border-top:1px solid var(--subtle-line);border-radius:0;background:transparent}
+.phase-progress.compact .phase-progress-heading{gap:5px 8px;margin-bottom:6px}
+.phase-progress.compact .phase-progress-heading>h2,.phase-progress.compact .phase-progress-heading>h3,.phase-progress.compact .phase-progress-heading>strong{font-size:11px}
+.phase-progress.compact .phase-count,.phase-progress.compact .phase-meta{font-size:10px}
+.phase-progress.compact .phase-steps{gap:6px;margin-top:8px}
+.phase-progress.compact .phase-step{grid-template-columns:18px minmax(0,1fr);gap:2px 6px;padding:8px 6px}
+.phase-progress.compact .phase-dot{width:18px;height:18px;font-size:10px}
+.phase-progress.compact .phase-label{font-size:10px;line-height:1.4}
+.phase-progress.compact .phase-detail{font-size:10px;line-height:1.45}
+@media(max-width:720px){
+  .phase-progress{padding:15px}
+  .phase-steps{grid-template-columns:1fr;gap:8px}
+  .phase-progress.compact .phase-steps{grid-template-columns:repeat(3,minmax(0,1fr));gap:6px}
+}
+@media print{
+  :root,:root[data-theme="dark"]{--done-ink:#28573b;--done-surface:#e5ece2;--done-border:#56835f;--done-solid:#3c6b47;--on-done:#fff}
+  .phase-progress,.phase-step{break-inside:avoid}
+}
