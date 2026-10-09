@@ -1,0 +1,201 @@
+{
+  "reviewDate": "2026-10-09",
+  "kind": "active_source_review",
+  "projectPath": "C:\\Users\\madde\\Documents\\Mirror",
+  "identity": {
+    "localName": "RelateLens",
+    "plannedStoreTitleConstant": "RelateLens: Mixed Signals",
+    "packageId": "com.energycrafted.mirror",
+    "sourceVersion": "1.1.0+16",
+    "branch": "relaunch/paused-2026-10-07",
+    "commit": "27ff955611886951e832159b91bec4f3ceec14a4",
+    "commitTime": "2026-10-07T23:19:22+02:00",
+    "workingTreeCleanAtRead": true,
+    "initialRoute": "/home"
+  },
+  "existingArtifacts": [
+    {
+      "path": "C:\\Users\\madde\\Documents\\Mirror\\build\\app\\outputs\\flutter-apk\\app-debug.apk",
+      "kind": "debug_apk",
+      "fileTime": "2026-06-24T20:55:55+02:00",
+      "versionName": "1.0.11",
+      "versionCode": 13,
+      "versionEvidence": "C:\\Users\\madde\\Documents\\Mirror\\build\\app\\outputs\\apk\\debug\\output-metadata.json",
+      "sameAsReviewedSource": false
+    },
+    {
+      "path": "C:\\Users\\madde\\Documents\\Mirror\\build\\app\\outputs\\bundle\\release\\app-release.aab",
+      "kind": "release_bundle",
+      "fileTime": "2026-10-07T22:49:21+02:00",
+      "versionName": null,
+      "versionCode": null,
+      "sameAsReviewedSource": null,
+      "note": "Nur Existenz, Dateigröße und Änderungsdatum geprüft; keine Signaturdaten oder Build-Defines gelesen."
+    }
+  ],
+  "activeProduct": {
+    "primaryFlow": "Home → fünf Clarity-Fragen → Ergebnis mit praktischem nächsten Schritt → optional enthaltener Volltext → gespeicherte Readings",
+    "tabs": ["Home", "Daily", "Pattern", "Insights"],
+    "clarityQuestionCount": 5,
+    "patternQuestionCount": 10,
+    "dailyInsightCount": 7,
+    "tarotCardCount": 42,
+    "generation": "Lokale deterministische Auswahl und Komposition vorformulierter Texte; keine aktive KI-API.",
+    "realBillingImplemented": false,
+    "earlyAccessFullReadingsEnabled": true,
+    "sourceRefs": [
+      {"path": "lib/app/router.dart", "line": 28},
+      {"path": "lib/app/providers.dart", "line": 28},
+      {"path": "lib/features/home/presentation/home_screen.dart", "line": 91},
+      {"path": "lib/features/paywall/data/mock_purchase_repository.dart", "line": 31}
+    ]
+  },
+  "findings": [
+    {
+      "id": "M01",
+      "priority": "high",
+      "title": "Eigenreaktion kann durch Tags zum Partnerverhalten verdrängt werden",
+      "type": "logic_and_content",
+      "evidenceLevel": "code_verified_and_current_web_runtime_reproduced",
+      "mechanism": "Verhalten der anderen Person und Gefühl nach Kontakt zählen doppelt. Derselbe dominante Tag steuert Your Emotional Pattern.",
+      "repro": ["Dating", "I cannot stop thinking about them", "I go silent", "Avoids serious conversations", "Calmer and more secure", "Read more — included → Your Emotional Pattern"],
+      "computedTags": {"emotional_intensity": 1, "withdrawal": 1, "avoidant_behavior": 2},
+      "expectedCurrentOutput": "Your Emotional Pattern beschreibt Nähe, Wärme und Verfügbarkeit trotz gewähltem eigenem Rückzug.",
+      "runtimeObservation": "Vom Hauptagenten bei 390×844 im unveränderten lokalen Webbuild mit der genannten Antwortfolge reproduziert. Gespeicherte Kurzansicht zeigt stay engaged and hopeful; Read more — included nach zweitem identischen Scan zeigt leaning in, staying warm, staying available. Kein nativer Android-Nachweis.",
+      "smallRecommendation": "Eigene Reaktion getrennt von ihrem beobachteten Verhalten auswerten.",
+      "sourceRefs": [
+        {"path": "lib/features/clarity_scan/domain/clarity_scoring.dart", "line": 30},
+        {"path": "lib/features/clarity_scan/data/mock_clarity_scan_repository.dart", "line": 106},
+        {"path": "lib/features/clarity_scan/domain/clarity_premium_content.dart", "line": 28},
+        {"path": "lib/features/clarity_scan/domain/clarity_premium_content.dart", "line": 81}
+      ]
+    },
+    {
+      "id": "M02",
+      "priority": "medium",
+      "title": "Wiedergeöffnete Kurzansicht verwendet andere Abschnitte",
+      "type": "flow_consistency",
+      "evidenceLevel": "code_verified_and_current_web_runtime_reproduced",
+      "repro": ["Scan abschließen", "Volltext noch nicht öffnen", "Back to my next step", "Home → Your last reading"],
+      "currentBehavior": "Gespeicherte Kurzansicht zeigt Your pattern / Their pattern / The dynamic / Next step; erstes Ergebnis zeigt What's happening / What the pattern suggests / What to watch for / Your next step. In der gespeicherten Kurzansicht fehlt ein Weg zum enthaltenen Volltext.",
+      "runtimeObservation": "Vom Hauptagenten bei 390×844 im aktuellen lokalen Webbuild reproduziert: erste Ergebnisansicht mit vier Karten gelesen, ohne Read more zurück Home und Your last reading geöffnet. Ganze gespeicherte Ansicht durchgescrollt: andere Abschnittsauswahl, What to watch for fehlt und kein Read-more-Button. Kein nativer Android-Nachweis.",
+      "smallRecommendation": "Ergebnisabschnitte beim Wiederöffnen konsistent halten; den Ausbau eines gespeicherten Readings bewusst unterstützen oder verständlich begrenzen.",
+      "sourceRefs": [
+        {"path": "lib/features/clarity_scan/presentation/full_reading_screen.dart", "line": 38},
+        {"path": "lib/features/clarity_scan/presentation/full_reading_screen.dart", "line": 57},
+        {"path": "lib/features/clarity_scan/presentation/clarity_teaser_result_screen.dart", "line": 139},
+        {"path": "lib/features/home/presentation/home_screen.dart", "line": 167}
+      ]
+    },
+    {
+      "id": "M03",
+      "priority": "medium",
+      "title": "Insights wiederholt sieben allgemeine Texte",
+      "type": "product_hypothesis",
+      "evidenceLevel": "code_fact_current_web_reading_observed_user_impact_unmeasured",
+      "currentBehavior": "Auswahl nach Tag des Jahres modulo sieben; kein Bezug zum Scan oder Pattern-Profil. Journal prompt ist ein lesbarer Text ohne Eingabe.",
+      "runtimeObservation": "Hauptagent sah Insights mit collecting tiny signs und put phone away 1h; Journal prompt ohne Eingabefeld. Rotation über sieben Tage und Nutzerwirkung nicht praktisch getestet.",
+      "reproIdea": "Insights an verschiedenen Kalendertagen betrachten; Texte nach sieben Tagen vergleichen. Kein Hostdatum für den Review verändern.",
+      "smallRecommendation": "Mit wenigen Nutzern prüfen, ob eine kurze Rückfrage zum letzten konkreten nächsten Schritt einen Wiederkehrgrund schafft. Kein großes Journal oder KI-Umbau nötig.",
+      "sourceRefs": [
+        {"path": "lib/features/daily_insight/data/mock_daily_insight_repository.dart", "line": 8},
+        {"path": "lib/features/daily_insight/data/mock_daily_insight_repository.dart", "line": 90},
+        {"path": "lib/features/daily_insight/presentation/daily_insight_screen.dart", "line": 101}
+      ]
+    },
+    {
+      "id": "M04",
+      "priority": "high",
+      "title": "Datenlöschen fehlt; Backup-Verhalten mit lokaler Aussage abgleichen",
+      "type": "privacy_and_user_control",
+      "evidenceLevel": "source_and_current_web_settings_verified_backup_behavior_unmeasured",
+      "currentBehavior": "Antwort-IDs und Readings werden in SharedPreferences archiviert. Keine vollständige Löschaktion in Settings oder Repository gefunden. Quellmanifest definiert keine allowBackup/fullBackupContent/dataExtractionRules.",
+      "runtimeObservation": "Settings durch Hauptagenten angesehen: Privacy Policy, Disclaimer, Version 1.1.0 (16), keine Löschfunktion sichtbar. Backup selbst nicht beobachtet.",
+      "externalRule": "Android Auto Backup nimmt Apps standardmäßig auf und kann SharedPreferences sichern; tatsächliches Verhalten hängt von Build und Geräteeinstellungen ab.",
+      "externalSource": "https://developer.android.com/identity/data/autobackup?hl=en",
+      "reproIdea": "Im isolierten aktuellen Android-Testbuild Settings prüfen und zusammengeführtes Manifest sowie Backup-/Gerätetransferregeln ansehen. Kein tatsächlicher Upload ist hier nachgewiesen.",
+      "smallRecommendation": "Einfaches Löschen der lokalen Daten anbieten und Backup-Regeln mit Answers stay on this device abstimmen.",
+      "sourceRefs": [
+        {"path": "lib/features/settings/presentation/settings_screen.dart", "line": 32},
+        {"path": "lib/features/journal/data/shared_prefs_user_state_repository.dart", "line": 280},
+        {"path": "lib/features/clarity_scan/presentation/clarity_scan_providers.dart", "line": 84},
+        {"path": "android/app/src/main/AndroidManifest.xml", "line": 3}
+      ]
+    },
+    {
+      "id": "M05",
+      "priority": "medium",
+      "title": "Tagesinhalte werden beim Wiederaufnehmen nicht anhand des Datums aktualisiert",
+      "type": "reliability",
+      "evidenceLevel": "code_inference_midnight_not_runtime_tested",
+      "currentBehavior": "Gecachte Provider für Tageskarte und Insight; Lifecycle resumed stößt Analytics an, jedoch keine Datumsprüfung oder Provider-Invalidierung. RAM-gehaltenes Tarot-Ergebnis kann ebenfalls erhalten bleiben.",
+      "reproIdea": "App mit Tageskarte und Insight öffnen, Prozess über lokalen Tageswechsel erhalten, danach wieder aufnehmen. Today-Darstellung und Tarot-Ergebnis prüfen; gezielter Test mit injizierter Uhr ist vorzuziehen.",
+      "smallRecommendation": "Beim Wiederaufnehmen lokalen Tageswechsel erkennen und Tages-Provider sowie alten Tarot-RAM-Zustand gezielt aktualisieren.",
+      "sourceRefs": [
+        {"path": "lib/app/providers.dart", "line": 81},
+        {"path": "lib/app/app.dart", "line": 26},
+        {"path": "lib/features/mirror_card/presentation/mirror_card_providers.dart", "line": 55}
+      ]
+    },
+    {
+      "id": "M06",
+      "priority": "economic_prerequisite",
+      "title": "Aktuelle Early-Access-Quelle ist kostenlos und nutzt Mock-Billing",
+      "type": "intentional_stage",
+      "evidenceLevel": "code_verified",
+      "currentBehavior": "earlyAccessFullReadingsEnabled=true; alle Premium-Gates offen; aktive Kaufklasse speichert lokalen Mock-Premium-Zustand. Kein echter Store-Billing-Service in der aktuellen Quelle.",
+      "reproIdea": "Normalen Clarity-, Pattern- und Tarot-Flow benutzen; ausführliche Inhalte sind enthalten. Keine echten Käufe oder Store-Änderungen ausführen.",
+      "smallRecommendation": "Zuerst verlässlichen Nutzen und Rückkehrinteresse prüfen; danach einen begrenzten transparenten Bezahlumfang entscheiden.",
+      "sourceRefs": [
+        {"path": "lib/features/paywall/data/mock_purchase_repository.dart", "line": 31},
+        {"path": "lib/features/paywall/data/mock_purchase_repository.dart", "line": 42},
+        {"path": "lib/app/providers.dart", "line": 60},
+        {"path": "lib/features/clarity_scan/presentation/clarity_teaser_result_screen.dart", "line": 181}
+      ]
+    },
+    {
+      "id": "M07",
+      "priority": "high",
+      "title": "Volltext behandelt tatsächliches Interesse als sicherer als die Antworten erlauben",
+      "type": "content_reliability",
+      "evidenceLevel": "source_verified_and_current_web_content_observed",
+      "currentBehavior": "Mixed-Signals-Volltext bezeichnet Interessensmomente als real und nicht eingebildet, obwohl nur fünf Beobachtungs-/Reflexionsantworten vorliegen.",
+      "runtimeObservation": "Vom Hauptagenten in der Vollansicht des M01-Testfalls gelesen. Kein Nachweis tatsächlicher Gefühle der anderen Person und keine Prüfung der Wirkung auf reale Nutzer.",
+      "smallRecommendation": "Beobachtung, mögliche Interpretation und unbekannte Absichten auch in der Vollansicht trennen; sichere Interessens- und Motivbehauptungen gezielt vorsichtiger formulieren.",
+      "sourceRefs": [
+        {"path": "lib/features/clarity_scan/domain/clarity_premium_content.dart", "line": 140},
+        {"path": "lib/features/clarity_scan/presentation/clarity_teaser_result_screen.dart", "line": 135}
+      ]
+    }
+  ],
+  "dataFlows": {
+    "firebaseFoundInActiveDartOrDependencies": false,
+    "relationshipInputs": "Antwort-IDs und vorformulierter Reading-Text lokal in SharedPreferences; kein aktiver Versand dieser Inhalte an KI oder PostHog gefunden.",
+    "analytics": {
+      "destination": "PostHog",
+      "defaultGate": "Passender Host und nichtleerer öffentlicher Projekttoken als Build-Defines plus ausdrückliche analytics_consent_v1=true erforderlich.",
+      "releaseConfigurationRead": false,
+      "payloadFields": ["event", "timestamp", "distinct_id (zufällig)", "session_number", "app_version", "cohort", "consent_timing"],
+      "answerOrReadingPayloadFound": false,
+      "replay": "Nach Zustimmung nur Ereignisse der aktuellen Sitzung; keine früheren Besuche.",
+      "withdrawal": "Settings-Schalter; Warteschlange und zufällige ID werden entfernt.",
+      "networkRuntimeInspected": false,
+      "sourceRefs": [
+        {"path": "lib/main.dart", "line": 26},
+        {"path": "lib/core/analytics/posthog_delivery.dart", "line": 29},
+        {"path": "lib/core/analytics/posthog_delivery.dart", "line": 61},
+        {"path": "lib/core/analytics/funnel_analytics.dart", "line": 93},
+        {"path": "lib/core/analytics/analytics_choice.dart", "line": 40}
+      ]
+    }
+  },
+  "limits": [
+    "Diese Datei protokolliert die gezielte Prüfung aktiver lokaler Quelle; sie ist kein vollständiger Sicherheits- oder Datenschutz-Audit.",
+    "Kein APK installiert und kein Android-Gerät in diesem Teilauftrag bedient.",
+    "M01 und M02 wurden ergänzend vom Hauptagenten im aktuellen lokalen Webbuild bei 390×844 mit erfundenen Antworten reproduziert. Weitere Befunde werden nicht dadurch zu Laufzeitbeobachtungen.",
+    "Vorhandene Tests wurden nicht ausgeführt; keine Aussage, dass alle Tests bestehen.",
+    "Keine Aussage zur Gleichheit mit dem veröffentlichten Store-Build oder dem vorhandenen AAB.",
+    "Keine Play-Console-KPIs erhoben; Download- und Retention-Wirkung dieser Befunde ist ungemessen.",
+    "Originalquelle, Stores, Signaturdateien und Zugangsdaten unverändert."
+  ]
+}

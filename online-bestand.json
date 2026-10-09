@@ -1,0 +1,80 @@
+{
+  "stand": "2026-10-09",
+  "umfang": "Grobe Bestandsaufnahme aus lokalen README-/Startseitentexten, Git-Remote-Konfigurationen und öffentlichen GitHub-Daten. Keine Qualitäts-, Strategie-, Wirtschaftlichkeits- oder Funktionsbewertung.",
+  "projekte": [
+    {
+      "name": "LandingGame",
+      "repository_url": "https://github.com/emfau88/LandingGame",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\Landing Page",
+      "zuordnung": "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
+      "beschreibung": "emfau-Anbieterwebsite für individuelle Websites für kleine Unternehmen, Gastronomie und Vereine aus der Region Karlsruhe. Enthält drei Farb-/Gestaltungsvarianten, einen eigenständigen Studio-Entwurf sowie eine Kundenreferenz und fiktive Branchenkonzepte.",
+      "online_urls": ["https://emfau88.github.io/LandingGame/", "https://emfau88.github.io/LandingGame/studio/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\Landing Page\\.git\\config", "C:\\Users\\madde\\Documents\\Landing Page\\README.md", "C:\\Users\\madde\\Documents\\Landing Page\\emfau-site\\dist\\index.html"]
+    },
+    {
+      "name": "shop",
+      "repository_url": "https://github.com/emfau88/shop",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\Ebay Websites",
+      "zuordnung": "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab. Die Anwendung liegt unter website/.",
+      "beschreibung": "Verkaufspräsentation für Unternehmenswebsites mit eigenem Anbieterauftritt und fünf fiktiven Branchenkonzepten: Maler, Metallbau, Garten-/Landschaftsbau, Sportverein und Gastronomie. Jedes Konzept besitzt eine mehrseitige Core-Website und eine zusätzliche Signature-Homepage.",
+      "online_urls": ["https://emfau88.github.io/shop/", "https://emfau88.github.io/shop/konzepte/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\Ebay Websites\\.git\\config", "C:\\Users\\madde\\Documents\\Ebay Websites\\README.md", "C:\\Users\\madde\\Documents\\Ebay Websites\\website\\README.md"]
+    },
+    {
+      "name": "keyofsolomon",
+      "repository_url": "https://github.com/emfau88/keyofsolomon",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon",
+      "zuordnung": "Durch lokales .git/config bestätigt. Weitere lokale Entwürfe liegen im übergeordneten Ordner.",
+      "beschreibung": "Einzelprodukt-Verkaufsseite unter Solomon Archive für eine restaurierte Ausgabe von The Key of Solomon auf Grundlage der Mathers-Ausgabe von 1889. Präsentiert ein Hardcover mit historischem Text und Tafeln sowie Produktinformationen und Whop-Bestellzugang.",
+      "online_urls": ["https://emfau88.github.io/keyofsolomon/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon\\.git\\config", "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon\\README.md", "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon\\index.html"]
+    },
+    {
+      "name": "Portfolio3",
+      "repository_url": "https://github.com/emfau88/Portfolio3",
+      "lokaler_pfad": null,
+      "zuordnung": "Öffentliches Repository bestätigt. Unter Documents wurde kein eindeutig zugeordnetes lokales Checkout gefunden; Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git.",
+      "beschreibung": "Persönliches emfau-Portfolio und Projektarchiv für Android-Apps, Browsergames und frühere Experimente. Die aktuelle Startseite stellt unter anderem Mirror, ZeroHero, between und MewTrack sowie spielbare Games, verwendete Technologien und Entwicklungsgeschichten vor.",
+      "online_urls": ["https://emfau88.github.io/Portfolio3/"],
+      "quellen": ["https://api.github.com/repos/emfau88/Portfolio3/contents", "https://raw.githubusercontent.com/emfau88/Portfolio3/main/index.html", "C:\\Users\\madde\\Documents\\phantom\\src\\data\\projects.ts"]
+    },
+    {
+      "name": "blueyard",
+      "repository_url": "https://github.com/emfau88/blueyard",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\bluebyte",
+      "zuordnung": "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
+      "beschreibung": "Zweisprachige emfau-Landingpage, die Webentwicklung, Browsergames und technische Werkzeuge unter Web / Games / Labs verbindet. Die Navigation verwendet eine scrollgesteuerte Three.js-Szene mit Bereichsauswahl.",
+      "online_urls": ["https://emfau88.github.io/blueyard/", "https://emfau88.github.io/blueyard/en/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\bluebyte\\.git\\config", "C:\\Users\\madde\\Documents\\bluebyte\\README.md"]
+    },
+    {
+      "name": "phantom",
+      "repository_url": "https://github.com/emfau88/phantom",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\phantom",
+      "zuordnung": "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
+      "beschreibung": "EMFAU Spatial Portfolio: ein interaktives Portfolio mit schwarzer, räumlich gebogener Projektwand, Projektfiltern und Detailseiten. Die lokale README beschreibt einen Katalog mit 20 Projekten und einen React-/Three.js-Aufbau.",
+      "online_urls": ["https://emfau88.github.io/phantom/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\phantom\\.git\\config", "C:\\Users\\madde\\Documents\\phantom\\README.md", "https://api.github.com/repos/emfau88/phantom"]
+    },
+    {
+      "name": "basement",
+      "repository_url": "https://github.com/emfau88/basement",
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\basement",
+      "zuordnung": "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
+      "beschreibung": "EMFAU Virtual Studio: ein begehbares beziehungsweise per Kamera navigiertes 3D-Portfolio für Games, Apps und archivierte Experimente. Ein virtueller Raum verbindet die Bereiche Studio, Games, Web, Projects und Archive mit Projektbildschirmen und HTML-Detailansichten.",
+      "online_urls": ["https://emfau88.github.io/basement/"],
+      "quellen": ["C:\\Users\\madde\\Documents\\basement\\.git\\config", "C:\\Users\\madde\\Documents\\basement\\README.md", "https://api.github.com/repos/emfau88/basement"]
+    }
+  ],
+  "verwandte_lokale_entwuerfe": [
+    {
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\portfolio",
+      "beschreibung": "Älterer zweisprachiger Game-&-App-Developer-Auftritt mit index.html und index23.html; keine Git-Remote-Konfiguration vorhanden, daher nicht als lokales Portfolio3-Repository bestätigt."
+    },
+    {
+      "lokaler_pfad": "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON",
+      "beschreibung": "Enthält neben dem bestätigten keyofsolomon-Checkout zusätzliche Entwurfsordner keyofsolomon_repo_ready, solomon_archive_highend_site und solomon-umami-whop."
+    }
+  ],
+  "hinweis_online_urls": "Adressen sind aus Projektquellen beziehungsweise GitHub-Metadaten übernommen. Erreichbarkeit, Nutzererlebnis und Veröffentlichungsvollständigkeit wurden nicht bewertet."
+}

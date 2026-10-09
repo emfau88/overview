@@ -1,0 +1,131 @@
+{
+  "erfasstAm": "2026-10-09",
+  "umfang": "Grobe Bestandsaufnahme anhand des Dashboard-Registers, lokaler README-Dateien und Git-Metadaten; keine Analyse oder Bewertung.",
+  "quelleRegister": "C:\\Users\\madde\\Documents\\dashboard\\data.json",
+  "quelleRegisterStand": "2026-10-07",
+  "dashboard": {
+    "beschreibung": "Statisches Game-Ops-Dashboard für Spieleprojekte, Portal-Einreichungen und Performance-Snapshots.",
+    "repo": "https://github.com/emfau88/dashboard",
+    "lokalerPfad": "C:\\Users\\madde\\Documents\\dashboard",
+    "eingetrageneSpiele": 6
+  },
+  "spiele": [
+    {
+      "name": "HEXFRONT",
+      "repoName": "hexwars",
+      "repo": "https://github.com/emfau88/hexwars",
+      "beschreibung": "Echtzeit-Taktikspiel auf Hexfeldern: Gebiet ausbauen, Truppen verteilen und die gegnerische Basis erobern.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\ChatGPT\\hexwars"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\ChatGPT\\hexwars\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Produktname HEXFRONT unterscheidet sich vom Repository-Namen hexwars."]
+    },
+    {
+      "name": "GALALAXY",
+      "repoName": "galalaxy",
+      "repo": "https://github.com/emfau88/galalaxy",
+      "beschreibung": "Mobile-orientierter Weltraum-Arcade-Survivor mit automatisch feuerndem Schiff, Gegnerflotten, Bossen und Upgrades.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\galaxy"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\galaxy\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Lokaler Ordner galaxy unterscheidet sich vom Repository-Namen galalaxy."]
+    },
+    {
+      "name": "ROOSTER RAGE",
+      "repoName": "RoosterRage",
+      "repo": "https://github.com/emfau88/RoosterRage",
+      "beschreibung": "Top-down-Bullet-Heaven/Action-Roguelite: drei Kampf-Hähne, weiterentwickelbare Eierwaffen und Wellen von Gegnern.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\ChatGPT\\Rooster\\RoosterRage", "C:\\Users\\madde\\Documents\\ROOSTER"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\ChatGPT\\Rooster\\RoosterRage\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Zwei lokale Checkouts desselben Repositories. ChatGPT\\Rooster\\RoosterRage: letzter lokaler Commit 2026-10-05; ROOSTER: letzter lokaler Commit 2026-08-09. Aktualität etwaiger uncommitteter Änderungen wurde nicht untersucht.", "Der übergeordnete Ordner ChatGPT\\Rooster besitzt ebenfalls .git, aber keinen origin-Remote; das Spielrepository liegt im Unterordner RoosterRage."]
+    },
+    {
+      "name": "KESSELKRAWALL",
+      "repoName": "KesselKrawall",
+      "repo": "https://github.com/emfau88/KesselKrawall",
+      "beschreibung": "Magischer Browser-Autobattler: Zutaten kaufen, kombinieren und verschmelzen; der aufgebaute Kessel kämpft anschließend automatisch.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\kesselkrawall"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\kesselkrawall\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Englischer Produktname Cauldron Rumble; im Dashboard bei Y8 als Cauldron Rumble: Merge & Battle geführt."]
+    },
+    {
+      "name": "CORE ARENA",
+      "repoName": "CTF-3.0",
+      "repo": "https://github.com/emfau88/CTF-3.0",
+      "beschreibung": "2D-Top-down-Arena-/CTF-Shooter mit Bewegung, Zielen, Waffen und Spielzielen; die dokumentierte Browserfassung spielt gegen Bots.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\CTF-3.0"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\CTF-3.0\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Produktname CORE ARENA unterscheidet sich vom Repository-Namen CTF-3.0.", "Der ähnlich benannte Ordner C:\\Users\\madde\\Documents\\CTF 3.0 wird in Codex als CTF 3.0 falscher ordner geführt; er hat keinen origin-Remote und enthält kein gefundenes README/package.json. Für diese Bestandsaufnahme ist CTF-3.0 der bestätigte Pfad."]
+    },
+    {
+      "name": "MORE THAN WOMBAT",
+      "repoName": "MoreThanWombat",
+      "repo": "https://github.com/emfau88/MoreThanWombat",
+      "beschreibung": "Comicartiger 2.5D-Arcade-Brawler mit kurzen Sessions, Spezialangriffen und Begegnungen in einer Schrottplatz-Stage.",
+      "lokalePfade": ["C:\\Users\\madde\\Documents\\New project 9"],
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\New project 9\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweise": ["Der lokale Ordner New project 9 lässt den Produktnamen nicht erkennen."]
+    }
+  ],
+  "zusaetzlicherDirektZugehoerigerFund": [
+    {
+      "name": "More Than Wombat — Unity Lab",
+      "repoName": "MoreThanWombarUnity",
+      "repo": "https://github.com/emfau88/MoreThanWombarUnity",
+      "lokalerPfad": "C:\\Users\\madde\\Documents\\MoreThanWombarUnity",
+      "beschreibung": "Eigenständiger Unity-Versuch eines stilisierten 3D-/2.5D-Arcade-Beat-'em-ups; MoreThanWombat dient laut README als Designreferenz.",
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\MoreThanWombarUnity\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweis": "Fehlt im Dashboard-Register. Separater Ableger/Versuch; nicht als zusätzliches dort registriertes Spiel gezählt. Repo und Ordner heißen tatsächlich WombarUnity mit r."
+    },
+    {
+      "name": "KesselKrawall 3D",
+      "repoName": "KesselKrawall-3-D",
+      "repo": "https://github.com/emfau88/KesselKrawall-3-D",
+      "lokalerPfad": "C:\\Users\\madde\\Documents\\ChatGPT\\KesselKrawall3D",
+      "beschreibung": "Eigenständiger 3D-Neuaufbau von KesselKrawall / Cauldron Rumble als Browsergame.",
+      "beschreibungQuelle": "C:\\Users\\madde\\Documents\\ChatGPT\\KesselKrawall3D\\README.md",
+      "remoteLokalBestaetigt": true,
+      "hinweis": "Fehlt im Dashboard-Register; separates Repository für die 3D-Fassung."
+    },
+    {
+      "name": "territory-tide",
+      "repoName": "territory-tide",
+      "repo": "https://github.com/emfau88/territory-tide",
+      "lokalerPfad": null,
+      "beschreibung": "Für CrazyGames angepasste HEXFRONT-Variante laut GitHub-Repository-Beschreibung.",
+      "beschreibungQuelle": "GitHub-Repository-Metadaten, vom Hauptagenten öffentlich abgerufen",
+      "remoteLokalBestaetigt": false,
+      "hinweis": "Fehlt im Dashboard-Register. Lokaler Pfad in dieser begrenzten Suche nicht gefunden."
+    },
+    {
+      "name": "CTF",
+      "repoName": "CTF",
+      "repo": "https://github.com/emfau88/CTF",
+      "lokalerPfad": "C:\\Users\\madde\\Documents\\CTF",
+      "beschreibung": "Weitere CTF-Repository-Version; die genaue Abgrenzung gegenüber CORE ARENA / CTF-3.0 wurde nicht geprüft.",
+      "beschreibungQuelle": "Repository-Namenszuordnung und lokaler Git-origin-Remote",
+      "remoteLokalBestaetigt": true,
+      "hinweis": "Fehlt im Dashboard-Register. Als möglicher Vorgänger separat gelistet, ohne daraus ein zusätzliches aktives Produkt abzuleiten."
+    },
+    {
+      "name": "CTF-2.0",
+      "repoName": "CTF-2.0",
+      "repo": "https://github.com/emfau88/CTF-2.0",
+      "lokalerPfad": null,
+      "beschreibung": "Weitere CTF-Repository-Version; die genaue Abgrenzung gegenüber CORE ARENA / CTF-3.0 wurde nicht geprüft.",
+      "beschreibungQuelle": "GitHub-Repository-Metadaten, vom Hauptagenten öffentlich abgerufen",
+      "remoteLokalBestaetigt": false,
+      "hinweis": "Fehlt im Dashboard-Register. Als möglicher Vorgänger separat gelistet. Lokaler Pfad in dieser begrenzten Suche nicht gefunden."
+    }
+  ],
+  "grenzen": [
+    "Die sechs Dashboard-Spiele wurden vollständig lokal zugeordnet. Andere Spiele außerhalb des Dashboard-Registers wurden nicht systematisch inventarisiert.",
+    "Öffentliche Spielseiten wurden in dieser Teilaufnahme nicht geprüft. Die ergänzenden öffentlichen Repository-Metadaten für territory-tide und CTF-2.0 wurden vom Hauptagenten geliefert.",
+    "Beschreibungen stammen aus Projekt-README-Dateien; es wurden keine Qualitätsurteile, Probleme, Marktchancen oder Strategien untersucht."
+  ]
+}

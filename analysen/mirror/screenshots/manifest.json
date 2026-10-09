@@ -1,0 +1,55 @@
+{
+  "copiedAt": "2026-10-09",
+  "kind": "existing_local_preview_capture",
+  "captures": [
+    {
+      "file": "bestand-ui-1.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-1.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:35.0654144+02:00",
+      "bytes": 372670,
+      "sha256": "105257596CC7DBC0BE7013638D04E2B211908A0012F69C56F25C6DAE27CA4581",
+      "copySha256": "105257596CC7DBC0BE7013638D04E2B211908A0012F69C56F25C6DAE27CA4581"
+    },
+    {
+      "file": "bestand-ui-2.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-2.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:35.6071187+02:00",
+      "bytes": 110728,
+      "sha256": "66D0AD7F67CA5718F37736DCC902C78C1618B6D65F3D153E2B063239F7FFC33D",
+      "copySha256": "66D0AD7F67CA5718F37736DCC902C78C1618B6D65F3D153E2B063239F7FFC33D"
+    },
+    {
+      "file": "bestand-ui-3.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-3.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:37.0084125+02:00",
+      "bytes": 212190,
+      "sha256": "090DF31FA4BC94D0A92797C137008C2CCCC29ACEBD312376FC3BA8F0EE8D2339",
+      "copySha256": "090DF31FA4BC94D0A92797C137008C2CCCC29ACEBD312376FC3BA8F0EE8D2339"
+    },
+    {
+      "file": "bestand-ui-4.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-4.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:37.3351660+02:00",
+      "bytes": 388135,
+      "sha256": "FBDB924A5C9E42EB9E9804BFE4C0787CDDE438DCCF3E1A86B1029D14C501FA73",
+      "copySha256": "FBDB924A5C9E42EB9E9804BFE4C0787CDDE438DCCF3E1A86B1029D14C501FA73"
+    },
+    {
+      "file": "bestand-ui-5.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-5.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:37.6223822+02:00",
+      "bytes": 220063,
+      "sha256": "8DDD22D36ED1E9A1ABFAD661A4F609E1977080B488677705EAFD101BD4A073A9",
+      "copySha256": "8DDD22D36ED1E9A1ABFAD661A4F609E1977080B488677705EAFD101BD4A073A9"
+    },
+    {
+      "file": "bestand-ui-6.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\store\\qa\\screen-6.png",
+      "sourceLastWriteTime": "2026-10-07T22:47:38.8502314+02:00",
+      "bytes": 658350,
+      "sha256": "2FD273304BC4EC1A58ED0519B93FA403A0EA9279DA08CE4508EC409CBE450C23",
+      "copySha256": "2FD273304BC4EC1A58ED0519B93FA403A0EA9279DA08CE4508EC409CBE450C23"
+    }
+  ],
+  "totalBytes": 1962136.0
+}

@@ -1,0 +1,54 @@
+{
+  "icons": {
+    "hexfront": {
+      "path": "dashboard/assets/hexfront.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\hexfront.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "galalaxy": {
+      "path": "dashboard/assets/galalaxy.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\galalaxy.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "rooster-rage": {
+      "path": "dashboard/assets/rooster-rage.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\rooster-rage.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "kesselkrawall": {
+      "path": "dashboard/assets/kesselkrawall.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\kesselkrawall.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "core-arena": {
+      "path": "dashboard/assets/core-arena.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\core-arena.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "more-than-wombat": {
+      "path": "dashboard/assets/more-than-wombat.webp",
+      "source": "C:\\Users\\madde\\Documents\\dashboard\\assets\\games\\more-than-wombat.webp",
+      "note": "Unverändert übernommenes Spielbild aus dem vorhandenen Game-Ops-Dashboard, data.json Feld image; keine neue Qualitätsbewertung oder neue Darstellung."
+    },
+    "zerohero": {
+      "path": "dashboard/assets/zerohero.png",
+      "source": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
+      "note": "Originales lokales Android-Launcher-Icon (192×192) aus ZEROHERO25; kein separat verifizierter Store-Export."
+    },
+    "mewtrack": {
+      "path": "dashboard/assets/mewtrack.png",
+      "source": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
+      "note": "Originales lokales Android-Launcher-Icon (192×192) aus der nativen Variante MEWING 2.0/app. Ihre App-ID passt zum Store-Eintrag; maßgeblicher Release-Stand und aktuelles Store-Icon sind damit noch nicht bewiesen."
+    },
+    "mirror": {
+      "path": "dashboard/assets/mirror.png",
+      "source": "C:\\Users\\madde\\Documents\\Mirror\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
+      "note": "Originales lokales Android-Launcher-Icon (192×192) aus Mirror. Lokale Metadaten nennen RelateLens; Gleichheit mit dem aktuellen Store-Icon wurde nicht geprüft."
+    },
+    "between": {
+      "path": "dashboard/assets/between.png",
+      "source": "C:\\Users\\madde\\flutter_projects\\love insight scanner\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
+      "note": "Originales lokales Android-Launcher-Icon (192×192) aus dem bestätigten between-Checkout; kein separat verifizierter Store-Export."
+    }
+  }
+}

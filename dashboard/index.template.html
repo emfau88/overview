@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#0b1017">
+  <title>emfau · Projektkompass</title>
+  <meta name="description" content="Zentrale Arbeitsgrundlage für emfau: Ziele, Produkte, ausführliche Analysen, Quellen und nächste Schritte.">
+  <style>/* DASHBOARD_STYLES */</style>
+</head>
+<body>
+  <a class="skip" href="#content">Zum Inhalt</a>
+  <div class="shell">
+    <aside class="sidebar" aria-label="Hauptnavigation">
+      <a class="brand" href="#overview"><span class="brand-mark">e.</span><span><strong>emfau</strong><small>PROJEKTKOMPASS</small></span></a>
+      <div class="sidebar-label">Arbeitsgrundlage</div>
+      <nav id="navigation"></nav>
+      <div class="sidebar-bottom"><span class="live-dot"></span> Ein gemeinsamer Stand<small id="sidebar-date"></small><a href="https://github.com/emfau88/overview" target="_blank" rel="noopener noreferrer">Repository öffnen ↗</a></div>
+    </aside>
+    <main id="content" tabindex="-1">
+      <header class="topbar"><span id="breadcrumb">Übersicht</span><div class="top-actions"><span id="stamp" class="stamp"></span><button id="export" class="button small" title="Alle Daten und vollständigen Dokumente als JSON herunterladen">Snapshot exportieren</button></div></header>
+      <div id="page"></div>
+      <footer>Dokumentierter Arbeitsstand · Inhalte und Quellen werden mit jeder Analyse fortgeschrieben.<span> em<span class="muted">fau</span> / overview</span></footer>
+    </main>
+  </div>
+  <dialog id="project-dialog" aria-labelledby="dialog-title"><div id="dialog-content"></div></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script id="dashboard-data" type="application/json">/* DASHBOARD_DATA */</script>
+  <script>/* DASHBOARD_APP */</script>
+</body>
+</html>

@@ -1,0 +1,1087 @@
+{
+  "updatedAt": "2026-10-09",
+  "analyses": [
+    {
+      "id": "zerohero",
+      "projectId": "zerohero",
+      "title": "ZeroHero – abgeschlossene Pilotanalyse",
+      "status": "reviewed",
+      "summary": "ZeroHero hat einen brauchbaren kleinen Produktkern und eine bereits ordentliche klassische Gestaltung. Ein begrenztes Verbesserungsupdate ist sinnvoll: verlässliche Erfassung, verständliches Feedback und ein früher sichtbarer Nutzen haben Vorrang. Drei Bedienfehler wurden im unverändert gebauten lokalen Webtest reproduziert. Weitere Risiken wurden aus dem Code abgeleitet. Die Play Console zeigt sehr wenig neue Nutzung, erlaubt wegen geringer Mengen und verschiedener Datenzeiträume aber keine belastbare Ursachenaufteilung. Wirtschaftliche Tragfähigkeit ist offen. Die Analyse ist abgeschlossen; Appcode, Store und Veröffentlichungen wurden nicht geändert. Sämtliche Maßnahmen sind Vorschläge.",
+      "scope": {
+        "checked": [
+          "Aktueller lokaler Quellstand unter C:\\Users\\madde\\flutter_projects\\ZEROHERO25, ausschließlich lesend; Version 1.0.3+25, lokaler Branch feature/quests-v2.",
+          "Unveränderte isolierte Testkopie aus lib, assets, web, pubspec.yaml, pubspec.lock und analysis_options.yaml. SHA256-Vergleich: 141 lib-, 20 assets- und 7 web-Dateien ohne Abweichung; auch Projekt- und Lockdateien identisch.",
+          "Erfolgreicher Release-Webbuild mit Flutter 3.41.4 und Dart 3.11.1. Visuelle Browserprüfung bei 390 × 844 Pixeln mit erfundenen Daten im lokalen Origin http://127.0.0.1:8765/; kein eigenes Browserprofil und keine Veränderung gespeicherter Android-Appdaten.",
+          "Einrichtung, erste Erfassung, Home, Heute, Verlauf, Level, Statistik und Einstellungen; klassische Gestaltung und ergänzend Neonmodus.",
+          "Reproduzierte Settings-Übernahme, verzögerte Getränkeliste und Live-Rückmeldung bei identischem Referenzgetränk. Aktive Codepfade unabhängig gegengeprüft.",
+          "Englischer öffentlicher Google-Play-Auftritt, Texte und erste fünf von insgesamt elf Store-Bildern.",
+          "Freigegebene eingeloggte Play-Console-Daten ausschließlich lesend: Sechsmonatsauswahl im Wachstumsbereich, separate Store-Performance-Karten, App-Dashboard und veröffentlichtes Release 25 (1.0.3).",
+          "Lokale Android-Konfiguration und aktive Firebase-Analytics-Codepfade; eigene Ereignisparameter und gefundene Aktivierungs-/Deaktivierungspfade.",
+          "Öffentliche Positionierungsbeschreibung von Sunnyside und DrinkControl als zwei begrenzte Vergleichspunkte; keine vollständige Marktanalyse."
+        ],
+        "notChecked": [
+          "Kein Laufzeittest der nativen Android-App auf einem Gerät und kein Test der tatsächlich veröffentlichten Play-Binärdatei. Android-Speicherung, Zurück-Taste, Geräteintegration und native Firebase-Komponenten sind nicht geprüft.",
+          "Keine bestätigte Gleichheit zwischen aktuellem lokalen Quellstand und veröffentlichtem Release. Beide nennen 1.0.3 / Build 25; gleiche Versionsnummer beweist weder gleiche Quellen noch gleiches Verhalten. Die vorhandene native APK mit Code 24 ist älter.",
+          "Kein Zeitverlaufstest für Mitternachtsabschluss, konsumfreie Tage oder Wiederöffnung nach mehrtägiger Pause. Die beschriebenen Abschlussrisiken bleiben Codebefunde.",
+          "Keine Erfassung tatsächlicher Android-Netzwerkübertragung, SDK-Metadaten oder automatisch erzeugter Analytics-Ereignisse. Kein Nachweis eines Datenschutzverstoßes der veröffentlichten App und keine rechtliche Bewertung.",
+          "Kein automatisierter Testlauf. Im Original liegen 18 Testdateien mit 115 statisch gefundenen Testdeklarationen; daraus wird kein Bestehen der Tests abgeleitet.",
+          "Deutsche Store-Fassung und Store-Bilder 6–11 nicht geprüft. Eine fehlende deutsche Lokalisierung ist nicht nachgewiesen.",
+          "Keine Nutzungsbefragung, kein Store-Experiment, keine belastbare Retentionskohorte, keine vollständige Markt-, Wirksamkeits- oder Monetarisierungsanalyse.",
+          "MewTrack, Mirror, Between, die Browser-Spiele und die Online-Auftritte wurden in diesem Pilot nicht qualitativ geprüft."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Nachvollziehbarer kleiner Produktkern",
+          "detail": "Konsumarten wählen, üblichen Tageswert angeben, Zigaretten oder konkrete Getränke schnell erfassen und den Verlauf betrachten. Eigene Einträge mit Name und Einheit sind ebenfalls im aktuellen Code vorhanden. Dieser Kern eignet sich für ein überschaubares Qualitätsupdate."
+        },
+        {
+          "title": "Klassische Gestaltung ist brauchbar",
+          "detail": "Die geprüfte klassische Oberfläche wirkt ruhig und lesbar, mit Weiß, Mint und Blau sowie großen Eingabeelementen. Ein vollständiger visueller Neustart ist aus dieser Prüfung nicht begründet. Klassisch war beim frischen getesteten Onboarding vorausgewählt."
+        },
+        {
+          "title": "Store-Grafiken sind bereits eine Grundlage",
+          "detail": "Die ersten fünf englischen Store-Bilder haben konsistente mintgrüne Gestaltung, große verständliche Überschriften und echte App-Ansichten. Sie vermitteln schnelle Erfassung, eigenen Rhythmus, gute und schwierige Tage, Belohnungen sowie Trends. Eine pauschal schlechte Optik ist damit nicht belegt."
+        },
+        {
+          "title": "Haltung ohne Druck bietet eine Positionierungsbasis",
+          "detail": "Schrittweise reduzieren, den eigenen Verlauf beobachten und nach schwierigen Tagen weitermachen ist eine brauchbare Ausgangsbotschaft. Level, Abzeichen und Meilensteine sind aktiv. Diese Haltung allein ist noch keine Alleinstellung und kein Nachweis von Nachfrage oder tatsächlicher Wirkung."
+        }
+      ],
+      "findings": [
+        {
+          "id": "zerohero-settings-refresh",
+          "title": "Gespeicherte Konsumarten erscheinen erst nach Neuladen",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Die Heute-Seite übernimmt gespeicherte Einstellungen im bestehenden Tageszustand nicht sofort. Die Speicherung wird bestätigt, der erwartete neue Eintrag fehlt jedoch. Für einen täglichen Tracker ist diese sichtbare Unzuverlässigkeit ein konkreter Verbesserungsbedarf.",
+          "evidence": "Heute zunächst ohne Tabletten geöffnet; in Einstellungen Tabletten mit Referenzwert 1 aktiviert und gespeichert. Speicherbestätigung erschien, Heute zeigte weiterhin nur Zigaretten und Alkohol. Nach Browserreload waren Tabletten mit Wert 0 vorhanden. Der Code hält Settings lokal, liest sie mit ref.read und behält den State im IndexedStack; die Provider-Invalidierung allein erreicht diesen lokalen Zustand nicht.",
+          "limitation": "Im aktuellen lokalen Webbuild reproduziert und im aktiven Codepfad bestätigt. Nativer Android-Laufzeitnachweis und Verhalten des veröffentlichten Release sind offen. Nicht jede denkbare Einstellungsänderung wurde einzeln getestet.",
+          "recommendation": "Gespeicherte Konsumarten, eigene Bezeichnungen und Referenzwerte auf Heute unmittelbar aus dem aktuellen reaktiven Zustand übernehmen; keinen Neustart voraussetzen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/ZeroHero-code-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-drink-list-refresh",
+          "title": "Getränkeliste bestätigt neue Erfassung verzögert",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Nach Hinzufügen eines Getränks kann die Liste Heute erfasst fehlen oder einen veralteten Zähler zeigen. Die Liste ist vorhanden; sie wurde nicht generell entfernt. Eine schnelle Erfassung braucht eine unmittelbar verlässliche Bestätigung.",
+          "evidence": "Nach dem ersten Bier war die Liste zunächst nicht sichtbar; nach Themewechsel zeigte sie ×1. Nach dem zweiten Bier bestätigte das Auswahlfenster ×2, Heute zeigte nach Schließen weiterhin ×1. Erst eine zusätzliche Zigaretteneingabe aktualisierte die Liste auf ×2. Der Code schreibt zuerst die Gesamtmenge in den Provider und anschließend Getränkezähler in Hive; die Liste liest Zähler direkt aus Hive ohne eigene reaktive Aktualisierung.",
+          "limitation": "Die verzögerte Anzeige wurde im aktuellen Webbuild reproduziert. Die genaue asynchrone Ursache ist eine starke Code-Inferenz. Daraus folgt kein belegter Datenverlust und kein nativer Android-Nachweis.",
+          "recommendation": "Menge und Getränkezähler in einem reaktiven Tageszustand konsistent aktualisieren und direkt nach Erfassung die tatsächlich bestätigte Anzahl anzeigen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md"
+          ]
+        },
+        {
+          "id": "zerohero-alcohol-rounding",
+          "title": "Identisches Referenzgetränk wird als darüber bewertet",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Die Live-Rückmeldung stuft ein Bier identisch zur zuvor gewählten Referenz als über dem üblichen Bereich ein. Anzeigepräzision und Vergleichsregel sind nicht konsistent.",
+          "evidence": "Einrichtung: Referenz 1 × Bier 500 ml mit 5 %. Anschließend dasselbe Getränk erfasst; Heute meldete Über deinem üblichen Bereich. Umrechnung ergibt 19,725 g; Onboarding speichert den auf eine Nachkommastelle formatierten Wert 19,7. Livefeedback vergleicht das Verhältnis exakt mit 1,0.",
+          "limitation": "Im aktuellen Webbuild reproduziert und rechnerisch im Code erklärt. Der Tagesabschluss nutzt ein anderes Toleranzband bis 1,10. Ein falscher XP-Abzug, eine falsche Abschlussbewertung oder ein Effekt in der veröffentlichten Android-App wurden damit nicht nachgewiesen.",
+          "recommendation": "Referenz intern ungerundet speichern, Formatierung auf die Anzeige begrenzen und eine nachvollziehbare konsistente Bewertungsregel für Livefeedback und Tagesabschluss verwenden.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md"
+          ]
+        },
+        {
+          "id": "zerohero-zero-versus-missing",
+          "title": "Konsumfreier Tag und fehlende Angabe sind nicht klar getrennt",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Eine verständliche Aktion Heute nichts konsumiert fehlt im geprüften Ablauf. Sichtbare 0 kann zugleich bedeuten, dass noch nichts eingetragen wurde. Ein konsumfreier Tag sollte ausdrücklich dokumentierbar sein, ohne indirekte Bedienung.",
+          "evidence": "Im Webtest war keine eigene Nulltag-Aktion sichtbar. Code: Minus bei Nicht-Alkohol auf 0 schreibt technisch einen echten Nullwert; für Alkohol wird ein Entfernen-Button erst nach Hinzufügen einer Getränkemenge angeboten. Vollständig leere Entwürfe werden beim automatischen Abschluss übersprungen. Die Aussage 0 kann überhaupt nicht gespeichert werden wäre deshalb falsch.",
+          "limitation": "Fehlende verständliche Aktion wurde gesehen; Folgen beim automatischen Tagesabschluss sind ein bestätigter Codepfad, kein Mitternachts-Laufzeitnachweis. Kein pauschaler Nachweis, dass konsumfreie Tage immer verloren gehen.",
+          "recommendation": "Eine explizite Nulltag-Aktion anbieten und dokumentierte Null von fehlender Angabe in Erfassung, Verlauf und Bewertung unterscheiden.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/ZeroHero-code-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-older-drafts",
+          "title": "Ältere Entwürfe können nach einer Pause unvollendet bleiben",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Der automatische Abschluss betrachtet ausschließlich gestern. Bei Wiederöffnung nach einer längeren Pause kann ein früherer vorhandener Entwurf deshalb im Entwurfszustand bleiben und im sichtbaren Verlauf beziehungsweise bei Belohnungen fehlen.",
+          "evidence": "_handleAutoFinalize verwendet yesterdayKeyAtMidnight; finalizeDraftIfNeeded blockiert andere Tage ohne force. Der manuelle Pfad bezieht sich auf den aktuellen Schlüssel, ein allgemeiner Nachholablauf wurde nicht gefunden. Beispiel für gezielte Reproduktion: Montag erfassen, erst Mittwoch wieder öffnen; der automatische Pfad betrachtet Dienstag.",
+          "limitation": "Codepfad unabhängig gegengeprüft, Zeitverlauf nicht getestet. Es ist kein belegter Datenverlust oder Nachweis einer Löschung. Die Systemzeit des Nutzerrechners soll für den Test nicht geändert werden.",
+          "recommendation": "In kontrollierter Testumgebung mit gespeicherten Entwürfen und mehrtägiger Pause reproduzieren; falls bestätigt, vorhandene ältere Entwürfe geordnet nachholen und Doppelabschlüsse verhindern.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/ZeroHero-code-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-first-day-value",
+          "title": "Der erste Tag zeigt den Nutzen relativ spät",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Nach drei Einrichtungsschritten erscheint zuerst ein großer leerer Wochenring. Verlauf, Level und Statistik bieten vor dem ersten Abschluss wenig unmittelbaren Ertrag. Der vorhandene erste Eintrag konkurriert mit leeren Auswertungen.",
+          "evidence": "Visueller Test bei 390 × 844 Pixeln: Die erste Aktion war sichtbar und nicht unterhalb des sichtbaren Bereichs versteckt. Designwahl steht im ersten Einrichtungsschritt vor der Auswahl des Verhaltens. Leere Zustände auf Home, Level und Statistik wurden betrachtet.",
+          "limitation": "UX-Einschätzung anhand eines begrenzten Webtests, keine gemessene Abbruchursache und keine Nutzerbefragung. Die Aussage, die erste Aktion sei auf dem getesteten Bildschirm unsichtbar gewesen, wäre falsch.",
+          "recommendation": "Erste Eingabe stärker hervorheben und unmittelbar einen verständlichen Tagesstand zeigen. Designwahl kann später zugänglich bleiben; keine neuen Quests oder großen neuen Systeme erforderlich.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/ZeroHero-code-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-reference-versus-goal",
+          "title": "Referenzwert, Limit und Tagesziel vermischen unterschiedliche Bedeutungen",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Beim Einrichten wird der bisherige durchschnittliche Tageswert abgefragt. Andere Texte nennen diesen Bezug Limit oder Tagesziel. Ein bisheriger Durchschnitt ist jedoch nicht automatisch ein bewusst gewähltes Ziel. Positive Referenzwerte sind erforderlich, auch bei unregelmäßigem Verhalten.",
+          "evidence": "Onboarding-Texte beschreiben den Durchschnitt, Home verwendet im Limit, die XP-Erklärung Tagesziel; die Baseline-Validierung lehnt 0 ab. Im Webtest wurde außerdem IM ZIEL in der Statistik gesehen.",
+          "limitation": "Text- und Codebefund plus UX-Einschätzung. Tatsächliche Verwirrung oder Wirkung auf Wiederkehr wurde nicht gemessen.",
+          "recommendation": "Zunächst überall üblichen Tageswert beziehungsweise Referenzwert verwenden. Ein echtes Ziel nur so benennen, wenn es bewusst gewählt werden kann; Dokumentation und Verbesserung sprachlich trennen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/ZeroHero-code-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-xp-honest-recording",
+          "title": "Versprechen ehrlicher Dokumentation und XP-Regel passen nur teilweise zusammen",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Texte betonen, dass schwierige Tage zählen und Punkte für dokumentierte Tage vergeben werden. Im aktuellen Code erhalten Tage oberhalb der Referenz 0 XP. Das könnte die Motivation nach schwierigen Tagen schwächen; diese Wirkung ist eine Hypothese.",
+          "evidence": "XP-Erklärung verspricht Anerkennung für Dokumentation; formulas.dart vergibt für OVER 0 XP. Die Store-Botschaft gute und schwierige Tage zählen gehört zu den geprüften Motiven.",
+          "limitation": "Die XP-Regel ist ein Codefakt, die Motivationswirkung nicht gemessen. Nicht mit dem Rundungsfehler verwechseln: Dort ist kein falscher XP-Abzug belegt.",
+          "recommendation": "Anerkennung ehrlichen Eintragens prüfen und die Texte exakt zur tatsächlichen Regel passend formulieren. Vor einer größeren Belohnungsänderung direkte Nutzerrückmeldungen einholen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-neon-contrast",
+          "title": "Neonmodus braucht gezielte Kontrastkorrekturen",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Klassisch wirkt als Ausgangspunkt ordentlich. Im ergänzend getesteten Neonmodus waren dunkelgrüne und dunkelrote Rückmeldungen sowie das Schließen-Symbol auf dunklem Hintergrund schwerer lesbar.",
+          "evidence": "Sichtvergleich im lokalen Webtest bei 390 × 844 Pixeln zwischen klassischer Oberfläche und Neon. Klassische Ansicht ruhig mit Weiß, Mint und Blau; Neon mit dunklem Hintergrund und cyanfarbenen Elementen.",
+          "limitation": "Begrenzte visuelle Bewertung, keine vollständige Barrierefreiheitsmessung, keine dokumentierten Kontrastverhältnisse und kein nativer Gerätetest.",
+          "recommendation": "Statusfarben und Schließen-Symbol im Neonmodus korrigieren; klassische Gestaltung als brauchbare Grundlage erhalten.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-store-positioning",
+          "title": "Store sollte den konkreten Nutzen früher benennen",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Der Titel nennt Alkohol und Zigaretten, die Kurzbeschreibung wird mit schlechten Gewohnheiten allgemein. Die vorhandenen ersten fünf Store-Bilder sind brauchbar; kleine Telefoninhalte erklären weniger als die großen Überschriften. Ein klarerer Nutzen ist sinnvoller als ein pauschaler visueller Neustart.",
+          "evidence": "Englische Store-Seite und Bilder 1–5 von 11 geprüft. Motive: 30 Sekunden Erfassung, eigener Rhythmus, gute/schwierige Tage, Level/Abzeichen und Trend. Das vierte Bild zeigt Level 3 mit Abzeichen. Kurztext-Entwurf aus dem Bericht: Track drinks and cigarettes, compare your baseline, and see your progress (73 Zeichen).",
+          "limitation": "Deutsche Fassung und Bilder 6–11 nicht geprüft. Fehlende Lokalisierung ist nicht nachgewiesen. Einzelne Ansichten müssen mit dem nächsten tatsächlichen Release abgeglichen werden; fünf Klicks reichen nicht, um die Gestaltung als Conversion-Ursache zu bewerten.",
+          "recommendation": "Alkohol/Zigaretten und persönlichen Verlauf konkret benennen, bestehende Bildgestaltung erhalten und aktuelle Release-Ansichten verwenden. Reihenfolge: Ausgangsmenge, schnell eintragen, Wochenentwicklung, nach schwierigem Tag weitermachen; Belohnungen ergänzend.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-privacy-mismatch",
+          "title": "Aktueller Analytics-Code und Privatversprechen müssen abgeglichen werden",
+          "evidenceType": "mismatch",
+          "priority": "high",
+          "detail": "Der Store verspricht vollständig privaten Offlinebetrieb und keine Datenerhebung. Der aktuelle Android-Quellstand initialisiert Firebase Analytics vor dem Onboarding und aktiviert die Erfassung. Dies ist ein Widerspruch zwischen aktuellem Code und versprochenem Verhalten, der vor einem Update geklärt werden muss.",
+          "evidence": "Passende Android-Firebase-Konfiguration und aktives Build-Plugin vorhanden; nach erfolgreicher Initialisierung setAnalyticsCollectionEnabled(true). Im geprüften lib kein setConsent-Aufruf, keine Deaktivierung und keine Opt-out-Oberfläche gefunden. Eigene Events: app_opened, onboarding_completed, today_opened, history_opened, first_trackable_created und session_ended mit duration_bucket. Konsummengen, Baselines, Konsumartnamen und eingegebene Texte wurden in eigenen Eventparametern nicht gefunden.",
+          "limitation": "Keine Prüfung tatsächlicher Android-Netzwerkübertragung oder vom SDK erzeugter Metadaten. Der Webtest initialisiert ohne Webkonfiguration und ist dafür nicht übertragbar. Die veröffentlichte Mai-Version kann vor dieser Analytics-Ergänzung liegen. Kein bewiesener Verstoß oder falsche Deklaration der veröffentlichten App; keine rechtliche Bewertung.",
+          "recommendation": "Gewünschtes Privatversprechen und tatsächliches Android-Release-Verhalten gemeinsam festlegen. Entweder externe Analysen für das versprochene Verhalten deaktivieren/entfernen oder Datenflüsse und Nutzerinformationen zutreffend beschreiben. Store-Angaben erst nach Prüfung des Release-Pakets festlegen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/store-review.md",
+            "analysen/zerohero/runtime/TEST-UMGEBUNG.md"
+          ]
+        },
+        {
+          "id": "zerohero-growth-evidence",
+          "title": "Sehr geringe neue Nutzung; Ursache und Wirtschaftlichkeit offen",
+          "evidenceType": "assessment",
+          "priority": "high",
+          "detail": "Console-Karten zeigen im verfügbaren Store-Zeitraum 40 Besucher und fünf Installationsklicks sowie zuletzt neun Besucher und einen Klick. Das Volumen ist sehr klein. Die Daten belegen weder eine schlechte Store-Conversion noch ausreichende Nachfrage nach dem Produkt.",
+          "evidence": "Store-Zeitraum 10.07.–05.10.2026: 40 Besucher, fünf eindeutige Installationsklicks, gerundete CTR 13 %. Separat 08.09.–05.10.: neun Besucher, ein Klick, CTR 11 %. Wachstumskarten haben unter Sechsmonatsauswahl andere verfügbare Zeiträume. Monatlich aktive Geräte 3 ist ein Wert für die vorherigen 28 Tage am 08.07., keine Gesamtnutzung über sechs Monate.",
+          "limitation": "Installationsklicks sind keine erfolgreichen Installationen. Besucher können über mehrere Tage erneut gezählt werden. 18.400 Impressionen, 31 Akquisitionen und 18 erste Öffnungen sind kein gemeinsamer Funnel; 18/31 wäre keine belegte Aktivierungsquote. Keine belastbare Ursachenaufteilung oder Umsatzprognose möglich.",
+          "recommendation": "Nach einem kleinen Qualitätsupdate einen begrenzten Vertriebsversuch über einen passenden Kanal machen und direkte Rückmeldungen sowie Erstnutzung und Wiederkehr beobachten. Gleiche verfügbare Zeiträume vergleichen. Ein A/B-Test mit fünf Klicks ist derzeit wenig aussagekräftig.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/play-console-kpis.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-update-growth-hypothesis",
+          "title": "Ein Update allein ist kein belegter Wachstumstrigger",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Die Hoffnung auf einen automatischen Schub durch eine neue Version sollte keine Planungsvoraussetzung sein. Ein Update ist sinnvoll, wenn es Zuverlässigkeit, erste Minuten und wiederkehrenden Nutzen verbessert.",
+          "evidence": "Die in den Berichten herangezogenen Google-Dokumente beschreiben Nutzungs- und Qualitätssignale, Marketingassets und technischen Nutzerwert; daraus geht keine garantierte Hochstufung allein durch Veröffentlichung einer neuen Version hervor.",
+          "limitation": "Keine vollständige Kenntnis des Google-Rankings und keine Aussage, dass Updates grundsätzlich ohne Einfluss wären. Konkrete Wirkung für ZeroHero muss beobachtet werden.",
+          "recommendation": "Updateumfang an belegten Produktproblemen ausrichten und nach Veröffentlichung Reichweite, Erstnutzung und Wiederkehr getrennt beurteilen.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-quests-disabled",
+          "title": "Aktive Belohnungen von deaktivierten Quests trennen",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Level, Abzeichen und Meilensteine sind aktive Produktbestandteile. Quests sind im aktuellen Code ausdrücklich deaktiviert; sie dürfen nicht allein wegen vorhandener Erklärung oder früherer Planung als aktive Funktion dargestellt werden.",
+          "evidence": "lib/core/flags.dart deaktiviert Quests. Die aktive Navigation besteht aus Home, Heute, Verlauf, Level, Stats und Einstellungen; der Webtest zeigte Level und Meilensteine.",
+          "limitation": "Befund zum aktuellen lokalen Quellstand. Kein Nachweis, welche Quest-Texte oder Funktionen im veröffentlichten Release enthalten sind.",
+          "recommendation": "Texte und Screenshots auf tatsächlich aktive Funktionen abgleichen; neue Quests sind für den vorgeschlagenen ersten Updateumfang nicht erforderlich.",
+          "sourceDocs": [
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+            "analysen/zerohero/store-review.md"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "id": "zerohero-growth-impressions",
+          "label": "Geräteimpressionen",
+          "value": 18400,
+          "unit": "Geräteimpressionen",
+          "selectedPeriod": "Letzte 6 Monate; Diagrammachse 12.04.–08.10.2026",
+          "availablePeriod": "01.05.–04.10.2026 (157 Tage laut Tooltip)",
+          "definition": "Tagesbezogene Geräteaufrufe auch von Symbol, Detailseite und anderen App-Inhalten.",
+          "caveat": "Keine 18.400 verschiedenen Menschen und keine 18.400 Store-Besucher. Nicht mit den Akquisitions-, Öffnungs- oder Store-Zahlen zu einem Funnel verbinden."
+        },
+        {
+          "id": "zerohero-growth-acquisitions",
+          "label": "Geräteakquisitionen",
+          "value": 31,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "13.04.–30.08.2026 (140 Tage laut Tooltip)",
+          "definition": "Geräte, auf denen die App installiert wurde; nicht ausschließlich neue Personen.",
+          "caveat": "Abdeckung weicht von erstem Öffnen und Impressionen ab. 18/31 ist keine belegte Aktivierungsquote; nicht mit dem Store-Teilzeitraum vermischen."
+        },
+        {
+          "id": "zerohero-growth-first-open",
+          "label": "Erstes Öffnen",
+          "value": 18,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "19.04.–07.07.2026 (80 Tage laut Tooltip)",
+          "definition": "Erste Öffnung nach Installation innerhalb von 180 Tagen; Neu- und Wiederinstallationen berücksichtigt.",
+          "caveat": "Anderer verfügbarer Zeitraum als Geräteakquisitionen. Keine gemeinsame Conversion-Kette und keine bestätigte Zahl ausschließlich neuer Personen."
+        },
+        {
+          "id": "zerohero-growth-mau",
+          "label": "Monatlich aktive Geräte",
+          "value": 3,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "Tooltipwert am 08.07.2026; jeweils vorherige 28 Tage",
+          "definition": "Am 08.07. angezeigter Aktivitätswert für die vorherigen 28 Tage.",
+          "caveat": "Keine Gesamtsumme aktiver Nutzer über sechs Monate und kein DAU-Wert. Nicht mit dem separaten Dashboard-Wert zusammenführen."
+        },
+        {
+          "id": "zerohero-growth-retained-seven-days",
+          "label": "Gerätebindung (7 Tage)",
+          "value": 1,
+          "unit": "Console-Anzeigewert",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "In dieser Prüfung nicht weiter aufgeschlüsselt",
+          "definition": "Angezeigter Wert der Karte Gerätebindung (7 Tage).",
+          "caveat": "Keine belastbare Bindungsquote daraus abgeleitet; Kohorte und Aggregation nicht weiter geklärt."
+        },
+        {
+          "id": "zerohero-store-visitors-available",
+          "label": "Store-Besucher im verfügbaren längeren Zeitraum",
+          "value": 40,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 180 Tage in Store-Einträgen",
+          "availablePeriod": "10.07.–05.10.2026",
+          "definition": "Gemeldete Besucher der Store-Einträge im angezeigten verfügbaren Zeitraum.",
+          "caveat": "Keine volle Sechsmonatsbilanz. Besucher können an unterschiedlichen Tagen erneut gezählt werden; nicht automatisch 40 verschiedene Menschen. Andere Play-Flächen sind nicht automatisch enthalten."
+        },
+        {
+          "id": "zerohero-store-clicks-available",
+          "label": "Eindeutige Installationsklicks im verfügbaren längeren Zeitraum",
+          "value": 5,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 180 Tage in Store-Einträgen",
+          "availablePeriod": "10.07.–05.10.2026",
+          "definition": "Gemeldete eindeutige Klicks auf Installieren im Store-Bericht.",
+          "caveat": "Ein Klick ist kein Nachweis erfolgreicher Installation oder späterer Nutzung. Sehr kleine Menge; keine belastbare Conversion-Bewertung."
+        },
+        {
+          "id": "zerohero-store-ctr-available",
+          "label": "Store-CTR im verfügbaren längeren Zeitraum",
+          "value": 13,
+          "unit": "%",
+          "selectedPeriod": "Letzte 180 Tage in Store-Einträgen",
+          "availablePeriod": "10.07.–05.10.2026",
+          "definition": "Console-Anteil von Installationsklicks an Store-Besuchern.",
+          "caveat": "Gerundeter Console-Wert; 5/40 ergibt 12,5 %. Kein Anteil erfolgreicher Installationen. Wegen nur fünf Klicks nicht als verlässlich gute oder schlechte Conversion bewerten."
+        },
+        {
+          "id": "zerohero-store-visitors-recent",
+          "label": "Store-Besucher zuletzt",
+          "value": 9,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 28 Tage in Store-Einträgen",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Gemeldete Besucher der Store-Einträge im separaten 28-Tage-Zeitraum.",
+          "caveat": "Store-Filter ist unabhängig vom Wachstumsbereich. Keine vollständige Gesamtakquisition über alle Play-Flächen."
+        },
+        {
+          "id": "zerohero-store-clicks-recent",
+          "label": "Eindeutige Installationsklicks zuletzt",
+          "value": 1,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 28 Tage in Store-Einträgen",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Gemeldeter eindeutiger Klick auf Installieren im separaten Store-Zeitraum.",
+          "caveat": "Keine bestätigte erfolgreiche Installation und keine Grundlage für belastbare Ursachenbewertung."
+        },
+        {
+          "id": "zerohero-store-ctr-recent",
+          "label": "Store-CTR zuletzt",
+          "value": 11,
+          "unit": "%",
+          "selectedPeriod": "Letzte 28 Tage in Store-Einträgen",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Gerundeter Console-Anteil von Installationsklicks an Store-Besuchern.",
+          "caveat": "Beruht auf einem Klick bei neun gemeldeten Besuchen. Keine statistisch belastbare Conversion-Aussage."
+        },
+        {
+          "id": "zerohero-dashboard-acquisitions",
+          "label": "App-Dashboard: Geräteakquisitionen",
+          "value": 1,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Dashboard-Auswahl; exakte Grenzen dort nicht gesondert protokolliert",
+          "definition": "Separater im App-Dashboard angezeigter Akquisitionswert.",
+          "caveat": "Nicht mit dem Wachstumsbereich oder dem Store-Bericht zu einer gemeinsamen Reihe zusammensetzen."
+        },
+        {
+          "id": "zerohero-dashboard-first-open",
+          "label": "App-Dashboard: erstes Öffnen",
+          "value": 1,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Dashboard-Auswahl; exakte Grenzen dort nicht gesondert protokolliert",
+          "definition": "Separater im App-Dashboard angezeigter Erstöffnungswert.",
+          "caveat": "Abweichende Darstellung beziehungsweise Abdeckung gegenüber dem Wachstumsbereich; keine gemeinsame Reihe abgeleitet."
+        },
+        {
+          "id": "zerohero-dashboard-mau",
+          "label": "App-Dashboard: monatlich aktive Geräte",
+          "value": 1,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Dashboard-Auswahl; exakte Grenzen dort nicht gesondert protokolliert",
+          "definition": "Separater im App-Dashboard angezeigter Aktivitätswert.",
+          "caveat": "Nicht mit dem Wachstumswert 3 am 08.07. als gleiche Reihe oder Gesamtsumme verwenden."
+        },
+        {
+          "id": "zerohero-total-installations",
+          "label": "Installationen insgesamt",
+          "value": 79,
+          "unit": "kumulative Installationen",
+          "selectedPeriod": "Kumulativer Dashboard-Zähler",
+          "availablePeriod": "Abgelesen am 09.10.2026; kein Beginn protokolliert",
+          "definition": "Im Dashboard angezeigter kumulativer Zähler.",
+          "caveat": "Keine Zahl aktueller Nutzer und nicht gleichbedeutend mit installierter Zielgruppe."
+        },
+        {
+          "id": "zerohero-installed-audience",
+          "label": "Installierte Zielgruppe",
+          "value": 4,
+          "unit": "Console-Anzeigewert",
+          "selectedPeriod": "App-Liste",
+          "availablePeriod": "Abgelesen am 09.10.2026",
+          "definition": "In der App-Liste angezeigte installierte Zielgruppe.",
+          "caveat": "Kein lebenslanger Downloadzähler und keine Zahl aus dem Store-Performance-Zeitraum."
+        },
+        {
+          "id": "zerohero-public-download-class",
+          "label": "Öffentliche Installationsklasse",
+          "value": "50+",
+          "unit": "Downloads laut Play-Auftritt",
+          "selectedPeriod": "Öffentlicher Store-Auftritt",
+          "availablePeriod": "Abgerufen am 09.10.2026",
+          "definition": "Öffentlich sichtbare Installationsklasse des englischen Store-Auftritts.",
+          "caveat": "Keine exakte Downloadzahl und keine Aussage zur aktuellen Aktivität."
+        },
+        {
+          "id": "zerohero-dashboard-quality-availability",
+          "label": "Crash-, ANR- und Bewertungsdaten",
+          "value": null,
+          "unit": "nicht verfügbar",
+          "selectedPeriod": "App-Dashboard, letzte 28 Tage",
+          "availablePeriod": "Abgelesen am 09.10.2026",
+          "definition": "Die Felder zeigten einen Strich statt eines Messwerts.",
+          "caveat": "Nicht als null Fehler, bestätigte Fehlerfreiheit oder null Bewertungen interpretieren. Auch Dashboard-Durchschnitte wurden nicht als Gesamtraten übernommen."
+        }
+      ],
+      "actions": [
+        {
+          "id": "zerohero-action-reliable-entry",
+          "order": 1,
+          "title": "Erfassung verlässlich machen",
+          "detail": "Settings unmittelbar auf Heute übernehmen, Getränkezähler sofort korrekt bestätigen und Referenzpräzision sowie Livefeedback konsistent berechnen. Diese drei reproduzierten Fehler bilden den ersten begrenzten Reparaturumfang.",
+          "status": "proposed",
+          "validation": "Auf Android gezielt prüfen: Konsumart und Baseline ändern ohne Neustart; zwei gleiche Getränke erfassen und unmittelbare Bestätigung vergleichen; identisches Referenzgetränk erfassen und Livefeedback mit Abschlussregel abgleichen. Keine Aussage über erfolgreichen Fix vor Umsetzung und Prüfung."
+        },
+        {
+          "id": "zerohero-action-zero-and-pauses",
+          "order": 2,
+          "title": "Nulltage und Pausen zuverlässig behandeln",
+          "detail": "Explizite Nulltag-Aktion und unterscheidbare fehlende Angabe vorsehen. Den Pausenfall für ältere vorhandene Entwürfe kontrolliert reproduzieren und nur bei Bestätigung korrigieren.",
+          "status": "proposed",
+          "validation": "Dokumentierte Null und keinerlei Angabe separat speichern und Abschluss/Verlauf vergleichen. Vorhandenen Entwurf nach mehrtägiger Pause in kontrollierter Zeitumgebung wieder öffnen; Nachholen, XP und Schutz vor Doppelabschlüssen prüfen. Rechner-Systemzeit nicht verändern."
+        },
+        {
+          "id": "zerohero-action-first-value",
+          "order": 3,
+          "title": "Ersten Nutzen und Begriffe klarer machen",
+          "detail": "Erste Erfassung hervorheben, unmittelbar einen verständlichen Tagesstand zeigen und Referenzwert von bewusstem Ziel unterscheiden. Kleine Neon-Kontrastkorrekturen; bestehende klassische Gestaltung verwenden. Dokumentationsanerkennung prüfen, ohne ein großes neues Belohnungssystem aufzubauen.",
+          "status": "proposed",
+          "validation": "Frischer Einstieg auf einem Android-Gerät: erste Aktion und gespeicherte Eingabe verständlich erkennbar; direkte Rückmeldung von wenigen passenden Testern zum Referenzbegriff, Nulltag und schwierigen Tagen; Statusfarben und Dialog-Schließen im Neonmodus prüfen."
+        },
+        {
+          "id": "zerohero-action-store-and-privacy",
+          "order": 4,
+          "title": "Store und Privatversprechen mit tatsächlichem Release abgleichen",
+          "detail": "Gewollten Datenfluss festlegen und native Release-Implementierung prüfen. Anschließend Datenschutztexte, Store-Deklaration und vorhandene Store-Grafiken passend zur tatsächlichen App halten. Alkohol/Zigaretten und Verlauf konkreter benennen; deutsche Fassung mitprüfen.",
+          "status": "proposed",
+          "validation": "Release-Paket und Android-Analytics-Verhalten abgleichen; veröffentlichte Quellen soweit verfügbar zuordnen. Store-Texte und sämtliche verwendeten Screenshots mit diesem Release vergleichen. Privatsphäre-Versprechen erst nach bestätigtem Datenfluss verwenden. Keine Veröffentlichungsänderung ist bisher erfolgt."
+        },
+        {
+          "id": "zerohero-action-small-distribution-test",
+          "order": 5,
+          "title": "Nach Qualitätsupdate vier Wochen begrenzt Nutzer erreichen",
+          "detail": "Über einen passenden Kanal freiwillige Tester gewinnen, verständliche Erfassung und Wiederkehr beobachten und wenige direkte Rückmeldungen sammeln. Bleiben Store-Besuche sehr gering, Ansprache und Vertriebsweg prüfen. Größeren Ausbau erst nach beobachtetem Nutzen bewerten.",
+          "status": "proposed",
+          "validation": "Vorher/nachher dieselben verfügbaren Zeitspannen und Definitionen protokollieren. Store-Besuche und Installationsklicks, tatsächliche Erstnutzung und Wiederkehr getrennt betrachten. Keine Erfolgsgarantie, kein A/B-Test auf Grundlage von fünf Klicks und kein automatischer Ranking-Schub vorausgesetzt."
+        }
+      ],
+      "openQuestions": [
+        "Welche der im aktuellen Webbuild reproduzierten Fehler treten ebenso im veröffentlichten nativen Android-Release 25 auf?",
+        "Ist der aktuelle lokale Quellstand dem veröffentlichten Release zuzuordnen, oder wurden seit Mai trotz gleicher Versionsnummer weitere Änderungen vorgenommen?",
+        "Wie verhalten sich explizite Null, fehlende Angabe, Tagesabschluss und Wiederöffnung nach mehrtägiger Pause tatsächlich auf Android?",
+        "Welche Analytics-Daten fließen im tatsächlichen Android-Release, und soll das Produkt einen vollständig lokalen Privatmodus versprechen?",
+        "Warum zeigen die Wachstumskarten trotz Sechsmonatsauswahl unterschiedliche verfügbare Teilzeiträume? Fehlende Daten wurden nicht als null interpretiert.",
+        "Welche Sprachen, Herkunftswege und Zielgruppen erzeugen die vorhandenen Store-Besuche und tatsächliche Erstnutzung?",
+        "Verstehen passende Menschen den Nutzen nach der ersten Eingabe und kommen sie an Folgetagen zurück? Bisher fehlen direkte Rückmeldungen und belastbare Kohorten.",
+        "Wie sieht die deutsche Store-Fassung aus, und passen alle elf Store-Bilder zum nächsten tatsächlichen Release?",
+        "Hilft eine kleine Anerkennung ehrlicher Dokumentation an schwierigen Tagen, oder ist die heutige XP-Regel für die Zielgruppe bereits nachvollziehbar?",
+        "Ist die Arbeitshypothese schneller Tracker für Alkohol und Zigaretten im eigenen Tempo ausreichend klar und nützlich gegenüber vorhandenen Alternativen?",
+        "Welcher begrenzte Kanal erreicht geeignete freiwillige Tester, und welche Aufwandgrenze wird für den ersten vierwöchigen Versuch gewählt?",
+        "Kann nach verlässlicher Erfassung und erster echter Wiederkehr ein wirtschaftliches Produkt entstehen? Umsatzmodell und größere Ausbauentscheidungen sind noch nicht bewertet."
+      ],
+      "documents": [
+        "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+        "analysen/zerohero/play-console-kpis.md",
+        "analysen/zerohero/review-evidence.md",
+        "analysen/zerohero/ZeroHero-code-review.md",
+        "analysen/zerohero/store-review.md",
+        "analysen/zerohero/runtime/TEST-UMGEBUNG.md",
+        "analysen/zerohero/runtime/README.md"
+      ]
+    },
+    {
+      "id": "mirror",
+      "projectId": "mirror",
+      "title": "Mirror / RelateLens – Pilotanalyse",
+      "status": "reviewed",
+      "summary": "Der aktuelle RelateLens-Relaunch hat einen nachvollziehbaren kleinen Produktkern: fünf Fragen zu einer unklaren Verbindung, Einordnung und konkreter nächster Schritt. Ruhige Optik und bedienbare Hauptbereiche sind eine brauchbare Basis. Zwei Probleme wurden im unveränderten aktuellen Webbuild reproduziert: die beschriebene Eigenreaktion kann der gewählten Antwort widersprechen; Wiederöffnen verändert Kurzabschnitte und verliert den Weg zum enthaltenen Volltext. Der Volltext vermittelt außerdem stellenweise zu viel Sicherheit über fremdes Interesse. Die Console zeigt 566 Store-Besucher und 28 Installationsklicks in 08.09.–05.10.2026 sowie kleine aktive Bestände; verschiedene Wachstumsfenster erlauben keinen gemeinsamen Funnel. Diese Kennzahlen gehören zum bisherigen Mirror, nicht zum lokalen Relaunch. Verlässliche Einordnung, konsistente Wiederöffnung, Datenkontrolle und ein klarer tatsächlicher Store-/Release-Auftritt haben Vorrang. Appcode und Stores unverändert; Monetarisierung ist ausdrücklich ein späteres Ziel nach Aufbau echter Nutzer.",
+      "scope": {
+        "checked": [
+          "Aktuelle lokale Quelle C:\\Users\\madde\\Documents\\Mirror ausschließlich lesend: RelateLens 1.1.0+16, com.energycrafted.mirror, Branch relaunch/paused-2026-10-07, HEAD 27ff955611886951e832159b91bec4f3ceec14a4; sauberer Git-Arbeitsstand.",
+          "Aktiver Router mit Start /home und Home-, Clarity-, Daily-Tarot-, Pattern-, Insights-, Archiv- und Settings-Pfaden; aktive lokale Repository-Implementierungen statt historischer Berichte geprüft.",
+          "Unveränderte isolierte Webkopie mit generiertem Webgerüst: 69 Dart- und 56 Asset-Dateien per SHA256 identisch; Projekt-, Lock- und Analysekonfiguration ebenfalls identisch. Erfolgreicher Web-Releasebuild mit Flutter 3.41.4 und Dart 3.11.1.",
+          "Vom Hauptagenten bedienter aktueller Webbuild bei 390×844 mit erfundenen Antworten im eigenen localhost-Origin; Home, zwei identische Fünf-Fragen-Scans, erste Ergebnisansicht, Wiederöffnung der gespeicherten Kurzansicht und ausführliches Ergebnis.",
+          "Widerspruch zwischen I go silent und stay engaged beziehungsweise leaning in im tatsächlichen Webablauf reproduziert. Abweichende Abschnitte und fehlender Read-more-Weg in vollständig durchgescrollter gespeicherter Kurzansicht reproduziert.",
+          "Aktive lokale Datenhaltung und PostHog-Ereignispayload, Zustimmungsgate, Early-Access-Freischaltung und fehlende reale Billing-Implementierung geprüft.",
+          "Öffentlicher englischer Play-Auftritt desselben Pakets mit 50+ Downloads und Update 13.07.2026; unterschiedliche sichtbare Titel zwischen Browser und direktem Textabruf dokumentiert.",
+          "Tageskartenablauf Daily → What am I not seeing? → Draw my card → The Star XVII → Continue Reading bis zum Ergebnis bedient. Creme-/Pflaumenpalette und Kartenkunst wirkten ruhig und stimmig; in diesem Durchlauf keine Bedienblockade.",
+          "Vom Hauptagenten am 09.10.2026 lesend abgelesene Mirror-Console: Wachstum mit Sechsmonatsauswahl, jeweils tatsächlich verfügbare Kartenabdeckung, separate Dashboard-Werte, kumulativer Installationszähler, installierte Zielgruppe und neuester Release. Keine Werte aus ZeroHero übernommen.",
+          "Alle vier Tabs und Settings im mobilen Webviewport bedienbar. Pattern-Intro mit ungefähr zehn Fragen und Abgrenzung zur Diagnose angesehen, aber Fragebogen nicht abgeschlossen. Insights zeigte Lesetexte und Journal prompt ohne Eingabe. Settings zeigte Privacy Policy, Disclaimer und 1.1.0 (16), ohne Löschfunktion.",
+          "Nach Browserreload blieben zwei gespeicherte Readings und The Star als heutige Karte erhalten. Daily zeigte View todays reading und Your last 7 cards mit The Star Today; kompletter Reopen-Klick nicht erneut geprüft.",
+          "Öffentliche visuelle Store-Stichprobe: erste vier von 15 Bildern. Sechs ältere lokale Relaunch-Captures zusätzlich betrachtet; Fake-Repository und Ersatzschriften begrenzen diese und sie ersetzen nicht heutige Laufzeitbeweise.",
+          "Store-Performance lesend abgelesen: 08.09.–05.10.2026 mit 566 Besuchern, 28 Installationsklicks und 5 Prozent; längerer Filter tatsächlich 10.07.–05.10.2026 mit 804 Besuchern, 58 Klicks und 7 Prozent. Gerundete Raten, keine Gleichsetzung mit erfolgreichen Installationen."
+        ],
+        "notChecked": [
+          "Kein Gerätetest des veröffentlichten Android-Binaries und keine bestätigte Gleichheit zur lokalen RelateLens-Quelle.",
+          "Vorhandenes Debug-APK vom Juni ist Version 1.0.11 (13), nicht der geprüfte Relaunch. Version und Quellenzuordnung des vorhandenen AAB vom 07.10.2026 sind in diesem Code-Teil nicht bestätigt.",
+          "Kein Laufzeitnachweis für Tageswechsel oder Android-Backup. Backup-Regeln des zusammengeführten Release-Manifests und konkrete Geräteinstellungen wurden nicht geprüft.",
+          "Kein Android-Netzwerkmitschnitt, kein verifizierter Produktions-PostHog-Buildparameter und keine vollständige Datenschutz- oder Sicherheitsprüfung.",
+          "Vorhandene Flutter-Tests wurden nicht ausgeführt. Kompilierbarkeit des Webbuilds ist kein bestandener automatisierter Testlauf.",
+          "Keine echte Nutzerbefragung, kein Wiederkehrversuch, keine bestätigte Zahlungsbereitschaft und keine Marktstudie. Wirkung der Befunde auf Downloads ist ungemessen.",
+          "Kompletter Pattern-Fragebogen, alle Tarot-Karten und vollständiger Reopen der Tageslesung nicht durchgespielt. Browserreload bestätigt Webgrundpersistenz, keinen nativen Android-Restore.",
+          "Store-Bilder 5–15 und deutsche öffentliche Storefassung nicht geprüft. Fehlende Crash-/ANR-/Bewertungsmesswerte sind nicht null."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Klarer kleiner Einstieg ohne Konto",
+          "detail": "Home adressiert Mixed Signals und beginnt direkt mit fünf Fragen. Der Nutzer erhält eine Einordnung und einen praktischen nächsten Schritt. Das ist eine nachvollziehbare Grundlage für einen begrenzten Produktversuch."
+        },
+        {
+          "title": "Ruhige Kartenoberfläche als Grundlage",
+          "detail": "Die im aktuellen Webablauf gelesenen Frage- und Ergebnisansichten sind eine brauchbare Grundlage. Eine vollständige Neugestaltung ist aus dieser Prüfung nicht begründet; inhaltliche Verlässlichkeit ist der dringendere Punkt."
+        },
+        {
+          "title": "Neutrale Ergebnisse und lokale Archivierung sind vorhanden",
+          "detail": "Konsequentes Verhalten und zu wenig Information führen im Code zu vorsichtigeren Ergebnissen. Tageskarte und Reading-Snapshots sind lokal gespeichert. Ausführliche einmal angezeigte Inhalte können stabil wieder geöffnet werden; einzelne Archivwege bleiben verbesserungsbedürftig."
+        },
+        {
+          "title": "Analytics ist im aktuellen Code ausdrücklich optional",
+          "detail": "PostHog-Versand verlangt passende Buildkonfiguration und Zustimmung. Der geprüfte Payload enthält Ereignisse und eine zufällige App-ID, keine Antworten oder Reading-Texte. Im isolierten Webbuild wurde kein Ziel konfiguriert; Produktionsverhalten ist separat zu prüfen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "mirror-own-reaction-mismatch",
+          "title": "Eigenes Muster widerspricht einer gewählten Reaktion",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Das Ergebnis kann trotz ausdrücklichem I go silent Wärme, Nähe und engagiertes Dranbleiben als eigenes Muster beschreiben. Für ein Reflexionsprodukt beschädigt das die inhaltliche Verlässlichkeit.",
+          "evidence": "Dating → I cannot stop thinking about them → I go silent → Avoids serious conversations → Calmer and more secure. Archivierte Kurzansicht zeigt stay engaged and hopeful; ausführliche Ansicht nach zweitem identischen Scan zeigt leaning in, staying warm, staying available. Code zählt ihren Verhaltens-Tag doppelt und verwendet ihn für Your Emotional Pattern.",
+          "limitation": "Im aktuellen unveränderten lokalen Webbuild bei 390×844 reproduziert und im aktiven Code bestätigt; kein nativer oder veröffentlichter Android-Nachweis und keine echte Nutzerwirkungsmessung.",
+          "recommendation": "Eigene Reaktion getrennt vom beobachteten Verhalten der anderen Person auswerten und wenige gegensätzliche Antwortfälle sinnvoll gegenprüfen.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/runtime-review.md"
+          ]
+        },
+        {
+          "id": "mirror-overconfident-full-copy",
+          "title": "Volltext behauptet echtes Interesse zu sicher",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Die Vollansicht behandelt tatsächliches Interesse als real und nicht eingebildet. Die fünf Antworten erlauben keine sichere Aussage über fremde Gefühle oder Motive.",
+          "evidence": "Im Volltext des dokumentierten Mixed-Signals-Falls gelesen; derselbe feste Textbaustein ist in ClarityPremiumContent aktiv. Die erste Ergebnisansicht kennzeichnet ihre Grundlage vorsichtiger als die eigene Antwortperspektive.",
+          "limitation": "Inhaltliche Bewertung eines konkreten Textfalls, keine umfassende Prüfung sämtlicher Inhaltskombinationen oder therapeutischer Wirkung.",
+          "recommendation": "Beobachtung, mögliche Interpretation und unbekannte Absichten im Volltext ebenso deutlich trennen; betroffene sichere Aussagen gezielt umformulieren.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/runtime-review.md"
+          ]
+        },
+        {
+          "id": "mirror-reopen-free-reading",
+          "title": "Gespeicherte Kurzansicht verändert Abschnitte und verliert den Weiterweg",
+          "evidenceType": "runtime",
+          "priority": "medium",
+          "detail": "Wiederöffnen zeigt eine andere Auswahl von Ergebnisabschnitten. Die zuvor sichtbare Einordnung What to watch for fehlt, während Your pattern hinzukommt; der enthaltene Volltext ist dort nicht über einen Button erreichbar.",
+          "evidence": "Erstes Ergebnis mit vier Karten gelesen, Read more nicht geöffnet, zurück Home und Your last reading aufgerufen. Ganze gespeicherte Ansicht durchgescrollt: Your pattern / Their pattern / The dynamic / Next step und kein Read-more-Button. _freeSections bestätigt die abweichende Abschnittszuordnung.",
+          "limitation": "Aktuelle Webquelle, nicht veröffentlichter Android-Build. Das Archiv ist absichtlich unveränderlich; die UX sollte diese Eigenschaft verständlich abbilden.",
+          "recommendation": "Erste und gespeicherte Ergebnisansicht konsistent halten und den gewünschten Zugang zu enthaltenen Volltexten beim Wiederöffnen klar regeln.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/runtime-review.md"
+          ]
+        },
+        {
+          "id": "mirror-local-data-control-and-backup",
+          "title": "Lokale Datenkontrolle und Backup-Aussage klären",
+          "evidenceType": "runtime",
+          "priority": "high",
+          "detail": "Antworten und persönliche Readings werden archiviert; im aktiven Settings-/Repository-Code fehlt vollständiges Löschen. Die Aussage Answers stay on this device ist ohne bewusst geprüfte Android-Backup-Regeln noch nicht ausreichend abgesichert.",
+          "evidence": "SharedPreferences speichert Antwort-IDs und Reading-Snapshots. Settings nennt Analytics, Privacy Policy, Disclaimer und Version; keine vollständige Löschaktion gefunden. Quellmanifest definiert keine allowBackup-, fullBackupContent- oder dataExtractionRules-Angaben. Android-Dokumentation beschreibt standardmäßiges Backup auch für SharedPreferences. Zusätzlich in der tatsächlichen Web-Settings-Ansicht Privacy Policy, Disclaimer und Version 1.1.0 (16) gesehen, keine Löschfunktion sichtbar.",
+          "limitation": "Kein tatsächlicher Backup-Upload nachgewiesen; zusammengeführtes Release-Manifest, Gerätetransfer und Geräteeinstellungen sind noch zu prüfen. Kein rechtliches Urteil.",
+          "recommendation": "Eine einfache bestätigte Löschaktion anbieten und Backup-/Gerätetransferregeln mit dem gewollten lokalen Versprechen abstimmen.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/runtime-review.md"
+          ]
+        },
+        {
+          "id": "mirror-daily-cache",
+          "title": "Tagesinhalte können nach Mitternacht gecacht bleiben",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "TodaysCard und TodaysInsight sind gecachte Provider ohne Datum als Abhängigkeit; Wiederaufnehmen der App aktualisiert nur Analytics. Erhaltener Tarot-RAM-Zustand kann ebenfalls alt bleiben.",
+          "evidence": "Aktive Tages-Provider und Lifecycle-Code sowie TarotResultNotifier.restoreFromToday geprüft. Die Berechnung kennt das Datum, wird beim bloßen Wiederaufnehmen jedoch nicht gezielt neu ausgelöst.",
+          "limitation": "Codeinferenz; kein praktischer Mitternachtstest und keine Änderung der Systemzeit durchgeführt.",
+          "recommendation": "Lokalen Tageswechsel beim Wiederaufnehmen erkennen und Tages-Provider sowie veralteten Tarot-RAM-Zustand gezielt aktualisieren.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json"
+          ]
+        },
+        {
+          "id": "mirror-recurrence-and-billing",
+          "title": "Wiederkehrnutzen und Zahlungsbereitschaft sind noch nicht gezeigt",
+          "evidenceType": "inference",
+          "priority": "medium",
+          "detail": "Insights rotiert sieben allgemeine Texte ohne Bezug zum Scan; Journal prompt ist eine gelesene Anregung. Die aktuelle Early-Access-Quelle ist bewusst kostenlos und verdrahtet Mock-Billing. Daraus lässt sich kein tragfähiges Abo oder Umsatz ableiten.",
+          "evidence": "Sieben feste DailyInsight-Einträge mit Tageszahl modulo sieben. earlyAccessFullReadingsEnabled=true; MockPurchaseRepository statt Store-Billing aktiv.",
+          "limitation": "Begrenztheit der implementierten Funktion ist Codefakt; daraus abgeleitete Wiederkehr- und Geschäftsfrage ist eine ungemessene Hypothese, kein Abwanderungsbeleg.",
+          "recommendation": "Mit wenigen passenden Nutzern konkrete Hilfreichkeit und freiwillige Wiederkehr prüfen. Der Nutzer möchte Monetarisierung ausdrücklich später behandeln, sobald Nutzer vorhanden sind; der aktuelle Early-Access-Stand bleibt bewusst kostenlos.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/Mirror-code-review.md",
+            "analysen/mirror/evidence.json"
+          ]
+        },
+        {
+          "id": "mirror-product-store-identity",
+          "title": "Lokalen Relaunch und öffentlichen Auftritt bewusst zusammenführen",
+          "evidenceType": "store",
+          "priority": "medium",
+          "detail": "Lokale Marke RelateLens, öffentlicher Browser-Titel Mirror: Love Tarot & Clarity und abweichender direkter Texttitel Mirror: Relationship Clarity gehören zum selben Paket, stellen jedoch unterschiedliche Erwartungen in den Vordergrund.",
+          "evidence": "Aktuelles Branding und Android-Label RelateLens; lokale Version 1.1.0+16. Öffentliche Store-Ausspielungen desselben Pakets dokumentiert; öffentliches Update 13.07.2026. Ein Namensunterschied allein ist kein Qualitätsurteil.",
+          "limitation": "Ursache der Titeldifferenzen und Gleichheit zur aktuell veröffentlichten Android-Quelle sind offen. Keine Storeänderung vorgenommen.",
+          "recommendation": "Einen primären Nutzerfall, Namen und tatsächlichen nächsten Release wählen. Storetexte und Screenshots müssen dessen echte Bedienung und Nutzen abbilden; Tarot kann bewusst ergänzend bleiben.",
+          "sourceDocs": [
+            "analysen/mirror/Mirror-Pilotanalyse.md",
+            "analysen/mirror/store-review.md",
+            "analysen/mirror/play-console-kpis.md"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "id": "mirror-public-download-class",
+          "label": "Öffentliche Installationsklasse",
+          "value": "50+",
+          "unit": "Downloads laut Play-Auftritt",
+          "selectedPeriod": "Öffentlicher englischer Store-Auftritt",
+          "availablePeriod": "Abgerufen am 09.10.2026",
+          "definition": "Öffentlich sichtbare Installationsklasse des Pakets com.energycrafted.mirror.",
+          "caveat": "Keine exakte Zahl aktueller Nutzer oder Lebenszeitdownloads; keine Kennzahl aus dem RelateLens-Webtest."
+        },
+        {
+          "id": "mirror-growth-device-impressions",
+          "label": "Wachstum: Geräteimpressionen",
+          "value": 11500,
+          "unit": "Geräteimpressionen",
+          "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+          "availablePeriod": "04.07.–04.10.2026, tatsächlich 93 Tage",
+          "definition": "Auf der Wachstumskarte angezeigte Geräteimpressionen; Ablesung 09.10.2026.",
+          "caveat": "Andere verfügbare Spanne als Akquisitionen und Erstöffnungen. Keine gemeinsame Funnelstufe aus verschiedenen Zeiträumen bilden."
+        },
+        {
+          "id": "mirror-growth-device-acquisitions",
+          "label": "Wachstum: Geräteakquisitionen",
+          "value": 91,
+          "unit": "Geräteakquisitionen",
+          "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+          "availablePeriod": "14.06.–05.10.2026, tatsächlich 114 Tage",
+          "definition": "Angezeigte Geräteakquisitionen der Wachstumskarte; Ablesung 09.10.2026.",
+          "caveat": "Keine Vergleichsquote mit 31 Erstöffnungen aus einer anderen Spanne. Kein kumulativer oder aktueller Nutzerzähler."
+        },
+        {
+          "id": "mirror-growth-device-first-open",
+          "label": "Wachstum: Erstes Öffnen auf Geräten",
+          "value": 31,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+          "availablePeriod": "15.06.–30.09.2026, tatsächlich 108 Tage",
+          "definition": "Auf der Wachstumskarte angezeigter Wert für erstes Öffnen; Ablesung 09.10.2026.",
+          "caveat": "31/91 ist wegen verschiedener Zeiträume und Metrikdefinitionen keine belegte Aktivierungsquote. Daten des älteren Produkts nicht als gemessene Nutzung des lokalen Relaunchs ausgeben."
+        },
+        {
+          "id": "mirror-growth-monthly-active",
+          "label": "Wachstum: monatlich aktive Geräte",
+          "value": 6,
+          "unit": "Geräte",
+          "selectedPeriod": "Sechsmonatsauswahl; Karte zeigt 28-Tage-Aktivität",
+          "availablePeriod": "Stand 29.09.2026, letzte 28 Tage",
+          "definition": "Letzter angezeigter MAU-Gerätewert der Wachstumskarte.",
+          "caveat": "Nicht mit dem separaten App-Dashboard-Wert 5 als gleiche aktuelle Reihe oder als Summe zusammenführen."
+        },
+        {
+          "id": "mirror-growth-seven-day-retained",
+          "label": "Wachstum: Geräte mit 7-Tage-Bindung",
+          "value": 17,
+          "unit": "Anzahl",
+          "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+          "availablePeriod": "Nur 20.–21.06.2026, zwei verfügbare Tage",
+          "definition": "Angezeigter Anzahlwert in der Karte Geräte mit 7-Tage-Bindung; Ablesung 09.10.2026.",
+          "caveat": "17 ist keine Retentionsrate in Prozent. Sehr kleine verfügbare Datumsabdeckung, keine belastbare aktuelle Retentionskohorte abgeleitet."
+        },
+        {
+          "id": "mirror-dashboard-device-acquisitions",
+          "label": "App-Dashboard: Geräteakquisitionen",
+          "value": 29,
+          "unit": "Geräteakquisitionen",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Ablesung 09.10.2026; genaue Filtergrenzen im KPI-Protokoll zu dokumentieren",
+          "definition": "Separater Geräteakquisitionswert aus dem App-Dashboard.",
+          "caveat": "Nicht als dieselbe Spanne wie die 91 Akquisitionen in der Wachstumskarte behandeln."
+        },
+        {
+          "id": "mirror-dashboard-first-open",
+          "label": "App-Dashboard: erstes Öffnen",
+          "value": 6,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Ablesung 09.10.2026; genaue Filtergrenzen im KPI-Protokoll zu dokumentieren",
+          "definition": "Separater Erstöffnungswert aus dem App-Dashboard.",
+          "caveat": "Nicht mit dem Wachstumswert 31 zu einer gemeinsamen Reihe oder Summe verbinden."
+        },
+        {
+          "id": "mirror-dashboard-monthly-active",
+          "label": "App-Dashboard: monatlich aktive Geräte",
+          "value": 5,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+          "availablePeriod": "Ablesung 09.10.2026; genauer Dashboard-Stand getrennt vom Grow-Wert am 29.09.",
+          "definition": "Separater MAU-Gerätewert im App-Dashboard.",
+          "caveat": "Wachstum zeigt 6 zu einem anderen Stand; nicht gleichsetzen oder addieren."
+        },
+        {
+          "id": "mirror-dashboard-total-installations",
+          "label": "Installationen insgesamt",
+          "value": 83,
+          "unit": "kumulative Installationen",
+          "selectedPeriod": "Kumulativer App-Dashboard-Zähler",
+          "availablePeriod": "Abgelesen am 09.10.2026; Beginn nicht protokolliert",
+          "definition": "Im App-Dashboard angezeigter kumulativer Zähler.",
+          "caveat": "Keine Anzahl aktueller Nutzer, keine Zahl der Installationsklicks und keine mit 91 Akquisitionen automatisch identische Definition."
+        },
+        {
+          "id": "mirror-installed-audience",
+          "label": "Installierte Zielgruppe",
+          "value": 13,
+          "unit": "Console-Anzeigewert",
+          "selectedPeriod": "App-Liste beziehungsweise Console-Zielgruppenanzeige",
+          "availablePeriod": "Abgelesen am 09.10.2026",
+          "definition": "Vom Hauptagenten abgelesene installierte Zielgruppe für Mirror.",
+          "caveat": "Kein lebenslanger Downloadzähler und nicht die Zahl des neueren lokalen RelateLens-Webbuilds."
+        },
+        {
+          "id": "mirror-latest-release-installations",
+          "label": "Neuester Release: Installationen",
+          "value": 14,
+          "unit": "Release-Installationen laut Console",
+          "selectedPeriod": "Neuester veröffentlichter Release",
+          "availablePeriod": "Release vom 13.07.2026, bei 100 Prozent Rollout am 09.10.2026 abgelesen",
+          "definition": "Auf dem neuesten Release angezeigter Installationswert. Veröffentlichter Versionsname 1.0.13, lokale Quelle 1.1.0+16.",
+          "caveat": "Kein lebenslanger Downloadzähler und kein Nachweis, dass der aktuelle lokale Relaunch veröffentlicht ist."
+        },
+        {
+          "id": "mirror-store-28-visitors",
+          "label": "Store: Besucher, letzte 28 Tage",
+          "value": 566,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Angezeigte Besucherzahl in der Store-Performance, abgelesen am 09.10.2026.",
+          "caveat": "Store-Population ist keine vollständige Play-Impressionspopulation. Keine dedizierte aktuelle Nutzung des lokalen Relaunchs."
+        },
+        {
+          "id": "mirror-store-28-install-clicks",
+          "label": "Store: eindeutige Installationsklicks, letzte 28 Tage",
+          "value": 28,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Klicks zur App-Installation, einzelne Nutzer laut Console.",
+          "caveat": "Klick ist weder bestätigte erfolgreiche Installation noch Erstöffnung. Nicht als dieselben Personen wie die Geräteakquisitionen ausgeben."
+        },
+        {
+          "id": "mirror-store-28-ctr",
+          "label": "Store: Klickrate, letzte 28 Tage",
+          "value": 5,
+          "unit": "%",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Von Google gerundete angezeigte Klickrate in der Store-Performance.",
+          "caveat": "Installationsintention, keine Aktivierungs- oder Wiederkehrquote; keine Kausalzuordnung allein zu Screenshotqualität."
+        },
+        {
+          "id": "mirror-store-long-visitors",
+          "label": "Store: Besucher, längerer Filter",
+          "value": 804,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026, im Datumsdialog und URL bestätigt",
+          "definition": "Besucher der längeren verfügbaren Store-Performance-Spanne.",
+          "caveat": "Filter ist durch verfügbare Daten auf weniger als drei Monate begrenzt; nicht als vollständiges Halbjahr ausgeben."
+        },
+        {
+          "id": "mirror-store-long-install-clicks",
+          "label": "Store: eindeutige Installationsklicks, längerer Filter",
+          "value": 58,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026",
+          "definition": "Angezeigte eindeutige Klicks zur App-Installation.",
+          "caveat": "Keine bestätigten erfolgreichen Installationen. Andere Zeitspanne als Wachstumskarten und keine gemeinsame Retentionskohorte."
+        },
+        {
+          "id": "mirror-store-long-ctr",
+          "label": "Store: Klickrate, längerer Filter",
+          "value": 7,
+          "unit": "%",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026",
+          "definition": "Von Google gerundete angezeigte Store-Klickrate.",
+          "caveat": "Keine bestätigte Installations- oder Nutzerbindungsquote; ohne belastbare Vergleichsgruppe kein Nachweis einer Ursache."
+        },
+        {
+          "id": "mirror-dashboard-quality-availability",
+          "label": "Crash-, ANR- und Bewertungsdaten",
+          "value": null,
+          "unit": "nicht verfügbar",
+          "selectedPeriod": "App-Dashboard",
+          "availablePeriod": "Abgelesen am 09.10.2026",
+          "definition": "Console-Felder zeigten einen Strich statt eines Messwerts.",
+          "caveat": "Kein Nachweis von null Fehlern, bestätigter Fehlerfreiheit oder null Bewertungen."
+        }
+      ],
+      "actions": [
+        {
+          "id": "mirror-action-reliable-content",
+          "order": 1,
+          "title": "Antwortbasierte Einordnung verlässlich machen",
+          "detail": "Eigenreaktion vom Partnerverhalten trennen, sichere Interessensbehauptungen vorsichtiger formulieren und erste sowie gespeicherte Ergebnisansicht angleichen. Das ist der erste begrenzte Reparaturumfang.",
+          "status": "proposed",
+          "validation": "Dokumentierten Rückzugsfall und einen gegensätzlichen aktiv nachfragenden Fall prüfen. Erste Kurzansicht, archivierte Kurzansicht und Volltext vergleichen; weder Inkonsistenz noch fix behaupten, bevor Umsetzung und passende native Prüfung erfolgt sind."
+        },
+        {
+          "id": "mirror-action-local-data-and-date",
+          "order": 2,
+          "title": "Lokale Daten und Tageswechsel sauber behandeln",
+          "detail": "Einfaches Löschen der Readings/Antworten vorsehen. Backup-/Gerätetransferverhalten bewusst festlegen und Tagesinhalte beim Wiederaufnehmen an das aktuelle Datum binden.",
+          "status": "proposed",
+          "validation": "Aktuellen Android-Testbuild verwenden: vollständige Datenkontrolle, zusammengeführtes Manifest und Backup-Regeln prüfen; Tageswechsel mit injizierter Testzeit statt veränderter Rechnerzeit testen. Kein tatsächlicher Upload oder erfolgter Fix vorausgesetzt."
+        },
+        {
+          "id": "mirror-action-release-and-store",
+          "order": 3,
+          "title": "Einen tatsächlichen Auftritt und Release zusammenführen",
+          "detail": "Primären Nutzen kurzer Beziehungsreflexion bei gemischten Signalen testen, Rolle symbolischer Karten entscheiden und Name, Storetext sowie aktuelle echte Screenshots auf den nächsten bestätigten Android-Release abstimmen.",
+          "status": "proposed",
+          "validation": "Lokale Quelle, freizugebendes Binary, Marke und sichtbare Storefassung einzeln zuordnen. Erwartung aus erstem Storebild mit tatsächlicher erster Appaktion vergleichen. Keine Titel-, Store- oder Releaseänderung ist bisher erfolgt."
+        },
+        {
+          "id": "mirror-action-small-user-test",
+          "order": 4,
+          "title": "Nutzen und Wiederkehr mit wenigen echten Nutzern prüfen",
+          "detail": "Passende freiwillige Tester den ersten Scan abschließen lassen und nach Verständlichkeit, praktischem nächsten Schritt und späterer Wiederkehr fragen. Monetarisierung ist ein späteres Ziel, sobald Nutzer vorhanden sind; noch kein Modell oder Billing-Umfang entschieden.",
+          "status": "proposed",
+          "validation": "Konkrete Rückmeldungen statt allgemeiner Gefallensfrage sammeln, Store-Besuche/Installationsklicks von Erstnutzung/Wiederkehr trennen und Zeiträume passend dokumentieren. Keine Erfolgs- oder Rankinggarantie."
+        }
+      ],
+      "openQuestions": [
+        "Welcher veröffentlichte Android-Release gehört zur aktuellen Quelle, und ist der RelateLens-Relaunch noch unveröffentlicht?",
+        "Wie reproduzieren sich die beiden dokumentierten Webprobleme auf dem tatsächlichen Android-Gerät?",
+        "Welche weiteren Antwortkombinationen ergeben widersprüchliche eigene Muster oder zu sichere Behauptungen über die andere Person?",
+        "Soll gespeicherte Kurzfassung vollständig identisch bleiben und wann soll enthaltene Vertiefung erreichbar sein?",
+        "Welche Marke und welcher Hauptnutzen soll das tatsächliche nächste Release haben; welche Rolle sollen symbolische Karten spielen?",
+        "Wie sind Android-Backup, Gerätetransfer und tatsächliche Produktions-Analytics konfiguriert?",
+        "Was passiert bei erhaltenem Prozess über Mitternacht mit Tageskarte, Insight und Tarot-RAM-Zustand?",
+        "Hilft der konkrete nächste Schritt passenden Menschen tatsächlich, und wollen sie deshalb freiwillig wiederkommen?",
+        "Welche kleine Bezahlleistung wäre nach Nutzenbeleg angemessen? Zahlungsbereitschaft und wirtschaftliche Tragfähigkeit sind derzeit offen.",
+        "Wie entwickeln sich Store-Besuche, Installationsklicks, tatsächliche Erstnutzung und Wiederkehr nach einem verlässlichen Relaunch in gemeinsam datierten und definierten Messfenstern?"
+      ],
+      "documents": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/runtime-review.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/store-review.md",
+        "analysen/mirror/play-console-kpis.md",
+        "analysen/mirror/TEST-UMGEBUNG.md",
+        "analysen/mirror/runtime/README.md"
+      ]
+    }
+  ],
+  "decisions": [
+    {
+      "id": "scope-inventory-before-evaluation",
+      "title": "Bestand und Anliegen dauerhaft zusammenhalten",
+      "detail": "Ausgangspunkt sind drei Bereiche: Browser-Spiele anhand des Repos dashboard, eigene Online-Präsenz mit Landing Page und den genannten weiteren Repos sowie lokale Android-Produkte. Erst wurde grob inventarisiert; anschließend werden Produkte ehrlich und nachvollziehbar geprüft. Das Dashboard bewahrt Ausgangslage, Ziele, Produkte, Prüfstand und ausführliche Ergebnisse, damit der Faden erhalten bleibt.",
+      "status": "established",
+      "source": "Nutzerauftrag: ursprüngliche Bestandsaufnahme und aktueller Dashboard-Wunsch vom 09.10.2026."
+    },
+    {
+      "id": "scope-bounded-honest-reviews",
+      "title": "Ehrliche Bewertungen mit überschaubarem Folgeumfang",
+      "detail": "Android-Ziel ist mehr echte Nutzer und Downloads; Store und App sollen hinsichtlich Produktnutzen, Optik und UX geprüft werden. Für Browser-Spiele sind einzelne Qualitätsanalysen vorgesehen. Für den Online-Auftritt folgt Beratung zur geeigneten Landing Page und zur Rolle von Games versus Website-Verkauf. Die Arbeit soll kein Mammutprojekt werden.",
+      "status": "established",
+      "source": "Nutzernachricht zur Zielklärung: mehr Downloads, ehrliche Produktbewertung, Store/App-Verbesserungen und begrenzter Umfang."
+    },
+    {
+      "id": "zerohero-pilot-status",
+      "title": "ZeroHero ist der erste abgeschlossene Analysepilot",
+      "detail": "Die begrenzte ZeroHero-Pilotanalyse ist dokumentiert. Analyseergebnis bedeutet keinen behobenen Fehler und kein veröffentlichtes Update. Die anderen Produkte sind dadurch nicht geprüft.",
+      "status": "established",
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+    },
+    {
+      "id": "zerohero-positioning-hypothesis",
+      "title": "Arbeitshypothese: schneller Tracker für Alkohol und Zigaretten",
+      "detail": "Den eigenen Verlauf verständlich machen, im eigenen Tempo und ohne Perfektion. Diese Positionierung ist ein Vorschlag aus der Analyse; Nachfrage, tatsächliche Wirkung und wirtschaftlicher Erfolg sind nicht belegt.",
+      "status": "proposed",
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+    },
+    {
+      "id": "zerohero-small-update-first",
+      "title": "Begrenztes Qualitätsupdate vor größerem Ausbau",
+      "detail": "Zuerst verlässliche Erfassung, Nulltage/Pausen, klarer erster Nutzen und korrektes Privatversprechen. Klassische Gestaltung und Store-Bildgrundlage sind brauchbar. Keine neuen Quests, kein vollständiger Neustart und kein großes neues System für diesen ersten Schritt erforderlich.",
+      "status": "proposed",
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+    },
+    {
+      "id": "zerohero-measure-separate-scopes",
+      "title": "Daten nur mit passenden Zeiträumen und Definitionen vergleichen",
+      "detail": "Sechsmonatsauswahl, tatsächliche Datenabdeckung und separate Store-/Dashboard-Filter werden getrennt dokumentiert. Klick ist nicht Installation; kumulative Installationen sind nicht aktuelle Nutzer; fehlende Messwerte sind nicht null. Keine gemeinsame Kette aus 18.400, 31 und 18 und keine Aktivierungsquote aus 18/31.",
+      "status": "established",
+      "source": "analysen/zerohero/play-console-kpis.md"
+    },
+    {
+      "id": "zerohero-small-user-test",
+      "title": "Kleinen Vertriebs- und Nutzerversuch vor Ausbauentscheidung erwägen",
+      "detail": "Nach einem tatsächlich umgesetzten Qualitätsupdate vier Wochen über einen passenden Kanal freiwillige Tester erreichen. Direkte Rückmeldungen und Wiederkehr beobachten; größerer Ausbau oder Monetarisierung erst anhand dieses Nutzens bewerten. Ein reines Update wird nicht als garantierter Algorithmus-Trigger eingeplant.",
+      "status": "proposed",
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+    },
+    {
+      "id": "zerohero-mirror-monetization-after-users",
+      "title": "ZeroHero und Mirror später monetarisieren",
+      "detail": "Ausdrückliches langfristiges Nutzerziel: ZeroHero und Mirror sollen Einnahmen erzielen, wenn sie zunächst tatsächliche Nutzer gewinnen. Nutzergewinnung und wiederkehrender Nutzen stehen davor. Preismodell, Bezahlinhalte und Zahlungsintegration sind noch offen; keine Monetarisierung wurde mit diesem Vermerk eingeführt.",
+      "status": "established",
+      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json"
+    },
+    {
+      "id": "push-then-mewtrack-then-push",
+      "title": "Aktuellen Stand sichern, danach MewTrack prüfen und erneut sichern",
+      "detail": "Der Nutzer beauftragt zuerst Commit und GitHub-Push des aktuellen Dashboard- und Mirror-Stands. Anschließend ist MewTrack die nächste Analyse; danach folgt erneut Commit und Push. Der genannte Play-Console-Release 13 (0.9.4) ist ein Zuordnungshinweis, der mit den lokalen Projektständen abzugleichen ist.",
+      "status": "established",
+      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json"
+    }
+  ],
+  "pending": [
+    {
+      "id": "zerohero-native-verification",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "Native Android-Gegenprüfung",
+      "detail": "Aktuelles und veröffentlichtes Release zuordnen; die drei Webfehler und native Erfassung gezielt auf einem Android-Gerät prüfen. Bisheriger Webtest ersetzt diesen Schritt nicht.",
+      "kind": "verification"
+    },
+    {
+      "id": "zerohero-day-lifecycle-verification",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "Nulltage, Mitternacht und mehrtägige Pause testen",
+      "detail": "Explizite Null, fehlende Angabe, ältere vorhandene Entwürfe und Doppelabschluss kontrolliert prüfen. Bisher Codebefunde; keine Änderung der Systemzeit des Nutzerrechners.",
+      "kind": "verification"
+    },
+    {
+      "id": "zerohero-privacy-release-verification",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "Release-Datenfluss und Privatversprechen klären",
+      "detail": "Native Analytics-Übertragung prüfen und gewünschtes Verhalten festlegen, bevor ein Update und passende Store-Angaben konkret umgesetzt werden.",
+      "kind": "verification"
+    },
+    {
+      "id": "zerohero-store-complete-verification",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "Deutschen Store und restliche Bilder ergänzen",
+      "detail": "Deutsche Fassung, Bilder 6–11 und Übereinstimmung sämtlicher verwendeter Ansichten mit dem tatsächlichen nächsten Release prüfen.",
+      "kind": "verification"
+    },
+    {
+      "id": "zerohero-user-and-distribution-strategy",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "Begrenzten nächsten Update- und Nutzerversuch konkretisieren",
+      "detail": "Die fünf vorgeschlagenen Schritte in einen kleinen tatsächlichen Umfang übersetzen. Testerkanal, Aufwandgrenze, Nutzerfragen und vergleichbare Messzeiträume festlegen; derzeit keine Umsetzung oder Veröffentlichung erfolgt.",
+      "kind": "strategy"
+    },
+    {
+      "id": "mewtrack-product-store-analysis",
+      "area": "android",
+      "projectId": "mewtrack",
+      "title": "MewTrack-Produkt und Store bewerten",
+      "detail": "Nach dem Commit/Push des aktuellen Dashboard- und Mirror-Stands als nächstes prüfen. Der Nutzer nennt Play-Console-Release 13 (0.9.4) als Zuordnungshinweis; zunächst maßgeblichen lokalen Stand mit Paket und Release abgleichen. Danach Produkt, Optik, UX, Store und verfügbare Daten mit Ziel mehr echte Nutzer prüfen. Drei lokale Implementierungen sind Bestand, keine drei nachgewiesenen aktiven Produkte. Anschließend Ergebnisse dokumentieren und erneut committen/pushen.",
+      "kind": "analysis"
+    },
+    {
+      "id": "browser-games-quality-analysis",
+      "area": "games",
+      "projectId": null,
+      "title": "Browser-Spiele einzeln auf Qualität prüfen",
+      "detail": "Die anhand des dashboard-Repos erfassten Spiele und relevanten Varianten nacheinander prüfen. Spielbarkeit, erste Minuten, Optik, UX und konkrete Qualitätsprobleme bewerten; bisher besteht die Bestandsaufnahme, keine abgeschlossene Spielanalyse.",
+      "kind": "analysis"
+    },
+    {
+      "id": "online-presence-product-review",
+      "area": "web",
+      "projectId": null,
+      "title": "Vorhandene Online-Auftritte vergleichen",
+      "detail": "LandingGame / lokaler Ordner Landing Page sowie shop, keyofsolomon, portfolio3, blueyard, phantom und basement anhand der realen Produkte prüfen. Ausgangsfrage: Ist schon eine vorhandene Seite als eigener Einstieg geeignet?",
+      "kind": "analysis"
+    },
+    {
+      "id": "online-presence-strategy",
+      "area": "web",
+      "projectId": null,
+      "title": "Rolle und Aufbau der eigenen Landing Page entscheiden",
+      "detail": "Nach Vergleich beraten, welche eigene Landing Page sinnvoll ist und wie sie aussehen sollte: Website-Verkauf, persönliche Homepage, Games als Referenzen oder eigener Bereich. Ziel, Ansprache und Verbindung der Produkte sind noch keine entschiedene Strategie.",
+      "kind": "strategy"
+    },
+    {
+      "id": "zerohero-later-monetization",
+      "area": "android",
+      "projectId": "zerohero",
+      "title": "ZeroHero später monetarisieren",
+      "detail": "Grundsätzliches Nutzerziel für die Zeit nach erster tatsächlicher Nutzergewinnung: geeigneten bezahlten Mehrwert und ein passendes Erlösmodell bewerten. Zunächst Nutzen und Wiederkehr beobachten. Kein festgelegtes Preismodell und keine bereits eingeführte Zahlungsintegration; daraus folgt kein sofortiger großer Monetarisierungsumbau.",
+      "kind": "strategy"
+    },
+    {
+      "id": "mirror-later-monetization",
+      "area": "android",
+      "projectId": "mirror",
+      "title": "Mirror später monetarisieren",
+      "detail": "Grundsätzliches Nutzerziel für die Zeit nach erster tatsächlicher Nutzergewinnung: geeigneten bezahlten Mehrwert und ein passendes Erlösmodell bewerten. Zunächst Nutzen und Wiederkehr beobachten. Kein festgelegtes Preismodell und keine bereits eingeführte Zahlungsintegration; daraus folgt kein sofortiger großer Monetarisierungsumbau.",
+      "kind": "strategy"
+    },
+    {
+      "id": "mirror-native-release-verification",
+      "area": "android",
+      "projectId": "mirror",
+      "title": "Mirror-Release und native Grenzen pruefen",
+      "detail": "Veroeffentlichten Mirror und lokalen RelateLens-Relaunch gezielt auf Android abgleichen; Backup, Tageswechsel und produktive Analytics-Konfiguration pruefen. Der Webpilot ersetzt dies nicht.",
+      "kind": "verification"
+    },
+    {
+      "id": "mirror-bounded-update",
+      "area": "android",
+      "projectId": "mirror",
+      "title": "Kleinen Mirror-Nutzerversuch konkretisieren",
+      "detail": "Antworttreue, vorsichtige Interessensaussagen, stabile Wiederoeffnung und lokale Datenkontrolle zuerst verbessern; Store-Versprechen mit dem tatsaechlichen Release abstimmen. Vorschlaege sind noch nicht umgesetzt.",
+      "kind": "strategy"
+    }
+  ]
+}

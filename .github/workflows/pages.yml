@@ -1,0 +1,56 @@
+name: Projektkompass auf GitHub Pages
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Repository auschecken
+        uses: actions/checkout@v4
+      - name: Python einrichten
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.13'
+      - name: Node.js einrichten
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: JavaScript-Syntax prüfen
+        run: node --check dashboard/app.js
+      - name: Dashboard bauen und Konsistenz prüfen
+        run: |
+          python scripts/build_dashboard.py
+          python scripts/build_dashboard.py --check
+      - name: Pages konfigurieren
+        uses: actions/configure-pages@v5
+      - name: Ausschließlich die eingebettete Dashboard-Datei vorbereiten
+        run: |
+          mkdir -p _site
+          cp index.html _site/index.html
+      - name: Pages-Artefakt hochladen
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: GitHub Pages veröffentlichen
+        id: deployment
+        uses: actions/deploy-pages@v4

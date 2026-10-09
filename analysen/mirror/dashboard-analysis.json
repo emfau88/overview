@@ -1,0 +1,410 @@
+{
+  "id": "mirror",
+  "projectId": "mirror",
+  "title": "Mirror / RelateLens – Pilotanalyse",
+  "status": "reviewed",
+  "summary": "Der aktuelle RelateLens-Relaunch hat einen nachvollziehbaren kleinen Produktkern: fünf Fragen zu einer unklaren Verbindung, Einordnung und konkreter nächster Schritt. Ruhige Optik und bedienbare Hauptbereiche sind eine brauchbare Basis. Zwei Probleme wurden im unveränderten aktuellen Webbuild reproduziert: die beschriebene Eigenreaktion kann der gewählten Antwort widersprechen; Wiederöffnen verändert Kurzabschnitte und verliert den Weg zum enthaltenen Volltext. Der Volltext vermittelt außerdem stellenweise zu viel Sicherheit über fremdes Interesse. Die Console zeigt 566 Store-Besucher und 28 Installationsklicks in 08.09.–05.10.2026 sowie kleine aktive Bestände; verschiedene Wachstumsfenster erlauben keinen gemeinsamen Funnel. Diese Kennzahlen gehören zum bisherigen Mirror, nicht zum lokalen Relaunch. Verlässliche Einordnung, konsistente Wiederöffnung, Datenkontrolle und ein klarer tatsächlicher Store-/Release-Auftritt haben Vorrang. Appcode und Stores unverändert; Monetarisierung ist ausdrücklich ein späteres Ziel nach Aufbau echter Nutzer.",
+  "scope": {
+    "checked": [
+      "Aktuelle lokale Quelle C:\\Users\\madde\\Documents\\Mirror ausschließlich lesend: RelateLens 1.1.0+16, com.energycrafted.mirror, Branch relaunch/paused-2026-10-07, HEAD 27ff955611886951e832159b91bec4f3ceec14a4; sauberer Git-Arbeitsstand.",
+      "Aktiver Router mit Start /home und Home-, Clarity-, Daily-Tarot-, Pattern-, Insights-, Archiv- und Settings-Pfaden; aktive lokale Repository-Implementierungen statt historischer Berichte geprüft.",
+      "Unveränderte isolierte Webkopie mit generiertem Webgerüst: 69 Dart- und 56 Asset-Dateien per SHA256 identisch; Projekt-, Lock- und Analysekonfiguration ebenfalls identisch. Erfolgreicher Web-Releasebuild mit Flutter 3.41.4 und Dart 3.11.1.",
+      "Vom Hauptagenten bedienter aktueller Webbuild bei 390×844 mit erfundenen Antworten im eigenen localhost-Origin; Home, zwei identische Fünf-Fragen-Scans, erste Ergebnisansicht, Wiederöffnung der gespeicherten Kurzansicht und ausführliches Ergebnis.",
+      "Widerspruch zwischen I go silent und stay engaged beziehungsweise leaning in im tatsächlichen Webablauf reproduziert. Abweichende Abschnitte und fehlender Read-more-Weg in vollständig durchgescrollter gespeicherter Kurzansicht reproduziert.",
+      "Aktive lokale Datenhaltung und PostHog-Ereignispayload, Zustimmungsgate, Early-Access-Freischaltung und fehlende reale Billing-Implementierung geprüft.",
+      "Öffentlicher englischer Play-Auftritt desselben Pakets mit 50+ Downloads und Update 13.07.2026; unterschiedliche sichtbare Titel zwischen Browser und direktem Textabruf dokumentiert.",
+      "Tageskartenablauf Daily → What am I not seeing? → Draw my card → The Star XVII → Continue Reading bis zum Ergebnis bedient. Creme-/Pflaumenpalette und Kartenkunst wirkten ruhig und stimmig; in diesem Durchlauf keine Bedienblockade.",
+      "Vom Hauptagenten am 09.10.2026 lesend abgelesene Mirror-Console: Wachstum mit Sechsmonatsauswahl, jeweils tatsächlich verfügbare Kartenabdeckung, separate Dashboard-Werte, kumulativer Installationszähler, installierte Zielgruppe und neuester Release. Keine Werte aus ZeroHero übernommen.",
+      "Alle vier Tabs und Settings im mobilen Webviewport bedienbar. Pattern-Intro mit ungefähr zehn Fragen und Abgrenzung zur Diagnose angesehen, aber Fragebogen nicht abgeschlossen. Insights zeigte Lesetexte und Journal prompt ohne Eingabe. Settings zeigte Privacy Policy, Disclaimer und 1.1.0 (16), ohne Löschfunktion.",
+      "Nach Browserreload blieben zwei gespeicherte Readings und The Star als heutige Karte erhalten. Daily zeigte View todays reading und Your last 7 cards mit The Star Today; kompletter Reopen-Klick nicht erneut geprüft.",
+      "Öffentliche visuelle Store-Stichprobe: erste vier von 15 Bildern. Sechs ältere lokale Relaunch-Captures zusätzlich betrachtet; Fake-Repository und Ersatzschriften begrenzen diese und sie ersetzen nicht heutige Laufzeitbeweise.",
+      "Store-Performance lesend abgelesen: 08.09.–05.10.2026 mit 566 Besuchern, 28 Installationsklicks und 5 Prozent; längerer Filter tatsächlich 10.07.–05.10.2026 mit 804 Besuchern, 58 Klicks und 7 Prozent. Gerundete Raten, keine Gleichsetzung mit erfolgreichen Installationen."
+    ],
+    "notChecked": [
+      "Kein Gerätetest des veröffentlichten Android-Binaries und keine bestätigte Gleichheit zur lokalen RelateLens-Quelle.",
+      "Vorhandenes Debug-APK vom Juni ist Version 1.0.11 (13), nicht der geprüfte Relaunch. Version und Quellenzuordnung des vorhandenen AAB vom 07.10.2026 sind in diesem Code-Teil nicht bestätigt.",
+      "Kein Laufzeitnachweis für Tageswechsel oder Android-Backup. Backup-Regeln des zusammengeführten Release-Manifests und konkrete Geräteinstellungen wurden nicht geprüft.",
+      "Kein Android-Netzwerkmitschnitt, kein verifizierter Produktions-PostHog-Buildparameter und keine vollständige Datenschutz- oder Sicherheitsprüfung.",
+      "Vorhandene Flutter-Tests wurden nicht ausgeführt. Kompilierbarkeit des Webbuilds ist kein bestandener automatisierter Testlauf.",
+      "Keine echte Nutzerbefragung, kein Wiederkehrversuch, keine bestätigte Zahlungsbereitschaft und keine Marktstudie. Wirkung der Befunde auf Downloads ist ungemessen.",
+      "Kompletter Pattern-Fragebogen, alle Tarot-Karten und vollständiger Reopen der Tageslesung nicht durchgespielt. Browserreload bestätigt Webgrundpersistenz, keinen nativen Android-Restore.",
+      "Store-Bilder 5–15 und deutsche öffentliche Storefassung nicht geprüft. Fehlende Crash-/ANR-/Bewertungsmesswerte sind nicht null."
+    ]
+  },
+  "strengths": [
+    {
+      "title": "Klarer kleiner Einstieg ohne Konto",
+      "detail": "Home adressiert Mixed Signals und beginnt direkt mit fünf Fragen. Der Nutzer erhält eine Einordnung und einen praktischen nächsten Schritt. Das ist eine nachvollziehbare Grundlage für einen begrenzten Produktversuch."
+    },
+    {
+      "title": "Ruhige Kartenoberfläche als Grundlage",
+      "detail": "Die im aktuellen Webablauf gelesenen Frage- und Ergebnisansichten sind eine brauchbare Grundlage. Eine vollständige Neugestaltung ist aus dieser Prüfung nicht begründet; inhaltliche Verlässlichkeit ist der dringendere Punkt."
+    },
+    {
+      "title": "Neutrale Ergebnisse und lokale Archivierung sind vorhanden",
+      "detail": "Konsequentes Verhalten und zu wenig Information führen im Code zu vorsichtigeren Ergebnissen. Tageskarte und Reading-Snapshots sind lokal gespeichert. Ausführliche einmal angezeigte Inhalte können stabil wieder geöffnet werden; einzelne Archivwege bleiben verbesserungsbedürftig."
+    },
+    {
+      "title": "Analytics ist im aktuellen Code ausdrücklich optional",
+      "detail": "PostHog-Versand verlangt passende Buildkonfiguration und Zustimmung. Der geprüfte Payload enthält Ereignisse und eine zufällige App-ID, keine Antworten oder Reading-Texte. Im isolierten Webbuild wurde kein Ziel konfiguriert; Produktionsverhalten ist separat zu prüfen."
+    }
+  ],
+  "findings": [
+    {
+      "id": "mirror-own-reaction-mismatch",
+      "title": "Eigenes Muster widerspricht einer gewählten Reaktion",
+      "evidenceType": "runtime",
+      "priority": "high",
+      "detail": "Das Ergebnis kann trotz ausdrücklichem I go silent Wärme, Nähe und engagiertes Dranbleiben als eigenes Muster beschreiben. Für ein Reflexionsprodukt beschädigt das die inhaltliche Verlässlichkeit.",
+      "evidence": "Dating → I cannot stop thinking about them → I go silent → Avoids serious conversations → Calmer and more secure. Archivierte Kurzansicht zeigt stay engaged and hopeful; ausführliche Ansicht nach zweitem identischen Scan zeigt leaning in, staying warm, staying available. Code zählt ihren Verhaltens-Tag doppelt und verwendet ihn für Your Emotional Pattern.",
+      "limitation": "Im aktuellen unveränderten lokalen Webbuild bei 390×844 reproduziert und im aktiven Code bestätigt; kein nativer oder veröffentlichter Android-Nachweis und keine echte Nutzerwirkungsmessung.",
+      "recommendation": "Eigene Reaktion getrennt vom beobachteten Verhalten der anderen Person auswerten und wenige gegensätzliche Antwortfälle sinnvoll gegenprüfen.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/runtime-review.md"
+      ]
+    },
+    {
+      "id": "mirror-overconfident-full-copy",
+      "title": "Volltext behauptet echtes Interesse zu sicher",
+      "evidenceType": "runtime",
+      "priority": "high",
+      "detail": "Die Vollansicht behandelt tatsächliches Interesse als real und nicht eingebildet. Die fünf Antworten erlauben keine sichere Aussage über fremde Gefühle oder Motive.",
+      "evidence": "Im Volltext des dokumentierten Mixed-Signals-Falls gelesen; derselbe feste Textbaustein ist in ClarityPremiumContent aktiv. Die erste Ergebnisansicht kennzeichnet ihre Grundlage vorsichtiger als die eigene Antwortperspektive.",
+      "limitation": "Inhaltliche Bewertung eines konkreten Textfalls, keine umfassende Prüfung sämtlicher Inhaltskombinationen oder therapeutischer Wirkung.",
+      "recommendation": "Beobachtung, mögliche Interpretation und unbekannte Absichten im Volltext ebenso deutlich trennen; betroffene sichere Aussagen gezielt umformulieren.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/runtime-review.md"
+      ]
+    },
+    {
+      "id": "mirror-reopen-free-reading",
+      "title": "Gespeicherte Kurzansicht verändert Abschnitte und verliert den Weiterweg",
+      "evidenceType": "runtime",
+      "priority": "medium",
+      "detail": "Wiederöffnen zeigt eine andere Auswahl von Ergebnisabschnitten. Die zuvor sichtbare Einordnung What to watch for fehlt, während Your pattern hinzukommt; der enthaltene Volltext ist dort nicht über einen Button erreichbar.",
+      "evidence": "Erstes Ergebnis mit vier Karten gelesen, Read more nicht geöffnet, zurück Home und Your last reading aufgerufen. Ganze gespeicherte Ansicht durchgescrollt: Your pattern / Their pattern / The dynamic / Next step und kein Read-more-Button. _freeSections bestätigt die abweichende Abschnittszuordnung.",
+      "limitation": "Aktuelle Webquelle, nicht veröffentlichter Android-Build. Das Archiv ist absichtlich unveränderlich; die UX sollte diese Eigenschaft verständlich abbilden.",
+      "recommendation": "Erste und gespeicherte Ergebnisansicht konsistent halten und den gewünschten Zugang zu enthaltenen Volltexten beim Wiederöffnen klar regeln.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/runtime-review.md"
+      ]
+    },
+    {
+      "id": "mirror-local-data-control-and-backup",
+      "title": "Lokale Datenkontrolle und Backup-Aussage klären",
+      "evidenceType": "runtime",
+      "priority": "high",
+      "detail": "Antworten und persönliche Readings werden archiviert; im aktiven Settings-/Repository-Code fehlt vollständiges Löschen. Die Aussage Answers stay on this device ist ohne bewusst geprüfte Android-Backup-Regeln noch nicht ausreichend abgesichert.",
+      "evidence": "SharedPreferences speichert Antwort-IDs und Reading-Snapshots. Settings nennt Analytics, Privacy Policy, Disclaimer und Version; keine vollständige Löschaktion gefunden. Quellmanifest definiert keine allowBackup-, fullBackupContent- oder dataExtractionRules-Angaben. Android-Dokumentation beschreibt standardmäßiges Backup auch für SharedPreferences. Zusätzlich in der tatsächlichen Web-Settings-Ansicht Privacy Policy, Disclaimer und Version 1.1.0 (16) gesehen, keine Löschfunktion sichtbar.",
+      "limitation": "Kein tatsächlicher Backup-Upload nachgewiesen; zusammengeführtes Release-Manifest, Gerätetransfer und Geräteeinstellungen sind noch zu prüfen. Kein rechtliches Urteil.",
+      "recommendation": "Eine einfache bestätigte Löschaktion anbieten und Backup-/Gerätetransferregeln mit dem gewollten lokalen Versprechen abstimmen.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/runtime-review.md"
+      ]
+    },
+    {
+      "id": "mirror-daily-cache",
+      "title": "Tagesinhalte können nach Mitternacht gecacht bleiben",
+      "evidenceType": "code",
+      "priority": "medium",
+      "detail": "TodaysCard und TodaysInsight sind gecachte Provider ohne Datum als Abhängigkeit; Wiederaufnehmen der App aktualisiert nur Analytics. Erhaltener Tarot-RAM-Zustand kann ebenfalls alt bleiben.",
+      "evidence": "Aktive Tages-Provider und Lifecycle-Code sowie TarotResultNotifier.restoreFromToday geprüft. Die Berechnung kennt das Datum, wird beim bloßen Wiederaufnehmen jedoch nicht gezielt neu ausgelöst.",
+      "limitation": "Codeinferenz; kein praktischer Mitternachtstest und keine Änderung der Systemzeit durchgeführt.",
+      "recommendation": "Lokalen Tageswechsel beim Wiederaufnehmen erkennen und Tages-Provider sowie veralteten Tarot-RAM-Zustand gezielt aktualisieren.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json"
+      ]
+    },
+    {
+      "id": "mirror-recurrence-and-billing",
+      "title": "Wiederkehrnutzen und Zahlungsbereitschaft sind noch nicht gezeigt",
+      "evidenceType": "inference",
+      "priority": "medium",
+      "detail": "Insights rotiert sieben allgemeine Texte ohne Bezug zum Scan; Journal prompt ist eine gelesene Anregung. Die aktuelle Early-Access-Quelle ist bewusst kostenlos und verdrahtet Mock-Billing. Daraus lässt sich kein tragfähiges Abo oder Umsatz ableiten.",
+      "evidence": "Sieben feste DailyInsight-Einträge mit Tageszahl modulo sieben. earlyAccessFullReadingsEnabled=true; MockPurchaseRepository statt Store-Billing aktiv.",
+      "limitation": "Begrenztheit der implementierten Funktion ist Codefakt; daraus abgeleitete Wiederkehr- und Geschäftsfrage ist eine ungemessene Hypothese, kein Abwanderungsbeleg.",
+      "recommendation": "Mit wenigen passenden Nutzern konkrete Hilfreichkeit und freiwillige Wiederkehr prüfen. Der Nutzer möchte Monetarisierung ausdrücklich später behandeln, sobald Nutzer vorhanden sind; der aktuelle Early-Access-Stand bleibt bewusst kostenlos.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json"
+      ]
+    },
+    {
+      "id": "mirror-product-store-identity",
+      "title": "Lokalen Relaunch und öffentlichen Auftritt bewusst zusammenführen",
+      "evidenceType": "store",
+      "priority": "medium",
+      "detail": "Lokale Marke RelateLens, öffentlicher Browser-Titel Mirror: Love Tarot & Clarity und abweichender direkter Texttitel Mirror: Relationship Clarity gehören zum selben Paket, stellen jedoch unterschiedliche Erwartungen in den Vordergrund.",
+      "evidence": "Aktuelles Branding und Android-Label RelateLens; lokale Version 1.1.0+16. Öffentliche Store-Ausspielungen desselben Pakets dokumentiert; öffentliches Update 13.07.2026. Ein Namensunterschied allein ist kein Qualitätsurteil.",
+      "limitation": "Ursache der Titeldifferenzen und Gleichheit zur aktuell veröffentlichten Android-Quelle sind offen. Keine Storeänderung vorgenommen.",
+      "recommendation": "Einen primären Nutzerfall, Namen und tatsächlichen nächsten Release wählen. Storetexte und Screenshots müssen dessen echte Bedienung und Nutzen abbilden; Tarot kann bewusst ergänzend bleiben.",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/store-review.md",
+        "analysen/mirror/play-console-kpis.md"
+      ]
+    }
+  ],
+  "metrics": [
+    {
+      "id": "mirror-public-download-class",
+      "label": "Öffentliche Installationsklasse",
+      "value": "50+",
+      "unit": "Downloads laut Play-Auftritt",
+      "selectedPeriod": "Öffentlicher englischer Store-Auftritt",
+      "availablePeriod": "Abgerufen am 09.10.2026",
+      "definition": "Öffentlich sichtbare Installationsklasse des Pakets com.energycrafted.mirror.",
+      "caveat": "Keine exakte Zahl aktueller Nutzer oder Lebenszeitdownloads; keine Kennzahl aus dem RelateLens-Webtest."
+    },
+    {
+      "id": "mirror-growth-device-impressions",
+      "label": "Wachstum: Geräteimpressionen",
+      "value": 11500,
+      "unit": "Geräteimpressionen",
+      "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+      "availablePeriod": "04.07.–04.10.2026, tatsächlich 93 Tage",
+      "definition": "Auf der Wachstumskarte angezeigte Geräteimpressionen; Ablesung 09.10.2026.",
+      "caveat": "Andere verfügbare Spanne als Akquisitionen und Erstöffnungen. Keine gemeinsame Funnelstufe aus verschiedenen Zeiträumen bilden."
+    },
+    {
+      "id": "mirror-growth-device-acquisitions",
+      "label": "Wachstum: Geräteakquisitionen",
+      "value": 91,
+      "unit": "Geräteakquisitionen",
+      "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+      "availablePeriod": "14.06.–05.10.2026, tatsächlich 114 Tage",
+      "definition": "Angezeigte Geräteakquisitionen der Wachstumskarte; Ablesung 09.10.2026.",
+      "caveat": "Keine Vergleichsquote mit 31 Erstöffnungen aus einer anderen Spanne. Kein kumulativer oder aktueller Nutzerzähler."
+    },
+    {
+      "id": "mirror-growth-device-first-open",
+      "label": "Wachstum: Erstes Öffnen auf Geräten",
+      "value": 31,
+      "unit": "Geräte",
+      "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+      "availablePeriod": "15.06.–30.09.2026, tatsächlich 108 Tage",
+      "definition": "Auf der Wachstumskarte angezeigter Wert für erstes Öffnen; Ablesung 09.10.2026.",
+      "caveat": "31/91 ist wegen verschiedener Zeiträume und Metrikdefinitionen keine belegte Aktivierungsquote. Daten des älteren Produkts nicht als gemessene Nutzung des lokalen Relaunchs ausgeben."
+    },
+    {
+      "id": "mirror-growth-monthly-active",
+      "label": "Wachstum: monatlich aktive Geräte",
+      "value": 6,
+      "unit": "Geräte",
+      "selectedPeriod": "Sechsmonatsauswahl; Karte zeigt 28-Tage-Aktivität",
+      "availablePeriod": "Stand 29.09.2026, letzte 28 Tage",
+      "definition": "Letzter angezeigter MAU-Gerätewert der Wachstumskarte.",
+      "caveat": "Nicht mit dem separaten App-Dashboard-Wert 5 als gleiche aktuelle Reihe oder als Summe zusammenführen."
+    },
+    {
+      "id": "mirror-growth-seven-day-retained",
+      "label": "Wachstum: Geräte mit 7-Tage-Bindung",
+      "value": 17,
+      "unit": "Anzahl",
+      "selectedPeriod": "Letzte sechs Monate im Wachstumsbereich",
+      "availablePeriod": "Nur 20.–21.06.2026, zwei verfügbare Tage",
+      "definition": "Angezeigter Anzahlwert in der Karte Geräte mit 7-Tage-Bindung; Ablesung 09.10.2026.",
+      "caveat": "17 ist keine Retentionsrate in Prozent. Sehr kleine verfügbare Datumsabdeckung, keine belastbare aktuelle Retentionskohorte abgeleitet."
+    },
+    {
+      "id": "mirror-dashboard-device-acquisitions",
+      "label": "App-Dashboard: Geräteakquisitionen",
+      "value": 29,
+      "unit": "Geräteakquisitionen",
+      "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+      "availablePeriod": "Ablesung 09.10.2026; genaue Filtergrenzen im KPI-Protokoll zu dokumentieren",
+      "definition": "Separater Geräteakquisitionswert aus dem App-Dashboard.",
+      "caveat": "Nicht als dieselbe Spanne wie die 91 Akquisitionen in der Wachstumskarte behandeln."
+    },
+    {
+      "id": "mirror-dashboard-first-open",
+      "label": "App-Dashboard: erstes Öffnen",
+      "value": 6,
+      "unit": "Geräte",
+      "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+      "availablePeriod": "Ablesung 09.10.2026; genaue Filtergrenzen im KPI-Protokoll zu dokumentieren",
+      "definition": "Separater Erstöffnungswert aus dem App-Dashboard.",
+      "caveat": "Nicht mit dem Wachstumswert 31 zu einer gemeinsamen Reihe oder Summe verbinden."
+    },
+    {
+      "id": "mirror-dashboard-monthly-active",
+      "label": "App-Dashboard: monatlich aktive Geräte",
+      "value": 5,
+      "unit": "Geräte",
+      "selectedPeriod": "Letzte 28 Tage im App-Dashboard",
+      "availablePeriod": "Ablesung 09.10.2026; genauer Dashboard-Stand getrennt vom Grow-Wert am 29.09.",
+      "definition": "Separater MAU-Gerätewert im App-Dashboard.",
+      "caveat": "Wachstum zeigt 6 zu einem anderen Stand; nicht gleichsetzen oder addieren."
+    },
+    {
+      "id": "mirror-dashboard-total-installations",
+      "label": "Installationen insgesamt",
+      "value": 83,
+      "unit": "kumulative Installationen",
+      "selectedPeriod": "Kumulativer App-Dashboard-Zähler",
+      "availablePeriod": "Abgelesen am 09.10.2026; Beginn nicht protokolliert",
+      "definition": "Im App-Dashboard angezeigter kumulativer Zähler.",
+      "caveat": "Keine Anzahl aktueller Nutzer, keine Zahl der Installationsklicks und keine mit 91 Akquisitionen automatisch identische Definition."
+    },
+    {
+      "id": "mirror-installed-audience",
+      "label": "Installierte Zielgruppe",
+      "value": 13,
+      "unit": "Console-Anzeigewert",
+      "selectedPeriod": "App-Liste beziehungsweise Console-Zielgruppenanzeige",
+      "availablePeriod": "Abgelesen am 09.10.2026",
+      "definition": "Vom Hauptagenten abgelesene installierte Zielgruppe für Mirror.",
+      "caveat": "Kein lebenslanger Downloadzähler und nicht die Zahl des neueren lokalen RelateLens-Webbuilds."
+    },
+    {
+      "id": "mirror-latest-release-installations",
+      "label": "Neuester Release: Installationen",
+      "value": 14,
+      "unit": "Release-Installationen laut Console",
+      "selectedPeriod": "Neuester veröffentlichter Release",
+      "availablePeriod": "Release vom 13.07.2026, bei 100 Prozent Rollout am 09.10.2026 abgelesen",
+      "definition": "Auf dem neuesten Release angezeigter Installationswert. Veröffentlichter Versionsname 1.0.13, lokale Quelle 1.1.0+16.",
+      "caveat": "Kein lebenslanger Downloadzähler und kein Nachweis, dass der aktuelle lokale Relaunch veröffentlicht ist."
+    },
+    {
+      "id": "mirror-store-28-visitors",
+      "label": "Store: Besucher, letzte 28 Tage",
+      "value": 566,
+      "unit": "Store-Besucher",
+      "selectedPeriod": "Letzte 28 Tage",
+      "availablePeriod": "08.09.–05.10.2026",
+      "definition": "Angezeigte Besucherzahl in der Store-Performance, abgelesen am 09.10.2026.",
+      "caveat": "Store-Population ist keine vollständige Play-Impressionspopulation. Keine dedizierte aktuelle Nutzung des lokalen Relaunchs."
+    },
+    {
+      "id": "mirror-store-28-install-clicks",
+      "label": "Store: eindeutige Installationsklicks, letzte 28 Tage",
+      "value": 28,
+      "unit": "Installationsklicks",
+      "selectedPeriod": "Letzte 28 Tage",
+      "availablePeriod": "08.09.–05.10.2026",
+      "definition": "Klicks zur App-Installation, einzelne Nutzer laut Console.",
+      "caveat": "Klick ist weder bestätigte erfolgreiche Installation noch Erstöffnung. Nicht als dieselben Personen wie die Geräteakquisitionen ausgeben."
+    },
+    {
+      "id": "mirror-store-28-ctr",
+      "label": "Store: Klickrate, letzte 28 Tage",
+      "value": 5,
+      "unit": "%",
+      "selectedPeriod": "Letzte 28 Tage",
+      "availablePeriod": "08.09.–05.10.2026",
+      "definition": "Von Google gerundete angezeigte Klickrate in der Store-Performance.",
+      "caveat": "Installationsintention, keine Aktivierungs- oder Wiederkehrquote; keine Kausalzuordnung allein zu Screenshotqualität."
+    },
+    {
+      "id": "mirror-store-long-visitors",
+      "label": "Store: Besucher, längerer Filter",
+      "value": 804,
+      "unit": "Store-Besucher",
+      "selectedPeriod": "Letzte 180 Tage",
+      "availablePeriod": "Tatsächlich 10.07.–05.10.2026, im Datumsdialog und URL bestätigt",
+      "definition": "Besucher der längeren verfügbaren Store-Performance-Spanne.",
+      "caveat": "Filter ist durch verfügbare Daten auf weniger als drei Monate begrenzt; nicht als vollständiges Halbjahr ausgeben."
+    },
+    {
+      "id": "mirror-store-long-install-clicks",
+      "label": "Store: eindeutige Installationsklicks, längerer Filter",
+      "value": 58,
+      "unit": "Installationsklicks",
+      "selectedPeriod": "Letzte 180 Tage",
+      "availablePeriod": "Tatsächlich 10.07.–05.10.2026",
+      "definition": "Angezeigte eindeutige Klicks zur App-Installation.",
+      "caveat": "Keine bestätigten erfolgreichen Installationen. Andere Zeitspanne als Wachstumskarten und keine gemeinsame Retentionskohorte."
+    },
+    {
+      "id": "mirror-store-long-ctr",
+      "label": "Store: Klickrate, längerer Filter",
+      "value": 7,
+      "unit": "%",
+      "selectedPeriod": "Letzte 180 Tage",
+      "availablePeriod": "Tatsächlich 10.07.–05.10.2026",
+      "definition": "Von Google gerundete angezeigte Store-Klickrate.",
+      "caveat": "Keine bestätigte Installations- oder Nutzerbindungsquote; ohne belastbare Vergleichsgruppe kein Nachweis einer Ursache."
+    },
+    {
+      "id": "mirror-dashboard-quality-availability",
+      "label": "Crash-, ANR- und Bewertungsdaten",
+      "value": null,
+      "unit": "nicht verfügbar",
+      "selectedPeriod": "App-Dashboard",
+      "availablePeriod": "Abgelesen am 09.10.2026",
+      "definition": "Console-Felder zeigten einen Strich statt eines Messwerts.",
+      "caveat": "Kein Nachweis von null Fehlern, bestätigter Fehlerfreiheit oder null Bewertungen."
+    }
+  ],
+  "actions": [
+    {
+      "id": "mirror-action-reliable-content",
+      "order": 1,
+      "title": "Antwortbasierte Einordnung verlässlich machen",
+      "detail": "Eigenreaktion vom Partnerverhalten trennen, sichere Interessensbehauptungen vorsichtiger formulieren und erste sowie gespeicherte Ergebnisansicht angleichen. Das ist der erste begrenzte Reparaturumfang.",
+      "status": "proposed",
+      "validation": "Dokumentierten Rückzugsfall und einen gegensätzlichen aktiv nachfragenden Fall prüfen. Erste Kurzansicht, archivierte Kurzansicht und Volltext vergleichen; weder Inkonsistenz noch fix behaupten, bevor Umsetzung und passende native Prüfung erfolgt sind."
+    },
+    {
+      "id": "mirror-action-local-data-and-date",
+      "order": 2,
+      "title": "Lokale Daten und Tageswechsel sauber behandeln",
+      "detail": "Einfaches Löschen der Readings/Antworten vorsehen. Backup-/Gerätetransferverhalten bewusst festlegen und Tagesinhalte beim Wiederaufnehmen an das aktuelle Datum binden.",
+      "status": "proposed",
+      "validation": "Aktuellen Android-Testbuild verwenden: vollständige Datenkontrolle, zusammengeführtes Manifest und Backup-Regeln prüfen; Tageswechsel mit injizierter Testzeit statt veränderter Rechnerzeit testen. Kein tatsächlicher Upload oder erfolgter Fix vorausgesetzt."
+    },
+    {
+      "id": "mirror-action-release-and-store",
+      "order": 3,
+      "title": "Einen tatsächlichen Auftritt und Release zusammenführen",
+      "detail": "Primären Nutzen kurzer Beziehungsreflexion bei gemischten Signalen testen, Rolle symbolischer Karten entscheiden und Name, Storetext sowie aktuelle echte Screenshots auf den nächsten bestätigten Android-Release abstimmen.",
+      "status": "proposed",
+      "validation": "Lokale Quelle, freizugebendes Binary, Marke und sichtbare Storefassung einzeln zuordnen. Erwartung aus erstem Storebild mit tatsächlicher erster Appaktion vergleichen. Keine Titel-, Store- oder Releaseänderung ist bisher erfolgt."
+    },
+    {
+      "id": "mirror-action-small-user-test",
+      "order": 4,
+      "title": "Nutzen und Wiederkehr mit wenigen echten Nutzern prüfen",
+      "detail": "Passende freiwillige Tester den ersten Scan abschließen lassen und nach Verständlichkeit, praktischem nächsten Schritt und späterer Wiederkehr fragen. Monetarisierung ist ein späteres Ziel, sobald Nutzer vorhanden sind; noch kein Modell oder Billing-Umfang entschieden.",
+      "status": "proposed",
+      "validation": "Konkrete Rückmeldungen statt allgemeiner Gefallensfrage sammeln, Store-Besuche/Installationsklicks von Erstnutzung/Wiederkehr trennen und Zeiträume passend dokumentieren. Keine Erfolgs- oder Rankinggarantie."
+    }
+  ],
+  "openQuestions": [
+    "Welcher veröffentlichte Android-Release gehört zur aktuellen Quelle, und ist der RelateLens-Relaunch noch unveröffentlicht?",
+    "Wie reproduzieren sich die beiden dokumentierten Webprobleme auf dem tatsächlichen Android-Gerät?",
+    "Welche weiteren Antwortkombinationen ergeben widersprüchliche eigene Muster oder zu sichere Behauptungen über die andere Person?",
+    "Soll gespeicherte Kurzfassung vollständig identisch bleiben und wann soll enthaltene Vertiefung erreichbar sein?",
+    "Welche Marke und welcher Hauptnutzen soll das tatsächliche nächste Release haben; welche Rolle sollen symbolische Karten spielen?",
+    "Wie sind Android-Backup, Gerätetransfer und tatsächliche Produktions-Analytics konfiguriert?",
+    "Was passiert bei erhaltenem Prozess über Mitternacht mit Tageskarte, Insight und Tarot-RAM-Zustand?",
+    "Hilft der konkrete nächste Schritt passenden Menschen tatsächlich, und wollen sie deshalb freiwillig wiederkommen?",
+    "Welche kleine Bezahlleistung wäre nach Nutzenbeleg angemessen? Zahlungsbereitschaft und wirtschaftliche Tragfähigkeit sind derzeit offen.",
+    "Wie entwickeln sich Store-Besuche, Installationsklicks, tatsächliche Erstnutzung und Wiederkehr nach einem verlässlichen Relaunch in gemeinsam datierten und definierten Messfenstern?"
+  ],
+  "documents": [
+    "analysen/mirror/Mirror-Pilotanalyse.md",
+    "analysen/mirror/runtime-review.md",
+    "analysen/mirror/Mirror-code-review.md",
+    "analysen/mirror/evidence.json",
+    "analysen/mirror/store-review.md",
+    "analysen/mirror/play-console-kpis.md",
+    "analysen/mirror/TEST-UMGEBUNG.md",
+    "analysen/mirror/runtime/README.md"
+  ]
+}

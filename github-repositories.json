@@ -1,0 +1,657 @@
+{
+  "inventoryDate": "2026-10-09",
+  "scope": "Öffentlich sichtbare Repositories von emfau88; keine privaten Repositories und keine Analyse",
+  "count": 65,
+  "repositories": [
+    {
+      "name": "abriss",
+      "description": null,
+      "html_url": "https://github.com/emfau88/abriss",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "attacke",
+      "description": null,
+      "html_url": "https://github.com/emfau88/attacke",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "basement",
+      "description": null,
+      "html_url": "https://github.com/emfau88/basement",
+      "homepage": "https://emfau88.github.io/basement/",
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "between",
+      "description": null,
+      "html_url": "https://github.com/emfau88/between",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "blueyard",
+      "description": null,
+      "html_url": "https://github.com/emfau88/blueyard",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "BrunoBulldog",
+      "description": null,
+      "html_url": "https://github.com/emfau88/BrunoBulldog",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "bulldog-realm",
+      "description": null,
+      "html_url": "https://github.com/emfau88/bulldog-realm",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "bulldogtactics",
+      "description": null,
+      "html_url": "https://github.com/emfau88/bulldogtactics",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Bunker",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Bunker",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Business",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Business",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Codester-Survivor-Framework",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Codester-Survivor-Framework",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "CommandCenter",
+      "description": null,
+      "html_url": "https://github.com/emfau88/CommandCenter",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Creatures",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Creatures",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "CTF",
+      "description": null,
+      "html_url": "https://github.com/emfau88/CTF",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "CTF-2.0",
+      "description": null,
+      "html_url": "https://github.com/emfau88/CTF-2.0",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "CTF-3.0",
+      "description": null,
+      "html_url": "https://github.com/emfau88/CTF-3.0",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Daily-status",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Daily-status",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "dashboard",
+      "description": null,
+      "html_url": "https://github.com/emfau88/dashboard",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "drk",
+      "description": null,
+      "html_url": "https://github.com/emfau88/drk",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "DroneGame",
+      "description": null,
+      "html_url": "https://github.com/emfau88/DroneGame",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "galalaxy",
+      "description": null,
+      "html_url": "https://github.com/emfau88/galalaxy",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "hexwars",
+      "description": null,
+      "html_url": "https://github.com/emfau88/hexwars",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Hollow",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Hollow",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "hollow2",
+      "description": null,
+      "html_url": "https://github.com/emfau88/hollow2",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "HundeTamagotchi",
+      "description": null,
+      "html_url": "https://github.com/emfau88/HundeTamagotchi",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "island",
+      "description": null,
+      "html_url": "https://github.com/emfau88/island",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Jadg",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Jadg",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Jagd2",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Jagd2",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "KesselKrawall",
+      "description": null,
+      "html_url": "https://github.com/emfau88/KesselKrawall",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "KesselKrawall-3-D",
+      "description": null,
+      "html_url": "https://github.com/emfau88/KesselKrawall-3-D",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "keyofsolomon",
+      "description": null,
+      "html_url": "https://github.com/emfau88/keyofsolomon",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Kitchen",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Kitchen",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "LandingGame",
+      "description": null,
+      "html_url": "https://github.com/emfau88/LandingGame",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "LaneLegion",
+      "description": null,
+      "html_url": "https://github.com/emfau88/LaneLegion",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "march-legends-landing",
+      "description": null,
+      "html_url": "https://github.com/emfau88/march-legends-landing",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "MarchLegendsAccountDelete",
+      "description": null,
+      "html_url": "https://github.com/emfau88/MarchLegendsAccountDelete",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "MergeMarket",
+      "description": null,
+      "html_url": "https://github.com/emfau88/MergeMarket",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "mirror-googleplay-formular",
+      "description": null,
+      "html_url": "https://github.com/emfau88/mirror-googleplay-formular",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "MoreThanWombarUnity",
+      "description": null,
+      "html_url": "https://github.com/emfau88/MoreThanWombarUnity",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "MoreThanWombat",
+      "description": null,
+      "html_url": "https://github.com/emfau88/MoreThanWombat",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "motorrad",
+      "description": null,
+      "html_url": "https://github.com/emfau88/motorrad",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "MythGatcha",
+      "description": null,
+      "html_url": "https://github.com/emfau88/MythGatcha",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Newsentence",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Newsentence",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Obby",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Obby",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "paperclip",
+      "description": "Open-source orchestration for zero-human companies",
+      "html_url": "https://github.com/emfau88/paperclip",
+      "homepage": "https://paperclip.ing",
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": true
+    },
+    {
+      "name": "phantom",
+      "description": null,
+      "html_url": "https://github.com/emfau88/phantom",
+      "homepage": "https://emfau88.github.io/phantom/",
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "PocketPier",
+      "description": null,
+      "html_url": "https://github.com/emfau88/PocketPier",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "portfolio",
+      "description": null,
+      "html_url": "https://github.com/emfau88/portfolio",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "portfolio2",
+      "description": null,
+      "html_url": "https://github.com/emfau88/portfolio2",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Portfolio3",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Portfolio3",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "RoosterRage",
+      "description": null,
+      "html_url": "https://github.com/emfau88/RoosterRage",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "shop",
+      "description": null,
+      "html_url": "https://github.com/emfau88/shop",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Siedler",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Siedler",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Skyharvest",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Skyharvest",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "StarConquest",
+      "description": null,
+      "html_url": "https://github.com/emfau88/StarConquest",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "strategy-galalaxy",
+      "description": null,
+      "html_url": "https://github.com/emfau88/strategy-galalaxy",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Survivor-io",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Survivor-io",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Terra-Divina",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Terra-Divina",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "territory-tide",
+      "description": "hexfront customized for crazygames",
+      "html_url": "https://github.com/emfau88/territory-tide",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "TinyArmies",
+      "description": null,
+      "html_url": "https://github.com/emfau88/TinyArmies",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "TinyWar-HTML",
+      "description": null,
+      "html_url": "https://github.com/emfau88/TinyWar-HTML",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "TinyWar2.0",
+      "description": null,
+      "html_url": "https://github.com/emfau88/TinyWar2.0",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "topdownshooter",
+      "description": null,
+      "html_url": "https://github.com/emfau88/topdownshooter",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "master",
+      "fork": false
+    },
+    {
+      "name": "utopia-cinematic",
+      "description": null,
+      "html_url": "https://github.com/emfau88/utopia-cinematic",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    },
+    {
+      "name": "Voidline-Tactic",
+      "description": null,
+      "html_url": "https://github.com/emfau88/Voidline-Tactic",
+      "homepage": null,
+      "private": false,
+      "archived": false,
+      "default_branch": "main",
+      "fork": false
+    }
+  ]
+}

@@ -1,0 +1,653 @@
+{
+  "updatedAt": "2026-10-09",
+  "projects": [
+    {
+      "id": "hexfront",
+      "name": "HEXFRONT",
+      "area": "games",
+      "description": "Echtzeit-Taktikspiel auf Hexfeldern: Gebiet ausbauen, Truppen verteilen und die gegnerische Basis erobern.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/hexwars",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\ChatGPT\\hexwars"
+      ],
+      "variants": [],
+      "notes": [
+        "Produktname HEXFRONT unterscheidet sich vom Repository-Namen hexwars."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "galalaxy",
+      "name": "GALALAXY",
+      "area": "games",
+      "description": "Mobile-orientierter Weltraum-Arcade-Survivor mit automatisch feuerndem Schiff, Gegnerflotten, Bossen und Upgrades.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/galalaxy",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\galaxy"
+      ],
+      "variants": [],
+      "notes": [
+        "Lokaler Ordner galaxy unterscheidet sich vom Repository-Namen galalaxy."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "rooster-rage",
+      "name": "ROOSTER RAGE",
+      "area": "games",
+      "description": "Top-down-Bullet-Heaven/Action-Roguelite: drei Kampf-Hähne, weiterentwickelbare Eierwaffen und Wellen von Gegnern.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/RoosterRage",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\ChatGPT\\Rooster\\RoosterRage",
+        "C:\\Users\\madde\\Documents\\ROOSTER"
+      ],
+      "variants": [
+        {
+          "name": "Neuere dokumentierte lokale Commit-Historie",
+          "path": "C:\\Users\\madde\\Documents\\ChatGPT\\Rooster\\RoosterRage",
+          "framework": "Browsergame; Framework in der Bestandsaufnahme nicht geprüft",
+          "packageId": null,
+          "version": null,
+          "note": "Commitstand vom 05.10.2026; für die Beschreibung verwendeter Checkout. Der maßgebliche Arbeitsstand ist ohne Vergleich uncommitteter Änderungen noch nicht gesichert."
+        },
+        {
+          "name": "Zweiter lokaler Checkout",
+          "path": "C:\\Users\\madde\\Documents\\ROOSTER",
+          "framework": "Browsergame; Framework in der Bestandsaufnahme nicht geprüft",
+          "packageId": null,
+          "version": null,
+          "note": "Commitstand vom 09.08.2026; derselbe origin-Remote. Enthaltene lokale Änderungen wurden nicht verglichen."
+        }
+      ],
+      "notes": [
+        "Zwei lokale Checkouts desselben Repositories. ChatGPT\\Rooster\\RoosterRage: letzter lokaler Commit 2026-10-05; ROOSTER: letzter lokaler Commit 2026-08-09. Aktualität etwaiger uncommitteter Änderungen wurde nicht untersucht.",
+        "Der übergeordnete Ordner ChatGPT\\Rooster besitzt ebenfalls .git, aber keinen origin-Remote; das Spielrepository liegt im Unterordner RoosterRage."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "kesselkrawall",
+      "name": "KESSELKRAWALL",
+      "area": "games",
+      "description": "Magischer Browser-Autobattler: Zutaten kaufen, kombinieren und verschmelzen; der aufgebaute Kessel kämpft anschließend automatisch.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/KesselKrawall",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\kesselkrawall"
+      ],
+      "variants": [],
+      "notes": [
+        "Englischer Produktname Cauldron Rumble; im Dashboard bei Y8 als Cauldron Rumble: Merge & Battle geführt."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "core-arena",
+      "name": "CORE ARENA",
+      "area": "games",
+      "description": "2D-Top-down-Arena-/CTF-Shooter mit Bewegung, Zielen, Waffen und Spielzielen; die dokumentierte Browserfassung spielt gegen Bots.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/CTF-3.0",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\CTF-3.0"
+      ],
+      "variants": [],
+      "notes": [
+        "Produktname CORE ARENA unterscheidet sich vom Repository-Namen CTF-3.0.",
+        "Der ähnlich benannte Ordner C:\\Users\\madde\\Documents\\CTF 3.0 wird in Codex als CTF 3.0 falscher ordner geführt; er hat keinen origin-Remote und enthält kein gefundenes README/package.json. Für diese Bestandsaufnahme ist CTF-3.0 der bestätigte Pfad."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "more-than-wombat",
+      "name": "MORE THAN WOMBAT",
+      "area": "games",
+      "description": "Comicartiger 2.5D-Arcade-Brawler mit kurzen Sessions, Spezialangriffen und Begegnungen in einer Schrottplatz-Stage.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Qualitätsprüfung geplant",
+      "repository": "https://github.com/emfau88/MoreThanWombat",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\New project 9"
+      ],
+      "variants": [],
+      "notes": [
+        "Der lokale Ordner New project 9 lässt den Produktnamen nicht erkennen."
+      ],
+      "openQuestions": [
+        "Wie verständlich ist der Einstieg beim tatsächlichen Spielen?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz?",
+        "Welche wenigen Verbesserungen sind nach einer Qualitätsprüfung sinnvoll?"
+      ],
+      "nextStep": "Das Browsergame tatsächlich spielen und mit einem kompakten Qualitätsraster prüfen. Die Bestandsbeschreibung ist noch kein Qualitätsurteil.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "landinggame",
+      "name": "LandingGame",
+      "area": "web",
+      "description": "emfau-Anbieterwebsite für individuelle Websites für kleine Unternehmen, Gastronomie und Vereine aus der Region Karlsruhe. Enthält drei Farb-/Gestaltungsvarianten, einen eigenständigen Studio-Entwurf sowie eine Kundenreferenz und fiktive Branchenkonzepte.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/LandingGame",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\Landing Page"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
+        "Drei Farb-/Gestaltungsvarianten und ein separater Studio-Entwurf sind vorhanden; die beste Grundlage wurde noch nicht ausgewählt."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
+        "Soll die zentrale Seite vor allem Website-Verkauf unterstützen oder auch Games und Apps sichtbar machen?"
+      ],
+      "nextStep": "Die vorhandenen Landingpage-Varianten und den Studio-Entwurf tatsächlich ansehen; anschließend mit shop und den Portfolio-Entwürfen vergleichen.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "shop",
+      "name": "shop",
+      "area": "web",
+      "description": "Verkaufspräsentation für Unternehmenswebsites mit eigenem Anbieterauftritt und fünf fiktiven Branchenkonzepten: Maler, Metallbau, Garten-/Landschaftsbau, Sportverein und Gastronomie. Jedes Konzept besitzt eine mehrseitige Core-Website und eine zusätzliche Signature-Homepage.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/shop",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\Ebay Websites"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab. Die Anwendung liegt unter website/.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
+        "Das eigentliche Webprojekt befindet sich im Unterordner website; fünf fiktive Branchenkonzepte sind Teil der Verkaufspräsentation."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
+        "Wie lässt sich das Angebot gegenüber LandingGame abgrenzen oder gemeinsam nutzen?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "keyofsolomon",
+      "name": "keyofsolomon",
+      "area": "web",
+      "description": "Einzelprodukt-Verkaufsseite unter Solomon Archive für eine restaurierte Ausgabe von The Key of Solomon auf Grundlage der Mathers-Ausgabe von 1889. Präsentiert ein Hardcover mit historischem Text und Tafeln sowie Produktinformationen und Whop-Bestellzugang.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/keyofsolomon",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\BOOK KEY OF SOLOMON\\keyofsolomon"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt. Weitere lokale Entwürfe liegen im übergeordneten Ordner.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
+        "Im übergeordneten Ordner BOOK KEY OF SOLOMON liegen zusätzlich keyofsolomon_repo_ready, solomon_archive_highend_site und solomon-umami-whop. Diese Entwürfe sind nicht als weitere Hauptprodukte gezählt."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?",
+        "Welche Verbindung soll die Einzelproduktseite zur eigenen zentralen Onlinepräsenz haben?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "portfolio3",
+      "name": "Portfolio3",
+      "area": "web",
+      "description": "Persönliches emfau-Portfolio und Projektarchiv für Android-Apps, Browsergames und frühere Experimente. Die aktuelle Startseite stellt unter anderem Mirror, ZeroHero, between und MewTrack sowie spielbare Games, verwendete Technologien und Entwicklungsgeschichten vor.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/Portfolio3",
+      "paths": [],
+      "variants": [],
+      "notes": [
+        "Öffentliches Repository bestätigt. Unter Documents wurde kein eindeutig zugeordnetes lokales Checkout gefunden; Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft.",
+        "Documents\\portfolio ist ein verwandter älterer Entwurf ohne .git und kein bestätigter lokaler Checkout von Portfolio3. Der fehlende lokale Checkout ist kein Qualitätsurteil."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "blueyard",
+      "name": "blueyard",
+      "area": "web",
+      "description": "Zweisprachige emfau-Landingpage, die Webentwicklung, Browsergames und technische Werkzeuge unter Web / Games / Labs verbindet. Die Navigation verwendet eine scrollgesteuerte Three.js-Szene mit Bereichsauswahl.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/blueyard",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\bluebyte"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt; Ordnername weicht vom Repository ab.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "phantom",
+      "name": "phantom",
+      "area": "web",
+      "description": "EMFAU Spatial Portfolio: ein interaktives Portfolio mit schwarzer, räumlich gebogener Projektwand, Projektfiltern und Detailseiten. Die lokale README beschreibt einen Katalog mit 20 Projekten und einen React-/Three.js-Aufbau.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/phantom",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\phantom"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "basement",
+      "name": "basement",
+      "area": "web",
+      "description": "EMFAU Virtual Studio: ein begehbares beziehungsweise per Kamera navigiertes 3D-Portfolio für Games, Apps und archivierte Experimente. Ein virtueller Raum verbindet die Bereiche Studio, Games, Web, Projects und Archive mit Projektbildschirmen und HTML-Detailansichten.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Vergleich geplant",
+      "repository": "https://github.com/emfau88/basement",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\basement"
+      ],
+      "variants": [],
+      "notes": [
+        "Durch lokales .git/config bestätigt; Onlineadresse durch öffentliche GitHub-Repository-Metadaten bestätigt.",
+        "Onlineadressen wurden aus Projektquellen beziehungsweise GitHub übernommen; Erreichbarkeit und Nutzererlebnis sind noch nicht geprüft."
+      ],
+      "openQuestions": [
+        "Welche Rolle kann dieser Entwurf innerhalb der eigenen Onlinepräsenz übernehmen?",
+        "Wie verständlich sind Angebot, Zielgruppe und nächster Schritt für Besucher?",
+        "Eignet sich der vorhandene Entwurf als zentrale Landingpage oder als ergänzende Projektseite?"
+      ],
+      "nextStep": "Die vorhandene Seite ansehen und im gemeinsamen Vergleich der sieben Onlineauftritte hinsichtlich Optik, Nutzerführung und Positionierung bewerten.",
+      "sourceFiles": [
+        "online-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "zerohero",
+      "name": "ZeroHero",
+      "area": "apps",
+      "description": "Android-App zum Dokumentieren von Konsumgewohnheiten, unter anderem Alkohol und Zigaretten. Als erstes Produkt in einem begrenzten Pilotcheck untersucht.",
+      "status": "pilot_complete",
+      "statusLabel": "Pilotanalyse abgeschlossen · Umsetzung offen",
+      "repository": null,
+      "paths": [
+        "C:\\Users\\madde\\flutter_projects\\ZEROHERO25"
+      ],
+      "variants": [
+        {
+          "name": "Lokales Flutter-Projekt",
+          "path": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25",
+          "framework": "Flutter",
+          "packageId": "com.energycrafted.zerohero",
+          "version": "1.0.3+25",
+          "note": "Unveränderte lokale Webkopie wurde bedient und visuell geprüft. Ein Test der veröffentlichten Android-App auf einem Gerät steht aus; gleiche Versionsnummer beweist keine identische Quelle."
+        }
+      ],
+      "notes": [
+        "Ziel des Nutzers: mehr Downloads und wiederkehrende Nutzer; die zuvor genannten ungefähr 50 Downloads sind eine Ausgangsschilderung, kein verifizierter KPI-Zeitpunkt.",
+        "Pilot umfasst lokale Webbedienung, Optik, Code-Gegenprüfung, öffentliche Store-Darstellung und verfügbare Play-Console-Daten.",
+        "Die Pilotanalyse enthält konkrete Fehlerbefunde und einen begrenzten vorgeschlagenen Updateumfang. Appcode und Store wurden nicht verändert.",
+        "Lokale Version 1.0.3+25; Play Console nennt veröffentlichte Version 25 (1.0.3). Ein älteres vorhandenes APK mit Versioncode 24 ist nicht als aktueller Store-Build anzusehen.",
+        "Ausdrückliches Nutzerziel vom 09.10.2026: ZeroHero soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen."
+      ],
+      "openQuestions": [
+        "Welche Ergebnisse bestätigen sich im tatsächlichen Android-Release auf einem Gerät?",
+        "Welche der priorisierten Maßnahmen sollen in einem kleinen nächsten Update umgesetzt werden?",
+        "Wie entwickeln sich Store-Besuche, Installationen und wiederkehrende Nutzung nach einer klar begrenzten Maßnahme?"
+      ],
+      "nextStep": "Den dokumentierten kleinen Updateumfang anhand der Pilotanalyse festlegen; vor einer Veröffentlichung die Befunde am Android-Release prüfen und die Analytics-/Privatsphäre-Angaben klären.",
+      "sourceFiles": [
+        "apps-bestand.json",
+        "README.md",
+        "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+        "analysen/zerohero/play-console-kpis.md",
+        "analysen/zerohero/review-evidence.md",
+        "analysen/zerohero/store-review.md",
+        "analysen/zerohero/ZeroHero-code-review.md"
+      ],
+      "analysisId": "zerohero"
+    },
+    {
+      "id": "mewtrack",
+      "name": "MewTrack",
+      "area": "apps",
+      "description": "Android-App mit dem veröffentlichten Namen MewTrack: Jawline Tracker. Drei lokale Implementierungen wurden gefunden; sie zählen gemeinsam als ein Produkt.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Arbeitsstand klären",
+      "repository": null,
+      "paths": [
+        "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
+        "C:\\Users\\madde\\flutter_projects\\MEWING",
+        "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app"
+      ],
+      "variants": [
+        {
+          "name": "Flutter-Variante",
+          "path": "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
+          "framework": "Flutter",
+          "packageId": "com.mewtrack.mewtrack",
+          "version": "1.0.0+1",
+          "note": "Andere App-ID als der bestätigte Play-Console-Eintrag. Nicht als maßgeblicher veröffentlichter Stand eingeordnet."
+        },
+        {
+          "name": "Expo-Variante",
+          "path": "C:\\Users\\madde\\flutter_projects\\MEWING",
+          "framework": "React Native / Expo",
+          "packageId": "com.chargegeist.mew",
+          "version": "0.0.1",
+          "note": "App-ID entspricht dem Play-Console-Eintrag. Das allein klärt noch nicht, ob dies der maßgebliche Arbeits- oder Release-Stand ist; Versionsangabe stammt aus package.json."
+        },
+        {
+          "name": "Native Android-Variante",
+          "path": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app",
+          "framework": "Native Android / Kotlin",
+          "packageId": "com.chargegeist.mew",
+          "version": "0.9.4 (Versioncode 13)",
+          "note": "Name MewTrack: Jawline Tracker und App-ID passen zum Play-Console-Eintrag. Maßgeblicher Arbeitsstand gegenüber Expo ist noch zu klären."
+        }
+      ],
+      "notes": [
+        "Drei Varianten bedeutet drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps.",
+        "Play Console führt MewTrack: Jawline Tracker mit com.chargegeist.mew. Dazu passen Expo und native Android; Flutter besitzt com.mewtrack.mewtrack.",
+        "Qualität, Optik, UX, Store-Auftritt und Wirtschaftlichkeit wurden noch nicht analysiert.",
+        "Ziel des Nutzers: aus ungefähr 50 Downloads mehr tatsächliche und wiederkehrende Nutzer gewinnen; Store-Verbesserung und kleines App-Update sollen erst anhand der Prüfung abgeleitet werden."
+      ],
+      "openQuestions": [
+        "Welcher der beiden Ordner mit com.chargegeist.mew ist der maßgebliche Arbeits- und Release-Stand?",
+        "Welchen Nutzen vermittelt das Produkt beim ersten Benutzen und im Store?",
+        "Welche wenigen Verbesserungen helfen nach einer ehrlichen Produktprüfung am meisten?"
+      ],
+      "nextStep": "Zuerst den maßgeblichen lokalen Stand zur veröffentlichten App bestimmen. Anschließend tatsächliche Bedienung, Optik, UX, Store-Auftritt und verfügbare Kennzahlen gemeinsam prüfen.",
+      "sourceFiles": [
+        "apps-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    },
+    {
+      "id": "mirror",
+      "name": "Mirror",
+      "area": "apps",
+      "description": "Android-App aus dem Projektordner Mirror. Der lokale Projektname lautet inzwischen RelateLens; in der Play Console ist die App als Mirror: Love Tarot & Clarity geführt.",
+      "status": "pilot_complete",
+      "statusLabel": "Pilotanalyse abgeschlossen",
+      "repository": null,
+      "paths": [
+        "C:\\Users\\madde\\Documents\\Mirror"
+      ],
+      "variants": [
+        {
+          "name": "Lokales Flutter-Projekt",
+          "path": "C:\\Users\\madde\\Documents\\Mirror",
+          "framework": "Flutter",
+          "packageId": "com.energycrafted.mirror",
+          "version": "1.1.0+16",
+          "note": "Lokales Android-Label RelateLens. Verhältnis des lokalen Standes zum veröffentlichten Store-Auftritt muss vor der Produktprüfung geklärt werden."
+        }
+      ],
+      "notes": [
+        "Ordnername, lokaler Appname und Store-Titel unterscheiden sich; daraus folgt noch keine Bewertung des Produkts.",
+        "Mirror-backups\\mirror-paused-2026-10-07.bundle ist eine Sicherung, kein zusätzliches Arbeitsprojekt.",
+        "mirror-googleplay-formular ist ein ergänzender Repository-Fund und nicht als App-Quellcode eingeordnet.",
+        "Qualität, Optik, UX, Store-Auftritt und Wirtschaftlichkeit wurden noch nicht analysiert.",
+        "Ziel des Nutzers: aus ungefähr 50 Downloads mehr tatsächliche und wiederkehrende Nutzer gewinnen; Verbesserungen sollen klein und anhand konkreter Befunde ausfallen.",
+        "Ausdrückliches Nutzerziel vom 09.10.2026: Mirror soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen.",
+        "Lokaler RelateLens-Webpilot 1.1.0+16 samt Store-/Console-Pruefung abgeschlossen; veroeffentlichter Mirror 1.0.13 und historische Previewbilder bleiben getrennt dokumentiert."
+      ],
+      "openQuestions": [
+        "Welcher lokale Stand entspricht dem veröffentlichten Produkt und welcher Name soll künftig verwendet werden?",
+        "Wie verständlich und überzeugend sind tatsächlicher Nutzen, Einstieg und Store-Darstellung?",
+        "Welche wenigen Änderungen verbessern das Produkt beziehungsweise seine Positionierung?"
+      ],
+      "nextStep": "Die begrenzten Vorschlaege zu Antworttreue und gespeicherten Ergebnissen konkretisieren; danach nativen Release und Store abgleichen. Monetarisierung folgt erst nach Nutzergewinnung.",
+      "sourceFiles": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/runtime-review.md",
+        "analysen/mirror/Mirror-code-review.md",
+        "analysen/mirror/evidence.json",
+        "analysen/mirror/store-review.md",
+        "analysen/mirror/play-console-kpis.md",
+        "analysen/mirror/TEST-UMGEBUNG.md",
+        "analysen/mirror/runtime/README.md"
+      ],
+      "analysisId": "mirror"
+    },
+    {
+      "id": "between",
+      "name": "Between",
+      "area": "apps",
+      "description": "Flutter-App im lokalen Ordner love insight scanner. Als einzige der hier vier erfassten Android-Apps einem bestätigten GitHub-Quellcode-Repository zugeordnet.",
+      "status": "inventoried",
+      "statusLabel": "Bestand erfasst · Prüfpriorität offen",
+      "repository": "https://github.com/emfau88/between",
+      "paths": [
+        "C:\\Users\\madde\\flutter_projects\\love insight scanner"
+      ],
+      "variants": [
+        {
+          "name": "Bestätigter lokaler Checkout",
+          "path": "C:\\Users\\madde\\flutter_projects\\love insight scanner",
+          "framework": "Flutter",
+          "packageId": null,
+          "version": "1.0.0+20",
+          "note": "origin-Remote bestätigt Repository between. Android-App-ID wurde in dieser Bestandsaufnahme nicht festgehalten."
+        }
+      ],
+      "notes": [
+        "Lokaler Checkout über origin-Remote eindeutig dem Repository between zugeordnet.",
+        "Die konkreten Downloadprobleme wurden vom Nutzer für MewTrack, ZeroHero und Mirror genannt. Für Between wurden in diesem Auftrag noch keine entsprechende Ausgangszahl oder eigene Prüfpriorität festgelegt.",
+        "Es liegt keine Produkt-, UX-, Store- oder Wirtschaftlichkeitsbewertung vor."
+      ],
+      "openQuestions": [
+        "Soll Between nach den drei ausdrücklich genannten Apps ebenfalls einen kompakten Produktcheck erhalten?",
+        "Welcher lokale Stand und Store-Auftritt gehören für eine spätere Prüfung zusammen?"
+      ],
+      "nextStep": "Im Bestand behalten; eine spätere Produktprüfung nach den ausdrücklich priorisierten Apps einordnen.",
+      "sourceFiles": [
+        "apps-bestand.json",
+        "README.md"
+      ],
+      "analysisId": null
+    }
+  ],
+  "relatedProducts": [
+    {
+      "id": "more-than-wombar-unity",
+      "name": "More Than Wombat — Unity Lab",
+      "description": "Eigenständiger Unity-Versuch eines stilisierten 3D-/2.5D-Arcade-Beat-'em-ups; MoreThanWombat dient laut README als Designreferenz.",
+      "repository": "https://github.com/emfau88/MoreThanWombarUnity",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\MoreThanWombarUnity"
+      ],
+      "note": "Fehlt im Dashboard-Register. Separater Ableger/Versuch; nicht als zusätzliches dort registriertes Spiel gezählt. Repo und Ordner heißen tatsächlich WombarUnity mit r.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "kesselkrawall-3d",
+      "name": "KesselKrawall 3D",
+      "description": "Eigenständiger 3D-Neuaufbau von KesselKrawall / Cauldron Rumble als Browsergame.",
+      "repository": "https://github.com/emfau88/KesselKrawall-3-D",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\ChatGPT\\KesselKrawall3D"
+      ],
+      "note": "Fehlt im Dashboard-Register; separates Repository für die 3D-Fassung.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "territory-tide",
+      "name": "territory-tide",
+      "description": "Für CrazyGames angepasste HEXFRONT-Variante laut GitHub-Repository-Beschreibung.",
+      "repository": "https://github.com/emfau88/territory-tide",
+      "paths": [],
+      "note": "Fehlt im Dashboard-Register. Lokaler Pfad in dieser begrenzten Suche nicht gefunden.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ctf",
+      "name": "CTF",
+      "description": "Weitere CTF-Repository-Version; die genaue Abgrenzung gegenüber CORE ARENA / CTF-3.0 wurde nicht geprüft.",
+      "repository": "https://github.com/emfau88/CTF",
+      "paths": [
+        "C:\\Users\\madde\\Documents\\CTF"
+      ],
+      "note": "Fehlt im Dashboard-Register. Als möglicher Vorgänger separat gelistet, ohne daraus ein zusätzliches aktives Produkt abzuleiten.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ]
+    },
+    {
+      "id": "ctf-2",
+      "name": "CTF-2.0",
+      "description": "Weitere CTF-Repository-Version; die genaue Abgrenzung gegenüber CORE ARENA / CTF-3.0 wurde nicht geprüft.",
+      "repository": "https://github.com/emfau88/CTF-2.0",
+      "paths": [],
+      "note": "Fehlt im Dashboard-Register. Als möglicher Vorgänger separat gelistet. Lokaler Pfad in dieser begrenzten Suche nicht gefunden.",
+      "sourceFiles": [
+        "spiele-bestand.json",
+        "README.md"
+      ]
+    }
+  ],
+  "scopeNotes": [
+    "17 Hauptprodukte: 6 im vorhandenen Spiele-Dashboard registrierte Games, 7 ausdrücklich genannte Web-Repositories und 4 Android-Apps. MewTrack zählt trotz drei lokaler Varianten als ein Produkt.",
+    "Das vorhandene Repository https://github.com/emfau88/dashboard und der lokale Ordner C:\\Users\\madde\\Documents\\dashboard dienen als Registerquelle, nicht als zusätzliches Produkt. Das Register data.json hat Stand 07.10.2026.",
+    "Die fünf ergänzenden Spiele-Repositories sind verwandte Versionen oder Ableger; ihre Rolle als aktive Produkte wurde noch nicht geprüft. Sie werden separat geführt.",
+    "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Spiele, Onlineauftritte und die übrigen Apps sind bisher nicht im Betrieb bewertet.",
+    "Nur für ZeroHero ist die Pilotanalyse abgeschlossen. Sie umfasst eine unveränderte lokale Webkopie, Store-Darstellung, Code-Gegenprüfung und verfügbare Play-Console-Daten. Die veröffentlichte Android-App wurde nicht auf einem Gerät geprüft.",
+    "Pfad- und Namensunterschiede sind Identitätsfragen, keine negativen Qualitätsurteile. Kein lokaler Checkout gefunden bedeutet nicht, dass das Produkt schlecht oder aufgegeben ist.",
+    "Eine öffentliche Gesamtliste mit 65 Repositories ist als github-repositories.json gespeichert. Sie ist noch nicht vollständig klassifiziert; private Repositories und alle übrigen lokalen Ordner sind nicht systematisch erfasst.",
+    "Originalprojekte, Original-Bestandsdateien und Store-Einträge wurden für dieses Dashboard nicht verändert. Fragen und nächste Schritte kennzeichnen geplante Arbeit; sie sind keine bereits geprüften Befunde."
+  ]
+}

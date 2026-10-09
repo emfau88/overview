@@ -1,0 +1,238 @@
+{
+  "updatedAt": "2026-10-09",
+  "title": "Ausgangslage, Ziele und roter Faden",
+  "situation": [
+    {
+      "id": "portfolio-overview",
+      "title": "Viele Projekte, ein gemeinsamer Überblick",
+      "text": "Der Nutzer hat mehrere Browsergames, Entwürfe für seinen Onlineauftritt und Android-Apps. Zuerst sollten die betroffenen Produkte gefunden, den Repositories und lokalen Ordnern zugeordnet und knapp beschrieben werden. Diese Bestandsaufnahme bildet die Arbeitsgrundlage; eine vollständige Qualitätsbewertung war ausdrücklich nicht Teil des ersten Schritts. Das Spiele-Repository dashboard dient als Ausgangspunkt für die Auswahl der Browsergames. Die Bestandsaufnahme bezieht sich auf die drei angefragten Bereiche und ist keine vollständige Prüfung aller lokalen Ordner oder sämtlicher Repositories.",
+      "source": "Usernachricht initial-inventory; README.md, Abschnitt Quellen und Umfang"
+    },
+    {
+      "id": "android-discovery",
+      "title": "Die Android-Apps erreichen bisher kaum Nutzer",
+      "text": "MewTrack, ZeroHero und Mirror haben nach Selbstauskunft des Nutzers jeweils ungefähr 50 Downloads und wirken für ihn nahezu inaktiv. Er möchte Nutzer und mehr Downloads gewinnen. Die ungefähre Downloadzahl ist eine Ausgangsbeschreibung des Nutzers, keine präzise Kennzahl aus der Play Console und keine Aussage über aktuell aktive Nutzer. Er vermutet, dass bessere Store-Auftritte und ein App-Update helfen könnten. Ein möglicher Algorithmusimpuls durch ein Update ist seine Hoffnung und wurde nicht als belegte Wirkung übernommen.",
+      "source": "Usernachricht goals-and-method"
+    },
+    {
+      "id": "honest-product-review",
+      "title": "Eine ehrliche Außenperspektive auf die Produkte",
+      "text": "Der Nutzer möchte, dass die Produkte tatsächlich angesehen und gegebenenfalls geprüft werden: Nutzen, Optik, Bedienung und Nutzererlebnis sollen bewertet werden, damit Probleme und Chancen sichtbar werden, die er selbst möglicherweise übersieht. Die Ergebnisse sollen zu konkreten Vorschlägen führen, wie ein überzeugenderes Produkt entsteht oder wie es besser positioniert werden kann. Es soll kein Mammutprojekt daraus werden.",
+      "source": "Usernachricht goals-and-method"
+    },
+    {
+      "id": "online-direction",
+      "title": "Die zentrale Onlinepräsenz ist noch nicht entschieden",
+      "text": "Es gibt mehrere vorhandene Websites und Portfolioentwürfe. Offen ist, welche davon die zentrale Landingpage werden könnte, wie sie aussehen sollte und welche Inhalte beziehungsweise Leistungen im Vordergrund stehen sollen. Insbesondere ist noch nicht entschieden, ob Games auf der zentralen Seite gezeigt werden oder ob sie sich auf den Verkauf von Websites konzentrieren soll. Die vorhandenen Kandidaten sollen erst verglichen werden; die Architektur und Positionierung werden daraus abgeleitet.",
+      "source": "Usernachrichten initial-inventory und goals-and-method"
+    },
+    {
+      "id": "shared-memory",
+      "title": "Alle Informationen als dauerhafte Arbeitsgrundlage behalten",
+      "text": "Der Nutzer wünscht ein Dashboard, das seine ursprüngliche Situation, die Problematik und Ziele, sämtliche betroffenen Repositories und Produkte sowie die jeweiligen Ergebnisse ausführlich zusammenführt. Es soll helfen, den Faden zu behalten und in späteren Schritten mit allen vorhandenen Informationen weiterzuarbeiten. Ergebnisse, offene Fragen und nächste Schritte müssen deshalb getrennt und nachvollziehbar sichtbar bleiben. Das Repository https://github.com/emfau88/overview ist als zentraler Sammelpunkt ausdrücklich vorgegeben; das Dashboard und die Arbeitsinformationen sollen dort sinnvoll miteinander verknüpft werden. Gewünscht sind eine klare Struktur, zuverlässige Funktion und sparsam eingesetzte echte Produkticons, soweit vorhanden. Das bereits vorhandene Spiele-Dashboard darf als Orientierung dienen.",
+      "source": "Usernachrichten dashboard-request und repository-request"
+    },
+    {
+      "id": "monetization-after-users",
+      "title": "ZeroHero und Mirror sollen später Einnahmen erzielen",
+      "text": "Der Nutzer hat ausdrücklich festgehalten, dass ZeroHero und Mirror grundsätzlich monetarisiert werden sollen, sobald sie zunächst tatsächliche Nutzer gewinnen. Das langfristige wirtschaftliche Ziel ist damit gesetzt. Vorrang haben weiterhin Nutzergewinnung, erkennbarer Nutzen und Wiederkehr; ein bestimmtes Preismodell, eine Paywall oder die Einführung eines Kaufsystems sind dadurch nicht entschieden. Die nächste beauftragte Reihenfolge lautet: aktuellen Dashboard- und Mirror-Stand committen und zu GitHub pushen, anschließend MewTrack als nächstes analysieren und danach erneut committen und pushen. Als Zuordnungshinweis nennt der Nutzer für MewTrack die Play-Console-Version Release 13 (0.9.4).",
+      "source": "Usernachricht monetization-and-next-review"
+    },
+    {
+      "id": "mirror-preview-screenshots",
+      "title": "Mirror-Previewbilder als zusätzliche visuelle Referenz",
+      "text": "Sechs vorhandene Mirror-/RelateLens-Screenshots aus einer lokalen UI-Preview vom 07.10.2026 werden im Dashboard sichtbar zusammengeführt. Sie helfen bei der Orientierung zu den dokumentierten Produktansichten. Sie sind historische lokale Previewbilder und keine heute aufgenommenen Screenshots, keine Aufnahmen des veröffentlichten Play-Binaries und kein zusätzlicher heutiger Laufzeitnachweis. Ihre Herkunft und Aussagegrenze bleiben unmittelbar bei den Bildern sichtbar.",
+      "source": "Dokumentierte lokale Mirror-UI-Preview vom 07.10.2026; Screenshot-Metadaten im Dashboard"
+    }
+  ],
+  "areas": [
+    {
+      "id": "games",
+      "title": "Browsergames",
+      "goal": "Die im Spiele-Dashboard geführten Spiele einzeln auf Qualität prüfen und später Aufwand, Probleme und Chancen vergleichen.",
+      "questions": [
+        "Welche Spiele und verwandten Versionen gehören zu den im Repository dashboard geführten Produkten?",
+        "Wie verständlich und motivierend sind Einstieg, Regeln und Spielziele?",
+        "Wie wirken Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz bei tatsächlicher Nutzung?",
+        "Welche wenigen Änderungen würden jedes einzelne Spiel am stärksten verbessern?"
+      ],
+      "constraints": [
+        "Ausgangspunkt der Bestandsaufnahme ist das Repository dashboard; weitere gefundene Varianten sind ergänzend aufgeführt.",
+        "Sechs Kernspiele sind inventarisiert: HEXFRONT/hexwars, GALALAXY/galalaxy, ROOSTER RAGE/RoosterRage, KESSELKRAWALL/KesselKrawall, CORE ARENA/CTF-3.0 und MORE THAN WOMBAT/MoreThanWombat.",
+        "Die ursprüngliche Anweisung verlangte ausdrücklich zunächst keine Qualitätsanalyse. Die Bestandsbeschreibungen ersetzen daher kein Spielen oder Testen.",
+        "Noch nicht geprüfte Spiele dürfen nicht als bereits bewertet dargestellt werden; die geplanten Einzelprüfungen sind ein eigener Schritt."
+      ]
+    },
+    {
+      "id": "online",
+      "title": "Onlineauftritt und zentrale Landingpage",
+      "goal": "Die bestehenden Entwürfe vergleichen und daraus eine begründete Empfehlung für die zentrale Onlinepräsenz ableiten.",
+      "questions": [
+        "Ist LandingGame im lokalen Ordner Landing Page bereits eine geeignete Grundlage?",
+        "Welche der Kandidaten LandingGame, shop, keyofsolomon, Portfolio3, blueyard, phantom und basement erfüllen welche Aufgabe?",
+        "Soll die zentrale Website vor allem Websites verkaufen, auch Games und Apps zeigen oder verschiedene Angebote verständlich zusammenführen?",
+        "Welche Gestaltung und Informationsstruktur passen zur empfohlenen Positionierung?",
+        "Welche vorhandenen Inhalte und Entwürfe lassen sich sinnvoll weiterverwenden?"
+      ],
+      "constraints": [
+        "Die Rolle von Games, Apps, Portfolio und Websiteverkauf ist noch offen; keine dieser Optionen ist bereits beschlossen.",
+        "keyofsolomon ist als angefragtes Einzelprodukt beziehungsweise Verkaufsseite Bestandteil der Bestandsaufnahme, aber nicht automatisch die künftige zentrale Homepage.",
+        "Vorhandene Seiten sollen angesehen und verglichen werden, bevor eine neue zentrale Landingpage empfohlen oder gebaut wird.",
+        "Bisher sind die sieben angefragten Web-Repositories und verwandte lokale Entwürfe inventarisiert; eine gemeinsame UX- oder Designbewertung steht noch aus."
+      ]
+    },
+    {
+      "id": "android",
+      "title": "Android-Apps",
+      "goal": "Mehr Nutzer und Downloads erreichen, die Produkte ehrlicher einschätzen und mit begrenzten Maßnahmen ihre Nutzbarkeit und Positionierung verbessern. ZeroHero und Mirror sollen später monetarisiert werden, sobald sie zunächst tatsächliche Nutzer gewinnen.",
+      "questions": [
+        "Welche lokalen Ordner enthalten ZeroHero, MewTrack und Mirror, und welcher Arbeitsstand gehört zur veröffentlichten App?",
+        "Was ist für neue Nutzer der konkrete Nutzen jeder App und wie schnell wird er erkennbar?",
+        "Welche Probleme bei Bedienung, Optik oder Zuverlässigkeit erschweren die Nutzung?",
+        "Wie gut vermitteln Titel, Beschreibung und Store-Bilder den tatsächlichen Produktnutzen?",
+        "Was zeigen verfügbare Kennzahlen über Auffindbarkeit, Installationsinteresse und Nutzung?",
+        "Welcher kleine Updateumfang und welche Positionierungsänderungen sind anhand der Befunde sinnvoll?",
+        "Wie lässt sich danach erkennen, ob die Maßnahmen mehr und wiederkehrende Nutzer bringen?",
+        "Wie können ZeroHero und Mirror später sinnvoll monetarisiert werden, sobald tatsächliche Nutzer und erkennbarer wiederkehrender Nutzen vorhanden sind?"
+      ],
+      "constraints": [
+        "ZeroHero, MewTrack und Mirror sind die drei ausdrücklich genannten Hauptprodukte. Between wurde als vorhandene App mit GitHub-Repository ergänzend aufgenommen; eine Gleichrangigkeit in der nächsten Review-Reihenfolge ist nicht ausdrücklich festgelegt.",
+        "Die ungefähr 50 Downloads je Haupt-App sind Selbstauskunft des Nutzers, keine überprüfte exakte KPI.",
+        "MewTrack hat drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps. Die maßgebliche Variante ist vor ihrer Produktprüfung zu klären.",
+        "Die Hoffnung auf einen Google-Algorithmusimpuls allein durch ein Update ist nicht belegt; Änderungen sollen einen nachvollziehbaren Nutzen für Nutzer haben.",
+        "Ein erster ZeroHero-Pilot ist autorisiert und abgeschlossen. Die übrigen Apps sind bisher nur inventarisiert.",
+        "Der ZeroHero-Pilot umfasst eine lokale Webkopie, Store-Prüfung, Code-Gegenprüfung und zugängliche Play-Console-Daten. Er ersetzt keinen Gerätetest der veröffentlichten Android-App.",
+        "Aus einer Analyse folgt noch keine Freigabe zur Veröffentlichung oder zu Store-Änderungen; solche Umsetzungen sind weitere Schritte.",
+        "Die spätere Monetarisierung von ZeroHero und Mirror ist ein ausdrückliches Nutzerziel. Nutzergewinnung kommt zuerst; Preismodell, Kaufumfang und konkrete Zahlungsintegration sind noch nicht festgelegt."
+      ],
+      "notes": []
+    }
+  ],
+  "principles": [
+    "Mit dem vorhandenen Bestand und den bereits benannten Zielen arbeiten; eine große vorgeschaltete Zielklärung ist keine Voraussetzung für den Einstieg.",
+    "Bestandsaufnahme, tatsächliche Produktprüfung, Bewertung, Priorisierung und Umsetzung als nachvollziehbare Schritte führen.",
+    "Produkte einzeln prüfen und Ergebnisse nach demselben kompakten Raster dokumentieren: Nutzen, Einstieg, Optik, Bedienung, Zuverlässigkeit, Positionierung und verfügbare Daten.",
+    "Eine ehrliche Außenperspektive liefern: Stärken ebenso wie Probleme und Chancen benennen, ohne Gefälligkeitsbewertung und ohne unbelegte Erfolgsversprechen.",
+    "Beobachtete Fehler, Schlussfolgerungen aus Quellcode, Selbstauskünfte und offene Vermutungen deutlich unterscheiden.",
+    "Downloads, aktive Nutzer, Store-Besuche und Installationsklicks sowie verschiedene Datenzeiträume nicht gleichsetzen.",
+    "Wenige konkrete Maßnahmen mit erkennbarem Nutzen priorisieren; keinen umfassenden Neubau allein aus dem Wunsch nach mehr Downloads ableiten.",
+    "Vorhandene Entwürfe und Produktstärken weiterverwenden, wenn sie sich bei der Prüfung bewähren.",
+    "Das Dashboard hält Bestand, ausführliche Ergebnisse, Quellen, Grenzen, offene Fragen und nächste Schritte zusammen; Detailberichte bleiben verlinkte Arbeitsgrundlagen.",
+    "Aktuellen Pruefstatus sichtbar halten: ZeroHero und Mirror sind als Piloten untersucht. MewTrack folgt danach, Spiele und Onlineauftritte sind bisher inventarisiert.",
+    "Neue Entscheidungen, Analysen und Umsetzungen im Dashboard ergänzen, damit spätere Arbeit an den dokumentierten Stand anknüpft.",
+    "Das Repository https://github.com/emfau88/overview als zentralen Sammelpunkt verwenden und Dashboard, Inventar, Kontext und ausführliche Ergebnisse so verknüpfen, dass die Informationen zuverlässig auffindbar bleiben.",
+    "Echte Produkticons sparsam zur Orientierung einsetzen, soweit verfügbar; klare Struktur und verständliche Navigation haben Vorrang. Das vorhandene Spiele-Dashboard kann als Gestaltungsreferenz dienen.",
+    "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden. Zuerst müssen sie tatsächliche Nutzer gewinnen; Monetarisierung ist das langfristige Ziel, kein bereits umgesetztes oder wirtschaftlich validiertes System.",
+    "Die aktuell beauftragte Reihenfolge einhalten: Dashboard und Mirror-Ergebnisse vollständig festhalten und committen/pushen, danach MewTrack als nächstes prüfen und den ergänzten Stand erneut committen/pushen.",
+    "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben."
+  ],
+  "chronology": [
+    {
+      "id": "initial-inventory",
+      "order": 1,
+      "title": "Grobe Bestandsaufnahme in drei Bereichen beauftragt",
+      "status": "completed",
+      "detail": "Der Nutzer bat um einen Gesamtüberblick: Spiele anhand des Repositories dashboard zuordnen und knapp beschreiben; sieben Web-Repositories beziehungsweise lokale Onlineentwürfe erfassen; lokale Appordner von ZeroHero, MewTrack und Mirror finden und Between als Repo-App berücksichtigen. Eine tiefergehende Analyse wurde in diesem ersten Auftrag ausdrücklich auf später verschoben. Die Bestandsdateien und README dokumentieren das Ergebnis."
+    },
+    {
+      "id": "goals-and-method",
+      "order": 2,
+      "title": "Gewünschte spätere Bewertungen konkretisiert",
+      "status": "documented",
+      "detail": "Der Nutzer erklärte die Android-Ziele: mehr Downloads und Nutzer, gegebenenfalls bessere Store-Auftritte und ein App-Update, eine ehrliche Bewertung von Produkt, Optik, UX und Positionierung mit begrenztem Aufwand. Für Browsergames wünscht er einzelne Qualitätsanalysen. Beim Onlineauftritt soll die Eignung vorhandener Entwürfe und die Rolle der zentralen Landingpage geklärt werden. Auch hier lautete die damalige Bitte zunächst nur auf Informationen zum Vorgehen."
+    },
+    {
+      "id": "pilot-authorization",
+      "order": 3,
+      "title": "Fortsetzung und ZeroHero-Pilot mit Play-Console-Daten",
+      "status": "completed",
+      "detail": "Nach der Bitte, die Arbeit durchzuführen und einen unterbrochenen Auftrag fortzusetzen, wurde ZeroHero als erster Produktcheck untersucht. Der Nutzer erlaubte ausdrücklich, bei Interesse die angemeldete Play Console für ZeroHero-Kennzahlen anzusehen, und stellte den Zeitraum auf die letzten sechs Monate. Daraus folgt keine pauschale Aussage, dass alle Apps, Spiele oder Onlineauftritte bereits analysiert sind."
+    },
+    {
+      "id": "pilot-results",
+      "order": 4,
+      "title": "ZeroHero-Ergebnisse dokumentiert",
+      "status": "completed",
+      "detail": "Die Pilotanalyse und das KPI-Protokoll halten Stärken, reproduzierte Bedienfehler, Quellcode-Befunde, Store-Eindruck, Kennzahlen und einen begrenzten empfohlenen Updateumfang fest. Lokaler Webtest und veröffentlichte Android-App sind ausdrücklich getrennt; Appcode und Store wurden nicht verändert. Die unterschiedlichen Datenzeiträume und Kennzahltypen sind dokumentiert."
+    },
+    {
+      "id": "dashboard-request",
+      "order": 5,
+      "title": "Dauerhaftes Dashboard für Ziele, Bestand und Ergebnisse",
+      "status": "completed",
+      "detail": "Der Nutzer wünscht nun eine gemeinsame, ausführliche Arbeitsgrundlage, die seine ursprünglichen Anliegen, die betroffenen Produkte und Repositories sowie alle Ergebnisse bewahrt. Dieses Kontextdokument hält den roten Faden fest; Inventar und Einzelberichte ergänzen die prüfbaren Details. Das Dashboard ist erstellt, mit vollstaendigen Dokumenten und Bildern geprueft und fuer das autorisierte Repository inklusive Pages-Workflow vorbereitet."
+    },
+    {
+      "id": "repository-request",
+      "order": 6,
+      "title": "Zentrales Repository und Gestaltung vorgegeben",
+      "status": "completed",
+      "detail": "Der Nutzer hat https://github.com/emfau88/overview.git als Sammelpunkt benannt und das Pushen dorthin ausdrücklich beauftragt. Dashboard und Informationen sollen sinnvoll verknüpft, klar aufgebaut und zuverlässig nutzbar sein. Gewünscht sind zurückhaltende Produkticons, soweit verfügbar, mit möglicher Orientierung am vorhandenen Spiele-Dashboard. Dies erweitert die Ablage und Darstellung; die Ziele und Prüfstände der Produktanalysen bleiben bestehen. Das Dashboard ist erstellt, mit vollstaendigen Dokumenten und Bildern geprueft und fuer das autorisierte Repository inklusive Pages-Workflow vorbereitet."
+    },
+    {
+      "id": "next-reviews",
+      "order": 9,
+      "title": "Weitere Einzelprüfungen und Entscheidungen",
+      "status": "pending",
+      "detail": "Nach Abschluss des aktuellen Dashboard- und Mirror-Auftrags und dem ersten Commit/Push soll MewTrack als nächstes geprüft werden. Der Nutzer nennt Play-Console-Release 13 (0.9.4) als Zuordnungshinweis. Nach dieser Analyse folgt erneut Commit/Push. Individuelle Browsergame-Analysen und der Vergleich der vorhandenen Onlineauftritte bleiben weitere offene Arbeit."
+    },
+    {
+      "id": "mirror-preview-screenshots",
+      "order": 7,
+      "title": "Historische Mirror-Previewbilder dokumentieren",
+      "status": "documented",
+      "detail": "Sechs vorhandene lokale UI-Previewbilder vom 07.10.2026 werden als zusätzliche visuelle Referenz im Dashboard aufgenommen. Die Datierung und Grenze gegenüber heutigem Laufzeittest sowie veröffentlichtem Android-Produkt bleiben ausdrücklich sichtbar."
+    },
+    {
+      "id": "monetization-and-next-review",
+      "order": 8,
+      "title": "Spätere Monetarisierung und Push-/Prüfreihenfolge festgelegt",
+      "status": "in_progress",
+      "detail": "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden, sobald sie Nutzer gewinnen. Zuerst aktuellen Dashboard- und Mirror-Stand committen/pushen, anschließend MewTrack analysieren, danach erneut committen/pushen. Nutzerhinweis zur Identifikation: Play-Console-Release 13 (0.9.4). Noch keine Preisentscheidung und keine konkrete Monetarisierungsumsetzung."
+    },
+    {
+      "id": "mirror-pilot-results",
+      "order": 10,
+      "title": "Mirror-Pilot abgeschlossen",
+      "status": "completed",
+      "detail": "Lokaler RelateLens-Webtest inklusive Scan, Archiv, Tarot, Tabs, Settings und Persistenz; Code, oeffentlicher Store und private Console-KPIs dokumentiert. Zwei Probleme reproduziert, weitere Grenzen kenntlich gemacht. Keine App- oder Storeaenderung."
+    }
+  ],
+  "originalMessages": [
+    {
+      "id": "initial-inventory",
+      "label": "Ursprünglicher Auftrag: Gesamtüberblick und grobe Bestandsaufnahme",
+      "text": "ich brauche dich, um einen gesamtüberblick über all meine projekte zu bekommen. es geht einerseits um meine spiele, hier solltest du dich an meinem repo \"dashboard\" orientieren und die betroffenen repos finden und auflisten. zudem möchte ich einen überblick was das thema mein onlineauftritt betrifft, hier habe ich das repo \"landinggame\" bzw den lokalen projektordner landing page. mit hier in diese kategorie fällt auch das repo \"shop\", \"keyofsolomon\", \"portfolio3\", \"blueyard\", \"phantom\", \"basement\". es wäre super wenn du dazu jeweils eine knappe beschreibung geben könntest, ziel wird es in einem weiteren schritt sein, herauszufinden wie ich am besten meine online-präsenz aufbauen sollte, was meine landing page werden soll, ob dort auch was von games erwähnt/gezeigt werden soll oder ob es rein homepage verkauf werden soll usw. als dritten großen punkt habe ich das thema meine android apps. ich habe diese nicht in github repos (nur die app \"between\"). sondern lokal. hier will ich dass du die app zerohero findest (ordner müsste zerohero25 oder so heißen), die app mewtrack und die app mirror. da nicht groß analysieren, auch nur mal finden und die pfade finden. im nächsten schritt sollen die apps analysiert werden wie ich diese und deren playstore auftritte verbessern müsste um wirtschaftlich zu werden und überhaupt mal downloads zu bekommen. das sind aber wie gesagt weitere schritte. verstehst du was ich will? ist das das richtige vorgehen, bestandsaufnahme grob, dann im anschluss (NICHT JETZT) alles analysieren und bewerten lassen und eine einschätzung zu bekommen über probleme chancen, welche dinge gut und schlecht sind usw und daraus dann zu handeln? sag mir gerne wenn du noch hinweise und verbesserungen hast"
+    },
+    {
+      "id": "goals-and-method",
+      "label": "Präzisierung: Ziele, ehrliche Bewertungen und begrenzter Aufwand",
+      "text": "was bedeutet mewtrack existiert in drei varianten? also wie würdest du nun weiter vorgehen? ziele klären gibts da nicht so konkret, ausser bei den android apps, da sind die ziele: mehr downloads (die apps sind quasi fast tot, mewtrack, zerohero, mirror sind alle bei ca 50 downloads), ich will nutzer bekommen und dazu ist eventuell nötig, die store auftritte zu verbessern und jeweils ein update der app selbst raus zu bringen (hoffnung ist trigger von google algorhitsmus), zudem will ich überhaupt mal dass du dir die produkte anschaust, eventuell auch prüfst, auch optisch bewertest, auch bezüglich user experience usw (NICHT JETZT), aber dass ich vielleicht dinge erfahre die ich selbst nicht sehe, brauche eine ehrliche bewertung und daraus vorschläge wie man ein produkt daraus macht oder es besser positionierst. kein mammutprojekt, aber trotzdem brauche ich da hilfe. bei den browser spielen will ich auch eine qualitätsanalyse jeweils (NICHT JETZT). und dann noch beratung wie ich meine eigene landing page machen soll, wie diese aussehen müsste oder ob schon eine der vorhandenen geeignet wäre. wie gehen wir am besten vor? nur info"
+    },
+    {
+      "id": "console-authorization",
+      "label": "Fortsetzung und Freigabe zum Ansehen von ZeroHero-Kennzahlen",
+      "text": "du wurdest unterbrochen, führe den auftrag aus. zudem: wenn interesse an zerohero playconsole daten kpi besteht ich bin im brave browser eingeloggt, kannst du ansehen und vermerken falls sinnvoll"
+    },
+    {
+      "id": "console-period",
+      "label": "Ausgewählter Play-Console-Zeitraum",
+      "text": "habe die letzten 6 monateausgewählt"
+    },
+    {
+      "id": "dashboard-request",
+      "label": "Dashboard als vollständige Arbeitsgrundlage",
+      "text": "gut wäre es wenn du eine art dashboard erstellst das festhält, was meine nachrichten zhu beginn zum schildern der sitauation/problematik beinhaltet haben dass wir das ziel vor augen haben und welche repos/produkte überhaupt betroffen sind, dass wir den faden nicht verlieren, zudem sollen auch die jeweiligen ergebnisse dort ausführlich vermerkt sein, sodass wir alle infos vollständig haben um damit zu arbeiten."
+    },
+    {
+      "id": "repository-request",
+      "label": "Zentrales Repository, klare Struktur und zurückhaltende Produkticons",
+      "text": "hier hin kannst du es pushen, das soll der sammelpunkt werden wo wir alle infos hinlegen können und so verdrahten dass es sinnvoll funktioniert als dashboard, es soll sauber funktionieren, sinnvoll und klar aufgebaut sein: [https://github.com/emfau88/overview.git](https://github.com/emfau88/overview.git) gerne auch mit entsprechenden icons der jeweiligen produkte wenn möglich dass es optisch besser nachvollziehbar ist (nicht übertreiben). eventuell ähnlich wie das bereits vorhandene dashboard repo"
+    },
+    {
+      "id": "monetization-and-next-review",
+      "label": "Monetarisierungsziel für ZeroHero und Mirror sowie nächste Arbeitsreihenfolge",
+      "text": "bitte auch noch vermerken dass zerohero und mirror grundsätzich auch noch monetarisiert werden sollen (WENN sie denn irgendwann endlich erstmal user bekommen). bitte gerne mal den aktuellen stand comitten und auf github pushen und wenn die fertig bist mit dem aktuellen auftrag danach mewtrack als nächstes angehen (da steht bei gooleplay console release 13 (0.9.4) falls das die identifikation erleichtert). danach dann wieder comitte und pushen"
+    }
+  ]
+}

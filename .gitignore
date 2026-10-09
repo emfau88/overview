@@ -1,0 +1,47 @@
+# Isolierte Appkopien und kompilierte Testumgebungen bleiben lokal.
+/analysen/*/runtime/*
+!/analysen/*/runtime/README.md
+!/analysen/*/runtime/TEST-UMGEBUNG.md
+
+# Generierte Veröffentlichungsstaging-Verzeichnisse und Sprachcaches.
+/_site/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.dart_tool/
+node_modules/
+
+# Keine Apppakete, Projektarchive oder Sicherungen veröffentlichen.
+*.apk
+*.aab
+*.ipa
+*.bundle
+*.zip
+*.7z
+*.tar
+*.tar.gz
+*.tgz
+*.rar
+
+# Keine Zugangsdaten, Signaturen, Umgebungsdateien oder Diagnose-Logs.
+.env
+.env.*
+*.env
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+local.properties
+google-services.json
+GoogleService-Info.plist
+credentials*.json
+secrets*.json
+*.log
+*.har
+
+# Lokale Betriebssystemdateien.
+.DS_Store
+Thumbs.db

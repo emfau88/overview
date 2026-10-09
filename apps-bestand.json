@@ -1,0 +1,100 @@
+{
+  "inventory_date": "2026-10-09",
+  "scope": "Lokale Projektpfade und minimale Identitätsprüfung; keine Code-, Qualitäts-, Wirtschaftlichkeits- oder Playstoreanalyse.",
+  "apps": [
+    {
+      "name": "ZeroHero",
+      "local_path": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25",
+      "framework": "Flutter",
+      "pubspec_name": "zerohero",
+      "android_label": "zerohero",
+      "application_id": "com.energycrafted.zerohero",
+      "version": "1.0.3+25",
+      "evidence": [
+        { "path": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25\\pubspec.yaml", "lines": [1, 19] },
+        { "path": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25\\android\\app\\src\\main\\AndroidManifest.xml", "lines": [3] },
+        { "path": "C:\\Users\\madde\\flutter_projects\\ZEROHERO25\\android\\app\\build.gradle.kts", "lines": [34] }
+      ]
+    },
+    {
+      "name": "MewTrack",
+      "primary_variant": null,
+      "note": "Drei lokale Varianten bestätigt. Der maßgebliche Arbeits- oder veröffentlichte Stand wurde nicht bestimmt.",
+      "variants": [
+        {
+          "local_path": "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
+          "framework": "Flutter",
+          "pubspec_name": "mewtrack",
+          "android_label": "MewTrack",
+          "application_id": "com.mewtrack.mewtrack",
+          "version": "1.0.0+1",
+          "evidence": [
+            { "path": "C:\\Users\\madde\\flutter_projects\\mewtrackflutter\\pubspec.yaml", "lines": [1, 4] },
+            { "path": "C:\\Users\\madde\\flutter_projects\\mewtrackflutter\\android\\app\\src\\main\\AndroidManifest.xml", "lines": [16] },
+            { "path": "C:\\Users\\madde\\flutter_projects\\mewtrackflutter\\android\\app\\build.gradle.kts", "lines": [25] }
+          ]
+        },
+        {
+          "local_path": "C:\\Users\\madde\\flutter_projects\\MEWING",
+          "framework": "React Native / Expo",
+          "project_name": "MewTrack",
+          "display_name": "MewTrack",
+          "application_id": "com.chargegeist.mew",
+          "package_version": "0.0.1",
+          "evidence": [
+            { "path": "C:\\Users\\madde\\flutter_projects\\MEWING\\app.json", "lines": [2, 3, 18] },
+            { "path": "C:\\Users\\madde\\flutter_projects\\MEWING\\package.json", "lines": [2, 3] }
+          ]
+        },
+        {
+          "local_path": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app",
+          "framework": "Native Android / Kotlin",
+          "android_label": "MewTrack: Jawline Tracker",
+          "application_id": "com.chargegeist.mew",
+          "version_name": "0.9.4",
+          "version_code": 13,
+          "evidence": [
+            { "path": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app\\app\\build.gradle.kts", "lines": [27, 30, 31] },
+            { "path": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app\\app\\src\\main\\res\\values\\strings.xml", "lines": [3] }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "Mirror",
+      "local_path": "C:\\Users\\madde\\Documents\\Mirror",
+      "framework": "Flutter",
+      "pubspec_name": "mirror",
+      "android_label": "RelateLens",
+      "application_id": "com.energycrafted.mirror",
+      "version": "1.1.0+16",
+      "note": "Projektordner heißt Mirror; der aktuelle Appname in den Projektmetadaten lautet RelateLens.",
+      "evidence": [
+        { "path": "C:\\Users\\madde\\Documents\\Mirror\\pubspec.yaml", "lines": [1, 2, 19] },
+        { "path": "C:\\Users\\madde\\Documents\\Mirror\\android\\app\\src\\main\\AndroidManifest.xml", "lines": [4] },
+        { "path": "C:\\Users\\madde\\Documents\\Mirror\\android\\app\\build.gradle.kts", "lines": [35] }
+      ],
+      "backups": [
+        {
+          "path": "C:\\Users\\madde\\Documents\\Mirror-backups\\mirror-paused-2026-10-07.bundle",
+          "kind": "bundle_file",
+          "working_project": false
+        }
+      ]
+    },
+    {
+      "name": "Between",
+      "local_path": "C:\\Users\\madde\\flutter_projects\\love insight scanner",
+      "framework": "Flutter",
+      "pubspec_name": "love_insight_scanner",
+      "version": "1.0.0+20",
+      "repository_url": "https://github.com/emfau88/between",
+      "confirmed_remote": "https://github.com/emfau88/between.git",
+      "note": "Lokaler Checkout über origin-Remote eindeutig dem Repository between zugeordnet.",
+      "evidence": [
+        { "path": "C:\\Users\\madde\\flutter_projects\\love insight scanner\\pubspec.yaml", "lines": [1, 19] },
+        { "path": "C:\\Users\\madde\\flutter_projects\\love insight scanner\\.git\\config", "section": "remote origin" }
+      ]
+    }
+  ]
+}
