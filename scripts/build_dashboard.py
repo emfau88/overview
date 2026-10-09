@@ -22,6 +22,7 @@ DATA_FILES = ("context.json", "projects.json", "results.json", "icons.json")
 ROOT_DOCUMENTS = (
     "README.md",
     "AGENTS.md",
+    "KOMPAKTUEBERSICHT.md",
     "spiele-bestand.json",
     "online-bestand.json",
     "apps-bestand.json",

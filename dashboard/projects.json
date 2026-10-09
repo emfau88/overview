@@ -433,9 +433,9 @@
       "id": "mewtrack",
       "name": "MewTrack",
       "area": "apps",
-      "description": "Android-App mit dem veröffentlichten Namen MewTrack: Jawline Tracker. Drei lokale Implementierungen wurden gefunden; sie zählen gemeinsam als ein Produkt.",
-      "status": "inventoried",
-      "statusLabel": "Bestand erfasst · Arbeitsstand klären",
+      "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich über Zeit. Drei lokale Implementierungen, native Android-Basis passt zu Play-Release 13 (0.9.4).",
+      "status": "pilot_complete",
+      "statusLabel": "Pilotanalyse abgeschlossen · native UX noch zu prüfen",
       "repository": null,
       "paths": [
         "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
@@ -456,8 +456,8 @@
           "path": "C:\\Users\\madde\\flutter_projects\\MEWING",
           "framework": "React Native / Expo",
           "packageId": "com.chargegeist.mew",
-          "version": "0.0.1",
-          "note": "App-ID entspricht dem Play-Console-Eintrag. Das allein klärt noch nicht, ob dies der maßgebliche Arbeits- oder Release-Stand ist; Versionsangabe stammt aus package.json."
+          "version": "Expo-App 1.0.0+1; package.json 0.0.1; Android-Gradle 1.0+1",
+          "note": "Expo com.chargegeist.mew, vorhandener Android-Gradle-Stand com.mewtrack / 1.0+1; nicht eindeutig Play-Release13 zugeordnet."
         },
         {
           "name": "Native Android-Variante",
@@ -465,26 +465,37 @@
           "framework": "Native Android / Kotlin",
           "packageId": "com.chargegeist.mew",
           "version": "0.9.4 (Versioncode 13)",
-          "note": "Name MewTrack: Jawline Tracker und App-ID passen zum Play-Console-Eintrag. Maßgeblicher Arbeitsstand gegenüber Expo ist noch zu klären."
+          "note": "Maßgebliche Reviewbasis; Version 13 (0.9.4) passt zum in Console und installiertem Play-Paket bestätigten Release. Identische Quellen noch nicht bewiesen."
         }
       ],
       "notes": [
-        "Drei Varianten bedeutet drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps.",
-        "Play Console führt MewTrack: Jawline Tracker mit com.chargegeist.mew. Dazu passen Expo und native Android; Flutter besitzt com.mewtrack.mewtrack.",
-        "Qualität, Optik, UX, Store-Auftritt und Wirtschaftlichkeit wurden noch nicht analysiert.",
-        "Ziel des Nutzers: aus ungefähr 50 Downloads mehr tatsächliche und wiederkehrende Nutzer gewinnen; Store-Verbesserung und kleines App-Update sollen erst anhand der Prüfung abgeleitet werden."
+        "Drei lokale Implementierungen eines Produkts. Primärbasis MEWING 2.0/app mit passendem Paket und Release 13 (0.9.4) in Console und installiertem Play-Paket bestätigt; keine bewiesene Binär-/Quellidentität.",
+        "Expo-Konfiguration nennt com.chargegeist.mew, vorhandener Android-Gradle-Stand dagegen com.mewtrack; Flutter verwendet com.mewtrack.mewtrack. Beide sind nicht die gewählte primäre Reviewbasis.",
+        "Quellen, visuelle Layoutbasis, Store-Stichprobe und Console-Kennzahlen analysiert. Die native Kamera-/UI-Bedienung wurde nicht ausgeführt; technische Risiken sind noch gezielt zu reproduzieren."
       ],
       "openQuestions": [
-        "Welcher der beiden Ordner mit com.chargegeist.mew ist der maßgebliche Arbeits- und Release-Stand?",
-        "Welchen Nutzen vermittelt das Produkt beim ersten Benutzen und im Store?",
-        "Welche wenigen Verbesserungen helfen nach einer ehrlichen Produktprüfung am meisten?"
+        "Welche konkrete lokale Quelle erzeugte das veröffentlichte und installierte Play-Binary13?",
+        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf dem echten Android-Gerät?",
+        "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
+        "Entsteht der Vergleich aus einer ausgewählten mittleren Session mit der erwarteten Vorauswahl?",
+        "Wie verhalten sich Home-Tagesstatus und Guidance bei Tageswechsel beziehungsweise Wiederaufnahme?",
+        "Werden Billing-Verbindungsfehler beendet und Restore/Freischaltung zwischen Home/Settings zuverlässig sichtbar?",
+        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
+        "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
+        "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
+        "Welcher Track/Artefakt verursacht den API-Hinweis, und was bedeutet der kontoweite Zahlungskontohinweis tatsächlich?"
       ],
-      "nextStep": "Zuerst den maßgeblichen lokalen Stand zur veröffentlichten App bestimmen. Anschließend tatsächliche Bedienung, Optik, UX, Store-Auftritt und verfügbare Kennzahlen gemeinsam prüfen.",
+      "nextStep": "Fünf native Kernprüfungen und wenige passende Tester; danach kleines Update und gezielte Verbreitung. Storebilder mit tatsächlich verfügbaren Vergleichswerkzeugen abgleichen.",
       "sourceFiles": [
-        "apps-bestand.json",
-        "README.md"
+        "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+        "analysen/mewtrack/MewTrack-code-review.md",
+        "analysen/mewtrack/Visual-review.md",
+        "analysen/mewtrack/store-review.md",
+        "analysen/mewtrack/play-console-kpis.md",
+        "analysen/mewtrack/Bestand-und-Zuordnung.md",
+        "analysen/mewtrack/TEST-UMGEBUNG.md"
       ],
-      "analysisId": null
+      "analysisId": "mewtrack"
     },
     {
       "id": "mirror",
@@ -504,14 +515,13 @@
           "framework": "Flutter",
           "packageId": "com.energycrafted.mirror",
           "version": "1.1.0+16",
-          "note": "Lokales Android-Label RelateLens. Verhältnis des lokalen Standes zum veröffentlichten Store-Auftritt muss vor der Produktprüfung geklärt werden."
+          "note": "Lokaler RelateLens-Relaunch 1.1.0+16; veröffentlichter Mirror-Auftritt 1.0.13 separat geprüft. Gleichheit der Quellen und Release-Binaries nicht behauptet."
         }
       ],
       "notes": [
         "Ordnername, lokaler Appname und Store-Titel unterscheiden sich; daraus folgt noch keine Bewertung des Produkts.",
         "Mirror-backups\\mirror-paused-2026-10-07.bundle ist eine Sicherung, kein zusätzliches Arbeitsprojekt.",
         "mirror-googleplay-formular ist ein ergänzender Repository-Fund und nicht als App-Quellcode eingeordnet.",
-        "Qualität, Optik, UX, Store-Auftritt und Wirtschaftlichkeit wurden noch nicht analysiert.",
         "Ziel des Nutzers: aus ungefähr 50 Downloads mehr tatsächliche und wiederkehrende Nutzer gewinnen; Verbesserungen sollen klein und anhand konkreter Befunde ausfallen.",
         "Ausdrückliches Nutzerziel vom 09.10.2026: Mirror soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen.",
         "Lokaler RelateLens-Webpilot 1.1.0+16 samt Store-/Console-Pruefung abgeschlossen; veroeffentlichter Mirror 1.0.13 und historische Previewbilder bleiben getrennt dokumentiert."
@@ -645,7 +655,7 @@
     "Das vorhandene Repository https://github.com/emfau88/dashboard und der lokale Ordner C:\\Users\\madde\\Documents\\dashboard dienen als Registerquelle, nicht als zusätzliches Produkt. Das Register data.json hat Stand 07.10.2026.",
     "Die fünf ergänzenden Spiele-Repositories sind verwandte Versionen oder Ableger; ihre Rolle als aktive Produkte wurde noch nicht geprüft. Sie werden separat geführt.",
     "Bestandsbeschreibungen und bestätigte Pfade sind von Qualitätsurteilen zu unterscheiden. Spiele, Onlineauftritte und die übrigen Apps sind bisher nicht im Betrieb bewertet.",
-    "Nur für ZeroHero ist die Pilotanalyse abgeschlossen. Sie umfasst eine unveränderte lokale Webkopie, Store-Darstellung, Code-Gegenprüfung und verfügbare Play-Console-Daten. Die veröffentlichte Android-App wurde nicht auf einem Gerät geprüft.",
+    "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten analysiert. Native Prüfgrenzen unterscheiden sich und sind je Analyse dokumentiert.",
     "Pfad- und Namensunterschiede sind Identitätsfragen, keine negativen Qualitätsurteile. Kein lokaler Checkout gefunden bedeutet nicht, dass das Produkt schlecht oder aufgegeben ist.",
     "Eine öffentliche Gesamtliste mit 65 Repositories ist als github-repositories.json gespeichert. Sie ist noch nicht vollständig klassifiziert; private Repositories und alle übrigen lokalen Ordner sind nicht systematisch erfasst.",
     "Originalprojekte, Original-Bestandsdateien und Store-Einträge wurden für dieses Dashboard nicht verändert. Fragen und nächste Schritte kennzeichnen geplante Arbeit; sie sind keine bereits geprüften Befunde."

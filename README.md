@@ -2,11 +2,13 @@
 
 [**Dashboard öffnen →**](https://emfau88.github.io/overview/)
 
+[**Kompaktübersicht: Was ist erledigt, was fehlt noch? →**](KOMPAKTUEBERSICHT.md)
+
 Der Projektkompass ist der zentrale Arbeitsstand: ursprüngliche Ziele und Nachrichten, 17 Produkte in drei Bereichen, lokale Pfade, ausführliche Analyseberichte, Kennzahlen mit ihren Aussagegrenzen und offene nächste Schritte. Er funktioniert auch offline durch Öffnen von `index.html`. GitHub Actions veröffentlicht ihn nach Änderungen an `main` automatisch auf GitHub Pages.
 
 Stand: **09.10.2026**. Grobe Bestandsaufnahme der angefragten Projekte: Spiele aus dem Dashboard, die sieben genannten Web-Repositories und vier Android-Apps. Enthalten sind kurze Beschreibungen, Repository-Zuordnungen und lokale Pfade. Die Bewertungen werden schrittweise ergänzt.
 
-**Produktchecks:** [ZeroHero](analysen/zerohero/ZeroHero-Pilotanalyse.md) und [Mirror / RelateLens](analysen/mirror/Mirror-Pilotanalyse.md) mit lokaler visueller UX-Prüfung, Store-Prüfung, Code-Gegenprüfung und Play-Console-Kennzahlen. Konkrete kleine nächste Schritte sind vorgeschlagen. Der lokale Mirror-Relaunch 1.1.0+16 ist vom veröffentlichten Mirror 1.0.13 getrennt dokumentiert. Appcode und Store wurden nicht verändert. MewTrack wird als nächstes anhand Release **13 (0.9.4)** zugeordnet und analysiert; Spiele und Onlineauftritte sind inventarisiert und später separat zu bewerten.
+**Produktchecks:** [ZeroHero](analysen/zerohero/ZeroHero-Pilotanalyse.md) und [Mirror / RelateLens](analysen/mirror/Mirror-Pilotanalyse.md) mit lokaler visueller UX-Prüfung, Store-Prüfung, Code-Gegenprüfung und Play-Console-Kennzahlen. Konkrete kleine nächste Schritte sind vorgeschlagen. Der lokale Mirror-Relaunch 1.1.0+16 ist vom veröffentlichten Mirror 1.0.13 getrennt dokumentiert. Appcode und Store wurden nicht verändert. [MewTrack](analysen/mewtrack/MewTrack-Pilotanalyse.md) ist ebenfalls abgeschlossen: native Produkt- und Layoutquellen, Store und Console wurden geprüft, Release **13 (0.9.4)** ist zugeordnet. Kamera und native UI wurden noch nicht bedient; zwei isolierte Testversuche endeten vor Testausführung an der Buildumgebung. Die fünf gezielten Android-Kernprüfungen bleiben offen; Spiele und Onlineauftritte sind inventarisiert und später separat zu bewerten.
 
 **Ziel:** zunächst Nutzer und wiederkehrende Nutzung gewinnen. ZeroHero und Mirror sollen anschließend grundsätzlich auch monetarisiert werden; ein konkretes Preismodell ist noch offen. Eine Veröffentlichung allein ist kein garantierter Algorithmus-Schub.
 
@@ -62,18 +64,18 @@ In [online-bestand.json](online-bestand.json) stehen die aus Projektquellen übe
 
 ## Android-Apps
 
-In dieser Tabelle wurden Projektidentität und Pfade festgehalten. Die Versionen stammen aus lokalen Metadaten. Für ZeroHero wurde der Veröffentlichungsstand anschließend im verlinkten Pilotbericht separat geprüft.
+In dieser Tabelle wurden Projektidentität und Pfade festgehalten. Die Versionen stammen aus lokalen Metadaten. Die Veröffentlichungsstände und die Grenzen gegenüber lokalen Quellen wurden anschließend in den drei verlinkten Pilotberichten separat geprüft.
 
 | App | Bestätigter lokaler Projektordner | Identität / Hinweis |
 |---|---|---|
 | **ZeroHero** | [ZEROHERO25](C:/Users/madde/flutter_projects/ZEROHERO25) | Flutter, `com.energycrafted.zerohero`; lokale Version `1.0.3+25`. |
 | **MewTrack – Flutter-Variante** | [mewtrackflutter](C:/Users/madde/flutter_projects/mewtrackflutter) | Flutter, `com.mewtrack.mewtrack`; lokale Version `1.0.0+1`. |
-| **MewTrack – Expo-Variante** | [MEWING](C:/Users/madde/flutter_projects/MEWING) | React Native/Expo, `com.chargegeist.mew`. |
+| **MewTrack – Expo-Variante** | [MEWING](C:/Users/madde/flutter_projects/MEWING) | React Native/Expo: Expo-Konfiguration `com.chargegeist.mew` / `1.0.0+1`, vorhandener Android-Gradle-Stand dagegen `com.mewtrack` / `1.0+1`. |
 | **MewTrack – native Android-Variante** | [MEWING 2.0/app](<C:/Users/madde/flutter_projects/MEWING 2.0/app>) | Natives Android-Projekt; Name **MewTrack: Jawline Tracker**, `com.chargegeist.mew`; Version `0.9.4`, Versioncode `13`. |
 | **Mirror** | [Mirror](C:/Users/madde/Documents/Mirror) | Flutter, `com.energycrafted.mirror`; aktueller Appname in den Projektmetadaten **RelateLens**, lokale Version `1.1.0+16`. |
 | **Between** / [between](https://github.com/emfau88/between) | [love insight scanner](<C:/Users/madde/flutter_projects/love insight scanner>) | Flutter-Projekt `love_insight_scanner`; Repositoryzuordnung per Git-Remote bestätigt. Lokale Version `1.0.0+20`. |
 
-**MewTrack umfasst drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps.** In der Play Console ist **MewTrack: Jawline Tracker** mit `com.chargegeist.mew` aufgeführt. Dazu passen die Expo- und die native Android-Variante; welcher dieser beiden Ordner der maßgebliche Arbeitsstand ist, bleibt offen. Die Flutter-Variante hat eine andere App-ID. Diese Zuordnung muss vor ihrer Produktprüfung geklärt werden.
+**MewTrack umfasst drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps.** In der Play Console ist **MewTrack: Jawline Tracker** mit `com.chargegeist.mew` aufgeführt. Die native Android-Variante unter **MEWING 2.0/app** ist die gewählte Reviewbasis: Paket, Version und Versioncode passen zu Produktionsrelease **13 (0.9.4)** und dem installierten Play-Paket. Identische Quellen zum veröffentlichten Binary sind damit noch nicht bewiesen. Expo enthält widersprüchliche Paketmetadaten, Flutter eine andere App-ID; beide sind separate lokale Varianten.
 
 [Mirror-backups](C:/Users/madde/Documents/Mirror-backups) enthält die Sicherung `mirror-paused-2026-10-07.bundle`, kein separates Arbeitsprojekt. Das öffentliche Repository [mirror-googleplay-formular](https://github.com/emfau88/mirror-googleplay-formular) wurde als zusätzlicher Fund vermerkt; es wurde nicht als App-Quellcode eingeordnet.
 
@@ -81,17 +83,17 @@ In dieser Tabelle wurden Projektidentität und Pfade festgehalten. Die Versionen
 
 Die vorhandenen Ziele reichen für den Einstieg: Bei Android-Apps mehr Downloads und wiederkehrende Nutzer; bei Spielen eine ehrliche Qualitätsprüfung; beim Onlineauftritt die Entscheidung für eine geeignete zentrale Website. Eine große vorgeschaltete Zielklärung ist dafür nicht nötig.
 
-1. **Ein Produkt als Pilot prüfen:** tatsächliche Bedienung und Optik, Nutzen, Store-Auftritt und verfügbare Nutzungsdaten zusammen betrachten. Für ZeroHero abgeschlossen; Grenzen des Webtests sind dokumentiert.
+1. **Ein Produkt als Pilot prüfen:** tatsächliche Bedienung und Optik, Nutzen, Store-Auftritt und verfügbare Nutzungsdaten zusammen betrachten. Für ZeroHero, Mirror und MewTrack im dokumentierten Umfang abgeschlossen; native Prüfgrenzen bleiben sichtbar.
 2. **Wenige Maßnahmen priorisieren:** belegte Probleme, Chancen und offene Fragen unterscheiden. Ein kleiner sinnvoller Updateumfang folgt aus den Befunden; Umsetzung ist ein eigener Schritt.
-3. **Weitere Apps einzeln prüfen:** MewTrack nach Klärung des maßgeblichen Ordners, anschließend Mirror. Dasselbe kompakte Raster verwenden, jeweils mit ehrlicher Einschätzung und wenigen konkreten Vorschlägen.
+3. **Android-Piloten vertiefen:** gezielte native Gegenprüfungen und wenige kleine Verbesserungs- und Nutzerversuche aus den drei Analysen auswählen. Between ist bisher nur inventarisiert.
 4. **Browsergames spielen und bewerten:** Einstieg, Verständlichkeit, Spielgefühl, Optik, technische Zuverlässigkeit und Wiederholungsreiz untersuchen; danach Aufwand und Chancen vergleichen.
 5. **Onlineauftritte vergleichen:** vorhandene Entwürfe tatsächlich ansehen und daraus eine Empfehlung für die zentrale Landingpage ableiten. Die Rolle von Webverkauf, Games und Apps erst anhand dieses Vergleichs festlegen.
 
-Die nächsten Bereiche sind noch nicht analysiert. Es wurden keine Verbesserungen veröffentlicht. Fehlende Daten und unbestätigte Nutzerwirkungen werden ausdrücklich als offen behandelt.
+Spiele und Onlineauftritte sind noch nicht qualitativ analysiert. Es wurden keine Verbesserungen veröffentlicht. Fehlende Daten und unbestätigte Nutzerwirkungen werden ausdrücklich als offen behandelt.
 
 ## Quellen und Umfang
 
-Die ursprünglichen Bestandsbeschreibungen beruhen auf README-Dateien und Startseitentexten. Repository-/Ordnerzuordnungen beruhen auf lokalen Git-Remotes beziehungsweise öffentlichen GitHub-Metadaten. Ergänzend wurde ZeroHero wie oben verlinkt untersucht. Spiele und übrige Produkte wurden noch nicht im Betrieb geprüft; Originalprojekte und Store-Einträge wurden nicht verändert.
+Die ursprünglichen Bestandsbeschreibungen beruhen auf README-Dateien und Startseitentexten. Repository-/Ordnerzuordnungen beruhen auf lokalen Git-Remotes beziehungsweise öffentlichen GitHub-Metadaten. Ergänzend wurden ZeroHero, Mirror und MewTrack wie oben verlinkt untersucht. Spiele, Onlineauftritte und Between wurden noch nicht im Betrieb geprüft; Originalprojekte und Store-Einträge wurden nicht verändert.
 
 - [spiele-bestand.json](spiele-bestand.json): sechs Dashboard-Spiele und fünf ergänzende Repositories mit Quellnachweisen.
 - [online-bestand.json](online-bestand.json): sieben Web-Repositories und verwandte lokale Entwürfe.

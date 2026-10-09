@@ -20,6 +20,7 @@ Dieses Repository ist der zentrale Projektkompass des Nutzers. Es bewahrt seinen
 - Tests passend zum Befund ausführen; ohne Ausführung keine bestandenen Tests behaupten. Grenzen eines Webtests gegenüber nativem Android sowie ungetestete Mitternachts- oder Pausenfälle ausdrücklich dokumentieren.
 - Neue Berichte unter `analysen/<produkt>/` ablegen und in `dashboard/results.json` mit ausführlichen Befunden, Stärken, Einschränkungen, Quellen, offenen Fragen und wenigen priorisierten Maßnahmen aufnehmen.
 - `dashboard/projects.json` mit tatsächlichem Status und nächstem Schritt pflegen. Neue Entscheidungen und Auftragspräzisierungen in `dashboard/context.json` fortschreiben. Originalnachrichten und frühere Quellberichte erhalten; keine Erkenntnisse nur in einer Chatantwort belassen.
+- `KOMPAKTUEBERSICHT.md` und die kompakte Dashboard-Startseite als leicht verständlichen Überblick aktuell halten: erledigte Analysen, aktueller nächster Schritt, offene große Bereiche und kurze Historie. Abgeschlossene Analyse niemals mit umgesetzten Fehlerbehebungen verwechseln. Der Nutzer bevorzugt ein ruhiges, gedämpftes warmes Design und einen neutralen Anthrazit-Dunkelmodus ohne grüne Akzente mit Schalter; reines helles Cremeweiß empfand er als blendend. Offene Schritte nach Produkt bündeln und Projektnamen samt kleinen echten Icons beziehungsweise Monogrammen sichtbar zuordnen. Entscheidungen mit expliziten projectIds, area oder scopeLabel versehen, statt ihre Zuordnung aus Titeln zu erraten.
 
 ## Dashboard bauen und prüfen
 

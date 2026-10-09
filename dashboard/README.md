@@ -2,6 +2,16 @@
 
 Das Dashboard verbindet die ursprünglichen Anliegen, den Projektbestand, ausführliche Ergebnisse, offene Fragen und nächste Schritte. Es ist die gemeinsame Arbeitsgrundlage für Android-Apps, Browsergames und Onlineauftritte. Die Originalberichte bleiben erhalten und sind zusätzlich als vollständiger Text in der Dashboard-Datei eingebettet.
 
+Die Startansicht ist eine **Kompaktübersicht**: „Erledigt“, „Als Nächstes“ und „Noch offen“, automatische Zähler für Bestand und abgeschlossene Analysen sowie kurze Produktstände nach Bereich. Der dokumentierte Verlauf zeigt die zuletzt festgehaltenen Schritte und lässt sich vollständig aufklappen. Abschlusszahlen beruhen auf dem Analyse- beziehungsweise Verlaufsstatus; vorgeschlagene Maßnahmen werden dadurch nicht als umgesetzt gezählt. Die ausführlichen Befunde, Kennzahlen, Quellen und Originalnachrichten bleiben in den übrigen Ansichten vollständig erhalten. [KOMPAKTUEBERSICHT.md](../KOMPAKTUEBERSICHT.md) ergänzt den kurzen Stand als Repository-Dokument.
+
+Die Darstellung verwendet gedämpfte warme Grautöne, zurückhaltendes Salbeigrün und einen umschaltbaren neutralen Anthrazitmodus ohne grüne Flächen. Die Moduswahl wird lokal im Browser gespeichert; Produktbilder und ausgeschriebene Namen helfen bei der Zuordnung. Es gibt keine externen Schriften, Bibliotheken oder Laufzeitabrufe.
+
+**Offene Schritte** sind zuerst nach Bereich und anschließend nach Produkt gruppiert. So stehen die Schritte einer App zusammen, statt zwischen anderen Apps verteilt zu erscheinen. Bereichsweite Aufgaben tragen eine eigene Kennzeichnung. Sprunglinks führen direkt zu den Produkten, zu den Bereichen und zum Abschnitt mit Entscheidungen; direkte Links wie `#pending/zerohero` oder `#pending/decisions` bleiben teilbar. Diese Gruppierung legt keine neue Priorität fest.
+
+**Entscheidungen und Vorschläge** werden nach ihrem Geltungsbereich zusammengefasst und zeigen an jedem Eintrag Produktname, vorhandenes Produktbild beziehungsweise den allgemeinen Bereich sowie den unveränderten Status. Die Zuordnung kommt aus expliziten `projectId`-/`projectIds`-, `area`- oder `scopeLabel`-Metadaten und wird nicht aus Überschriften geraten. Für neue Einträge diese Metadaten pflegen. Die ausführlichen Texte bleiben unverändert erhalten.
+
+Die **Ergebnis-Auswahl** zeigt die analysierten Produkte als Links mit Bild und Namen. Beim Wechsel bleibt der gewählte Teilbereich (Bewertung, Kennzahlen, Maßnahmen oder Prüfumfang) erhalten. Kleine Produktkennzeichnungen ergänzen außerdem den Erledigt-Überblick, konkrete nächste Produkte, Befund- und Maßnahmenkacheln, den Verlauf bei expliziter Zuordnung und den Kopf zugeordneter Analyseberichte im Dokumentenleser. Dokumentzuordnungen stammen aus den `documents`-Referenzen der Analysen, nicht aus Dateinamen.
+
 Nach dem Build lässt sich `index.html` im Repository-Hauptordner **direkt per Doppelklick** öffnen. Daten, Oberfläche und vorhandene Produktbilder liegen in dieser einzelnen Datei; ein lokaler Server, externe Bibliotheken oder eine Anmeldung sind dafür nicht erforderlich. Der GitHub-Pages-Workflow veröffentlicht dieselbe Datei unter [emfau88.github.io/overview](https://emfau88.github.io/overview/), sobald Pages für GitHub Actions eingerichtet ist.
 
 ## Welche Dateien den Arbeitsstand tragen
@@ -43,3 +53,7 @@ Dieser Kompass ist **manuell gepflegtes Arbeitsgedächtnis**, keine Liveüberwac
 GitHub Actions prüft JavaScript, baut das Dashboard, prüft die erzeugte Datei und veröffentlicht ausschließlich `_site/index.html`. Darin sind die eingebundenen Texte enthalten. Deshalb müssen Berichte und Daten vor einem öffentlichen Push auf tatsächlich beabsichtigte öffentliche Inhalte geprüft werden. Appquellen, Buildprodukte, Signaturen, Umgebungsdateien und Diagnose-Logs gehören nicht in dieses Repository.
 
 Ein späterer Schritt kann zusätzliche Produkte prüfen oder einen vorhandenen Befund umsetzen. Das Dashboard selbst erteilt dafür keine neue Veröffentlichungsfreigabe und erzeugt keine Nutzer- oder Erfolgsaussage ohne Belege.
+
+## Prüfung dieses Darstellungsstands
+
+Am 09.10.2026 wurden die gedämpfte warme und die neutrale Anthrazitdarstellung im Browser geprüft, einschließlich schmaler Ansicht um 390 Pixel, gespeicherter Moduswahl nach Neuladen, Produkt-Sprungziel und Analysewechsel mit erhaltenem Kennzahlen-Teilbereich. Alle 15 offenen Schritte und 9 Entscheidungen waren vorhanden; die Seitenbreite lief nicht über den sichtbaren Bereich hinaus. Originalicons bleiben als Produktmerkmale erhalten. Die drei abgeschlossenen Analysen enthalten zusammen 34 Befunde, 60 Kennzahlen und 13 vorgeschlagene Maßnahmen; ihre jeweiligen Prüfgrenzen bleiben maßgeblich.

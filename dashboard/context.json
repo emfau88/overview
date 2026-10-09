@@ -100,7 +100,7 @@
         "Die ungefähr 50 Downloads je Haupt-App sind Selbstauskunft des Nutzers, keine überprüfte exakte KPI.",
         "MewTrack hat drei lokale Implementierungen, nicht drei bestätigte aktive Store-Apps. Die maßgebliche Variante ist vor ihrer Produktprüfung zu klären.",
         "Die Hoffnung auf einen Google-Algorithmusimpuls allein durch ein Update ist nicht belegt; Änderungen sollen einen nachvollziehbaren Nutzen für Nutzer haben.",
-        "Ein erster ZeroHero-Pilot ist autorisiert und abgeschlossen. Die übrigen Apps sind bisher nur inventarisiert.",
+        "ZeroHero, Mirror und MewTrack wurden als begrenzte Piloten analysiert. Between bleibt vorerst inventarisiert. Native Testgrenzen stehen in den jeweiligen Berichten.",
         "Der ZeroHero-Pilot umfasst eine lokale Webkopie, Store-Prüfung, Code-Gegenprüfung und zugängliche Play-Console-Daten. Er ersetzt keinen Gerätetest der veröffentlichten Android-App.",
         "Aus einer Analyse folgt noch keine Freigabe zur Veröffentlichung oder zu Store-Änderungen; solche Umsetzungen sind weitere Schritte.",
         "Die spätere Monetarisierung von ZeroHero und Mirror ist ein ausdrückliches Nutzerziel. Nutzergewinnung kommt zuerst; Preismodell, Kaufumfang und konkrete Zahlungsintegration sind noch nicht festgelegt."
@@ -118,13 +118,14 @@
     "Wenige konkrete Maßnahmen mit erkennbarem Nutzen priorisieren; keinen umfassenden Neubau allein aus dem Wunsch nach mehr Downloads ableiten.",
     "Vorhandene Entwürfe und Produktstärken weiterverwenden, wenn sie sich bei der Prüfung bewähren.",
     "Das Dashboard hält Bestand, ausführliche Ergebnisse, Quellen, Grenzen, offene Fragen und nächste Schritte zusammen; Detailberichte bleiben verlinkte Arbeitsgrundlagen.",
-    "Aktuellen Pruefstatus sichtbar halten: ZeroHero und Mirror sind als Piloten untersucht. MewTrack folgt danach, Spiele und Onlineauftritte sind bisher inventarisiert.",
+    "Aktuellen Prüfstatus sichtbar halten: ZeroHero, Mirror und MewTrack sind als Piloten untersucht. Spiele und Onlineauftritte sind bisher inventarisiert.",
     "Neue Entscheidungen, Analysen und Umsetzungen im Dashboard ergänzen, damit spätere Arbeit an den dokumentierten Stand anknüpft.",
     "Das Repository https://github.com/emfau88/overview als zentralen Sammelpunkt verwenden und Dashboard, Inventar, Kontext und ausführliche Ergebnisse so verknüpfen, dass die Informationen zuverlässig auffindbar bleiben.",
     "Echte Produkticons sparsam zur Orientierung einsetzen, soweit verfügbar; klare Struktur und verständliche Navigation haben Vorrang. Das vorhandene Spiele-Dashboard kann als Gestaltungsreferenz dienen.",
     "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden. Zuerst müssen sie tatsächliche Nutzer gewinnen; Monetarisierung ist das langfristige Ziel, kein bereits umgesetztes oder wirtschaftlich validiertes System.",
     "Die aktuell beauftragte Reihenfolge einhalten: Dashboard und Mirror-Ergebnisse vollständig festhalten und committen/pushen, danach MewTrack als nächstes prüfen und den ergänzten Stand erneut committen/pushen.",
-    "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben."
+    "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben.",
+    "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen: erledigte Analysen, aktueller nächster Schritt und noch offene große Bereiche. Die ausführlichen Informationen bleiben erhalten. Ruhiges, gedämpftes warmes Design mit neutralem Anthrazit-Dunkelmodus ohne grüne Akzente und einem Schalter bevorzugt; kleine Produkticons und eindeutige Namen helfen beim Erfassen."
   ],
   "chronology": [
     {
@@ -146,14 +147,20 @@
       "order": 3,
       "title": "Fortsetzung und ZeroHero-Pilot mit Play-Console-Daten",
       "status": "completed",
-      "detail": "Nach der Bitte, die Arbeit durchzuführen und einen unterbrochenen Auftrag fortzusetzen, wurde ZeroHero als erster Produktcheck untersucht. Der Nutzer erlaubte ausdrücklich, bei Interesse die angemeldete Play Console für ZeroHero-Kennzahlen anzusehen, und stellte den Zeitraum auf die letzten sechs Monate. Daraus folgt keine pauschale Aussage, dass alle Apps, Spiele oder Onlineauftritte bereits analysiert sind."
+      "detail": "Nach der Bitte, die Arbeit durchzuführen und einen unterbrochenen Auftrag fortzusetzen, wurde ZeroHero als erster Produktcheck untersucht. Der Nutzer erlaubte ausdrücklich, bei Interesse die angemeldete Play Console für ZeroHero-Kennzahlen anzusehen, und stellte den Zeitraum auf die letzten sechs Monate. Daraus folgt keine pauschale Aussage, dass alle Apps, Spiele oder Onlineauftritte bereits analysiert sind.",
+      "projectIds": [
+        "zerohero"
+      ]
     },
     {
       "id": "pilot-results",
       "order": 4,
       "title": "ZeroHero-Ergebnisse dokumentiert",
       "status": "completed",
-      "detail": "Die Pilotanalyse und das KPI-Protokoll halten Stärken, reproduzierte Bedienfehler, Quellcode-Befunde, Store-Eindruck, Kennzahlen und einen begrenzten empfohlenen Updateumfang fest. Lokaler Webtest und veröffentlichte Android-App sind ausdrücklich getrennt; Appcode und Store wurden nicht verändert. Die unterschiedlichen Datenzeiträume und Kennzahltypen sind dokumentiert."
+      "detail": "Die Pilotanalyse und das KPI-Protokoll halten Stärken, reproduzierte Bedienfehler, Quellcode-Befunde, Store-Eindruck, Kennzahlen und einen begrenzten empfohlenen Updateumfang fest. Lokaler Webtest und veröffentlichte Android-App sind ausdrücklich getrennt; Appcode und Store wurden nicht verändert. Die unterschiedlichen Datenzeiträume und Kennzahltypen sind dokumentiert.",
+      "projectIds": [
+        "zerohero"
+      ]
     },
     {
       "id": "dashboard-request",
@@ -174,28 +181,70 @@
       "order": 9,
       "title": "Weitere Einzelprüfungen und Entscheidungen",
       "status": "pending",
-      "detail": "Nach Abschluss des aktuellen Dashboard- und Mirror-Auftrags und dem ersten Commit/Push soll MewTrack als nächstes geprüft werden. Der Nutzer nennt Play-Console-Release 13 (0.9.4) als Zuordnungshinweis. Nach dieser Analyse folgt erneut Commit/Push. Individuelle Browsergame-Analysen und der Vergleich der vorhandenen Onlineauftritte bleiben weitere offene Arbeit."
+      "detail": "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten dokumentiert. Umsetzungen, native Gegenprüfungen, einzelne Browsergame-Analysen und Vergleich der vorhandenen Onlineauftritte bleiben offen. Die nächste Auswahl wird aus den dokumentierten Vorschlägen getroffen."
     },
     {
       "id": "mirror-preview-screenshots",
       "order": 7,
       "title": "Historische Mirror-Previewbilder dokumentieren",
       "status": "documented",
-      "detail": "Sechs vorhandene lokale UI-Previewbilder vom 07.10.2026 werden als zusätzliche visuelle Referenz im Dashboard aufgenommen. Die Datierung und Grenze gegenüber heutigem Laufzeittest sowie veröffentlichtem Android-Produkt bleiben ausdrücklich sichtbar."
+      "detail": "Sechs vorhandene lokale UI-Previewbilder vom 07.10.2026 werden als zusätzliche visuelle Referenz im Dashboard aufgenommen. Die Datierung und Grenze gegenüber heutigem Laufzeittest sowie veröffentlichtem Android-Produkt bleiben ausdrücklich sichtbar.",
+      "projectIds": [
+        "mirror"
+      ]
     },
     {
       "id": "monetization-and-next-review",
       "order": 8,
       "title": "Spätere Monetarisierung und Push-/Prüfreihenfolge festgelegt",
-      "status": "in_progress",
-      "detail": "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden, sobald sie Nutzer gewinnen. Zuerst aktuellen Dashboard- und Mirror-Stand committen/pushen, anschließend MewTrack analysieren, danach erneut committen/pushen. Nutzerhinweis zur Identifikation: Play-Console-Release 13 (0.9.4). Noch keine Preisentscheidung und keine konkrete Monetarisierungsumsetzung."
+      "status": "documented",
+      "detail": "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden, sobald sie Nutzer gewinnen. Zuerst aktuellen Dashboard- und Mirror-Stand committen/pushen, anschließend MewTrack analysieren, danach erneut committen/pushen. Nutzerhinweis zur Identifikation: Play-Console-Release 13 (0.9.4). Noch keine Preisentscheidung und keine konkrete Monetarisierungsumsetzung.",
+      "projectIds": [
+        "zerohero",
+        "mirror",
+        "mewtrack"
+      ]
     },
     {
       "id": "mirror-pilot-results",
       "order": 10,
       "title": "Mirror-Pilot abgeschlossen",
       "status": "completed",
-      "detail": "Lokaler RelateLens-Webtest inklusive Scan, Archiv, Tarot, Tabs, Settings und Persistenz; Code, oeffentlicher Store und private Console-KPIs dokumentiert. Zwei Probleme reproduziert, weitere Grenzen kenntlich gemacht. Keine App- oder Storeaenderung."
+      "detail": "Lokaler RelateLens-Webtest inklusive Scan, Archiv, Tarot, Tabs, Settings und Persistenz; Code, öffentlicher Store und private Console-KPIs dokumentiert. Zwei Probleme reproduziert, weitere Grenzen kenntlich gemacht. Keine App- oder Storeänderung.",
+      "projectIds": [
+        "mirror"
+      ]
+    },
+    {
+      "id": "dashboard-first-push",
+      "order": 11,
+      "title": "Dashboard veröffentlicht und erster Push abgeschlossen",
+      "status": "completed",
+      "detail": "Commit f304de0466c8c72dd5b11236af40481a52460c22 wurde in emfau88/overview gepusht. GitHub Actions run37977118003 (Build und Deploy) erfolgreich. Dashboard unter https://emfau88.github.io/overview/ erreichbar; README enthält direkten Link. Anschließend MewTrack-Analyse begonnen."
+    },
+    {
+      "id": "compact-overview-design",
+      "order": 12,
+      "title": "Kompaktübersicht und kurze Historie ergänzt",
+      "status": "completed",
+      "detail": "Zusätzlicher schneller Überblick über erledigte Analysen, fehlende Arbeit und kurze Historie ergänzt. Ausführliche Berichte bleiben erhalten. Die zunächst gewünschte cremeweiße Gestaltung wird nach Nutzerfeedback gedämpfter und um einen Dunkelmodus ergänzt."
+    },
+    {
+      "id": "mewtrack-pilot-results",
+      "order": 13,
+      "title": "MewTrack-Pilot abgeschlossen",
+      "status": "completed",
+      "detail": "Release13 (0.9.4) in nativer Quelle, Console und installiertem Play-Paket zugeordnet. Produkt-/Layoutquellen, Store und Console bewertet; Kamera und UI nicht nativ bedient. Begrenzte Verbesserungen und Nutzerversuch vorgeschlagen, keine App-/Storeänderung.",
+      "projectIds": [
+        "mewtrack"
+      ]
+    },
+    {
+      "id": "structure-and-theme-refinement",
+      "order": 14,
+      "title": "Projektzuordnung und augenfreundliche Darstellung präzisiert",
+      "status": "completed",
+      "detail": "Offene Schritte nach Produkt gebündelt, Entscheidungen mit explizitem Geltungsbereich und kleinen Produkticons versehen. Gedämpften warmen Modus und neutralen Anthrazit-Dunkelmodus mit gespeichertem Schalter ergänzt; sämtliche Analyseinhalte und offenen Punkte bleiben erhalten. Im Browser auf Desktop und schmaler Ansicht geprüft: 15 offene Schritte und 9 Entscheidungen erhalten, Projektsprünge und Analysewechsel funktionieren, Moduswahl bleibt nach Neuladen erhalten."
     }
   ],
   "originalMessages": [
@@ -233,6 +282,31 @@
       "id": "monetization-and-next-review",
       "label": "Monetarisierungsziel für ZeroHero und Mirror sowie nächste Arbeitsreihenfolge",
       "text": "bitte auch noch vermerken dass zerohero und mirror grundsätzich auch noch monetarisiert werden sollen (WENN sie denn irgendwann endlich erstmal user bekommen). bitte gerne mal den aktuellen stand comitten und auf github pushen und wenn die fertig bist mit dem aktuellen auftrag danach mewtrack als nächstes angehen (da steht bei gooleplay console release 13 (0.9.4) falls das die identifikation erleichtert). danach dann wieder comitte und pushen"
+    },
+    {
+      "id": "screenshots-request",
+      "label": "Bilder bei geringem Zusatzaufwand",
+      "text": "gerne wenn sinnvoll auch jeweils screenshots mit ins repo (solange das kein riesen aufwand wird, nur wenn du vielleicht sowieso gerade dabei bist), kann vielleicht sinn machen"
+    },
+    {
+      "id": "pages-and-mirror-request",
+      "label": "Pages-Link und Mirror-Analyse",
+      "text": "ich habe gerade github actions dort aktiviert, wäre gut wenn du in der github readme einen direkten link einfügst um das dashboard dann zu öffnen zu können (dauert vielleicht noch kurz). gerne kannst du solange noch die mirror app ebenso wie zerohero analysieren"
+    },
+    {
+      "id": "compact-overview-request",
+      "label": "Zusätzliche Kompaktübersicht und ruhigeres Design",
+      "text": "Es wäre auch gut wenn du eine art zusätzliche Kompaktübersicht in das repo einbaust da es sehr viele lange ausführliche Infos sind (das ist gut und gewünscht) aber will quasi eine Übersicht was dieser Punkte wir erledigt haben, welche Analysen bereits vollzogen und abgeschlossen sind usw, ähnlich der history vom dashboard-repo , dass wir einen Überblick behalten was erledigt ist und was noch fehlt. Gern das design etwas weniger verspielt machen und vielleicht eher cremeweiß statt dem scifi blau. Mir geht es um einen zusätzlichen leicht verständlichen Überblick, da es extrem viele Infos und offene Punkte für mich sind bei dem ganzen Vorhaben, aber bisher machst du das echt gut"
+    },
+    {
+      "id": "structure-and-theme-refinement",
+      "label": "Klarere Projektzuordnung, gedämpfte Farben und Dunkelmodus",
+      "text": "prüfe bitte auch generell den aufbau dieser overview-seite, ob gerade die rubrik \"offene schritte\" sinnvoll aufgebaut ist (z.b. kommen kacheln von zerohero, dann wieder mirror, dann wieder zerohero usw) oder weiter unten in der rubrik kommt \"festgehaltene entscheidungen und vorschläge\" und da steht teilweise gar nicht gleich klar ersichtlich, um welches projekt genau es geht usw. das neue creme-design ist zu hell und zu blendend, bitte doch etwas dunkler und für augen angenehmer gestalten, oder einen darkmode-toggle einbauen. wenn es geht überall wo infos zum jeweiligen projekt kommen (z.b. eine kachel über zerohero = kleines zerohero-icon) dass da auch visuell das entsprechende kleine icon zu sehen ist, mir hilft das beim schneller erfassen. gerne auch vorschläge für weitere logik/darstellungs-optimierung ohne die echten inhalte zu verändern"
+    },
+    {
+      "id": "neutral-dark-theme",
+      "label": "Dunkelmodus in Anthrazit statt Grün",
+      "text": "du kannst den darkmode von mir aus auch anthrazit oder schwarz machen, das grün mag ich nicht."
     }
   ]
 }

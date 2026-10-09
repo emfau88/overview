@@ -911,6 +911,528 @@
         "analysen/mirror/TEST-UMGEBUNG.md",
         "analysen/mirror/runtime/README.md"
       ]
+    },
+    {
+      "id": "mewtrack",
+      "projectId": "mewtrack",
+      "title": "MewTrack – Pilotanalyse",
+      "status": "reviewed",
+      "summary": "MewTrack hat einen klaren kleinen Kern: geführte Front-/Profilfotos, private Sessions und Zeitvergleich. Native Quelle, Console und installierte Play-App passen zu com.chargegeist.mew, 0.9.4 / Code 13; identische Binärquelle und native Bedienqualität sind noch nicht bewiesen. Nur 18 Store-Besucher mit 11 Installationsklicks in 08.09.–05.10.2026 sprechen zunächst für geringe Reichweite; die kleine gute Klickzahl trägt kein pauschales Urteil über schlechte Storegestaltung. Quellenprüfung zeigt konkrete Risiken bei Billing-Fehlerabschluss, getrennten Freischaltungszuständen, Tageswechsel, Compare-Vorauswahl und Fotohoheit. Storebilder versprechen Werkzeuge, die diese lokale Quelle nicht anbietet. Kleinere Lesbarkeits- und Einstiegskorrekturen sind vorgeschlagen. Erst fünf native Gegenprüfungen und wenige passende Tester, dann ein begrenztes Update und gezielte Verbreitung; kein Trainings-/Gamification-Neubau und kein SDK-Upgrade auf Verdacht. Appcode, Store und Releases unverändert.",
+      "scope": {
+        "checked": [
+          "Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
+          "Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
+          "Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
+          "Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
+          "Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
+          "Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
+          "Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
+          "ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
+          "Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
+          "Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert."
+        ],
+        "notChecked": [
+          "Keine native Appbedienung, kein Kamera-, Capture-, Compare-, Kauf-, Restore-, Lösch-, Reinstall- oder Mitternachtsversuch. Codebefunde werden nicht als reproduzierte Play-Fehler ausgegeben.",
+          "Passende Quellen-, Store- und installierte Paketmetadaten beweisen keine identische Quell-/Binärdatei; kein bestätigter Commitstand des maßgeblichen Ordners.",
+          "Beide isolierten Offline-Versuche erreichten keine Testaufgaben/JUnit-Ergebnisse: erster Abbruch an Sandbox-Daemon-Verbindung, zweiter nach erfolgreicher Verbindung bei AndroidLocationsBuildService / AndroidDirectoryCreator in der Plugin-Konfiguration. Keine App-Kompilierung oder bestandenen Tests daraus ableitbar; kein nachgewiesener Appimplementierungsfehler. Keine instrumentierten Android-Tests ausgeführt.",
+          "Kein vollständiger Netzwerk-/Datenschutz-/Sicherheitscheck; Internetberechtigung beweist keinen Fotoupload. Dienste-/Font-/Play-Verhalten nicht mitgeschnitten.",
+          "Storebilder 5–10 und deutsche Storefassung nicht geprüft; keine echten lokalen UI-Screenshots vorhanden. Kein Webnachbau als Android-Test verwendet.",
+          "Keine Nutzerbefragung, gemessene Aufnahme-Abbruchursache, Retentionskohorte oder Zahlungsbereitschaft. Wirkung vorgeschlagener Maßnahmen auf Downloads ungemessen.",
+          "API-Warnung keinem aktuellen betroffenen Track/Artefakt sicher zugeordnet; Zahlungskonto-Ursache, private Zahlungsdetails und Kaufwirkung ungeprüft."
+        ]
+      },
+      "strengths": [
+        {
+          "title": "Klarer kleiner Nutzen",
+          "detail": "Private wiederholbare Front-/Profilfotos, Sessions nach Datum und Zeitvergleich sind ein nachvollziehbarer Produktkern ohne Konto im aktiven Ablauf. Ein großer Featureausbau ist dafür nicht erforderlich."
+        },
+        {
+          "title": "Sinnvolle Schutzmaßnahmen für Foto-Sessions",
+          "detail": "Feste Slots, gezielte Wiederholung, Ablehnung unvollständiger Sets und gemeinsamer Datenbankabschluss sind vorhanden. Dies ist eine gute technische Basis, noch kein bestandener Kameratest."
+        },
+        {
+          "title": "Zusammenhängender Auftritt mit begrenzten Versprechen",
+          "detail": "Die ersten vier Storebilder wirken schwarz-grün konsistent, Hauptüberschriften sind lesbar. Die Beschreibung grenzt Diagnose/Behandlung und körperliche Veränderung ausdrücklich aus; kein pauschales Heilversprechen festgestellt."
+        },
+        {
+          "title": "Lokaler Fotofokus und brauchbare Vergleichsgrundlage",
+          "detail": "Appprivate Dateien, deaktiviertes Backup und keine eigenen Upload-/Analytics-Pfade im gescannten Code; Detail/Compare mit Vollbildzoom. Datenschutz und Gerätewechsel bleiben gezielt nachzuprüfen."
+        }
+      ],
+      "findings": [
+        {
+          "id": "mewtrack-reach",
+          "title": "Sehr wenige Store-Besucher begrenzen das aktuelle Wachstum",
+          "evidenceType": "inference",
+          "priority": "high",
+          "detail": "18 Besucher in vier Wochen sind die stärkste aktuelle Grundlage für ein Reichweitenproblem. Die vorhandenen Klickwerte tragen kein pauschales Urteil über einen schlechten Store.",
+          "evidence": "08.09.–05.10.2026: 18 Besucher, 11 eindeutige Installationsklicks, angezeigte 61 %. Längerer Filter tatsächlich 10.07.–05.10.2026: 104 / 49 / 47 %.",
+          "limitation": "Kleine Population, Klicks sind keine Installationen oder Erstöffnungen; keine getestete Ursache oder dauerhaft bewiesene Conversion.",
+          "recommendation": "Wenige passende freiwillige Tester und einen begrenzten Verbreitungsweg wählen; Besuche, Klicks, erste vollständige Session und Wiederkehr getrennt dokumentieren.",
+          "sourceDocs": [
+            "analysen/mewtrack/play-console-kpis.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-store-tools",
+          "title": "Storebilder und tatsächlichen Vergleich/Fotofilter abgleichen",
+          "evidenceType": "mismatch",
+          "priority": "high",
+          "detail": "Storebilder zeigen zusätzliche Vergleichsschalter und Galerie-Winkelfilter, die im geprüften lokalen Quellstand nicht angeschlossen sind.",
+          "evidence": "Live-Stichprobe Bild 2 Overlay / Grid / Guide Lines, Bild 3 All / Front / Left / Right. Compare bietet Side-by-side, Pose-Tabs, Datumswahl und Vollbild; Gallery Sessionkarten. Kamera-PoseGuideOverlay erfüllt kein Vergleichs-Overlay.",
+          "limitation": "Quelle und Play-Release besitzen passende Paket-/Versionsdaten, aber ihre identische Binärquelle ist nicht bewiesen. Kein native UI-Test und keine Behauptung absichtlich falscher Werbung.",
+          "recommendation": "Im installierten Release 13 prüfen und Storebilder mit tatsächlichen nativen Funktionen abstimmen. Neue Werkzeuge nur bei bewusst priorisiertem Bedarf bauen.",
+          "sourceDocs": [
+            "analysen/mewtrack/store-review.md",
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-compare-selection",
+          "title": "Vorausgewählte Session wird im Vergleich nicht verwendet",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Compare aus einer bestimmten Session kann einen unerwarteten Standardvergleich zeigen.",
+          "evidence": "CompareScreen akzeptiert preselectedEntryId, verwendet ihn nicht; CompareViewModel startet mit ältester/neuster Session. Detail und Navigation übergeben die ID dennoch.",
+          "limitation": "Quellenbefund, nicht auf dem Android-Gerät bedient.",
+          "recommendation": "Mit mindestens drei Test-Sessions über die mittlere Session einsteigen, beabsichtigte Vorauswahl implementieren und gegenprüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-billing-failure",
+          "title": "Billing-Reconnect hat keinen verlässlichen Fehlerabschluss",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Kauf oder Wiederherstellen kann nach einem Verbindungsfehler laut Code-Inferenz im Ladezustand bleiben.",
+          "evidence": "ensureConnected ruft die Fortsetzung nur bei erfolgreichem Setup auf. Fehler wird geloggt; zuvor gesetzte purchaseInProgress/restoreInProgress werden in diesem Pfad nicht abgeschlossen.",
+          "limitation": "Nicht im Gerät reproduziert, kein Nachweis eines gescheiterten echten Kaufs. Ein regulärer Kaufabbruch ist gesondert behandelt.",
+          "recommendation": "Verbindungsabschluss mit Erfolg oder typisiertem Fehler, klare Meldung und freigegebene Buttons prüfen; kein echter Kauf für diesen Fehlerfall nötig.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-entitlement-sync",
+          "title": "Freischaltung ist auf getrennte lokale Zustände verteilt",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Activity, Home, Paywall und Settings halten eigene EntitlementRepository-Instanzen und StateFlows; Restore/Resume kann vorhandene Oberflächen unterschiedlich aktuell halten.",
+          "evidence": "grantPro aktualisiert den eigenen Flow; kein gemeinsamer bereitgestellter Zustand oder Preferences-Listener gefunden. Mehrere BillingClients können ebenfalls Callbacks erhalten.",
+          "limitation": "Synchronisationsrisiko, keine Behauptung, dass jeder Kauf Home nie aktualisiert.",
+          "recommendation": "Eine kontrollierte Billing-Verbindung und einen gemeinsamen Entitlement-State verwenden, falls das Risiko im Test bestätigt beziehungsweise gezielt abgesichert wird. Home/Settings/Restore/Neustart prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md"
+          ]
+        },
+        {
+          "id": "mewtrack-day-change",
+          "title": "Home berechnet Tagesstatus und Guidance nur bei Erstellung",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Bei über Mitternacht bestehendem ViewModel können Tagesstatus, Tipp und erledigter Hinweis zum Vortag gehören.",
+          "evidence": "todayKey und Tagestipp einmalig in HomeViewModel; allgemeiner Wiederaufnahme-/Datumsrefresh fehlt. Speichern im Repository verwendet die aktuelle Zeit.",
+          "limitation": "Kein Laufzeitnachweis über Tageswechsel; kein Nachweis einer immer blockierten Folgetagaufnahme.",
+          "recommendation": "Datum bei Wiederaufnahme/Tageswechsel neu bestimmen und abhängige Zustände gemeinsam aktualisieren. Mit Testzeit arbeiten, private Systemuhr unverändert lassen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-free-value",
+          "title": "Drei Gratis-Sessions müssen den längerfristigen Nutzen erst beweisen",
+          "evidenceType": "inference",
+          "priority": "medium",
+          "detail": "Das Kontingent lässt den Ablauf kennenlernen, könnte aber für einen über Wochen/Monate empfohlenen Dokumentationsnutzen zu kurz sein.",
+          "evidence": "Drei aktuell gespeicherte vollständige Gratis-Sessions, höchstens eine täglich, danach Lifetime für neue Sessions. Guidance empfiehlt längere Vergleichshorizonte; Löschen senkt den Zähler bewusst.",
+          "limitation": "Keine gemessene Abbruchursache oder Zahlungsbereitschaft. Das Löschen zum Weiterbenutzen ist dokumentierte Produktentscheidung, kein Sicherheitsbefund.",
+          "recommendation": "Mit wenigen passenden Menschen testen, wann ein hilfreicher Vergleich entsteht und wie die Grenze verstanden wird. Erst danach Kontingent/Frequenz ändern; kein Abo oder Trainingsausbau auf Verdacht.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-photo-control",
+          "title": "Exportversprechen und langfristige Fotohoheit sind ungeklärt",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Onboarding nennt Export, aber der aktive Ablauf bietet keine Exportfunktion. Persönliche Langzeitfotos benötigen verständliche Speicher-/Gerätewechselinformationen.",
+          "evidence": "Fotos appprivat unter filesDir/captures, Backup deaktiviert; keine Export-/Share-Implementierung in gescannten aktiven Routen. Kauf-Restore stellt Kaufstatus statt Fotos wieder her.",
+          "limitation": "Kein tatsächlicher Datenverlust reproduziert; kein vollständiger Backup-/Gerätewechseltest.",
+          "recommendation": "Nicht vorhandenen Export nicht versprechen. Speicher-/Löschfolgen klar nennen; bei bestätigtem Bedarf kleinen ausdrücklich ausgelösten lokalen Export vorsehen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-delete-errors",
+          "title": "Löschfehler werden der Oberfläche nicht zutreffend gemeldet",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Datenbankzeilen können entfernt werden, obwohl eine Datei-Löschung fehlgeschlagen ist; Settings liefert keinen klaren Abschluss-/Fehlerstatus.",
+          "evidence": "deleteFile liefert Ergebnis; deleteEntry/deleteAll ignorieren es. Orphan-Bereinigung ist vorhanden, prüft beziehungsweise zählt ihre Löschresultate ebenfalls nicht zuverlässig.",
+          "limitation": "Code-Inferenz für einen Fehlerpfad, keine fehlgeschlagene native Löschung beobachtet. Keine privaten Daten für Tests löschen.",
+          "recommendation": "Löschresultate sammeln und wahrheitsgemäßen Erfolg/Fehler anzeigen. Mit erfundenen Testdaten einzelne und gesamte Löschung prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-readability",
+          "title": "Kleine informative Texte haben wenig Kontrast",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Dunkler grauer Hilfstext betrifft unter anderem Schritte, Daten, Speicherhinweise und leere Zustände.",
+          "evidence": "TextTertiary #5C6470 auf Background #0D0F12: ca. 3,21:1; auf SurfaceRaised #1A1D22: ca. 2,83:1, aus sRGB-Farben berechnet. bodySmall 12sp, labelSmall 11sp. TextSecondary auf Background ca. 7,52:1.",
+          "limitation": "Keine gerenderte native Lesbarkeitsprüfung oder vollständige Konformitätsprüfung; deaktivierte Controls gesondert betrachten.",
+          "recommendation": "Informative kleine Texte heller setzen und auf echtem Android bei größerer Schrift, wenig Helligkeit und Tageslicht prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-first-capture",
+          "title": "Erster Check-in und Foto-Review können direkter werden",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Home ordnet Guidance vor dem Aufnahmebutton an. Review zeigt kleine zugeschnittene Vorschauen ohne angeschlossenen Vollbildbetrachter.",
+          "evidence": "Home-Reihenfolge Today/Last Session/Guidance/CTA; scrollbare Seite. Review feste 110×160dp Crop-Thumbnails, Detail/Compare bereits Vollbild mit Zoom. Review ist nicht vertikal scrollbar.",
+          "limitation": "Kein beobachteter abgeschnittener Button, Foto oder Large-font-Fehler; UX-Einschätzung aus Layoutquelle.",
+          "recommendation": "Aufnahmeaktion direkt bei Today insbesondere im leeren Zustand prüfen. Vorhandenen Vollbildbetrachter für die Kontrolle vor dem Speichern nutzen; kleine Geräte/große Schrift testen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-privacy-price",
+          "title": "Absolute Offline- und Fallback-Preisaussagen präzisieren",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Lokale Fotoablage ist ein plausibler Kern; vollständig offline und ein fest bestätigter Preis sind zu absolut, wenn Play-/Font-Dienste benötigt werden.",
+          "evidence": "Keine eigenen Upload-/Analytics-Pfade im gescannten Appcode; Merged Release-Manifest enthält INTERNET/ACCESS_NETWORK_STATE/Billing. Google-Font-Provider und Play Billing vorhanden. Paywall-Fallback 3,99 €, Store regional 3,59 €, Liveproduktpreis kann Fallback ersetzen.",
+          "limitation": "Internetberechtigung beweist keinen Fotoupload. Kein vollständiger Netzwerkmitschnitt, keine bewiesene falsche Kaufanzeige oder Datenschutzdeklaration.",
+          "recommendation": "Fotoablage von Kauf-/Fontbezug unterscheiden. Ohne verfügbare Produktdaten keinen scheinbar bestätigten Preis anzeigen; tatsächliches Angebot prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/store-review.md"
+          ]
+        },
+        {
+          "id": "mewtrack-console-notices",
+          "title": "API- und Zahlungskontohinweise haben noch ungeklärten Bezug",
+          "evidenceType": "mismatch",
+          "priority": "medium",
+          "detail": "Eine kritische Console-Warnung ist nicht automatisch ein Verstoß des aktuellen Release. Zahlungskonto-Ursache/Kaufwirkung bleibt ungeprüft.",
+          "evidence": "Aktiver Produktionsrelease 13 und installierte Play-App bereits target36; älteres deaktiviertes Bundle 12 target35. API-Hinweis fordert 36 bis 01.11.2026. Kontoweiter Zahlungskonto-Hinweis datiert 02.10.2026.",
+          "limitation": "Kein bestätigter betroffener Track/aktueller Produktionsblocker; keine Prüfung privater Zahlungsdaten, Ursachen oder Auswirkung.",
+          "recommendation": "Betroffenen Track/Artefakt oder überholten Hinweis klären. Zahlungskontohinweis vor aktiver Kaufwerbung gesondert prüfen. Kein blindes SDK-Upgrade.",
+          "sourceDocs": [
+            "analysen/mewtrack/play-console-kpis.md",
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        }
+      ],
+      "metrics": [
+        {
+          "id": "mewtrack-impressions",
+          "label": "Geräteimpressionen",
+          "value": 6120,
+          "unit": "Impressionen",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "114 Tage, 13.06.–04.10.2026",
+          "definition": "Grow-Karte; am 09.10.2026 abgelesen.",
+          "caveat": "Kein gemeinsames Halbjahresfenster und keine Besucher-/Nutzerzahl."
+        },
+        {
+          "id": "mewtrack-acquisitions",
+          "label": "Geräteakquisitionen",
+          "value": 55,
+          "unit": "Geräteakquisitionen",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "78 Tage, 04.07.–19.09.2026",
+          "definition": "Grow-Karte für com.chargegeist.mew.",
+          "caveat": "Nicht mit Installationsklicks gleichsetzen."
+        },
+        {
+          "id": "mewtrack-first-opens",
+          "label": "Erstes Öffnen auf Geräten",
+          "value": 36,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "78 Tage, 04.07.–19.09.2026",
+          "definition": "Grow-Karte mit Erstöffnungen.",
+          "caveat": "Gleicher Kalenderzeitraum wie Akquisitionen ist keine bestätigte Kohorte; keine sichere 36/55-Aktivierungsquote."
+        },
+        {
+          "id": "mewtrack-mau",
+          "label": "Monatlich aktive Geräte",
+          "value": 12,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "Stand 22.09.2026, Nutzung der vorherigen 28 Tage",
+          "definition": "Angezeigte MAU-Gerätezahl.",
+          "caveat": "Keine gesamte Installationsbasis, keine täglich aktive Nutzerzahl."
+        },
+        {
+          "id": "mewtrack-seven-day-count",
+          "label": "Gerätebindung nach 7 Tagen",
+          "value": 3,
+          "unit": "Anzahl",
+          "selectedPeriod": "Letzte 6 Monate",
+          "availablePeriod": "Nur 6 Tage, 08.–13.06.2026",
+          "definition": "Als Anzahl dargestellte Grow-Bindungskarte.",
+          "caveat": "Keine 3 %, keine aktuelle Retentionsquote. Abdeckung liegt teilweise vor öffentlicher Erstveröffentlichung; Testhistorie ungeprüft."
+        },
+        {
+          "id": "mewtrack-store-28-visitors",
+          "label": "Store: Besucher, letzte 28 Tage",
+          "value": 18,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Live Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Nur 18 Besucher; Klick ist keine erfolgreiche Installation oder Erstöffnung. Kein bewiesener Conversion-/Qualitätseffekt."
+        },
+        {
+          "id": "mewtrack-store-28-clicks",
+          "label": "Store: eindeutige Installationsklicks, letzte 28 Tage",
+          "value": 11,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Live Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Nur 18 Besucher; Klick ist keine erfolgreiche Installation oder Erstöffnung. Kein bewiesener Conversion-/Qualitätseffekt."
+        },
+        {
+          "id": "mewtrack-store-28-rate",
+          "label": "Store: Klickrate, letzte 28 Tage",
+          "value": 61,
+          "unit": "%",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "08.09.–05.10.2026",
+          "definition": "Live Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Nur 18 Besucher; Klick ist keine erfolgreiche Installation oder Erstöffnung. Kein bewiesener Conversion-/Qualitätseffekt."
+        },
+        {
+          "id": "mewtrack-store-long-visitors",
+          "label": "Store: Besucher, längerer Filter",
+          "value": 104,
+          "unit": "Store-Besucher",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026, URL/Datumsdialog bestätigt",
+          "definition": "Längere verfügbare Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Kein vollständiges Halbjahr. Klicks sind keine erfolgreichen Installationen und keine gemeinschaftliche Kohorte mit Wachstumskarten."
+        },
+        {
+          "id": "mewtrack-store-long-clicks",
+          "label": "Store: eindeutige Installationsklicks, längerer Filter",
+          "value": 49,
+          "unit": "Installationsklicks",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026, URL/Datumsdialog bestätigt",
+          "definition": "Längere verfügbare Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Kein vollständiges Halbjahr. Klicks sind keine erfolgreichen Installationen und keine gemeinschaftliche Kohorte mit Wachstumskarten."
+        },
+        {
+          "id": "mewtrack-store-long-rate",
+          "label": "Store: Klickrate, längerer Filter",
+          "value": 47,
+          "unit": "%",
+          "selectedPeriod": "Letzte 180 Tage",
+          "availablePeriod": "Tatsächlich 10.07.–05.10.2026, URL/Datumsdialog bestätigt",
+          "definition": "Längere verfügbare Store-Performance; Rate gerundete Consoleanzeige.",
+          "caveat": "Kein vollständiges Halbjahr. Klicks sind keine erfolgreichen Installationen und keine gemeinschaftliche Kohorte mit Wachstumskarten."
+        },
+        {
+          "id": "mewtrack-short-impressions",
+          "label": "Wachstum: Impressionen, kurze Auswahl",
+          "value": 988,
+          "unit": "Impressionen",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "Abgelesen 09.10.2026; einzelne Tooltips für kurze Auswahl nicht zusätzlich geprüft",
+          "definition": "Separat sichtbare kürzere Grow-Auswahl.",
+          "caveat": "Nicht als gesichert gemeinsamer 28-Tage-Funnel darstellen; langer Kartenbezug ist genauer dokumentiert."
+        },
+        {
+          "id": "mewtrack-short-acquisitions",
+          "label": "Wachstum: Akquisitionen, kurze Auswahl",
+          "value": 7,
+          "unit": "Geräteakquisitionen",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "Abgelesen 09.10.2026; einzelne Tooltips für kurze Auswahl nicht zusätzlich geprüft",
+          "definition": "Separat sichtbare kürzere Grow-Auswahl.",
+          "caveat": "Nicht als gesichert gemeinsamer 28-Tage-Funnel darstellen; langer Kartenbezug ist genauer dokumentiert."
+        },
+        {
+          "id": "mewtrack-short-first-opens",
+          "label": "Wachstum: Erstöffnungen, kurze Auswahl",
+          "value": 6,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "Abgelesen 09.10.2026; einzelne Tooltips für kurze Auswahl nicht zusätzlich geprüft",
+          "definition": "Separat sichtbare kürzere Grow-Auswahl.",
+          "caveat": "Nicht als gesichert gemeinsamer 28-Tage-Funnel darstellen; langer Kartenbezug ist genauer dokumentiert."
+        },
+        {
+          "id": "mewtrack-short-mau",
+          "label": "Wachstum: MAU, kurze Auswahl",
+          "value": 12,
+          "unit": "Geräte",
+          "selectedPeriod": "Letzte 28 Tage",
+          "availablePeriod": "Abgelesen 09.10.2026; einzelne Tooltips für kurze Auswahl nicht zusätzlich geprüft",
+          "definition": "Separat sichtbare kürzere Grow-Auswahl.",
+          "caveat": "Nicht als gesichert gemeinsamer 28-Tage-Funnel darstellen; langer Kartenbezug ist genauer dokumentiert."
+        },
+        {
+          "id": "mewtrack-total-installations",
+          "label": "Installationen insgesamt",
+          "value": 48,
+          "unit": "kumulative Installationen",
+          "selectedPeriod": "App-Dashboard, kumulativ",
+          "availablePeriod": "Abgelesen 09.10.2026; Beginn nicht protokolliert",
+          "definition": "Kumulativer Console-Zähler.",
+          "caveat": "Kein aktueller Nutzerbestand oder derselbe Zähler wie Store-Klicks."
+        },
+        {
+          "id": "mewtrack-installed-audience",
+          "label": "Installierte Zielgruppe",
+          "value": 9,
+          "unit": "Console-Anzeigewert",
+          "selectedPeriod": "App-Liste",
+          "availablePeriod": "Abgelesen 09.10.2026",
+          "definition": "Sichtbar installierte Zielgruppe.",
+          "caveat": "Andere Definition als MAU 12, 48 kumulative Installationen oder öffentliche Downloadklasse."
+        },
+        {
+          "id": "mewtrack-public-download-class",
+          "label": "Öffentliche Downloadklasse",
+          "value": "10+",
+          "unit": "Store-Klasse",
+          "selectedPeriod": "Englischer Google-Play-Auftritt",
+          "availablePeriod": "Live abgelesen 09.10.2026",
+          "definition": "Öffentliche gerundete Klassenanzeige.",
+          "caveat": "Keine exakte Installationszahl und kein Widerspruch zum kumulativen Console-Zähler allein."
+        },
+        {
+          "id": "mewtrack-release-installs",
+          "label": "Release-Detail: Installationen/Updates",
+          "value": 7,
+          "unit": "Release-Installationen/Updates",
+          "selectedPeriod": "Aktiver Produktionsrelease 13 (0.9.4)",
+          "availablePeriod": "Release 28.08.2026, 100 % Rollout; abgelesen 09.10.2026",
+          "definition": "Release-Detailbereich zeigt 7 und 85,71 % der Installationsbasis.",
+          "caveat": "Dashboard nennt daneben 6 neueste-Release-Installationen; unterschiedliche Zähler nicht gleichsetzen."
+        },
+        {
+          "id": "mewtrack-release-dashboard-installs",
+          "label": "Dashboard: neuester Release",
+          "value": 6,
+          "unit": "Release-Installationen",
+          "selectedPeriod": "App-Dashboard",
+          "availablePeriod": "Abgelesen 09.10.2026",
+          "definition": "Separater Dashboard-Release-Zähler.",
+          "caveat": "Nicht mit dem Release-Detailwert 7 oder lebenslangen Installationen gleichsetzen."
+        },
+        {
+          "id": "mewtrack-public-purchase-price",
+          "label": "Sichtbarer In-App-Kaufbetrag",
+          "value": 3.59,
+          "unit": "EUR",
+          "selectedPeriod": "Öffentlicher Store, angezeigte Region",
+          "availablePeriod": "Live abgelesen 09.10.2026",
+          "definition": "In-App-Kaufbetrag in dieser Storeansicht.",
+          "caveat": "Kein tatsächlich ausgelöster Kauf; regionale Darstellung, lokale Fallback-Zeichenkette 3,99 € kein bewiesener Livepreis."
+        },
+        {
+          "id": "mewtrack-quality-unavailable",
+          "label": "Crash-, ANR- und Bewertungsdaten",
+          "value": null,
+          "unit": "nicht verfügbar",
+          "selectedPeriod": "App-Dashboard",
+          "availablePeriod": "Abgelesen 09.10.2026",
+          "definition": "Felder zeigten – statt Messwert.",
+          "caveat": "Kein Nachweis von null Fehlern, Fehlerfreiheit oder null Bewertungen."
+        },
+        {
+          "id": "mewtrack-money-unavailable",
+          "label": "Umsatz-, Käufer- und ARPPU-Daten",
+          "value": null,
+          "unit": "nicht verfügbar",
+          "selectedPeriod": "App-Dashboard",
+          "availablePeriod": "Abgelesen 09.10.2026",
+          "definition": "Felder zeigten – statt bestätigtem Wert.",
+          "caveat": "Keine exakte Null-Umsatz-/Null-Käufer-Aussage und kein Kaufbarkeitstest."
+        }
+      ],
+      "actions": [
+        {
+          "id": "mewtrack-action-native-check",
+          "order": 1,
+          "title": "Fünf native Gegenprüfungen mit Testdaten",
+          "detail": "Erster kompletter Check-in und Retake; Neustart/Compare/Vorauswahl/Storewerkzeuge; Tageswechsel; Billing-Verbindungsfehler/Restore/State; sichere Löschung und Exporttext prüfen. Keine private Kameraaufnahme oder reale Zahlung vorausgesetzt.",
+          "status": "proposed",
+          "validation": "Tatsächlichen Play-Release13 beziehungsweise nachvollziehbaren Testbuild zuordnen, Beobachtungen getrennt von Quelle dokumentieren. Kleine Geräte/große Schrift beachten, echte Kamera nur mit bewusst freigegebenen Testmotiven. Keine privaten Daten löschen."
+        },
+        {
+          "id": "mewtrack-action-small-update",
+          "order": 2,
+          "title": "Bestätigte Risiken in einem kleinen Update beheben",
+          "detail": "Nach Gegenprüfung Billing-Fehlerabschluss, gegebenenfalls Freischaltungssynchronisierung/Tageswechsel/Compare-Vorauswahl reparieren. Informative Texte heller und Aufnahme/Review direkter machen. Export-/Offlineaussagen präzisieren und echte Storebilder verwenden.",
+          "status": "proposed",
+          "validation": "Jede tatsächliche Änderung passend prüfen; keine vorgeschlagenen Fixes als implementiert ausgeben. Releasehinweise beschreiben echte Änderungen, kein behaupteter Algorithmusimpuls."
+        },
+        {
+          "id": "mewtrack-action-console",
+          "order": 3,
+          "title": "Console-Hinweise gezielt zuordnen",
+          "detail": "API-Hinweis einem Track/Artefakt oder überholtem Stand zuordnen; aktiver Release ist bereits target36. Zahlungskontohinweis vor aktiver Kaufwerbung gesondert prüfen.",
+          "status": "proposed",
+          "validation": "Kein SDK-Upgrade auf Verdacht, keine privaten Zahlungsdaten veröffentlichen, keine Kaufblockade allein aus Hinweisexistenz behaupten."
+        },
+        {
+          "id": "mewtrack-action-users",
+          "order": 4,
+          "title": "Wenige passende Menschen und einen Verbreitungsweg testen",
+          "detail": "Etwa fünf freiwillige Menschen mit Interesse an privaten Profilverlaufsfotos beobachten: erste vollständige Session, verständlicher Vergleich, freiwillige Wiederholung und Dreisessionsgrenze. Einen passenden begrenzten Reichweitenkanal wählen.",
+          "status": "proposed",
+          "validation": "Niemand wurde angeschrieben. Rückmeldungen und Store-Besuche/Klicks/Erstnutzung/Wiederkehr getrennt mit Zeiträumen erfassen. Erst dann über Gratisumfang oder einzelne neue Funktion entscheiden; keine Download-/Umsatzgarantie."
+        }
+      ],
+      "openQuestions": [
+        "Welche konkrete lokale Quelle erzeugte das veröffentlichte und installierte Play-Binary13?",
+        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf dem echten Android-Gerät?",
+        "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
+        "Entsteht der Vergleich aus einer ausgewählten mittleren Session mit der erwarteten Vorauswahl?",
+        "Wie verhalten sich Home-Tagesstatus und Guidance bei Tageswechsel beziehungsweise Wiederaufnahme?",
+        "Werden Billing-Verbindungsfehler beendet und Restore/Freischaltung zwischen Home/Settings zuverlässig sichtbar?",
+        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
+        "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
+        "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
+        "Welcher Track/Artefakt verursacht den API-Hinweis, und was bedeutet der kontoweite Zahlungskontohinweis tatsächlich?"
+      ],
+      "documents": [
+        "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+        "analysen/mewtrack/MewTrack-code-review.md",
+        "analysen/mewtrack/Visual-review.md",
+        "analysen/mewtrack/store-review.md",
+        "analysen/mewtrack/play-console-kpis.md",
+        "analysen/mewtrack/Bestand-und-Zuordnung.md",
+        "analysen/mewtrack/TEST-UMGEBUNG.md"
+      ]
     }
   ],
   "decisions": [
@@ -919,63 +1441,91 @@
       "title": "Bestand und Anliegen dauerhaft zusammenhalten",
       "detail": "Ausgangspunkt sind drei Bereiche: Browser-Spiele anhand des Repos dashboard, eigene Online-Präsenz mit Landing Page und den genannten weiteren Repos sowie lokale Android-Produkte. Erst wurde grob inventarisiert; anschließend werden Produkte ehrlich und nachvollziehbar geprüft. Das Dashboard bewahrt Ausgangslage, Ziele, Produkte, Prüfstand und ausführliche Ergebnisse, damit der Faden erhalten bleibt.",
       "status": "established",
-      "source": "Nutzerauftrag: ursprüngliche Bestandsaufnahme und aktueller Dashboard-Wunsch vom 09.10.2026."
+      "source": "Nutzerauftrag: ursprüngliche Bestandsaufnahme und aktueller Dashboard-Wunsch vom 09.10.2026.",
+      "scopeLabel": "Gesamtes Vorhaben"
     },
     {
       "id": "scope-bounded-honest-reviews",
       "title": "Ehrliche Bewertungen mit überschaubarem Folgeumfang",
       "detail": "Android-Ziel ist mehr echte Nutzer und Downloads; Store und App sollen hinsichtlich Produktnutzen, Optik und UX geprüft werden. Für Browser-Spiele sind einzelne Qualitätsanalysen vorgesehen. Für den Online-Auftritt folgt Beratung zur geeigneten Landing Page und zur Rolle von Games versus Website-Verkauf. Die Arbeit soll kein Mammutprojekt werden.",
       "status": "established",
-      "source": "Nutzernachricht zur Zielklärung: mehr Downloads, ehrliche Produktbewertung, Store/App-Verbesserungen und begrenzter Umfang."
+      "source": "Nutzernachricht zur Zielklärung: mehr Downloads, ehrliche Produktbewertung, Store/App-Verbesserungen und begrenzter Umfang.",
+      "scopeLabel": "Gesamtes Vorhaben"
     },
     {
       "id": "zerohero-pilot-status",
       "title": "ZeroHero ist der erste abgeschlossene Analysepilot",
       "detail": "Die begrenzte ZeroHero-Pilotanalyse ist dokumentiert. Analyseergebnis bedeutet keinen behobenen Fehler und kein veröffentlichtes Update. Die anderen Produkte sind dadurch nicht geprüft.",
       "status": "established",
-      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+      "projectIds": [
+        "zerohero"
+      ],
+      "area": "android"
     },
     {
       "id": "zerohero-positioning-hypothesis",
       "title": "Arbeitshypothese: schneller Tracker für Alkohol und Zigaretten",
       "detail": "Den eigenen Verlauf verständlich machen, im eigenen Tempo und ohne Perfektion. Diese Positionierung ist ein Vorschlag aus der Analyse; Nachfrage, tatsächliche Wirkung und wirtschaftlicher Erfolg sind nicht belegt.",
       "status": "proposed",
-      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+      "projectIds": [
+        "zerohero"
+      ],
+      "area": "android"
     },
     {
       "id": "zerohero-small-update-first",
       "title": "Begrenztes Qualitätsupdate vor größerem Ausbau",
       "detail": "Zuerst verlässliche Erfassung, Nulltage/Pausen, klarer erster Nutzen und korrektes Privatversprechen. Klassische Gestaltung und Store-Bildgrundlage sind brauchbar. Keine neuen Quests, kein vollständiger Neustart und kein großes neues System für diesen ersten Schritt erforderlich.",
       "status": "proposed",
-      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+      "projectIds": [
+        "zerohero"
+      ],
+      "area": "android"
     },
     {
       "id": "zerohero-measure-separate-scopes",
       "title": "Daten nur mit passenden Zeiträumen und Definitionen vergleichen",
       "detail": "Sechsmonatsauswahl, tatsächliche Datenabdeckung und separate Store-/Dashboard-Filter werden getrennt dokumentiert. Klick ist nicht Installation; kumulative Installationen sind nicht aktuelle Nutzer; fehlende Messwerte sind nicht null. Keine gemeinsame Kette aus 18.400, 31 und 18 und keine Aktivierungsquote aus 18/31.",
       "status": "established",
-      "source": "analysen/zerohero/play-console-kpis.md"
+      "source": "analysen/zerohero/play-console-kpis.md",
+      "projectIds": [
+        "zerohero"
+      ],
+      "area": "android"
     },
     {
       "id": "zerohero-small-user-test",
       "title": "Kleinen Vertriebs- und Nutzerversuch vor Ausbauentscheidung erwägen",
       "detail": "Nach einem tatsächlich umgesetzten Qualitätsupdate vier Wochen über einen passenden Kanal freiwillige Tester erreichen. Direkte Rückmeldungen und Wiederkehr beobachten; größerer Ausbau oder Monetarisierung erst anhand dieses Nutzens bewerten. Ein reines Update wird nicht als garantierter Algorithmus-Trigger eingeplant.",
       "status": "proposed",
-      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md"
+      "source": "analysen/zerohero/ZeroHero-Pilotanalyse.md",
+      "projectIds": [
+        "zerohero"
+      ],
+      "area": "android"
     },
     {
       "id": "zerohero-mirror-monetization-after-users",
       "title": "ZeroHero und Mirror später monetarisieren",
       "detail": "Ausdrückliches langfristiges Nutzerziel: ZeroHero und Mirror sollen Einnahmen erzielen, wenn sie zunächst tatsächliche Nutzer gewinnen. Nutzergewinnung und wiederkehrender Nutzen stehen davor. Preismodell, Bezahlinhalte und Zahlungsintegration sind noch offen; keine Monetarisierung wurde mit diesem Vermerk eingeführt.",
       "status": "established",
-      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json"
+      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json",
+      "projectIds": [
+        "zerohero",
+        "mirror"
+      ],
+      "area": "android"
     },
     {
       "id": "push-then-mewtrack-then-push",
       "title": "Aktuellen Stand sichern, danach MewTrack prüfen und erneut sichern",
       "detail": "Der Nutzer beauftragt zuerst Commit und GitHub-Push des aktuellen Dashboard- und Mirror-Stands. Anschließend ist MewTrack die nächste Analyse; danach folgt erneut Commit und Push. Der genannte Play-Console-Release 13 (0.9.4) ist ein Zuordnungshinweis, der mit den lokalen Projektständen abzugleichen ist.",
       "status": "established",
-      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json"
+      "source": "Usernachricht monetization-and-next-review vom 09.10.2026; dashboard/context.json",
+      "scopeLabel": "Repository OVERVIEW · Sicherung und Prüfreihenfolge"
     }
   ],
   "pending": [
@@ -1018,14 +1568,6 @@
       "title": "Begrenzten nächsten Update- und Nutzerversuch konkretisieren",
       "detail": "Die fünf vorgeschlagenen Schritte in einen kleinen tatsächlichen Umfang übersetzen. Testerkanal, Aufwandgrenze, Nutzerfragen und vergleichbare Messzeiträume festlegen; derzeit keine Umsetzung oder Veröffentlichung erfolgt.",
       "kind": "strategy"
-    },
-    {
-      "id": "mewtrack-product-store-analysis",
-      "area": "android",
-      "projectId": "mewtrack",
-      "title": "MewTrack-Produkt und Store bewerten",
-      "detail": "Nach dem Commit/Push des aktuellen Dashboard- und Mirror-Stands als nächstes prüfen. Der Nutzer nennt Play-Console-Release 13 (0.9.4) als Zuordnungshinweis; zunächst maßgeblichen lokalen Stand mit Paket und Release abgleichen. Danach Produkt, Optik, UX, Store und verfügbare Daten mit Ziel mehr echte Nutzer prüfen. Drei lokale Implementierungen sind Bestand, keine drei nachgewiesenen aktiven Produkte. Anschließend Ergebnisse dokumentieren und erneut committen/pushen.",
-      "kind": "analysis"
     },
     {
       "id": "browser-games-quality-analysis",
@@ -1071,8 +1613,8 @@
       "id": "mirror-native-release-verification",
       "area": "android",
       "projectId": "mirror",
-      "title": "Mirror-Release und native Grenzen pruefen",
-      "detail": "Veroeffentlichten Mirror und lokalen RelateLens-Relaunch gezielt auf Android abgleichen; Backup, Tageswechsel und produktive Analytics-Konfiguration pruefen. Der Webpilot ersetzt dies nicht.",
+      "title": "Mirror-Release und native Grenzen prüfen",
+      "detail": "Veröffentlichten Mirror und lokalen RelateLens-Relaunch gezielt auf Android abgleichen; Backup, Tageswechsel und produktive Analytics-Konfiguration prüfen. Der Webpilot ersetzt dies nicht.",
       "kind": "verification"
     },
     {
@@ -1080,8 +1622,32 @@
       "area": "android",
       "projectId": "mirror",
       "title": "Kleinen Mirror-Nutzerversuch konkretisieren",
-      "detail": "Antworttreue, vorsichtige Interessensaussagen, stabile Wiederoeffnung und lokale Datenkontrolle zuerst verbessern; Store-Versprechen mit dem tatsaechlichen Release abstimmen. Vorschlaege sind noch nicht umgesetzt.",
+      "detail": "Antworttreue, vorsichtige Interessensaussagen, stabile Wiederöffnung und lokale Datenkontrolle zuerst verbessern; Store-Versprechen mit dem tatsächlichen Release abstimmen. Vorschläge sind noch nicht umgesetzt.",
       "kind": "strategy"
+    },
+    {
+      "id": "mewtrack-native-verification",
+      "area": "android",
+      "projectId": "mewtrack",
+      "title": "MewTrack: fünf native Kernprüfungen",
+      "detail": "Capture mit Retake/Speichern; Compare-Vorauswahl und Store-Werkzeuge; Billing-/Restore-Fehlerzustände; Tageswechsel; Fotoexport und Löschrückmeldung. Bislang Quellenbefunde und Metadatenprüfung, kein bedienter nativer UI-Test.",
+      "kind": "verification"
+    },
+    {
+      "id": "mewtrack-reach-and-user-test",
+      "area": "android",
+      "projectId": "mewtrack",
+      "title": "MewTrack: kleiner Nutzertest und gezielte Verbreitung",
+      "detail": "Nur 18 Store-Besuche in den geprüften 28 Tagen. Mit wenigen passenden Menschen Aufnahme und Vergleich prüfen, echte Screens mit Storebildern abgleichen und einen kleinen Verbreitungsversuch durchführen; Gratisumfang erst anhand der Rückmeldungen ändern.",
+      "kind": "strategy"
+    },
+    {
+      "id": "mewtrack-console-notices",
+      "area": "android",
+      "projectId": "mewtrack",
+      "title": "MewTrack: Console-Hinweise zuordnen",
+      "detail": "API-Warnung bis 01.11.2026 gezielt älterem Track oder Artefakt zuordnen: aktiver Produktionsrelease 13 hat bereits SDK36. Kontoweiten Zahlungskonto-Hinweis separat prüfen; Ursache und Wirkung noch nicht geprüft.",
+      "kind": "verification"
     }
   ]
 }

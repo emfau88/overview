@@ -17,8 +17,8 @@
   const allProjects = new Map([...projects, ...related].map((item) => [item.id, item]));
   const areaLabels = { games: 'Browsergames', apps: 'Android-Apps', web: 'Onlineauftritt' };
   const areaAlias = (area) => ({ android: 'apps', online: 'web' })[area] || area;
-  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft' };
-  const evidenceLabels = { runtime: 'Im Webtest reproduziert', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung' };
+  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft' };
+  const evidenceLabels = { runtime: 'Im Webtest reproduziert', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung', data: 'Kennzahlenbefund', hypothesis: 'Hypothese' };
   const priorityLabels = { high: 'Hohe Priorität', medium: 'Mittlere Priorität', low: 'Niedrige Priorität' };
   const filterState = { query: '', area: '', status: '' };
   const paths = new Map();
@@ -73,8 +73,25 @@
   const productIcon = (project) => {
     const icon = data.icons?.[project.id];
     return icon?.dataUrl && /^data:image\/(png|webp|jpeg|gif);base64,[a-z0-9+/=\s]+$/i.test(icon.dataUrl)
-      ? `<img class="product-icon" src="${escape(icon.dataUrl)}" alt="" title="${escape(icon.note || '')}" width="46" height="46">`
+      ? `<img class="product-icon" src="${escape(icon.dataUrl)}" alt="" aria-hidden="true" title="${escape(icon.note || '')}" width="46" height="46">`
       : `<span class="monogram" aria-hidden="true">${escape(project.name.split(/\s+/).map((part) => part[0]).slice(0, 2).join('').toUpperCase())}</span>`;
+  };
+  const productLabel = (project, href = '', passive = false) => {
+    if (!project) return '';
+    const body = `${productIcon(project)}<span>${escape(project.name)}</span>`;
+    return href ? `<a class="project-label" href="${escape(href)}" aria-label="${escape(project.name)}">${body}</a>` : passive ? `<span class="project-label">${body}</span>` : `<button type="button" class="project-label" data-project="${escape(project.id)}" aria-label="${escape(project.name)}: Produktdetails öffnen">${body}</button>`;
+  };
+  const scopedProjects = (entry) => [...new Set([...array(entry?.projectIds), ...(entry?.projectId ? [entry.projectId] : [])])].map((id) => allProjects.get(id)).filter(Boolean);
+  const scopeMark = (entry, fallbackArea = '') => {
+    const members = scopedProjects(entry);
+    if (members.length) return `<div class="scope-row">${members.map((project) => productLabel(project)).join('')}</div>`;
+    const area = areaAlias(entry?.area || fallbackArea);
+    return `<span class="scope-label">${svg(areaLabels[area] ? area : 'overview')}<span>${escape(entry?.scopeLabel || (areaLabels[area] ? 'Bereichsweit · ' + areaLabels[area] : 'Gesamtes Vorhaben'))}</span></span>`;
+  };
+  const documentProjects = (path) => {
+    const normalized = normalize(path);
+    const ids = analyses.filter((analysis) => array(analysis.documents).some((doc) => normalize(doc) === normalized)).map((analysis) => analysis.projectId);
+    return [...new Set(ids)].map((id) => allProjects.get(id)).filter(Boolean);
   };
   const sources = (items) => array(items).length ? `<div class="sources">${items.map((path) => link(String(path).split(/[\\/]/).pop(), path)).join('')}</div>` : '';
   const intro = (eyebrow, title, description) => `<div class="page-intro"><div class="eyebrow">${escape(eyebrow)}</div><h1>${escape(title)}</h1><p>${escape(description)}</p></div>`;
@@ -145,21 +162,42 @@
   }
 
   function overview() {
-    const completed = analyses.filter((analysis) => ['reviewed', 'completed'].includes(analysis.status));
-    const zerohero = analyses.find((analysis) => analysis.id === 'zerohero') || analyses[0];
-    const actions = array(zerohero?.actions);
-    const cards = Object.entries(areaLabels).map(([id, title]) => {
+    const isComplete = (analysis) => ['reviewed', 'completed'].includes(analysis?.status);
+    const completed = analyses.filter(isComplete);
+    const completedIds = new Set(completed.map((analysis) => analysis.projectId));
+    const running = projects.filter((project) => ['in_progress', 'review_in_progress', 'analysis_in_progress', 'analyzing'].includes(project.status));
+    const queued = array(results.pending).find((entry) => entry.kind === 'analysis' && entry.projectId && !completedIds.has(entry.projectId));
+    const nextProject = running[0] || (queued ? allProjects.get(queued.projectId) : null);
+    const actualChanges = analyses.flatMap((analysis) => array(analysis.actions)).filter((action) => ['completed', 'implemented'].includes(action.status));
+    const compactDoc = paths.get(normalize('KOMPAKTUEBERSICHT.md'));
+    const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse fertig' : running.includes(project) ? 'Prüfung läuft' : 'Bestand erfasst';
+    const areaCards = Object.entries(areaLabels).map(([id, title]) => {
       const members = projects.filter((project) => areaAlias(project.area) === id);
-      const area = array(context.areas).find((entry) => areaAlias(entry.id) === id);
-      return `<article class="panel"><div class="area-icon">${svg(id)}</div><h2>${escape(title)}</h2><p class="muted">${escape(area?.goal || '')}</p><div class="area-footer"><span>${members.length} Hauptprodukte</span><a href="#projects/${id}">Bestand ansehen →</a></div></article>`;
+      const reviewed = members.filter((project) => completedIds.has(project.id)).length;
+      return '<article class="panel area-summary"><div class="section-head"><h2>' + escape(title) + '</h2><span>' + members.length + ' Produkte · ' + reviewed + ' geprüft</span></div><div class="compact-products">' + members.map((project) => '<div class="compact-product">' + productIcon(project) + '<button class="link-button" data-project="' + escape(project.id) + '">' + escape(project.name) + '</button><span class="compact-status' + (completedIds.has(project.id) ? ' done' : running.includes(project) ? ' running' : '') + '">' + shortStatus(project) + '</span></div>').join('') + '</div><a class="area-link" href="#projects/' + id + '">Pfade und Details →</a></article>';
     }).join('');
-    const nextSteps = array(results.pending).slice(0, 5);
-    return intro('Ziele · Bestand · Ergebnisse', 'Ein Kompass für alle Projekte.', 'Die Ausgangslage bleibt sichtbar. Produkte, ausführliche Analysen und offene Entscheidungen stehen an einem Ort – mit klarer Trennung zwischen geprüft, vorgeschlagen und umgesetzt.') +
-      `<div class="numbers"><div class="number"><strong>${projects.length}</strong><span>Hauptprodukte</span></div><div class="number"><strong>${Object.keys(areaLabels).length}</strong><span>Projektbereiche</span></div><div class="number"><strong>${completed.length}</strong><span>abgeschlossene Analysen</span></div><div class="number"><strong>${related.length}</strong><span>verwandte Spiele-Repositories</span></div></div>` +
-      `<div class="hero"><div><div class="eyebrow">Dokumentierter Analysepilot</div><h2>${escape(zerohero ? allProjects.get(zerohero.projectId)?.name || zerohero.title : 'Der Bestand ist erfasst')}</h2><p>${escape(zerohero?.summary || 'Als Nächstes folgen einzelne nachvollziehbare Produktprüfungen.')}</p></div>${zerohero ? `<a class="button primary" href="#results/${escape(zerohero.id)}/review">Ergebnisse lesen →</a>` : '<a class="button primary" href="#projects">Produkte ansehen →</a>'}</div>` +
-      section('Drei Bereiche, unterschiedliche Fragen', `<div class="grid three">${cards}</div>`) +
-      `<div class="grid two">${actions.length ? `<section class="panel"> <h2>Begrenzter nächster Updateumfang</h2><p class="muted small-text">${escape(allProjects.get(zerohero.projectId)?.name || '')} · Vorschläge aus der Analyse, bisher nicht umgesetzt.</p><div class="queue">${actions.map((action, index) => `<div class="queue-item"><span class="step-number">${action.order || index + 1}</span><div><strong>${escape(action.title)}</strong><p>${escape(action.detail)}</p></div></div>`).join('')}</div><a href="#results/${escape(zerohero.id)}/actions">Maßnahmen und Prüfung ansehen →</a></section>` : ''}<section class="panel"><h2>Was als Nächstes offen ist</h2><div class="queue">${nextSteps.map((step, index) => `<div class="queue-item"><span class="step-number">${index + 1}</span><div><strong>${escape(step.title)}</strong><p>${escape(step.detail)}</p></div></div>`).join('')}</div><a href="#pending">Alle offenen Schritte und Entscheidungen →</a></section></div>` +
-      `<div class="note">Die ungefähr 50 Downloads der drei Haupt-Apps waren die Ausgangsschilderung. Aktuelle Kennzahlen, Zeiträume und Grenzen stehen separat in den Analysen. Mehr Downloads, ehrliche Produktbewertungen und eine geeignete Landingpage bleiben die Ziele.</div><a class="button quiet" href="#context">Ursprüngliche Anliegen und Ziele lesen</a>`;
+    const completedRows = completed.map((analysis) => {
+      const project = allProjects.get(analysis.projectId);
+      return '<li class="completed-analysis">' + (project ? productLabel(project, '#results/' + analysis.id + '/review') : '<a href="#results/' + escape(analysis.id) + '/review">' + escape(analysis.title) + '</a>') + '<span>Analyse abgeschlossen</span></li>';
+    }).join('');
+    const nextTitle = nextProject ? nextProject.name + (running.includes(nextProject) ? ': Prüfung abschließen' : ': nächste Produktprüfung') : 'Nächsten kleinen Schritt festlegen';
+    const nextDescription = nextProject ? 'Produkt, Bedienung, Store und verfügbare Daten zusammen prüfen. Ergebnisse und Grenzen anschließend hier ergänzen.' : 'Die abgeschlossenen Analysen in wenige konkrete nächste Maßnahmen übersetzen. Native Gegenprüfungen und Prioritäten sind noch offen.';
+    const openRows = [
+      'Browsergames einzeln spielen und auf Qualität prüfen.',
+      'Vorhandene Onlineauftritte vergleichen und die zentrale Landingpage entscheiden.',
+      'Vorgeschlagene Appverbesserungen und native Gegenprüfungen priorisieren.',
+      'ZeroHero und Mirror später monetarisieren, sobald zunächst Nutzer gewonnen sind.'
+    ];
+    const history = array(context.chronology).slice().sort((a, b) => Number(b.order || 0) - Number(a.order || 0));
+    const recentHistory = history.filter((entry) => entry.status !== 'pending').slice(0, 5);
+    const historyRows = (entries) => entries.map((entry) => '<details class="history-entry"><summary><span>' + escape(entry.title) + '</span><small class="history-status">' + escape(statusLabels[entry.status] || entry.status || 'Offen') + '</small></summary>' + (scopedProjects(entry).length ? '<div class="card-scope">' + scopeMark(entry) + '</div>' : '') + '<p>' + escape(entry.detail) + '</p></details>').join('');
+    return intro('Projektkompass', 'Der aktuelle Arbeitsstand.', 'Was erledigt ist, welche Analysen vorliegen und was als Nächstes fehlt. Die ausführlichen Ergebnisse und ursprünglichen Ziele bleiben in den übrigen Ansichten erhalten.') +
+      '<div class="numbers"><div class="number"><strong>' + projects.length + '</strong><span>Produkte im Bestand</span></div><div class="number"><strong>' + completed.length + '</strong><span>Analysen abgeschlossen</span></div><div class="number"><strong>' + Object.keys(areaLabels).length + '</strong><span>Bereiche</span></div><div class="number"><strong>' + related.length + '</strong><span>verwandte Spiele-Repos</span></div></div>' +
+      '<div class="grid three work-summary"><section class="panel"><h2>Erledigt</h2><p class="small-text muted">Bestand mit Produkten, Repositories und lokalen Pfaden erfasst.</p><ul class="status-list">' + (completedRows || '<li>Noch keine Produktanalyse abgeschlossen.</li>') + '</ul><a class="area-link" href="#results">Ausführliche Ergebnisse →</a></section><section class="panel"><h2>Als Nächstes</h2>' + (nextProject ? productLabel(nextProject) : '') + '<strong class="next-title">' + escape(nextTitle) + '</strong><p class="muted">' + escape(nextDescription) + '</p><a class="area-link" href="#pending">Offene Schritte ansehen →</a></section><section class="panel"><h2>Noch offen</h2>' + list(openRows) + '</section></div>' +
+      '<p class="completion-note"><strong>Analyse abgeschlossen bedeutet nicht: Verbesserungen umgesetzt.</strong> ' + (actualChanges.length ? actualChanges.length + ' Maßnahmen sind als umgesetzt dokumentiert; weitere Vorschläge bleiben offen.' : 'Die dokumentierten Maßnahmen sind Vorschläge. Appupdates und Storeänderungen wurden damit noch nicht umgesetzt.') + '</p>' +
+      section('Produkte nach Bereich', '<div class="grid three">' + areaCards + '</div>') +
+      section('Zuletzt dokumentiert', '<div class="panel compact-history">' + historyRows(recentHistory) + '<details class="history-more"><summary>Gesamten Verlauf anzeigen (' + history.length + ')</summary>' + historyRows(history) + '</details></div>') +
+      '<div class="overview-links"><a href="#context">Ausgangslage und Ziele</a><a href="#docs">Alle Dokumente</a>' + (compactDoc ? '<a href="' + escape(docRoute(compactDoc)) + '">Kompaktübersicht als Dokument</a>' : '') + '</div>';
   }
 
   function contextView() {
@@ -167,7 +205,7 @@
       `<div class="content-stack">${array(context.situation).map((item) => `<article class="panel"><h2>${escape(item.title)}</h2><p>${escape(item.text)}</p><p class="muted small-text">Quelle: ${escape(item.source)}</p></article>`).join('')}</div>` +
       section('Ziele und Fragen je Bereich', `<div class="grid three">${array(context.areas).map((area) => `<article class="panel"><div class="area-icon">${svg(areaAlias(area.id))}</div><h2>${escape(area.title)}</h2><p>${escape(area.goal)}</p><h3>Offene Fragen</h3>${list(area.questions)}<details class="original"><summary>Rahmen und Grenzen</summary>${list(area.constraints)}</details></article>`).join('')}</div>`) +
       section('Wie wir arbeiten', `<div class="panel">${list(context.principles)}</div>`) +
-      section('Dokumentierter Verlauf', `<div class="timeline">${array(context.chronology).slice().sort((a, b) => a.order - b.order).map((step) => `<article class="timeline-item"><h3>${escape(step.title)}</h3>${badge(step.status)}<p>${escape(step.detail)}</p></article>`).join('')}</div>`) +
+      section('Dokumentierter Verlauf', `<div class="timeline">${array(context.chronology).slice().sort((a, b) => a.order - b.order).map((step) => `<article class="timeline-item">${scopedProjects(step).length ? scopeMark(step) : ''}<h3>${escape(step.title)}</h3>${badge(step.status)}<p>${escape(step.detail)}</p></article>`).join('')}</div>`) +
       section('Originalnachrichten', array(context.originalMessages).map((message) => `<details class="original"><summary>${escape(message.label)}</summary><p>${escape(message.text)}</p></details>`).join(''), 'Wortlaut als dauerhafte Quelle');
   }
 
@@ -205,10 +243,11 @@
   }
 
   function findingsView(analysis) {
+    const project = allProjects.get(analysis.projectId);
     return `<div class="note">Befunde sind nach Belegtyp markiert. „Im Webtest reproduziert“ bezeichnet die dokumentierte Testkopie; native und veröffentlichte Builds sind separat abzugleichen.</div>` +
-      section('Stärken und vorhandene Grundlage', `<div class="grid two">${array(analysis.strengths).map((strength) => `<article class="panel"><div class="strength-item">${svg('check')}<div><strong>${escape(strength.title)}</strong><p>${escape(strength.detail)}</p></div></div></article>`).join('')}</div>`) +
-      section('Ausführliche Befunde', array(analysis.findings).map((finding) => `<details class="finding"><summary><strong>${escape(finding.title)}</strong>${badge(finding.evidenceType, evidenceLabels[finding.evidenceType] || finding.evidenceType)}${finding.priority ? badge(finding.priority, priorityLabels[finding.priority] || finding.priority) : ''}</summary><div class="finding-body">${field('Befund', finding.detail)}${field('Beleg / Beobachtung', finding.evidence)}${field('Aussagegrenze', finding.limitation)}${field('Empfehlung', finding.recommendation)}${sources(finding.sourceDocs)}</div></details>`).join(''), `${array(analysis.findings).length} dokumentierte Befunde`) +
-      section('Noch offene Fragen', `<div class="panel">${list(analysis.openQuestions)}</div>`);
+      section('Stärken und vorhandene Grundlage', `<div class="grid two">${array(analysis.strengths).map((strength) => `<article class="panel"><div class="card-scope">${productLabel(project)}</div><div class="strength-item">${svg('check')}<div><strong>${escape(strength.title)}</strong><p>${escape(strength.detail)}</p></div></div></article>`).join('')}</div>`) +
+      section('Ausführliche Befunde', array(analysis.findings).map((finding) => `<details class="finding"><summary><span class="finding-summary-title">${productLabel(project, '', true)}<strong>${escape(finding.title)}</strong></span>${badge(finding.evidenceType, evidenceLabels[finding.evidenceType] || finding.evidenceType)}${finding.priority ? badge(finding.priority, priorityLabels[finding.priority] || finding.priority) : ''}</summary><div class="finding-body">${field('Befund', finding.detail)}${field('Beleg / Beobachtung', finding.evidence)}${field('Aussagegrenze', finding.limitation)}${field('Empfehlung', finding.recommendation)}${sources(finding.sourceDocs)}</div></details>`).join(''), `${array(analysis.findings).length} dokumentierte Befunde`) +
+      section('Noch offene Fragen', `<div class="panel"><div class="card-scope">${productLabel(project)}</div>${list(analysis.openQuestions)}</div>`);
   }
 
   function metricsView(analysis) {
@@ -228,11 +267,13 @@
   }
 
   function actionsView(analysis) {
-    return `<div class="note amber">Diese Maßnahmen sind aus der Analyse abgeleitete Vorschläge. Eine abgeschlossene Analyse bedeutet keinen behobenen Fehler, kein veröffentlichtes Update und keinen bewiesenen wirtschaftlichen Erfolg.</div>` + array(analysis.actions).slice().sort((a, b) => a.order - b.order).map((action, index) => `<article class="action"><span class="step-number">${action.order || index + 1}</span><div><h2>${escape(action.title)}</h2>${badge(action.status)}<p>${escape(action.detail)}</p><h3>Wie der Schritt geprüft werden soll</h3><p>${escape(action.validation)}</p></div></article>`).join('');
+    const project = allProjects.get(analysis.projectId);
+    return `<div class="note amber">Diese Maßnahmen sind aus der Analyse abgeleitete Vorschläge. Eine abgeschlossene Analyse bedeutet keinen behobenen Fehler, kein veröffentlichtes Update und keinen bewiesenen wirtschaftlichen Erfolg.</div>` + array(analysis.actions).slice().sort((a, b) => a.order - b.order).map((action, index) => `<article class="action"><span class="step-number">${action.order || index + 1}</span><div><div class="card-scope">${productLabel(project)}</div><h2>${escape(action.title)}</h2>${badge(action.status)}<p>${escape(action.detail)}</p><h3>Wie der Schritt geprüft werden soll</h3><p>${escape(action.validation)}</p></div></article>`).join('');
   }
 
   function scopeView(analysis) {
-    return `<div class="grid two"><article class="panel"><h2>Tatsächlich geprüft</h2>${list(analysis.scope?.checked)}</article><article class="panel"><h2>Grenzen und nicht geprüft</h2>${list(analysis.scope?.notChecked)}</article></div>` + screenshotsView(analysis) + section('Vollständige Detaildokumente', `<div class="content-stack">${array(analysis.documents).map((path) => { const doc = paths.get(normalize(path)); return `<article class="panel list-row">${svg('docs')}<div class="grow"><h3>${escape(doc?.title || path.split('/').pop())}</h3><p class="path-reference">${escape(path)}</p></div>${link('Lesen →', path, 'button small')}</article>`; }).join('')}</div>`);
+    const project = allProjects.get(analysis.projectId);
+    return `<div class="grid two"><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Tatsächlich geprüft</h2>${list(analysis.scope?.checked)}</article><article class="panel"><div class="card-scope">${productLabel(project)}</div><h2>Grenzen und nicht geprüft</h2>${list(analysis.scope?.notChecked)}</article></div>` + screenshotsView(analysis) + section('Vollständige Detaildokumente', `<div class="content-stack">${array(analysis.documents).map((path) => { const doc = paths.get(normalize(path)); return `<article class="panel list-row"><div class="grow"><div class="card-scope">${productLabel(project)}</div><h3>${escape(doc?.title || path.split('/').pop())}</h3><p class="path-reference">${escape(path)}</p></div>${link('Lesen →', path, 'button small')}</article>`; }).join('')}</div>`);
   }
 
   function resultsView(id, tab) {
@@ -240,15 +281,49 @@
     if (!analysis) return intro('Ergebnisse', 'Noch keine Produktanalyse enthalten.', 'Die Bestandsaufnahme und die vorgesehenen Prüfungen stehen in den übrigen Bereichen.');
     const selectedTab = ['review', 'metrics', 'actions', 'scope'].includes(tab) ? tab : 'review';
     const tabs = { review: 'Bewertung & Befunde', metrics: 'Kennzahlen', actions: 'Maßnahmen', scope: 'Prüfumfang & Quellen' };
-    const selection = analyses.length > 1 ? `<div class="toolbar"><label for="analysis-choice">Analyse:</label><select id="analysis-choice" class="filter">${analyses.map((item) => `<option value="${escape(item.id)}"${item.id === analysis.id ? ' selected' : ''}>${escape(item.title)}</option>`).join('')}</select></div>` : '';
-    return intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + `<div class="pill-row">${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div>${selection}<nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
+    const project = allProjects.get(analysis.projectId);
+    const selection = analyses.length > 1 ? `<nav class="analysis-picker" aria-label="Produktanalyse auswählen">${analyses.map((item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}</a>`; }).join('')}</nav>` : '';
+    return selection + intro('Ausführlich dokumentiert', analysis.title, analysis.summary) + `<div class="pill-row">${analyses.length === 1 ? productLabel(project) : ''}${badge(analysis.status)}<span class="badge">${array(analysis.findings).length} Befunde</span><span class="badge">${array(analysis.metrics).length} Kennzahlen</span><span class="badge">${array(analysis.actions).length} Maßnahmen</span></div><nav class="subnav" aria-label="Analysebereiche">${Object.entries(tabs).map(([key, title]) => `<a href="#results/${escape(analysis.id)}/${key}"${key === selectedTab ? ' class="active" aria-current="page"' : ''}>${title}</a>`).join('')}</nav>` + ({ review: findingsView, metrics: metricsView, actions: actionsView, scope: scopeView })[selectedTab](analysis);
   }
 
   function pendingView() {
     const entries = array(results.pending);
-    return intro('Offene Arbeit und Entscheidungen', 'Der nächste Schritt bleibt nachvollziehbar.', 'Geplante Prüfungen, Strategievorschläge und bereits festgehaltene Arbeitsentscheidungen sind getrennt. Die Reihenfolge ist ein Arbeitsstand, keine pauschale Qualitätsbewertung.') +
-      Object.entries(areaLabels).map(([id, title]) => section(title, `<div class="content-stack">${entries.filter((entry) => areaAlias(entry.area) === id).map((entry) => `<article class="panel"><div class="pill-row">${badge('pending', ({ verification: 'Gegenprüfung offen', analysis: 'Analyse offen', strategy: 'Entscheidung offen' })[entry.kind] || 'Offen')}${entry.projectId ? `<button class="link-button" data-project="${escape(entry.projectId)}">${escape(allProjects.get(entry.projectId)?.name || entry.projectId)}</button>` : ''}</div><h3>${escape(entry.title)}</h3><p>${escape(entry.detail)}</p></article>`).join('') || '<p class="muted">Kein weiterer Schritt dokumentiert.</p>'}</div>`)).join('') +
-      section('Festgehaltene Entscheidungen und Vorschläge', array(results.decisions).map((decision) => `<article class="panel decision"><h3>${escape(decision.title)}</h3>${badge(decision.status)}<p>${escape(decision.detail)}</p><p class="small-text muted">Quelle: ${escape(decision.source || '')}</p>${sources([decision.source].filter((source) => paths.has(normalize(source))))}</article>`).join(''));
+    const kinds = { verification: 'Gegenprüfung offen', analysis: 'Analyse offen', strategy: 'Entscheidung offen' };
+    const card = (entry) => `<article class="panel pending-card" data-pending="${escape(entry.id)}"><div class="card-scope">${scopeMark(entry)}${badge('pending', kinds[entry.kind] || 'Offen')}</div><h4>${escape(entry.title)}</h4><p>${escape(entry.detail)}</p></article>`;
+    const orderedAreas = ['apps', 'games', 'web'];
+    const jumpLinks = orderedAreas.map((area) => {
+      const count = entries.filter((entry) => areaAlias(entry.area) === area).length;
+      return `<a href="#pending/${area}">${svg(area)}<span>${escape(areaLabels[area])}</span><small>${count} offen</small></a>`;
+    }).join('');
+    const projectJumps = projects.filter((project) => entries.some((entry) => entry.projectId === project.id)).map((project) => productLabel(project, '#pending/' + project.id)).join('');
+    const areaBlocks = orderedAreas.map((area) => {
+      const members = entries.filter((entry) => areaAlias(entry.area) === area);
+      const ids = [...new Set([...projects.filter((project) => members.some((entry) => entry.projectId === project.id)).map((project) => project.id), ...members.map((entry) => entry.projectId).filter(Boolean)])];
+      const general = members.filter((entry) => !entry.projectId);
+      const groups = ids.map((id) => {
+        const project = allProjects.get(id);
+        const items = members.filter((entry) => entry.projectId === id);
+        return `<section class="pending-group" id="pending-${escape(id)}" aria-label="Offene Schritte für ${escape(project?.name || id)}"><div class="pending-group-head"><h3>${project ? productLabel(project) : escape(id)}</h3><span class="small-text muted">${items.length} offene Schritte</span>${project?.analysisId ? `<a href="#results/${escape(project.analysisId)}/review">Analyse lesen →</a>` : ''}</div><div class="pending-grid">${items.map(card).join('')}</div></section>`;
+      }).join('');
+      const generalGroup = general.length ? `<section class="pending-group"><div class="pending-group-head"><h3>Bereichsweite Schritte</h3><span class="small-text muted">${general.length} offen</span></div><div class="pending-grid">${general.map(card).join('')}</div></section>` : '';
+      return `<section class="pending-area" id="pending-${area}">${section(areaLabels[area], groups + generalGroup || '<p class="muted">Kein weiterer Schritt dokumentiert.</p>', `${members.length} offene Schritte`)}</section>`;
+    }).join('');
+    const otherEntries = entries.filter((entry) => !orderedAreas.includes(areaAlias(entry.area)));
+    const decisionGroups = new Map();
+    array(results.decisions).forEach((decision) => {
+      const members = scopedProjects(decision);
+      const area = areaAlias(decision.area);
+      const title = members.length ? members.map((project) => project.name).join(' · ') : decision.scopeLabel || areaLabels[area] || 'Gesamtes Vorhaben';
+      const key = members.length ? members.map((project) => project.id).sort().join('|') : area + '|' + title;
+      if (!decisionGroups.has(key)) decisionGroups.set(key, { title, entries: [] });
+      decisionGroups.get(key).entries.push(decision);
+    });
+    const decisions = [...decisionGroups.values()].map((group) => `<section class="decision-group"><h3>${escape(group.title)}</h3><div class="decision-grid">${group.entries.map((decision) => `<article class="panel decision" data-decision="${escape(decision.id)}"><div class="card-scope">${scopeMark(decision)}${badge(decision.status)}</div><h4>${escape(decision.title)}</h4><p>${escape(decision.detail)}</p><p class="small-text muted">Quelle: ${escape(decision.source || '')}</p>${sources([decision.source].filter((source) => paths.has(normalize(source))))}</article>`).join('')}</div></section>`).join('');
+    return intro('Offene Arbeit und Entscheidungen', 'Der nächste Schritt bleibt nachvollziehbar.', 'Alle offenen Schritte stehen zusammen nach Bereich und Produkt. Weiter unten folgen festgehaltene Arbeitsentscheidungen und Vorschläge mit klarer Zuordnung. Die Gruppierung ist keine Priorisierung oder Qualitätsbewertung.') +
+      `<nav class="pending-nav" aria-label="Zu offenen Schritten springen">${jumpLinks}<a href="#pending/decisions">${svg('context')}<span>Entscheidungen & Vorschläge</span></a></nav>` +
+      (projectJumps ? `<nav class="pending-nav product-jumps" aria-label="Zu einem Produkt springen">${projectJumps}</nav>` : '') +
+      areaBlocks + (otherEntries.length ? section('Übergreifende offene Schritte', `<div class="pending-grid">${otherEntries.map(card).join('')}</div>`) : '') +
+      `<section id="pending-decisions">${section('Festgehaltene Entscheidungen und Vorschläge', decisions, 'Nach Geltungsbereich gruppiert · Status an jedem Eintrag')}</section>`;
   }
 
   function docsView(path) {
@@ -258,8 +333,9 @@
     const json = /\.json$/i.test(doc.path);
     let content = String(doc.content ?? '');
     if (json) { try { content = JSON.stringify(JSON.parse(content), null, 2); } catch (_) { /* Preserve original text. */ } }
+    const members = documentProjects(doc.path);
     return intro('Alle Arbeitsinformationen', 'Dokumente und vollständige Quellen.', 'Die Berichte und Bestandsdateien sind vollständig eingebettet. Lesen, herunterladen und exportieren funktionieren auch ohne Server; Links zu bekannten Quellen führen hierher.') +
-      `<div class="doc-layout"><nav class="doc-list" aria-label="Dokumentauswahl">${documents.map((entry) => `<a href="${escape(docRoute(entry))}"${entry.path === doc.path ? ' class="active" aria-current="page"' : ''}>${escape(entry.title || entry.path.split('/').pop())}<br><span class="small-text">${escape(entry.path)}</span></a>`).join('')}</nav><article class="doc-reader"><div class="doc-heading"><div><span>${escape(doc.path)}</span></div><div class="top-actions"><button class="button small" data-download-doc="${escape(doc.path)}">Original herunterladen</button><button class="button small quiet" data-print>Drucken</button></div></div>${json ? `<pre><code>${escape(content)}</code></pre>` : markdown(content, doc.path)}</article></div>`;
+      `<div class="doc-layout"><nav class="doc-list" aria-label="Dokumentauswahl">${documents.map((entry) => `<a href="${escape(docRoute(entry))}"${entry.path === doc.path ? ' class="active" aria-current="page"' : ''}>${escape(entry.title || entry.path.split('/').pop())}<br><span class="small-text">${escape(entry.path)}</span></a>`).join('')}</nav><article class="doc-reader"><div class="doc-heading"><div>${members.length ? `<div class="scope-row doc-project">${members.map((project) => productLabel(project)).join('')}</div>` : ''}<span>${escape(doc.path)}</span></div><div class="top-actions"><button class="button small" data-download-doc="${escape(doc.path)}">Original herunterladen</button><button class="button small quiet" data-print>Drucken</button></div></div>${json ? `<pre><code>${escape(content)}</code></pre>` : markdown(content, doc.path)}</article></div>`;
   }
 
   function download(name, content, mime) {
@@ -283,8 +359,15 @@
       $('project-area').addEventListener('change', (event) => { filterState.area = event.target.value; updateProjectCards(); });
       $('project-status').addEventListener('change', (event) => { filterState.status = event.target.value; updateProjectCards(); });
     }
-    const choice = $('analysis-choice');
-    if (choice) choice.addEventListener('change', (event) => { location.hash = `results/${event.target.value}/review`; });
+  }
+
+  function scrollToRoute() {
+    const parts = location.hash.replace(/^#\/?/, '').split('/');
+    let id = '';
+    try { id = decodeURIComponent(parts[1] || ''); } catch (_) { id = parts[1] || ''; }
+    const target = parts[0] === 'pending' && id ? $('pending-' + id) : null;
+    if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    else window.scrollTo({ top: 0, behavior: 'instant' });
   }
 
   document.addEventListener('click', async (event) => {
@@ -310,9 +393,10 @@
   let printDetails = [];
   window.addEventListener('beforeprint', () => { printDetails = [...document.querySelectorAll('details:not([open])')]; printDetails.forEach((detail) => { detail.open = true; }); });
   window.addEventListener('afterprint', () => { printDetails.forEach((detail) => { detail.open = false; }); printDetails = []; });
-  window.addEventListener('hashchange', () => { if ($('project-dialog').open) $('project-dialog').close(); render(); window.scrollTo({ top: 0, behavior: 'instant' }); });
+  window.addEventListener('hashchange', () => { if ($('project-dialog').open) $('project-dialog').close(); render(); scrollToRoute(); });
   const updated = dateLabel(data.meta?.updatedAt || context.updatedAt);
   $('sidebar-date').textContent = `Stand ${updated}`;
   $('stamp').textContent = `Stand ${updated}`;
   render();
+  if (location.hash.startsWith('#pending/')) scrollToRoute();
 })();
