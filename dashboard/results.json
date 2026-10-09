@@ -2446,6 +2446,14 @@
   ],
   "decisions": [
     {
+      "id": "independent-review-rule",
+      "scopeLabel": "Gesamtes Vorhaben · Bewertungsmethode",
+      "title": "Unvoreingenommen und unabhängig bewerten",
+      "detail": "Ausdrückliche Nutzerregel: zuerst anhand tatsächlicher Bedienung ein eigenes Urteil bilden. Repositorytexte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen; subjektive Eindrücke und kurze Testgrenzen kennzeichnen.",
+      "status": "established",
+      "source": "Usernachricht independent-review-rule; dashboard/context.json"
+    },
+    {
       "id": "scope-inventory-before-evaluation",
       "title": "Bestand und Anliegen dauerhaft zusammenhalten",
       "detail": "Ausgangspunkt sind drei Bereiche: Browser-Spiele anhand des Repos dashboard, eigene Online-Präsenz mit Landing Page und den genannten weiteren Repos sowie lokale Android-Produkte. Erst wurde grob inventarisiert; anschließend werden Produkte ehrlich und nachvollziehbar geprüft. Das Dashboard bewahrt Ausgangslage, Ziele, Produkte, Prüfstand und ausführliche Ergebnisse, damit der Faden erhalten bleibt.",

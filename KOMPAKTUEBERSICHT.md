@@ -54,6 +54,8 @@ Der [gemeinsame Vergleich](analysen/onlineauftritt/Grundanalyse-Vergleich.md) ve
 
 Das entspricht der gewünschten Reihenfolge: erst die breite Grundlage, dann Prioritäten und Handeln. Es wurde kein gleichzeitiger Umbau aller Produkte gestartet.
 
+**Bewertungsregel:** unvoreingenommen anhand eigener Bedienbeobachtungen urteilen. Repositorytexte und frühere Aussagen gelten nicht als Qualitätsnachweis. Code dient der gezielten Gegenprüfung; kurze Spielsitzungen belegen keine Langzeitmotivation oder echte Spielerreaktionen.
+
 ## Was bewusst noch offen ist
 
 - Umsetzung der vorgeschlagenen Appverbesserungen und tatsächliche App-/Storeveröffentlichungen.

@@ -125,7 +125,8 @@
     "ZeroHero und Mirror sollen grundsätzlich später monetarisiert werden. Zuerst müssen sie tatsächliche Nutzer gewinnen; Monetarisierung ist das langfristige Ziel, kein bereits umgesetztes oder wirtschaftlich validiertes System.",
     "Die frühere Reihenfolge Dashboard/Mirror sichern, MewTrack prüfen und erneut sichern wurde abgeschlossen. Die nun beauftragte Etappe umfasst die sieben Webauftritte. Für die vollständige Basis folgen empfohlen die sechs Spiele, danach Priorisierung und Umsetzung.",
     "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben.",
-    "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen: erledigte Analysen, aktueller nächster Schritt und noch offene große Bereiche. Die ausführlichen Informationen bleiben erhalten. Ruhiges, gedämpftes warmes Design mit neutralem Anthrazit-Dunkelmodus ohne grüne Akzente und einem Schalter bevorzugt; kleine Produkticons und eindeutige Namen helfen beim Erfassen."
+    "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen: erledigte Analysen, aktueller nächster Schritt und noch offene große Bereiche. Die ausführlichen Informationen bleiben erhalten. Ruhiges, gedämpftes warmes Design mit neutralem Anthrazit-Dunkelmodus ohne grüne Akzente und einem Schalter bevorzugt; kleine Produkticons und eindeutige Namen helfen beim Erfassen.",
+    "Unvoreingenommen und unabhängig bewerten: zuerst ein eigenes Urteil anhand tatsächlicher Bedienung bilden. README-Texte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen. Stärken, Schwächen, Quelle und subjektive Einschätzung nachvollziehbar unterscheiden; kurze Spielsitzungen belegen keine Langzeitmotivation."
   ],
   "chronology": [
     {
@@ -275,6 +276,13 @@
         "basement"
       ],
       "detail": "LandingGame mit Studio, shop, keyofsolomon, Portfolio3, blueyard, phantom und basement öffentlich im Browser auf Desktop-/Mobilbreite angesehen und anhand aktiver Quellen geprüft. 15 echte Browserbilder mit Herkunft eingebettet; ausführliche Einzelbefunde, Grenzen und gemeinsamer Vergleich gespeichert. Keine Originalwebsite verändert, keine Anfrage/Bestellung versandt. Homepage-Endentscheidung bleibt offen; die sechs Spiele sind die empfohlene nächste Grundanalyseetappe."
+    },
+    {
+      "id": "independent-review-rule",
+      "order": 18,
+      "title": "Unvoreingenommene eigene Bewertung ausdrücklich festgelegt",
+      "status": "documented",
+      "detail": "Der Nutzer verlangt ausdrücklich eine unabhängige Bewertung ohne Vorprägung durch Repositorytexte oder andere Aussagen. Die eigene Bedienbeobachtung bildet das Urteil; Code prüft konkrete Beobachtungen gegen. Behauptete Testerfolge sind ohne eigene Ausführung kein bestandener Test. Bei Spielen sind kurze praktische Spielsitzungen und gezielte Quellenprüfung vorgesehen; Langzeitmotivation und echte Spielerreaktionen bleiben gesonderte Grenzen. Die Spieleprüfungen wurden noch nicht begonnen."
     }
   ],
   "originalMessages": [
@@ -347,6 +355,11 @@
       "id": "web-baseline-request",
       "label": "Schritt 1: sieben Webauftritte analysieren",
       "text": "beginne mit schritt 1, die sieben webauftritte"
+    },
+    {
+      "id": "independent-review-rule",
+      "label": "Unvoreingenommen und unabhängig bewerten",
+      "text": "Lass dich nicht von den repos oder andern Aussagen beeinflussen, sei unvoreingenommen und unabhängig"
     }
   ],
   "nextStep": {
