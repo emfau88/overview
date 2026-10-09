@@ -4,6 +4,8 @@ Stand: **09.10.2026** · [Dashboard öffnen](https://emfau88.github.io/overview/
 
 Das Ziel bleibt: mehr echte Nutzer für die Android-Apps, ehrliche Qualitätsbewertungen der Spiele und eine begründete Entscheidung für den eigenen Onlineauftritt. ZeroHero und Mirror sollen später auch Geld verdienen, sobald sie Nutzer gewinnen. Wir arbeiten in kleinen Schritten.
 
+**Neu:** [Drei begründete nächste Schritte](#meine-empfehlung-drei-nächste-schritte). Die Kurzempfehlung lässt sich ohne vorheriges Lesen sämtlicher Analysen verstehen. Sie ist noch keine Auswahlentscheidung oder Umsetzung.
+
 ## Was erledigt ist
 
 | Arbeit | Stand | Details |
@@ -41,6 +43,18 @@ Die kompakte Dashboardanzeige ergänzt die bisherigen Inhalte. Sie trennt drei A
 
 **Maßnahmenstand insgesamt: 0 von 49 dokumentierten Vorschlägen umgesetzt und geprüft.** Phase 3 wird erst abgeschlossen, wenn sämtliche dokumentierten Maßnahmen des jeweiligen Produkts tatsächlich umgesetzt und passend geprüft sind. Eine fertige Analyse bleibt dabei fertig. Zwei von drei Phasen bedeutet weder zwei Drittel des Zeitaufwands noch eine Erfolgsquote; die einzelnen Maßnahmen können unterschiedlich groß sein. Zuerst werden weiterhin wenige Prioritäten ausgewählt, nicht automatisch alle Vorschläge umgesetzt.
 
+## Meine Empfehlung: drei nächste Schritte
+
+**Vorgeschlagene Reihenfolge, schrittweise bearbeiten:** zunächst einen kleinen App-Versuch, danach die Homepage-Struktur und anschließend genau ein Gamepaket. Die anderen Befunde bleiben erhalten. Diese Empfehlung wählt aus den vorhandenen 49 Vorschlägen; sie ist keine weitere Produktanalyse und fügt keine bereits erledigte Maßnahme hinzu.
+
+1. **Mirror als ersten begrenzten App-Versuch vorbereiten.** Der bisherige Store-Auftritt hatte im Fenster **08.09.–05.10.2026** bereits **566 Besucher und 28 Installationsklicks**. Im lokalen Webbuild sind Widersprüche bei eigener Antwort und gespeicherten Ergebnissen reproduziert; gelesene Volltexte formulieren außerdem zu sichere Aussagen über fremdes Interesse. Das bietet einen klar abgrenzbaren Ansatz. **Zuerst:** veröffentlichtes Mirror **1.0.13** und pausierten RelateLens-Relaunch **1.1.0+16** zuordnen und den nächsten Teststand festlegen. Danach diese Kernpunkte auf Android verlässlich machen, Datenkontrolle vor Veröffentlichung klären und mit etwa fünf passenden freiwilligen Personen Verständlichkeit, hilfreichen nächsten Schritt und Wiederkehr prüfen. Store-Einstieg und echte Bilder auf denselben Stand abstimmen. **Abschlusskriterium:** dokumentierte Fälle werden konsistent beantwortet und konkrete Nutzerrückmeldungen liegen vor. Die Reichweite gehört zum bisherigen Mirror, nicht zum Relaunch; Klicks sind keine Installationen. Keine Download-/Umsatzprognose. [Begründung und Befunde](analysen/mirror/Mirror-Pilotanalyse.md) · [Kennzahlen](analysen/mirror/play-console-kpis.md).
+2. **Studio als zentrale Homepage vorschlagen, Apps und Games sichtbar als eigenen Bereich führen.** LandingGame/Studio erklärt Angebot, Region und Ansprechpartner bereits verständlich und wirkt ruhig; shop liefert passende Konzepte, Portfolio3 klare Produktwege. **Zuerst:** einen kurzen Seitenplan entscheiden: Webleistungen als Hauptangebot, knapper Apps-/Games-Einstieg, eigener Produktbereich. Anschließend nur die gewählte Grundlage vervollständigen – tatsächlicher Kontaktweg und bestätigter einheitlicher OMF-Referenzstatus zuerst. **Abschlusskriterium:** klare Hauptroute und bei späterer Umsetzung eine funktionierende Anfrage bis zum vorgesehenen Empfang. Webaufträge als Schwerpunkt sind meine Empfehlung, noch kein Nutzerbeschluss; bei vorrangigen eigenen Produkten wäre Portfolio3 die direktere Hauptbasis. Ein Verkaufseffekt wurde nicht gemessen. [Webvergleich](analysen/onlineauftritt/Grundanalyse-Vergleich.md) · [Studio-Befunde](analysen/landinggame/Grundanalyse.md).
+3. **Bei CORE ARENA zunächst nur das Training verlässlich machen.** Die eigene Prüfung bestätigte „bestanden“ trotz offener Lernaufgabe. Die gezielte Quelle prüft die erfüllten Aufgaben nicht und kann Botaktionen als menschliche Lernleistung zählen. **Zuerst:** maßgeblichen Quellstand festlegen und frisches Training kontrolliert reproduzieren, vorhandene Karriere erhalten. Danach Aufgabenzuordnung und Abschlussaussage passend zur tatsächlichen Lernleistung korrigieren oder präzisieren. Ein Siegzwang ist nicht automatisch sinnvoll. **Abschlusskriterium:** passive Spieler erhalten keine durch Bots erfüllten eigenen Aufgaben; offene Lernschritte führen zu einer ehrlichen Abschlussaussage. Botbalance, Sci-Fi-Gestaltung und Waffenökonomie bleiben separate Fragen. [Trainingsbefunde](analysen/core-arena/Grundanalyse.md) · [Spielevergleich](analysen/spiele/Grundvergleich.md).
+
+**Warum nicht alle Produkte gleichzeitig?** Mirror verbindet vorhandene Sichtbarkeit mit konkreten Kernbefunden. ZeroHero hat ebenfalls reparierbare Probleme, aber zusätzlich offene Release-/Privatsphäre-Fragen und wenig Store-Reichweite. Bei MewTrack fehlen noch native Bediennachweise. Das ist eine pragmatische Arbeitsreihenfolge, keine Rangliste der besten oder wirtschaftlich aussichtsreichsten Produkte. ZeroHero und MewTrack bleiben für spätere kleine Versuche erhalten. Die räumlichen Webauftritte bleiben optionale Showcases; Solomon ein separates Produktangebot. Andere Gamepakete folgen erst nach Auswahl, MORE THAN WOMBAT und übrige Games bleiben zurückgestellt.
+
+**Status:** Empfehlungen dokumentiert, Auswahl und Umsetzung offen. Noch keine Testeransprache, Produktänderung, Storeänderung oder Veröffentlichung daraus abgeleitet. Die Empfehlungskarten mit ersten Schritten, Grenzen und Belegen stehen auf der [Übersicht](https://emfau88.github.io/overview/#overview) und bei [Offene Schritte](https://emfau88.github.io/overview/#pending).
+
 ## Wo wir pro Bereich stehen
 
 | Bereich | Bestand | Noch zu tun |
@@ -65,7 +79,7 @@ Der [gemeinsame Vergleich](analysen/onlineauftritt/Grundanalyse-Vergleich.md) ve
 
 ## Als Nächstes
 
-**Aktuelle Etappe:** Die breite ausgewählte Basis liegt vor. Jetzt werden die Befunde verglichen und wenige Prioritäten gewählt. KESSELKRAWALL wurde als frischer Lauf in isolierter lokaler Testkopie des öffentlichen main-Commits **83d17ab14ff265559b58652e9040eecef7d7ad51** geprüft; der bestehende öffentliche Run blieb unberührt. Diese Bilder belegen die separate Testkopie, keine bewiesene Identität des öffentlichen Live-Bundles. [Testherkunft](analysen/kesselkrawall/runtime/README.md).
+**Aktuelle Etappe:** Die breite ausgewählte Basis liegt vor und drei begründete Prioritäten sind oben vorgeschlagen. Als ersten kleinen Schritt den Mirror-Teststand und Paketumfang auswählen; Homepage und CORE-Training bleiben in der vorgeschlagenen Reihenfolge im Blick. Auswahl und Umsetzung sind noch offen. KESSELKRAWALL wurde als frischer Lauf in isolierter lokaler Testkopie des öffentlichen main-Commits **83d17ab14ff265559b58652e9040eecef7d7ad51** geprüft; der bestehende öffentliche Run blieb unberührt. Diese Bilder belegen die separate Testkopie, keine bewiesene Identität des öffentlichen Live-Bundles. [Testherkunft](analysen/kesselkrawall/runtime/README.md).
 
 **Anschließende Empfehlung:**
 
@@ -110,6 +124,7 @@ Die vollständigen Einzelbefunde stehen unter [Ergebnisse](https://emfau88.githu
 | 09.10.2026 | Erste zwei begrenzte öffentliche Spiel-Grundanalysen für HEXFRONT und GALALAXY samt gezielter Codegegenprüfung und neun unveränderten Browseraufnahmen abgeschlossen. |
 | 09.10.2026 | Begrenzte öffentliche Grundanalysen für ROOSTER RAGE und CORE ARENA ergänzt; eigene Bedienbeobachtungen und aktive Quellengegenprüfung dokumentiert. |
 | 09.10.2026 | KESSELKRAWALL-Grundanalyse an frischer isolierter Kopie ergänzt; fünf Spielbaselines und insgesamt 15 begrenzte Analysen dokumentiert. |
+| 09.10.2026 | Drei begründete Prioritätsvorschläge mit Umfang, ersten Schritten und Abschlusskriterien ergänzt: Mirror-Versuch, Homepage-Struktur und CORE-Training. Auswahl und Produktumsetzung bleiben offen. |
 
 **Umfangspräzisierung:** Die abgeschlossene gewählte Spieleetappe umfasst fünf Hauptspiele. MORE THAN WOMBAT sowie verwandte und übrige Games bleiben vorerst ausschließlich im Bestand. KESSELKRAWALL wurde zum Schutz des vorhandenen öffentlichen Runs in isolierter frischer Testkopie geprüft. Die fertigen Berichte sind von noch offenen Verbesserungen und von bestätigten Veröffentlichungsschritten zu unterscheiden.
 

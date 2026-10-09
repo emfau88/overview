@@ -199,6 +199,17 @@
     return output.join('\n');
   }
 
+  function priorityRecommendations() {
+    const priorities = array(results.decisions).filter((entry) => Number.isInteger(entry.priorityRank) && entry.priorityRank > 0).slice().sort((a, b) => a.priorityRank - b.priorityRank);
+    if (!priorities.length) return '';
+    const cards = priorities.map((entry) => {
+      const members = scopedProjects(entry);
+      const target = members.length === 1 ? members[0].id : areaAlias(entry.area);
+      return `<li class="panel recommendation"><div class="recommendation-order">${escape(entry.priorityRank)}. Schritt ${badge(entry.status)}</div><div class="card-scope">${scopeMark(entry)}</div><h3>${escape(entry.title)}</h3><p><strong>Warum:</strong> ${escape(entry.rationale)}</p><p><strong>Zuerst:</strong> ${escape(entry.firstStep)}</p><details class="original"><summary>Umfang, Abschlusskriterium und Belege</summary>${field('Begrenztes Paket', entry.detail)}${field('Woran wir den Schritt beurteilen', entry.completionCriterion)}${field('Grenzen', entry.limitation)}${sources(entry.sourceDocs)}</details><a class="area-link" href="#pending/${escape(target)}">Zugehörige offene Schritte →</a></li>`;
+    }).join('');
+    return `<section class="recommendations" aria-label="Empfohlene nächste Schritte"><div class="section-head"><h2>Meine Empfehlung: drei nächste Schritte</h2><span>Vorschlag · noch nicht ausgewählt</span></div><p class="muted">Diese Reihenfolge bündelt die vorhandenen Befunde. Schrittweise bearbeiten; die nächsten beiden bleiben im Blick. Die ausführlichen Analysen müssen dafür nicht zuerst vollständig gelesen werden. Noch keine Produktänderung oder Veröffentlichung beauftragt.</p><ol class="grid three recommendation-grid">${cards}</ol></section>`;
+  }
+
   function overview() {
     const isComplete = (analysis) => ['reviewed', 'completed'].includes(analysis?.status);
     const completed = analyses.filter(isComplete);
@@ -239,6 +250,7 @@
       overallProgress() +
       '<div class="grid three work-summary"><section class="panel"><h2>Erledigt</h2><p class="small-text muted">Bestand mit Produkten, Repositories und lokalen Pfaden erfasst.</p><ul class="status-list">' + (completedRows || '<li>Noch keine Produktanalyse abgeschlossen.</li>') + '</ul><a class="area-link" href="#results">Ausführliche Ergebnisse →</a></section><section class="panel"><h2>Als Nächstes</h2>' + (nextProject ? productLabel(nextProject) : '') + '<strong class="next-title">' + escape(nextTitle) + '</strong><p class="muted">' + escape(nextDescription) + '</p><a class="area-link" href="#pending">Offene Schritte ansehen →</a></section><section class="panel"><h2>Noch offen</h2>' + list(openRows) + '</section></div>' +
       '<p class="completion-note"><strong>Analyse abgeschlossen bedeutet nicht: Verbesserungen umgesetzt.</strong> ' + (actualChanges.length ? actualChanges.length + ' Maßnahmen sind als umgesetzt dokumentiert; weitere Vorschläge bleiben offen.' : 'Die dokumentierten Maßnahmen sind Vorschläge. Appupdates und Storeänderungen wurden damit noch nicht umgesetzt.') + '</p>' +
+      priorityRecommendations() +
       section('Produkte nach Bereich', '<div class="grid three">' + areaCards + '</div>') +
       section('Zuletzt dokumentiert', '<div class="panel compact-history">' + historyRows(recentHistory) + '<details class="history-more"><summary>Gesamten Verlauf anzeigen (' + history.length + ')</summary>' + historyRows(history) + '</details></div>') +
       '<div class="overview-links"><a href="#context">Ausgangslage und Ziele</a><a href="#docs">Alle Dokumente</a>' + (compactDoc ? '<a href="' + escape(docRoute(compactDoc)) + '">Kompaktübersicht als Dokument</a>' : '') + (gamesComparison ? '<a href="' + escape(docRoute(gamesComparison)) + '">Spielvergleich als Dokument</a>' : '') + '</div>';
@@ -410,8 +422,9 @@
       if (!decisionGroups.has(key)) decisionGroups.set(key, { title, entries: [] });
       decisionGroups.get(key).entries.push(decision);
     });
-    const decisions = [...decisionGroups.values()].map((group) => `<section class="decision-group"><h3>${escape(group.title)}</h3><div class="decision-grid">${group.entries.map((decision) => `<article class="panel decision" data-decision="${escape(decision.id)}"><div class="card-scope">${scopeMark(decision)}${badge(decision.status)}</div><h4>${escape(decision.title)}</h4><p>${escape(decision.detail)}</p><p class="small-text muted">Quelle: ${escape(decision.source || '')}</p>${sources([decision.source].filter((source) => paths.has(normalize(source))))}</article>`).join('')}</div></section>`).join('');
-    return intro('Offene Arbeit und Entscheidungen', 'Der nächste Schritt bleibt nachvollziehbar.', 'Alle offenen Schritte stehen zusammen nach Bereich und Produkt. Weiter unten folgen festgehaltene Arbeitsentscheidungen und Vorschläge mit klarer Zuordnung. Die Gruppierung ist keine Priorisierung oder Qualitätsbewertung.') +
+    const decisions = [...decisionGroups.values()].map((group) => `<section class="decision-group"><h3>${escape(group.title)}</h3><div class="decision-grid">${group.entries.map((decision) => `<article class="panel decision" data-decision="${escape(decision.id)}"><div class="card-scope">${scopeMark(decision)}${badge(decision.status)}</div><h4>${escape(decision.title)}</h4><p>${escape(decision.detail)}</p>${decision.priorityRank ? field('Vorgeschlagene Reihenfolge', decision.priorityRank + '. Schritt') + field('Begründung', decision.rationale) + field('Erster Schritt', decision.firstStep) + field('Abschlusskriterium', decision.completionCriterion) + field('Grenzen', decision.limitation) : ''}<p class="small-text muted">Quelle: ${escape(decision.source || '')}</p>${sources(array(decision.sourceDocs).length ? decision.sourceDocs : [decision.source].filter((source) => paths.has(normalize(source))))}</article>`).join('')}</div></section>`).join('');
+    return intro('Offene Arbeit und Entscheidungen', 'Der nächste Schritt bleibt nachvollziehbar.', 'Oben steht die vorgeschlagene Reihenfolge. Alle offenen Schritte bleiben darunter nach Bereich und Produkt gebündelt; diese Gruppierung selbst ist keine Priorisierung oder Qualitätsbewertung.') +
+      priorityRecommendations() +
       `<nav class="pending-nav" aria-label="Zu offenen Schritten springen">${jumpLinks}<a href="#pending/decisions">${svg('context')}<span>Entscheidungen & Vorschläge</span></a></nav>` +
       (projectJumps ? `<nav class="pending-nav product-jumps" aria-label="Zu einem Produkt springen">${projectJumps}</nav>` : '') +
       areaBlocks + (otherEntries.length ? section('Übergreifende offene Schritte', `<div class="pending-grid">${otherEntries.map(card).join('')}</div>`) : '') +

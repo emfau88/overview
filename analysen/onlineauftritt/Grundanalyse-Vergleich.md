@@ -4,7 +4,7 @@ Stand: **09.10.2026**. Dieser Bericht ergänzt die Bestandsaufnahme um eine tats
 
 ## Die ursprüngliche Frage
 
-Welche vorhandene Seite könnte die eigene zentrale Landingpage werden? Soll sie vor allem Website-Aufträge gewinnen, ein persönliches Portfolio zeigen oder Apps und Games gleichberechtigt präsentieren? Das ist weiterhin eine offene Entscheidung. Der Nutzer möchte zuerst die gesamte Basis kennen: nach den drei Android-Piloten jetzt die sieben Webauftritte, als nächstes die sechs Spiele, danach Prioritäten und wenige konkrete Maßnahmen.
+Welche vorhandene Seite könnte die eigene zentrale Landingpage werden? Soll sie vor allem Website-Aufträge gewinnen, ein persönliches Portfolio zeigen oder Apps und Games gleichberechtigt präsentieren? Das ist weiterhin eine offene Entscheidung. Der Nutzer wollte zuerst eine breite gemeinsame Grundlage. Diese liegt inzwischen im ausgewählten Umfang vor: drei Android-Piloten, sieben Webauftritte und fünf Spielchecks. Der Spieleauftrag wurde ausdrücklich auf fünf begrenzt; MORE THAN WOMBAT bleibt zurückgestellt. Danach folgen Prioritäten und wenige konkrete Maßnahmen.
 
 Für diesen Vergleich wurde keine neue Zielgruppe erfunden und kein neuer Auftritt gebaut. Vorhandene Entwürfe werden nach ihrer tatsächlichen Aufgabe beurteilt. Eine schöne Projektgalerie kann eine gute Ergänzung sein, ohne bereits ein verständliches Website-Angebot zu vermitteln. Umgekehrt muss eine Anbieterwebsite nicht jedes eigene Spiel in ihrem ersten Bildschirm erklären.
 
@@ -43,9 +43,9 @@ blueyard, phantom und basement müssen nicht verworfen werden. Sie zeigen einen 
 
 ## Wenige nächste Schritte
 
-Zuerst die **sechs Browsergames nach einem gemeinsamen Grundraster** prüfen: erste Minuten, Steuerung, Verständlichkeit, Optik, Zuverlässigkeit und Wiederholungsreiz. Das ist der empfohlene nächste Analysebereich, in diesem Auftrag noch nicht begonnen.
+**Aktueller Anschluss nach der gewählten Grundrunde:** Fünf Spielchecks sind abgeschlossen; es fehlt keine sechste Pflichtanalyse. Drei begründete nächste Schritte sind in der [Kompaktübersicht](../../KOMPAKTUEBERSICHT.md#meine-empfehlung-drei-nächste-schritte) vorgeschlagen: Mirror-Versuch, Homepage-Struktur und CORE-Training. Auswahl und Umsetzung bleiben offen; das ist keine zusätzliche Produktanalyse.
 
-Danach die App-, Web- und Spielebefunde gemeinsam vergleichen und einen kleinen Schwerpunkt wählen. Die Homepage-Entscheidung kann dann konkret zwischen vorhandenen Grundlagen getroffen werden: beispielsweise Studio als Anbieterauftritt plus Portfolio3 als Produktbereich, falls Webaufträge priorisiert werden. Bestehende Inhalte und Designs sollten dabei möglichst weitergenutzt werden.
+Für die Homepage empfehle ich vorläufig Studio als Anbieterauftritt, shop als Konzept-Showroom und Portfolio3 als ergänzenden Produktbereich. Apps und Games bleiben über einen kurzen Einstieg sichtbar. Zuerst einen kleinen Seitenplan festlegen; die Anbieterrolle ist noch keine Nutzerentscheidung. Falls eigene Produkte Vorrang erhalten sollen, wäre Portfolio3 die direktere Hauptbasis. Bestehende Inhalte und Designs möglichst weiterverwenden; eine gemessene Umsatzwirkung liegt nicht vor.
 
 Erst anschließend den ausgewählten Auftritt vervollständigen: echte Kontaktstrecke, bestätigte Referenz-/Produktstände, eindeutige Hauptroute, nachvollziehbare Anbieterangaben und wenige passende Referenzen. Alle Einzelmaßnahmen in dieser Analyse sind **Vorschläge**; es wurden keine Originalwebsites, Formulare, Preise, Storeeinträge oder Apps geändert.
 

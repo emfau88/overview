@@ -4,6 +4,10 @@
 
 [**Kompaktübersicht: Was ist erledigt, was fehlt noch? →**](KOMPAKTUEBERSICHT.md)
 
+[**Neu: drei begründete nächste Schritte →**](KOMPAKTUEBERSICHT.md#meine-empfehlung-drei-nächste-schritte)
+
+**Vorgeschlagene Reihenfolge:** ein kleiner Mirror-Versuch nach Release-/Relaunch-Zuordnung; die zentrale Homepage aus Studio, shop und Portfolio3 strukturieren; anschließend CORE ARENAs Training verlässlich machen. Kurze Begründungen und erste Schritte stehen zusätzlich auf der Dashboardübersicht und unter „Offene Schritte“, ausführliche Grenzen und Belege bleiben erreichbar. Empfehlungen sind noch keine ausgewählten oder umgesetzten Maßnahmen; die 15 Analysen und 0/49 Umsetzungen bleiben unverändert.
+
 Der Projektkompass ist der zentrale Arbeitsstand: ursprüngliche Ziele und Nachrichten, 17 Produkte in drei Bereichen, lokale Pfade, ausführliche Analyseberichte, Kennzahlen mit ihren Aussagegrenzen und offene nächste Schritte. Er funktioniert auch offline durch Öffnen von `index.html`. GitHub Actions veröffentlicht ihn nach Änderungen an `main` automatisch auf GitHub Pages.
 
 Stand: **09.10.2026**. Bestandsaufnahme der angefragten Projekte: sechs Spiele aus dem Dashboard, sieben Web-Repositories und vier Android-Apps. **Fünfzehn begrenzte Analysen sind dokumentiert: drei Android-Piloten, sieben Web-Grundanalysen und fünf Spiel-Grundanalysen.** Die ausgewählte erste Analysebasis ist damit vollständig. Enthalten sind Beschreibungen, Repository-Zuordnungen, lokale Pfade und ausführliche Befunde mit ihren jeweiligen Prüfgrenzen; eine vollständige Prüfung aller Funktionen oder aller 17 Produkte ist damit nicht behauptet.

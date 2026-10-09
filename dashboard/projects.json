@@ -184,7 +184,7 @@
         "Wie funktionieren CTF/One Flag, die anderen zwei Karten, Karrierefortsetzung und längerfristiger Spielfortschritt?",
         "Wie funktionieren mobile Gameplay-/Touchsteuerung, Audio/Fullscreen und gezielte Fokus-/Hintergrundfälle?"
       ],
-      "nextStep": "Wenige Maßnahmen nach gemeinsamem Vergleich auswählen; vorgeschlagene Änderungen sind noch nicht umgesetzt.",
+      "nextStep": "Vorschlag: dritter Schritt und einziges erstes Gamepaket. Menschliche Trainingsaufgaben von Botaktionen trennen und Abschlussaussage passend zur tatsächlichen Lernleistung gestalten; maßgeblichen Quellstand und frisches Training gezielt prüfen. Keine pauschale Bot-/Design-/Waffenänderung; noch nicht ausgewählt oder umgesetzt.",
       "sourceFiles": [
         "spiele-bestand.json",
         "README.md",
@@ -192,7 +192,8 @@
         "analysen/core-arena/Quellenpruefung.md",
         "analysen/core-arena/runtime/README.md",
         "analysen/core-arena/screenshots/manifest.json",
-        "analysen/spiele/Grundvergleich.md"
+        "analysen/spiele/Grundvergleich.md",
+        "KOMPAKTUEBERSICHT.md"
       ],
       "analysisId": "core-arena"
     },
@@ -246,14 +247,15 @@
         "Welche echte geschäftliche Kontaktmöglichkeit und welcher einfache Anfrageweg sollen hinterlegt werden?",
         "Soll die zentrale emfau-Seite Webleistungen priorisieren und Games/Apps ergänzend verlinken, oder mehrere Zielgruppen gleichberechtigt ansprechen?"
       ],
-      "nextStep": "Die bereits ruhige Studio-Struktur gegen die übrigen Webauftritte vergleichen und entscheiden, ob der zentrale Einstieg Webleistungen priorisiert. Games und Apps können danach als ergänzende Produktseite oder knapper Bereich eingeordnet werden; die Strategie bleibt ausdrücklich offen.",
+      "nextStep": "Vorschlag: als zweiter Schritt Studio als Hauptseite für Webleistungen festlegen, mit shop als Showroom und Portfolio3 als Apps-/Games-Bereich. Erst Seitenplan und Rolle entscheiden; vor Bewerbung echten Kontaktweg und konsistenten bestätigten OMF-Status herstellen. Homepage-Rolle noch offen.",
       "sourceFiles": [
         "online-bestand.json",
         "README.md",
         "analysen/landinggame/Grundanalyse.md",
         "analysen/landinggame/Quellenpruefung.md",
         "analysen/landinggame/screenshots/manifest.json",
-        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md",
+        "KOMPAKTUEBERSICHT.md"
       ],
       "analysisId": "landinggame"
     },
@@ -280,14 +282,15 @@
         "Welcher Zeit- und Korrekturaufwand ist für das geplante 699€-Referenzkundenangebot realistisch?",
         "Welche echte Kontaktstrecke und welche Anbieteridentität sollen über LandingGame und shop hinweg einheitlich verwendet werden?"
       ],
-      "nextStep": "Im Vergleich aller sieben Webauftritte entscheiden, ob shop verlinkte Konzeptbibliothek oder Hauptseite wird. Bei Integration Markenbezeichnung, Referenzen und Kontaktweg eindeutig verbinden; keine zweite widersprüchliche Anbieteridentität schaffen.",
+      "nextStep": "Vorschlag: als Konzept-Showroom von einer Studio-Hauptseite verlinken; vorhandene Beispiele nutzen und Marke, Angebot sowie Kontakt eindeutig verbinden. Empfehlung noch nicht beschlossen oder umgesetzt.",
       "sourceFiles": [
         "online-bestand.json",
         "README.md",
         "analysen/shop/Grundanalyse.md",
         "analysen/shop/Quellenpruefung.md",
         "analysen/shop/screenshots/manifest.json",
-        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md",
+        "KOMPAKTUEBERSICHT.md"
       ],
       "analysisId": "shop"
     },
@@ -348,7 +351,7 @@
         "Bleibt eine bewusst abweichende Sprachauswahl nach Neuladen im Live-Browser erhalten?",
         "Welche externen Bilder/Spiel- und App-Links sind für einen späteren gepflegten Hauptauftritt tatsächlich erreichbar und aktuell?"
       ],
-      "nextStep": "Vorhandene Struktur als Apps-/Games-Portfolio nutzen oder bei Webverkauf als Ziel einen kurzen Leistungszugang und Kontakt ergänzen. Entscheidung anhand des gemeinsamen Vergleichs.",
+      "nextStep": "Vorschlag: ergänzenden Apps-/Games-Bereich von Studio aus erreichbar machen. Wenn eigene Produkte Vorrang erhalten sollen, Portfolio3 als alternative Hauptbasis nutzen. Rolle und Umsetzung bleiben offen.",
       "sourceFiles": [
         "online-bestand.json",
         "README.md",
@@ -356,7 +359,8 @@
         "analysen/portfolio3/Quellenpruefung.md",
         "analysen/portfolio3/screenshots/manifest.json",
         "analysen/portfolio3/runtime/README.md",
-        "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md",
+        "KOMPAKTUEBERSICHT.md"
       ],
       "analysisId": "portfolio3"
     },
@@ -609,7 +613,7 @@
         "Wie verständlich und überzeugend sind tatsächlicher Nutzen, Einstieg und Store-Darstellung?",
         "Welche wenigen Änderungen verbessern das Produkt beziehungsweise seine Positionierung?"
       ],
-      "nextStep": "Die begrenzten Vorschlaege zu Antworttreue und gespeicherten Ergebnissen konkretisieren; danach nativen Release und Store abgleichen. Monetarisierung folgt erst nach Nutzergewinnung.",
+      "nextStep": "Vorschlag: erster begrenzter App-Versuch. Zunächst veröffentlichtes Mirror und pausierten RelateLens-Relaunch einem vorgesehenen Android-Teststand zuordnen; danach Antworttreue und gespeicherte Ergebnisse gezielt verbessern und Nutzen mit wenigen passenden Personen prüfen. Noch nicht ausgewählt oder umgesetzt.",
       "sourceFiles": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
         "analysen/mirror/runtime-review.md",
@@ -618,7 +622,8 @@
         "analysen/mirror/store-review.md",
         "analysen/mirror/play-console-kpis.md",
         "analysen/mirror/TEST-UMGEBUNG.md",
-        "analysen/mirror/runtime/README.md"
+        "analysen/mirror/runtime/README.md",
+        "KOMPAKTUEBERSICHT.md"
       ],
       "analysisId": "mirror"
     },

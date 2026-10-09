@@ -3349,10 +3349,21 @@
         "portfolio3"
       ],
       "area": "web",
-      "title": "Vorläufiger Vorschlag: Studio als Anbieterbasis, Portfolio3 als Produktbereich",
-      "detail": "Falls Website-Aufträge Vorrang erhalten, bietet LandingGame/Studio einen verständlichen vorhandenen Einstieg; shop liefert Angebote und Branchenkonzepte, Portfolio3 Apps/Games. Die Rolle der Hauptseite ist weiterhin offen. Keine endgültige Auswahl, Zusammenführung oder Umsetzung.",
+      "title": "Homepage: Studio mit Produktbereich",
+      "detail": "LandingGame/Studio als zentrale Anbietergrundlage vorschlagen, shop als verlinkten Konzept-Showroom und Portfolio3 als ergänzenden Produktbereich nutzen. Games und Apps sichtbar halten, ohne alle Besucherziele gleich prominent in den ersten Bildschirm zu legen. Vor Bewerbung tatsächlichen Kontaktweg herstellen und OMF-Referenzstatus einheitlich bestätigen. Die räumlichen Auftritte bleiben optionale Showcases; Solomon ein separates Produktangebot. Zunächst Struktur entscheiden, anschließend nur die gewählte Grundlage vervollständigen.",
       "status": "proposed",
-      "source": "analysen/onlineauftritt/Grundanalyse-Vergleich.md"
+      "source": "KOMPAKTUEBERSICHT.md",
+      "priorityRank": 2,
+      "rationale": "Studio erklärt Angebot und Ansprechpartner klar und wirkt ruhig. shop liefert passende Konzepte, Portfolio3 direkte App-/Spielwege. Diese vorhandenen Teile sind eine brauchbare Grundlage für eine zentrale Seite.",
+      "firstStep": "Kurzen Seitenplan mit Webleistungen vorne und eigenem Apps-/Games-Bereich festlegen. Diese Rolle ist noch zu entscheiden.",
+      "completionCriterion": "Der Seitenplan zeigt Hauptangebot, Kontaktziel und getrennte Produktwege klar. Bei späterer Umsetzung funktioniert die Anfrage vom Mobiltelefon bis zum vorgesehenen Empfang; Referenz- und Produktangaben stimmen mit bestätigten Ständen überein. Eine bloße Formularvorschau zählt nicht als fertiger Kontaktweg.",
+      "limitation": "Webaufträge als Hauptangebot sind eine vorgeschlagene Schwerpunktwahl. Wenn eigene Produkte im Vordergrund stehen sollen, wäre Portfolio3 die direktere Startbasis. Keine Markt-/Rentabilitätsdaten, kein bestätigter Verkaufseffekt; die endgültige Rolle, Integration und Umsetzung bleiben offen.",
+      "sourceDocs": [
+        "analysen/onlineauftritt/Grundanalyse-Vergleich.md",
+        "analysen/landinggame/Grundanalyse.md",
+        "analysen/shop/Grundanalyse.md",
+        "analysen/portfolio3/Grundanalyse.md"
+      ]
     },
     {
       "id": "solomon-separate-product",
@@ -3388,6 +3399,49 @@
       "detail": "Originalberichte bleiben erhalten. Erfasster Bestand, dokumentierte begrenzte Analyse und tatsächlich umgesetzte/geprüfte Maßnahmen sind drei getrennte Arbeitsphasen. Grüne Marker zeigen erledigte Arbeit mit Statuswort; 2/3 bedeutet Analyse dokumentiert, keine fertige Produktverbesserung. Vorschläge sind eine Auswahlbasis; 0/49 umgesetzt ist kein verpflichtender Gesamtplan. Between und zurückgestellte Games erhalten dadurch keinen neuen Prüfauftrag.",
       "status": "established",
       "source": "dashboard/context.json"
+    },
+    {
+      "id": "mirror-first-bounded-attempt",
+      "projectIds": [
+        "mirror"
+      ],
+      "area": "android",
+      "priorityRank": 1,
+      "status": "proposed",
+      "title": "Mirror: kleiner Nutzerversuch",
+      "rationale": "Bisheriger Mirror-Store: 566 Besucher, 28 Installationsklicks (08.09.–05.10.2026). Der lokale Relaunch hat konkrete Ergebniswidersprüche und zu sichere Aussagen. Vorhandene Sichtbarkeit und ein begrenzter Kernumfang machen ihn zum ersten Versuch.",
+      "firstStep": "Veröffentlichtes Mirror und pausierten RelateLens-Relaunch trennen; den nächsten Android-Teststand festlegen.",
+      "detail": "Danach eigene Reaktion getrennt vom Verhalten anderer auswerten, sichere Interessensbehauptungen vorsichtiger formulieren und erste sowie gespeicherte Ergebnisse angleichen. Am zugeordneten Android-Testbuild prüfen; Datenkontrolle und Backup vor Veröffentlichung mit klären. Anschließend mit etwa fünf freiwilligen passenden Personen Verständlichkeit, hilfreichen nächsten Schritt und freiwillige Wiederkehr beobachten. Store-Einstieg und echte Bilder an diesen Stand anpassen; einen begrenzten Verbreitungsweg wählen. Keine neue Paywall oder große Zusatzfunktion für diesen ersten Versuch.",
+      "completionCriterion": "Ein eindeutig zugeordneter Android-Teststand beantwortet die dokumentierten Fälle konsistent; eigene Aussagen werden korrekt wiedergegeben und unbekannte Motive bleiben offen. Rückmeldungen zum Nutzen und freiwilliger Wiederkehr liegen getrennt von Store-Besuchen und Klicks vor. Erst dann nächsten Ausbau beurteilen; keine starre Downloadquote als Erfolgskriterium.",
+      "limitation": "Veröffentlichtes Mirror 1.0.13 und pausierter lokaler RelateLens-Relaunch 1.1.0+16 sind getrennte Stände. Webbefunde sind nicht als Fehler des veröffentlichten Android-Binaries bestätigt. Installationsklicks sind keine Installationen oder Erstnutzung; 5 % sind keine bewiesene Ursache schlechter Storegestaltung. Der Relaunch ist pausiert und nicht als veröffentlicht belegt. Auswahl, Umsetzung, Testeransprache und Veröffentlichung sind noch nicht beauftragt; keine Download-, Ranking- oder Umsatzgarantie.",
+      "source": "KOMPAKTUEBERSICHT.md",
+      "sourceDocs": [
+        "analysen/mirror/Mirror-Pilotanalyse.md",
+        "analysen/mirror/play-console-kpis.md",
+        "analysen/mirror/runtime-review.md",
+        "analysen/mirror/TEST-UMGEBUNG.md"
+      ]
+    },
+    {
+      "id": "core-arena-first-training-package",
+      "projectIds": [
+        "core-arena"
+      ],
+      "area": "games",
+      "priorityRank": 3,
+      "status": "proposed",
+      "title": "CORE ARENA: Training verlässlich machen",
+      "rationale": "Training wurde trotz offener Lernaufgabe als bestanden bestätigt. Die Quelle kann Botaktionen als menschliche Aufgaben zählen. Das ist ein belegter Einstiegsmangel mit einem klar begrenzten Korrekturpaket.",
+      "firstStep": "Quellstand festlegen und frisches Training gezielt nachprüfen; vorhandene Karriere erhalten.",
+      "detail": "Nur die Zuordnung der Lernaufgaben und die Abschlussaussage korrigieren oder präzisieren. Menschliche Aufgaben müssen eigene Aktionen zählen. Die Erfolgsaussage muss zur tatsächlichen Lernleistung passen; ein absolviertes Kennenlernmatch kann ehrlich so benannt werden. Ein Siegzwang ist nicht automatisch sinnvoll. Anschließend die betroffenen Trainingswege gezielt prüfen. Botbalance, Sci-Fi-Gestaltung und Waffenökonomie sind separate offene Fragen, kein Teil dieses ersten Pakets.",
+      "completionCriterion": "Ein passiver Spieler erhält keine durch Bots erfüllten menschlichen Aufgaben. Offene Lernschritte erzeugen keine irreführende Bestanden-Aussage; ein aktiver Spieler versteht Aufgabe und nächsten Schritt. Der Gegencheck erhält bestehende Karriere-/Speicherdaten und deckt die tatsächlich geänderten Wege ab.",
+      "limitation": "Öffentliches Spiel und eingefrorener Quellenstand sind nicht als identisches Bundle belegt. Bot-Schwierigkeit, langfristiger Spielreiz und Reichweitenwirkung bleiben ungeprüft. Das Paket wählt aus bestehenden Vorschlägen; Umsetzung ist noch nicht beauftragt.",
+      "source": "KOMPAKTUEBERSICHT.md",
+      "sourceDocs": [
+        "analysen/core-arena/Grundanalyse.md",
+        "analysen/core-arena/Quellenpruefung.md",
+        "analysen/spiele/Grundvergleich.md"
+      ]
     }
   ],
   "pending": [
@@ -3436,7 +3490,7 @@
       "area": "web",
       "projectId": null,
       "title": "Rolle und Aufbau der eigenen Landing Page entscheiden",
-      "detail": "Die sieben Web-Grundanalysen samt Vergleich liegen vor. Nach den empfohlenen sechs Spiele-Grundanalysen entscheiden, ob die zentrale Seite Webleistungen priorisiert, Produkte präsentiert oder Bereiche verbindet. Studio als Anbieterbasis und Portfolio3 als Produktbereich sind vorläufige Vorschläge; keine gewählte oder umgesetzte Architektur.",
+      "detail": "Die sieben Web-Grundanalysen und fünf ausgewählten Spielchecks liegen vor. Vorschlag als zweiter Schritt: LandingGame/Studio mit Webleistungen als Hauptangebot, shop als Showroom und Portfolio3 als ergänzenden Apps-/Games-Bereich. Zuerst Seitenplan und Rolle entscheiden, dann Kontakt und bestätigte Referenzen vervollständigen. Noch keine gewählte oder umgesetzte Architektur; MORE THAN WOMBAT bleibt zurückgestellt.",
       "kind": "strategy"
     },
     {
@@ -3468,7 +3522,7 @@
       "area": "android",
       "projectId": "mirror",
       "title": "Kleinen Mirror-Nutzerversuch konkretisieren",
-      "detail": "Antworttreue, vorsichtige Interessensaussagen, stabile Wiederöffnung und lokale Datenkontrolle zuerst verbessern; Store-Versprechen mit dem tatsächlichen Release abstimmen. Vorschläge sind noch nicht umgesetzt.",
+      "detail": "Vorschlag als erster begrenzter Versuch: nach Release-/Relaunch-Zuordnung Antworttreue, vorsichtige Interessensaussagen und stabile Wiederöffnung verbessern; Datenkontrolle vor Veröffentlichung klären. Danach etwa fünf passende freiwillige Personen und einen begrenzten Verbreitungsweg vorsehen. Store und echte Bilder mit dem tatsächlichen Stand abstimmen. Noch nicht ausgewählt oder umgesetzt.",
       "kind": "strategy"
     },
     {
@@ -3573,7 +3627,7 @@
       "projectId": null,
       "scopeLabel": "Fünf geprüfte Browsergames",
       "title": "Wenige Spielmaßnahmen aus der abgeschlossenen Basis wählen",
-      "detail": "Alle fünf beauftragten Grundchecks sind dokumentiert. Den gemeinsamen Vergleich nutzen und höchstens ein kleines erstes Maßnahmenpaket auswählen; Vertiefungen nur für die dafür nötigen offenen Wege. MORE THAN WOMBAT und übrige Spiele bleiben zurückgestellt. Keine Verbesserungen umgesetzt.",
+      "detail": "Alle fünf Grundchecks liegen vor. Vorgeschlagenes erstes Gamepaket, nach App-Versuch und Homepage-Struktur: CORE ARENAs Trainingszuordnung und Abschlussaussage verlässlich machen. Keine neue Balance-/Design-/Kampagnenrunde. Übrige Gameempfehlungen bleiben erhalten; MORE THAN WOMBAT und verwandte Games zurückgestellt. Keine Umsetzung.",
       "kind": "decision"
     },
     {

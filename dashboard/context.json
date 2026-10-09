@@ -336,6 +336,21 @@
       "scopeLabel": "Gesamtes Dashboard",
       "detail": "Aktuelle Prinzipien, Produktstände, nächste Schritte und Entscheidungen abgeglichen. Zusätzliche grüne Erledigtmarker und drei Arbeitsphasen auf Übersicht, Produktkarten/-dialogen, Analyse-Untermenüs, offenen Gruppen und zugeordneten Dokumenten ergänzt. Browsercheck beider Themes und schmaler Ansicht ohne Seitenüberlauf; 15 Produkte 2/3, Between/Wombat 1/3, 0/49 Vorschläge umgesetzt. Originalberichte und historische Etappen erhalten; keine Produktfixes daraus abgeleitet.",
       "order": 23
+    },
+    {
+      "id": "first-priorities-proposed",
+      "title": "Drei begründete nächste Schritte vorgeschlagen und dokumentiert",
+      "status": "completed",
+      "scopeLabel": "Gesamtvorhaben · vorgeschlagene Priorisierung",
+      "projectIds": [
+        "mirror",
+        "landinggame",
+        "shop",
+        "portfolio3",
+        "core-arena"
+      ],
+      "detail": "Vorhandene Befunde verglichen und eine begrenzte Reihenfolge vorgeschlagen: Mirror-Versuch, Homepage-Struktur mit Studio/Showroom/Produktbereich, CORE-Training. Begründungen, erste Schritte, Abschlusskriterien und Grenzen auf Übersicht, offenen Schritten und Kompaktübersicht ergänzt. Keine Auswahlentscheidung oder Produktumsetzung daraus abgeleitet; 15 Analysen und 0/49 Maßnahmen unverändert.",
+      "order": 24
     }
   ],
   "originalMessages": [
@@ -433,11 +448,16 @@
       "id": "push-updated-overview",
       "label": "Aktualisierten Überblick committen und pushen",
       "text": "dann comitten und pushen"
+    },
+    {
+      "id": "priorities-proposal-and-push",
+      "label": "Begründete Vorschläge machen, sinnvoll dokumentieren und sichern",
+      "text": "ich hab ehrlich gesagt die ganzen analysen noch nicht gelesen. du kannst aber gerne deine vorschläge machen, mit begründung (nicht ausufernd) und das ggf auch auf der overview seite an sinnvoller stelle vermerken und comitten und pushen"
     }
   ],
   "nextStep": {
-    "title": "Aus der gemeinsamen Grundlage wenige Prioritäten wählen",
-    "detail": "15 begrenzte Analysen liegen vor: drei App-Piloten, sieben Webauftritte und fünf Spiele. Jetzt Befunde, Stärken und offene Prüfgrenzen gemeinsam ansehen; Homepage-Rolle entscheiden und wenige erste Maßnahmen für Apps/Games auswählen. Nur die dafür nötigen Lücken gezielt prüfen. Übrige Games bleiben zurückgestellt; bisher keine Produktverbesserungen umgesetzt.",
+    "title": "Vorschlag: mit einem kleinen Mirror-Versuch beginnen",
+    "detail": "Empfohlene Reihenfolge: 1. Mirror-Release/Relaunch zuordnen und ein kleines Verlässlichkeits- und Nutzertestpaket wählen. 2. Homepage-Struktur aus Studio, shop und Portfolio3 entscheiden. 3. CORE ARENAs Training gezielt korrigieren. Begründungen, begrenzter Umfang und Abschlusskriterien stehen in den neuen Empfehlungskarten. Das sind Vorschläge; Auswahl und Umsetzung sind noch offen.",
     "area": "overall",
     "status": "proposed"
   }
