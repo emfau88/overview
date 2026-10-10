@@ -2,15 +2,17 @@
 
 Stand: **10.10.2026**. Storetexte für die native App **`com.chargegeist.mew`**, Zielversion **0.9.5 / 14**. Die neuere Nutzerpräzisierung wählt den Storetitel **MewTrack: Mewing Photo Tracker** für Englisch und Deutsch. **Titel, Kurz- und Langbeschreibung beider Sprachen wurden in der richtigen Console-App gespeichert**; nach „Bewerten“ bestätigte die Console „Änderung gespeichert“. Die unten stehenden exakten Texte entsprechen diesen Feldern. Die Launcherquelle und das bereits gebaute Bundle 14 werden durch diese Metadatenänderung nicht verändert.
 
-**Release-Zwischenstand:** AAB14 akzeptiert, Produktionsrelease mit 100 % für die bisherigen 178 Länder gespeichert. Am **10.10.2026 gegen 22:31 MESZ** bestätigte die Console nach dem abschließenden Dialog per Toast, dass **fünf Änderungen zur Überprüfung gesendet wurden**. Google-Freigabe und öffentliche Aktivierung sind noch nicht belegt. Alle bisherigen Storebilder bleiben auf ausdrückliche Nutzerpräzisierung unverändert.
+**Historischer Release-Zwischenstand vor der späteren Freigabe:** AAB14 akzeptiert, Produktionsrelease mit 100 % für die bisherigen 178 Länder gespeichert. Am **10.10.2026 gegen 22:31 MESZ** bestätigte die Console nach dem abschließenden Dialog per Toast, dass **fünf Änderungen zur Überprüfung gesendet wurden**. Google-Freigabe und öffentliche Aktivierung sind noch nicht belegt. Alle bisherigen Storebilder bleiben auf ausdrückliche Nutzerpräzisierung unverändert.
 
-**Lesende Nachkontrolle um 22:35 MESZ:** Vorabprüfungen fertig; die Console zeigt **„Deine Änderungen werden jetzt überprüft.“** Version14 und die fünf eingereichten Änderungen sind unverändert. Google-Freigabe/öffentliche Aktivierung weiterhin offen, Managed Publishing aus; keine zusätzliche Einreichung vorgenommen.
+**Historische lesende Nachkontrolle um 22:35 MESZ:** Vorabprüfungen fertig; die Console zeigt **„Deine Änderungen werden jetzt überprüft.“** Version14 und die fünf eingereichten Änderungen sind unverändert. Google-Freigabe/öffentliche Aktivierung weiterhin offen, Managed Publishing aus; keine zusätzliche Einreichung vorgenommen.
 
 Die fünf Einreichungszeilen betreffen Produktionsrelease14/Rollout, den hinzugefügten deutschen Eintrag mit allen drei Textfeldern sowie englischen Namen, englischen Kurztext und englischen Langtext. **Keine Bild-/Icon-/Featuregrafikänderung** wurde eingereicht. Managed Publishing ist ausgeschaltet; Aktivierung nach Google-Freigabe erfolgt damit automatisch. Vor dem Senden liefen automatische Vorabprüfungen mit angezeigten bis zu 14 Minuten Restdauer; daraus folgt keine Freigabezeit oder bestätigte öffentliche Auslieferung.
 
 **Früherer Entwurf:** Zunächst waren `MewTrack: Jawline Tracker` (25 Zeichen), der englische Kurztext `Track mewing and jawline photos. Compare privately, with no account.` (68) und ein langer Text mit 1.406 Zeichen vorbereitet. Die neuere Nutzerwahl ersetzt diese Felder für die Storeeinreichung. Der neue Titel hat tatsächlich **30 Zeichen**, nicht 29.
 
 Das bestehende Icon und die Schwarz-Grün-Grundgestaltung bleiben erhalten. Drei Gratissessions einschließlich Vergleich und der bestehende einmalige Lifetime-Kauf bleiben als Produktumfang unverändert; die Texte benennen keinen Preis. Die Beschreibung erklärt den Nutzen gegenüber zufälligen Selfies anhand von geführten Winkeln, datierten Sessions und Vergleich. „Looksmaxing“ steht je Sprache einmal als möglicher Routinekontext, ohne Veränderungsversprechen. Ein Suchvolumen- oder Downloadvorteil ist nicht nachgewiesen.
+
+**Aktueller Liveabgleich am 10.10. um 23:07 MESZ:** Nach der Livemeldung des Nutzers sind Console und öffentliche englische/deutsche Play-Seiten unabhängig gegengeprüft. **MewTrack 0.9.5 / Code 14 ist live**, Produktionsrelease für **178 Länder**, angezeigte Veröffentlichung **10.10., 22:42**; keine unveröffentlichten Änderungen. Der gewählte Titel und die exakten EN-/DE-Texte sind öffentlich sichtbar (EN **30/79/1.510**, DE **30/75/1.702 Zeichen**). **Bestehende Storebilder, Icon und Featuregrafik bleiben unverändert.** Release-/Storemaßnahme abgeschlossen; MewTrack **2/4**, insgesamt **5/49 Vorschläge beziehungsweise 5/6 bewusst gewählte Maßnahmen**; beide Apps weiterhin **2/3 Phasen**. Kein neuer Play-Install-/Upgradeversuch, realer Kauf, vollständiger Kamerafluss oder gemessene Nutzerwirkung.
 
 ## Felder und Länge
 
@@ -93,7 +95,7 @@ MewTrack ist ein Foto-Tracker. Die App diagnostiziert oder behandelt keine Besch
 
 ### English release notes
 
-**Entwurf, unter 500 Zeichen:** Vor Verwendung mit den tatsächlich umgesetzten und geprüften Korrekturen abgleichen. Die Aussagen beziehen sich auf den Zielrelease und belegen allein noch keine öffentliche Veröffentlichung.
+**Für Release14 gespeichert und nun öffentlich gegengeprüft, unter 500 Zeichen.** Die Aussagen beziehen sich auf die dokumentierten kleinen Korrekturen; Releasefreigabe belegt keine vollständige Kamera-/Kaufprüfung oder Nutzerwirkung.
 
 ```text
 Improved session selection for photo comparisons, clearer purchase restore errors and refreshed daily guidance.
@@ -130,4 +132,4 @@ Kopierfertige UTF-8-Texte liegen lokal im ignorierten Ordner `analysen/mewtrack/
 
 Das ebenfalls lokale `screenshots.html` liefert das 1080×1920-Layout mit `?slide=1` bis `4`; zugehörige lokale Appansichten heißen `home.png`, `gallery.png`, `compare.png` und `settings.png`. Drei gerenderte Marketingentwürfe heißen `mewtrack-phone-01.png` bis `mewtrack-phone-03.png`. Die öffentliche Dokumentation enthält alle gespeicherten Feldtexte oben. Layout, Demo-Illustrationen und PNG-Entwürfe bleiben separate Arbeitsartefakte; **keines dieser Bilder wurde in die Console übernommen**.
 
-Der historische Befundstand bleibt in der [Nachprüfung vom 10.10.](Nachpruefung-2026-10-10.md) erhalten; Umsetzung, Prüfgrenzen und akzeptiertes AAB sind im [Updatebericht](MewTrack-Update-2026-10-10.md) dokumentiert. Gespeicherte Texte, Produktionsrelease und Einreichung sind belegt, unveränderter Launchername/Icon/Bildbestand ebenfalls festgehalten. Als nächste Console-Stufe bleiben Google-Freigabe und öffentliche Aktivierung getrennt nachzuweisen.
+Der historische Befundstand bleibt in der [Nachprüfung vom 10.10.](Nachpruefung-2026-10-10.md) erhalten; Umsetzung, Prüfgrenzen und akzeptiertes AAB sind im [Updatebericht](MewTrack-Update-2026-10-10.md) dokumentiert. Gespeicherte Texte, Produktionsrelease und Einreichung sind belegt, unveränderter Launchername/Icon/Bildbestand ebenfalls festgehalten. Die spätere eigene Console-/öffentliche EN/DE-Gegenkontrolle um 23:07 MESZ bestätigt Freigabe und Aktivierung. Kamera-/Kauf-/Upgradegrenzen bleiben separat offen; keine Wirkung auf Downloads belegt.

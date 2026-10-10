@@ -47,7 +47,7 @@
     {
       "id": "mirror-heartvia-local-go",
       "title": "Heartvia als lokale Mirror-Iteration gewählt – damaliger Stand",
-      "text": "Am 10.10.2026 wählte der Nutzer Heartvia: Love Tarot & Clarity und gab kleine lokale Korrekturen frei. Heartvia 1.1.1+17 wurde im bestehenden Mirror-Projekt mit com.energycrafted.mirror übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde, finales Debug-APK im isolierten Android-34-Emulator bedient. 263 relevante Originaldateien sind bytegleich zur Testkopie. Branch codex/heartvia-relaunch, Änderungen uncommitted, HEAD bleibt die Ausgangsbasis. Antworttreue und Daten/Tageswechsel sind abgeschlossen: 2/49 insgesamt, 2/4 Mirror, weiterhin 2/3 Phasen. Zum lokalen Abschluss zunächst Storeentwurf ohne Upload; echte Testeransprache und ein Kaufmodell nicht ausgeführt. Anschließend auf Nutzerwunsch signiertes Release-AAB und englische ASO-Felder/Icon lokal geliefert; Signierzertifikatsabdruck zum alten lokalen AAB gleich, keine Play-Uploadkey-/Consolegarantie. Anschließend ausdrücklich autorisierter Console-Upload: AAB 17 akzeptiert, Rollout und englischer Name/Texte/Icon gespeichert; Einreichung bestätigt. Automatische Vorabprüfungen laufen, Google-Freigabe/öffentliche Aktivierung noch ausstehend; Screenshots/Featuregrafik unverändert. Dieser Absatz bewahrt den damaligen lokalen und Einreichungsstand vor der späteren Nachkontrolle. Aktuell bestätigt die Kontrolle um 22:34 MESZ den öffentlichen Heartvia-Release 17; Mirror steht bei 3/4, insgesamt sind 4/49 dokumentierte Vorschläge beziehungsweise 4/6 bewusst gewählte Aufgaben abgeschlossen. Siehe Heartvia-Nachtrag und den aktuellen Arbeitsplan.",
+      "text": "Am 10.10.2026 wählte der Nutzer Heartvia: Love Tarot & Clarity und gab kleine lokale Korrekturen frei. Heartvia 1.1.1+17 wurde im bestehenden Mirror-Projekt mit com.energycrafted.mirror übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde, finales Debug-APK im isolierten Android-34-Emulator bedient. 263 relevante Originaldateien sind bytegleich zur Testkopie. Branch codex/heartvia-relaunch, Änderungen uncommitted, HEAD bleibt die Ausgangsbasis. Antworttreue und Daten/Tageswechsel sind abgeschlossen: 2/49 insgesamt, 2/4 Mirror, weiterhin 2/3 Phasen. Zum lokalen Abschluss zunächst Storeentwurf ohne Upload; echte Testeransprache und ein Kaufmodell nicht ausgeführt. Anschließend auf Nutzerwunsch signiertes Release-AAB und englische ASO-Felder/Icon lokal geliefert; Signierzertifikatsabdruck zum alten lokalen AAB gleich, keine Play-Uploadkey-/Consolegarantie. Anschließend ausdrücklich autorisierter Console-Upload: AAB 17 akzeptiert, Rollout und englischer Name/Texte/Icon gespeichert; Einreichung bestätigt. Automatische Vorabprüfungen laufen, Google-Freigabe/öffentliche Aktivierung noch ausstehend; Screenshots/Featuregrafik unverändert. Dieser Absatz bewahrt den damaligen lokalen und Einreichungsstand vor der späteren Nachkontrolle. Aktuell bestätigt die Kontrolle um 22:34 MESZ den öffentlichen Heartvia-Release 17; Mirror steht bei 3/4, insgesamt sind nach MewTracks Liveabgleich 5/49 dokumentierte Vorschläge beziehungsweise 5/6 bewusst gewählte Aufgaben abgeschlossen. Siehe Heartvia-Nachtrag und den aktuellen Arbeitsplan.",
       "source": "Ausdrückliche Nutzerentscheidung vom 10.10.2026; analysen/mirror/Heartvia-Update-2026-10-10.md"
     }
   ],
@@ -112,7 +112,7 @@
         "Aus einer Analyse folgt noch keine Freigabe zur Veröffentlichung oder zu Store-Änderungen; solche Umsetzungen sind weitere Schritte.",
         "Die spätere Monetarisierung von ZeroHero und Mirror ist ein ausdrückliches Nutzerziel. Nutzergewinnung kommt zuerst; Preismodell, Kaufumfang und konkrete Zahlungsintegration sind noch nicht festgelegt.",
         "Ausgewählter Schritt seit 10.10.2026: Heartvia: Love Tarot & Clarity 1.1.1+17 lokal übernommen/geprüft und öffentlich bei Google Play veröffentlicht. Drei der vier bestehenden Maßnahmen abgeschlossen. Console-/öffentlicher Name-/Text-/Iconabgleich 10.10., 22:34 bestätigt, Code 17/178 Länder; echter Play-Upgrade und Nutzerversuch weiterhin offen. Nutzerversuch nicht ausgewählt.",
-        "Zusätzlich freigegeben: MewTrack kleines Update 0.9.5/14, Version+1 und Play-/Storeübernahme. Lokal übernommen/geprüft, eine von vier Maßnahmen completed. Grunddesign/Icon/Launcher erhalten; neuer Storetitel MewTrack: Mewing Photo Tracker und EN/DE freigegeben. Kamera-/realer Kauf-/Play-Upgradegrenzen bleiben offen; Nutzerversuch nicht automatisch ausgewählt."
+        "Zusätzlich freigegeben: MewTrack kleines Update 0.9.5/14, Version+1 und Play-/Storeübernahme. Lokal übernommen/geprüft und öffentlich bestätigt; zwei von vier Maßnahmen completed. Grunddesign/Icon/Launcher erhalten; neuer Storetitel MewTrack: Mewing Photo Tracker und EN/DE freigegeben. Kamera-/realer Kauf-/Play-Upgradegrenzen bleiben offen; Nutzerversuch nicht automatisch ausgewählt."
       ],
       "notes": []
     }
@@ -138,7 +138,8 @@
     "Unvoreingenommen und unabhängig bewerten: zuerst ein eigenes Urteil anhand tatsächlicher Bedienung bilden. README-Texte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen. Stärken, Schwächen, Quelle und subjektive Einschätzung nachvollziehbar unterscheiden; kurze Spielsitzungen belegen keine Langzeitmotivation.",
     "Die Nutzerwahl Heartvia vom 10.10.2026 erlaubt die kleinen lokalen Mirror-Korrekturen. Gewählte Marke, vorbereitete Testkopie, tatsächliche Originalübernahme, geprüftes Binary und veröffentlichtes Play-Release einzeln belegen. Homepage und CORE-Training bleiben nachfolgende Vorschläge; 49 bestehende Maßnahmen werden anhand tatsächlicher Umsetzung und Prüfung gezählt.",
     "Öffentliche Tagesnachträge erlauben die Beurteilung von Auftrag, Versionen, Methoden und Folgerungen durch einen weiteren Chat. Eine unabhängige technische Wiederholung benötigt die separat lokalen Appquellen und Prüfartefakte; Overview veröffentlicht keine Apppakete, Schlüssel oder Rohprotokolle. Historische Pilotgrenzen gelten für ihre Etappe, neue begrenzte Nachproben stehen in datierten Nachträgen.",
-    "Bewusst gewählte Arbeitsaufgaben gesondert zeigen: Die 49 dokumentierten Vorschläge bleiben eine Auswahlbasis, kein Pflichtgesamtplan. Aktuelle Auswahl explizit über workPlan.selectedActionIds, Status aus bestehenden Maßnahmen. Apps abschließen, danach Homepage-Entscheidung vorbereiten; keine automatische Freigabe für Homepage-/COREfixes oder Testeransprache."
+    "Bewusst gewählte Arbeitsaufgaben gesondert zeigen: Die 49 dokumentierten Vorschläge bleiben eine Auswahlbasis, kein Pflichtgesamtplan. Aktuelle Auswahl explizit über workPlan.selectedActionIds, Status aus bestehenden Maßnahmen. Apps abschließen, danach Homepage-Entscheidung vorbereiten; keine automatische Freigabe für Homepage-/COREfixes oder Testeransprache.",
+    "Neuere Designfreigabe: keine Termine/Fristen, Begrüßung oder Motivationsbox. Hauptfokus zuerst, aktive Aufgaben als klare Zeilen mit tatsächlichem Hindernis unmittelbar an der jeweiligen Aufgabe, kompakte Produkte danach, Fragen/Analysen/sekundäre Informationen einklappbar. Mobile hat Vorrang; keine erfundenen Aufwand-/Prioritätswerte oder neue Business-Logik. IDs, Statusregeln, Verknüpfungen und vollständige Inhalte erhalten; bisheriger warmer und Anthrazitmodus bleiben."
   ],
   "chronology": [
     {
@@ -509,6 +510,31 @@
       "scopeLabel": "MewTrack · Google-Überprüfung, öffentliche Aktivierung offen",
       "title": "MewTrack14: laufende Google-Überprüfung lesend bestätigt",
       "detail": "Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung."
+    },
+    {
+      "id": "mewtrack-public-release14-verified",
+      "order": 37,
+      "date": "2026-10-10",
+      "projectIds": [
+        "mewtrack"
+      ],
+      "status": "completed",
+      "scopeLabel": "MewTrack · Veröffentlichung, öffentlicher EN/DE-Abgleich und Hinweiszuordnung",
+      "title": "MewTrack 14 unabhängig als veröffentlicht bestätigt",
+      "detail": "Nach der Nutzer-Livemeldung am 10.10.2026 um 23:07 MESZ unabhängig lesend bestätigt: Console ohne unveröffentlichte Änderungen, Produktion Release 14 (0.9.5) in 178 Ländern verfügbar, angezeigte Veröffentlichung 10.10., 22:42. Öffentliche englische und deutsche Play-Seiten zeigen MewTrack: Mewing Photo Tracker, Version 0.9.5/Update 10.10. und die gewählten Texte (EN 30/79/1.510; DE 30/75/1.702 Zeichen). Bestehende Storebilder/Icon/Featuregrafik unverändert. Kein neuer Play-Install-/Upgradeversuch, realer Kauf oder vollständiger Kamerafluss; keine Nutzer- oder ASO-Wirkung belegt. Die aufgeklappten Empfehlungen des aktiven Produktionsrelease 14 sind diesem Release zugeordnet: Edge-to-edge/Inset-Prüfung für Android 15+, veraltete API androidx.core.view.X.b und eine R8-Empfehlung mit AGP mindestens 9.0. Der geprüfte Release wurde bereits mit R8/Ressourcenverkleinerung und AGP 8.10.1 gebaut; die Empfehlung beweist weder ausgeschaltetes R8 noch einen reproduzierten Appfehler. Der historische Ziel-API-Hinweis ist getrennt von diesen aktuellen Empfehlungen zu behandeln; Release 14 target36. Ursache und reale Kaufwirkung eines kontoweiten Zahlungskontohinweises bleiben separat offen. Keine neuen SDK-/AGP- oder Appkorrekturen durchgeführt und keine privaten Zahlungsdaten veröffentlicht. MewTrack 2/4, insgesamt 5/49 Vorschläge bzw. 5/6 bewusst gewählt. Native Runde bleibt in_progress."
+    },
+    {
+      "id": "overview-clean-mobile-design-go",
+      "order": 38,
+      "date": "2026-10-10",
+      "projectIds": [],
+      "status": "documented",
+      "scopeLabel": "Overview · visueller/struktureller Umbau, vorhandene Daten erhalten",
+      "title": "Cleaner Overview-Aufbau ohne Termine freigegeben",
+      "detail": "Nach dem zunächst nur zur Meinung vorgelegten Mockup gab der Nutzer die Empfehlung ausdrücklich frei: Fokus zuerst, aktive Aufgaben, kompakte Produkte, aufgabennahes Hindernis, Fragen/abgeschlossene Analysen einklappbar; mobile Bedienung vorrangig. Keine Begrüßung/Motivationsbox und keine Termine, erfundenen Aufwand-/Prioritätswerte oder neue Business-Logik. Datenquellen, IDs, Statusregeln, Berichte, Links und Filter/Dialoge erhalten. Umsetzung und tatsächliche Regressionstests werden im Designnachtrag separat belegt.",
+      "sourceDocs": [
+        "analysen/overview/Design-Update-2026-10-10.md"
+      ]
     }
   ],
   "originalMessages": [
@@ -725,16 +751,33 @@
       "date": "2026-10-10",
       "label": "MewTrack: vorhandene Storebilder beibehalten",
       "text": "hast du bei mewtrack die store bilder geändert? davon war ja eigentlich nicht die rede"
+    },
+    {
+      "id": "mewtrack-live-and-overview-design-opinion",
+      "date": "2026-10-10",
+      "label": "MewTrack-Livemeldung und Mockup zunächst nur beurteilen",
+      "text": "Das mewtrack Update ist genehmigt von Google. Ist also live. Zudem Meinung von Kumpel zum design von overview, ist zwar ein prompt aber noch nicht ausführen, nur deine Meinung dazu, anbei ein mockup vom Zielzustand: Überarbeite das bestehende Overview-Dashboard rein strukturell und visuell, ohne Daten, Verknüpfungen, Produktzustände, Analyseinhalte oder bestehende Logik zu verlieren.\n\nZiel: cleaner, hochwertiger, ruhiger und stärker priorisiert.\n\nWichtig:\n\n- Bestehende Datenquellen, IDs, Produktverknüpfungen, Analyseberichte und Statuslogik vollständig erhalten.\n- Keine Datenmodelle umbenennen oder entfernen, wenn es nicht zwingend nötig ist.\n- Keine Inhalte löschen; weniger wichtige Bereiche dürfen nur anders gruppiert oder eingeklappt werden.\n- Keine neue Business-Logik erfinden.\n\nUmbau:\n\n1. „Als Nächstes“ ganz nach oben und klar als Hauptfokus hervorheben.\n2. Weniger verschachtelte Karten. Produkt- und Aufgabenbereiche eher als saubere Zeilen/Listen darstellen.\n3. Typografie deutlich verbessern: klare Hierarchie, Manrope, konsistente Abstände, weniger visuelles Rauschen.\n4. Aktive Aufgaben direkt unter dem Hauptfokus zeigen.\n5. Produktübersicht darunter kompakt halten.\n6. Erledigte Analysen und sekundäre Informationen einklappbar und weiter unten platzieren.\n7. Mobile sauber responsiv umsetzen: Tabellen dort in kompakte vertikale Zeilen/Karten umwandeln, keine gequetschten Desktoptabellen.\n8. Bestehende Funktionen, Filter, Dialoge, Links und Datenbeziehungen nach dem Umbau vollständig testen.\n\nVor Änderungen zuerst prüfen, wie Datenfluss und Verknüpfungen aktuell funktionieren. Danach schrittweise refactoren und nach jedem größeren Schritt gegen Regressionen testen.\n\nDas Ziel ist kein neues Dashboard, sondern dieselbe funktionierende Informationsbasis mit deutlich besserer visueller Hierarchie und Bedienbarkeit."
+    },
+    {
+      "id": "overview-design-no-deadlines-mobile",
+      "date": "2026-10-10",
+      "label": "Keine Termine; mobile Darstellung besonders wichtig",
+      "text": "Also ich will keine termine drin haben, aber den Rest finde ich sehr gut und Clean und übersichtlich und gut nachvollziehbar, muss auch vor allem auf mobile Funktionieren. Was siehst du als pro und contra dieses plans/ziels?"
+    },
+    {
+      "id": "overview-clean-design-implementation-go",
+      "date": "2026-10-10",
+      "label": "Designempfehlung und Hindernis direkt bei Aufgabe freigegeben",
+      "text": "Ok dann noch deine Empfehlung von vorher bezüglich Design umsetzen, das mit blocker direkt bei Aufgabe usw"
     }
   ],
   "nextStep": {
-    "title": "MewTrack14: Google-Prüfung und öffentlichen Stand abwarten",
-    "detail": "Lokales MewTrack 0.9.5/14 übernommen/geprüft, eine Mew-Maßnahme completed. Code14 akzeptiert, Produktionsrelease 100 %/178 und EN/DE-Felder gespeichert; fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus. Alle Storebilder erhalten, Grafikentwürfe gestoppt. Reale Kamera-/Kauf-/Play-Upgradefälle separat offen. Heartvia 1.1.1/17 ist um 22:34 MESZ in Console/öffentlichem Store unabhängig bestätigt. Danach Homepage-Entscheidung vorbereiten; alle 49 Vorschläge erhalten, vier completed, gewählte Aufgaben separat zählen. Lesende Console-Nachkontrolle 22:35: Vorabprüfungen fertig, Google-Überprüfung läuft.",
+    "title": "MewTrack: offene Geräteprüfungen klären",
+    "detail": "Heartvia17 und MewTrack14 sind öffentlich bestätigt. Fünf der sechs bewusst gewählten Maßnahmen sind abgeschlossen; als einzige gewählte offene Maßnahme bleibt die native MewTrack-Kernprüfung. Geeigneten vollständigen Kamera- sowie realen Play-Kauf/Restore-/Upgradeversuch ausführen oder deren Umfang ausdrücklich klären. Danach eigene Homepage entscheiden; CORE und weitere Vorschläge bleiben ungewählt.",
     "area": "android",
     "status": "in_progress",
     "projectIds": [
-      "mewtrack",
-      "mirror"
+      "mewtrack"
     ]
   },
   "workPlan": {
@@ -748,26 +791,30 @@
       "mewtrack-action-small-update",
       "mewtrack-action-console"
     ],
-    "currentActionId": "mewtrack-action-console",
+    "currentActionId": "mewtrack-action-native-check",
     "currentTask": {
       "projectIds": [
         "mewtrack"
       ],
-      "title": "MewTrack: Googles Freigabe und öffentlichen Store prüfen",
-      "detail": "Version 0.9.5 (14) und die neuen englischen/deutschen Texte sind eingereicht. Google prüft sie; danach folgt die öffentliche Gegenkontrolle. Die bisherigen Storebilder bleiben erhalten.",
+      "title": "MewTrack: offene Geräteprüfungen klären",
+      "detail": "Update 0.9.5 (14) und der englische/deutsche Store sind live. Offen bleiben ein vollständiger Kameraablauf mit Gesicht sowie reale Kauf-, Restore- und Upgradefälle.",
       "status": "in_progress",
-      "completionCriterion": "Version 14 und die freigegebenen Texte sind tatsächlich öffentlich verfügbar und gegengeprüft.",
-      "blocker": "Googles Freigabe steht aus. Kamera-, Kauf- und Upgradeprüfungen bleiben separat offen."
+      "completionCriterion": "Vollständigen Kamera-/Retake-/Saveweg mit erkanntem Gesicht und echten Play-Kauf/Restore/Sync/Upgrade gezielt nachweisen. Eine Verkleinerung dieser Prüfrunde benötigt eine ausdrückliche neue Umfangsentscheidung; dokumentierte Teiltests und Grenzen allein schließen sie nicht ab.",
+      "blocker": "Der bisherige virtuelle Kameraeingang erkannte kein Gesicht; ein geeigneter vollständiger Kameralauf und reale Play-Kauf/Restore-/Upgradefälle wurden bislang nicht ausgeführt."
     },
     "taskBoundaries": {
       "mewtrack-action-native-check": {
-        "detail": "81 JVM-/6 Androidtests und begrenzte Debug-/AAB14-Ansichten erledigt. Virtuelles Front-Kamerabild blieb am No-face-Gate; vollständige Kamera-/Kauf-/Play-Upgradeprüfung bleibt offen.",
+        "detail": "Update 0.9.5/14 ist live und EN/DE öffentlich bestätigt. 81 JVM-/6 Androidtests und begrenzte Debug-/AAB14-Gegenproben sind belegt. Vollständige Kamera-/Kauf-/Play-Upgradefälle bleiben separat offen.",
         "completionCriterion": "Vollständigen Kamera-/Retake-/Saveweg mit erkanntem Gesicht und echten Play-Kauf/Restore/Sync/Upgrade gezielt nachweisen. Eine Verkleinerung dieser Prüfrunde benötigt eine ausdrückliche neue Umfangsentscheidung; dokumentierte Teiltests und Grenzen allein schließen sie nicht ab.",
-        "blocker": "Vollständiger Kamerafluss mit erkanntem Gesicht, realer Play-Kauf und tatsächliches Play-Upgrade bislang nicht ausgeführt."
+        "blocker": "Der bisherige virtuelle Kameraeingang erkannte kein Gesicht; ein geeigneter vollständiger Kameralauf und reale Play-Kauf/Restore-/Upgradefälle wurden bislang nicht ausgeführt."
       },
       "mirror-action-release-and-store": {
         "detail": "Am 10.10. um 22:34 MESZ unabhängig bestätigt: Version 17 / 1.1.1 ist in 178 Ländern verfügbar; neuer Name, Icon und englische Texte sind öffentlich sichtbar. Nutzerversuch und echtes Play-Upgrade bleiben getrennt.",
         "completionCriterion": "Erfüllt: aktuelle Console-/öffentliche Gegenkontrolle bestätigt Veröffentlichung, Versionsidentität und gewählte Storefelder. Daraus folgt kein Nutzerversuch oder Play-Upgrade."
+      },
+      "mewtrack-action-console": {
+        "detail": "Nach der Nutzer-Livemeldung am 10.10.2026 um 23:07 MESZ unabhängig lesend bestätigt: Console ohne unveröffentlichte Änderungen, Produktion Release 14 (0.9.5) in 178 Ländern verfügbar, angezeigte Veröffentlichung 10.10., 22:42. Öffentliche englische und deutsche Play-Seiten zeigen MewTrack: Mewing Photo Tracker, Version 0.9.5/Update 10.10. und die gewählten Texte (EN 30/79/1.510; DE 30/75/1.702 Zeichen). Bestehende Storebilder/Icon/Featuregrafik unverändert. Kein neuer Play-Install-/Upgradeversuch, realer Kauf oder vollständiger Kamerafluss; keine Nutzer- oder ASO-Wirkung belegt.",
+        "completionCriterion": "Erfüllt: Produktionsrelease14/0.9.5, öffentlicher EN/DE-Textabgleich und Zuordnung der aktuellen Release-Empfehlungen sind lesend belegt. Kein Geräte-/Kauf- oder Warnungsfixabschluss daraus ableiten."
       }
     },
     "nextStage": {

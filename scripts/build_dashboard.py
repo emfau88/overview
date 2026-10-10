@@ -31,6 +31,9 @@ ROOT_DOCUMENTS = (
     "apps-bestand.json",
     "github-repositories.json",
     "dashboard/README.md",
+    "dashboard/assets/fonts/README.md",
+    "dashboard/assets/fonts/OFL.txt",
+    "dashboard/assets/fonts/FONTLOG.txt",
 )
 IMAGE_MIME_TYPES = {
     ".png": "image/png",
@@ -304,8 +307,22 @@ def build_data() -> dict[str, Any]:
 
 def render_dashboard(data: dict[str, Any]) -> bytes:
     template = read_text(DASHBOARD / "index.template.html")
+    font_dir = DASHBOARD / "assets" / "fonts"
+    font_bytes = (font_dir / "Manrope-Variable.ttf").read_bytes()
+    if font_bytes[:4] != b"\x00\x01\x00\x00":
+        raise BuildError("Manrope muss eine gültige TrueType-Schriftdatei sein")
+    font_license = read_text(font_dir / "OFL.txt")
+    font_log = read_text(font_dir / "FONTLOG.txt")
+    embedded_font = (
+        "/* Manrope font license and information:\n"
+        + "\n".join(line.rstrip() for line in (font_license + "\n" + font_log).splitlines()).replace("*/", "* /")
+        + "\n*/\n@font-face{font-family:'Manrope';font-style:normal;"
+        "font-weight:200 800;font-display:swap;src:url(data:font/ttf;base64,"
+        + base64.b64encode(font_bytes).decode("ascii")
+        + ") format('truetype')}\n"
+    )
     replacements = {
-        "/* DASHBOARD_STYLES */": read_text(DASHBOARD / "styles.css"),
+        "/* DASHBOARD_STYLES */": embedded_font + read_text(DASHBOARD / "styles.css"),
         "/* DASHBOARD_DATA */": json.dumps(data, ensure_ascii=False, separators=(",", ":"), allow_nan=False).replace("</", "<\\/"),
         "/* DASHBOARD_APP */": read_text(DASHBOARD / "app.js"),
     }

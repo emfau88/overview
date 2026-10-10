@@ -174,7 +174,7 @@
       if (line.includes('|') && tableDivider(lines[i + 1])) {
         const head = splitCells(line); i += 2; const rows = [];
         while (i < lines.length && lines[i].trim() && lines[i].includes('|')) rows.push(splitCells(lines[i++]));
-        output.push(`<div class="table-wrap"><table><thead><tr>${head.map((cell) => `<th>${inlineMarkdown(cell, sourcePath)}</th>`).join('')}</tr></thead><tbody>${rows.map((cells) => `<tr>${head.map((_, index) => `<td>${inlineMarkdown(cells[index] || '', sourcePath)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`); continue;
+        output.push(`<div class="table-wrap"><table><thead><tr>${head.map((cell) => `<th>${inlineMarkdown(cell, sourcePath)}</th>`).join('')}</tr></thead><tbody>${rows.map((cells) => `<tr>${head.map((cell, index) => `<td data-label="${escape(cell.replace(/[*_`]/g, ''))}">${inlineMarkdown(cells[index] || '', sourcePath)}</td>`).join('')}</tr>`).join('')}</tbody></table></div>`); continue;
       }
       if (/^\s*>/.test(line)) {
         const quote = []; while (i < lines.length && /^\s*>/.test(lines[i])) quote.push(lines[i++].replace(/^\s*>\s?/, ''));
@@ -215,8 +215,8 @@
     const current = plan.currentTask || context.nextStep || {};
     const scope = scopedProjects(current).length ? current : selected || current;
     const criterion = current.completionCriterion || selected?.completionCriterion || selected?.validation || 'Das Abschlusskriterium des gewählten Schritts wird hier dokumentiert.';
-    const blocker = current.blocker || '';
-    return `<section class="current-work" aria-label="Aktueller Arbeitsschritt"><div class="eyebrow">Aktueller Schritt</div><div class="card-scope">${scopeMark(scope)}${badge(current.status || selected?.status || 'pending', current.statusLabel)}</div><h1>${escape(current.title || selected?.title || 'Nächsten kleinen Schritt festlegen')}</h1><p>${escape(current.detail || selected?.detail || 'Eine konkrete Aufgabe auswählen und ihren Abschluss festhalten.')}</p>${blocker ? `<p class="task-blocker"><strong>Offen / Blocker:</strong> ${escape(text(blocker))}</p>` : ''}<div class="completion-criterion"><strong>Abgeschlossen, wenn:</strong>${escape(criterion)}</div><a class="area-link" href="#pending/selected">Beschlossene Aufgaben und Belege →</a></section>`;
+    const blocker = current.blocker || selected?.blocker || '';
+    return `<section class="current-work" aria-label="Aktueller Arbeitsschritt"><div class="current-work-header"><div class="eyebrow">Als Nächstes</div>${badge(current.status || selected?.status || 'pending', current.statusLabel)}</div><div class="current-work-body"><div class="current-work-main"><div class="card-scope">${scopeMark(scope)}</div><h1>${escape(current.title || selected?.title || 'Nächsten kleinen Schritt festlegen')}</h1><p>${escape(current.detail || selected?.detail || 'Eine konkrete Aufgabe auswählen und ihren Abschluss festhalten.')}</p><a class="area-link" href="#pending/selected">Aufgaben und Belege ansehen →</a></div><div class="current-work-finish">${blocker ? `<p class="task-blocker"><strong>Offen / Blocker</strong>${escape(text(blocker))}</p>` : ''}<details class="completion-criterion"><summary>Abschlusskriterium ansehen</summary><p>${escape(criterion)}</p></details></div></div></section>`;
   }
 
   function selectedWork() {
@@ -227,8 +227,11 @@
     const open = tasks.filter((task) => !actionComplete(task));
     const rank = (task) => task.id === plan.currentActionId ? 0 : task.blocker || task.status === 'blocked' ? 1 : task.status === 'in_progress' ? 2 : 3;
     open.sort((a, b) => rank(a) - rank(b));
-    const card = (task) => `<article class="selected-task${actionComplete(task) ? ' done' : ''}" id="pending-${escape(task.id)}"><div class="card-scope">${scopeMark(task)}${badge(task.status)}</div><h3>${escape(task.title)}</h3>${task.blocker ? `<p class="task-blocker"><strong>Offen / Blocker:</strong> ${escape(text(task.blocker))}</p>` : ''}<details class="original"><summary>Umfang, Abschlusskriterium und Belege</summary>${field('Aufgabe', task.detail)}${field('Abgeschlossen, wenn', task.completionCriterion || task.validation || 'Noch zu dokumentieren.')}${sources(task.sourceDocs)}</details></article>`;
-    return `<section class="selected-work" id="pending-selected" aria-label="Beschlossene Aufgaben und ihr Fortschritt"><div class="section-head"><h2>Beschlossene Aufgaben</h2></div><div class="selected-work-summary"><strong>${completed.length} von ${tasks.length} erledigt</strong><p>Nur ausdrücklich ausgewählte Aufgaben werden hier gezählt.</p></div><progress class="selected-progress" value="${completed.length}" max="${tasks.length}" aria-label="${completed.length} von ${tasks.length} beschlossenen Aufgaben erledigt"></progress><div class="selected-task-list">${open.map(card).join('')}</div>${completed.length ? `<details class="completed-selected"><summary>Erledigte gewählte Aufgaben (${completed.length})</summary><div class="selected-task-list">${completed.map(card).join('')}</div></details>` : ''}</section>`;
+    const card = (task) => {
+      const blocker = task.blocker || (task.id === plan.currentActionId ? plan.currentTask?.blocker : '');
+      return `<article class="selected-task${actionComplete(task) ? ' done' : ''}" id="pending-${escape(task.id)}"><div class="selected-task-product">${scopeMark(task)}</div><div class="selected-task-body"><h3>${escape(task.title)}</h3>${blocker ? `<p class="task-blocker"><strong>Offen / Blocker</strong>${escape(text(blocker))}</p>` : ''}<details class="original"><summary>Details und Belege</summary>${field('Aufgabe', task.detail)}${field('Abgeschlossen, wenn', task.completionCriterion || task.validation || 'Noch zu dokumentieren.')}${sources(task.sourceDocs)}</details></div><div class="selected-task-status">${badge(task.status)}</div></article>`;
+    };
+    return `<section class="selected-work" id="pending-selected" aria-label="Beschlossene Aufgaben und ihr Fortschritt"><div class="section-head"><h2>Aktive Aufgaben</h2><a href="#pending/selected">Alle Aufgaben →</a></div><div class="selected-work-summary"><strong>${completed.length} von ${tasks.length} erledigt</strong><p>Fortschritt der bewusst gewählten Aufgaben.</p></div><progress class="selected-progress" value="${completed.length}" max="${tasks.length}" aria-label="${completed.length} von ${tasks.length} beschlossenen Aufgaben erledigt"></progress><div class="selected-list-head" aria-hidden="true"><span>Produkt</span><span>Arbeitsschritt und offene Punkte</span><span>Status</span></div><div class="selected-task-list">${open.length ? open.map(card).join('') : '<p class="selected-empty">Alle gewählten Aufgaben sind abgeschlossen.</p>'}</div>${completed.length ? `<details class="completed-selected"><summary>Erledigte gewählte Aufgaben (${completed.length})</summary><div class="selected-task-list">${completed.map(card).join('')}</div></details>` : ''}</section>`;
   }
 
   function workDirection() {
@@ -255,7 +258,10 @@
     const compactDoc = paths.get(normalize('KOMPAKTUEBERSICHT.md'));
     const gamesComparison = paths.get(normalize('analysen/spiele/Grundvergleich.md'));
     const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse dokumentiert' : project.status === 'deferred' ? 'Zurückgestellt' : 'Nur Bestand';
-    const productRow = (project) => '<div class="focus-product">' + productLabel(project) + '<div class="focus-product-links"><span class="compact-status' + (completedIds.has(project.id) ? ' done' : '') + '">' + shortStatus(project) + '</span>' + (project.analysisId ? '<a href="#results/' + escape(project.analysisId) + '/review">Bericht lesen →</a>' : '<button class="link-button" data-project="' + escape(project.id) + '">Bestand ansehen →</button>') + '</div></div>';
+    const productRow = (project) => {
+      const progress = projectProgress(project);
+      return '<div class="focus-product"><div class="focus-product-name">' + productLabel(project) + '</div><div class="focus-product-status"><span class="compact-status' + (completedIds.has(project.id) ? ' done' : '') + '">' + shortStatus(project) + '</span><span class="focus-product-progress">' + progress.phases + '/3 Arbeitsphasen' + (progress.actions ? ' · ' + progress.doneActions + '/' + progress.actions + ' Vorschläge umgesetzt' : '') + '</span></div><div class="focus-product-links">' + (project.analysisId ? '<a href="#results/' + escape(project.analysisId) + '/review">Bericht lesen →</a>' : '<button class="link-button" data-project="' + escape(project.id) + '">Bestand ansehen →</button>') + '</div></div>';
+    };
     const apps = projects.filter((project) => areaAlias(project.area) === 'apps');
     const otherAreas = ['web', 'games'].map((id) => {
       const members = projects.filter((project) => areaAlias(project.area) === id);
@@ -272,7 +278,7 @@
     return currentWork() +
       selectedWork() +
       workDirection() +
-      section('Android-Apps und ihre Berichte', '<div class="focus-products">' + apps.map(productRow).join('') + '</div>', 'Produktdetails und Quellen bleiben erreichbar') +
+      section('Produkte im aktuellen Fokus', '<div class="focus-products"><div class="focus-products-head" aria-hidden="true"><span>Android-App</span><span>Dokumentierter Stand</span><span>Bericht</span></div>' + apps.map(productRow).join('') + '</div>', 'Android-Apps · alle Details bleiben erreichbar') +
       '<details class="work-archive"><summary>Weitere Produkte: Onlineauftritt und Browsergames</summary><div class="grid two">' + otherAreas + '</div>' + (deferred.length ? '<p class="phase-meta">Bewusst zurückgestellt: ' + escape(deferred.map((project) => project.name).join(', ')) + '. Daraus folgt kein neuer Prüfauftrag.</p>' : '') + '<a class="area-link" href="#projects">Gesamten Bestand und verwandte Repositories ansehen →</a></details>' +
       '<details class="work-archive"><summary>Analysen, Arbeitsphasen und alle dokumentierten Vorschläge</summary>' +
       '<div class="numbers"><div class="number"><strong>' + projects.length + '</strong><span>Produkte im Bestand</span></div><div class="number"><strong>' + completed.length + '</strong><span>Analysen dokumentiert</span></div><div class="number"><strong>' + Object.keys(areaLabels).length + '</strong><span>Bereiche</span></div><div class="number"><strong>' + related.length + '</strong><span>verwandte Spiele-Repos</span></div></div>' +
@@ -362,7 +368,7 @@
       ? 'Für diesen begrenzten Spielcheck sind keine Spieler-, Session- oder Retentionskennzahlen dokumentiert.'
       : 'Für diese Analyse sind keine Kennzahlen dokumentiert.';
     return `<div class="note amber">${escape(note)}</div>` +
-      (metrics.length ? `<div class="table-wrap"><table class="metric-table"><thead><tr><th>Kennzahl</th><th>Wert / Einheit</th><th>Auswahl</th><th>Tatsächliche Abdeckung</th><th>Definition und Grenze</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td>${escape(metric.label)}</td><td><strong>${escape(metric.value == null ? '—' : typeof metric.value === 'number' ? new Intl.NumberFormat('de-DE').format(metric.value) : metric.value)}</strong><p>${escape(metric.unit)}</p></td><td>${escape(metric.selectedPeriod)}</td><td>${escape(metric.availablePeriod)}</td><td>${escape(metric.definition)}<p>${escape(metric.caveat)}</p></td></tr>`).join('')}</tbody></table></div>` : `<div class="empty">${escape(emptyNote)}</div>`) + sources(analysis.documents);
+      (metrics.length ? `<div class="table-wrap"><table class="metric-table"><thead><tr><th>Kennzahl</th><th>Wert / Einheit</th><th>Auswahl</th><th>Tatsächliche Abdeckung</th><th>Definition und Grenze</th></tr></thead><tbody>${metrics.map((metric) => `<tr><td data-label="Kennzahl">${escape(metric.label)}</td><td data-label="Wert / Einheit"><strong>${escape(metric.value == null ? '—' : typeof metric.value === 'number' ? new Intl.NumberFormat('de-DE').format(metric.value) : metric.value)}</strong><p>${escape(metric.unit)}</p></td><td data-label="Auswahl">${escape(metric.selectedPeriod)}</td><td data-label="Tatsächliche Abdeckung">${escape(metric.availablePeriod)}</td><td data-label="Definition und Grenze">${escape(metric.definition)}<p>${escape(metric.caveat)}</p></td></tr>`).join('')}</tbody></table></div>` : `<div class="empty">${escape(emptyNote)}</div>`) + sources(analysis.documents);
   }
 
   function screenshotsView(analysis) {

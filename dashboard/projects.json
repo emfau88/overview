@@ -519,9 +519,9 @@
       "id": "mewtrack",
       "name": "MewTrack",
       "area": "apps",
-      "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich. Native Kotlinbasis0.9.5/14 als kleines geprüftes Update übernommen. MewTrack: Mewing Photo Tracker und EN/DE-Texte in Play gespeichert; Release14 eingereicht, Google-Freigabe/öffentliche Aktivierung offen.",
+      "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich. Kleine Korrekturen in 0.9.5/14 übernommen/geprüft; MewTrack: Mewing Photo Tracker mit EN/DE-Texte öffentlich bestätigt. Native Kamera-/Kauf-/Play-Upgradegrenzen bleiben separat offen.",
       "status": "pilot_complete",
-      "statusLabel": "Analyse abgeschlossen · kleines Update geprüft · Google-Prüfung offen",
+      "statusLabel": "Analyse abgeschlossen · Update live · native Kernprüfung offen",
       "repository": null,
       "paths": [
         "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
@@ -551,7 +551,7 @@
           "framework": "Native Android / Kotlin",
           "packageId": "com.chargegeist.mew",
           "version": "0.9.5 (Versioncode 14; vorher 0.9.4/13)",
-          "note": "32 geprüfte Dateien auf codex/mewtrack-fixes-14 übernommen, uncommitted; HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert. 81 JVM-/6 Androidtests und begrenzte Debug-/AAB14-Proben. Play akzeptierte 14, Produktionsrelease 100 %/178 und EN/DE gespeichert/eingereicht; Google-Freigabe/öffentlicher Stand offen."
+          "note": "32 geprüfte Dateien auf codex/mewtrack-fixes-14 übernommen, uncommitted; HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert. 81 JVM-/6 Androidtests und begrenzte Debug-/AAB14-Proben. Nach der Nutzer-Livemeldung am 10.10.2026 um 23:07 MESZ unabhängig lesend bestätigt: Console ohne unveröffentlichte Änderungen, Produktion Release 14 (0.9.5) in 178 Ländern verfügbar, angezeigte Veröffentlichung 10.10., 22:42. Öffentliche englische und deutsche Play-Seiten zeigen MewTrack: Mewing Photo Tracker, Version 0.9.5/Update 10.10. und die gewählten Texte (EN 30/79/1.510; DE 30/75/1.702 Zeichen). Bestehende Storebilder/Icon/Featuregrafik unverändert. Kein neuer Play-Install-/Upgradeversuch, realer Kauf oder vollständiger Kamerafluss; keine Nutzer- oder ASO-Wirkung belegt."
         }
       ],
       "notes": [
@@ -561,24 +561,25 @@
         "Freigegebenes Update 0.9.5/14: Compare/Restore/Guidance/Review-Savefehler, Löschresultate, Shared-Lifetime-State, Play-Preis, Lesbarkeit/CTA/Settings/Review und ehrliche Texte korrigiert. Icon/Grunddesign/Launcher sowie drei Gratis-Sessions/Lifetime-Umfang erhalten.",
         "81 JVMtests (36 neu), sechs Android-Review-/Löschtests und begrenzte Debug14-Compare/Restore/Guidance-Proben bestanden. Separate AAB14-Test-APK-Ansichten mit Onboarding/Home/Settings und virtuellem Front-Kameraeinstieg; No-face-Gate verhindert vollständige Aufnahme. Kamera-E2E, realer Kauf/Nutzergerät/Play-Upgrade offen.",
         "Vor Sync 80 Eingaben bytegleich zur Baseline; 32 ausgewählte Dateien übernommen, vorhandene Änderungen erhalten. codex/mewtrack-fixes-14, HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert, Appänderungen uncommitted.",
-        "Originalrelease C:/Users/madde/flutter_projects/MEWING 2.0/app/release/mewtrack-0.9.5-14.aab, 20.613.143 Bytes, SHA256 a2bc62b84dcd0ba19b8f0b32b6d65c71c37ec0996cb508bf37530d32c285f6ae. Signatur/Bundle validiert, Uploadzertifikat wie 13. In Play akzeptiert, Produktionsrelease 100 %/178 gespeichert und am 10.10. gegen 22:31 MESZ eingereicht. Google/public pending.",
+        "Originalrelease C:/Users/madde/flutter_projects/MEWING 2.0/app/release/mewtrack-0.9.5-14.aab, 20.613.143 Bytes, SHA256 a2bc62b84dcd0ba19b8f0b32b6d65c71c37ec0996cb508bf37530d32c285f6ae. Signatur/Bundle validiert, Uploadzertifikat wie 13. In Play akzeptiert, Produktionsrelease 100 %/178 gespeichert und am 10.10. gegen 22:31 MESZ eingereicht. Öffentliche Veröffentlichung anschließend am 10.10., 23:07 MESZ unabhängig bestätigt.",
         "Storetitel MewTrack: Mewing Photo Tracker sowie EN 30/79/1510 und DE 30/75/1702 gespeichert und eingereicht. Android-Launchername/Icon und sämtliche Consolebilder unverändert; vier Phone/fünf Tablet7/ein Tablet10, Featuregrafik erhalten. Marketingempfehlung nicht gewählt und gestoppt, kein Bild-Upload/Entfernen. Looksmaxing nur Routinekontext ohne Wirkungs-/Downloadgarantie.",
-        "MewTrack 1/4 Vorschläge abgeschlossen, Phase 2/3; small-update completed, native-check/console in_progress, Nutzerversuch proposed. Insgesamt 4/49 Vorschläge abgeschlossen; diese 49 sind kein gewählter Pflichtplan.",
-        "Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung."
+        "MewTrack 2/4 Vorschläge abgeschlossen, Phase 2/3; small-update und console completed, native-check in_progress, Nutzerversuch proposed. Insgesamt 5/49 Vorschläge bzw. 5/6 bewusst gewählte Maßnahmen abgeschlossen; 49 Empfehlungen sind kein Pflichtplan.",
+        "Historischer Zwischenstand: Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung.",
+        "Nach der Nutzer-Livemeldung am 10.10.2026 um 23:07 MESZ unabhängig lesend bestätigt: Console ohne unveröffentlichte Änderungen, Produktion Release 14 (0.9.5) in 178 Ländern verfügbar, angezeigte Veröffentlichung 10.10., 22:42. Öffentliche englische und deutsche Play-Seiten zeigen MewTrack: Mewing Photo Tracker, Version 0.9.5/Update 10.10. und die gewählten Texte (EN 30/79/1.510; DE 30/75/1.702 Zeichen). Bestehende Storebilder/Icon/Featuregrafik unverändert. Kein neuer Play-Install-/Upgradeversuch, realer Kauf oder vollständiger Kamerafluss; keine Nutzer- oder ASO-Wirkung belegt.",
+        "Die aufgeklappten Empfehlungen des aktiven Produktionsrelease 14 sind diesem Release zugeordnet: Edge-to-edge/Inset-Prüfung für Android 15+, veraltete API androidx.core.view.X.b und eine R8-Empfehlung mit AGP mindestens 9.0. Der geprüfte Release wurde bereits mit R8/Ressourcenverkleinerung und AGP 8.10.1 gebaut; die Empfehlung beweist weder ausgeschaltetes R8 noch einen reproduzierten Appfehler. Der historische Ziel-API-Hinweis ist getrennt von diesen aktuellen Empfehlungen zu behandeln; Release 14 target36. Ursache und reale Kaufwirkung eines kontoweiten Zahlungskontohinweises bleiben separat offen. Keine neuen SDK-/AGP- oder Appkorrekturen durchgeführt und keine privaten Zahlungsdaten veröffentlicht."
       ],
       "openQuestions": [
         "Wie funktionieren drei Posen, Auto Capture, Retake und echtes Speichern mit erkanntem Gesicht auf einem Nutzergerät? Gezielte Reviewtests sind kein kompletter Kamerafluss.",
         "Wie funktionieren realer Kauf/Restore, regionaler Preis und gemeinsame Freischaltung in bereits geöffneten Screens? Technische Fehler-/JVMtests ersetzen dies nicht.",
         "Wie verhält sich ein echtes 13→14-Play-Upgrade mit vorhandenen Sessions? Lokale Testsignatur und AAB14-Onboardingstart sind kein Play-Upgrade.",
-        "Wann werden der am 10.10. gegen 22:31 MESZ eingereichte Produktionsrelease14 und die gespeicherten EN/DE-Texte von Google freigegeben und öffentlich aktiv? Bilder bleiben ausdrücklich unverändert.",
         "Wie funktionieren natürliche Mitternacht, Zeitzonen/OEM-Resume und echte Sessionabschlüsse an zwei Tagen im Zielrelease?",
         "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Vergleichsnutzen und freiwillige Wiederkehr?",
         "Ist ein kleiner Fotoexport für Gerätewechsel/Deinstallation sinnvoll? Exportversprechen entfernt; kein Export neu gewählt.",
         "Welcher begrenzte Verbreitungsweg bringt passende Nutzer und echte Wiederkehr? Kein neuer Nutzerversuch/keine ASO-Wirkung bisher belegt.",
-        "Welcher Track/Artefakt und welche Ursache gehören zu API-/Zahlungskontohinweisen? Keine Kaufblockade allein aus Hinweisexistenz ableiten.",
+        "Welche reale Auswirkung haben die Release14-Empfehlungen zu Android15+-Insets/veralteter API? Die Zuordnung ist belegt, ein Laufzeitfehler nicht. Zahlungskonto-Ursache und Kaufwirkung bleiben separat offen.",
         "Wie künftig gecachten Lifetime-Zugang nach Erstattung/Widerruf/Kontowechsel abgleichen? Dies war kein Teil des kleinen Updates."
       ],
-      "nextStep": "Google-Freigabe/öffentliche Aktivierung nach bestätigter Einreichung von Release14 und EN/DE-Texten getrennt kontrollieren. Vollständige Kamera-/Kauf-/Play-Upgradefälle separat offen; keine Tester automatisch anschreiben und keinen Bildtausch vornehmen.",
+      "nextStep": "Verbleibenden vollständigen Kamera-/Retake-/Speicherweg mit Gesicht sowie realen Play-Kauf/Restore und tatsächliches Upgrade gezielt prüfen oder deren Umfang ausdrücklich klären. Der verfügbare Emulator hatte keine Gesichtserkennung; für reale Play-Fälle fehlt ein ausgeführter Test. Keine neuen Appfixes oder Testeransprache automatisch freigegeben.",
       "sourceFiles": [
         "analysen/mewtrack/MewTrack-Pilotanalyse.md",
         "analysen/mewtrack/MewTrack-code-review.md",
