@@ -535,6 +535,19 @@
       "sourceDocs": [
         "analysen/overview/Design-Update-2026-10-10.md"
       ]
+    },
+    {
+      "id": "overview-design-pushed-hotspot-verified",
+      "order": 39,
+      "date": "2026-10-10",
+      "projectIds": [],
+      "status": "completed",
+      "scopeLabel": "Overview · geprüfter Umbau und GitHub-/Pages-Sicherung",
+      "title": "Overview-Design umgesetzt und nach Hotspot-Wechsel veröffentlicht",
+      "detail": "Fokus, aufgabennahe Hindernisse, kompakte Zeilen, einklappbare Hintergründe und lokal eingebettetes Manrope umgesetzt. Desktop-/Mobilproben bei 1280/390/320 Pixeln, Filter/Dialog/Escape, Links, Kennzahlen, Dokumenttabellen und tatsächlicher Snapshotexport geprüft; Quellen/IDs/49 Maßnahmen/alle Kennzahlen erhalten. DNS-Cache auf ausdrücklichen Nutzerwunsch erfolgreich geleert, zuvor unveränderte GitHub-Namensfehler. Nach Nutzerwechsel auf Hotspot funktioniert git push. Am 10.10., 23:46 MESZ: HEAD/origin/main/Remote identisch bei 7d7005524168491bca09b1291db64da88dc26331, Arbeitsbaum sauber. Pages-Run 38088828842 Build/Deployment erfolgreich, Abschluss 23:45:46 MESZ. Die Ursache der früheren Verbindung ist nicht eindeutig nachgewiesen; keine DNS-Server-/Sicherheitsänderung. Reine Dashboard-/Sicherungsarbeit, keine neue Appmaßnahme oder Nutzeransprache.",
+      "sourceDocs": [
+        "analysen/overview/Design-Update-2026-10-10.md"
+      ]
     }
   ],
   "originalMessages": [
@@ -769,6 +782,42 @@
       "date": "2026-10-10",
       "label": "Designempfehlung und Hindernis direkt bei Aufgabe freigegeben",
       "text": "Ok dann noch deine Empfehlung von vorher bezüglich Design umsetzen, das mit blocker direkt bei Aufgabe usw"
+    },
+    {
+      "id": "overview-github-desktop-push-request",
+      "date": "2026-10-10",
+      "label": "Push auch über GitHub Desktop versuchen",
+      "text": "und wenn du mein programm github desktop verwendest?"
+    },
+    {
+      "id": "overview-dns-cache-check-request",
+      "date": "2026-10-10",
+      "label": "DNS-Verbindung prüfen und gegebenenfalls Cache leeren",
+      "text": "prüfe ob meine verbindung dns probleme hat oder evtl den lokalen dns cache löschen?"
+    },
+    {
+      "id": "overview-hotspot-connection-switch",
+      "date": "2026-10-10",
+      "label": "Nutzer wechselt auf Hotspot",
+      "text": "hab dich über meinen hotspot verbunden, vielleicht geht es so"
+    },
+    {
+      "id": "overview-push-retry-after-hotspot",
+      "date": "2026-10-10",
+      "label": "Push nach Verbindungswechsel erneut beauftragt",
+      "text": "versuch nochmal zu pushen"
+    },
+    {
+      "id": "overview-desktop-push-user-report",
+      "date": "2026-10-10",
+      "label": "Erfolgreichen Desktop-Push gemeldet",
+      "text": "ah auf github desktop ging der push wohl"
+    },
+    {
+      "id": "overview-latest-remote-verification-request",
+      "date": "2026-10-10",
+      "label": "Tatsächlich aktuellsten Remote-Stand gegenprüfen",
+      "text": "prüfe ob nun wirlkich der aktuellste stand auf github gepusht ist"
     }
   ],
   "nextStep": {
