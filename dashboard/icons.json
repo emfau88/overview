@@ -41,9 +41,9 @@
       "note": "Originales lokales Android-Launcher-Icon (192×192) aus der nativen Variante MEWING 2.0/app. Ihre App-ID passt zum Store-Eintrag; maßgeblicher Release-Stand und aktuelles Store-Icon sind damit noch nicht bewiesen."
     },
     "mirror": {
-      "path": "dashboard/assets/mirror.png",
-      "source": "C:\\Users\\madde\\Documents\\Mirror\\android\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png",
-      "note": "Originales lokales Android-Launcher-Icon (192×192) aus Mirror. Lokale Metadaten nennen RelateLens; Gleichheit mit dem aktuellen Store-Icon wurde nicht geprüft."
+      "path": "analysen/mirror/heartvia-icon-512.png",
+      "source": "C:/Users/madde/Documents/Mirror/assets/app_icon/heartvia_store_512.png",
+      "note": "Freigegebenes Heartvia-Herz mit goldener Orientierung vom 10.10.2026. Gestaltung des KI-Masters erhalten, mechanischer 512px-Export. Anschließend in der bestehenden Play-App übernommen und Einreichung bestätigt; Google-Freigabe/öffentliche Aktivierung am Belegzeitpunkt 18:52:09 MESZ offen. Herkunft: analysen/mirror/heartvia-icon-provenienz.json."
     },
     "between": {
       "path": "dashboard/assets/between.png",

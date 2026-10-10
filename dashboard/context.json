@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "title": "Ausgangslage, Ziele und roter Faden",
   "situation": [
     {
@@ -43,6 +43,12 @@
       "title": "Mirror-Previewbilder als zusätzliche visuelle Referenz",
       "text": "Sechs vorhandene Mirror-/RelateLens-Screenshots aus einer lokalen UI-Preview vom 07.10.2026 werden im Dashboard sichtbar zusammengeführt. Sie helfen bei der Orientierung zu den dokumentierten Produktansichten. Sie sind historische lokale Previewbilder und keine heute aufgenommenen Screenshots, keine Aufnahmen des veröffentlichten Play-Binaries und kein zusätzlicher heutiger Laufzeitnachweis. Ihre Herkunft und Aussagegrenze bleiben unmittelbar bei den Bildern sichtbar.",
       "source": "Dokumentierte lokale Mirror-UI-Preview vom 07.10.2026; Screenshot-Metadaten im Dashboard"
+    },
+    {
+      "id": "mirror-heartvia-local-go",
+      "title": "Heartvia als lokale Mirror-Iteration gewählt",
+      "text": "Am 10.10.2026 wählte der Nutzer Heartvia: Love Tarot & Clarity und gab kleine lokale Korrekturen frei. Heartvia 1.1.1+17 wurde im bestehenden Mirror-Projekt mit com.energycrafted.mirror übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde, finales Debug-APK im isolierten Android-34-Emulator bedient. 263 relevante Originaldateien sind bytegleich zur Testkopie. Branch codex/heartvia-relaunch, Änderungen uncommitted, HEAD bleibt die Ausgangsbasis. Antworttreue und Daten/Tageswechsel sind abgeschlossen: 2/49 insgesamt, 2/4 Mirror, weiterhin 2/3 Phasen. Zum lokalen Abschluss zunächst Storeentwurf ohne Upload; echte Testeransprache und ein Kaufmodell nicht ausgeführt. Anschließend auf Nutzerwunsch signiertes Release-AAB und englische ASO-Felder/Icon lokal geliefert; Signierzertifikatsabdruck zum alten lokalen AAB gleich, keine Play-Uploadkey-/Consolegarantie. Anschließend ausdrücklich autorisierter Console-Upload: AAB 17 akzeptiert, Rollout und englischer Name/Texte/Icon gespeichert; Einreichung bestätigt. Automatische Vorabprüfungen laufen, Google-Freigabe/öffentliche Aktivierung noch ausstehend; Screenshots/Featuregrafik unverändert.",
+      "source": "Ausdrückliche Nutzerentscheidung vom 10.10.2026; analysen/mirror/Heartvia-Update-2026-10-10.md"
     }
   ],
   "areas": [
@@ -104,7 +110,8 @@
         "ZeroHero, Mirror und MewTrack wurden als begrenzte Piloten analysiert. Between bleibt vorerst inventarisiert. Native Testgrenzen stehen in den jeweiligen Berichten.",
         "Der ZeroHero-Pilot umfasst eine lokale Webkopie, Store-Prüfung, Code-Gegenprüfung und zugängliche Play-Console-Daten. Er ersetzt keinen Gerätetest der veröffentlichten Android-App.",
         "Aus einer Analyse folgt noch keine Freigabe zur Veröffentlichung oder zu Store-Änderungen; solche Umsetzungen sind weitere Schritte.",
-        "Die spätere Monetarisierung von ZeroHero und Mirror ist ein ausdrückliches Nutzerziel. Nutzergewinnung kommt zuerst; Preismodell, Kaufumfang und konkrete Zahlungsintegration sind noch nicht festgelegt."
+        "Die spätere Monetarisierung von ZeroHero und Mirror ist ein ausdrückliches Nutzerziel. Nutzergewinnung kommt zuerst; Preismodell, Kaufumfang und konkrete Zahlungsintegration sind noch nicht festgelegt.",
+        "Ausgewählter lokaler Schritt seit 10.10.2026: Heartvia: Love Tarot & Clarity 1.1.1+17 im bestehenden Mirror-Projekt übernommen und gezielt geprüft. Zwei der vier bestehenden Maßnahmen abgeschlossen; tatsächliche Veröffentlichung, öffentlicher Release-/Storeabgleich und echter Nutzerversuch bleiben offen."
       ],
       "notes": []
     }
@@ -127,7 +134,9 @@
     "Die frühere Reihenfolge Dashboard/Mirror sichern, MewTrack prüfen und erneut sichern wurde abgeschlossen. Auch die ausgewählte gemeinsame Grundlage aus drei App-Piloten, sieben Webauftritten und fünf Spielen ist dokumentiert. Jetzt Befunde vergleichen und wenige Maßnahmen priorisieren; weitere Games nicht ohne neue Freigabe testen.",
     "Historische Mirror-Screenshots vom 07.10.2026 als lokale UI-Preview kennzeichnen. Sie dienen als visuelle Referenz und werden nicht als heutiger Android- oder Play-Laufzeitbeleg ausgegeben.",
     "Zusätzliche leicht verständliche Kompaktübersicht und Historie pflegen; aktuellen Stand in allen relevanten Untermenüs konsistent zeigen. Detailinformationen erhalten. Gedämpfte warme beziehungsweise neutrale Anthrazitflächen mit Schalter bleiben; gezielte grüne Erledigtmarker sind auf aktuellen Nutzerwunsch erwünscht. Fortschritt zusätzlich als Bestand, Analyse und Maßnahmen sowie tatsächliche Maßnahmenzahl zeigen. Farben ergänzen eindeutige Statuswörter; Analyseabschluss ist keine vollständige Produktprüfung oder Umsetzung.",
-    "Unvoreingenommen und unabhängig bewerten: zuerst ein eigenes Urteil anhand tatsächlicher Bedienung bilden. README-Texte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen. Stärken, Schwächen, Quelle und subjektive Einschätzung nachvollziehbar unterscheiden; kurze Spielsitzungen belegen keine Langzeitmotivation."
+    "Unvoreingenommen und unabhängig bewerten: zuerst ein eigenes Urteil anhand tatsächlicher Bedienung bilden. README-Texte, frühere Bewertungen und behauptete Testerfolge nicht als Qualitätsnachweis übernehmen. Code gezielt zur Gegenprüfung konkreter Beobachtungen nutzen. Stärken, Schwächen, Quelle und subjektive Einschätzung nachvollziehbar unterscheiden; kurze Spielsitzungen belegen keine Langzeitmotivation.",
+    "Die Nutzerwahl Heartvia vom 10.10.2026 erlaubt die kleinen lokalen Mirror-Korrekturen. Gewählte Marke, vorbereitete Testkopie, tatsächliche Originalübernahme, geprüftes Binary und veröffentlichtes Play-Release einzeln belegen. Homepage und CORE-Training bleiben nachfolgende Vorschläge; 49 bestehende Maßnahmen werden anhand tatsächlicher Umsetzung und Prüfung gezählt.",
+    "Öffentliche Tagesnachträge erlauben die Beurteilung von Auftrag, Versionen, Methoden und Folgerungen durch einen weiteren Chat. Eine unabhängige technische Wiederholung benötigt die separat lokalen Appquellen und Prüfartefakte; Overview veröffentlicht keine Apppakete, Schlüssel oder Rohprotokolle. Historische Pilotgrenzen gelten für ihre Etappe, neue begrenzte Nachproben stehen in datierten Nachträgen."
   ],
   "chronology": [
     {
@@ -351,6 +360,65 @@
       ],
       "detail": "Vorhandene Befunde verglichen und eine begrenzte Reihenfolge vorgeschlagen: Mirror-Versuch, Homepage-Struktur mit Studio/Showroom/Produktbereich, CORE-Training. Begründungen, erste Schritte, Abschlusskriterien und Grenzen auf Übersicht, offenen Schritten und Kompaktübersicht ergänzt. Keine Auswahlentscheidung oder Produktumsetzung daraus abgeleitet; 15 Analysen und 0/49 Maßnahmen unverändert.",
       "order": 24
+    },
+    {
+      "id": "mirror-heartvia-local-start",
+      "order": 25,
+      "title": "Heartvia gewählt; kleine lokale Mirror-Korrekturen begonnen",
+      "status": "in_progress",
+      "scopeLabel": "Mirror / Heartvia · lokale Umsetzung",
+      "projectIds": [
+        "mirror"
+      ],
+      "detail": "Beginn der Etappe 10.10.2026: Nutzer-Go für Heartvia: Love Tarot & Clarity und kleine lokale Korrekturen. Vorherige lokale AAB-16-Nachprüfung bestätigte Eigenreaktions-/Archivfehler. Zunächst native Abschlussprüfung ausstehend, damals 0/49 erledigt. Der nachfolgende Abschlussnachtrag dokumentiert die tatsächliche lokale Übernahme und Prüfung; keine Storepublikation oder Testeransprache."
+    },
+    {
+      "id": "mirror-heartvia-local-verified",
+      "order": 26,
+      "title": "Kleine Heartvia-Korrekturen lokal übernommen und geprüft",
+      "status": "completed",
+      "scopeLabel": "Mirror / Heartvia · lokaler Korrekturabschluss",
+      "projectIds": [
+        "mirror"
+      ],
+      "detail": "10.10.2026: Original Heartvia 1.1.1+17 auf codex/heartvia-relaunch bytegleich zur geprüften Kopie übernommen, noch uncommitted. 195 Fluttertests bestanden, analyze ohne Befunde; finales Debug-APK im isolierten Android-34-Emulator bedient. Antwort-/Archivgegenproben, kontrollierter Tages-/Resume-Fall, Löschung/Cold Restart und APK-Backupregeln belegt. 2/49 Maßnahmen insgesamt, Mirror 2/4, weiter 2/3 Phasen. Storeentwurf und Icon lokal fertig; kein öffentliches Apprelease, Storeupload oder echter Nutzerversuch."
+    },
+    {
+      "id": "mirror-heartvia-play-submission",
+      "order": 27,
+      "title": "Heartvia in Play gespeichert und Einreichung bestätigt",
+      "status": "in_progress",
+      "scopeLabel": "Mirror / Heartvia · Play Console",
+      "projectIds": [
+        "mirror"
+      ],
+      "detail": "10.10.2026, Belegzeitpunkt 18:52:09 MESZ (16:52:09 UTC): Nutzer gab Upload und Name/Icon/englische Texte bei unveränderten Screenshots ausdrücklich frei, einschließlich Bedienung über den Codex-Browser. Bestehende richtige App com.energycrafted.mirror: AAB 17 akzeptiert, Produktion Heartvia 1.1.1 mit 100 % für bisherige 178 Länder gespeichert; keine unterstützten Geräte verloren. en-US-Felder 30/69/1306 und Icon gespeichert, nur Icon als KI-erstellt gekennzeichnet. Sechs Telefon-Screenshots und Featuregrafik exakt verglichen: unverändert. Sechs 7-Zoll-/drei 10-Zoll-Tablet-Screenshots unangetastet, in Reviewvorschau vorhanden; kein separater URL-Vergleich. Einreichung der fünf Änderungen bestätigt; automatische Vorabprüfungen laufen, Google-Freigabe/öffentliche Aktivierung ausstehend. Managed Publishing aus. Fortschritt unverändert 2/49, Mirror 2/4, weiterhin 2/3 Phasen."
+    },
+    {
+      "id": "android-reaudit-public-documentation",
+      "order": 28,
+      "date": "2026-10-10",
+      "title": "Heutige App-Nachprüfungen und Freigaben öffentlich nachvollziehbar ergänzt",
+      "status": "completed",
+      "projectIds": [
+        "zerohero",
+        "mewtrack",
+        "mirror"
+      ],
+      "scopeLabel": "Android-Nachprüfungen · Dokumentation",
+      "detail": "Die zuvor nur lokalen ZeroHero-/MewTrack-Nachprüfungen und Versionsklärungen sind als datierte öffentliche Nachträge aufgenommen; native Einzelbeobachtungen, aktive Binary-/Quellbefunde und offene Kamera-/Kauf-/Play-Grenzen getrennt. Heartvia mit Wiederholungsanleitung und korrigierter Iconherkunft ergänzt. Originalanweisungen inklusive unveränderter Screenshots und Console-Go erhalten. 15 Analysen und 49 Maßnahmen-IDs bleiben; 2 Maßnahmen abgeschlossen. Overview-Commit/Push ausdrücklich beauftragt; Git-Historie und Remote-Stand belegen die anschließende Sicherung. Appquellen, Pakete und Rohprotokolle bleiben lokal."
+    },
+    {
+      "id": "mirror-heartvia-review-observed",
+      "order": 29,
+      "date": "2026-10-10",
+      "title": "Heartvias Google-Überprüfung in der Console bestätigt",
+      "status": "in_progress",
+      "projectIds": [
+        "mirror"
+      ],
+      "scopeLabel": "Mirror / Heartvia · Statuskontrolle",
+      "detail": "10.10., 19:12 MESZ: rein lesende Nachkontrolle zeigt Deine Änderungen werden jetzt überprüft. Die fünf bereits eingereichten Änderungen bleiben Produktion1.1.1 sowie englischer Name/Kurz-/Langtext/Icon. Automatische Vorabprüfungen sind nicht mehr als laufend dargestellt. Managed Publishing aus; Google-Freigabe/öffentliche Aktivierung weiter ausstehend. Keine neue Einreichung oder Storeänderung durch diese Nachkontrolle."
     }
   ],
   "originalMessages": [
@@ -453,12 +521,99 @@
       "id": "priorities-proposal-and-push",
       "label": "Begründete Vorschläge machen, sinnvoll dokumentieren und sichern",
       "text": "ich hab ehrlich gesagt die ganzen analysen noch nicht gelesen. du kannst aber gerne deine vorschläge machen, mit begründung (nicht ausufernd) und das ggf auch auf der overview seite an sinnvoller stelle vermerken und comitten und pushen"
+    },
+    {
+      "id": "android-actions-request",
+      "date": "2026-10-10",
+      "label": "Konkrete kleine Appmaßnahmen",
+      "text": "finde bezüglich der android apps die konkreten maßnehmen, die jeweils durchgeführt werden sollten und gib eine liste diebezüglich aus. relativ kompakt und leicht verständlich."
+    },
+    {
+      "id": "android-access-info",
+      "date": "2026-10-10",
+      "label": "Zugriff und Nachkontrolle zunächst nur besprechen",
+      "text": "hast du zugriff auf diese apps? müssten lokal auf diesem gerät liegen, ich hätte gern dass du jede nochmal kontrollierst ob die berichte stimmen und ob die diagnosen wirklich korrekt sind usw. nur info noch nicht anfangen"
+    },
+    {
+      "id": "android-review-scope-info",
+      "date": "2026-10-10",
+      "label": "Fehler und weitere Umbauten unterscheiden",
+      "text": "vorgehensweise betrifft dann erstmal nur fehler oder ging es auch um optischen/logischen/anderen umbau der apps? kurze info"
+    },
+    {
+      "id": "android-reaudit-authorized",
+      "date": "2026-10-10",
+      "label": "Besprochene Apps nachprüfen, nichts ändern",
+      "text": "prüfe es bei den besprochenen apps, noch keine änderungen machen."
+    },
+    {
+      "id": "android-reaudit-ux",
+      "date": "2026-10-10",
+      "label": "Optik und Bedienung am Ende ergänzen",
+      "text": "mach gerne auch vorschläge zur optik und bedienung jeweils am ende wenn du sowieso in jeder app bist"
+    },
+    {
+      "id": "android-reaudit-resume",
+      "date": "2026-10-10",
+      "label": "Unterbrochenen Auftrag abschließen",
+      "text": "du wurdest unterbrochen, führe den auftrag zu ende"
+    },
+    {
+      "id": "android-version-boundaries",
+      "date": "2026-10-10",
+      "label": "Versions- und Fehlergrenzen analysieren",
+      "text": "was wäre dein empfohlenes vorgehen? was genau braucht genauere versions und fehlergrenzen? gehe diese dinge an, noch keinen code ändern, nur analysieren"
+    },
+    {
+      "id": "mirror-brand-content-request",
+      "date": "2026-10-10",
+      "label": "Mirror-Inhalte erklären, kleine Fixes und neue Marke vorbereiten",
+      "text": "Bezüglich mirror: erkläre einfach verständlich inwiefern du Inhalte ändern willst bzw inwiefern das nötig bzw angebracht wäre. Die genannten nötigen anderen Dinge können wir definitiv fixen. Wenn wir schon dabei sind die app zu bearbeiten möchte ich sie umbenennen und neues Icon, soll beides die app stärker und besser verkaufen und Downloads generieren, mach hierzu gern Vorschläge."
+    },
+    {
+      "id": "mirror-tarot-positioning",
+      "date": "2026-10-10",
+      "label": "Tarot-Publikum in der Positionierung berücksichtigen",
+      "text": "Und bezüglich des Namens: sollten wir da nicht das Tarot Publikum mit einbeziehen? Oder lieber nicht so prominent?"
+    },
+    {
+      "id": "mirror-heartvia-go",
+      "date": "2026-10-10",
+      "label": "Freigabe des besprochenen Heartvia-Schritts",
+      "text": "Ok von Mir aus go"
+    },
+    {
+      "id": "mirror-release-delivery",
+      "date": "2026-10-10",
+      "label": "Play-Bundle, Icon und englische ASO-Felder bereitstellen",
+      "text": "hast du die version aktualisiert für googleplay upload? wo liegt das release bundle? wo das neue icon für google playstore? wo der neue app-name, kurzbeschreibung und lange beschreibung, aso optimiert auf englisch?"
+    },
+    {
+      "id": "mirror-console-info",
+      "date": "2026-10-10",
+      "label": "Console-Übernahme zunächst besprechen; Screenshots erhalten",
+      "text": "bin im brave browser in googleplay bei mirror eingeloggt, kannst du die neue version hochladen und die umbenennung, neuen icon, neuen store-auftritt (screenshots so lassen wie bisher) übernehmen? gib nur info"
+    },
+    {
+      "id": "mirror-console-go",
+      "date": "2026-10-10",
+      "label": "Console-Upload und Storeübernahme im Codex-Browser freigegeben",
+      "text": "ok dann mach das, du hast es schonmal geschafft dich einfach direkt im codex browser auf meine playconsole zuzugreifen"
+    },
+    {
+      "id": "overview-today-document-and-push",
+      "date": "2026-10-10",
+      "label": "Heutige Arbeiten nachvollziehbar dokumentieren und Overview sichern",
+      "text": "ok und hast du alles was wir heute gemacht haben in unserem overview-dashboard an sinnvollen stellen vermerkt als zusätzliche/neue infosm dass alles genau nachvollziehbar bleibt und extern später von anderem chat geprüft und beurteilt werden kann? und dann das repo comitten und pushen von overview"
     }
   ],
   "nextStep": {
-    "title": "Vorschlag: mit einem kleinen Mirror-Versuch beginnen",
-    "detail": "Empfohlene Reihenfolge: 1. Mirror-Release/Relaunch zuordnen und ein kleines Verlässlichkeits- und Nutzertestpaket wählen. 2. Homepage-Struktur aus Studio, shop und Portfolio3 entscheiden. 3. CORE ARENAs Training gezielt korrigieren. Begründungen, begrenzter Umfang und Abschlusskriterien stehen in den neuen Empfehlungskarten. Das sind Vorschläge; Auswahl und Umsetzung sind noch offen.",
+    "title": "Heartvia: Google-Freigabe und öffentliche Aktivierung prüfen",
+    "detail": "Google-Freigabe und öffentliche Aktivierung nach bestätigter Einreichung prüfen: AAB 17 und englischer Name/Texte/Icon in Play gespeichert, Console-Nachkontrolle 10.10., 19:12 MESZ bestätigt laufende Google-Überprüfung. Managed Publishing aus, daher automatische Aktivierung nach Freigabe. Öffentlichen Release-/Storeabgleich belegen; echten Nutzerversuch gesondert planen. Zwei lokale Maßnahmen abgeschlossen; weiterhin 2/49 insgesamt, Mirror 2/4 und 2/3 Phasen. Homepage/CORE bleiben nachfolgende ungewählte Vorschläge.",
     "area": "overall",
-    "status": "proposed"
+    "status": "in_progress",
+    "projectIds": [
+      "mirror"
+    ]
   }
 }

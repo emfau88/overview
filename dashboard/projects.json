@@ -1,5 +1,5 @@
 {
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "projects": [
     {
       "id": "hexfront",
@@ -470,7 +470,7 @@
       "id": "zerohero",
       "name": "ZeroHero",
       "area": "apps",
-      "description": "Android-App zum Dokumentieren von Konsumgewohnheiten, unter anderem Alkohol und Zigaretten. Als erstes Produkt in einem begrenzten Pilotcheck untersucht.",
+      "description": "Konsumtracker; Pilot plus datierte Web-/Android-/Versionsnachprüfung. Lose Quelle 25 und nativ bedientes AAB 26 unterscheiden sich; keine Appkorrektur umgesetzt.",
       "status": "pilot_complete",
       "statusLabel": "Pilotanalyse abgeschlossen · Umsetzung offen",
       "repository": null,
@@ -484,7 +484,7 @@
           "framework": "Flutter",
           "packageId": "com.energycrafted.zerohero",
           "version": "1.0.3+25",
-          "note": "Unveränderte lokale Webkopie wurde bedient und visuell geprüft. Ein Test der veröffentlichten Android-App auf einem Gerät steht aus; gleiche Versionsnummer beweist keine identische Quelle."
+          "note": "Lose Quelle/Web 1.0.3+25. Ältere APK 24, nativ geprüftes lokales AAB 1.1.0/26 und früherer Play-Stand 25 getrennt. 112 Kernelbibliotheken dem AAB zugeordnet; vollständiger baubarer 26er-Checkout noch offen."
         }
       ],
       "notes": [
@@ -492,14 +492,17 @@
         "Pilot umfasst lokale Webbedienung, Optik, Code-Gegenprüfung, öffentliche Store-Darstellung und verfügbare Play-Console-Daten.",
         "Die Pilotanalyse enthält konkrete Fehlerbefunde und einen begrenzten vorgeschlagenen Updateumfang. Appcode und Store wurden nicht verändert.",
         "Lokale Version 1.0.3+25; Play Console nennt veröffentlichte Version 25 (1.0.3). Ein älteres vorhandenes APK mit Versioncode 24 ist nicht als aktueller Store-Build anzusehen.",
-        "Ausdrückliches Nutzerziel vom 09.10.2026: ZeroHero soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen."
+        "Ausdrückliches Nutzerziel vom 09.10.2026: ZeroHero soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen.",
+        "10.10.: Settings-Übernahme, fehlende Einzelangaben als 0/Excellent und kontrollierte Abschlusslücke nach Pause am AAB 26 bestätigt; Eingabe erhalten. Direkte Home-Erfassung, optionaler Consent und Plan-Nullbestätigung in 26 bereits vorhanden. Drei Charttests bestanden; Gesamtlauf nicht bestanden. Siehe datierter Nachtrag; kein ZeroHero-Fix/Upload."
       ],
       "openQuestions": [
-        "Welche Ergebnisse bestätigen sich im tatsächlichen Android-Release auf einem Gerät?",
-        "Welche der priorisierten Maßnahmen sollen in einem kleinen nächsten Update umgesetzt werden?",
-        "Wie entwickeln sich Store-Besuche, Installationen und wiederkehrende Nutzung nach einer klar begrenzten Maßnahme?"
+        "Wo liegt die vollständige baubare 26er-Arbeitskopie einschließlich Assets, Dependencies und Androidkonfiguration?",
+        "Welcher exakt zugeordnete Stand soll später korrigiert/veröffentlicht werden?",
+        "Wie verhalten sich Doppelabschluss, XP und Stats nach rückwirkendem Plan-Nachtrag sowie weitere Cutoff-/Wochenfälle?",
+        "Wie entsprechen tatsächlicher Produktionsdatenfluss und Storeangaben dem gewählten Release?",
+        "Wie entwickeln sich echte Erstnutzung und Wiederkehr nach einem kleinen geprüften Schritt?"
       ],
-      "nextStep": "Den dokumentierten kleinen Updateumfang anhand der Pilotanalyse festlegen; vor einer Veröffentlichung die Befunde am Android-Release prüfen und die Analytics-/Privatsphäre-Angaben klären.",
+      "nextStep": "Vollständige Arbeitsbasis 26 beziehungsweise Sicherung finden und Zielstand wählen. Dann Settings-Übernahme, unbekannte Angaben im Tagesabschluss und Pausennachholung gezielt korrigieren; vorhandenen Plan/Consent/direkte Erfassung erhalten. Noch keine Umsetzungsauswahl.",
       "sourceFiles": [
         "apps-bestand.json",
         "README.md",
@@ -507,7 +510,8 @@
         "analysen/zerohero/play-console-kpis.md",
         "analysen/zerohero/review-evidence.md",
         "analysen/zerohero/store-review.md",
-        "analysen/zerohero/ZeroHero-code-review.md"
+        "analysen/zerohero/ZeroHero-code-review.md",
+        "analysen/zerohero/Nachpruefung-2026-10-10.md"
       ],
       "analysisId": "zerohero"
     },
@@ -517,7 +521,7 @@
       "area": "apps",
       "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich über Zeit. Drei lokale Implementierungen, native Android-Basis passt zu Play-Release 13 (0.9.4).",
       "status": "pilot_complete",
-      "statusLabel": "Pilotanalyse abgeschlossen · native UX noch zu prüfen",
+      "statusLabel": "Pilot abgeschlossen · native Nachprüfung teilweise ausgeführt",
       "repository": null,
       "paths": [
         "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
@@ -547,27 +551,28 @@
           "framework": "Native Android / Kotlin",
           "packageId": "com.chargegeist.mew",
           "version": "0.9.4 (Versioncode 13)",
-          "note": "Maßgebliche Reviewbasis; Version 13 (0.9.4) passt zum in Console und installiertem Play-Paket bestätigten Release. Identische Quellen noch nicht bewiesen."
+          "note": "Gewählte Kotlinbasis 0.9.4/13 mit vier bestehenden Änderungen gegenüber HEAD 0.9.3/12. Isolierter Debug 13 nativ geprüft; drei konkrete Fehlerpfade im vorhandenen lokalen AAB 13 bestätigt. Versionsgleichheit beweist keine vollständige Play-/Quellidentität."
         }
       ],
       "notes": [
         "Drei lokale Implementierungen eines Produkts. Primärbasis MEWING 2.0/app mit passendem Paket und Release 13 (0.9.4) in Console und installiertem Play-Paket bestätigt; keine bewiesene Binär-/Quellidentität.",
         "Expo-Konfiguration nennt com.chargegeist.mew, vorhandener Android-Gradle-Stand dagegen com.mewtrack; Flutter verwendet com.mewtrack.mewtrack. Beide sind nicht die gewählte primäre Reviewbasis.",
-        "Quellen, visuelle Layoutbasis, Store-Stichprobe und Console-Kennzahlen analysiert. Die native Kamera-/UI-Bedienung wurde nicht ausgeführt; technische Risiken sind noch gezielt zu reproduzieren."
+        "Pilot vom 09.10. ohne native Bedienung; Nachprüfung 10.10.: isolierter Debugbuild und 45 JVM-Tests erfolgreich. Native Compare-/Restore-/Guidancefälle und normales Löschen mit künstlichen Daten geprüft. Kamera-/Kauf-/Reviewgrenzen und tatsächliche Play-Identität bleiben offen.",
+        "HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 ist 0.9.3/12; vier vorhandene Änderungen ergeben Arbeitsbaum 0.9.4/13. Compare, Restore-Queryklassifikation und Review-Speicherfehler bereits in HEAD und direkt im lokalen AAB 13-DEX bestätigt. Keine neue Appkorrektur."
       ],
       "openQuestions": [
         "Welche konkrete lokale Quelle erzeugte das veröffentlichte und installierte Play-Binary13?",
         "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf dem echten Android-Gerät?",
         "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
-        "Entsteht der Vergleich aus einer ausgewählten mittleren Session mit der erwarteten Vorauswahl?",
-        "Wie verhalten sich Home-Tagesstatus und Guidance bei Tageswechsel beziehungsweise Wiederaufnahme?",
+        "Wie soll die mittlere Session nach einer gewählten Compare-Korrektur zuverlässig vorausgewählt werden? Debug 13 und lokale AAB 13-Pfade ignorieren sie nachweislich; tatsächliches Play-Binary weiterhin separat offen.",
+        "Wie erneuern sich Session-Tagesstatus und weitere Homezustände beim Resume im Zielrelease? Die veraltete Guidance wurde im kontrollierten Debugfall bestätigt; echte Session-/Release-Zeitfälle offen.",
         "Werden Billing-Verbindungsfehler beendet und Restore/Freischaltung zwischen Home/Settings zuverlässig sichtbar?",
         "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
         "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
         "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
         "Welcher Track/Artefakt verursacht den API-Hinweis, und was bedeutet der kontoweite Zahlungskontohinweis tatsächlich?"
       ],
-      "nextStep": "Fünf native Kernprüfungen und wenige passende Tester; danach kleines Update und gezielte Verbreitung. Storebilder mit tatsächlich verfügbaren Vergleichswerkzeugen abgleichen.",
+      "nextStep": "Verbleibende Kamera-/Retake-/Review- und echte Play-Kauf-/Syncfälle gezielt prüfen. Bestätigte Restore-, Compare-, Guidance- und Review-Fehler für einen kleinen gesondert gewählten Updateumfang bündeln; keine Umsetzung oder Veröffentlichung beauftragt.",
       "sourceFiles": [
         "analysen/mewtrack/MewTrack-Pilotanalyse.md",
         "analysen/mewtrack/MewTrack-code-review.md",
@@ -575,15 +580,16 @@
         "analysen/mewtrack/store-review.md",
         "analysen/mewtrack/play-console-kpis.md",
         "analysen/mewtrack/Bestand-und-Zuordnung.md",
-        "analysen/mewtrack/TEST-UMGEBUNG.md"
+        "analysen/mewtrack/TEST-UMGEBUNG.md",
+        "analysen/mewtrack/Nachpruefung-2026-10-10.md"
       ],
       "analysisId": "mewtrack"
     },
     {
       "id": "mirror",
-      "name": "Mirror",
+      "name": "Mirror / Heartvia",
       "area": "apps",
-      "description": "Android-App aus dem Projektordner Mirror. Der lokale Projektname lautet inzwischen RelateLens; in der Play Console ist die App als Mirror: Love Tarot & Clarity geführt.",
+      "description": "Bestehende Mirror-App, lokal neu als Heartvia: Love Tarot & Clarity 1.1.1+17 übernommen und passend geprüft. Symbolisches Love Tarot und kurzer antwortenbasierter Clarity Scan gemeinsam sichtbar; Free Early Access. Zwei von vier bestehenden Maßnahmen abgeschlossen. AAB 17 und englischer Name/Texte/Icon in Play gespeichert; Einreichung bestätigt, Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ). Öffentliche Aktivierung noch ausstehend.",
       "status": "pilot_complete",
       "statusLabel": "Pilotanalyse abgeschlossen",
       "repository": null,
@@ -592,12 +598,12 @@
       ],
       "variants": [
         {
-          "name": "Lokales Flutter-Projekt",
+          "name": "Ausgewählte lokale Heartvia-Iteration",
           "path": "C:\\Users\\madde\\Documents\\Mirror",
           "framework": "Flutter",
           "packageId": "com.energycrafted.mirror",
-          "version": "1.1.0+16",
-          "note": "Lokaler RelateLens-Relaunch 1.1.0+16; veröffentlichter Mirror-Auftritt 1.0.13 separat geprüft. Gleichheit der Quellen und Release-Binaries nicht behauptet."
+          "version": "1.1.1+17",
+          "note": "Heartvia 1.1.1+17 im Original auf codex/heartvia-relaunch übernommen; Änderungen uncommitted, HEAD bleibt 27ff955611886951e832159b91bec4f3ceec14a4. 263 relevante Dateien bytegleich zur geprüften Kopie. Debug-APK auf Android 34 geprüft; signiertes Release-AAB gebaut, Manifest/Bundle/signierende Zertifikatsgleichheit zum alten lokalen AAB verifiziert. Anschließend AAB 17 in der richtigen bestehenden Play-App akzeptiert; noch kein echter Play-Upgradeversuch oder öffentlicher Aktivierungsnachweis."
         }
       ],
       "notes": [
@@ -606,14 +612,21 @@
         "mirror-googleplay-formular ist ein ergänzender Repository-Fund und nicht als App-Quellcode eingeordnet.",
         "Ziel des Nutzers: aus ungefähr 50 Downloads mehr tatsächliche und wiederkehrende Nutzer gewinnen; Verbesserungen sollen klein und anhand konkreter Befunde ausfallen.",
         "Ausdrückliches Nutzerziel vom 09.10.2026: Mirror soll grundsätzlich später monetarisiert werden, sobald zunächst tatsächliche Nutzer gewonnen wurden. Nutzergewinnung hat Vorrang; Preismodell und konkrete Zahlungsintegration sind noch offen.",
-        "Lokaler RelateLens-Webpilot 1.1.0+16 samt Store-/Console-Pruefung abgeschlossen; veroeffentlichter Mirror 1.0.13 und historische Previewbilder bleiben getrennt dokumentiert."
+        "Pilot vom 09.10.2026 und begrenzte native Nachprüfung des alten lokalen AAB 16 behalten ihre eigene historische Zuordnung; finale Heartvia-Belege stehen im datierten Umsetzungsnachtrag.",
+        "Ausdrückliche lokale Nutzerwahl am 10.10.2026: Heartvia: Love Tarot & Clarity; aktueller Early Access öffnet alle Volltexte ohne reales Billing. Zum lokalen Abschluss zunächst Storeentwurf ohne Upload; anschließende Console-Übernahme separat dokumentiert.",
+        "Lokaler Abschluss 10.10.2026: 195 Fluttertests und analyze bestanden; native Antwort-/Archiv-, Datum-/Resume- und Löschgegenproben sowie finale APK-Backupregeln bestätigt. Native Patternlöschung, reales Cloud-/OEM-Backup, Produktions-Analytics, iOS-Laufzeit und echtes Play-Upgrade bleiben Grenzen.",
+        "Lokale Release-Lieferung: heartvia-1.1.1-17.aab gebaut/validiert/signiert; Zertifikatsabdruck gleich altem lokalen AAB, zu diesem lokalen Zeitpunkt noch keine bestätigte Play-Uploadannahme. Englische Felder 30/69/1.306 und 512px-Icon im Original-playstore-Verzeichnis exportiert; damaliger Stand vor dem anschließenden Upload.",
+        "Begrenzte native Release-Nachprobe aus genau dem neuen AAB: separat testsigniertes Universal-APK, nicht debuggable; Home, Settings 1.1.1 (17) und Tarot bis The Moon-Lesung bedient. Kein vollständiger erneuter Clarity-/Lösch-/Datumsdurchlauf oder Play-Install.",
+        "Play Console 10.10.2026: AAB 17 akzeptiert, Rollout 100 % für bisherige 178 Länder und englischer Name/Kurz-/Volltext/Icon gespeichert. Einreichung bestätigt, automatische Vorabprüfungen laufen; Google-Freigabe/öffentliche Aktivierung ausstehend. Managed Publishing aus. Sechs Telefon-Screenshots und Featuregrafik exakt verglichen: unverändert. Sechs 7-Zoll-/drei 10-Zoll-Tablet-Screenshots unangetastet und in Reviewvorschau vorhanden; kein separater Tablet-URL-Vergleich; nur neues Icon als KI-erstellt markiert.",
+        "Rein lesende Console-Nachkontrolle 10.10., 19:12 MESZ: Deine Änderungen werden jetzt überprüft. Google-Freigabe/öffentliche Aktivierung weiterhin offen; fünf bereits eingereichte Änderungen unverändert, keine neue Einreichung."
       ],
       "openQuestions": [
-        "Welcher lokale Stand entspricht dem veröffentlichten Produkt und welcher Name soll künftig verwendet werden?",
-        "Wie verständlich und überzeugend sind tatsächlicher Nutzen, Einstieg und Store-Darstellung?",
-        "Welche wenigen Änderungen verbessern das Produkt beziehungsweise seine Positionierung?"
+        "Sind nach Google-Freigabe Heartvia 1.1.1/17, Name, Icon und englische Texte tatsächlich öffentlich aktiv und stimmig sichtbar? Die bisherigen Screenshots bleiben auf Nutzerwunsch erhalten.",
+        "Wie verhalten sich bestehende Play-Installationen beim späteren tatsächlichen Upgrade? Nur Updates zwischen lokalen Debug-17-Ständen wurden geprüft.",
+        "Wie passen reale Cloud-/OEM-Transfers, Produktions-Analytics und finale Privacy-/Data-Safety-Angaben zum späteren Release?",
+        "Hilft der konkrete nächste Schritt echten passenden Menschen, und kehren sie freiwillig zurück? Noch kein Nutzerversuch ausgeführt."
       ],
-      "nextStep": "Vorschlag: erster begrenzter App-Versuch. Zunächst veröffentlichtes Mirror und pausierten RelateLens-Relaunch einem vorgesehenen Android-Teststand zuordnen; danach Antworttreue und gespeicherte Ergebnisse gezielt verbessern und Nutzen mit wenigen passenden Personen prüfen. Noch nicht ausgewählt oder umgesetzt.",
+      "nextStep": "Google-Freigabe und öffentliche Aktivierung nach bestätigter Einreichung prüfen: AAB 17 und englischer Name/Texte/Icon in Play gespeichert, Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ). Managed Publishing aus, daher automatische Aktivierung nach Freigabe. Öffentlichen Release-/Storeabgleich belegen; echten Nutzerversuch gesondert planen.",
       "sourceFiles": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
         "analysen/mirror/runtime-review.md",
@@ -623,7 +636,10 @@
         "analysen/mirror/play-console-kpis.md",
         "analysen/mirror/TEST-UMGEBUNG.md",
         "analysen/mirror/runtime/README.md",
-        "KOMPAKTUEBERSICHT.md"
+        "KOMPAKTUEBERSICHT.md",
+        "analysen/mirror/Heartvia-Update-2026-10-10.md",
+        "analysen/mirror/Heartvia-Store-Entwurf.md",
+        "analysen/mirror/heartvia-icon-provenienz.json"
       ],
       "analysisId": "mirror"
     },
@@ -741,6 +757,6 @@
     "ZeroHero, Mirror und MewTrack sind als begrenzte Piloten analysiert. Native Prüfgrenzen unterscheiden sich und sind je Analyse dokumentiert.",
     "Pfad- und Namensunterschiede sind Identitätsfragen, keine negativen Qualitätsurteile. Kein lokaler Checkout gefunden bedeutet nicht, dass das Produkt schlecht oder aufgegeben ist.",
     "Eine öffentliche Gesamtliste mit 65 Repositories ist als github-repositories.json gespeichert. Sie ist noch nicht vollständig klassifiziert; private Repositories und alle übrigen lokalen Ordner sind nicht systematisch erfasst.",
-    "Originalprojekte, Original-Bestandsdateien und Store-Einträge wurden für dieses Dashboard nicht verändert. Fragen und nächste Schritte kennzeichnen geplante Arbeit; sie sind keine bereits geprüften Befunde."
+    "Die ursprüngliche Bestandsaufnahme veränderte keine Originalprojekte oder Store-Einträge. Die später ausdrücklich autorisierte Heartvia-Umsetzung und Console-Einreichung sind mit ihrem eigenen Stand dokumentiert. Fragen und nächste Schritte kennzeichnen geplante Arbeit; sie sind keine bereits geprüften Befunde."
   ]
 }

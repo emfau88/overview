@@ -18,7 +18,7 @@
   const areaLabels = { games: 'Browsergames', apps: 'Android-Apps', web: 'Onlineauftritt' };
   const areaAlias = (area) => ({ android: 'apps', online: 'web' })[area] || area;
   const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft', deferred: 'Zurückgestellt' };
-  const evidenceLabels = { runtime: 'Im Webtest reproduziert', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung', data: 'Kennzahlenbefund', hypothesis: 'Hypothese' };
+  const evidenceLabels = { runtime: 'Im Webtest reproduziert', android_runtime: 'Im Android-Test beobachtet', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung', data: 'Kennzahlenbefund', hypothesis: 'Hypothese' };
   const priorityLabels = { high: 'Hohe Priorität', medium: 'Mittlere Priorität', low: 'Niedrige Priorität' };
   const filterState = { query: '', area: '', status: '' };
   const paths = new Map();
@@ -131,7 +131,7 @@
     const states = [
       { label: 'Bestand erfasst', count: projects.length + '/' + projects.length, detail: 'Hauptprodukte zugeordnet; verwandte Repos separat', done: true },
       { label: 'Analysen dokumentiert', count: completed.length + '/' + eligible.length, detail: 'Aktuell beauftragte Grundanalysen; ' + (projects.length - eligible.length) + ' Produkte nur im Bestand oder zurückgestellt', done: eligible.length > 0 && completed.length === eligible.length },
-      { label: 'Maßnahmen umgesetzt', count: doneActions + '/' + allActions.length, detail: 'Dokumentierte Vorschläge; Auswahl und Priorität noch offen', done: allActions.length > 0 && doneActions === allActions.length }
+      { label: 'Maßnahmen umgesetzt', count: doneActions + '/' + allActions.length, detail: 'Dokumentierte Maßnahmen; Fortschritt je Produkt', done: allActions.length > 0 && doneActions === allActions.length }
     ];
     return section('Fortschritt auf einen Blick', '<div class="phase-progress"><ol class="phase-steps">' + states.map((step, index) => '<li class="phase-step ' + (step.done ? 'done' : 'waiting') + '"><span class="phase-dot" aria-hidden="true">' + (step.done ? '✓' : index + 1) + '</span><span><strong class="phase-label">' + step.label + ' · ' + step.count + '</strong><span class="phase-detail">' + escape(step.detail) + '</span></span></li>').join('') + '</ol><p class="phase-meta">Grün markiert erledigte Arbeit. Analyseabschluss gilt nur für den dokumentierten Prüfumfang. Phasen sind keine Aufwandsschätzung oder Erfolgsgarantie; Vorschläge sind kein verpflichtender Gesamtplan.</p></div>');
   }
@@ -207,7 +207,7 @@
       const target = members.length === 1 ? members[0].id : areaAlias(entry.area);
       return `<li class="panel recommendation"><div class="recommendation-order">${escape(entry.priorityRank)}. Schritt ${badge(entry.status)}</div><div class="card-scope">${scopeMark(entry)}</div><h3>${escape(entry.title)}</h3><p><strong>Warum:</strong> ${escape(entry.rationale)}</p><p><strong>Zuerst:</strong> ${escape(entry.firstStep)}</p><details class="original"><summary>Umfang, Abschlusskriterium und Belege</summary>${field('Begrenztes Paket', entry.detail)}${field('Woran wir den Schritt beurteilen', entry.completionCriterion)}${field('Grenzen', entry.limitation)}${sources(entry.sourceDocs)}</details><a class="area-link" href="#pending/${escape(target)}">Zugehörige offene Schritte →</a></li>`;
     }).join('');
-    return `<section class="recommendations" aria-label="Empfohlene nächste Schritte"><div class="section-head"><h2>Meine Empfehlung: drei nächste Schritte</h2><span>Vorschlag · noch nicht ausgewählt</span></div><p class="muted">Diese Reihenfolge bündelt die vorhandenen Befunde. Schrittweise bearbeiten; die nächsten beiden bleiben im Blick. Die ausführlichen Analysen müssen dafür nicht zuerst vollständig gelesen werden. Noch keine Produktänderung oder Veröffentlichung beauftragt.</p><ol class="grid three recommendation-grid">${cards}</ol></section>`;
+    return `<section class="recommendations" aria-label="Empfohlene nächste Schritte"><div class="section-head"><h2>Meine Empfehlung: drei nächste Schritte</h2><span>Stand je Schritt</span></div><p class="muted">Diese Reihenfolge bündelt die vorhandenen Befunde. Ausgewählte Schritte werden einzeln bearbeitet; weitere Vorschläge bleiben erhalten. Auswahl, Umfang und Fortschritt stehen bei jedem Schritt.</p><ol class="grid three recommendation-grid">${cards}</ol></section>`;
   }
 
   function overview() {
@@ -310,7 +310,7 @@
       ? isLocalGame
       ? 'Befunde sind nach Belegtyp markiert. „In isolierter Spielkopie beobachtet“ bezeichnet eine getrennte lokale Testfassung mit eigenem Spielstand. Das ist kein Nachweis des öffentlich ausgelieferten Live-Bundles. Kurze Spielsitzungen sind kein Langzeittest und kein echtes Spielerfeedback; Herkunft und konkrete Prüfgrenzen stehen im Bericht.'
       : 'Befunde sind nach Belegtyp markiert. „Im öffentlichen Spiel beobachtet“ bezeichnet die dokumentierte Prüfung des tatsächlichen Browsergames. Kurze Spielsitzungen sind kein Langzeittest und kein echtes Spielerfeedback. Quellenbefunde und veröffentlichter Spielstand bleiben getrennt; der konkrete Umfang steht im Bericht.'
-      : 'Befunde sind nach Belegtyp markiert. „Im Webtest reproduziert“ bezeichnet die dokumentierte Testkopie; native und veröffentlichte Builds sind separat abzugleichen.';
+      : 'Befunde sind nach Belegtyp markiert. Webtest und Android-Test beziehen sich jeweils auf den dokumentierten Teststand. Lokale Quelle, Testkopie, vorhandenes Binary und veröffentlichter Play-Stand bleiben getrennt; Herkunft, Version und Grenzen stehen beim jeweiligen Befund.';
     const evidenceLabel = (finding) => finding.evidenceType === 'runtime' && (isWebsite || isGame)
       ? isGame ? gameRuntimeLabel : 'Im Browser beobachtet'
       : evidenceLabels[finding.evidenceType] || finding.evidenceType;

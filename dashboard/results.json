@@ -1,33 +1,37 @@
 {
-  "updatedAt": "2026-10-09",
+  "updatedAt": "2026-10-10",
   "analyses": [
     {
       "id": "zerohero",
       "projectId": "zerohero",
       "title": "ZeroHero – abgeschlossene Pilotanalyse",
       "status": "reviewed",
-      "summary": "ZeroHero hat einen brauchbaren kleinen Produktkern und eine bereits ordentliche klassische Gestaltung. Ein begrenztes Verbesserungsupdate ist sinnvoll: verlässliche Erfassung, verständliches Feedback und ein früher sichtbarer Nutzen haben Vorrang. Drei Bedienfehler wurden im unverändert gebauten lokalen Webtest reproduziert. Weitere Risiken wurden aus dem Code abgeleitet. Die Play Console zeigt sehr wenig neue Nutzung, erlaubt wegen geringer Mengen und verschiedener Datenzeiträume aber keine belastbare Ursachenaufteilung. Wirtschaftliche Tragfähigkeit ist offen. Die Analyse ist abgeschlossen; Appcode, Store und Veröffentlichungen wurden nicht geändert. Sämtliche Maßnahmen sind Vorschläge.",
+      "summary": "Pilot abgeschlossen; Nachprüfung vom 10.10. ergänzt. Lose Quelle/Web 1.0.3+25, ältere APK 24, nativ geprüftes lokales AAB 1.1.0/26 und früherer Play-Stand 25 getrennt. Der erhaltene Kernel und Drei-ABI-Buildpfad ordnen 112 eigene Bibliotheken dem AAB 26 zu; vollständiger baubarer Checkout bleibt offen. Settings-Übernahme auch nativ fehlerhaft. 26 besitzt bereits direkte Home-Erfassung, freiwilligen ausgeschalteten Consent und bestätigte Plan-Nulltage; fehlende Angaben im alten Tagesabschluss werden dennoch als 0/Excellent bewertet. Kontrollierte Pause bestätigt einen fehlenden Abschluss bei erhaltener Menge. Drei Charttests bestanden, Gesamtlauf nicht bestanden; Setup-/Erwartungsprobleme sind keine Appfehler. Keine ZeroHero-Korrektur oder Veröffentlichung; alle fünf Maßnahmen offen.",
       "scope": {
         "checked": [
-          "Aktueller lokaler Quellstand unter C:\\Users\\madde\\flutter_projects\\ZEROHERO25, ausschließlich lesend; Version 1.0.3+25, lokaler Branch feature/quests-v2.",
-          "Unveränderte isolierte Testkopie aus lib, assets, web, pubspec.yaml, pubspec.lock und analysis_options.yaml. SHA256-Vergleich: 141 lib-, 20 assets- und 7 web-Dateien ohne Abweichung; auch Projekt- und Lockdateien identisch.",
-          "Erfolgreicher Release-Webbuild mit Flutter 3.41.4 und Dart 3.11.1. Visuelle Browserprüfung bei 390 × 844 Pixeln mit erfundenen Daten im lokalen Origin http://127.0.0.1:8765/; kein eigenes Browserprofil und keine Veränderung gespeicherter Android-Appdaten.",
-          "Einrichtung, erste Erfassung, Home, Heute, Verlauf, Level, Statistik und Einstellungen; klassische Gestaltung und ergänzend Neonmodus.",
-          "Reproduzierte Settings-Übernahme, verzögerte Getränkeliste und Live-Rückmeldung bei identischem Referenzgetränk. Aktive Codepfade unabhängig gegengeprüft.",
-          "Englischer öffentlicher Google-Play-Auftritt, Texte und erste fünf von insgesamt elf Store-Bildern.",
-          "Freigegebene eingeloggte Play-Console-Daten ausschließlich lesend: Sechsmonatsauswahl im Wachstumsbereich, separate Store-Performance-Karten, App-Dashboard und veröffentlichtes Release 25 (1.0.3).",
-          "Lokale Android-Konfiguration und aktive Firebase-Analytics-Codepfade; eigene Ereignisparameter und gefundene Aktivierungs-/Deaktivierungspfade.",
-          "Öffentliche Positionierungsbeschreibung von Sunnyside und DrinkControl als zwei begrenzte Vergleichspunkte; keine vollständige Marktanalyse."
+          "Pilot vom 09.10.: Aktueller lokaler Quellstand unter C:\\Users\\madde\\flutter_projects\\ZEROHERO25, ausschließlich lesend; Version 1.0.3+25, lokaler Branch feature/quests-v2.",
+          "Pilot vom 09.10.: Unveränderte isolierte Testkopie aus lib, assets, web, pubspec.yaml, pubspec.lock und analysis_options.yaml. SHA256-Vergleich: 141 lib-, 20 assets- und 7 web-Dateien ohne Abweichung; auch Projekt- und Lockdateien identisch.",
+          "Pilot vom 09.10.: Erfolgreicher Release-Webbuild mit Flutter 3.41.4 und Dart 3.11.1. Visuelle Browserprüfung bei 390 × 844 Pixeln mit erfundenen Daten im lokalen Origin http://127.0.0.1:8765/; kein eigenes Browserprofil und keine Veränderung gespeicherter Android-Appdaten.",
+          "Pilot vom 09.10.: Einrichtung, erste Erfassung, Home, Heute, Verlauf, Level, Statistik und Einstellungen; klassische Gestaltung und ergänzend Neonmodus.",
+          "Pilot vom 09.10.: Reproduzierte Settings-Übernahme, verzögerte Getränkeliste und Live-Rückmeldung bei identischem Referenzgetränk. Aktive Codepfade unabhängig gegengeprüft.",
+          "Pilot vom 09.10.: Englischer öffentlicher Google-Play-Auftritt, Texte und erste fünf von insgesamt elf Store-Bildern.",
+          "Pilot vom 09.10.: Freigegebene eingeloggte Play-Console-Daten ausschließlich lesend: Sechsmonatsauswahl im Wachstumsbereich, separate Store-Performance-Karten, App-Dashboard und veröffentlichtes Release 25 (1.0.3).",
+          "Pilot vom 09.10.: Lokale Android-Konfiguration und aktive Firebase-Analytics-Codepfade; eigene Ereignisparameter und gefundene Aktivierungs-/Deaktivierungspfade.",
+          "Pilot vom 09.10.: Öffentliche Positionierungsbeschreibung von Sunnyside und DrinkControl als zwei begrenzte Vergleichspunkte; keine vollständige Marktanalyse.",
+          "10.10.: unveränderte 25er-Webkopie erneut bedient; 141 lib-, 20 Asset-, sieben Webdateien und Metadaten bytegleich zum Original.",
+          "Vorhandenes AAB 1.1.0/26 als separat testsigniertes Universal-APK auf isoliertem Android 34 bedient: Einstieg, Consent, direkte Erfassung und Settings-Gegenprobe.",
+          "Erhaltener Kernel mit 112 eigenen lib-Dateien (98 gleich heutiger Quelle, 14 geändert/neu), AOT-Buildstamps und Output-/ELF-/AAB-Kette über drei ABIs geprüft. Kein vollständiger 26er-Checkout gefunden.",
+          "Kontrollierte Emulator-Datumsfälle: Plan-Nullbestätigung, fehlende Einzelangaben als 0/Excellent im Tagesdetail, Pause 11. bis 13.10. mit fehlendem Abschluss und weiterhin erhaltener Eingabe.",
+          "Vorhandene 25er-Tests ausgeführt: drei Charttests bestanden; Gesamtlauf nicht bestanden. Setupfehler und unpassende Boundary-Erwartung getrennt dokumentiert."
         ],
         "notChecked": [
-          "Kein Laufzeittest der nativen Android-App auf einem Gerät und kein Test der tatsächlich veröffentlichten Play-Binärdatei. Android-Speicherung, Zurück-Taste, Geräteintegration und native Firebase-Komponenten sind nicht geprüft.",
-          "Keine bestätigte Gleichheit zwischen aktuellem lokalen Quellstand und veröffentlichtem Release. Beide nennen 1.0.3 / Build 25; gleiche Versionsnummer beweist weder gleiche Quellen noch gleiches Verhalten. Die vorhandene native APK mit Code 24 ist älter.",
-          "Kein Zeitverlaufstest für Mitternachtsabschluss, konsumfreie Tage oder Wiederöffnung nach mehrtägiger Pause. Die beschriebenen Abschlussrisiken bleiben Codebefunde.",
-          "Keine Erfassung tatsächlicher Android-Netzwerkübertragung, SDK-Metadaten oder automatisch erzeugter Analytics-Ereignisse. Kein Nachweis eines Datenschutzverstoßes der veröffentlichten App und keine rechtliche Bewertung.",
-          "Kein automatisierter Testlauf. Im Original liegen 18 Testdateien mit 115 statisch gefundenen Testdeklarationen; daraus wird kein Bestehen der Tests abgeleitet.",
-          "Deutsche Store-Fassung und Store-Bilder 6–11 nicht geprüft. Eine fehlende deutsche Lokalisierung ist nicht nachgewiesen.",
-          "Keine Nutzungsbefragung, kein Store-Experiment, keine belastbare Retentionskohorte, keine vollständige Markt-, Wirksamkeits- oder Monetarisierungsanalyse.",
-          "MewTrack, Mirror, Between, die Browser-Spiele und die Online-Auftritte wurden in diesem Pilot nicht qualitativ geprüft."
+          "Kein Download/Install/Upgrade des tatsächlichen Play-Binaries; Play 25 und lokales AAB 26 sind verschiedene Stände. Keine vollständige Source-/Play-Bytegleichheit.",
+          "Keine vollständige baubare 26er-Arbeitskopie einschließlich damaliger Assets/Dependencies/Androidkonfiguration; extrahierte Bibliotheken nicht über die lose Quelle kopiert.",
+          "Kein natürlicher Mitternachts- oder mehrtägiger Langzeitlauf, keine vollständigen Cutoff-/Wochenwechsel-/Doppelabschluss- und XP-Folgen. Kontrollierte Pausenprobe ist ein konkreter Einzelablauf.",
+          "Keine vollständige native Statistikdatensatzprobe; acht gespeicherte Berichte versus sieben Chartpunkte, Lücken und Nachtragsaktualisierung bleiben gezielte Quellen-/Testfragen.",
+          "Kein Produktionsnetz-/vollständiger SDK-/Datenschutztest. Der sichtbare und in zugeordneten 26er-Quellen gegengeprüfte Consent ersetzt diese Prüfung nicht.",
+          "Kein bestandener Gesamt-Testlauf; die drei bestandenen 25er-Charttests prüfen keinen vollständigen 26er-Plan.",
+          "Keine neue KPI-Erhebung, echte Nutzerbefragung, Retentions-/Monetarisierungswirkung; deutsche Storefassung und übrige Storebilder weiterhin separat offen."
         ]
       },
       "strengths": [
@@ -51,89 +55,95 @@
       "findings": [
         {
           "id": "zerohero-settings-refresh",
-          "title": "Gespeicherte Konsumarten erscheinen erst nach Neuladen",
-          "evidenceType": "runtime",
+          "title": "Settings-Übernahme in Web 25 und lokalem Android-AAB 26 verzögert",
+          "evidenceType": "android_runtime",
           "priority": "high",
           "detail": "Die Heute-Seite übernimmt gespeicherte Einstellungen im bestehenden Tageszustand nicht sofort. Die Speicherung wird bestätigt, der erwartete neue Eintrag fehlt jedoch. Für einen täglichen Tracker ist diese sichtbare Unzuverlässigkeit ein konkreter Verbesserungsbedarf.",
-          "evidence": "Heute zunächst ohne Tabletten geöffnet; in Einstellungen Tabletten mit Referenzwert 1 aktiviert und gespeichert. Speicherbestätigung erschien, Heute zeigte weiterhin nur Zigaretten und Alkohol. Nach Browserreload waren Tabletten mit Wert 0 vorhanden. Der Code hält Settings lokal, liest sie mit ref.read und behält den State im IndexedStack; die Provider-Invalidierung allein erreicht diesen lokalen Zustand nicht.",
-          "limitation": "Im aktuellen lokalen Webbuild reproduziert und im aktiven Codepfad bestätigt. Nativer Android-Laufzeitnachweis und Verhalten des veröffentlichten Release sind offen. Nicht jede denkbare Einstellungsänderung wurde einzeln getestet.",
+          "evidence": "Heute zunächst ohne Tabletten geöffnet; in Einstellungen Tabletten mit Referenzwert 1 aktiviert und gespeichert. Speicherbestätigung erschien, Heute zeigte weiterhin nur Zigaretten und Alkohol. Nach Browserreload waren Tabletten mit Wert 0 vorhanden. Der Code hält Settings lokal, liest sie mit ref.read und behält den State im IndexedStack; die Provider-Invalidierung allein erreicht diesen lokalen Zustand nicht. Nachprüfung 10.10.: Im lokalen AAB 26 blieben aktivierte Pills auf dem bereits geöffneten Heute unsichtbar; erst Prozessneustart zeigte Pills/Baseline 1. Die Speicherung ging nicht verloren.",
+          "limitation": "Nativ am separat testsignierten lokalen AAB 1.1.0/26 bestätigt, nicht am Play-Binary. Die historische Webprobe betrifft 1.0.3+25. Nicht jede Einstellungsänderung geprüft.",
           "recommendation": "Gespeicherte Konsumarten, eigene Bezeichnungen und Referenzwerte auf Heute unmittelbar aus dem aktuellen reaktiven Zustand übernehmen; keinen Neustart voraussetzen.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
             "analysen/zerohero/review-evidence.md",
-            "analysen/zerohero/ZeroHero-code-review.md"
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "zerohero-drink-list-refresh",
-          "title": "Getränkeliste bestätigt neue Erfassung verzögert",
+          "title": "Getränkeliste im 25er-Webbuild verzögert; 26er-Gegenfall korrekt",
           "evidenceType": "runtime",
           "priority": "medium",
           "detail": "Nach Hinzufügen eines Getränks kann die Liste Heute erfasst fehlen oder einen veralteten Zähler zeigen. Die Liste ist vorhanden; sie wurde nicht generell entfernt. Eine schnelle Erfassung braucht eine unmittelbar verlässliche Bestätigung.",
           "evidence": "Nach dem ersten Bier war die Liste zunächst nicht sichtbar; nach Themewechsel zeigte sie ×1. Nach dem zweiten Bier bestätigte das Auswahlfenster ×2, Heute zeigte nach Schließen weiterhin ×1. Erst eine zusätzliche Zigaretteneingabe aktualisierte die Liste auf ×2. Der Code schreibt zuerst die Gesamtmenge in den Provider und anschließend Getränkezähler in Hive; die Liste liest Zähler direkt aus Hive ohne eigene reaktive Aktualisierung.",
-          "limitation": "Die verzögerte Anzeige wurde im aktuellen Webbuild reproduziert. Die genaue asynchrone Ursache ist eine starke Code-Inferenz. Daraus folgt kein belegter Datenverlust und kein nativer Android-Nachweis.",
+          "limitation": "Webfehler am 25er-Stand erneut bestätigt. Beim nativen AAB-26-Gegenfall erschien Beer 500 ml nach Schließen sofort. Kein allgemeiner Speicherverlust oder Nachweis, dass 26 denselben Fehler hat; nur bei erneuter Reproduktion am gewählten Zielstand korrigieren.",
           "recommendation": "Menge und Getränkezähler in einem reaktiven Tageszustand konsistent aktualisieren und direkt nach Erfassung die tatsächlich bestätigte Anzahl anzeigen.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
-            "analysen/zerohero/review-evidence.md"
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "zerohero-alcohol-rounding",
-          "title": "Identisches Referenzgetränk wird als darüber bewertet",
+          "title": "25er-Livefeedback rundet uneinheitlich; 26 nutzt anderen Bezug",
           "evidenceType": "runtime",
           "priority": "medium",
           "detail": "Die Live-Rückmeldung stuft ein Bier identisch zur zuvor gewählten Referenz als über dem üblichen Bereich ein. Anzeigepräzision und Vergleichsregel sind nicht konsistent.",
           "evidence": "Einrichtung: Referenz 1 × Bier 500 ml mit 5 %. Anschließend dasselbe Getränk erfasst; Heute meldete Über deinem üblichen Bereich. Umrechnung ergibt 19,725 g; Onboarding speichert den auf eine Nachkommastelle formatierten Wert 19,7. Livefeedback vergleicht das Verhältnis exakt mit 1,0.",
-          "limitation": "Im aktuellen Webbuild reproduziert und rechnerisch im Code erklärt. Der Tagesabschluss nutzt ein anderes Toleranzband bis 1,10. Ein falscher XP-Abzug, eine falsche Abschlussbewertung oder ein Effekt in der veröffentlichten Android-App wurden damit nicht nachgewiesen.",
+          "limitation": "Rundungsfall betrifft Quelle/Web 25. 26 speichert eine typische Alkoholwoche als Tagesdurchschnitt und verwendet einen bewusst reduzierten Wochenplan; Tages- und Wochenfeedback haben unterschiedliche Bezüge. Kein falscher Abzug bereits erhaltener XP nachgewiesen.",
           "recommendation": "Referenz intern ungerundet speichern, Formatierung auf die Anzeige begrenzen und eine nachvollziehbare konsistente Bewertungsregel für Livefeedback und Tagesabschluss verwenden.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
-            "analysen/zerohero/review-evidence.md"
+            "analysen/zerohero/review-evidence.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "zerohero-zero-versus-missing",
-          "title": "Konsumfreier Tag und fehlende Angabe sind nicht klar getrennt",
-          "evidenceType": "code",
+          "title": "Plan bestätigt Null; alter Tagesabschluss bewertet fehlende Angaben als Null",
+          "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Eine verständliche Aktion Heute nichts konsumiert fehlt im geprüften Ablauf. Sichtbare 0 kann zugleich bedeuten, dass noch nichts eingetragen wurde. Ein konsumfreier Tag sollte ausdrücklich dokumentierbar sein, ohne indirekte Bedienung.",
-          "evidence": "Im Webtest war keine eigene Nulltag-Aktion sichtbar. Code: Minus bei Nicht-Alkohol auf 0 schreibt technisch einen echten Nullwert; für Alkohol wird ein Entfernen-Button erst nach Hinzufügen einer Getränkemenge angeboten. Vollständig leere Entwürfe werden beim automatischen Abschluss übersprungen. Die Aussage 0 kann überhaupt nicht gespeichert werden wäre deshalb falsch.",
-          "limitation": "Fehlende verständliche Aktion wurde gesehen; Folgen beim automatischen Tagesabschluss sind ein bestätigter Codepfad, kein Mitternachts-Laufzeitnachweis. Kein pauschaler Nachweis, dass konsumfreie Tage immer verloren gehen.",
-          "recommendation": "Eine explizite Nulltag-Aktion anbieten und dokumentierte Null von fehlender Angabe in Erfassung, Verlauf und Bewertung unterscheiden.",
+          "detail": "26 unterscheidet im neuen Wochenplan unbekannte Tage von bestätigter Null. Der alte Tagesabschluss tut das für fehlende aktive Konsumarten weiterhin nicht. Beide Pfade müssen getrennt beurteilt werden.",
+          "evidence": "AAB 26: Erst 0/7 bestätigte Tage; ausdrückliche Null für den 10.10. erhöht auf 1/7, zuverlässiger Wochenvergleich bleibt gesperrt. Im zuvor erzeugten Tagesdetail war nur ein Bier erfasst; nie bestätigte Zigaretten/Pills erschienen dennoch als 0/Excellent. Keine allgemeine Behauptung, Null sei nicht speicherbar.",
+          "limitation": "Beschleunigte Datumsprobe im isolierten Android-34-Emulator, keine natürliche Mitternacht oder Play-Bedienung. Planbestätigung und alter EOD-Abschluss sind verschiedene aktive Pfade.",
+          "recommendation": "Den bestätigungsbasierten Plan erhalten; nicht erfasste Mengen im alten Tagesabschluss als unbekannt behandeln. Tagesdetail/Stats dürfen keine sichere Null daraus machen.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
             "analysen/zerohero/review-evidence.md",
-            "analysen/zerohero/ZeroHero-code-review.md"
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "zerohero-older-drafts",
-          "title": "Ältere Entwürfe können nach einer Pause unvollendet bleiben",
-          "evidenceType": "code",
+          "title": "Kontrollierte Pause lässt Abschluss aus; gespeicherte Menge bleibt erhalten",
+          "evidenceType": "android_runtime",
           "priority": "high",
           "detail": "Der automatische Abschluss betrachtet ausschließlich gestern. Bei Wiederöffnung nach einer längeren Pause kann ein früherer vorhandener Entwurf deshalb im Entwurfszustand bleiben und im sichtbaren Verlauf beziehungsweise bei Belohnungen fehlen.",
-          "evidence": "_handleAutoFinalize verwendet yesterdayKeyAtMidnight; finalizeDraftIfNeeded blockiert andere Tage ohne force. Der manuelle Pfad bezieht sich auf den aktuellen Schlüssel, ein allgemeiner Nachholablauf wurde nicht gefunden. Beispiel für gezielte Reproduktion: Montag erfassen, erst Mittwoch wieder öffnen; der automatische Pfad betrachtet Dienstag.",
-          "limitation": "Codepfad unabhängig gegengeprüft, Zeitverlauf nicht getestet. Es ist kein belegter Datenverlust oder Nachweis einer Löschung. Die Systemzeit des Nutzerrechners soll für den Test nicht geändert werden.",
+          "evidence": "AAB 26: Am simulierten 11.10. eine Zigarette erfasst, dann Force-stop und Emulator auf 13.10. gestellt. History enthielt nur 10.10., der Plan weiterhin die Eingabe vom 11.10. mit Wochensumme 1/28. Autoabschluss betrachtet nur gestern.",
+          "limitation": "Konkreter beschleunigter Pausenfall nativ bestätigt. Kein globaler Datenverlust; Menge erhalten. Andere Cutoffs/Konsumarten, Doppelabschluss und XP-Folgen bleiben offen.",
           "recommendation": "In kontrollierter Testumgebung mit gespeicherten Entwürfen und mehrtägiger Pause reproduzieren; falls bestätigt, vorhandene ältere Entwürfe geordnet nachholen und Doppelabschlüsse verhindern.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
             "analysen/zerohero/review-evidence.md",
-            "analysen/zerohero/ZeroHero-code-review.md"
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "zerohero-first-day-value",
-          "title": "Der erste Tag zeigt den Nutzen relativ spät",
+          "title": "25er-Einstieg zeigt Nutzen spät; 26 hat bereits direkte Home-Erfassung",
           "evidenceType": "assessment",
           "priority": "medium",
           "detail": "Nach drei Einrichtungsschritten erscheint zuerst ein großer leerer Wochenring. Verlauf, Level und Statistik bieten vor dem ersten Abschluss wenig unmittelbaren Ertrag. Der vorhandene erste Eintrag konkurriert mit leeren Auswertungen.",
           "evidence": "Visueller Test bei 390 × 844 Pixeln: Die erste Aktion war sichtbar und nicht unterhalb des sichtbaren Bereichs versteckt. Designwahl steht im ersten Einrichtungsschritt vor der Auswahl des Verhaltens. Leere Zustände auf Home, Level und Statistik wurden betrachtet.",
-          "limitation": "UX-Einschätzung anhand eines begrenzten Webtests, keine gemessene Abbruchursache und keine Nutzerbefragung. Die Aussage, die erste Aktion sei auf dem getesteten Bildschirm unsichtbar gewesen, wäre falsch.",
-          "recommendation": "Erste Eingabe stärker hervorheben und unmittelbar einen verständlichen Tagesstand zeigen. Designwahl kann später zugänglich bleiben; keine neuen Quests oder großen neuen Systeme erforderlich.",
+          "limitation": "Die ursprüngliche UX-Einschätzung betrifft den 25er-Webpilot. Nativ 26 wurden direkte Erfassungsbuttons, Wochenplan und eingeklappte Insights gesehen. Keine erneute Umsetzung bereits vorhandener Funktionen und keine gemessene Abbruch-/Retentionwirkung.",
+          "recommendation": "Vorhandene direkte Erfassung in 26 erhalten; lange Einführung nach dem ersten Eintrag verdichten. Zuerst Tagesbewertung und Settings-Verlässlichkeit klären.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
-            "analysen/zerohero/ZeroHero-code-review.md"
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -143,11 +153,12 @@
           "priority": "medium",
           "detail": "Beim Einrichten wird der bisherige durchschnittliche Tageswert abgefragt. Andere Texte nennen diesen Bezug Limit oder Tagesziel. Ein bisheriger Durchschnitt ist jedoch nicht automatisch ein bewusst gewähltes Ziel. Positive Referenzwerte sind erforderlich, auch bei unregelmäßigem Verhalten.",
           "evidence": "Onboarding-Texte beschreiben den Durchschnitt, Home verwendet im Limit, die XP-Erklärung Tagesziel; die Baseline-Validierung lehnt 0 ab. Im Webtest wurde außerdem IM ZIEL in der Statistik gesehen.",
-          "limitation": "Text- und Codebefund plus UX-Einschätzung. Tatsächliche Verwirrung oder Wirkung auf Wiederkehr wurde nicht gemessen.",
+          "limitation": "Historischer 25er-Textbefund; 26 bietet bewusst gewählten Reduktionsplan und Wochenziel. Sein altes Tagesdetail vergleicht Alkohol dagegen mit Tagesdurchschnitt. Konkreten Bezugsrahmen erklären, keine pauschal fehlende Zielwahl behaupten.",
           "recommendation": "Zunächst überall üblichen Tageswert beziehungsweise Referenzwert verwenden. Ein echtes Ziel nur so benennen, wenn es bewusst gewählt werden kann; Dokumentation und Verbesserung sprachlich trennen.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
-            "analysen/zerohero/ZeroHero-code-review.md"
+            "analysen/zerohero/ZeroHero-code-review.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -195,18 +206,19 @@
         },
         {
           "id": "zerohero-privacy-mismatch",
-          "title": "Aktueller Analytics-Code und Privatversprechen müssen abgeglichen werden",
+          "title": "Analytics-Aussagen müssen zur gewählten Version passen",
           "evidenceType": "mismatch",
           "priority": "high",
-          "detail": "Der Store verspricht vollständig privaten Offlinebetrieb und keine Datenerhebung. Der aktuelle Android-Quellstand initialisiert Firebase Analytics vor dem Onboarding und aktiviert die Erfassung. Dies ist ein Widerspruch zwischen aktuellem Code und versprochenem Verhalten, der vor einem Update geklärt werden muss.",
-          "evidence": "Passende Android-Firebase-Konfiguration und aktives Build-Plugin vorhanden; nach erfolgreicher Initialisierung setAnalyticsCollectionEnabled(true). Im geprüften lib kein setConsent-Aufruf, keine Deaktivierung und keine Opt-out-Oberfläche gefunden. Eigene Events: app_opened, onboarding_completed, today_opened, history_opened, first_trackable_created und session_ended mit duration_bucket. Konsummengen, Baselines, Konsumartnamen und eingegebene Texte wurden in eigenen Eventparametern nicht gefunden.",
-          "limitation": "Keine Prüfung tatsächlicher Android-Netzwerkübertragung oder vom SDK erzeugter Metadaten. Der Webtest initialisiert ohne Webkonfiguration und ist dafür nicht übertragbar. Die veröffentlichte Mai-Version kann vor dieser Analytics-Ergänzung liegen. Kein bewiesener Verstoß oder falsche Deklaration der veröffentlichten App; keine rechtliche Bewertung.",
+          "detail": "Die lose 25er-Quelle aktiviert Analytics ohne sichtbaren Consent. Das nativ geprüfte AAB 26 besitzt bereits freiwillige ausgeschaltete Einwilligung; die zugeordneten Quellen und Manifestdefaults stützen diesen Ablauf.",
+          "evidence": "Nachprüfung 10.10.: 26 zeigt optionalen Analytics-Schalter in Onboarding/Settings. Zugeordneter Service verlangt gespeichertes true, Manifestdefault aus. Der Schalter wurde nicht aktiviert. Die 25er-Aktivierung und historischen Storetexte bleiben separate Belege.",
+          "limitation": "Keine Messung des tatsächlichen Produktionsnetzverkehrs oder vollständigen SDK-/Rechtskonformität. 26 nicht als Play 25 ausgegeben; keine pauschale fehlende Einwilligung in 26 behaupten.",
           "recommendation": "Gewünschtes Privatversprechen und tatsächliches Android-Release-Verhalten gemeinsam festlegen. Entweder externe Analysen für das versprochene Verhalten deaktivieren/entfernen oder Datenflüsse und Nutzerinformationen zutreffend beschreiben. Store-Angaben erst nach Prüfung des Release-Pakets festlegen.",
           "sourceDocs": [
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
             "analysen/zerohero/review-evidence.md",
             "analysen/zerohero/store-review.md",
-            "analysen/zerohero/runtime/TEST-UMGEBUNG.md"
+            "analysen/zerohero/runtime/TEST-UMGEBUNG.md",
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -251,6 +263,19 @@
             "analysen/zerohero/ZeroHero-code-review.md",
             "analysen/zerohero/ZeroHero-Pilotanalyse.md",
             "analysen/zerohero/store-review.md"
+          ]
+        },
+        {
+          "id": "zerohero-stats-window-boundary",
+          "title": "Sieben-Tage-Stats verwenden verschiedene Zeitfenster",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Bis zu acht gespeicherte Summaries ohne Kalenderfilter stehen einem Chart mit sieben Kalenderpunkten gegenüber; fehlende Tage werden als Null dargestellt.",
+          "evidence": "Lose und eingebettete Quellen: stats_provider berücksichtigt bis zu acht jüngste Berichte; stats_chart_view_model zeichnet sieben Kalenderpunkte bis zur neuesten Summary. Neuer bestätigter Planvergleich ist ein anderer Pfad.",
+          "limitation": "Gezielter Quellenbefund, kein vollständiger nativer Statistikdatensatznachweis. Drei 25er-Charttests bestanden; Gesamt-Testlauf nicht bestanden. XP/Stats nach Plan-Nachtrag gesondert offen.",
+          "recommendation": "Acht gespeicherte Tage mit einer Lücke und rückwirkendem Plan-Nachtrag prüfen; einheitlichen Kalenderbezug und unbekannt statt sicherer Null zeigen.",
+          "sourceDocs": [
+            "analysen/zerohero/Nachpruefung-2026-10-10.md"
           ]
         }
       ],
@@ -441,7 +466,7 @@
           "id": "zerohero-action-reliable-entry",
           "order": 1,
           "title": "Erfassung verlässlich machen",
-          "detail": "Settings unmittelbar auf Heute übernehmen, Getränkezähler sofort korrekt bestätigen und Referenzpräzision sowie Livefeedback konsistent berechnen. Diese drei reproduzierten Fehler bilden den ersten begrenzten Reparaturumfang.",
+          "detail": "Am gewählten vollständigen Zielstand gespeicherte Einstellungen sofort auf Heute übernehmen. Getränkelisten-/Rundungsfehler aus Web 25 nur nach erneuter Gegenprobe dort korrigieren; im nativen 26er-Getränkefall nicht reproduziert. Kein Codefix ausgeführt.",
           "status": "proposed",
           "validation": "Auf Android gezielt prüfen: Konsumart und Baseline ändern ohne Neustart; zwei gleiche Getränke erfassen und unmittelbare Bestätigung vergleichen; identisches Referenzgetränk erfassen und Livefeedback mit Abschlussregel abgleichen. Keine Aussage über erfolgreichen Fix vor Umsetzung und Prüfung."
         },
@@ -449,7 +474,7 @@
           "id": "zerohero-action-zero-and-pauses",
           "order": 2,
           "title": "Nulltage und Pausen zuverlässig behandeln",
-          "detail": "Explizite Nulltag-Aktion und unterscheidbare fehlende Angabe vorsehen. Den Pausenfall für ältere vorhandene Entwürfe kontrolliert reproduzieren und nur bei Bestätigung korrigieren.",
+          "detail": "Vorhandene 26er-Planbestätigung für Null erhalten; unbekannte aktive Mengen im alten Tagesabschluss nicht als 0/Excellent bewerten. Kontrolliert bestätigte Abschlusslücke nach Pause geordnet nachholen, erhaltene Eingaben bewahren; Doppelabschluss/XP/Stats separat prüfen. Kein Fix ausgeführt.",
           "status": "proposed",
           "validation": "Dokumentierte Null und keinerlei Angabe separat speichern und Abschluss/Verlauf vergleichen. Vorhandenen Entwurf nach mehrtägiger Pause in kontrollierter Zeitumgebung wieder öffnen; Nachholen, XP und Schutz vor Doppelabschlüssen prüfen. Rechner-Systemzeit nicht verändern."
         },
@@ -457,7 +482,7 @@
           "id": "zerohero-action-first-value",
           "order": 3,
           "title": "Ersten Nutzen und Begriffe klarer machen",
-          "detail": "Erste Erfassung hervorheben, unmittelbar einen verständlichen Tagesstand zeigen und Referenzwert von bewusstem Ziel unterscheiden. Kleine Neon-Kontrastkorrekturen; bestehende klassische Gestaltung verwenden. Dokumentationsanerkennung prüfen, ohne ein großes neues Belohnungssystem aufzubauen.",
+          "detail": "Vorhandene direkte Home-Erfassung und eingeklappte Insights in 26 erhalten. Tages-/Wochenbezug und Einheiten klarer erklären; lange Einführung nach erster Eingabe verkürzen. Keine bereits vorhandene Plan-/Consentfunktion erneut bauen.",
           "status": "proposed",
           "validation": "Frischer Einstieg auf einem Android-Gerät: erste Aktion und gespeicherte Eingabe verständlich erkennbar; direkte Rückmeldung von wenigen passenden Testern zum Referenzbegriff, Nulltag und schwierigen Tagen; Statusfarben und Dialog-Schließen im Neonmodus prüfen."
         },
@@ -465,7 +490,7 @@
           "id": "zerohero-action-store-and-privacy",
           "order": 4,
           "title": "Store und Privatversprechen mit tatsächlichem Release abgleichen",
-          "detail": "Gewollten Datenfluss festlegen und native Release-Implementierung prüfen. Anschließend Datenschutztexte, Store-Deklaration und vorhandene Store-Grafiken passend zur tatsächlichen App halten. Alkohol/Zigaretten und Verlauf konkreter benennen; deutsche Fassung mitprüfen.",
+          "detail": "Storetexte und tatsächlichen Datenfluss an genau den gewählten Release anpassen. Quelle 25 ohne Consent versus lokales AAB 26 mit freiwilligem ausgeschaltetem Consent unterscheiden; Produktionsnetzverhalten offen. Keine Storeänderung ausgeführt.",
           "status": "proposed",
           "validation": "Release-Paket und Android-Analytics-Verhalten abgleichen; veröffentlichte Quellen soweit verfügbar zuordnen. Store-Texte und sämtliche verwendeten Screenshots mit diesem Release vergleichen. Privatsphäre-Versprechen erst nach bestätigtem Datenfluss verwenden. Keine Veröffentlichungsänderung ist bisher erfolgt."
         },
@@ -479,10 +504,10 @@
         }
       ],
       "openQuestions": [
-        "Welche der im aktuellen Webbuild reproduzierten Fehler treten ebenso im veröffentlichten nativen Android-Release 25 auf?",
-        "Ist der aktuelle lokale Quellstand dem veröffentlichten Release zuzuordnen, oder wurden seit Mai trotz gleicher Versionsnummer weitere Änderungen vorgenommen?",
-        "Wie verhalten sich explizite Null, fehlende Angabe, Tagesabschluss und Wiederöffnung nach mehrtägiger Pause tatsächlich auf Android?",
-        "Welche Analytics-Daten fließen im tatsächlichen Android-Release, und soll das Produkt einen vollständig lokalen Privatmodus versprechen?",
+        "Welche Befunde aus Web 25 und lokalem AAB 26 gelten auch für das veröffentlichte Play-Binary 25? Ein Play-Download wurde nicht gegengeprüft.",
+        "Lässt sich der erhaltene Kernel-/AAB-26-Stand als vollständiger baubarer Checkout rekonstruieren und eindeutig vom losen Quellstand 25 sowie dem Play-Binary abgrenzen?",
+        "Welche weiteren Pause-/Tagesabschlussfälle bleiben nach der kontrollierten 11.-bis-13.-Oktober-Probe offen, insbesondere XP und längere Pausen im tatsächlichen Release? Erhaltene Menge und fehlender Abschluss sind bereits begrenzt belegt.",
+        "Welche Daten überträgt Analytics im tatsächlichen Play-Release und nach freiwilligem Consent im lokalen AAB 26? Dessen anfänglich ausgeschalteter Consent ist belegt; ein vollständiger lokaler Privatmodus ist nicht entschieden.",
         "Warum zeigen die Wachstumskarten trotz Sechsmonatsauswahl unterschiedliche verfügbare Teilzeiträume? Fehlende Daten wurden nicht als null interpretiert.",
         "Welche Sprachen, Herkunftswege und Zielgruppen erzeugen die vorhandenen Store-Besuche und tatsächliche Erstnutzung?",
         "Verstehen passende Menschen den Nutzen nach der ersten Eingabe und kommen sie an Folgetagen zurück? Bisher fehlen direkte Rückmeldungen und belastbare Kohorten.",
@@ -499,40 +524,82 @@
         "analysen/zerohero/ZeroHero-code-review.md",
         "analysen/zerohero/store-review.md",
         "analysen/zerohero/runtime/TEST-UMGEBUNG.md",
-        "analysen/zerohero/runtime/README.md"
-      ]
+        "analysen/zerohero/runtime/README.md",
+        "analysen/zerohero/Nachpruefung-2026-10-10.md"
+      ],
+      "pilotScope": {
+        "checked": [
+          "Aktueller lokaler Quellstand unter C:\\Users\\madde\\flutter_projects\\ZEROHERO25, ausschließlich lesend; Version 1.0.3+25, lokaler Branch feature/quests-v2.",
+          "Unveränderte isolierte Testkopie aus lib, assets, web, pubspec.yaml, pubspec.lock und analysis_options.yaml. SHA256-Vergleich: 141 lib-, 20 assets- und 7 web-Dateien ohne Abweichung; auch Projekt- und Lockdateien identisch.",
+          "Erfolgreicher Release-Webbuild mit Flutter 3.41.4 und Dart 3.11.1. Visuelle Browserprüfung bei 390 × 844 Pixeln mit erfundenen Daten im lokalen Origin http://127.0.0.1:8765/; kein eigenes Browserprofil und keine Veränderung gespeicherter Android-Appdaten.",
+          "Einrichtung, erste Erfassung, Home, Heute, Verlauf, Level, Statistik und Einstellungen; klassische Gestaltung und ergänzend Neonmodus.",
+          "Reproduzierte Settings-Übernahme, verzögerte Getränkeliste und Live-Rückmeldung bei identischem Referenzgetränk. Aktive Codepfade unabhängig gegengeprüft.",
+          "Englischer öffentlicher Google-Play-Auftritt, Texte und erste fünf von insgesamt elf Store-Bildern.",
+          "Freigegebene eingeloggte Play-Console-Daten ausschließlich lesend: Sechsmonatsauswahl im Wachstumsbereich, separate Store-Performance-Karten, App-Dashboard und veröffentlichtes Release 25 (1.0.3).",
+          "Lokale Android-Konfiguration und aktive Firebase-Analytics-Codepfade; eigene Ereignisparameter und gefundene Aktivierungs-/Deaktivierungspfade.",
+          "Öffentliche Positionierungsbeschreibung von Sunnyside und DrinkControl als zwei begrenzte Vergleichspunkte; keine vollständige Marktanalyse."
+        ],
+        "notChecked": [
+          "Kein Laufzeittest der nativen Android-App auf einem Gerät und kein Test der tatsächlich veröffentlichten Play-Binärdatei. Android-Speicherung, Zurück-Taste, Geräteintegration und native Firebase-Komponenten sind nicht geprüft.",
+          "Keine bestätigte Gleichheit zwischen aktuellem lokalen Quellstand und veröffentlichtem Release. Beide nennen 1.0.3 / Build 25; gleiche Versionsnummer beweist weder gleiche Quellen noch gleiches Verhalten. Die vorhandene native APK mit Code 24 ist älter.",
+          "Kein Zeitverlaufstest für Mitternachtsabschluss, konsumfreie Tage oder Wiederöffnung nach mehrtägiger Pause. Die beschriebenen Abschlussrisiken bleiben Codebefunde.",
+          "Keine Erfassung tatsächlicher Android-Netzwerkübertragung, SDK-Metadaten oder automatisch erzeugter Analytics-Ereignisse. Kein Nachweis eines Datenschutzverstoßes der veröffentlichten App und keine rechtliche Bewertung.",
+          "Kein automatisierter Testlauf. Im Original liegen 18 Testdateien mit 115 statisch gefundenen Testdeklarationen; daraus wird kein Bestehen der Tests abgeleitet.",
+          "Deutsche Store-Fassung und Store-Bilder 6–11 nicht geprüft. Eine fehlende deutsche Lokalisierung ist nicht nachgewiesen.",
+          "Keine Nutzungsbefragung, kein Store-Experiment, keine belastbare Retentionskohorte, keine vollständige Markt-, Wirksamkeits- oder Monetarisierungsanalyse.",
+          "MewTrack, Mirror, Between, die Browser-Spiele und die Online-Auftritte wurden in diesem Pilot nicht qualitativ geprüft."
+        ]
+      }
     },
     {
       "id": "mirror",
       "projectId": "mirror",
-      "title": "Mirror / RelateLens – Pilotanalyse",
+      "title": "Mirror / Heartvia – lokale Korrekturen geprüft",
       "status": "reviewed",
-      "summary": "Der aktuelle RelateLens-Relaunch hat einen nachvollziehbaren kleinen Produktkern: fünf Fragen zu einer unklaren Verbindung, Einordnung und konkreter nächster Schritt. Ruhige Optik und bedienbare Hauptbereiche sind eine brauchbare Basis. Zwei Probleme wurden im unveränderten aktuellen Webbuild reproduziert: die beschriebene Eigenreaktion kann der gewählten Antwort widersprechen; Wiederöffnen verändert Kurzabschnitte und verliert den Weg zum enthaltenen Volltext. Der Volltext vermittelt außerdem stellenweise zu viel Sicherheit über fremdes Interesse. Die Console zeigt 566 Store-Besucher und 28 Installationsklicks in 08.09.–05.10.2026 sowie kleine aktive Bestände; verschiedene Wachstumsfenster erlauben keinen gemeinsamen Funnel. Diese Kennzahlen gehören zum bisherigen Mirror, nicht zum lokalen Relaunch. Verlässliche Einordnung, konsistente Wiederöffnung, Datenkontrolle und ein klarer tatsächlicher Store-/Release-Auftritt haben Vorrang. Appcode und Stores unverändert; Monetarisierung ist ausdrücklich ein späteres Ziel nach Aufbau echter Nutzer.",
+      "summary": "Die begrenzte Mirror-Analyse bleibt abgeschlossen. Heartvia: Love Tarot & Clarity 1.1.1+17 ist jetzt lokal im Original übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde; finales Debug-APK auf isoliertem Android 34 bedient. Eigene Reaktion und Gegenfall stimmen, archivierte Kurzabschnitte/Read more bleiben nach Neustart korrekt, gewählte alte Einträge werden nicht von späteren RAM-Antworten überschrieben. Kontrollierter Tages-/Resume-Fall, Löschung/Cold Restart und finale APK-Backupregeln sind belegt. Originaldateien bytegleich zur Testkopie, Änderungen uncommitted; kein echter Play-Upgrade-Nachweis. Antworttreue und Daten/Tageswechsel abgeschlossen: 2/4 Mirror, 2/49 insgesamt, weiterhin 2/3 Phasen. Signiertes Release-AAB samt begrenzter nativer Release-Nachprobe und ASO-/Iconexport lokal fertig. AAB 17 von Play akzeptiert, Produktionsrollout und englischer Name/Texte/Icon gespeichert; Einreichung der fünf Änderungen bestätigt. Console-Nachkontrolle 10.10., 19:12 MESZ zeigt laufende Google-Überprüfung; Freigabe und öffentliche Aktivierung ausstehend. Screenshots/Featuregrafik unverändert; echter Nutzerversuch offen. Kein echtes Billing.",
       "scope": {
         "checked": [
-          "Aktuelle lokale Quelle C:\\Users\\madde\\Documents\\Mirror ausschließlich lesend: RelateLens 1.1.0+16, com.energycrafted.mirror, Branch relaunch/paused-2026-10-07, HEAD 27ff955611886951e832159b91bec4f3ceec14a4; sauberer Git-Arbeitsstand.",
-          "Aktiver Router mit Start /home und Home-, Clarity-, Daily-Tarot-, Pattern-, Insights-, Archiv- und Settings-Pfaden; aktive lokale Repository-Implementierungen statt historischer Berichte geprüft.",
-          "Unveränderte isolierte Webkopie mit generiertem Webgerüst: 69 Dart- und 56 Asset-Dateien per SHA256 identisch; Projekt-, Lock- und Analysekonfiguration ebenfalls identisch. Erfolgreicher Web-Releasebuild mit Flutter 3.41.4 und Dart 3.11.1.",
-          "Vom Hauptagenten bedienter aktueller Webbuild bei 390×844 mit erfundenen Antworten im eigenen localhost-Origin; Home, zwei identische Fünf-Fragen-Scans, erste Ergebnisansicht, Wiederöffnung der gespeicherten Kurzansicht und ausführliches Ergebnis.",
-          "Widerspruch zwischen I go silent und stay engaged beziehungsweise leaning in im tatsächlichen Webablauf reproduziert. Abweichende Abschnitte und fehlender Read-more-Weg in vollständig durchgescrollter gespeicherter Kurzansicht reproduziert.",
-          "Aktive lokale Datenhaltung und PostHog-Ereignispayload, Zustimmungsgate, Early-Access-Freischaltung und fehlende reale Billing-Implementierung geprüft.",
-          "Öffentlicher englischer Play-Auftritt desselben Pakets mit 50+ Downloads und Update 13.07.2026; unterschiedliche sichtbare Titel zwischen Browser und direktem Textabruf dokumentiert.",
-          "Tageskartenablauf Daily → What am I not seeing? → Draw my card → The Star XVII → Continue Reading bis zum Ergebnis bedient. Creme-/Pflaumenpalette und Kartenkunst wirkten ruhig und stimmig; in diesem Durchlauf keine Bedienblockade.",
-          "Vom Hauptagenten am 09.10.2026 lesend abgelesene Mirror-Console: Wachstum mit Sechsmonatsauswahl, jeweils tatsächlich verfügbare Kartenabdeckung, separate Dashboard-Werte, kumulativer Installationszähler, installierte Zielgruppe und neuester Release. Keine Werte aus ZeroHero übernommen.",
-          "Alle vier Tabs und Settings im mobilen Webviewport bedienbar. Pattern-Intro mit ungefähr zehn Fragen und Abgrenzung zur Diagnose angesehen, aber Fragebogen nicht abgeschlossen. Insights zeigte Lesetexte und Journal prompt ohne Eingabe. Settings zeigte Privacy Policy, Disclaimer und 1.1.0 (16), ohne Löschfunktion.",
-          "Nach Browserreload blieben zwei gespeicherte Readings und The Star als heutige Karte erhalten. Daily zeigte View todays reading und Your last 7 cards mit The Star Today; kompletter Reopen-Klick nicht erneut geprüft.",
-          "Öffentliche visuelle Store-Stichprobe: erste vier von 15 Bildern. Sechs ältere lokale Relaunch-Captures zusätzlich betrachtet; Fake-Repository und Ersatzschriften begrenzen diese und sie ersetzen nicht heutige Laufzeitbeweise.",
-          "Store-Performance lesend abgelesen: 08.09.–05.10.2026 mit 566 Besuchern, 28 Installationsklicks und 5 Prozent; längerer Filter tatsächlich 10.07.–05.10.2026 mit 804 Besuchern, 58 Klicks und 7 Prozent. Gerundete Raten, keine Gleichsetzung mit erfolgreichen Installationen."
+          "Pilot 09.10.2026: Aktuelle lokale Quelle C:\\Users\\madde\\Documents\\Mirror ausschließlich lesend: RelateLens 1.1.0+16, com.energycrafted.mirror, Branch relaunch/paused-2026-10-07, HEAD 27ff955611886951e832159b91bec4f3ceec14a4; sauberer Git-Arbeitsstand.",
+          "Pilot 09.10.2026: Aktiver Router mit Start /home und Home-, Clarity-, Daily-Tarot-, Pattern-, Insights-, Archiv- und Settings-Pfaden; aktive lokale Repository-Implementierungen statt historischer Berichte geprüft.",
+          "Pilot 09.10.2026: Unveränderte isolierte Webkopie mit generiertem Webgerüst: 69 Dart- und 56 Asset-Dateien per SHA256 identisch; Projekt-, Lock- und Analysekonfiguration ebenfalls identisch. Erfolgreicher Web-Releasebuild mit Flutter 3.41.4 und Dart 3.11.1.",
+          "Pilot 09.10.2026: Vom Hauptagenten bedienter aktueller Webbuild bei 390×844 mit erfundenen Antworten im eigenen localhost-Origin; Home, zwei identische Fünf-Fragen-Scans, erste Ergebnisansicht, Wiederöffnung der gespeicherten Kurzansicht und ausführliches Ergebnis.",
+          "Pilot 09.10.2026: Widerspruch zwischen I go silent und stay engaged beziehungsweise leaning in im tatsächlichen Webablauf reproduziert. Abweichende Abschnitte und fehlender Read-more-Weg in vollständig durchgescrollter gespeicherter Kurzansicht reproduziert.",
+          "Pilot 09.10.2026: Aktive lokale Datenhaltung und PostHog-Ereignispayload, Zustimmungsgate, Early-Access-Freischaltung und fehlende reale Billing-Implementierung geprüft.",
+          "Pilot 09.10.2026: Öffentlicher englischer Play-Auftritt desselben Pakets mit 50+ Downloads und Update 13.07.2026; unterschiedliche sichtbare Titel zwischen Browser und direktem Textabruf dokumentiert.",
+          "Pilot 09.10.2026: Tageskartenablauf Daily → What am I not seeing? → Draw my card → The Star XVII → Continue Reading bis zum Ergebnis bedient. Creme-/Pflaumenpalette und Kartenkunst wirkten ruhig und stimmig; in diesem Durchlauf keine Bedienblockade.",
+          "Pilot 09.10.2026: Vom Hauptagenten am 09.10.2026 lesend abgelesene Mirror-Console: Wachstum mit Sechsmonatsauswahl, jeweils tatsächlich verfügbare Kartenabdeckung, separate Dashboard-Werte, kumulativer Installationszähler, installierte Zielgruppe und neuester Release. Keine Werte aus ZeroHero übernommen.",
+          "Pilot 09.10.2026: Alle vier Tabs und Settings im mobilen Webviewport bedienbar. Pattern-Intro mit ungefähr zehn Fragen und Abgrenzung zur Diagnose angesehen, aber Fragebogen nicht abgeschlossen. Insights zeigte Lesetexte und Journal prompt ohne Eingabe. Settings zeigte Privacy Policy, Disclaimer und 1.1.0 (16), ohne Löschfunktion.",
+          "Pilot 09.10.2026: Nach Browserreload blieben zwei gespeicherte Readings und The Star als heutige Karte erhalten. Daily zeigte View todays reading und Your last 7 cards mit The Star Today; kompletter Reopen-Klick nicht erneut geprüft.",
+          "Pilot 09.10.2026: Öffentliche visuelle Store-Stichprobe: erste vier von 15 Bildern. Sechs ältere lokale Relaunch-Captures zusätzlich betrachtet; Fake-Repository und Ersatzschriften begrenzen diese und sie ersetzen nicht heutige Laufzeitbeweise.",
+          "Pilot 09.10.2026: Store-Performance lesend abgelesen: 08.09.–05.10.2026 mit 566 Besuchern, 28 Installationsklicks und 5 Prozent; längerer Filter tatsächlich 10.07.–05.10.2026 mit 804 Besuchern, 58 Klicks und 7 Prozent. Gerundete Raten, keine Gleichsetzung mit erfolgreichen Installationen.",
+          "Nachprüfung 10.10.2026: vorhandenes lokales AAB 1.1.0/16 mit neuer lokaler Testsignatur im isolierten Android-Emulator vom frischen Home durch fünf Fragen, Ergebnis und vollständige Archivansicht bedient. Eigenreaktionswiderspruch und fehlender Read-more-Zugang vor erstmaligem Volltextöffnen bestätigt. Kein Play-Download.",
+          "Erneute begrenzte Web-/Quellgegenprüfung: konkreter überstarker Mixed-Signals-Volltext, vorsichtiger Gegenfall, vollständiger Pattern-Fall Secure Grounder und Tageskartenablauf The Sun. Keine pauschale Fehlerbehauptung für sämtliche Texte.",
+          "Rein technische vorangehende Archiv-/Tageswechsel-Vorbereitung: 70 ausgewählte Flutter-Unit-/Widgettests bestanden und analyze ohne Befunde. Dieser frühere Patchstand änderte Scoring, Texte, Marke, Icon, Löschung und Backup nicht; kein Gesamtnachweis des danach erweiterten Heartvia-Zielstands.",
+          "Originalübernahme: Heartvia 1.1.1+17, com.energycrafted.mirror, codex/heartvia-relaunch; HEAD unverändert 27ff955611886951e832159b91bec4f3ceec14a4, Änderungen uncommitted. 263 relevante Dateien bytegleich zur gebauten Kopie; 243 Basisdateien, 82 geänderte/neue Dateien, zehn Git-Zeilenenden angeglichen.",
+          "Gesamtsuite final 195/195 Fluttertests bestanden, analyze ohne Befunde. Danach nur mechanische adaptive Iconausgaben und finaler APK-Build. Frühere 70 Tests gehören zur technischen Vorstufe und werden nicht auf 195 aufgeschlagen.",
+          "Finales Android-x64-Debug-APK auf isoliertem Android 34 bedient. SHA256 3ebaf457ecf8ccb271b78a63b25b7f23d67b0b85954bfdb639399c6502a449bb; Patch-SHA256 bd35d987ebe191ad081dbd7cde9f94f997b895a2899e43a9acaba6e7d08f0c66. Rohlogs/Patch/Pakete bleiben lokal.",
+          "Antwort-/Archivgegenproben auf vorausgehenden Heartvia-Debug-17-Testständen: Schweigen und Klarheit suchen/Chase bei gleichem Kontext passend. Freie Erstlesung/Archiv nach Kaltstart vier gleiche Abschnitte und Read more; gewählte ältere Volltextlesung bleibt trotz anderer letzter RAM-Antwort korrekt.",
+          "Zwei vorausgehende Heartvia-Debug-17-Stände auf final 17 aktualisiert: zwei Readings/eine Karte erhalten. Alter synthetischer AAB 16-Stand wegen anderer Testsignatur zuvor deinstalliert; ausdrücklich kein Upgrade 16 → 17-Nachweis.",
+          "Finaler APK, simulierte Emulatordaten 11.10./12.10.: The Magician gezogen, Pause/Resume bei gleichem PID 8406; alte aktuelle Karte weg, echte Themenwahl leer. Zwei Readings/zwei Karten im Archiv und Preferences-SHA unverändert. Danach Emulatoruhr zurückgesetzt, auto_time aktiv, eigener Emulator beendet.",
+          "Native Löschung am finalen APK: Cancel lässt Preferences-SHA und 2+2 Inhalte gleich; Confirm entfernt elf persönliche Keys, null Readings/null Karten auch nach Cold Restart. Mock-Premium false; technische KPI-/Einstiegskeys erhalten. Kein nativ gespeichertes Pattern oder Analytics-Consent; diese und laufende Saves/gecachte Ansichten automatisiert abgedeckt.",
+          "AAPT finaler APK: Heartvia 1.1.1/17, min 24/target 36, allowBackup=false; verpackte XML schließen sharedpref/device_sharedpref im Legacyformat, cloud-backup und device-transfer aus. Keine tatsächlichen Cloud-/OEM-Uploads. Adaptive Androidicons/Splash gesehen; iOS-Namen/Icons mechanisch angepasst, nicht nativ geprüft.",
+          "Content: neue Scans clarity_v2, ungetaggte historische Scans v1. Gefrorene Volltexte unverändert. Erstmals erweitertes historisches Kurzreading nutzt heutige Vorlagen bei erhaltenem v1-Herkunftsmarker; keine v1-Textrekonstruktion behauptet.",
+          "Signiertes Original-Release-AAB 1.1.1/17 gebaut: 49.687.036 Bytes, SHA256 ca068400ba34e9d1de89a4a263220e348563ca69993650ab5730b5b3c8c5293c. Bundletool-Metadaten/validate Exit 0, jarsigner verify alt/neu jeweils jar verified; öffentlicher Signierzertifikatabdruck gleich altem lokalen AAB 16, kein Android-Debug-Subject. Keine Play-Uploadkey-/Console-Identität behauptet.",
+          "Aktualisierte englische ASO-Felder 30/69/1.306 Zeichen aus öffentlichem Storeentwurf exakt ins Original-playstore-Verzeichnis exportiert; 512RGBA-Icon, README.txt und release-info.json vorhanden. Relevante Keywords/Nutzenpositionierung, keine Suchvolumen-/Rankingmessung. Dies war der lokale Vor-Console-Stand; anschließender akzeptierter Upload separat dokumentiert.",
+          "Begrenzte Release-Nachprobe: genau aus dem neuen signierten AAB abgeleitetes Universal-APK separat mit lokaler Debug-Testsignatur versehen; Releasecode nicht debuggable, ARM64/ARMv7/x86_64 enthalten. Android 34: Home mit beiden Einstiegen, Settings 1.1.1 (17), Lösch-/Privacy-/Disclaimerbereich, keine Developer-Mocksektion; Tarot-Themenwahl → Ziehung → The Moon → Lesung funktioniert. Backupverweise auch dort bestätigt. Kein Play-Install; eigener Emulator wieder beendet.",
+          "Play Console 10.10.2026 nach ausdrücklicher Nutzerfreigabe im bestehenden Codex-Browser bedient: richtige App com.energycrafted.mirror, AAB 17 (1.1.1) akzeptiert, Produktion Heartvia 1.1.1 mit 100 % für bisherige 178 Länder gespeichert, keine unterstützten Geräte verloren. Englischer Name/Kurz-/Volltext 30/69/1306 und 512px-Icon gespeichert; nur Icon als KI-erstellt gekennzeichnet. Sechs Telefon-Screenshots und Featuregrafik im genauen Dateiname-/geordneten Asset-URL-Vergleich unverändert. Sechs 7-Zoll- und drei 10-Zoll-Tablet-Screenshots unangetastet und in Reviewvorschau vorhanden, ohne separaten Tablet-URL-Vergleich.",
+          "Einreichung der fünf Änderungen bestätigt. Console zeigt Änderungen, die überprüft werden, zugleich laufende automatische Vorabprüfungen und Übergabe zur Google-Überprüfung nach deren Abschluss. Managed Publishing aus; automatische Aktivierung nach Freigabe. Noch keine Google-Freigabe oder öffentliche Aktivierung bestätigt. Belegzeitpunkt 10.10.2026, 18:52:09 MESZ (16:52:09 UTC)."
         ],
         "notChecked": [
-          "Kein Gerätetest des veröffentlichten Android-Binaries und keine bestätigte Gleichheit zur lokalen RelateLens-Quelle.",
-          "Vorhandenes Debug-APK vom Juni ist Version 1.0.11 (13), nicht der geprüfte Relaunch. Version und Quellenzuordnung des vorhandenen AAB vom 07.10.2026 sind in diesem Code-Teil nicht bestätigt.",
-          "Kein Laufzeitnachweis für Tageswechsel oder Android-Backup. Backup-Regeln des zusammengeführten Release-Manifests und konkrete Geräteinstellungen wurden nicht geprüft.",
-          "Kein Android-Netzwerkmitschnitt, kein verifizierter Produktions-PostHog-Buildparameter und keine vollständige Datenschutz- oder Sicherheitsprüfung.",
-          "Vorhandene Flutter-Tests wurden nicht ausgeführt. Kompilierbarkeit des Webbuilds ist kein bestandener automatisierter Testlauf.",
-          "Keine echte Nutzerbefragung, kein Wiederkehrversuch, keine bestätigte Zahlungsbereitschaft und keine Marktstudie. Wirkung der Befunde auf Downloads ist ungemessen.",
-          "Kompletter Pattern-Fragebogen, alle Tarot-Karten und vollständiger Reopen der Tageslesung nicht durchgespielt. Browserreload bestätigt Webgrundpersistenz, keinen nativen Android-Restore.",
-          "Store-Bilder 5–15 und deutsche öffentliche Storefassung nicht geprüft. Fehlende Crash-/ANR-/Bewertungsmesswerte sind nicht null."
+          "Google-Freigabe und öffentliche Aktivierung noch ausstehend: akzeptierter Upload, gespeicherte Änderungen und bestätigte Einreichung sind belegt; automatische Vorabprüfungen laufen. Kein echter Play-Install-/Upgradeversuch.",
+          "Kein Upgrade vom älteren AAB 16 oder bestehenden Play-Installationen auf 17. Nur lokale Debug 17-Zwischenstände auf final 17 aktualisiert; das anders testsignierte 16er-QA-Paket war zuvor deinstalliert.",
+          "Keine vollständige Wiederholung der Clarity-/Lösch-/Mitternachtsgegenproben mit Releasecode. Die zusätzliche native Release-Nachprobe beschränkt sich auf Home, Settings und einen Tarotablauf an einer separat testsignierten AAB-Ableitung; kein echter Play-Install.",
+          "Kein natürlicher Mitternachts-Langzeittest. Kontrollierte Datums-/Resumeprobe im isolierten Emulator; Nutzergerätezeit unberührt und Emulatoruhr anschließend zurückgesetzt.",
+          "Keine tatsächlichen Cloud-/OEM-Backupuploads, Gerätewechsel oder Produktions-Analytics-/Netztests; verpackte Regeln im finalen APK belegt, Produktions-Analytics nicht konfiguriert.",
+          "Kein nativ gespeichertes Pattern bei Löschprobe; Pattern/Consent/Unlocks/laufende GUI-Zustände automatisiert geprüft. iOS- und Windowslaufzeit nicht geprüft.",
+          "Keine historische v1-Volltextrekonstruktion beim ersten Read more eines alten Kurzscans; heutige Vorlagen trotz v1-Herkunftsmarker. Nicht alle Pattern-/Tarot-/Textkombinationen vollständig geprüft.",
+          "Original-Appänderungen noch uncommitted; kein Commit/Push-/Sicherungsabschluss. Kein echter Nutzerversuch, Wiederkehr-/Zahlungsbereitschaftsbeleg oder gemessener ASO-Effekt.",
+          "Historische Console-Kennzahlen behalten eigene Zeitfenster; kein gemeinsamer Funnel und keine aktuelle Markenfreiheit behauptet."
         ]
       },
       "strengths": [
@@ -556,110 +623,117 @@
       "findings": [
         {
           "id": "mirror-own-reaction-mismatch",
-          "title": "Eigenes Muster widerspricht einer gewählten Reaktion",
-          "evidenceType": "runtime",
+          "title": "Eigenreaktion im lokalen Heartvia-Stand korrigiert",
+          "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Das Ergebnis kann trotz ausdrücklichem I go silent Wärme, Nähe und engagiertes Dranbleiben als eigenes Muster beschreiben. Für ein Reflexionsprodukt beschädigt das die inhaltliche Verlässlichkeit.",
-          "evidence": "Dating → I cannot stop thinking about them → I go silent → Avoids serious conversations → Calmer and more secure. Archivierte Kurzansicht zeigt stay engaged and hopeful; ausführliche Ansicht nach zweitem identischen Scan zeigt leaning in, staying warm, staying available. Code zählt ihren Verhaltens-Tag doppelt und verwendet ihn für Your Emotional Pattern.",
-          "limitation": "Im aktuellen unveränderten lokalen Webbuild bei 390×844 reproduziert und im aktiven Code bestätigt; kein nativer oder veröffentlichter Android-Nachweis und keine echte Nutzerwirkungsmessung.",
-          "recommendation": "Eigene Reaktion getrennt vom beobachteten Verhalten der anderen Person auswerten und wenige gegensätzliche Antwortfälle sinnvoll gegenprüfen.",
+          "detail": "Der Ausgangsfehler in Web/AAB 16 konnte I go silent als engagiertes Dranbleiben beschreiben. Heartvia 17 trennt eigene Reaktion vom beobachteten Verhalten anderer. Schweigen und der gegensätzliche Klarheit-suchen-/Chase-Fall beschreiben die eigene Reaktion jetzt passend.",
+          "evidence": "Native Gegenproben an den vorausgehenden Heartvia-Debug-17-Testständen; finale Gesamtsuite 195/195 bestanden. Die relevanten Originaldateien sind bytegleich zur geprüften Kopie übernommen; anschließender finaler APK mit mechanischen Iconausgaben gebaut.",
+          "limitation": "Begrenzte dokumentierte Gegenfälle, keine vollständige Prüfung sämtlicher Antwortkombinationen oder echte Nutzerwirkungsmessung. Lokaler Stand 17 ist noch kein veröffentlichter Play-Release.",
+          "recommendation": "Korrigierte Reaktionszuordnung erhalten; weitere Inhaltsfälle gezielt statt pauschal ausbauen. Diese Teilmaßnahme ist lokal umgesetzt und passend geprüft.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/Mirror-code-review.md",
             "analysen/mirror/evidence.json",
-            "analysen/mirror/runtime-review.md"
+            "analysen/mirror/runtime-review.md",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-overconfident-full-copy",
-          "title": "Volltext behauptet echtes Interesse zu sicher",
-          "evidenceType": "runtime",
+          "title": "Überstarke Aussagen in neuen Heartvia-Texten präzisiert",
+          "evidenceType": "code",
           "priority": "high",
-          "detail": "Die Vollansicht behandelt tatsächliches Interesse als real und nicht eingebildet. Die fünf Antworten erlauben keine sichere Aussage über fremde Gefühle oder Motive.",
-          "evidence": "Im Volltext des dokumentierten Mixed-Signals-Falls gelesen; derselbe feste Textbaustein ist in ClarityPremiumContent aktiv. Die erste Ergebnisansicht kennzeichnet ihre Grundlage vorsichtiger als die eigene Antwortperspektive.",
-          "limitation": "Inhaltliche Bewertung eines konkreten Textfalls, keine umfassende Prüfung sämtlicher Inhaltskombinationen oder therapeutischer Wirkung.",
-          "recommendation": "Beobachtung, mögliche Interpretation und unbekannte Absichten im Volltext ebenso deutlich trennen; betroffene sichere Aussagen gezielt umformulieren.",
+          "detail": "Der historische Mixed-Signals-Volltext behauptete fremdes Interesse zu sicher. Neue clarity_v2-Inhalte lassen Motive und Gefühle anderer offen und formulieren mögliche Deutungen samt eigenen Schritten. Eingefrorene historische Volltexte bleiben unverändert.",
+          "evidence": "Gezielte Inhalts-/Reaktionsänderungen im geprüften 17er-Stand und finale195 Tests. NeueScans clarity_v2, ungetaggte Altscans v1. Ein alter Kurzscan erhält beim ersten Read more heutige Vorlagen mit erhaltenem v1-Herkunftsmarker.",
+          "limitation": "Kein pauschaler Nachweis aller Text-/Tarotkombinationen. Der v1-Marker garantiert beim erst später generierten Volltext keine v1-Textgleichheit. Bereits gespeicherte eingefrorene Texte wurden nicht rückwirkend umgeschrieben; kein Veröffentlichungsnachweis.",
+          "recommendation": "Symbolische Tarotreflexion und antwortenbasierte Einordnung klar halten. Inhaltliche Gegenproben bei späteren gezielten Textänderungen erhalten.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/Mirror-code-review.md",
             "analysen/mirror/evidence.json",
-            "analysen/mirror/runtime-review.md"
+            "analysen/mirror/runtime-review.md",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-reopen-free-reading",
-          "title": "Gespeicherte Kurzansicht verändert Abschnitte und verliert den Weiterweg",
-          "evidenceType": "runtime",
+          "title": "Archivabschnitte und Volltextzugang lokal konsistent",
+          "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "Wiederöffnen zeigt eine andere Auswahl von Ergebnisabschnitten. Die zuvor sichtbare Einordnung What to watch for fehlt, während Your pattern hinzukommt; der enthaltene Volltext ist dort nicht über einen Button erreichbar.",
-          "evidence": "Erstes Ergebnis mit vier Karten gelesen, Read more nicht geöffnet, zurück Home und Your last reading aufgerufen. Ganze gespeicherte Ansicht durchgescrollt: Your pattern / Their pattern / The dynamic / Next step und kein Read-more-Button. _freeSections bestätigt die abweichende Abschnittszuordnung.",
-          "limitation": "Aktuelle Webquelle, nicht veröffentlichter Android-Build. Das Archiv ist absichtlich unveränderlich; die UX sollte diese Eigenschaft verständlich abbilden.",
-          "recommendation": "Erste und gespeicherte Ergebnisansicht konsistent halten und den gewünschten Zugang zu enthaltenen Volltexten beim Wiederöffnen klar regeln.",
+          "detail": "Heartvia 17 zeigt beim Wiederöffnen eines kurzen kostenlosen Readings dieselben vier Abschnitte und Read more. Volltext bezieht sich auf den gewählten gespeicherten Eintrag; spätere aktuelle Antworten überschreiben diesen nicht.",
+          "evidence": "Native Gegenproben an vorausgehenden Heartvia-Debug-17-Ständen: freie Erstlesung und Archiv nach Cold Restart mit vier gleichen Abschnitten und Read more. Gewählte ältere Volltextlesung bleibt trotz anderer letzter RAM-Antwort korrekt. Updates auf final 17 erhalten zwei Readings/eine Karte.",
+          "limitation": "Kein AAB 16→17-/Play-Upgradebeleg wegen verschiedener Testsignaturen. Eingefrorene Volltexte bleiben gleich; erst nachträglich erweitertes historisches Kurzreading nutzt heutige Vorlagen. Kein Nachweis einer v1-Textrekonstruktion.",
+          "recommendation": "Stabile Abschnitte und gezielten gespeicherten Zielbezug erhalten; echte Upgrade-/Releasezuordnung vor späterer Veröffentlichung separat prüfen.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/Mirror-code-review.md",
             "analysen/mirror/evidence.json",
-            "analysen/mirror/runtime-review.md"
+            "analysen/mirror/runtime-review.md",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-local-data-control-and-backup",
-          "title": "Lokale Datenkontrolle und Backup-Aussage klären",
-          "evidenceType": "runtime",
+          "title": "Persönliche lokale Daten löschbar; APK-Backupregeln belegt",
+          "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Antworten und persönliche Readings werden archiviert; im aktiven Settings-/Repository-Code fehlt vollständiges Löschen. Die Aussage Answers stay on this device ist ohne bewusst geprüfte Android-Backup-Regeln noch nicht ausreichend abgesichert.",
-          "evidence": "SharedPreferences speichert Antwort-IDs und Reading-Snapshots. Settings nennt Analytics, Privacy Policy, Disclaimer und Version; keine vollständige Löschaktion gefunden. Quellmanifest definiert keine allowBackup-, fullBackupContent- oder dataExtractionRules-Angaben. Android-Dokumentation beschreibt standardmäßiges Backup auch für SharedPreferences. Zusätzlich in der tatsächlichen Web-Settings-Ansicht Privacy Policy, Disclaimer und Version 1.1.0 (16) gesehen, keine Löschfunktion sichtbar.",
-          "limitation": "Kein tatsächlicher Backup-Upload nachgewiesen; zusammengeführtes Release-Manifest, Gerätetransfer und Geräteeinstellungen sind noch zu prüfen. Kein rechtliches Urteil.",
-          "recommendation": "Eine einfache bestätigte Löschaktion anbieten und Backup-/Gerätetransferregeln mit dem gewollten lokalen Versprechen abstimmen.",
+          "detail": "Bestätigte Löschung entfernt persönliche Antworten/Readings/Karten und weitere persönliche Zustände. Technische KPI-/Einstiegskeys bleiben bewusst. Finale APK-Regeln schließen SharedPreferences von Backup-/Transferpfaden aus.",
+          "evidence": "Native Cancel mit identischer Preferences-SHA; Confirm entfernt elf persönliche Keys und hinterlässt null Readings/null Karten auch nach Cold Restart. Mock-Premium false. Pattern/Consent/Unlocks und laufende Saves/gecachte Ansichten automatisiert geprüft. AAPT finaler APK: allowBackup=false und verpackte Ausschlüsse aller sharedpref/device_sharedpref für Legacy-/Cloudbackup und Gerätetransfer.",
+          "limitation": "Im nativen Lauf kein gespeichertes Pattern und keine Produktions-Analyticskonfiguration. Keine echten Cloud-/OEM-Uploads oder Gerätewechsel getestet. Belegt sind die konkreten Löschpfade und verpackten Regeln des lokalen APK, keine absolute Datenflussgarantie.",
+          "recommendation": "Bestätigte Löschaktion und bewusste Regeln beibehalten; Privacy-/Data-Safety-Angaben mit dem späteren tatsächlichen Produktionsbuild abgleichen.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/Mirror-code-review.md",
             "analysen/mirror/evidence.json",
-            "analysen/mirror/runtime-review.md"
+            "analysen/mirror/runtime-review.md",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-daily-cache",
-          "title": "Tagesinhalte können nach Mitternacht gecacht bleiben",
-          "evidenceType": "code",
+          "title": "Tagesinhalte bei Resume im lokalen Stand erneuert",
+          "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "TodaysCard und TodaysInsight sind gecachte Provider ohne Datum als Abhängigkeit; Wiederaufnehmen der App aktualisiert nur Analytics. Erhaltener Tarot-RAM-Zustand kann ebenfalls alt bleiben.",
-          "evidence": "Aktive Tages-Provider und Lifecycle-Code sowie TarotResultNotifier.restoreFromToday geprüft. Die Berechnung kennt das Datum, wird beim bloßen Wiederaufnehmen jedoch nicht gezielt neu ausgelöst.",
-          "limitation": "Codeinferenz; kein praktischer Mitternachtstest und keine Änderung der Systemzeit durchgeführt.",
-          "recommendation": "Lokalen Tageswechsel beim Wiederaufnehmen erkennen und Tages-Provider sowie veralteten Tarot-RAM-Zustand gezielt aktualisieren.",
+          "detail": "Gemeinsame lokale Datumsprüfung erneuert Tageskarte/Insight und setzt veralteten Tarot-RAM-Zustand zurück; Archive bleiben erhalten. Resume prüft sofort, ein offenbleibender Prozess spätestens nach einer Minute.",
+          "evidence": "Finaler Android 34-APK: The Magician beim simulierten 11.10. gezogen. Nach Pause und simuliertem 12.10. Resume im gleichen PID 8406: alte aktuelle Karte weg, tatsächliche Themenwahl leer; zwei Readings/zwei Archivkarten und Preferences-SHA unverändert. Automatisierte Datum-/Lifecycle-Gegenproben bestanden.",
+          "limitation": "Kontrollierter Emulator-/Testzeitfall, kein natürlicher Mitternachts-Langzeittest. Nutzergerätezeit unberührt; Emulatoruhr anschließend zurückgesetzt. Nicht alle realen Zeitzonen-/OEM-Lifecyclefälle durchgespielt.",
+          "recommendation": "Kalendertagsabhängigkeit und sofortigenResumeCheck erhalten; lokale Daten-/Tageswechselmaßnahme ist umgesetzt und passend geprüft.",
           "sourceDocs": [
             "analysen/mirror/Mirror-code-review.md",
-            "analysen/mirror/evidence.json"
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-recurrence-and-billing",
-          "title": "Wiederkehrnutzen und Zahlungsbereitschaft sind noch nicht gezeigt",
+          "title": "Echter Wiederkehrnutzen bleibt offen; Early Access bewusst frei",
           "evidenceType": "inference",
           "priority": "medium",
-          "detail": "Insights rotiert sieben allgemeine Texte ohne Bezug zum Scan; Journal prompt ist eine gelesene Anregung. Die aktuelle Early-Access-Quelle ist bewusst kostenlos und verdrahtet Mock-Billing. Daraus lässt sich kein tragfähiges Abo oder Umsatz ableiten.",
-          "evidence": "Sieben feste DailyInsight-Einträge mit Tageszahl modulo sieben. earlyAccessFullReadingsEnabled=true; MockPurchaseRepository statt Store-Billing aktiv.",
-          "limitation": "Begrenztheit der implementierten Funktion ist Codefakt; daraus abgeleitete Wiederkehr- und Geschäftsfrage ist eine ungemessene Hypothese, kein Abwanderungsbeleg.",
-          "recommendation": "Mit wenigen passenden Nutzern konkrete Hilfreichkeit und freiwillige Wiederkehr prüfen. Der Nutzer möchte Monetarisierung ausdrücklich später behandeln, sobald Nutzer vorhanden sind; der aktuelle Early-Access-Stand bleibt bewusst kostenlos.",
+          "detail": "Insights und symbolische Tageskarten bieten Reflexion, belegen aber keinen wiederkehrenden Nutzen oder Zahlungsbereitschaft. Aktueller Early Access öffnet alle Volltexte ohne echtes Billing.",
+          "evidence": "earlyAccessFullReadingsEnabled=true im aktiven MockRepository; aktuelle Tarot-/Clarity-/Pattern-Volltexte freigeschaltet. Sieben rotierende Insighttexte und gelesene Journalprompts; kein frei eingebbares Journal beworben.",
+          "limitation": "Keine echten Nutzerrückmeldungen, Wiederkehrbeobachtung oder Zahlungsbereitschaft gemessen. Spätere Monetarisierung ist Nutzerziel, konkretes Modell offen.",
+          "recommendation": "Echten kleinen Nutzerversuch gesondert planen; Verständlichkeit und praktischen nächsten Schritt beobachten. Preise/Billing erst nach Nutzenbeleg entscheiden.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/Mirror-code-review.md",
-            "analysen/mirror/evidence.json"
+            "analysen/mirror/evidence.json",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mirror-product-store-identity",
-          "title": "Lokalen Relaunch und öffentlichen Auftritt bewusst zusammenführen",
+          "title": "Heartvia in Play eingereicht; öffentliche Aktivierung ausstehend",
           "evidenceType": "store",
           "priority": "medium",
-          "detail": "Lokale Marke RelateLens, öffentlicher Browser-Titel Mirror: Love Tarot & Clarity und abweichender direkter Texttitel Mirror: Relationship Clarity gehören zum selben Paket, stellen jedoch unterschiedliche Erwartungen in den Vordergrund.",
-          "evidence": "Aktuelles Branding und Android-Label RelateLens; lokale Version 1.1.0+16. Öffentliche Store-Ausspielungen desselben Pakets dokumentiert; öffentliches Update 13.07.2026. Ein Namensunterschied allein ist kein Qualitätsurteil.",
-          "limitation": "Ursache der Titeldifferenzen und Gleichheit zur aktuell veröffentlichten Android-Quelle sind offen. Keine Storeänderung vorgenommen.",
-          "recommendation": "Einen primären Nutzerfall, Namen und tatsächlichen nächsten Release wählen. Storetexte und Screenshots müssen dessen echte Bedienung und Nutzen abbilden; Tarot kann bewusst ergänzend bleiben.",
+          "detail": "Lokales Heartvia 1.1.1+17 samt signiertem AAB, Icon und englischen Feldern fertig und in der richtigen bestehenden Play-App gespeichert. Bundle akzeptiert, Einreichung bestätigt; Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ). Google-Freigabe und öffentliche Kohärenz noch ausstehend. Vorhandene Screenshots/Featuregrafik auf Nutzerwunsch unverändert.",
+          "evidence": "AAB 17 / 1.1.1 in com.energycrafted.mirror akzeptiert. Produktion Heartvia 1.1.1 mit 100 % für bisherige 178 Länder gespeichert. Fünf Einträge für Rollout, en-US-Name/Kurz-/Volltext und Icon zur Überprüfung bestätigt; 30/69/1306 Zeichen. Sechs Telefon-Screenshots und Featuregrafik exakt verglichen: unverändert. Sechs 7-Zoll-/drei 10-Zoll-Tablet-Screenshots unangetastet, in Reviewvorschau vorhanden; kein separater URL-Vergleich. Stand 10.10.2026, 18:52:09 MESZ. Nur neues Icon als KI erstellt markiert. Releasecode zuvor begrenzt nativ geprüft; Managed Publishing aus. Lesende Nachkontrolle 10.10., 19:12 MESZ: Deine Änderungen werden jetzt überprüft; Freigabe/öffentliche Aktivierung weiter offen.",
+          "limitation": "Noch keine abgeschlossene Google-Überprüfung oder öffentliche Aktivierung. Kein echter Play-Install-/Upgrade 16 → 17-Nachweis und keine gemessene ASO-/Downloadwirkung. Unveränderte ältere Screens behalten ihre bisherige Herkunft; neue Screenshotideen zurückgestellt.",
+          "recommendation": "Nach Google-Freigabe den tatsächlich öffentlich sichtbaren Namen, Icon, Text und Release abgleichen. Maßnahme bleibt bis zu diesem Nachweis in_progress.",
           "sourceDocs": [
             "analysen/mirror/Mirror-Pilotanalyse.md",
             "analysen/mirror/store-review.md",
-            "analysen/mirror/play-console-kpis.md"
+            "analysen/mirror/play-console-kpis.md",
+            "analysen/mirror/Heartvia-Update-2026-10-10.md"
           ]
         }
       ],
@@ -860,25 +934,25 @@
           "id": "mirror-action-reliable-content",
           "order": 1,
           "title": "Antwortbasierte Einordnung verlässlich machen",
-          "detail": "Eigenreaktion vom Partnerverhalten trennen, sichere Interessensbehauptungen vorsichtiger formulieren und erste sowie gespeicherte Ergebnisansicht angleichen. Das ist der erste begrenzte Reparaturumfang.",
-          "status": "proposed",
-          "validation": "Dokumentierten Rückzugsfall und einen gegensätzlichen aktiv nachfragenden Fall prüfen. Erste Kurzansicht, archivierte Kurzansicht und Volltext vergleichen; weder Inkonsistenz noch fix behaupten, bevor Umsetzung und passende native Prüfung erfolgt sind."
+          "detail": "Lokal übernommen und geprüft: eigene Reaktion getrennt ausgewertet, betroffene zu sichere Texte präzisiert, erste/gespeicherte Kurzabschnitte und Read-more-Zugang angeglichen. Heartvia 1.1.1+17; eingefrorene Volltexte erhalten, neue Scans clarity_v2.",
+          "status": "completed",
+          "validation": "Finale 195/195 Tests und analyze bestanden; native Schweigen-/Chase-Gegenfälle korrekt. Freies Reading nach Cold Restart vier gleiche Abschnitte und Read more; spätere RAM-Antwort ändert gewählten alten Volltext nicht. Originaldateien bytegleich übernommen. Erste Erweiterung historischen Kurzscans nutzt heutige Vorlagen bei v1-Herkunftsmarker; kein Play-Upgradebeleg."
         },
         {
           "id": "mirror-action-local-data-and-date",
           "order": 2,
           "title": "Lokale Daten und Tageswechsel sauber behandeln",
-          "detail": "Einfaches Löschen der Readings/Antworten vorsehen. Backup-/Gerätetransferverhalten bewusst festlegen und Tagesinhalte beim Wiederaufnehmen an das aktuelle Datum binden.",
-          "status": "proposed",
-          "validation": "Aktuellen Android-Testbuild verwenden: vollständige Datenkontrolle, zusammengeführtes Manifest und Backup-Regeln prüfen; Tageswechsel mit injizierter Testzeit statt veränderter Rechnerzeit testen. Kein tatsächlicher Upload oder erfolgter Fix vorausgesetzt."
+          "detail": "Persönliche lokale Löschung, konkrete APK-Backup-/Transferregeln und Tages-/Resume-Erneuerung umgesetzt und passend geprüft. Technische KPI-/Einstiegskeys bleiben bewusst; tatsächliches Cloud-/OEM-Verhalten ist eigene Grenze.",
+          "status": "completed",
+          "validation": "Native Cancel erhält Preferences-SHA; Confirm entfernt elf persönliche Keys, null Readings/null Karten auch nach Cold Restart. AAPT: allowBackup=false und verpackte SharedPreferences-Ausschlüsse. Kontrollierter Resume am simulierten 12.10. im gleichen PID 8406 erneuert Karte/Themenwahl und erhält Archive. Pattern/Consent/Unlocks/laufende GUI automatisiert abgedeckt; kein nativ gespeichertes Pattern oder echter Backupupload."
         },
         {
           "id": "mirror-action-release-and-store",
           "order": 3,
           "title": "Einen tatsächlichen Auftritt und Release zusammenführen",
-          "detail": "Primären Nutzen kurzer Beziehungsreflexion bei gemischten Signalen testen, Rolle symbolischer Karten entscheiden und Name, Storetext sowie aktuelle echte Screenshots auf den nächsten bestätigten Android-Release abstimmen.",
-          "status": "proposed",
-          "validation": "Lokale Quelle, freizugebendes Binary, Marke und sichtbare Storefassung einzeln zuordnen. Erwartung aus erstem Storebild mit tatsächlicher erster Appaktion vergleichen. Keine Titel-, Store- oder Releaseänderung ist bisher erfolgt."
+          "detail": "Signiertes AAB 17, englischer Name/Texte und Icon in der bestehenden Play-App gespeichert; Bundle akzeptiert und Einreichung der fünf Änderungen bestätigt. Automatische Vorabprüfungen laufen. Google-Freigabe und tatsächlich öffentlicher Release-/Storeabgleich offen. Bestehende Screenshots/Featuregrafik auf Nutzerwunsch unverändert.",
+          "status": "in_progress",
+          "validation": "Lokale Quelle/Debug-APK/Release-AAB zugeordnet; englische Felder 30/69/1306 und Icon exportiert. Console akzeptiert AAB 17, Produktion mit 100 % für bisherige 178 Länder gespeichert, keine unterstützten Geräte verloren; fünf Änderungen zur Überprüfung bestätigt. Managed Publishing aus. Google-Freigabe/öffentliche Aktivierung noch ausstehend, deshalb weiterhin in_progress. Nachkontrolle 19:12 MESZ bestätigt laufende Google-Überprüfung; noch kein öffentlicher Aktivierungsnachweis."
         },
         {
           "id": "mirror-action-small-user-test",
@@ -890,16 +964,14 @@
         }
       ],
       "openQuestions": [
-        "Welcher veröffentlichte Android-Release gehört zur aktuellen Quelle, und ist der RelateLens-Relaunch noch unveröffentlicht?",
-        "Wie reproduzieren sich die beiden dokumentierten Webprobleme auf dem tatsächlichen Android-Gerät?",
-        "Welche weiteren Antwortkombinationen ergeben widersprüchliche eigene Muster oder zu sichere Behauptungen über die andere Person?",
-        "Soll gespeicherte Kurzfassung vollständig identisch bleiben und wann soll enthaltene Vertiefung erreichbar sein?",
-        "Welche Marke und welcher Hauptnutzen soll das tatsächliche nächste Release haben; welche Rolle sollen symbolische Karten spielen?",
-        "Wie sind Android-Backup, Gerätetransfer und tatsächliche Produktions-Analytics konfiguriert?",
-        "Was passiert bei erhaltenem Prozess über Mitternacht mit Tageskarte, Insight und Tarot-RAM-Zustand?",
-        "Hilft der konkrete nächste Schritt passenden Menschen tatsächlich, und wollen sie deshalb freiwillig wiederkommen?",
-        "Welche kleine Bezahlleistung wäre nach Nutzenbeleg angemessen? Zahlungsbereitschaft und wirtschaftliche Tragfähigkeit sind derzeit offen.",
-        "Wie entwickeln sich Store-Besuche, Installationsklicks, tatsächliche Erstnutzung und Wiederkehr nach einem verlässlichen Relaunch in gemeinsam datierten und definierten Messfenstern?"
+        "Sind nach Google-Freigabe Heartvia 1.1.1/17, Name, Icon und englische Texte tatsächlich öffentlich aktiv und stimmig sichtbar? Die bisherigen Screenshots bleiben auf Nutzerwunsch erhalten.",
+        "Wie verhalten sich bestehende Play-Installationen beim späteren tatsächlichen Upgrade? Nur Updates zwischen lokalen Debug-17-Ständen wurden geprüft.",
+        "Wie passen reale Cloud-/OEM-Transfers, Produktions-Analytics und finale Privacy-/Data-Safety-Angaben zum späteren Release?",
+        "Hilft der konkrete nächste Schritt echten passenden Menschen, und kehren sie freiwillig zurück? Noch kein Nutzerversuch ausgeführt.",
+        "Welche weiteren Inhalts-/Tarotfälle verdienen eine gezielte Gegenprüfung? Nicht alle Kombinationen vollständig geprüft.",
+        "Wie verständlich ist der v1-Herkunftsmarker bei einem erst später mit heutigen Vorlagen erweiterten alten Kurzscan?",
+        "Welche kleine Bezahlleistung wäre später nach Nutzenbeleg angemessen? Free Early Access aktuell vollständig freigeschaltet, kein Modell entschieden.",
+        "Wie entwickeln sich Storebesuche, Installationsklicks, Erstnutzung und Wiederkehr nach einem späteren tatsächlichen Release in passenden Messfenstern?"
       ],
       "documents": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
@@ -909,7 +981,10 @@
         "analysen/mirror/store-review.md",
         "analysen/mirror/play-console-kpis.md",
         "analysen/mirror/TEST-UMGEBUNG.md",
-        "analysen/mirror/runtime/README.md"
+        "analysen/mirror/runtime/README.md",
+        "analysen/mirror/Heartvia-Update-2026-10-10.md",
+        "analysen/mirror/Heartvia-Store-Entwurf.md",
+        "analysen/mirror/heartvia-icon-provenienz.json"
       ]
     },
     {
@@ -917,28 +992,33 @@
       "projectId": "mewtrack",
       "title": "MewTrack – Pilotanalyse",
       "status": "reviewed",
-      "summary": "MewTrack hat einen klaren kleinen Kern: geführte Front-/Profilfotos, private Sessions und Zeitvergleich. Native Quelle, Console und installierte Play-App passen zu com.chargegeist.mew, 0.9.4 / Code 13; identische Binärquelle und native Bedienqualität sind noch nicht bewiesen. Nur 18 Store-Besucher mit 11 Installationsklicks in 08.09.–05.10.2026 sprechen zunächst für geringe Reichweite; die kleine gute Klickzahl trägt kein pauschales Urteil über schlechte Storegestaltung. Quellenprüfung zeigt konkrete Risiken bei Billing-Fehlerabschluss, getrennten Freischaltungszuständen, Tageswechsel, Compare-Vorauswahl und Fotohoheit. Storebilder versprechen Werkzeuge, die diese lokale Quelle nicht anbietet. Kleinere Lesbarkeits- und Einstiegskorrekturen sind vorgeschlagen. Erst fünf native Gegenprüfungen und wenige passende Tester, dann ein begrenztes Update und gezielte Verbreitung; kein Trainings-/Gamification-Neubau und kein SDK-Upgrade auf Verdacht. Appcode, Store und Releases unverändert.",
+      "summary": "Pilot abgeschlossen; datierte Nachprüfung 10.10. ergänzt. Unveränderte isolierte Quelle 0.9.4/13 erfolgreich als com.chargegeist.mew.debug gebaut: 45 JVM-Tests bestanden. Native künstliche Sessions bestätigen falsche Compare-Vorauswahl und Restore-Fehlermeldung; normales Löschen funktioniert, Kamera erkennt kein Gesicht. Guidance bleibt nach kontrolliertem Datum/Resume alt und aktualisiert erst nach Neustart. HEAD 0.9.3/12, vier vorhandene Arbeitsbaumänderungen und lokales AAB 0.9.4/13 getrennt; Compare, Restoreklassifikation und unsichtbarer Review-Speicherfehler direkt im lokalen AAB-DEX bestätigt. Kein Play-Binary/Kauf/Kamerasave, keine Appkorrektur. Vier Maßnahmen weiterhin nicht abgeschlossen.",
       "scope": {
         "checked": [
-          "Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
-          "Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
-          "Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
-          "Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
-          "Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
-          "Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
-          "Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
-          "ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
-          "Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
-          "Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert."
+          "Pilot vom 09.10.: Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
+          "Pilot vom 09.10.: Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
+          "Pilot vom 09.10.: Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
+          "Pilot vom 09.10.: Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
+          "Pilot vom 09.10.: Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
+          "Pilot vom 09.10.: Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
+          "Pilot vom 09.10.: Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
+          "Pilot vom 09.10.: ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
+          "Pilot vom 09.10.: Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
+          "Pilot vom 09.10.: Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert.",
+          "10.10.: alle 80 Original-Eingaben vor/nach isoliertem Debugbuild bytegleich; assembleDebug und testDebugUnitTest erfolgreich. 45 JVM-Tests in fünf Suiten ohne Fehler/Fehlschläge/Skip.",
+          "Native Debugbedienung auf frischem Android-34-Emulator mit geometrischen künstlichen Sessions: Restore-Fehler, Compare-Ausgangssession, erfolgreiche Einzellöschung, Home/Settings und Kamera-Einstieg.",
+          "Kontrollierte Guidance-Datumsprobe durch Hauptagenten: Resume PID4415 weiterhin Done for today, Neustart PID5021 erneuert Guidance. Keine private Gerätezeitänderung.",
+          "HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 mit Version12 gegenüber vier bestehenden Änderungen/Version13, lokale AAB-Metadaten AGP 8.10.1/Billing 9.1.0 und drei aktive AAB-DEX-Fehlerpfade geprüft.",
+          "Lesbarkeit nativ betrachtet, Farbkontraste erneut berechnet; Aufnahme-CTA erreichbar. Store-Werkzeugabbildungen erneut mit Debugansichten/Quellen verglichen."
         ],
         "notChecked": [
-          "Keine native Appbedienung, kein Kamera-, Capture-, Compare-, Kauf-, Restore-, Lösch-, Reinstall- oder Mitternachtsversuch. Codebefunde werden nicht als reproduzierte Play-Fehler ausgegeben.",
-          "Passende Quellen-, Store- und installierte Paketmetadaten beweisen keine identische Quell-/Binärdatei; kein bestätigter Commitstand des maßgeblichen Ordners.",
-          "Beide isolierten Offline-Versuche erreichten keine Testaufgaben/JUnit-Ergebnisse: erster Abbruch an Sandbox-Daemon-Verbindung, zweiter nach erfolgreicher Verbindung bei AndroidLocationsBuildService / AndroidDirectoryCreator in der Plugin-Konfiguration. Keine App-Kompilierung oder bestandenen Tests daraus ableitbar; kein nachgewiesener Appimplementierungsfehler. Keine instrumentierten Android-Tests ausgeführt.",
-          "Kein vollständiger Netzwerk-/Datenschutz-/Sicherheitscheck; Internetberechtigung beweist keinen Fotoupload. Dienste-/Font-/Play-Verhalten nicht mitgeschnitten.",
-          "Storebilder 5–10 und deutsche Storefassung nicht geprüft; keine echten lokalen UI-Screenshots vorhanden. Kein Webnachbau als Android-Test verwendet.",
-          "Keine Nutzerbefragung, gemessene Aufnahme-Abbruchursache, Retentionskohorte oder Zahlungsbereitschaft. Wirkung vorgeschlagener Maßnahmen auf Downloads ungemessen.",
-          "API-Warnung keinem aktuellen betroffenen Track/Artefakt sicher zugeordnet; Zahlungskonto-Ursache, private Zahlungsdetails und Kaufwirkung ungeprüft."
+          "Kein installierter/bedienter Play-Release in dieser Nachprüfung und keine vollständige historische Source-/Play-Binarygleichheit. Aus AAB abgeleitetes Release-Test-APK bereitgestellt, nicht bedient.",
+          "Kamera erkennt im Test kein Gesicht; Kameradreiersatz, Retake, Review und Kameraspeichern nicht erreicht. Künstliche Gallerysessions sind kein Capture-Erfolg.",
+          "Kein echter Play-Kauf/erfolgreicher Restore, kein beobachteter Endlosspinner im anderen Reconnectpfad und keine tatsächliche Freischaltungssynchronisierung.",
+          "Kein nativ ausgelöster Speicher-/Löschfehler, kein Deinstallations-/Gerätewechseltest. Normales Löschen mit künstlichen Daten erfolgreich.",
+          "Kein natürlicher Mitternachtslauf, Session-Abschluss oder nativer Release-Tageswechsel. Guidance-Resumeprobe ist ein konkreter Debugfall.",
+          "Keine instrumentierten Androidtests, großer Schrift-/kleiner Displaydurchlauf, vollständiger Netz-/Datenschutzcheck oder neue Nutzer-/KPI-Erhebung.",
+          "API-/Zahlungskontohinweise, vollständige Storelokalisierung und alle übrigen Storebilder weiterhin separat offen."
         ]
       },
       "strengths": [
@@ -981,41 +1061,44 @@
           "priority": "high",
           "detail": "Storebilder zeigen zusätzliche Vergleichsschalter und Galerie-Winkelfilter, die im geprüften lokalen Quellstand nicht angeschlossen sind.",
           "evidence": "Live-Stichprobe Bild 2 Overlay / Grid / Guide Lines, Bild 3 All / Front / Left / Right. Compare bietet Side-by-side, Pose-Tabs, Datumswahl und Vollbild; Gallery Sessionkarten. Kamera-PoseGuideOverlay erfüllt kein Vergleichs-Overlay.",
-          "limitation": "Quelle und Play-Release besitzen passende Paket-/Versionsdaten, aber ihre identische Binärquelle ist nicht bewiesen. Kein native UI-Test und keine Behauptung absichtlich falscher Werbung.",
+          "limitation": "Aktuelle öffentliche Bilder erneut gesehen, Werkzeuge in tatsächlich bedienten Debugansichten/aktiver Quelle an dargestellten Stellen nicht vorhanden. Kein bedienter Play-Binary und keine bewiesene absichtliche Falschwerbung.",
           "recommendation": "Im installierten Release 13 prüfen und Storebilder mit tatsächlichen nativen Funktionen abstimmen. Neue Werkzeuge nur bei bewusst priorisiertem Bedarf bauen.",
           "sourceDocs": [
             "analysen/mewtrack/store-review.md",
             "analysen/mewtrack/Visual-review.md",
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-compare-selection",
           "title": "Vorausgewählte Session wird im Vergleich nicht verwendet",
-          "evidenceType": "code",
+          "evidenceType": "android_runtime",
           "priority": "medium",
           "detail": "Compare aus einer bestimmten Session kann einen unerwarteten Standardvergleich zeigen.",
-          "evidence": "CompareScreen akzeptiert preselectedEntryId, verwendet ihn nicht; CompareViewModel startet mit ältester/neuster Session. Detail und Navigation übergeben die ID dennoch.",
-          "limitation": "Quellenbefund, nicht auf dem Android-Gerät bedient.",
+          "evidence": "Nativ Debug 13 mit künstlichen Sessions: Einstieg aus 5. Oktober zeigt 1./9. Oktober. preselectedEntryId wird nur angenommen, nicht angewendet; ViewModel wählt älteste/neuste. Mechanismus unverändert in HEAD 12 und direkt im lokalen AAB 13-DEX bestätigt.",
+          "limitation": "Debug-Emulator mit eingespeisten geometrischen Sessions; kein Play-Binary. Side-by-side/Pose-Tabs korrekt sichtbar, kein genereller Compare-Defekt.",
           "recommendation": "Mit mindestens drei Test-Sessions über die mittlere Session einsteigen, beabsichtigte Vorauswahl implementieren und gegenprüfen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-billing-failure",
-          "title": "Billing-Reconnect hat keinen verlässlichen Fehlerabschluss",
-          "evidenceType": "code",
+          "title": "Restore meldet technischen Fehler als fehlenden Kauf",
+          "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Kauf oder Wiederherstellen kann nach einem Verbindungsfehler laut Code-Inferenz im Ladezustand bleiben.",
-          "evidence": "ensureConnected ruft die Fortsetzung nur bei erfolgreichem Setup auf. Fehler wird geloggt; zuvor gesetzte purchaseInProgress/restoreInProgress werden in diesem Pfad nicht abgeschlossen.",
-          "limitation": "Nicht im Gerät reproduziert, kein Nachweis eines gescheiterten echten Kaufs. Ein regulärer Kaufabbruch ist gesondert behandelt.",
-          "recommendation": "Verbindungsabschluss mit Erfolg oder typisiertem Fehler, klare Meldung und freigegebene Buttons prüfen; kein echter Kauf für diesen Fehlerfall nötig.",
+          "detail": "Query-Verbindungsfehler und erfolgreich abgefragter fehlender Kauf werden nicht getrennt. Der andere Reconnectpfad kann laut aktivem Code einen Abschluss verlieren.",
+          "evidence": "Debug-Emulator ohne verfügbaren Billingdienst: nach wenigen Sekunden No purchase found bei protokolliertem Query-/Verbindungsfehler. restorePurchases liefert im Fehlerfall lokalen is_pro-Boolean, UI übersetzt false. In HEAD 12 und aktivem lokalen AAB 13-DEX ebenfalls bestätigt.",
+          "limitation": "Kein echter Kauf/erfolgreicher Play-Restore. Endlosspinner im nativen Lauf nicht beobachtet; ensureConnected-Abschlussrisiko bleibt Quellenbefund.",
+          "recommendation": "Fehler, fehlenden Kauf und vorhandene Freischaltung getrennt melden; jeden Ladezustand mit Erfolg/Fehler beenden und erneutes Laden ermöglichen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -1033,16 +1116,17 @@
         },
         {
           "id": "mewtrack-day-change",
-          "title": "Home berechnet Tagesstatus und Guidance nur bei Erstellung",
-          "evidenceType": "code",
+          "title": "Guidance bleibt nach kontrolliertem Datum/Resume veraltet",
+          "evidenceType": "android_runtime",
           "priority": "medium",
           "detail": "Bei über Mitternacht bestehendem ViewModel können Tagesstatus, Tipp und erledigter Hinweis zum Vortag gehören.",
-          "evidence": "todayKey und Tagestipp einmalig in HomeViewModel; allgemeiner Wiederaufnahme-/Datumsrefresh fehlt. Speichern im Repository verwendet die aktuelle Zeit.",
-          "limitation": "Kein Laufzeitnachweis über Tageswechsel; kein Nachweis einer immer blockierten Folgetagaufnahme.",
+          "evidence": "Hauptagent: Guidance bestätigt am 10.10., nur Emulator auf 11.10. gesetzt. Resume im PID4415 zeigt weiterhin Done for today; Force-stop/Neustart PID5021 zeigt neuen Guide Avoid force. HomeViewModel erzeugt todayKey/Tipp nur einmal.",
+          "limitation": "Konkreter Debug-Guidancefall, kein natürlicher Mitternachtslauf, echter Session-Abschluss, nativer Releasefall oder Beleg einer generell blockierten Aufnahme.",
           "recommendation": "Datum bei Wiederaufnahme/Tageswechsel neu bestimmen und abhängige Zustände gemeinsam aktualisieren. Mit Testzeit arbeiten, private Systemuhr unverändert lassen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -1081,25 +1165,27 @@
           "priority": "medium",
           "detail": "Datenbankzeilen können entfernt werden, obwohl eine Datei-Löschung fehlgeschlagen ist; Settings liefert keinen klaren Abschluss-/Fehlerstatus.",
           "evidence": "deleteFile liefert Ergebnis; deleteEntry/deleteAll ignorieren es. Orphan-Bereinigung ist vorhanden, prüft beziehungsweise zählt ihre Löschresultate ebenfalls nicht zuverlässig.",
-          "limitation": "Code-Inferenz für einen Fehlerpfad, keine fehlgeschlagene native Löschung beobachtet. Keine privaten Daten für Tests löschen.",
+          "limitation": "Normales natives Löschen einer künstlichen Session entfernt Zeile und drei Testbilder erfolgreich. Fehlgeschlagene Dateilöschung wurde nicht erzeugt; ignorierte Rückgaben bleiben Code-Inferenz für diesen Fehlerpfad.",
           "recommendation": "Löschresultate sammeln und wahrheitsgemäßen Erfolg/Fehler anzeigen. Mit erfundenen Testdaten einzelne und gesamte Löschung prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-readability",
           "title": "Kleine informative Texte haben wenig Kontrast",
-          "evidenceType": "code",
+          "evidenceType": "assessment",
           "priority": "medium",
           "detail": "Dunkler grauer Hilfstext betrifft unter anderem Schritte, Daten, Speicherhinweise und leere Zustände.",
-          "evidence": "TextTertiary #5C6470 auf Background #0D0F12: ca. 3,21:1; auf SurfaceRaised #1A1D22: ca. 2,83:1, aus sRGB-Farben berechnet. bodySmall 12sp, labelSmall 11sp. TextSecondary auf Background ca. 7,52:1.",
-          "limitation": "Keine gerenderte native Lesbarkeitsprüfung oder vollständige Konformitätsprüfung; deaktivierte Controls gesondert betrachten.",
+          "evidence": "Home/Settings/Compare nativ: informative graue Hilfstexte schwer lesbar, dunkle Statusicons; Settings-Leerraum auffällig. Farbgegenprobe bestätigt TextTertiary ca. 3,21:1 auf Background/2,83:1 auf SurfaceRaised, 12/11sp.",
+          "limitation": "Begrenzte native Standardviewport-/Farbprüfung, keine vollständige Barrierefreiheitsprüfung, kein Großschrift-/Tageslichttest; Ursache Settings-Leerraum nicht isoliert.",
           "recommendation": "Informative kleine Texte heller setzen und auf echtem Android bei größerer Schrift, wenig Helligkeit und Tageslicht prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/Visual-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -1109,11 +1195,12 @@
           "priority": "medium",
           "detail": "Home ordnet Guidance vor dem Aufnahmebutton an. Review zeigt kleine zugeschnittene Vorschauen ohne angeschlossenen Vollbildbetrachter.",
           "evidence": "Home-Reihenfolge Today/Last Session/Guidance/CTA; scrollbare Seite. Review feste 110×160dp Crop-Thumbnails, Detail/Compare bereits Vollbild mit Zoom. Review ist nicht vertikal scrollbar.",
-          "limitation": "Kein beobachteter abgeschnittener Button, Foto oder Large-font-Fehler; UX-Einschätzung aus Layoutquelle.",
+          "limitation": "Aufnahme-CTA im nativen Standardviewport sichtbar/bedienbar. Kamerareview mangels erkanntem Gesicht nicht erreicht; Crop-/Reviewlayout bleibt Quellenbefund. Kein beobachteter abgeschnittener Button oder Large-font-Fehler.",
           "recommendation": "Aufnahmeaktion direkt bei Today insbesondere im leeren Zustand prüfen. Vorhandenen Vollbildbetrachter für die Kontrolle vor dem Speichern nutzen; kleine Geräte/große Schrift testen.",
           "sourceDocs": [
             "analysen/mewtrack/Visual-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         },
         {
@@ -1143,6 +1230,19 @@
             "analysen/mewtrack/play-console-kpis.md",
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-review-save-error",
+          "title": "Speicherfehler erreicht die Reviewansicht nicht",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Save setzt errorMessage, die Reviewansicht erhält diesen Zustand jedoch nicht und kehrt vor dem Snackbarzweig zurück.",
+          "evidence": "CaptureViewModel.saveEntry und CaptureScreen-Reviewbranch gezielt gelesen. Bereits in HEAD 12 enthalten und durch AAB-eigene R8-Zuordnung/aktive DEX-Pfade im lokalen AAB 13 bestätigt.",
+          "limitation": "Kein nativ ausgelöster Speicherfehler oder belegter Datenverlust. Kamera-/Reviewseite im Debuglauf mangels erkanntem Gesicht nicht erreicht.",
+          "recommendation": "Speicherfehler und Wiederholen direkt in Review anzeigen; Fehlerfall mit künstlichen Daten gezielt prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
           ]
         }
       ],
@@ -1383,15 +1483,15 @@
           "id": "mewtrack-action-native-check",
           "order": 1,
           "title": "Fünf native Gegenprüfungen mit Testdaten",
-          "detail": "Erster kompletter Check-in und Retake; Neustart/Compare/Vorauswahl/Storewerkzeuge; Tageswechsel; Billing-Verbindungsfehler/Restore/State; sichere Löschung und Exporttext prüfen. Keine private Kameraaufnahme oder reale Zahlung vorausgesetzt.",
-          "status": "proposed",
+          "detail": "Teilweise ausgeführt: Debug-Compare/Restore/Guidance und normales Löschen geprüft, 45 JVM-Tests bestanden. Weiter offen: echter Capture-/Retake-/Reviewweg, freigegebener Play-Testkauf/Restore/Synchronisierung, Speicher-/Löschfehler und kleine Displays/große Schrift; Play-Zuordnung separat erhalten.",
+          "status": "in_progress",
           "validation": "Tatsächlichen Play-Release13 beziehungsweise nachvollziehbaren Testbuild zuordnen, Beobachtungen getrennt von Quelle dokumentieren. Kleine Geräte/große Schrift beachten, echte Kamera nur mit bewusst freigegebenen Testmotiven. Keine privaten Daten löschen."
         },
         {
           "id": "mewtrack-action-small-update",
           "order": 2,
           "title": "Bestätigte Risiken in einem kleinen Update beheben",
-          "detail": "Nach Gegenprüfung Billing-Fehlerabschluss, gegebenenfalls Freischaltungssynchronisierung/Tageswechsel/Compare-Vorauswahl reparieren. Informative Texte heller und Aufnahme/Review direkter machen. Export-/Offlineaussagen präzisieren und echte Storebilder verwenden.",
+          "detail": "Nach Zielstandwahl Restore-Ergebniszustände, Compare-Vorauswahl, Guidance-Refresh und sichtbaren Review-Speicherfehler klein korrigieren. Entitlement-Synchronisierung gezielt absichern; informative Texte/Statusicons verbessern. Ehrliche Export-/Offline-/Preis-/Storeaussagen. Noch kein Fix umgesetzt.",
           "status": "proposed",
           "validation": "Jede tatsächliche Änderung passend prüfen; keine vorgeschlagenen Fixes als implementiert ausgeben. Releasehinweise beschreiben echte Änderungen, kein behaupteter Algorithmusimpuls."
         },
@@ -1413,12 +1513,12 @@
         }
       ],
       "openQuestions": [
-        "Welche konkrete lokale Quelle erzeugte das veröffentlichte und installierte Play-Binary13?",
-        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf dem echten Android-Gerät?",
+        "Welche konkrete lokale Quelle erzeugte das veröffentlichte Play-Binary 13? Arbeitsbaum, Debugbuild und lokales AAB sind abgegrenzt; vollständige Play-Binarygleichheit bleibt unbelegt.",
+        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf einem echten Android-Gerät? Die Emulatorkamera erreichte mangels erkanntem Gesicht keinen vollständigen Aufnahme-/Speicherablauf.",
         "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
-        "Entsteht der Vergleich aus einer ausgewählten mittleren Session mit der erwarteten Vorauswahl?",
-        "Wie verhalten sich Home-Tagesstatus und Guidance bei Tageswechsel beziehungsweise Wiederaufnahme?",
-        "Werden Billing-Verbindungsfehler beendet und Restore/Freischaltung zwischen Home/Settings zuverlässig sichtbar?",
+        "Welche kleinste Korrektur übernimmt die ausgewählte Compare-Ausgangssession zuverlässig? Der Fehler ist im Debugtest beobachtet und im lokalen AAB-Code bestätigt; eine Umsetzung steht aus.",
+        "Wie verhalten sich Session-Abschluss und weitere Home-Datumszustände über Mitternacht im echten Release? Die Guidance-Probe bestätigt nur den veralteten Debug-Zustand nach kontrolliertem Resume.",
+        "Wie funktionieren echter Kauf, erfolgreicher Restore und sofortige Freischaltung zwischen Home/Settings? Falsche Fehlerklassifikation ist belegt, ein endloser Spinner blieb in der nativen Sitzung unbeobachtet.",
         "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
         "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
         "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
@@ -1431,8 +1531,32 @@
         "analysen/mewtrack/store-review.md",
         "analysen/mewtrack/play-console-kpis.md",
         "analysen/mewtrack/Bestand-und-Zuordnung.md",
-        "analysen/mewtrack/TEST-UMGEBUNG.md"
-      ]
+        "analysen/mewtrack/TEST-UMGEBUNG.md",
+        "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+      ],
+      "pilotScope": {
+        "checked": [
+          "Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
+          "Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
+          "Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
+          "Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
+          "Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
+          "Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
+          "Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
+          "ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
+          "Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
+          "Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert."
+        ],
+        "notChecked": [
+          "Keine native Appbedienung, kein Kamera-, Capture-, Compare-, Kauf-, Restore-, Lösch-, Reinstall- oder Mitternachtsversuch. Codebefunde werden nicht als reproduzierte Play-Fehler ausgegeben.",
+          "Passende Quellen-, Store- und installierte Paketmetadaten beweisen keine identische Quell-/Binärdatei; kein bestätigter Commitstand des maßgeblichen Ordners.",
+          "Beide isolierten Offline-Versuche erreichten keine Testaufgaben/JUnit-Ergebnisse: erster Abbruch an Sandbox-Daemon-Verbindung, zweiter nach erfolgreicher Verbindung bei AndroidLocationsBuildService / AndroidDirectoryCreator in der Plugin-Konfiguration. Keine App-Kompilierung oder bestandenen Tests daraus ableitbar; kein nachgewiesener Appimplementierungsfehler. Keine instrumentierten Android-Tests ausgeführt.",
+          "Kein vollständiger Netzwerk-/Datenschutz-/Sicherheitscheck; Internetberechtigung beweist keinen Fotoupload. Dienste-/Font-/Play-Verhalten nicht mitgeschnitten.",
+          "Storebilder 5–10 und deutsche Storefassung nicht geprüft; keine echten lokalen UI-Screenshots vorhanden. Kein Webnachbau als Android-Test verwendet.",
+          "Keine Nutzerbefragung, gemessene Aufnahme-Abbruchursache, Retentionskohorte oder Zahlungsbereitschaft. Wirkung vorgeschlagener Maßnahmen auf Downloads ungemessen.",
+          "API-Warnung keinem aktuellen betroffenen Track/Artefakt sicher zugeordnet; Zahlungskonto-Ursache, private Zahlungsdetails und Kaufwirkung ungeprüft."
+        ]
+      }
     },
     {
       "id": "landinggame",
@@ -3396,7 +3520,7 @@
       "id": "overview-progress-display",
       "scopeLabel": "Gesamtes Dashboard · Arbeitsfortschritt",
       "title": "Fortschritt zusätzlich und überall konsistent darstellen",
-      "detail": "Originalberichte bleiben erhalten. Erfasster Bestand, dokumentierte begrenzte Analyse und tatsächlich umgesetzte/geprüfte Maßnahmen sind drei getrennte Arbeitsphasen. Grüne Marker zeigen erledigte Arbeit mit Statuswort; 2/3 bedeutet Analyse dokumentiert, keine fertige Produktverbesserung. Vorschläge sind eine Auswahlbasis; 0/49 umgesetzt ist kein verpflichtender Gesamtplan. Between und zurückgestellte Games erhalten dadurch keinen neuen Prüfauftrag.",
+      "detail": "Originalberichte bleiben erhalten. Erfasster Bestand, dokumentierte begrenzte Analyse und tatsächlich umgesetzte/geprüfte Maßnahmen sind drei getrennte Arbeitsphasen. Grüne Marker zeigen erledigte Arbeit mit Statuswort; 2/3 bedeutet Analyse dokumentiert, keine fertige Produktverbesserung. Vorschläge sind eine Auswahlbasis; Die Maßnahmenliste ist kein verpflichtender Gesamtplan. Between und zurückgestellte Games erhalten dadurch keinen neuen Prüfauftrag.",
       "status": "established",
       "source": "dashboard/context.json"
     },
@@ -3407,19 +3531,21 @@
       ],
       "area": "android",
       "priorityRank": 1,
-      "status": "proposed",
-      "title": "Mirror: kleiner Nutzerversuch",
-      "rationale": "Bisheriger Mirror-Store: 566 Besucher, 28 Installationsklicks (08.09.–05.10.2026). Der lokale Relaunch hat konkrete Ergebniswidersprüche und zu sichere Aussagen. Vorhandene Sichtbarkeit und ein begrenzter Kernumfang machen ihn zum ersten Versuch.",
-      "firstStep": "Veröffentlichtes Mirror und pausierten RelateLens-Relaunch trennen; den nächsten Android-Teststand festlegen.",
-      "detail": "Danach eigene Reaktion getrennt vom Verhalten anderer auswerten, sichere Interessensbehauptungen vorsichtiger formulieren und erste sowie gespeicherte Ergebnisse angleichen. Am zugeordneten Android-Testbuild prüfen; Datenkontrolle und Backup vor Veröffentlichung mit klären. Anschließend mit etwa fünf freiwilligen passenden Personen Verständlichkeit, hilfreichen nächsten Schritt und freiwillige Wiederkehr beobachten. Store-Einstieg und echte Bilder an diesen Stand anpassen; einen begrenzten Verbreitungsweg wählen. Keine neue Paywall oder große Zusatzfunktion für diesen ersten Versuch.",
+      "status": "in_progress",
+      "title": "Mirror / Heartvia: lokale Korrekturen geprüft; Folgeschritte offen",
+      "rationale": "Historischer Mirror-Store: 566 Besucher und 28 Installationsklicks (08.09.–05.10.2026). Bestätigte Ausgangsfehler wurden im begrenzten lokalen Heartvia 17-Schritt korrigiert. Echte Nutzerwirkung und freiwillige Wiederkehr bleiben ungemessen.",
+      "firstStep": "Nach bestätigter Einreichung Google-Freigabe und öffentlichen Release-/Storeabgleich prüfen; echten Nutzerversuch gesondert planen.",
+      "detail": "Heartvia 1.1.1+17 lokal übernommen und passend geprüft: Antworttreue sowie Daten/Tageswechsel completed, 2/4 Mirror und 2/49 insgesamt, weiterhin 2/3 Phasen. AAB 17 und englischer Name/Texte/Icon in Play gespeichert, Einreichung bestätigt. Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ); Google-Freigabe/öffentliche Aktivierung und echte Nutzerrückmeldungen offen. Screenshots/Featuregrafik unverändert.",
       "completionCriterion": "Ein eindeutig zugeordneter Android-Teststand beantwortet die dokumentierten Fälle konsistent; eigene Aussagen werden korrekt wiedergegeben und unbekannte Motive bleiben offen. Rückmeldungen zum Nutzen und freiwilliger Wiederkehr liegen getrennt von Store-Besuchen und Klicks vor. Erst dann nächsten Ausbau beurteilen; keine starre Downloadquote als Erfolgskriterium.",
-      "limitation": "Veröffentlichtes Mirror 1.0.13 und pausierter lokaler RelateLens-Relaunch 1.1.0+16 sind getrennte Stände. Webbefunde sind nicht als Fehler des veröffentlichten Android-Binaries bestätigt. Installationsklicks sind keine Installationen oder Erstnutzung; 5 % sind keine bewiesene Ursache schlechter Storegestaltung. Der Relaunch ist pausiert und nicht als veröffentlicht belegt. Auswahl, Umsetzung, Testeransprache und Veröffentlichung sind noch nicht beauftragt; keine Download-, Ranking- oder Umsatzgarantie.",
+      "limitation": "Originaländerungen uncommitted auf codex/heartvia-relaunch, HEAD weiterhin Ausgangsbasis. Alte Play-Version, AAB 16, Debug 17 und akzeptiertes neues AAB 17 getrennt zugeordnet. Kein echter Play-Upgrade-Nachweis, keine öffentliche Aktivierung oder Nutzerwirkung bestätigt. Kein reales Billing oder Testeransprache. Kontrollierte Zeitprobe kein Langzeittest; Produktions-Analytics/OEM-Backups und alle Inhalte nicht vollständig geprüft.",
       "source": "KOMPAKTUEBERSICHT.md",
       "sourceDocs": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
         "analysen/mirror/play-console-kpis.md",
         "analysen/mirror/runtime-review.md",
-        "analysen/mirror/TEST-UMGEBUNG.md"
+        "analysen/mirror/TEST-UMGEBUNG.md",
+        "analysen/mirror/Heartvia-Update-2026-10-10.md",
+        "analysen/mirror/Heartvia-Store-Entwurf.md"
       ]
     },
     {
@@ -3449,8 +3575,8 @@
       "id": "zerohero-native-verification",
       "area": "android",
       "projectId": "zerohero",
-      "title": "Native Android-Gegenprüfung",
-      "detail": "Aktuelles und veröffentlichtes Release zuordnen; die drei Webfehler und native Erfassung gezielt auf einem Android-Gerät prüfen. Bisheriger Webtest ersetzt diesen Schritt nicht.",
+      "title": "ZeroHero: vollständige Arbeitsbasis und Zielrelease wählen",
+      "detail": "Web 25 und lokales AAB 26 nativ gegengeprüft, Kernel-/Drei-ABI-Zuordnung vorhanden; vollständiger baubarer 26er-Checkout bleibt offen. Ältere APK 24/Play 25 separat. Bereits vorhandene26-Funktionen erhalten, Zielstand vor kleinem Fix sichern.",
       "kind": "verification"
     },
     {
@@ -3458,7 +3584,7 @@
       "area": "android",
       "projectId": "zerohero",
       "title": "Nulltage, Mitternacht und mehrtägige Pause testen",
-      "detail": "Explizite Null, fehlende Angabe, ältere vorhandene Entwürfe und Doppelabschluss kontrolliert prüfen. Bisher Codebefunde; keine Änderung der Systemzeit des Nutzerrechners.",
+      "detail": "26: explizite Plan-Nullbestätigung, falsche 0/Excellent für fehlende Tagesangaben und Pause 11→13 mit erhaltenen Mengen/fehlendem Abschluss nativ belegt. Weitere Cutoffs, Doppelabschluss, XP und Stats nach rückwirkendem Plan-Nachtrag prüfen. Keine private Gerätezeitänderung.",
       "kind": "verification"
     },
     {
@@ -3466,7 +3592,7 @@
       "area": "android",
       "projectId": "zerohero",
       "title": "Release-Datenfluss und Privatversprechen klären",
-      "detail": "Native Analytics-Übertragung prüfen und gewünschtes Verhalten festlegen, bevor ein Update und passende Store-Angaben konkret umgesetzt werden.",
+      "detail": "Quelle 25 aktiviert Analytics ohne Consent; AAB 26 besitzt freiwilligen ausgeschalteten Consent und passende zugeordnete Quell-/Manifestdefaults. Tatsächlicher Produktionsnetzfluss und Storeangaben zum gewählten Release weiterhin prüfen.",
       "kind": "verification"
     },
     {
@@ -3513,24 +3639,24 @@
       "id": "mirror-native-release-verification",
       "area": "android",
       "projectId": "mirror",
-      "title": "Mirror-Release und native Grenzen prüfen",
-      "detail": "Veröffentlichten Mirror und lokalen RelateLens-Relaunch gezielt auf Android abgleichen; Backup, Tageswechsel und produktive Analytics-Konfiguration prüfen. Der Webpilot ersetzt dies nicht.",
+      "title": "Heartvia: tatsächliches Release und verbleibende Gerätefragen zuordnen",
+      "detail": "Lokale Übernahme, begrenzte native Debug-/Release-Nachproben und akzeptierter Play-Upload AAB 1.1.1/17 abgeschlossen. Google-Freigabe und öffentliche Aktivierung ausstehend; anschließend tatsächlich sichtbares Release zuordnen. Echtes Play-Upgrade, Cloud-/OEM-Transfers und Produktions-Analytics bleiben Grenzen.",
       "kind": "verification"
     },
     {
       "id": "mirror-bounded-update",
       "area": "android",
       "projectId": "mirror",
-      "title": "Kleinen Mirror-Nutzerversuch konkretisieren",
-      "detail": "Vorschlag als erster begrenzter Versuch: nach Release-/Relaunch-Zuordnung Antworttreue, vorsichtige Interessensaussagen und stabile Wiederöffnung verbessern; Datenkontrolle vor Veröffentlichung klären. Danach etwa fünf passende freiwillige Personen und einen begrenzten Verbreitungsweg vorsehen. Store und echte Bilder mit dem tatsächlichen Stand abstimmen. Noch nicht ausgewählt oder umgesetzt.",
+      "title": "Heartvia: Freigabe und öffentliche Aktivierung prüfen; Nutzerversuch planen",
+      "detail": "Zwei von vier Mirror-Maßnahmen abgeschlossen. AAB 17 und englischer Name/Texte/Icon gespeichert, fünf Änderungen zur Überprüfung bestätigt. Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ); Google-Freigabe und öffentlicher Release-/Storeabgleich noch offen. Bestehende Screenshots/Featuregrafik unverändert. Echter Nutzerversuch vorgeschlagen, keine Einladungen ausgeführt.",
       "kind": "strategy"
     },
     {
       "id": "mewtrack-native-verification",
       "area": "android",
       "projectId": "mewtrack",
-      "title": "MewTrack: fünf native Kernprüfungen",
-      "detail": "Capture mit Retake/Speichern; Compare-Vorauswahl und Store-Werkzeuge; Billing-/Restore-Fehlerzustände; Tageswechsel; Fotoexport und Löschrückmeldung. Bislang Quellenbefunde und Metadatenprüfung, kein bedienter nativer UI-Test.",
+      "title": "MewTrack: verbleibende native Kernprüfungen",
+      "detail": "Debug 13: Compare-Vorauswahl, Restore-Fehlerklassifikation, kontrollierter Guidance-Resume und normales Löschen geprüft ; 45 JVM-Tests bestanden. Capture/Retake/Review, tatsächlicher Play-Testkauf/Sync, Speicher-/Löschfehler und Großschrift offen. Kein nativer Play-/Release-Test daraus ableiten.",
       "kind": "verification"
     },
     {

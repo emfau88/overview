@@ -101,6 +101,9 @@ def document_paths() -> list[Path]:
     mirror_evidence = ROOT / "analysen" / "mirror" / "evidence.json"
     if mirror_evidence.is_file():
         paths.append(mirror_evidence)
+    icon_provenance = ROOT / "analysen" / "mirror" / "heartvia-icon-provenienz.json"
+    if icon_provenance.is_file():
+        paths.append(icon_provenance)
     unique = {path.relative_to(ROOT).as_posix(): path for path in paths}
     return [unique[name] for name in sorted(unique)]
 

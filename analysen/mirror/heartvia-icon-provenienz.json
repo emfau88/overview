@@ -1,0 +1,26 @@
+{
+  "createdAt": "2026-10-10",
+  "projectId": "mirror",
+  "role": "Approved Heartvia brand icon; creation stage and subsequent Play Console submission are separate documented stages",
+  "imagePath": "analysen/mirror/heartvia-icon-512.png",
+  "width": 512,
+  "height": 512,
+  "format": "32-bit RGBA PNG",
+  "bytes": 204915,
+  "sha256": "84c83845e58b71cdead85f1e10743a585b1acf026344be726c787881f1dd4ed2",
+  "masterSha256": "4D5891F39EB3EAA6B42F5EB261438853825FE17EBDF74E096CA3A484C55B7003",
+  "provenance": "Original approved opaque image from built-in image_gen; mechanical 512px export with existing Dart image dependency. Two experimental transparent cutouts rejected because edge artifacts; not used.",
+  "prompt": "Use case: logo-brand. Asset type: one proposed Android app icon, a branding concept for a relationship self-reflection app that helps make sense of mixed signals and choose a grounded next step. Primary request: create a polished memorable app icon whose single bold central emblem is instantly recognizable as a heart with a small guiding light inside. Full square image, no rounded outer corners. Deep muted aubergine/plum background. A generously sized clean heart emblem uses warm ivory and soft coral as two harmonious joined broad shapes, visually whole and comforting, never a broken heart. A small warm gold four-point guiding spark sits inside the heart and clearly suggests clarity/orientation. The emblem should read beautifully at 32px: very few shapes, substantial silhouettes, broad negative space, no thin ornamentation. Style: premium contemporary vector-friendly logo design, mostly flat with only a restrained smooth tonal richness, emotionally inviting and confident. Composition: centered emblem occupying about two thirds of the square, ample launcher-safe margin, entire background filled. No text, letters, badges, numbers, literal compass needle, chat bubbles, lens, people, card deck, photo realism, glossy 3D, heavy shadows, fine patterns, sparkles outside the emblem, watermark. One icon only, no mockup, no device, no presentation sheet. This is a proposed new visual direction, not a representation of any existing brand. Keep the heart and interior guiding light as one legible visual mark.",
+  "mechanicalExport": "tool/export_heartvia_store_icon.dart in local Mirror repository",
+  "consoleSubmission": {
+    "observedAt": "2026-10-10T18:52:09+02:00",
+    "submitted": true,
+    "status": "Saved in existing Play app; review submission confirmed, automatic pre-review checks running; Google approval and public activation pending at observation time",
+    "aiAssetDeclared": true,
+    "report": "analysen/mirror/Heartvia-Update-2026-10-10.md"
+  },
+  "latestReviewObservation": {
+    "observedAt": "2026-10-10T19:12:00+02:00",
+    "status": "Changes are now under review; approval and public activation pending; no new submission"
+  }
+}
