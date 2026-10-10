@@ -554,9 +554,9 @@
     {
       "id": "mirror",
       "projectId": "mirror",
-      "title": "Mirror / Heartvia – lokale Korrekturen geprüft",
+      "title": "Mirror / Heartvia – Korrekturen geprüft und Release öffentlich",
       "status": "reviewed",
-      "summary": "Die begrenzte Mirror-Analyse bleibt abgeschlossen. Heartvia: Love Tarot & Clarity 1.1.1+17 ist jetzt lokal im Original übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde; finales Debug-APK auf isoliertem Android 34 bedient. Eigene Reaktion und Gegenfall stimmen, archivierte Kurzabschnitte/Read more bleiben nach Neustart korrekt, gewählte alte Einträge werden nicht von späteren RAM-Antworten überschrieben. Kontrollierter Tages-/Resume-Fall, Löschung/Cold Restart und finale APK-Backupregeln sind belegt. Originaldateien bytegleich zur Testkopie, Änderungen uncommitted; kein echter Play-Upgrade-Nachweis. Antworttreue und Daten/Tageswechsel abgeschlossen: 2/4 Mirror, 2/49 insgesamt, weiterhin 2/3 Phasen. Signiertes Release-AAB samt begrenzter nativer Release-Nachprobe und ASO-/Iconexport lokal fertig. AAB 17 von Play akzeptiert, Produktionsrollout und englischer Name/Texte/Icon gespeichert; Einreichung der fünf Änderungen bestätigt. Console-Nachkontrolle 10.10., 19:12 MESZ zeigt laufende Google-Überprüfung; Freigabe und öffentliche Aktivierung ausstehend. Screenshots/Featuregrafik unverändert; echter Nutzerversuch offen. Kein echtes Billing.",
+      "summary": "Die begrenzte Mirror-Analyse bleibt abgeschlossen. Heartvia: Love Tarot & Clarity 1.1.1+17 ist lokal übernommen und passend geprüft: 195 Fluttertests bestanden, analyze ohne Befunde; begrenzte native Antwort-/Archiv-, Datums-/Resume-, Lösch- und Backupgegenproben belegt. Originaländerungen uncommitted, kein echtes Play-Upgrade. Signiertes Release-AAB17 validiert und begrenzt nativ nachgeprüft. Lesende Consolekontrolle am 10.10. um 22:34 MESZ: keine unveröffentlichten Änderungen, Produktion bei Google Play verfügbar, veröffentlicht am 10.10. um 19:18, Code 17/178 Länder. Öffentlicher Play-Eintrag zeigt Heartvia: Love Tarot & Clarity, neues Herzicon, englische Kurz-/Langtexte 69/1306, Version 1.1.1 und Update 10.10.; visuell mit den Zielmetadaten abgeglichen. Bestehende Screenshots/Featuregrafik erhalten. Antworttreue, Daten/Tageswechsel und tatsächlicher Release/Store abgeschlossen: 3/4 Mirror, insgesamt 4/49, weiterhin 2/3 Phasen. Nutzerversuch proposed und nicht ausgewählt; kein echtes Billing oder nachgewiesener ASO-/Nutzungseffekt.",
       "scope": {
         "checked": [
           "Pilot 09.10.2026: Aktuelle lokale Quelle C:\\Users\\madde\\Documents\\Mirror ausschließlich lesend: RelateLens 1.1.0+16, com.energycrafted.mirror, Branch relaunch/paused-2026-10-07, HEAD 27ff955611886951e832159b91bec4f3ceec14a4; sauberer Git-Arbeitsstand.",
@@ -588,10 +588,11 @@
           "Aktualisierte englische ASO-Felder 30/69/1.306 Zeichen aus öffentlichem Storeentwurf exakt ins Original-playstore-Verzeichnis exportiert; 512RGBA-Icon, README.txt und release-info.json vorhanden. Relevante Keywords/Nutzenpositionierung, keine Suchvolumen-/Rankingmessung. Dies war der lokale Vor-Console-Stand; anschließender akzeptierter Upload separat dokumentiert.",
           "Begrenzte Release-Nachprobe: genau aus dem neuen signierten AAB abgeleitetes Universal-APK separat mit lokaler Debug-Testsignatur versehen; Releasecode nicht debuggable, ARM64/ARMv7/x86_64 enthalten. Android 34: Home mit beiden Einstiegen, Settings 1.1.1 (17), Lösch-/Privacy-/Disclaimerbereich, keine Developer-Mocksektion; Tarot-Themenwahl → Ziehung → The Moon → Lesung funktioniert. Backupverweise auch dort bestätigt. Kein Play-Install; eigener Emulator wieder beendet.",
           "Play Console 10.10.2026 nach ausdrücklicher Nutzerfreigabe im bestehenden Codex-Browser bedient: richtige App com.energycrafted.mirror, AAB 17 (1.1.1) akzeptiert, Produktion Heartvia 1.1.1 mit 100 % für bisherige 178 Länder gespeichert, keine unterstützten Geräte verloren. Englischer Name/Kurz-/Volltext 30/69/1306 und 512px-Icon gespeichert; nur Icon als KI-erstellt gekennzeichnet. Sechs Telefon-Screenshots und Featuregrafik im genauen Dateiname-/geordneten Asset-URL-Vergleich unverändert. Sechs 7-Zoll- und drei 10-Zoll-Tablet-Screenshots unangetastet und in Reviewvorschau vorhanden, ohne separaten Tablet-URL-Vergleich.",
-          "Einreichung der fünf Änderungen bestätigt. Console zeigt Änderungen, die überprüft werden, zugleich laufende automatische Vorabprüfungen und Übergabe zur Google-Überprüfung nach deren Abschluss. Managed Publishing aus; automatische Aktivierung nach Freigabe. Noch keine Google-Freigabe oder öffentliche Aktivierung bestätigt. Belegzeitpunkt 10.10.2026, 18:52:09 MESZ (16:52:09 UTC)."
+          "Einreichung der fünf Änderungen bestätigt. Console zeigt Änderungen, die überprüft werden, zugleich laufende automatische Vorabprüfungen und Übergabe zur Google-Überprüfung nach deren Abschluss. Managed Publishing aus; automatische Aktivierung nach Freigabe. Noch keine Google-Freigabe oder öffentliche Aktivierung bestätigt. Belegzeitpunkt 10.10.2026, 18:52:09 MESZ (16:52:09 UTC).",
+          "Aktuelle lesende Console-/öffentliche Gegenkontrolle am 10.10.2026 um 22:34 MESZ: Publishing zuletzt veröffentlicht 10.10. und keine unveröffentlichten Änderungen; Produktion bei Google Play verfügbar, veröffentlicht 10.10., 19:18, aufgeklappt Code 17/178 Länder. Öffentliche Play-Seite com.energycrafted.mirror zeigt Heartvia: Love Tarot & Clarity, neues Herzicon, englische Kurz 69 und alle Langtextabsätze 1306, AboutVersion 1.1.1/Updated Oct10. Aktueller visueller Abgleich bestätigt Name/Texte/Icon. Frühere 18:52-/19:12-Überprüfungsstände bleiben historisch; kein Play-Install oder Upgrade dadurch belegt."
         ],
         "notChecked": [
-          "Google-Freigabe und öffentliche Aktivierung noch ausstehend: akzeptierter Upload, gespeicherte Änderungen und bestätigte Einreichung sind belegt; automatische Vorabprüfungen laufen. Kein echter Play-Install-/Upgradeversuch.",
+          "Öffentlicher Release/Store17 ist inzwischen unabhängig bestätigt; echter Play-Install-/Upgradeversuch weiterhin nicht durchgeführt. Console und öffentliche Metadaten sind kein Nachweis einer auf dem Gerät getesteten Play-Binary.",
           "Kein Upgrade vom älteren AAB 16 oder bestehenden Play-Installationen auf 17. Nur lokale Debug 17-Zwischenstände auf final 17 aktualisiert; das anders testsignierte 16er-QA-Paket war zuvor deinstalliert.",
           "Keine vollständige Wiederholung der Clarity-/Lösch-/Mitternachtsgegenproben mit Releasecode. Die zusätzliche native Release-Nachprobe beschränkt sich auf Home, Settings und einen Tarotablauf an einer separat testsignierten AAB-Ableitung; kein echter Play-Install.",
           "Kein natürlicher Mitternachts-Langzeittest. Kontrollierte Datums-/Resumeprobe im isolierten Emulator; Nutzergerätezeit unberührt und Emulatoruhr anschließend zurückgesetzt.",
@@ -950,9 +951,9 @@
           "id": "mirror-action-release-and-store",
           "order": 3,
           "title": "Einen tatsächlichen Auftritt und Release zusammenführen",
-          "detail": "Signiertes AAB 17, englischer Name/Texte und Icon in der bestehenden Play-App gespeichert; Bundle akzeptiert und Einreichung der fünf Änderungen bestätigt. Automatische Vorabprüfungen laufen. Google-Freigabe und tatsächlich öffentlicher Release-/Storeabgleich offen. Bestehende Screenshots/Featuregrafik auf Nutzerwunsch unverändert.",
-          "status": "in_progress",
-          "validation": "Lokale Quelle/Debug-APK/Release-AAB zugeordnet; englische Felder 30/69/1306 und Icon exportiert. Console akzeptiert AAB 17, Produktion mit 100 % für bisherige 178 Länder gespeichert, keine unterstützten Geräte verloren; fünf Änderungen zur Überprüfung bestätigt. Managed Publishing aus. Google-Freigabe/öffentliche Aktivierung noch ausstehend, deshalb weiterhin in_progress. Nachkontrolle 19:12 MESZ bestätigt laufende Google-Überprüfung; noch kein öffentlicher Aktivierungsnachweis."
+          "detail": "Heartvia 1.1.1/17 mit neuem Namen/Herzicon und englischen Texten in der bestehenden Play-App veröffentlicht. Lesende Console-/öffentliche Kontrolle 10.10., 22:34 bestätigt ProduktionsreleaseCode 17, Verfügbarkeit bei Google Play, Veröffentlichung 10.10., 19:18 und 178 Länder. Öffentliche Name-/Text-/Iconansicht entspricht dem Zielstand; Screenshots/Featuregrafik erhalten.",
+          "status": "completed",
+          "validation": "Console Publishing: zuletzt veröffentlicht 10.10., keine unveröffentlichten Änderungen. Produktion: bei Google Play verfügbar, veröffentlicht 10.10., 19:18; aufgeklappt Versionscode 17/178 Länder. Öffentliche Play-Seite com.energycrafted.mirror&hl=en: Heartvia: Love Tarot & Clarity, neues Herzicon, Kurz 69/Lang 1306 visuell abgeglichen; AboutVersion 1.1.1/Updated Oct10. Belegzeit 22:34 MESZ. Kein echter Play-Install/Upgrade, reales Billing, Testeransprache oder gemessene Downloadwirkung. Rohbelege separat lokal, Details im Heartvia-Updatebericht."
         },
         {
           "id": "mirror-action-small-user-test",
@@ -964,14 +965,13 @@
         }
       ],
       "openQuestions": [
-        "Sind nach Google-Freigabe Heartvia 1.1.1/17, Name, Icon und englische Texte tatsächlich öffentlich aktiv und stimmig sichtbar? Die bisherigen Screenshots bleiben auf Nutzerwunsch erhalten.",
         "Wie verhalten sich bestehende Play-Installationen beim späteren tatsächlichen Upgrade? Nur Updates zwischen lokalen Debug-17-Ständen wurden geprüft.",
         "Wie passen reale Cloud-/OEM-Transfers, Produktions-Analytics und finale Privacy-/Data-Safety-Angaben zum späteren Release?",
         "Hilft der konkrete nächste Schritt echten passenden Menschen, und kehren sie freiwillig zurück? Noch kein Nutzerversuch ausgeführt.",
         "Welche weiteren Inhalts-/Tarotfälle verdienen eine gezielte Gegenprüfung? Nicht alle Kombinationen vollständig geprüft.",
         "Wie verständlich ist der v1-Herkunftsmarker bei einem erst später mit heutigen Vorlagen erweiterten alten Kurzscan?",
         "Welche kleine Bezahlleistung wäre später nach Nutzenbeleg angemessen? Free Early Access aktuell vollständig freigeschaltet, kein Modell entschieden.",
-        "Wie entwickeln sich Storebesuche, Installationsklicks, Erstnutzung und Wiederkehr nach einem späteren tatsächlichen Release in passenden Messfenstern?"
+        "Wie entwickeln sich Storebesuche, Installationsklicks, Erstnutzung und Wiederkehr nach dem am 10.10. tatsächlich veröffentlichten Heartvia 17-Release in passenden Messfenstern? Bisher kein neuer Wirkungsmesswert."
       ],
       "documents": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
@@ -990,35 +990,32 @@
     {
       "id": "mewtrack",
       "projectId": "mewtrack",
-      "title": "MewTrack – Pilotanalyse",
+      "title": "MewTrack – Pilot und geprüfter Update-Nachtrag",
       "status": "reviewed",
-      "summary": "Pilot abgeschlossen; datierte Nachprüfung 10.10. ergänzt. Unveränderte isolierte Quelle 0.9.4/13 erfolgreich als com.chargegeist.mew.debug gebaut: 45 JVM-Tests bestanden. Native künstliche Sessions bestätigen falsche Compare-Vorauswahl und Restore-Fehlermeldung; normales Löschen funktioniert, Kamera erkennt kein Gesicht. Guidance bleibt nach kontrolliertem Datum/Resume alt und aktualisiert erst nach Neustart. HEAD 0.9.3/12, vier vorhandene Arbeitsbaumänderungen und lokales AAB 0.9.4/13 getrennt; Compare, Restoreklassifikation und unsichtbarer Review-Speicherfehler direkt im lokalen AAB-DEX bestätigt. Kein Play-Binary/Kauf/Kamerasave, keine Appkorrektur. Vier Maßnahmen weiterhin nicht abgeschlossen.",
+      "summary": "Begrenzte Analyse und Nachprüfung erhalten; freigegebenes kleines Update 0.9.5/14 umgesetzt, geprüft und in den Originalordner übernommen. 81 JVM-Tests (36 neu) und sechs Android-Review-/Löschtests bestanden; native Debuggegenproben für Compare, Guidance und technischen Restorefehler mit Ladeende. Signiertes R8-/Shrink-AAB14 validiert, Uploadzertifikat wie 13. Separate lokale AAB-Ableitung: Onboarding, Home, Settings/Privatheit und Front-Kameraeinstieg bedient; virtuelles Bild blieb bei No face detected, kein vollständiger Check-in. 32 Dateien übernommen, Appänderungen uncommitted. Code14 in Play akzeptiert, Produktionsrelease 100 %/178 Länder und EN/DE-Texte gespeichert; fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus. Alle bisherigen Storebilder auf Nutzerwunsch unverändert. Eine von vier Maßnahmen abgeschlossen; native Gesamtprüfung und Release/Store weiter in_progress. Kein voller Kamerafluss, realer Kauf oder Play-Upgrade. Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung.",
       "scope": {
         "checked": [
-          "Pilot vom 09.10.: Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
-          "Pilot vom 09.10.: Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
-          "Pilot vom 09.10.: Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
-          "Pilot vom 09.10.: Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
-          "Pilot vom 09.10.: Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
-          "Pilot vom 09.10.: Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
-          "Pilot vom 09.10.: Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
-          "Pilot vom 09.10.: ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
-          "Pilot vom 09.10.: Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
-          "Pilot vom 09.10.: Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert.",
-          "10.10.: alle 80 Original-Eingaben vor/nach isoliertem Debugbuild bytegleich; assembleDebug und testDebugUnitTest erfolgreich. 45 JVM-Tests in fünf Suiten ohne Fehler/Fehlschläge/Skip.",
-          "Native Debugbedienung auf frischem Android-34-Emulator mit geometrischen künstlichen Sessions: Restore-Fehler, Compare-Ausgangssession, erfolgreiche Einzellöschung, Home/Settings und Kamera-Einstieg.",
-          "Kontrollierte Guidance-Datumsprobe durch Hauptagenten: Resume PID4415 weiterhin Done for today, Neustart PID5021 erneuert Guidance. Keine private Gerätezeitänderung.",
-          "HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 mit Version12 gegenüber vier bestehenden Änderungen/Version13, lokale AAB-Metadaten AGP 8.10.1/Billing 9.1.0 und drei aktive AAB-DEX-Fehlerpfade geprüft.",
-          "Lesbarkeit nativ betrachtet, Farbkontraste erneut berechnet; Aufnahme-CTA erreichbar. Store-Werkzeugabbildungen erneut mit Debugansichten/Quellen verglichen."
+          "Historischer Pilot 09.10. und Nachprüfung vor dem Fix am 10.10. bleiben in datierten Berichten und pilotScope/scopeBeforeUpdate14/findingsBeforeUpdate14 erhalten. HEAD12, vier vorhandene Änderungen/Version13 und damaliges AAB13 getrennt; historische Befunde nicht als ungelösten heutigen Gesamtstand ausgeben.",
+          "Freigegebenes kleines Update14 in isolierter Kotlinbasis: Compare-ID, Restore-Ergebnisse/Ladeenden, Home-Tag/Guidance, sichtbare Review-Savefehler/Retry, Sperren während Save, Löschresultate/Retry, gemeinsamer Lifetime-State, geladener Play-Preis und ehrliche Texte korrigiert.",
+          "Grunddesign/Icon/Ressourcen/Manifest/Typografie und drei Gratissessions erhalten. Hilfstext heller, Systemicons hell, CTA direkt nach Tagesstatus vor Guidance, Settings-Abstand kleiner; Review scrollbar und vorhandener Vollbildviewer angeschlossen.",
+          "assembleDebug und testDebugUnitTest erfolgreich: zehn vollständige XML-Suiten, 81 Tests, 0 Fehler/Fehlschläge/Skip; 45 vorhandene und 36 neue Regressionstests.",
+          "Sechs instrumentierte Tests auf isoliertem Android34-Emulator: vier Reviewtests mit künstlichen Fotos, Fehler-/Retryzustand, Save-Sperren, Vollbild und Schriftfaktor 2; zwei Löschtests mit eigener In-Memory-DB/blockierter künstlicher Datei und erfolgreichem Retry.",
+          "Separate native Debug14-Gegenproben: Detail der künstlichen Session vom 5. Oktober öffnet Compare 1./5. Oktober, danach 9. Oktober frei gewählt. Restore zeigt technischen Queryfehler statt fehlendem Kauf und spätestens nach 8,83 s wieder Restore-Aktion. Keine Kamera-Session aus Fixtures ableiten.",
+          "Kontrollierte Emulator-/Resumeprobe: nach Guidancebestätigung am 10.10. neuer Tipp/Done-Zustand am 11.10. Emulator anschließend auto_time=1 und ursprüngliche ADB-UID 2000 wiederhergestellt; private Gerätezeit unverändert.",
+          "Signierter bundleRelease einschließlich R8/Ressourcenverkleinerung/lintVitalRelease erfolgreich; Bundle-/Signaturprüfung bestanden, Uploadzertifikat wie AAB13. Separate AAB14-Test-APK-Probe: Onboarding, Home, Settings/Privatheit und Front-Kameraeinstieg bedient; eigener virtueller Kameraeingang blieb bei No face detected mit gesperrter Autoaufnahme. Kein kompletter Kamerafluss, kein Play-Download.",
+          "Vor Sync alle 80 Eingaben bytegleich zur Baseline; 32 ausgewählte Dateien übernommen, vorhandene Änderungen erhalten. Branch codex/mewtrack-fixes-14, HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert, Appänderungen uncommitted. Originalbundle C:/Users/madde/flutter_projects/MEWING 2.0/app/release/mewtrack-0.9.5-14.aab, SHA256 a2bc62b84dcd0ba19b8f0b32b6d65c71c37ec0996cb508bf37530d32c285f6ae.",
+          "Code14 in richtiger Play-App akzeptiert, Produktionsrelease 100 % für bisherige 178 Länder gespeichert. Storetitel MewTrack: Mewing Photo Tracker und EN/DE-Felder gespeichert, Längen EN 30/79/1510 und DE 30/75/1702. Fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet; Managed Publishing aus. Vier Telefon-/fünf 7-Zoll-/ein 10-Zoll-Bild, Icon und Featuregrafik unverändert; kein Bild-Upload oder Entfernen. Marketingentwürfe separat und gestoppt.",
+          "Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung."
         ],
         "notChecked": [
-          "Kein installierter/bedienter Play-Release in dieser Nachprüfung und keine vollständige historische Source-/Play-Binarygleichheit. Aus AAB abgeleitetes Release-Test-APK bereitgestellt, nicht bedient.",
-          "Kamera erkennt im Test kein Gesicht; Kameradreiersatz, Retake, Review und Kameraspeichern nicht erreicht. Künstliche Gallerysessions sind kein Capture-Erfolg.",
-          "Kein echter Play-Kauf/erfolgreicher Restore, kein beobachteter Endlosspinner im anderen Reconnectpfad und keine tatsächliche Freischaltungssynchronisierung.",
-          "Kein nativ ausgelöster Speicher-/Löschfehler, kein Deinstallations-/Gerätewechseltest. Normales Löschen mit künstlichen Daten erfolgreich.",
-          "Kein natürlicher Mitternachtslauf, Session-Abschluss oder nativer Release-Tageswechsel. Guidance-Resumeprobe ist ein konkreter Debugfall.",
-          "Keine instrumentierten Androidtests, großer Schrift-/kleiner Displaydurchlauf, vollständiger Netz-/Datenschutzcheck oder neue Nutzer-/KPI-Erhebung.",
-          "API-/Zahlungskontohinweise, vollständige Storelokalisierung und alle übrigen Storebilder weiterhin separat offen."
+          "Kein vollständiger Kamerafluss mit erkanntem Gesicht über drei Posen, Retake und reales Speichern. Reviewtests mit künstlichen Zuständen ersetzen dies nicht.",
+          "Kein echtes Nutzergerät, realer Play-Kauf/erfolgreicher Restore, regionaler Preis oder kontobezogener Entitlement-Abgleich; Shared-State-Code und JVMtests sind keine vollständige Kaufintegration.",
+          "Kein tatsächliches 13→14-Play-Upgrade oder öffentlich aktivierter 14er-Release. Lokale AAB-Test-APK-Probe mit eigener Testsignatur belegt begrenzte Ansichten/Kameraeinstieg; keine erfolgreiche Gesichtserkennung/Drei-Posen-Speicherung und keine Source-/Play-Binarygleichheit.",
+          "Kein natürlicher Mitternachts-/Langzeittest, echte Kameraabschlüsse an zwei Tagen oder alle Zeitzonen/OEM-/Displayfälle. Schriftfaktor 2 nur gezielt im Review geprüft.",
+          "Dateilöschung und DB sind nicht atomar: Datensätze bleiben bei Fehler für Retry, bereits gelöschte Fotos werden nicht zurückgerollt. Gerätewechsel/Deinstallation/Backup und vollständiger Netzwerkfluss offen.",
+          "Bestehende Offline-Lifetime-Regel bleibt: gecachter Prostatus wird bei leerer/fehlerhafter Abfrage nicht entzogen. Erstattungs-/Widerrufs-/Kontowechsel-Reconciliation nicht neu umgesetzt oder geprüft.",
+          "Google-Freigabe/öffentliche Aktivierung nach bestätigter Einreichung noch offen; separate API-/Zahlungskontohinweise nicht vollständig abschließend zugeordnet. Bildtausch wurde nicht ausgewählt und gestoppt, bestehende Consolebilder bleiben unverändert; kein zusätzlicher Grafikauftrag.",
+          "Keine Testeransprache, neue Nutzungs-/Download-/Retentionwerte oder belegte ASO-Wirkung. Gratis-/Lifetime-Umfang unverändert."
         ]
       },
       "strengths": [
@@ -1059,74 +1056,80 @@
           "title": "Storebilder und tatsächlichen Vergleich/Fotofilter abgleichen",
           "evidenceType": "mismatch",
           "priority": "high",
-          "detail": "Storebilder zeigen zusätzliche Vergleichsschalter und Galerie-Winkelfilter, die im geprüften lokalen Quellstand nicht angeschlossen sind.",
+          "detail": "Historische öffentliche Storebilder zeigen nicht angeschlossene Vergleichsschalter/Galleryfilter. Nutzer stellte ausdrücklich klar, vorhandene Bilder zu behalten. Alle vier Telefon-, fünf 7-Zoll- und ein 10-Zoll-Tabletbild sowie Icon/Featuregrafik unverändert; kein Console-Bild-Upload oder Entfernen. Lokale Marketingentwürfe wurden separat vorbereitet und gestoppt.",
           "evidence": "Live-Stichprobe Bild 2 Overlay / Grid / Guide Lines, Bild 3 All / Front / Left / Right. Compare bietet Side-by-side, Pose-Tabs, Datumswahl und Vollbild; Gallery Sessionkarten. Kamera-PoseGuideOverlay erfüllt kein Vergleichs-Overlay.",
           "limitation": "Aktuelle öffentliche Bilder erneut gesehen, Werkzeuge in tatsächlich bedienten Debugansichten/aktiver Quelle an dargestellten Stellen nicht vorhanden. Kein bedienter Play-Binary und keine bewiesene absichtliche Falschwerbung.",
-          "recommendation": "Im installierten Release 13 prüfen und Storebilder mit tatsächlichen nativen Funktionen abstimmen. Neue Werkzeuge nur bei bewusst priorisiertem Bedarf bauen.",
+          "recommendation": "Historische Grafikempfehlung erhalten, aber nicht ausgewählt und nicht umsetzen. Gespeicherte EN/DE-Texte und AAB14 sind zur Überprüfung eingereicht; Google-Freigabe/öffentlichen Stand gesondert kontrollieren.",
           "sourceDocs": [
             "analysen/mewtrack/store-review.md",
             "analysen/mewtrack/Visual-review.md",
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Store-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-compare-selection",
-          "title": "Vorausgewählte Session wird im Vergleich nicht verwendet",
+          "title": "Gewählte Compare-Session im lokalen Update14 berücksichtigt",
           "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "Compare aus einer bestimmten Session kann einen unerwarteten Standardvergleich zeigen.",
-          "evidence": "Nativ Debug 13 mit künstlichen Sessions: Einstieg aus 5. Oktober zeigt 1./9. Oktober. preselectedEntryId wird nur angenommen, nicht angewendet; ViewModel wählt älteste/neuste. Mechanismus unverändert in HEAD 12 und direkt im lokalen AAB 13-DEX bestätigt.",
-          "limitation": "Debug-Emulator mit eingespeisten geometrischen Sessions; kein Play-Binary. Side-by-side/Pose-Tabs korrekt sichtbar, kein genereller Compare-Defekt.",
-          "recommendation": "Mit mindestens drei Test-Sessions über die mittlere Session einsteigen, beabsichtigte Vorauswahl implementieren und gegenprüfen.",
+          "detail": "Historischer Debug/AAB13 ignorierte die Session. Update14 wendet die Navigations-ID an, wartet auf asynchrone Sessions, erhält manuelle Seitenwahl und berücksichtigt neue Navigation.",
+          "evidence": "Zehn neue JVMtests und native Debug14-Probe: Detail 5. Oktober → Compare 1./5. Oktober; danach 9. Oktober frei gewählt. Überholte Fotoladejobs abgebrochen.",
+          "limitation": "Geometrische Debugfixtures; keine Camera-to-Compare-/Play-Upgradeprobe. AAB14-Start ist kein Release-Compare-E2E.",
+          "recommendation": "Vorauswahl und frei wählbare Seiten erhalten; echte Upgradezuordnung separat prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-billing-failure",
-          "title": "Restore meldet technischen Fehler als fehlenden Kauf",
+          "title": "Restore-Fehlerklassifikation und Ladeende lokal korrigiert",
           "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Query-Verbindungsfehler und erfolgreich abgefragter fehlender Kauf werden nicht getrennt. Der andere Reconnectpfad kann laut aktivem Code einen Abschluss verlieren.",
-          "evidence": "Debug-Emulator ohne verfügbaren Billingdienst: nach wenigen Sekunden No purchase found bei protokolliertem Query-/Verbindungsfehler. restorePurchases liefert im Fehlerfall lokalen is_pro-Boolean, UI übersetzt false. In HEAD 12 und aktivem lokalen AAB 13-DEX ebenfalls bestätigt.",
-          "limitation": "Kein echter Kauf/erfolgreicher Play-Restore. Endlosspinner im nativen Lauf nicht beobachtet; ensureConnected-Abschlussrisiko bleibt Quellenbefund.",
-          "recommendation": "Fehler, fehlenden Kauf und vorhandene Freischaltung getrennt melden; jeden Ladezustand mit Erfolg/Fehler beenden und erneutes Laden ermöglichen.",
+          "detail": "Technischer Fehler, abgefragter fehlender Kauf und erfolgreicher Restore sind getrennt. Verbindung/Query sind zeitlich begrenzt; verspätete Callbacks werden ignoriert.",
+          "evidence": "16 neue Billing-/Callbacktests bestanden; native Debug14-Queryfehlermeldung sichtbar und Restore-Aktion spätestens nach 8,83 s wieder verfügbar, keine falsche No-purchase-Meldung.",
+          "limitation": "Kein realer Kauf/erfolgreicher Restore, Kontowechsel oder vollständiger Kauf-/Refundnachweis.",
+          "recommendation": "Getrennte Ergebnisse und begrenzte Ladeenden erhalten; echten Play-Kauf/Restore gesondert prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-entitlement-sync",
-          "title": "Freischaltung ist auf getrennte lokale Zustände verteilt",
+          "title": "Lifetime-State im lokalen Update14 zwischen Aufrufern geteilt",
           "evidenceType": "code",
           "priority": "medium",
-          "detail": "Activity, Home, Paywall und Settings halten eigene EntitlementRepository-Instanzen und StateFlows; Restore/Resume kann vorhandene Oberflächen unterschiedlich aktuell halten.",
-          "evidence": "grantPro aktualisiert den eigenen Flow; kein gemeinsamer bereitgestellter Zustand oder Preferences-Listener gefunden. Mehrere BillingClients können ebenfalls Callbacks erhalten.",
-          "limitation": "Synchronisationsrisiko, keine Behauptung, dass jeder Kauf Home nie aktualisiert.",
-          "recommendation": "Eine kontrollierte Billing-Verbindung und einen gemeinsamen Entitlement-State verwenden, falls das Risiko im Test bestätigt beziehungsweise gezielt abgesichert wird. Home/Settings/Restore/Neustart prüfen.",
+          "detail": "Repository-Aufrufer teilen den applicationweiten Entitlement-State mit Preferences-Listener; bisheriger gecachter Offlinezugang bleibt erhalten.",
+          "evidence": "Aktiver Shared-State/Listener und BillingOutcomes-Tests geprüft; Paywall nutzt geladenen Play-Preis und Ready-/Fehlerzustände.",
+          "limitation": "Mehrere BillingClients bleiben. Kein realer sofortiger Kauf-/Restore-Sync oder neuer Erstattungs-/Widerrufs-/Kontowechselabgleich.",
+          "recommendation": "Gemeinsamen Zustand erhalten; echte Kauf-/Restorewirkung in bestehenden Screens separat prüfen.",
           "sourceDocs": [
-            "analysen/mewtrack/MewTrack-code-review.md"
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-day-change",
-          "title": "Guidance bleibt nach kontrolliertem Datum/Resume veraltet",
+          "title": "Home-Tag und Guidance bei Resume im lokalen Update14 erneuert",
           "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "Bei über Mitternacht bestehendem ViewModel können Tagesstatus, Tipp und erledigter Hinweis zum Vortag gehören.",
-          "evidence": "Hauptagent: Guidance bestätigt am 10.10., nur Emulator auf 11.10. gesetzt. Resume im PID4415 zeigt weiterhin Done for today; Force-stop/Neustart PID5021 zeigt neuen Guide Avoid force. HomeViewModel erzeugt todayKey/Tipp nur einmal.",
-          "limitation": "Konkreter Debug-Guidancefall, kein natürlicher Mitternachtslauf, echter Session-Abschluss, nativer Releasefall oder Beleg einer generell blockierten Aufnahme.",
-          "recommendation": "Datum bei Wiederaufnahme/Tageswechsel neu bestimmen und abhängige Zustände gemeinsam aktualisieren. Mit Testzeit arbeiten, private Systemuhr unverändert lassen.",
+          "detail": "Gemeinsamer lokaler Tag steuert Guidance/Done und heutige Session. Resume-Refresh und sichtbarer Timer erneuern den Zustand; alter Got-it-Tipp hakt den ungesehenen neuen Tag nicht ab.",
+          "evidence": "Sechs neue Tageslogiktests; kontrollierter Debug14-Resume am 11.10. erneuert Tipp/Done. Emulatoruhr/ADB-UID zurückgestellt.",
+          "limitation": "Kontrollierter Debugfall, kein natürlicher Langzeitlauf, echte Kameraabschlüsse an zwei Tagen oder Play-Tageswechsel.",
+          "recommendation": "Gemeinsamen Tagesbezug/Lifecycle-Refresh erhalten; echte Session-/Zeitzonenfälle getrennt prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
@@ -1145,76 +1148,81 @@
         },
         {
           "id": "mewtrack-photo-control",
-          "title": "Exportversprechen und langfristige Fotohoheit sind ungeklärt",
+          "title": "Exportversprechen entfernt; Fotohoheit bleibt Nutzerfrage",
           "evidenceType": "code",
           "priority": "medium",
-          "detail": "Onboarding nennt Export, aber der aktive Ablauf bietet keine Exportfunktion. Persönliche Langzeitfotos benötigen verständliche Speicher-/Gerätewechselinformationen.",
-          "evidence": "Fotos appprivat unter filesDir/captures, Backup deaktiviert; keine Export-/Share-Implementierung in gescannten aktiven Routen. Kauf-Restore stellt Kaufstatus statt Fotos wieder her.",
-          "limitation": "Kein tatsächlicher Datenverlust reproduziert; kein vollständiger Backup-/Gerätewechseltest.",
-          "recommendation": "Nicht vorhandenen Export nicht versprechen. Speicher-/Löschfolgen klar nennen; bei bestätigtem Bedarf kleinen ausdrücklich ausgelösten lokalen Export vorsehen.",
+          "detail": "Onboarding/Settings erklären lokale appprivate Fotos und Verlust bei Deinstallation. Nicht vorhandener Export wird nicht mehr versprochen; keine Exportfunktion neu eingebaut.",
+          "evidence": "Aktive 14er-Texte/Storeentwurf geprüft; Kauf-Restore stellt Prozugang statt Fotos wieder her. Fotoablage/Backupregeln unverändert.",
+          "limitation": "Kein Deinstallations-/Gerätewechseltest oder realer Datenverlust; Exportbedarf ungemessen.",
+          "recommendation": "Speicherfolgen ehrlich nennen; Export erst bei belegtem Bedarf gesondert wählen.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/Visual-review.md",
-            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-delete-errors",
-          "title": "Löschfehler werden der Oberfläche nicht zutreffend gemeldet",
-          "evidenceType": "code",
+          "title": "Löschfehler und Retry im lokalen Update14 sichtbar",
+          "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "Datenbankzeilen können entfernt werden, obwohl eine Datei-Löschung fehlgeschlagen ist; Settings liefert keinen klaren Abschluss-/Fehlerstatus.",
-          "evidence": "deleteFile liefert Ergebnis; deleteEntry/deleteAll ignorieren es. Orphan-Bereinigung ist vorhanden, prüft beziehungsweise zählt ihre Löschresultate ebenfalls nicht zuverlässig.",
-          "limitation": "Normales natives Löschen einer künstlichen Session entfernt Zeile und drei Testbilder erfolgreich. Fehlgeschlagene Dateilöschung wurde nicht erzeugt; ignorierte Rückgaben bleiben Code-Inferenz für diesen Fehlerpfad.",
-          "recommendation": "Löschresultate sammeln und wahrheitsgemäßen Erfolg/Fehler anzeigen. Mit erfundenen Testdaten einzelne und gesamte Löschung prüfen.",
+          "detail": "Dateirückgaben ausgewertet, Datensätze bleiben bei Fehler für Retry. Detail verlässt nur nach Erfolg; Settings meldet Result und beendet Fortschritt. Cleanup zählt erfolgreiche Löschungen.",
+          "evidence": "Vier neue JVMtests und zwei Androidtests mit In-Memory-DB/blockierter künstlicher Datei: Einzel-/Gesamtlöschfehler erhält Zeilen, Retry gelingt.",
+          "limitation": "Dateisystem/DB nicht atomar; bereits gelöschte Fotos werden bei Folgefehler nicht zurückgerollt. Keine privaten Daten gelöscht.",
+          "recommendation": "Wahrheitsgemäße Fehler-/Retrylogik erhalten; keinen atomaren Rollback behaupten.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-readability",
-          "title": "Kleine informative Texte haben wenig Kontrast",
+          "title": "Hilfstexte und Systemicons bei erhaltenem Grunddesign lesbarer",
           "evidenceType": "assessment",
           "priority": "medium",
-          "detail": "Dunkler grauer Hilfstext betrifft unter anderem Schritte, Daten, Speicherhinweise und leere Zustände.",
-          "evidence": "Home/Settings/Compare nativ: informative graue Hilfstexte schwer lesbar, dunkle Statusicons; Settings-Leerraum auffällig. Farbgegenprobe bestätigt TextTertiary ca. 3,21:1 auf Background/2,83:1 auf SurfaceRaised, 12/11sp.",
-          "limitation": "Begrenzte native Standardviewport-/Farbprüfung, keine vollständige Barrierefreiheitsprüfung, kein Großschrift-/Tageslichttest; Ursache Settings-Leerraum nicht isoliert.",
-          "recommendation": "Informative kleine Texte heller setzen und auf echtem Android bei größerer Schrift, wenig Helligkeit und Tageslicht prüfen.",
+          "detail": "Informative Grautöne aufgehellt, Systemicons hell. Schwarz-Grün-Flächen, Icon und Typografie erhalten; Settings-TopBar-Inset kleiner.",
+          "evidence": "TextTertiary #929CA8 statt #5C6470; native Debugansichten geprüft. Ressourcen/Theme/Type/Manifest unverändert.",
+          "limitation": "Keine vollständige Barrierefreiheits-/Tageslicht-/Nutzergeräteprüfung. Schriftfaktor 2 nur gezielt im Review.",
+          "recommendation": "Kleine Lesbarkeitskorrekturen erhalten; Helligkeit/Schrift auf echtem Gerät gezielt prüfen.",
           "sourceDocs": [
             "analysen/mewtrack/Visual-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-first-capture",
-          "title": "Erster Check-in und Foto-Review können direkter werden",
-          "evidenceType": "code",
+          "title": "Aufnahmeaktion vor Guidance und Review-Vollbild angeschlossen",
+          "evidenceType": "android_runtime",
           "priority": "medium",
-          "detail": "Home ordnet Guidance vor dem Aufnahmebutton an. Review zeigt kleine zugeschnittene Vorschauen ohne angeschlossenen Vollbildbetrachter.",
-          "evidence": "Home-Reihenfolge Today/Last Session/Guidance/CTA; scrollbare Seite. Review feste 110×160dp Crop-Thumbnails, Detail/Compare bereits Vollbild mit Zoom. Review ist nicht vertikal scrollbar.",
-          "limitation": "Aufnahme-CTA im nativen Standardviewport sichtbar/bedienbar. Kamerareview mangels erkanntem Gesicht nicht erreicht; Crop-/Reviewlayout bleibt Quellenbefund. Kein beobachteter abgeschnittener Button oder Large-font-Fehler.",
-          "recommendation": "Aufnahmeaktion direkt bei Today insbesondere im leeren Zustand prüfen. Vorhandenen Vollbildbetrachter für die Kontrolle vor dem Speichern nutzen; kleine Geräte/große Schrift testen.",
+          "detail": "CTA direkt nach Tagesstatus vor Last Session/Guidance. Review vertikal scrollbar; Fotos öffnen bestehenden Vollbildviewer, Save/Discard stehen unten.",
+          "evidence": "Native Debug14-Homeansichten und Android-Reviewtests für Vollbild/Erreichbarkeit bei Schriftfaktor 2 bestanden.",
+          "limitation": "Künstlicher Reviewzustand, kein vollständiger Kamerafluss; sämtliche Display-/Orientierungs-/Home-Großschriftfälle offen.",
+          "recommendation": "Verbesserten Einstieg/Viewer erhalten; keinen neuen Kamera-/Designumfang ableiten.",
           "sourceDocs": [
             "analysen/mewtrack/Visual-review.md",
             "analysen/mewtrack/MewTrack-Pilotanalyse.md",
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
           "id": "mewtrack-privacy-price",
-          "title": "Absolute Offline- und Fallback-Preisaussagen präzisieren",
+          "title": "Offline-/Speichertexte und geladener Play-Preis präzisiert",
           "evidenceType": "code",
           "priority": "low",
-          "detail": "Lokale Fotoablage ist ein plausibler Kern; vollständig offline und ein fest bestätigter Preis sind zu absolut, wenn Play-/Font-Dienste benötigt werden.",
-          "evidence": "Keine eigenen Upload-/Analytics-Pfade im gescannten Appcode; Merged Release-Manifest enthält INTERNET/ACCESS_NETWORK_STATE/Billing. Google-Font-Provider und Play Billing vorhanden. Paywall-Fallback 3,99 €, Store regional 3,59 €, Liveproduktpreis kann Fallback ersetzen.",
-          "limitation": "Internetberechtigung beweist keinen Fotoupload. Kein vollständiger Netzwerkmitschnitt, keine bewiesene falsche Kaufanzeige oder Datenschutzdeklaration.",
-          "recommendation": "Fotoablage von Kauf-/Fontbezug unterscheiden. Ohne verfügbare Produktdaten keinen scheinbar bestätigten Preis anzeigen; tatsächliches Angebot prüfen.",
+          "detail": "Fotoablage ohne Konto und Onlineabhängigkeiten für Kauf/Restore getrennt. Geladene Produktdaten statt festem Preisfallback; fehlender Preis sperrt Kauf und erlaubt erneutes Laden.",
+          "evidence": "Aktive 14er-Onboarding-/Settings-/Paywalltexte und Preisbereitschaftslogik geprüft. Fester Eurofallback entfernt, Fontprovider/Netzwerkrechte unverändert.",
+          "limitation": "Kein realer regionaler Preis/Kauf oder vollständiger Netzwerkmitschnitt; Internetrecht beweist keinen Fotoupload.",
+          "recommendation": "Preis aus geladenem Angebot und zutreffende Speicherfolgen erhalten; echte Play-Angebotsprüfung separat.",
           "sourceDocs": [
             "analysen/mewtrack/MewTrack-code-review.md",
-            "analysen/mewtrack/store-review.md"
+            "analysen/mewtrack/store-review.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         },
         {
@@ -1234,15 +1242,16 @@
         },
         {
           "id": "mewtrack-review-save-error",
-          "title": "Speicherfehler erreicht die Reviewansicht nicht",
-          "evidenceType": "code",
+          "title": "Review erhält Savefehler und Retry im lokalen Update14",
+          "evidenceType": "android_runtime",
           "priority": "high",
-          "detail": "Save setzt errorMessage, die Reviewansicht erhält diesen Zustand jedoch nicht und kehrt vor dem Snackbarzweig zurück.",
-          "evidence": "CaptureViewModel.saveEntry und CaptureScreen-Reviewbranch gezielt gelesen. Bereits in HEAD 12 enthalten und durch AAB-eigene R8-Zuordnung/aktive DEX-Pfade im lokalen AAB 13 bestätigt.",
-          "limitation": "Kein nativ ausgelöster Speicherfehler oder belegter Datenverlust. Kamera-/Reviewseite im Debuglauf mangels erkanntem Gesicht nicht erreicht.",
-          "recommendation": "Speicherfehler und Wiederholen direkt in Review anzeigen; Fehlerfall mit künstlichen Daten gezielt prüfen.",
+          "detail": "Review bekommt errorMessage; Speicherfehler sichtbar und Retry möglich. Save-/Retake-/Discard-Sperren verhindern konkurrierende Aktionen während Save.",
+          "evidence": "Vier Android-Reviewtests bestanden: Fehler/Retry, Sperren, Vollbild und Erreichbarkeit bei Schriftfaktor 2; aktiver VM-/Reviewpfad korrigiert.",
+          "limitation": "Fehlerzustand gezielt in Composable aufgebaut; kein echter DB-Savefehler aus vollständiger Kameraaufnahme erzeugt, kein Datenverlust behauptet.",
+          "recommendation": "Sichtbare Fehler-/Retrylogik erhalten; vollständigen Kamera-/Retake-/Saveweg gesondert prüfen.",
           "sourceDocs": [
-            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+            "analysen/mewtrack/MewTrack-Update-2026-10-10.md"
           ]
         }
       ],
@@ -1483,25 +1492,25 @@
           "id": "mewtrack-action-native-check",
           "order": 1,
           "title": "Fünf native Gegenprüfungen mit Testdaten",
-          "detail": "Teilweise ausgeführt: Debug-Compare/Restore/Guidance und normales Löschen geprüft, 45 JVM-Tests bestanden. Weiter offen: echter Capture-/Retake-/Reviewweg, freigegebener Play-Testkauf/Restore/Synchronisierung, Speicher-/Löschfehler und kleine Displays/große Schrift; Play-Zuordnung separat erhalten.",
+          "detail": "Teilweise ausgeführt: 81 JVM-/6 Androidtests, Debug14-Compare/Restore/Guidance und begrenzte native AAB14-Probe mit Onboarding/Home/Settings/Front-Kameraeinstieg. Virtuelles Kamerabild blieb bei No face detected. Vollständiger Kamera-/Retake-/Saveweg mit Gesicht, echter Play-Kauf/Restore/Sync, regionaler Preis, Nutzergerät und Play-Upgrade offen.",
           "status": "in_progress",
-          "validation": "Tatsächlichen Play-Release13 beziehungsweise nachvollziehbaren Testbuild zuordnen, Beobachtungen getrennt von Quelle dokumentieren. Kleine Geräte/große Schrift beachten, echte Kamera nur mit bewusst freigegebenen Testmotiven. Keine privaten Daten löschen."
+          "validation": "Künstliche Debugsessions, gezielt aufgebauter Reviewfehlerzustand und separate AAB-Testsignatur unterscheiden; kein Gesamtabschluss der nativen Runde. Keine privaten Daten gelöscht; Emulatorzeit/ADB-UID zurückgestellt."
         },
         {
           "id": "mewtrack-action-small-update",
           "order": 2,
-          "title": "Bestätigte Risiken in einem kleinen Update beheben",
-          "detail": "Nach Zielstandwahl Restore-Ergebniszustände, Compare-Vorauswahl, Guidance-Refresh und sichtbaren Review-Speicherfehler klein korrigieren. Entitlement-Synchronisierung gezielt absichern; informative Texte/Statusicons verbessern. Ehrliche Export-/Offline-/Preis-/Storeaussagen. Noch kein Fix umgesetzt.",
-          "status": "proposed",
-          "validation": "Jede tatsächliche Änderung passend prüfen; keine vorgeschlagenen Fixes als implementiert ausgeben. Releasehinweise beschreiben echte Änderungen, kein behaupteter Algorithmusimpuls."
+          "title": "Besprochene Fehler in einem kleinen Update beheben",
+          "detail": "0.9.5/14 übernommen/geprüft: Compare-ID, Restore-Ergebnisse/Ladeenden, Home-Tag/Guidance, Review-Savefehler/Retry, Löschresultate, Shared-Lifetime-State, Play-Preis und zutreffende Texte. Besprochene Lesbarkeit/CTA/Settings/Review verbessert; Grunddesign/Icon/Launcher/Gratisumfang erhalten.",
+          "status": "completed",
+          "validation": "81/81 JVMtests (36 neu), sechs Androidtests und native Debug-Compare/Tages-/Restoregegenfälle bestanden; signierter R8-/Shrink-Release14 mit lintVitalRelease/Bundle-/Signaturvalidierung, Uploadzertifikat wie 13. 32 Dateien nach 80er-Baselineabgleich übernommen, codex/mewtrack-fixes-14 uncommitted. Kamera-E2E/echter Kauf/Play-Upgrade separat offen; kein atomarer Dateien-/DB-Rollback oder neuer Refundabgleich behauptet."
         },
         {
           "id": "mewtrack-action-console",
           "order": 3,
-          "title": "Console-Hinweise gezielt zuordnen",
-          "detail": "API-Hinweis einem Track/Artefakt oder überholtem Stand zuordnen; aktiver Release ist bereits target36. Zahlungskontohinweis vor aktiver Kaufwerbung gesondert prüfen.",
-          "status": "proposed",
-          "validation": "Kein SDK-Upgrade auf Verdacht, keine privaten Zahlungsdaten veröffentlichen, keine Kaufblockade allein aus Hinweisexistenz behaupten."
+          "title": "Release/Store abschließen und Console-Hinweise zuordnen",
+          "detail": "Code14 akzeptiert; Produktionsrelease 100 % für bisherige 178 Länder und EN/DE-Texte gespeichert, fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet. Titel MewTrack: Mewing Photo Tracker; EN 30/79/1510, DE 30/75/1702. Alle Storebilder/Icon/Featuregrafik unverändert. Google-Freigabe/öffentliche Aktivierung und getrennte Console-Hinweiszuordnung offen; Managed Publishing aus. Nachkontrolle 22:35: Vorabprüfungen fertig, Google-Überprüfung läuft.",
+          "status": "in_progress",
+          "validation": "Bundle/Signatur validiert, SHA256 a2bc62b84dcd0ba19b8f0b32b6d65c71c37ec0996cb508bf37530d32c285f6ae. Consoleannahme14, gespeicherter Produktionsrollout100 %/178, Toast Änderungen gespeichert für EN/DE und Toast fünf Änderungen zur Überprüfung gesendet bestätigt. Einreichungszeilen: Produktionsrelease14, deutscher Eintrag, EN Name/Kurz/Lang. Keine Bildänderungszeile; vier Phone/fünf Tablet7/ein Tablet10, Icon/Featuregrafik erhalten. Google/public pending; technische Vorabprüfung ist keine zugesagte Freigabedauer. Keine privaten Zahlungsdaten veröffentlichen. Lesende Nachkontrolle 22:35 bestätigt Deine Änderungen werden jetzt überprüft; gleiche fünf Änderungen, keine weitere Einreichung."
         },
         {
           "id": "mewtrack-action-users",
@@ -1513,16 +1522,16 @@
         }
       ],
       "openQuestions": [
-        "Welche konkrete lokale Quelle erzeugte das veröffentlichte Play-Binary 13? Arbeitsbaum, Debugbuild und lokales AAB sind abgegrenzt; vollständige Play-Binarygleichheit bleibt unbelegt.",
-        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf einem echten Android-Gerät? Die Emulatorkamera erreichte mangels erkanntem Gesicht keinen vollständigen Aufnahme-/Speicherablauf.",
-        "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
-        "Welche kleinste Korrektur übernimmt die ausgewählte Compare-Ausgangssession zuverlässig? Der Fehler ist im Debugtest beobachtet und im lokalen AAB-Code bestätigt; eine Umsetzung steht aus.",
-        "Wie verhalten sich Session-Abschluss und weitere Home-Datumszustände über Mitternacht im echten Release? Die Guidance-Probe bestätigt nur den veralteten Debug-Zustand nach kontrolliertem Resume.",
-        "Wie funktionieren echter Kauf, erfolgreicher Restore und sofortige Freischaltung zwischen Home/Settings? Falsche Fehlerklassifikation ist belegt, ein endloser Spinner blieb in der nativen Sitzung unbeobachtet.",
-        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
-        "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
-        "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
-        "Welcher Track/Artefakt verursacht den API-Hinweis, und was bedeutet der kontoweite Zahlungskontohinweis tatsächlich?"
+        "Wie funktionieren drei Posen, Auto Capture, Retake und echtes Speichern mit erkanntem Gesicht auf einem Nutzergerät? Gezielte Reviewtests sind kein kompletter Kamerafluss.",
+        "Wie funktionieren realer Kauf/Restore, regionaler Preis und gemeinsame Freischaltung in bereits geöffneten Screens? Technische Fehler-/JVMtests ersetzen dies nicht.",
+        "Wie verhält sich ein echtes 13→14-Play-Upgrade mit vorhandenen Sessions? Lokale Testsignatur und AAB14-Onboardingstart sind kein Play-Upgrade.",
+        "Wann werden der am 10.10. gegen 22:31 MESZ eingereichte Produktionsrelease14 und die gespeicherten EN/DE-Texte von Google freigegeben und öffentlich aktiv? Bilder bleiben ausdrücklich unverändert.",
+        "Wie funktionieren natürliche Mitternacht, Zeitzonen/OEM-Resume und echte Sessionabschlüsse an zwei Tagen im Zielrelease?",
+        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Vergleichsnutzen und freiwillige Wiederkehr?",
+        "Ist ein kleiner Fotoexport für Gerätewechsel/Deinstallation sinnvoll? Exportversprechen entfernt; kein Export neu gewählt.",
+        "Welcher begrenzte Verbreitungsweg bringt passende Nutzer und echte Wiederkehr? Kein neuer Nutzerversuch/keine ASO-Wirkung bisher belegt.",
+        "Welcher Track/Artefakt und welche Ursache gehören zu API-/Zahlungskontohinweisen? Keine Kaufblockade allein aus Hinweisexistenz ableiten.",
+        "Wie künftig gecachten Lifetime-Zugang nach Erstattung/Widerruf/Kontowechsel abgleichen? Dies war kein Teil des kleinen Updates."
       ],
       "documents": [
         "analysen/mewtrack/MewTrack-Pilotanalyse.md",
@@ -1532,7 +1541,9 @@
         "analysen/mewtrack/play-console-kpis.md",
         "analysen/mewtrack/Bestand-und-Zuordnung.md",
         "analysen/mewtrack/TEST-UMGEBUNG.md",
-        "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+        "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+        "analysen/mewtrack/MewTrack-Update-2026-10-10.md",
+        "analysen/mewtrack/MewTrack-Store-2026-10-10.md"
       ],
       "pilotScope": {
         "checked": [
@@ -1556,7 +1567,242 @@
           "Keine Nutzerbefragung, gemessene Aufnahme-Abbruchursache, Retentionskohorte oder Zahlungsbereitschaft. Wirkung vorgeschlagener Maßnahmen auf Downloads ungemessen.",
           "API-Warnung keinem aktuellen betroffenen Track/Artefakt sicher zugeordnet; Zahlungskonto-Ursache, private Zahlungsdetails und Kaufwirkung ungeprüft."
         ]
-      }
+      },
+      "scopeBeforeUpdate14": {
+        "checked": [
+          "Pilot vom 09.10.: Native Kotlin-/Compose-Quelle C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app ausschließlich lesend, Appmodul app, com.chargegeist.mew, 0.9.4 / Code 13, min API 26 / target36. Aktive Routen und Daten-/Billingpfade geprüft.",
+          "Pilot vom 09.10.: Onboarding, Home, Capture mit Review, Gallery, Detail, Compare, Settings und Paywall verbunden. Aufnahme-Countdown, 21 Hinweise und Sessionstatus vorhanden; kein aktives Trainingsprogramm, XP/Badge/Streak-System oder Push-Reminder gefunden.",
+          "Pilot vom 09.10.: Feste Aufnahmeslots, Retakes, Vollständigkeitsprüfung, Room-Speichertransaktion, lokale Fotos, fehlende-Datei-Platzhalter und Vollbildvergleich überprüft.",
+          "Pilot vom 09.10.: Native UI-Themes und Layoutquellen gelesen; Textkontrast aus unveränderten sRGB-Farben berechnet. Zwei lokale Logoquellen visuell geöffnet.",
+          "Pilot vom 09.10.: Begrenzte Assetsuche in MEWING 2.0, MEWING und mewtrackflutter ohne Build-/Cacheordner: nur Logos/Icons, keine echten lokalen UI-Screenshot- oder Demoaufnahmen gefunden.",
+          "Pilot vom 09.10.: Live englischer Store durch Hauptagenten geprüft: MewTrack: Jawline Tracker, ChargeGeist, Health & Fitness, 10+, 0.9.4, Update 28.08.2026; erste vier von zehn Bildern, sichtbarer In-App-Kaufbetrag regional 3,59 €.",
+          "Pilot vom 09.10.: Play Console lesend: Produktionsrelease13 vom 28.08.2026, Ziel-SDK36, 100 % Rollout; Wachstum, Store-Performance, Bestandswerte, fehlende Qualitäts-/Umsatzfelder und Hinweisexistenz mit getrennten Zeiträumen.",
+          "Pilot vom 09.10.: ADB nur lesend: ein erreichbares Gerät mit installierter com.chargegeist.mew 0.9.4/code13, min26/target36, Play-Installer com.android.vending. Keine Gerätekennung gespeichert.",
+          "Pilot vom 09.10.: Vorhandenes Release-AAB und zusammengeführtes Manifest gelesen; INTERNET/ACCESS_NETWORK_STATE/Billing zusätzlich zum eigenen Manifest bestätigt. Kein eigener Fotoupload-/Analytics-Pfad im gescannten Appcode gefunden.",
+          "Pilot vom 09.10.: Zwei begrenzte isolierte Offline-Testversuche: zunächst Gradle-Daemon-Verbindung in Sandbox gescheitert; ein gezielter genehmigter Retry außerhalb stellte die Verbindung und gecachtes AGP 8.10.1 erfolgreich her, brach nach 41 Sekunden bei AndroidLocationsBuildService / AndroidDirectoryCreator während Plugin-Konfiguration vor Testaufgaben ab. Alle 80 kopierten Original-Eingangsdateien laut SHA-256-Abgleich unverändert.",
+          "10.10.: alle 80 Original-Eingaben vor/nach isoliertem Debugbuild bytegleich; assembleDebug und testDebugUnitTest erfolgreich. 45 JVM-Tests in fünf Suiten ohne Fehler/Fehlschläge/Skip.",
+          "Native Debugbedienung auf frischem Android-34-Emulator mit geometrischen künstlichen Sessions: Restore-Fehler, Compare-Ausgangssession, erfolgreiche Einzellöschung, Home/Settings und Kamera-Einstieg.",
+          "Kontrollierte Guidance-Datumsprobe durch Hauptagenten: Resume PID4415 weiterhin Done for today, Neustart PID5021 erneuert Guidance. Keine private Gerätezeitänderung.",
+          "HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 mit Version12 gegenüber vier bestehenden Änderungen/Version13, lokale AAB-Metadaten AGP 8.10.1/Billing 9.1.0 und drei aktive AAB-DEX-Fehlerpfade geprüft.",
+          "Lesbarkeit nativ betrachtet, Farbkontraste erneut berechnet; Aufnahme-CTA erreichbar. Store-Werkzeugabbildungen erneut mit Debugansichten/Quellen verglichen."
+        ],
+        "notChecked": [
+          "Kein installierter/bedienter Play-Release in dieser Nachprüfung und keine vollständige historische Source-/Play-Binarygleichheit. Aus AAB abgeleitetes Release-Test-APK bereitgestellt, nicht bedient.",
+          "Kamera erkennt im Test kein Gesicht; Kameradreiersatz, Retake, Review und Kameraspeichern nicht erreicht. Künstliche Gallerysessions sind kein Capture-Erfolg.",
+          "Kein echter Play-Kauf/erfolgreicher Restore, kein beobachteter Endlosspinner im anderen Reconnectpfad und keine tatsächliche Freischaltungssynchronisierung.",
+          "Kein nativ ausgelöster Speicher-/Löschfehler, kein Deinstallations-/Gerätewechseltest. Normales Löschen mit künstlichen Daten erfolgreich.",
+          "Kein natürlicher Mitternachtslauf, Session-Abschluss oder nativer Release-Tageswechsel. Guidance-Resumeprobe ist ein konkreter Debugfall.",
+          "Keine instrumentierten Androidtests, großer Schrift-/kleiner Displaydurchlauf, vollständiger Netz-/Datenschutzcheck oder neue Nutzer-/KPI-Erhebung.",
+          "API-/Zahlungskontohinweise, vollständige Storelokalisierung und alle übrigen Storebilder weiterhin separat offen."
+        ]
+      },
+      "findingsBeforeUpdate14": [
+        {
+          "id": "mewtrack-reach",
+          "title": "Sehr wenige Store-Besucher begrenzen das aktuelle Wachstum",
+          "evidenceType": "inference",
+          "priority": "high",
+          "detail": "18 Besucher in vier Wochen sind die stärkste aktuelle Grundlage für ein Reichweitenproblem. Die vorhandenen Klickwerte tragen kein pauschales Urteil über einen schlechten Store.",
+          "evidence": "08.09.–05.10.2026: 18 Besucher, 11 eindeutige Installationsklicks, angezeigte 61 %. Längerer Filter tatsächlich 10.07.–05.10.2026: 104 / 49 / 47 %.",
+          "limitation": "Kleine Population, Klicks sind keine Installationen oder Erstöffnungen; keine getestete Ursache oder dauerhaft bewiesene Conversion.",
+          "recommendation": "Wenige passende freiwillige Tester und einen begrenzten Verbreitungsweg wählen; Besuche, Klicks, erste vollständige Session und Wiederkehr getrennt dokumentieren.",
+          "sourceDocs": [
+            "analysen/mewtrack/play-console-kpis.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-store-tools",
+          "title": "Storebilder und tatsächlichen Vergleich/Fotofilter abgleichen",
+          "evidenceType": "mismatch",
+          "priority": "high",
+          "detail": "Storebilder zeigen zusätzliche Vergleichsschalter und Galerie-Winkelfilter, die im geprüften lokalen Quellstand nicht angeschlossen sind.",
+          "evidence": "Live-Stichprobe Bild 2 Overlay / Grid / Guide Lines, Bild 3 All / Front / Left / Right. Compare bietet Side-by-side, Pose-Tabs, Datumswahl und Vollbild; Gallery Sessionkarten. Kamera-PoseGuideOverlay erfüllt kein Vergleichs-Overlay.",
+          "limitation": "Aktuelle öffentliche Bilder erneut gesehen, Werkzeuge in tatsächlich bedienten Debugansichten/aktiver Quelle an dargestellten Stellen nicht vorhanden. Kein bedienter Play-Binary und keine bewiesene absichtliche Falschwerbung.",
+          "recommendation": "Im installierten Release 13 prüfen und Storebilder mit tatsächlichen nativen Funktionen abstimmen. Neue Werkzeuge nur bei bewusst priorisiertem Bedarf bauen.",
+          "sourceDocs": [
+            "analysen/mewtrack/store-review.md",
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-compare-selection",
+          "title": "Vorausgewählte Session wird im Vergleich nicht verwendet",
+          "evidenceType": "android_runtime",
+          "priority": "medium",
+          "detail": "Compare aus einer bestimmten Session kann einen unerwarteten Standardvergleich zeigen.",
+          "evidence": "Nativ Debug 13 mit künstlichen Sessions: Einstieg aus 5. Oktober zeigt 1./9. Oktober. preselectedEntryId wird nur angenommen, nicht angewendet; ViewModel wählt älteste/neuste. Mechanismus unverändert in HEAD 12 und direkt im lokalen AAB 13-DEX bestätigt.",
+          "limitation": "Debug-Emulator mit eingespeisten geometrischen Sessions; kein Play-Binary. Side-by-side/Pose-Tabs korrekt sichtbar, kein genereller Compare-Defekt.",
+          "recommendation": "Mit mindestens drei Test-Sessions über die mittlere Session einsteigen, beabsichtigte Vorauswahl implementieren und gegenprüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-billing-failure",
+          "title": "Restore meldet technischen Fehler als fehlenden Kauf",
+          "evidenceType": "android_runtime",
+          "priority": "high",
+          "detail": "Query-Verbindungsfehler und erfolgreich abgefragter fehlender Kauf werden nicht getrennt. Der andere Reconnectpfad kann laut aktivem Code einen Abschluss verlieren.",
+          "evidence": "Debug-Emulator ohne verfügbaren Billingdienst: nach wenigen Sekunden No purchase found bei protokolliertem Query-/Verbindungsfehler. restorePurchases liefert im Fehlerfall lokalen is_pro-Boolean, UI übersetzt false. In HEAD 12 und aktivem lokalen AAB 13-DEX ebenfalls bestätigt.",
+          "limitation": "Kein echter Kauf/erfolgreicher Play-Restore. Endlosspinner im nativen Lauf nicht beobachtet; ensureConnected-Abschlussrisiko bleibt Quellenbefund.",
+          "recommendation": "Fehler, fehlenden Kauf und vorhandene Freischaltung getrennt melden; jeden Ladezustand mit Erfolg/Fehler beenden und erneutes Laden ermöglichen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-entitlement-sync",
+          "title": "Freischaltung ist auf getrennte lokale Zustände verteilt",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Activity, Home, Paywall und Settings halten eigene EntitlementRepository-Instanzen und StateFlows; Restore/Resume kann vorhandene Oberflächen unterschiedlich aktuell halten.",
+          "evidence": "grantPro aktualisiert den eigenen Flow; kein gemeinsamer bereitgestellter Zustand oder Preferences-Listener gefunden. Mehrere BillingClients können ebenfalls Callbacks erhalten.",
+          "limitation": "Synchronisationsrisiko, keine Behauptung, dass jeder Kauf Home nie aktualisiert.",
+          "recommendation": "Eine kontrollierte Billing-Verbindung und einen gemeinsamen Entitlement-State verwenden, falls das Risiko im Test bestätigt beziehungsweise gezielt abgesichert wird. Home/Settings/Restore/Neustart prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md"
+          ]
+        },
+        {
+          "id": "mewtrack-day-change",
+          "title": "Guidance bleibt nach kontrolliertem Datum/Resume veraltet",
+          "evidenceType": "android_runtime",
+          "priority": "medium",
+          "detail": "Bei über Mitternacht bestehendem ViewModel können Tagesstatus, Tipp und erledigter Hinweis zum Vortag gehören.",
+          "evidence": "Hauptagent: Guidance bestätigt am 10.10., nur Emulator auf 11.10. gesetzt. Resume im PID4415 zeigt weiterhin Done for today; Force-stop/Neustart PID5021 zeigt neuen Guide Avoid force. HomeViewModel erzeugt todayKey/Tipp nur einmal.",
+          "limitation": "Konkreter Debug-Guidancefall, kein natürlicher Mitternachtslauf, echter Session-Abschluss, nativer Releasefall oder Beleg einer generell blockierten Aufnahme.",
+          "recommendation": "Datum bei Wiederaufnahme/Tageswechsel neu bestimmen und abhängige Zustände gemeinsam aktualisieren. Mit Testzeit arbeiten, private Systemuhr unverändert lassen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-free-value",
+          "title": "Drei Gratis-Sessions müssen den längerfristigen Nutzen erst beweisen",
+          "evidenceType": "inference",
+          "priority": "medium",
+          "detail": "Das Kontingent lässt den Ablauf kennenlernen, könnte aber für einen über Wochen/Monate empfohlenen Dokumentationsnutzen zu kurz sein.",
+          "evidence": "Drei aktuell gespeicherte vollständige Gratis-Sessions, höchstens eine täglich, danach Lifetime für neue Sessions. Guidance empfiehlt längere Vergleichshorizonte; Löschen senkt den Zähler bewusst.",
+          "limitation": "Keine gemessene Abbruchursache oder Zahlungsbereitschaft. Das Löschen zum Weiterbenutzen ist dokumentierte Produktentscheidung, kein Sicherheitsbefund.",
+          "recommendation": "Mit wenigen passenden Menschen testen, wann ein hilfreicher Vergleich entsteht und wie die Grenze verstanden wird. Erst danach Kontingent/Frequenz ändern; kein Abo oder Trainingsausbau auf Verdacht.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-photo-control",
+          "title": "Exportversprechen und langfristige Fotohoheit sind ungeklärt",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Onboarding nennt Export, aber der aktive Ablauf bietet keine Exportfunktion. Persönliche Langzeitfotos benötigen verständliche Speicher-/Gerätewechselinformationen.",
+          "evidence": "Fotos appprivat unter filesDir/captures, Backup deaktiviert; keine Export-/Share-Implementierung in gescannten aktiven Routen. Kauf-Restore stellt Kaufstatus statt Fotos wieder her.",
+          "limitation": "Kein tatsächlicher Datenverlust reproduziert; kein vollständiger Backup-/Gerätewechseltest.",
+          "recommendation": "Nicht vorhandenen Export nicht versprechen. Speicher-/Löschfolgen klar nennen; bei bestätigtem Bedarf kleinen ausdrücklich ausgelösten lokalen Export vorsehen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-delete-errors",
+          "title": "Löschfehler werden der Oberfläche nicht zutreffend gemeldet",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Datenbankzeilen können entfernt werden, obwohl eine Datei-Löschung fehlgeschlagen ist; Settings liefert keinen klaren Abschluss-/Fehlerstatus.",
+          "evidence": "deleteFile liefert Ergebnis; deleteEntry/deleteAll ignorieren es. Orphan-Bereinigung ist vorhanden, prüft beziehungsweise zählt ihre Löschresultate ebenfalls nicht zuverlässig.",
+          "limitation": "Normales natives Löschen einer künstlichen Session entfernt Zeile und drei Testbilder erfolgreich. Fehlgeschlagene Dateilöschung wurde nicht erzeugt; ignorierte Rückgaben bleiben Code-Inferenz für diesen Fehlerpfad.",
+          "recommendation": "Löschresultate sammeln und wahrheitsgemäßen Erfolg/Fehler anzeigen. Mit erfundenen Testdaten einzelne und gesamte Löschung prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-readability",
+          "title": "Kleine informative Texte haben wenig Kontrast",
+          "evidenceType": "assessment",
+          "priority": "medium",
+          "detail": "Dunkler grauer Hilfstext betrifft unter anderem Schritte, Daten, Speicherhinweise und leere Zustände.",
+          "evidence": "Home/Settings/Compare nativ: informative graue Hilfstexte schwer lesbar, dunkle Statusicons; Settings-Leerraum auffällig. Farbgegenprobe bestätigt TextTertiary ca. 3,21:1 auf Background/2,83:1 auf SurfaceRaised, 12/11sp.",
+          "limitation": "Begrenzte native Standardviewport-/Farbprüfung, keine vollständige Barrierefreiheitsprüfung, kein Großschrift-/Tageslichttest; Ursache Settings-Leerraum nicht isoliert.",
+          "recommendation": "Informative kleine Texte heller setzen und auf echtem Android bei größerer Schrift, wenig Helligkeit und Tageslicht prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-first-capture",
+          "title": "Erster Check-in und Foto-Review können direkter werden",
+          "evidenceType": "code",
+          "priority": "medium",
+          "detail": "Home ordnet Guidance vor dem Aufnahmebutton an. Review zeigt kleine zugeschnittene Vorschauen ohne angeschlossenen Vollbildbetrachter.",
+          "evidence": "Home-Reihenfolge Today/Last Session/Guidance/CTA; scrollbare Seite. Review feste 110×160dp Crop-Thumbnails, Detail/Compare bereits Vollbild mit Zoom. Review ist nicht vertikal scrollbar.",
+          "limitation": "Aufnahme-CTA im nativen Standardviewport sichtbar/bedienbar. Kamerareview mangels erkanntem Gesicht nicht erreicht; Crop-/Reviewlayout bleibt Quellenbefund. Kein beobachteter abgeschnittener Button oder Large-font-Fehler.",
+          "recommendation": "Aufnahmeaktion direkt bei Today insbesondere im leeren Zustand prüfen. Vorhandenen Vollbildbetrachter für die Kontrolle vor dem Speichern nutzen; kleine Geräte/große Schrift testen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Visual-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md",
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        },
+        {
+          "id": "mewtrack-privacy-price",
+          "title": "Absolute Offline- und Fallback-Preisaussagen präzisieren",
+          "evidenceType": "code",
+          "priority": "low",
+          "detail": "Lokale Fotoablage ist ein plausibler Kern; vollständig offline und ein fest bestätigter Preis sind zu absolut, wenn Play-/Font-Dienste benötigt werden.",
+          "evidence": "Keine eigenen Upload-/Analytics-Pfade im gescannten Appcode; Merged Release-Manifest enthält INTERNET/ACCESS_NETWORK_STATE/Billing. Google-Font-Provider und Play Billing vorhanden. Paywall-Fallback 3,99 €, Store regional 3,59 €, Liveproduktpreis kann Fallback ersetzen.",
+          "limitation": "Internetberechtigung beweist keinen Fotoupload. Kein vollständiger Netzwerkmitschnitt, keine bewiesene falsche Kaufanzeige oder Datenschutzdeklaration.",
+          "recommendation": "Fotoablage von Kauf-/Fontbezug unterscheiden. Ohne verfügbare Produktdaten keinen scheinbar bestätigten Preis anzeigen; tatsächliches Angebot prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/store-review.md"
+          ]
+        },
+        {
+          "id": "mewtrack-console-notices",
+          "title": "API- und Zahlungskontohinweise haben noch ungeklärten Bezug",
+          "evidenceType": "mismatch",
+          "priority": "medium",
+          "detail": "Eine kritische Console-Warnung ist nicht automatisch ein Verstoß des aktuellen Release. Zahlungskonto-Ursache/Kaufwirkung bleibt ungeprüft.",
+          "evidence": "Aktiver Produktionsrelease 13 und installierte Play-App bereits target36; älteres deaktiviertes Bundle 12 target35. API-Hinweis fordert 36 bis 01.11.2026. Kontoweiter Zahlungskonto-Hinweis datiert 02.10.2026.",
+          "limitation": "Kein bestätigter betroffener Track/aktueller Produktionsblocker; keine Prüfung privater Zahlungsdaten, Ursachen oder Auswirkung.",
+          "recommendation": "Betroffenen Track/Artefakt oder überholten Hinweis klären. Zahlungskontohinweis vor aktiver Kaufwerbung gesondert prüfen. Kein blindes SDK-Upgrade.",
+          "sourceDocs": [
+            "analysen/mewtrack/play-console-kpis.md",
+            "analysen/mewtrack/MewTrack-code-review.md",
+            "analysen/mewtrack/MewTrack-Pilotanalyse.md"
+          ]
+        },
+        {
+          "id": "mewtrack-review-save-error",
+          "title": "Speicherfehler erreicht die Reviewansicht nicht",
+          "evidenceType": "code",
+          "priority": "high",
+          "detail": "Save setzt errorMessage, die Reviewansicht erhält diesen Zustand jedoch nicht und kehrt vor dem Snackbarzweig zurück.",
+          "evidence": "CaptureViewModel.saveEntry und CaptureScreen-Reviewbranch gezielt gelesen. Bereits in HEAD 12 enthalten und durch AAB-eigene R8-Zuordnung/aktive DEX-Pfade im lokalen AAB 13 bestätigt.",
+          "limitation": "Kein nativ ausgelöster Speicherfehler oder belegter Datenverlust. Kamera-/Reviewseite im Debuglauf mangels erkanntem Gesicht nicht erreicht.",
+          "recommendation": "Speicherfehler und Wiederholen direkt in Review anzeigen; Fehlerfall mit künstlichen Daten gezielt prüfen.",
+          "sourceDocs": [
+            "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+          ]
+        }
+      ]
     },
     {
       "id": "landinggame",
@@ -3532,12 +3778,12 @@
       "area": "android",
       "priorityRank": 1,
       "status": "in_progress",
-      "title": "Mirror / Heartvia: lokale Korrekturen geprüft; Folgeschritte offen",
+      "title": "Mirror / Heartvia: Korrekturen und öffentlicher Release geprüft; Nutzerversuch offen",
       "rationale": "Historischer Mirror-Store: 566 Besucher und 28 Installationsklicks (08.09.–05.10.2026). Bestätigte Ausgangsfehler wurden im begrenzten lokalen Heartvia 17-Schritt korrigiert. Echte Nutzerwirkung und freiwillige Wiederkehr bleiben ungemessen.",
-      "firstStep": "Nach bestätigter Einreichung Google-Freigabe und öffentlichen Release-/Storeabgleich prüfen; echten Nutzerversuch gesondert planen.",
-      "detail": "Heartvia 1.1.1+17 lokal übernommen und passend geprüft: Antworttreue sowie Daten/Tageswechsel completed, 2/4 Mirror und 2/49 insgesamt, weiterhin 2/3 Phasen. AAB 17 und englischer Name/Texte/Icon in Play gespeichert, Einreichung bestätigt. Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ); Google-Freigabe/öffentliche Aktivierung und echte Nutzerrückmeldungen offen. Screenshots/Featuregrafik unverändert.",
+      "firstStep": "Verbleibende Play-/Gerätefragen separat klären; echten Nutzerversuch erst bewusst wählen und planen, niemand automatisch anschreiben.",
+      "detail": "Heartvia 1.1.1+17 lokal übernommen/geprüft, tatsächlicher Release und öffentlicher Name/Texte/Icon10.10., 22:34 unabhängig bestätigt. Drei von vier Mirror-Maßnahmen completed, insgesamt 4/49 einschließlich MewTrack, weiterhin 2/3 Phasen. Produktion Code 17/178 Länder bei Google Play verfügbar, veröffentlicht 10.10., 19:18. Screenshots/Featuregrafik unverändert. Echte Nutzerrückmeldungen proposed/nicht ausgewählt und Wirkungsmessung offen.",
       "completionCriterion": "Ein eindeutig zugeordneter Android-Teststand beantwortet die dokumentierten Fälle konsistent; eigene Aussagen werden korrekt wiedergegeben und unbekannte Motive bleiben offen. Rückmeldungen zum Nutzen und freiwilliger Wiederkehr liegen getrennt von Store-Besuchen und Klicks vor. Erst dann nächsten Ausbau beurteilen; keine starre Downloadquote als Erfolgskriterium.",
-      "limitation": "Originaländerungen uncommitted auf codex/heartvia-relaunch, HEAD weiterhin Ausgangsbasis. Alte Play-Version, AAB 16, Debug 17 und akzeptiertes neues AAB 17 getrennt zugeordnet. Kein echter Play-Upgrade-Nachweis, keine öffentliche Aktivierung oder Nutzerwirkung bestätigt. Kein reales Billing oder Testeransprache. Kontrollierte Zeitprobe kein Langzeittest; Produktions-Analytics/OEM-Backups und alle Inhalte nicht vollständig geprüft.",
+      "limitation": "Originaländerungen uncommitted auf codex/heartvia-relaunch, HEAD weiterhin Ausgangsbasis. Frühere Play-Version/AAB16/Debug17 und nun veröffentlichter17er-Stand getrennt zugeordnet. Öffentliche Metadaten-/Consoleprüfung belegt Veröffentlichung, kein tatsächliches Play-Upgrade, Nutzerwirkung oder reales Billing. Keine Testeransprache. Kontrollierte Zeitprobe kein Langzeittest; Produktions-Analytics/OEM-Backups und alle Inhalte nicht vollständig geprüft.",
       "source": "KOMPAKTUEBERSICHT.md",
       "sourceDocs": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
@@ -3567,6 +3813,26 @@
         "analysen/core-arena/Grundanalyse.md",
         "analysen/core-arena/Quellenpruefung.md",
         "analysen/spiele/Grundvergleich.md"
+      ]
+    },
+    {
+      "id": "mewtrack-bounded-update-14",
+      "projectIds": [
+        "mewtrack"
+      ],
+      "area": "android",
+      "status": "in_progress",
+      "title": "MewTrack14: kleines Update geprüft und Play-/Storeänderungen eingereicht",
+      "rationale": "Nutzer gab besprochene kleine Fixes, Version+1 und Play-/Storeübernahme frei; Grunddesign bleibt. Keine Downloadwirkung aus einem Update allein ableiten.",
+      "firstStep": "Google-Freigabe/öffentliche Aktivierung nach bestätigter Einreichung getrennt prüfen; reale Kamera-/Kauf-/Play-Upgradefälle bleiben offen.",
+      "detail": "32 Dateien übernommen, Appänderungen uncommitted; 81 JVM-/6 Androidtests und begrenzte native Gegenproben bestanden. Mew 1/4, weiter 2/3 Phasen; gesamt 4/49 Vorschläge completed. Code14 akzeptiert, Produktionsrelease 100 %/178 und EN/DE-Felder gespeichert; fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet. Alle bisherigen Storebilder erhalten. Google/public pending; native Gesamtprüfung offen. Lesende Nachkontrolle 22:35: Vorabprüfungen fertig, Google-Überprüfung läuft; Freigabe/public offen.",
+      "completionCriterion": "Lokale kleine Fixes passend geprüft; gewählter Release-/Storeauftritt muss gespeichert/eingereicht und öffentlicher Stand separat belegt sein. Kamera/Kauf/Play-Upgrade bleiben eigene Nachproben, Nutzerversuch nicht automatisch ausgewählt.",
+      "limitation": "Künstliche Komponententests/kontrollierter Zeitfall; kein Kamera-E2E/realer Kauf/Play-Upgrade. Dateisystem/DB nicht atomar; gecachter Lifetimezugang bleibt ohne neuen Refundabgleich. Keine Testeransprache oder bewiesene ASO-Wirkung.",
+      "source": "analysen/mewtrack/MewTrack-Update-2026-10-10.md",
+      "sourceDocs": [
+        "analysen/mewtrack/MewTrack-Update-2026-10-10.md",
+        "analysen/mewtrack/MewTrack-Store-2026-10-10.md",
+        "analysen/mewtrack/Nachpruefung-2026-10-10.md"
       ]
     }
   ],
@@ -3639,16 +3905,16 @@
       "id": "mirror-native-release-verification",
       "area": "android",
       "projectId": "mirror",
-      "title": "Heartvia: tatsächliches Release und verbleibende Gerätefragen zuordnen",
-      "detail": "Lokale Übernahme, begrenzte native Debug-/Release-Nachproben und akzeptierter Play-Upload AAB 1.1.1/17 abgeschlossen. Google-Freigabe und öffentliche Aktivierung ausstehend; anschließend tatsächlich sichtbares Release zuordnen. Echtes Play-Upgrade, Cloud-/OEM-Transfers und Produktions-Analytics bleiben Grenzen.",
+      "title": "Heartvia: verbleibende Play-/Gerätefragen gezielt prüfen",
+      "detail": "Lokale Umsetzung und öffentliche Veröffentlichung1.1.1/17 unabhängig bestätigt. Echter Play-Install/Upgrade, Cloud-/OEM-Transfers und Produktions-Analytics bleiben separate Grenzen; öffentlichen Metadatenabgleich nicht als Geräteprüfung ausgeben.",
       "kind": "verification"
     },
     {
       "id": "mirror-bounded-update",
       "area": "android",
       "projectId": "mirror",
-      "title": "Heartvia: Freigabe und öffentliche Aktivierung prüfen; Nutzerversuch planen",
-      "detail": "Zwei von vier Mirror-Maßnahmen abgeschlossen. AAB 17 und englischer Name/Texte/Icon gespeichert, fünf Änderungen zur Überprüfung bestätigt. Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ); Google-Freigabe und öffentlicher Release-/Storeabgleich noch offen. Bestehende Screenshots/Featuregrafik unverändert. Echter Nutzerversuch vorgeschlagen, keine Einladungen ausgeführt.",
+      "title": "Heartvia: echter Nutzerversuch bleibt vorgeschlagen",
+      "detail": "Drei von vier bestehenden Mirror-Maßnahmen abgeschlossen: lokale Korrekturen und öffentlicher Release-/Storeabgleich 10.10., 22:34 belegt. Nutzerversuch proposed und nicht automatisch ausgewählt; niemand eingeladen, keine neue Wirkungsmessung. Bestehende Screenshots/Featuregrafik erhalten.",
       "kind": "strategy"
     },
     {
@@ -3656,7 +3922,7 @@
       "area": "android",
       "projectId": "mewtrack",
       "title": "MewTrack: verbleibende native Kernprüfungen",
-      "detail": "Debug 13: Compare-Vorauswahl, Restore-Fehlerklassifikation, kontrollierter Guidance-Resume und normales Löschen geprüft ; 45 JVM-Tests bestanden. Capture/Retake/Review, tatsächlicher Play-Testkauf/Sync, Speicher-/Löschfehler und Großschrift offen. Kein nativer Play-/Release-Test daraus ableiten.",
+      "detail": "Kleines Update14 lokal übernommen/geprüft: 81 JVM-/6 Androidtests, Debug-Compare/Restore/Guidance und begrenzte AAB14-Ansichten/Kameraeinstieg. Virtuelles Bild blieb am No-face-Gate; vollständiger Kamera-/Retake-/Saveweg, realer Kauf/Sync/Preis, Nutzergerät und Play-Upgrade bleiben offen.",
       "kind": "verification"
     },
     {
@@ -3671,8 +3937,8 @@
       "id": "mewtrack-console-notices",
       "area": "android",
       "projectId": "mewtrack",
-      "title": "MewTrack: Console-Hinweise zuordnen",
-      "detail": "API-Warnung bis 01.11.2026 gezielt älterem Track oder Artefakt zuordnen: aktiver Produktionsrelease 13 hat bereits SDK36. Kontoweiten Zahlungskonto-Hinweis separat prüfen; Ursache und Wirkung noch nicht geprüft.",
+      "title": "MewTrack: Google-Prüfung und öffentlichen Release14 abwarten",
+      "detail": "Code14 akzeptiert, Produktionsrelease 100 %/178 und EN/DE-Felder gespeichert, fünf Änderungen am 10.10. gegen 22:31 MESZ zur Überprüfung gesendet. Google-Freigabe/öffentliche Aktivierung offen; Managed Publishing aus. Alle bisherigen Storebilder unverändert, Marketingentwürfe gestoppt. API-/Zahlungskontohinweise getrennt zuordnen. Nachkontrolle 22:35 bestätigt abgeschlossene Vorabprüfungen und laufende Google-Überprüfung.",
       "kind": "verification"
     },
     {

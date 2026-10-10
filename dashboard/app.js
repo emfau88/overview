@@ -17,7 +17,7 @@
   const allProjects = new Map([...projects, ...related].map((item) => [item.id, item]));
   const areaLabels = { games: 'Browsergames', apps: 'Android-Apps', web: 'Onlineauftritt' };
   const areaAlias = (area) => ({ android: 'apps', online: 'web' })[area] || area;
-  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', pending: 'Noch offen', in_progress: 'In Arbeit', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft', deferred: 'Zurückgestellt' };
+  const statusLabels = { inventoried: 'Bestand erfasst', pilot_complete: 'Pilot abgeschlossen', reviewed: 'Analyse abgeschlossen', proposed: 'Vorschlag · offen', established: 'Festgehalten', completed: 'Abgeschlossen', implemented: 'Umgesetzt und geprüft', pending: 'Noch offen', in_progress: 'In Arbeit', blocked: 'Blockiert', awaiting_review: 'Wartet auf Freigabe', submitted: 'Eingereicht', documented: 'Dokumentiert', review_in_progress: 'Prüfung läuft', analysis_in_progress: 'Prüfung läuft', analyzing: 'Prüfung läuft', deferred: 'Zurückgestellt' };
   const evidenceLabels = { runtime: 'Im Webtest reproduziert', android_runtime: 'Im Android-Test beobachtet', code: 'Codebefund', assessment: 'Bewertung', mismatch: 'Abgleich / Widerspruch', inference: 'Einschätzung / Hypothese', store: 'Store-Beobachtung', data: 'Kennzahlenbefund', hypothesis: 'Hypothese' };
   const priorityLabels = { high: 'Hohe Priorität', medium: 'Mittlere Priorität', low: 'Niedrige Priorität' };
   const filterState = { query: '', area: '', status: '' };
@@ -52,7 +52,7 @@
   };
   const text = (value) => typeof value === 'string' ? value : value == null ? '' : JSON.stringify(value, null, 2);
   const list = (items) => array(items).length ? `<ul class="clean-list">${items.map((item) => `<li>${escape(text(item))}</li>`).join('')}</ul>` : '<p class="muted">Noch nicht dokumentiert.</p>';
-  const badge = (value, customLabel) => `<span class="badge ${['reviewed', 'pilot_complete', 'completed', 'established'].includes(value) ? 'green' : ['proposed', 'pending', 'in_progress', 'high', 'review_in_progress'].includes(value) ? 'amber' : 'blue'}">${escape(customLabel || statusLabels[value] || value || 'Offen')}</span>`;
+  const badge = (value, customLabel) => `<span class="badge ${['reviewed', 'pilot_complete', 'completed', 'implemented', 'established'].includes(value) ? 'green' : ['proposed', 'pending', 'in_progress', 'blocked', 'high', 'review_in_progress'].includes(value) ? 'amber' : 'blue'}">${escape(customLabel || statusLabels[value] || value || 'Offen')}</span>`;
   const dateLabel = (value) => {
     const parts = String(value || '').slice(0, 10).split('-');
     return parts.length === 3 && /^\d{4}$/.test(parts[0]) ? `${parts[2]}.${parts[1]}.${parts[0]}` : String(value || 'ohne Datumsangabe');
@@ -131,9 +131,9 @@
     const states = [
       { label: 'Bestand erfasst', count: projects.length + '/' + projects.length, detail: 'Hauptprodukte zugeordnet; verwandte Repos separat', done: true },
       { label: 'Analysen dokumentiert', count: completed.length + '/' + eligible.length, detail: 'Aktuell beauftragte Grundanalysen; ' + (projects.length - eligible.length) + ' Produkte nur im Bestand oder zurückgestellt', done: eligible.length > 0 && completed.length === eligible.length },
-      { label: 'Maßnahmen umgesetzt', count: doneActions + '/' + allActions.length, detail: 'Dokumentierte Maßnahmen; Fortschritt je Produkt', done: allActions.length > 0 && doneActions === allActions.length }
+      { label: 'Vorschläge umgesetzt', count: doneActions + '/' + allActions.length, detail: 'Alle dokumentierten Maßnahmen im Vorschlagsbestand', done: allActions.length > 0 && doneActions === allActions.length }
     ];
-    return section('Fortschritt auf einen Blick', '<div class="phase-progress"><ol class="phase-steps">' + states.map((step, index) => '<li class="phase-step ' + (step.done ? 'done' : 'waiting') + '"><span class="phase-dot" aria-hidden="true">' + (step.done ? '✓' : index + 1) + '</span><span><strong class="phase-label">' + step.label + ' · ' + step.count + '</strong><span class="phase-detail">' + escape(step.detail) + '</span></span></li>').join('') + '</ol><p class="phase-meta">Grün markiert erledigte Arbeit. Analyseabschluss gilt nur für den dokumentierten Prüfumfang. Phasen sind keine Aufwandsschätzung oder Erfolgsgarantie; Vorschläge sind kein verpflichtender Gesamtplan.</p></div>');
+    return section('Gesamtbestand und dokumentierte Vorschläge', '<div class="phase-progress"><ol class="phase-steps">' + states.map((step, index) => '<li class="phase-step ' + (step.done ? 'done' : 'waiting') + '"><span class="phase-dot" aria-hidden="true">' + (step.done ? '✓' : index + 1) + '</span><span><strong class="phase-label">' + step.label + ' · ' + step.count + '</strong><span class="phase-detail">' + escape(step.detail) + '</span></span></li>').join('') + '</ol><p class="phase-meta">Dieser Gesamtstand enthält auch ungewählte Vorschläge. Der Fortschritt der beschlossenen Aufgaben steht oben. Analyseabschluss gilt für den dokumentierten Prüfumfang; Arbeitsphasen sind keine Aufwandsschätzung oder Erfolgsgarantie.</p></div>');
   }
   let toastTimer;
   const toast = (message) => { $('toast').textContent = message; $('toast').classList.add('show'); clearTimeout(toastTimer); toastTimer = setTimeout(() => $('toast').classList.remove('show'), 3500); };
@@ -199,6 +199,45 @@
     return output.join('\n');
   }
 
+  function selectedActions() {
+    const plan = context.workPlan || {};
+    const registry = new Map(analyses.flatMap((analysis) => array(analysis.actions).map((action) => [action.id, { ...action, projectId: analysis.projectId, sourceDocs: array(action.sourceDocs).length ? action.sourceDocs : analysis.documents }])));
+    return [...new Set(array(plan.selectedActionIds))].map((id) => {
+      const action = registry.get(id);
+      if (!action) return { id, title: 'Ausgewählte Aufgabe noch nicht zugeordnet', status: 'pending', detail: 'Für die gewählte ID fehlt der zugehörige Maßnahmeneintrag.', completionCriterion: 'Zuordnung und tatsächlichen Stand dokumentieren.' };
+      return { ...action, ...(plan.taskBoundaries?.[id] || {}), id: action.id, projectId: action.projectId, title: action.title, status: action.status };
+    });
+  }
+
+  function currentWork() {
+    const plan = context.workPlan || {};
+    const selected = selectedActions().find((action) => action.id === plan.currentActionId);
+    const current = plan.currentTask || context.nextStep || {};
+    const scope = scopedProjects(current).length ? current : selected || current;
+    const criterion = current.completionCriterion || selected?.completionCriterion || selected?.validation || 'Das Abschlusskriterium des gewählten Schritts wird hier dokumentiert.';
+    const blocker = current.blocker || '';
+    return `<section class="current-work" aria-label="Aktueller Arbeitsschritt"><div class="eyebrow">Aktueller Schritt</div><div class="card-scope">${scopeMark(scope)}${badge(current.status || selected?.status || 'pending', current.statusLabel)}</div><h1>${escape(current.title || selected?.title || 'Nächsten kleinen Schritt festlegen')}</h1><p>${escape(current.detail || selected?.detail || 'Eine konkrete Aufgabe auswählen und ihren Abschluss festhalten.')}</p>${blocker ? `<p class="task-blocker"><strong>Offen / Blocker:</strong> ${escape(text(blocker))}</p>` : ''}<div class="completion-criterion"><strong>Abgeschlossen, wenn:</strong>${escape(criterion)}</div><a class="area-link" href="#pending/selected">Beschlossene Aufgaben und Belege →</a></section>`;
+  }
+
+  function selectedWork() {
+    const plan = context.workPlan || {};
+    const tasks = selectedActions();
+    if (!tasks.length) return '<section class="selected-work" id="pending-selected"><div class="section-head"><h2>Beschlossene Aufgaben</h2></div><p class="muted">Noch keine Aufgabenauswahl dokumentiert. Die vorhandenen Vorschläge bleiben zugänglich.</p></section>';
+    const completed = tasks.filter(actionComplete);
+    const open = tasks.filter((task) => !actionComplete(task));
+    const rank = (task) => task.id === plan.currentActionId ? 0 : task.blocker || task.status === 'blocked' ? 1 : task.status === 'in_progress' ? 2 : 3;
+    open.sort((a, b) => rank(a) - rank(b));
+    const card = (task) => `<article class="selected-task${actionComplete(task) ? ' done' : ''}" id="pending-${escape(task.id)}"><div class="card-scope">${scopeMark(task)}${badge(task.status)}</div><h3>${escape(task.title)}</h3>${task.blocker ? `<p class="task-blocker"><strong>Offen / Blocker:</strong> ${escape(text(task.blocker))}</p>` : ''}<details class="original"><summary>Umfang, Abschlusskriterium und Belege</summary>${field('Aufgabe', task.detail)}${field('Abgeschlossen, wenn', task.completionCriterion || task.validation || 'Noch zu dokumentieren.')}${sources(task.sourceDocs)}</details></article>`;
+    return `<section class="selected-work" id="pending-selected" aria-label="Beschlossene Aufgaben und ihr Fortschritt"><div class="section-head"><h2>Beschlossene Aufgaben</h2></div><div class="selected-work-summary"><strong>${completed.length} von ${tasks.length} erledigt</strong><p>Nur ausdrücklich ausgewählte Aufgaben werden hier gezählt.</p></div><progress class="selected-progress" value="${completed.length}" max="${tasks.length}" aria-label="${completed.length} von ${tasks.length} beschlossenen Aufgaben erledigt"></progress><div class="selected-task-list">${open.map(card).join('')}</div>${completed.length ? `<details class="completed-selected"><summary>Erledigte gewählte Aufgaben (${completed.length})</summary><div class="selected-task-list">${completed.map(card).join('')}</div></details>` : ''}</section>`;
+  }
+
+  function workDirection() {
+    const plan = context.workPlan || {};
+    const next = plan.nextStage;
+    if (!plan.detail && !next) return '';
+    return `<aside class="work-direction" aria-label="Gewählte Arbeitsrichtung"><strong>${escape(plan.title || 'Unser Plan')}</strong><p>${escape(plan.detail || '')}${next ? `<span class="next-stage">Danach: ${escape(next.title)}${next.requiresDecision ? ' · nächste Entscheidungsphase' : ''}</span>` : ''}</p></aside>`;
+  }
+
   function priorityRecommendations() {
     const priorities = array(results.decisions).filter((entry) => Number.isInteger(entry.priorityRank) && entry.priorityRank > 0).slice().sort((a, b) => a.priorityRank - b.priorityRank);
     if (!priorities.length) return '';
@@ -207,52 +246,41 @@
       const target = members.length === 1 ? members[0].id : areaAlias(entry.area);
       return `<li class="panel recommendation"><div class="recommendation-order">${escape(entry.priorityRank)}. Schritt ${badge(entry.status)}</div><div class="card-scope">${scopeMark(entry)}</div><h3>${escape(entry.title)}</h3><p><strong>Warum:</strong> ${escape(entry.rationale)}</p><p><strong>Zuerst:</strong> ${escape(entry.firstStep)}</p><details class="original"><summary>Umfang, Abschlusskriterium und Belege</summary>${field('Begrenztes Paket', entry.detail)}${field('Woran wir den Schritt beurteilen', entry.completionCriterion)}${field('Grenzen', entry.limitation)}${sources(entry.sourceDocs)}</details><a class="area-link" href="#pending/${escape(target)}">Zugehörige offene Schritte →</a></li>`;
     }).join('');
-    return `<section class="recommendations" aria-label="Empfohlene nächste Schritte"><div class="section-head"><h2>Meine Empfehlung: drei nächste Schritte</h2><span>Stand je Schritt</span></div><p class="muted">Diese Reihenfolge bündelt die vorhandenen Befunde. Ausgewählte Schritte werden einzeln bearbeitet; weitere Vorschläge bleiben erhalten. Auswahl, Umfang und Fortschritt stehen bei jedem Schritt.</p><ol class="grid three recommendation-grid">${cards}</ol></section>`;
+    return `<section class="recommendations" aria-label="Dokumentierte Empfehlungen"><div class="section-head"><h2>Dokumentierte Empfehlungen</h2><span>Stand je Schritt</span></div><p class="muted">Die bisherigen Priorisierungen bleiben nachvollziehbar. Die ausdrücklich beschlossenen Aufgaben stehen oben; weitere Vorschläge können später ausgewählt werden.</p><ol class="grid three recommendation-grid">${cards}</ol></section>`;
   }
 
   function overview() {
-    const isComplete = (analysis) => ['reviewed', 'completed'].includes(analysis?.status);
-    const completed = analyses.filter(isComplete);
+    const completed = analyses.filter(analysisComplete);
     const completedIds = new Set(completed.map((analysis) => analysis.projectId));
-    const running = projects.filter((project) => ['in_progress', 'review_in_progress', 'analysis_in_progress', 'analyzing'].includes(project.status));
-    const queued = array(results.pending).find((entry) => entry.kind === 'analysis' && entry.projectId && !completedIds.has(entry.projectId));
-    const nextProject = running[0] || (queued ? allProjects.get(queued.projectId) : null);
-    const actualChanges = analyses.flatMap((analysis) => array(analysis.actions)).filter((action) => ['completed', 'implemented'].includes(action.status));
     const compactDoc = paths.get(normalize('KOMPAKTUEBERSICHT.md'));
     const gamesComparison = paths.get(normalize('analysen/spiele/Grundvergleich.md'));
-    const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse fertig' : project.status === 'deferred' ? 'Zurückgestellt' : running.includes(project) ? 'Prüfung läuft' : 'Bestand erfasst';
-    const areaCards = Object.entries(areaLabels).map(([id, title]) => {
+    const shortStatus = (project) => completedIds.has(project.id) ? 'Analyse dokumentiert' : project.status === 'deferred' ? 'Zurückgestellt' : 'Nur Bestand';
+    const productRow = (project) => '<div class="focus-product">' + productLabel(project) + '<div class="focus-product-links"><span class="compact-status' + (completedIds.has(project.id) ? ' done' : '') + '">' + shortStatus(project) + '</span>' + (project.analysisId ? '<a href="#results/' + escape(project.analysisId) + '/review">Bericht lesen →</a>' : '<button class="link-button" data-project="' + escape(project.id) + '">Bestand ansehen →</button>') + '</div></div>';
+    const apps = projects.filter((project) => areaAlias(project.area) === 'apps');
+    const otherAreas = ['web', 'games'].map((id) => {
       const members = projects.filter((project) => areaAlias(project.area) === id);
-      const reviewed = members.filter((project) => completedIds.has(project.id)).length;
-      return '<article class="panel area-summary"><div class="section-head"><h2>' + escape(title) + '</h2><span>' + members.length + ' Produkte · ' + reviewed + ' geprüft</span></div><div class="compact-products">' + members.map((project) => '<div class="compact-product">' + productIcon(project) + '<button class="link-button" data-project="' + escape(project.id) + '">' + escape(project.name) + '</button><span class="compact-status' + (completedIds.has(project.id) ? ' done' : running.includes(project) ? ' running' : '') + '">' + shortStatus(project) + ' · ' + projectProgress(project).phases + '/3 Phasen</span></div>').join('') + '</div><a class="area-link" href="#projects/' + id + '">Pfade und Details →</a></article>';
+      return '<article class="area-summary"><div class="section-head"><h2>' + escape(areaLabels[id]) + '</h2><span>' + members.length + ' Produkte</span></div><div class="focus-products">' + members.map(productRow).join('') + '</div><a class="area-link" href="#projects/' + id + '">Pfade und weitere Details →</a></article>';
     }).join('');
     const completedRows = completed.map((analysis) => {
       const project = allProjects.get(analysis.projectId);
-      return '<li class="completed-analysis">' + (project ? productLabel(project, '#results/' + analysis.id + '/review') : '<a href="#results/' + escape(analysis.id) + '/review">' + escape(analysis.title) + '</a>') + '<span>Analyse abgeschlossen</span></li>';
+      return '<li class="completed-analysis">' + (project ? productLabel(project, '#results/' + analysis.id + '/review') : '<a href="#results/' + escape(analysis.id) + '/review">' + escape(analysis.title) + '</a>') + '<span>Analyse im dokumentierten Umfang abgeschlossen</span></li>';
     }).join('');
-    const nextTitle = nextProject ? nextProject.name + (running.includes(nextProject) ? ': Prüfung abschließen' : ': nächste Produktprüfung') : context.nextStep?.title || 'Nächsten kleinen Schritt festlegen';
-    const nextDescription = nextProject ? 'Produkt, Bedienung und verfügbare Daten zusammen prüfen. Ergebnisse und Grenzen anschließend hier ergänzen.' : context.nextStep?.detail || 'Die abgeschlossenen Analysen in wenige konkrete nächste Maßnahmen übersetzen. Native Gegenprüfungen und Prioritäten sind noch offen.';
-    const remainingGames = projects.filter((project) => areaAlias(project.area) === 'games' && project.status !== 'deferred' && !completedIds.has(project.id));
-    const deferredGames = projects.filter((project) => areaAlias(project.area) === 'games' && project.status === 'deferred');
-    const openRows = [
-      ...(remainingGames.length ? [`${remainingGames.length} Browsergame${remainingGames.length === 1 ? '' : 's'} noch grundlegend prüfen: ${remainingGames.map((project) => project.name).join(', ')}.`] : []),
-      ...(deferredGames.length ? [`Vorerst zurückgestellt: ${deferredGames.map((project) => project.name).join(', ')}; übrige Varianten bleiben ebenfalls ohne neuen Prüfauftrag.`] : []),
-      ...(completed.some((analysis) => areaAlias(allProjects.get(analysis.projectId)?.area) === 'games') ? ['Aus den abgeschlossenen Spielchecks wenige sinnvolle Verbesserungen wählen; Vertiefungen nach Bedarf.'] : []),
-      'Die zentrale Landingpage nach den vorliegenden Webchecks und dem Gesamtvergleich entscheiden.',
-      'Vorgeschlagene Appverbesserungen und native Gegenprüfungen priorisieren.',
-      'ZeroHero und Mirror später monetarisieren, sobald zunächst Nutzer gewonnen sind.'
-    ];
+    const deferred = projects.filter((project) => project.status === 'deferred');
     const history = array(context.chronology).slice().sort((a, b) => Number(b.order || 0) - Number(a.order || 0));
     const recentHistory = history.filter((entry) => entry.status !== 'pending').slice(0, 5);
     const historyRows = (entries) => entries.map((entry) => '<details class="history-entry"><summary><span>' + escape(entry.title) + '</span><small class="history-status">' + escape(statusLabels[entry.status] || entry.status || 'Offen') + '</small></summary>' + (scopedProjects(entry).length ? '<div class="card-scope">' + scopeMark(entry) + '</div>' : '') + '<p>' + escape(entry.detail) + '</p></details>').join('');
-    return intro('Projektkompass', 'Der aktuelle Arbeitsstand.', 'Was erledigt ist, welche Analysen vorliegen und was als Nächstes fehlt. Die ausführlichen Ergebnisse und ursprünglichen Ziele bleiben in den übrigen Ansichten erhalten.') +
-      '<div class="numbers"><div class="number"><strong>' + projects.length + '</strong><span>Produkte im Bestand</span></div><div class="number"><strong>' + completed.length + '</strong><span>Analysen abgeschlossen</span></div><div class="number"><strong>' + Object.keys(areaLabels).length + '</strong><span>Bereiche</span></div><div class="number"><strong>' + related.length + '</strong><span>verwandte Spiele-Repos</span></div></div>' +
+    return currentWork() +
+      selectedWork() +
+      workDirection() +
+      section('Android-Apps und ihre Berichte', '<div class="focus-products">' + apps.map(productRow).join('') + '</div>', 'Produktdetails und Quellen bleiben erreichbar') +
+      '<details class="work-archive"><summary>Weitere Produkte: Onlineauftritt und Browsergames</summary><div class="grid two">' + otherAreas + '</div>' + (deferred.length ? '<p class="phase-meta">Bewusst zurückgestellt: ' + escape(deferred.map((project) => project.name).join(', ')) + '. Daraus folgt kein neuer Prüfauftrag.</p>' : '') + '<a class="area-link" href="#projects">Gesamten Bestand und verwandte Repositories ansehen →</a></details>' +
+      '<details class="work-archive"><summary>Analysen, Arbeitsphasen und alle dokumentierten Vorschläge</summary>' +
+      '<div class="numbers"><div class="number"><strong>' + projects.length + '</strong><span>Produkte im Bestand</span></div><div class="number"><strong>' + completed.length + '</strong><span>Analysen dokumentiert</span></div><div class="number"><strong>' + Object.keys(areaLabels).length + '</strong><span>Bereiche</span></div><div class="number"><strong>' + related.length + '</strong><span>verwandte Spiele-Repos</span></div></div>' +
       overallProgress() +
-      '<div class="grid three work-summary"><section class="panel"><h2>Erledigt</h2><p class="small-text muted">Bestand mit Produkten, Repositories und lokalen Pfaden erfasst.</p><ul class="status-list">' + (completedRows || '<li>Noch keine Produktanalyse abgeschlossen.</li>') + '</ul><a class="area-link" href="#results">Ausführliche Ergebnisse →</a></section><section class="panel"><h2>Als Nächstes</h2>' + (nextProject ? productLabel(nextProject) : '') + '<strong class="next-title">' + escape(nextTitle) + '</strong><p class="muted">' + escape(nextDescription) + '</p><a class="area-link" href="#pending">Offene Schritte ansehen →</a></section><section class="panel"><h2>Noch offen</h2>' + list(openRows) + '</section></div>' +
-      '<p class="completion-note"><strong>Analyse abgeschlossen bedeutet nicht: Verbesserungen umgesetzt.</strong> ' + (actualChanges.length ? actualChanges.length + ' Maßnahmen sind als umgesetzt dokumentiert; weitere Vorschläge bleiben offen.' : 'Die dokumentierten Maßnahmen sind Vorschläge. Appupdates und Storeänderungen wurden damit noch nicht umgesetzt.') + '</p>' +
+      '<div class="section-head"><h2>Bereits abgeschlossene Analysen</h2></div><ul class="status-list">' + (completedRows || '<li>Noch keine Produktanalyse abgeschlossen.</li>') + '</ul><a class="area-link" href="#results">Ausführliche Befunde und Prüfgrenzen →</a>' +
       priorityRecommendations() +
-      section('Produkte nach Bereich', '<div class="grid three">' + areaCards + '</div>') +
-      section('Zuletzt dokumentiert', '<div class="panel compact-history">' + historyRows(recentHistory) + '<details class="history-more"><summary>Gesamten Verlauf anzeigen (' + history.length + ')</summary>' + historyRows(history) + '</details></div>') +
+      '<p class="phase-meta">Ungewählte Maßnahmen und Ideen bleiben Vorschläge. Eine fertige Analyse ist kein vollständig umgesetztes Produkt.</p></details>' +
+      '<details class="work-archive"><summary>Historie und frühere Entscheidungen</summary><div class="compact-history">' + historyRows(recentHistory) + '<details class="history-more"><summary>Gesamten Verlauf anzeigen (' + history.length + ')</summary>' + historyRows(history) + '</details></div></details>' +
       '<div class="overview-links"><a href="#context">Ausgangslage und Ziele</a><a href="#docs">Alle Dokumente</a>' + (compactDoc ? '<a href="' + escape(docRoute(compactDoc)) + '">Kompaktübersicht als Dokument</a>' : '') + (gamesComparison ? '<a href="' + escape(docRoute(gamesComparison)) + '">Spielvergleich als Dokument</a>' : '') + '</div>';
   }
 
@@ -362,7 +390,8 @@
 
   function actionsView(analysis) {
     const project = allProjects.get(analysis.projectId);
-    return `<div class="note amber">Diese Maßnahmen sind aus der Analyse abgeleitete Vorschläge. Eine abgeschlossene Analyse bedeutet keinen behobenen Fehler, kein veröffentlichtes Update und keinen bewiesenen wirtschaftlichen Erfolg.</div>` + array(analysis.actions).slice().sort((a, b) => a.order - b.order).map((action, index) => `<article class="action"><span class="step-number">${action.order || index + 1}</span><div><div class="card-scope">${productLabel(project)}</div><h2>${escape(action.title)}</h2>${badge(action.status)}<p>${escape(action.detail)}</p><h3>Wie der Schritt geprüft werden soll</h3><p>${escape(action.validation)}</p></div></article>`).join('');
+    const selected = new Set(array(context.workPlan?.selectedActionIds));
+    return `<div class="note">Beschlossene Aufgaben sind markiert. Weitere dokumentierte Vorschläge bleiben zur späteren Auswahl erhalten; Analyseabschluss und tatsächliche Umsetzung werden getrennt geführt.</div>` + array(analysis.actions).slice().sort((a, b) => a.order - b.order).map((action, index) => `<article class="action"><span class="step-number">${action.order || index + 1}</span><div><div class="card-scope">${productLabel(project)}${selected.has(action.id) ? '<span class="badge blue">Beschlossene Aufgabe</span>' : '<span class="badge">Weitere Idee / Vorschlag</span>'}</div><h2>${escape(action.title)}</h2>${badge(action.status)}<p>${escape(action.detail)}</p><h3>Wie der Schritt geprüft werden soll</h3><p>${escape(action.validation)}</p></div></article>`).join('');
   }
 
   function scopeView(analysis) {
@@ -379,7 +408,7 @@
     const analysis = analyses.find((item) => item.id === id) || analyses[0];
     if (!analysis) return intro('Ergebnisse', 'Noch keine Produktanalyse enthalten.', 'Die Bestandsaufnahme und die vorgesehenen Prüfungen stehen in den übrigen Bereichen.');
     const selectedTab = ['review', 'metrics', 'actions', 'scope'].includes(tab) ? tab : 'review';
-    const tabs = { review: 'Bewertung & Befunde', metrics: 'Kennzahlen', actions: 'Maßnahmen', scope: 'Prüfumfang & Quellen' };
+    const tabs = { review: 'Bewertung & Befunde', metrics: 'Kennzahlen', actions: 'Vorschläge & Aufgaben', scope: 'Prüfumfang & Quellen' };
     const project = allProjects.get(analysis.projectId);
     const choice = (item) => { const member = allProjects.get(item.projectId); return `<a class="analysis-choice${item.id === analysis.id ? ' active' : ''}" href="#results/${escape(item.id)}/${selectedTab}"${item.id === analysis.id ? ' aria-current="page"' : ''} aria-label="${escape(item.title)}">${member ? productLabel(member, '', true) : escape(item.title)}${analysisComplete(item) ? badge('reviewed', 'fertig') : badge(item.status)}${member ? `<span class="phase-count" title="Arbeitsphasen: Bestand, Analyse, Maßnahmen">${projectProgress(member).phases}/3</span>` : ''}</a>`; };
     const selection = analyses.length > 1 ? ['apps', 'web', 'games'].map((area) => {
@@ -423,12 +452,13 @@
       decisionGroups.get(key).entries.push(decision);
     });
     const decisions = [...decisionGroups.values()].map((group) => `<section class="decision-group"><h3>${escape(group.title)}</h3><div class="decision-grid">${group.entries.map((decision) => `<article class="panel decision" data-decision="${escape(decision.id)}"><div class="card-scope">${scopeMark(decision)}${badge(decision.status)}</div><h4>${escape(decision.title)}</h4><p>${escape(decision.detail)}</p>${decision.priorityRank ? field('Vorgeschlagene Reihenfolge', decision.priorityRank + '. Schritt') + field('Begründung', decision.rationale) + field('Erster Schritt', decision.firstStep) + field('Abschlusskriterium', decision.completionCriterion) + field('Grenzen', decision.limitation) : ''}<p class="small-text muted">Quelle: ${escape(decision.source || '')}</p>${sources(array(decision.sourceDocs).length ? decision.sourceDocs : [decision.source].filter((source) => paths.has(normalize(source))))}</article>`).join('')}</div></section>`).join('');
-    return intro('Offene Arbeit und Entscheidungen', 'Der nächste Schritt bleibt nachvollziehbar.', 'Oben steht die vorgeschlagene Reihenfolge. Alle offenen Schritte bleiben darunter nach Bereich und Produkt gebündelt; diese Gruppierung selbst ist keine Priorisierung oder Qualitätsbewertung.') +
-      priorityRecommendations() +
+    return currentWork() + selectedWork() + workDirection() +
+      '<details class="work-archive"><summary>Weitere Vorschläge, Prüfgrenzen und frühere Entscheidungen</summary>' +
+      '<p class="muted small-text">Der vollständige Vorschlagsbestand bleibt nach Produkt und Bereich zugänglich. Diese Einträge werden erst durch ausdrückliche Auswahl zu Aufgaben.</p>' + priorityRecommendations() +
       `<nav class="pending-nav" aria-label="Zu offenen Schritten springen">${jumpLinks}<a href="#pending/decisions">${svg('context')}<span>Entscheidungen & Vorschläge</span></a></nav>` +
       (projectJumps ? `<nav class="pending-nav product-jumps" aria-label="Zu einem Produkt springen">${projectJumps}</nav>` : '') +
       areaBlocks + (otherEntries.length ? section('Übergreifende offene Schritte', `<div class="pending-grid">${otherEntries.map(card).join('')}</div>`) : '') +
-      `<section id="pending-decisions">${section('Festgehaltene Entscheidungen und Vorschläge', decisions, 'Nach Geltungsbereich gruppiert · Status an jedem Eintrag')}</section>`;
+      `<section id="pending-decisions">${section('Festgehaltene Entscheidungen und Vorschläge', decisions, 'Nach Geltungsbereich gruppiert · Status an jedem Eintrag')}</section></details>`;
   }
 
   function docsView(path) {
@@ -451,7 +481,7 @@
     setTimeout(() => URL.revokeObjectURL(url), 1000);
   }
 
-  const navigation = [['overview', 'Übersicht'], ['context', 'Anliegen & Ziele'], ['projects', 'Produkte & Repos'], ['results', 'Ergebnisse'], ['pending', 'Offene Schritte'], ['docs', 'Dokumente']];
+  const navigation = [['overview', 'Übersicht'], ['context', 'Anliegen & Ziele'], ['projects', 'Produkte & Repos'], ['results', 'Ergebnisse'], ['pending', 'Aufgaben & Vorschläge'], ['docs', 'Dokumente']];
   function render() {
     const parts = location.hash.replace(/^#\/?/, '').split('/');
     const view = navigation.some(([id]) => id === parts[0]) ? parts[0] : 'overview';
@@ -471,7 +501,12 @@
     let id = '';
     try { id = decodeURIComponent(parts[1] || ''); } catch (_) { id = parts[1] || ''; }
     const target = parts[0] === 'pending' && id ? $('pending-' + id) : null;
-    if (target) target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    if (target) {
+      for (let parent = target.parentElement; parent; parent = parent.parentElement) {
+        if (parent.tagName === 'DETAILS') parent.open = true;
+      }
+      target.scrollIntoView({ block: 'start', behavior: 'instant' });
+    }
     else window.scrollTo({ top: 0, behavior: 'instant' });
   }
 

@@ -519,9 +519,9 @@
       "id": "mewtrack",
       "name": "MewTrack",
       "area": "apps",
-      "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich über Zeit. Drei lokale Implementierungen, native Android-Basis passt zu Play-Release 13 (0.9.4).",
+      "description": "Privater Foto-Tracker: geführte Front-/Profilaufnahmen, lokale Sessions und Vergleich. Native Kotlinbasis0.9.5/14 als kleines geprüftes Update übernommen. MewTrack: Mewing Photo Tracker und EN/DE-Texte in Play gespeichert; Release14 eingereicht, Google-Freigabe/öffentliche Aktivierung offen.",
       "status": "pilot_complete",
-      "statusLabel": "Pilot abgeschlossen · native Nachprüfung teilweise ausgeführt",
+      "statusLabel": "Analyse abgeschlossen · kleines Update geprüft · Google-Prüfung offen",
       "repository": null,
       "paths": [
         "C:\\Users\\madde\\flutter_projects\\mewtrackflutter",
@@ -550,29 +550,35 @@
           "path": "C:\\Users\\madde\\flutter_projects\\MEWING 2.0\\app",
           "framework": "Native Android / Kotlin",
           "packageId": "com.chargegeist.mew",
-          "version": "0.9.4 (Versioncode 13)",
-          "note": "Gewählte Kotlinbasis 0.9.4/13 mit vier bestehenden Änderungen gegenüber HEAD 0.9.3/12. Isolierter Debug 13 nativ geprüft; drei konkrete Fehlerpfade im vorhandenen lokalen AAB 13 bestätigt. Versionsgleichheit beweist keine vollständige Play-/Quellidentität."
+          "version": "0.9.5 (Versioncode 14; vorher 0.9.4/13)",
+          "note": "32 geprüfte Dateien auf codex/mewtrack-fixes-14 übernommen, uncommitted; HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert. 81 JVM-/6 Androidtests und begrenzte Debug-/AAB14-Proben. Play akzeptierte 14, Produktionsrelease 100 %/178 und EN/DE gespeichert/eingereicht; Google-Freigabe/öffentlicher Stand offen."
         }
       ],
       "notes": [
-        "Drei lokale Implementierungen eines Produkts. Primärbasis MEWING 2.0/app mit passendem Paket und Release 13 (0.9.4) in Console und installiertem Play-Paket bestätigt; keine bewiesene Binär-/Quellidentität.",
-        "Expo-Konfiguration nennt com.chargegeist.mew, vorhandener Android-Gradle-Stand dagegen com.mewtrack; Flutter verwendet com.mewtrack.mewtrack. Beide sind nicht die gewählte primäre Reviewbasis.",
-        "Pilot vom 09.10. ohne native Bedienung; Nachprüfung 10.10.: isolierter Debugbuild und 45 JVM-Tests erfolgreich. Native Compare-/Restore-/Guidancefälle und normales Löschen mit künstlichen Daten geprüft. Kamera-/Kauf-/Reviewgrenzen und tatsächliche Play-Identität bleiben offen.",
-        "HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 ist 0.9.3/12; vier vorhandene Änderungen ergeben Arbeitsbaum 0.9.4/13. Compare, Restore-Queryklassifikation und Review-Speicherfehler bereits in HEAD und direkt im lokalen AAB 13-DEX bestätigt. Keine neue Appkorrektur."
+        "Drei lokale Implementierungen eines Produkts. Gewählte native Basis MEWING 2.0/app; historische Package-/Release13-Zuordnung zu Console/Play-Paket erhalten, keine vollständige Source-/Play-Binarygleichheit.",
+        "Expo nennt com.chargegeist.mew, Android-Gradle dort com.mewtrack; Flutter com.mewtrack.mewtrack. Beide bleiben ungewählte Varianten.",
+        "Historischer Pilot 09.10. ohne native Bedienung; Nachprüfung vor Fix am 10.10. mit unverändertem Debug13 und 45 JVMtests bestätigt Ausgangsfehler. Datierte Berichte erhalten.",
+        "Freigegebenes Update 0.9.5/14: Compare/Restore/Guidance/Review-Savefehler, Löschresultate, Shared-Lifetime-State, Play-Preis, Lesbarkeit/CTA/Settings/Review und ehrliche Texte korrigiert. Icon/Grunddesign/Launcher sowie drei Gratis-Sessions/Lifetime-Umfang erhalten.",
+        "81 JVMtests (36 neu), sechs Android-Review-/Löschtests und begrenzte Debug14-Compare/Restore/Guidance-Proben bestanden. Separate AAB14-Test-APK-Ansichten mit Onboarding/Home/Settings und virtuellem Front-Kameraeinstieg; No-face-Gate verhindert vollständige Aufnahme. Kamera-E2E, realer Kauf/Nutzergerät/Play-Upgrade offen.",
+        "Vor Sync 80 Eingaben bytegleich zur Baseline; 32 ausgewählte Dateien übernommen, vorhandene Änderungen erhalten. codex/mewtrack-fixes-14, HEAD e0729e4c20663bd34c424c5fb92155b8395259c6 unverändert, Appänderungen uncommitted.",
+        "Originalrelease C:/Users/madde/flutter_projects/MEWING 2.0/app/release/mewtrack-0.9.5-14.aab, 20.613.143 Bytes, SHA256 a2bc62b84dcd0ba19b8f0b32b6d65c71c37ec0996cb508bf37530d32c285f6ae. Signatur/Bundle validiert, Uploadzertifikat wie 13. In Play akzeptiert, Produktionsrelease 100 %/178 gespeichert und am 10.10. gegen 22:31 MESZ eingereicht. Google/public pending.",
+        "Storetitel MewTrack: Mewing Photo Tracker sowie EN 30/79/1510 und DE 30/75/1702 gespeichert und eingereicht. Android-Launchername/Icon und sämtliche Consolebilder unverändert; vier Phone/fünf Tablet7/ein Tablet10, Featuregrafik erhalten. Marketingempfehlung nicht gewählt und gestoppt, kein Bild-Upload/Entfernen. Looksmaxing nur Routinekontext ohne Wirkungs-/Downloadgarantie.",
+        "MewTrack 1/4 Vorschläge abgeschlossen, Phase 2/3; small-update completed, native-check/console in_progress, Nutzerversuch proposed. Insgesamt 4/49 Vorschläge abgeschlossen; diese 49 sind kein gewählter Pflichtplan.",
+        "Lesende Console-Nachkontrolle am 10.10. um 22:35 MESZ: Vorabprüfungen fertig; Deine Änderungen werden jetzt überprüft. Fünf Änderungen und Code14 unverändert. Google-Freigabe/öffentliche Aktivierung offen, Managed Publishing aus; keine zusätzliche Einreichung."
       ],
       "openQuestions": [
-        "Welche konkrete lokale Quelle erzeugte das veröffentlichte und installierte Play-Binary13?",
-        "Wie gut funktionieren drei Winkel, Haltungshilfe, Auto Capture, Retake und Review auf dem echten Android-Gerät?",
-        "Sind beworbene Overlay-/Grid-/Guide-Lines-Schalter und Galerie-Winkelfilter im Play-Release tatsächlich vorhanden?",
-        "Wie soll die mittlere Session nach einer gewählten Compare-Korrektur zuverlässig vorausgewählt werden? Debug 13 und lokale AAB 13-Pfade ignorieren sie nachweislich; tatsächliches Play-Binary weiterhin separat offen.",
-        "Wie erneuern sich Session-Tagesstatus und weitere Homezustände beim Resume im Zielrelease? Die veraltete Guidance wurde im kontrollierten Debugfall bestätigt; echte Session-/Release-Zeitfälle offen.",
-        "Werden Billing-Verbindungsfehler beendet und Restore/Freischaltung zwischen Home/Settings zuverlässig sichtbar?",
-        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Nutzen, um wiederzukommen beziehungsweise Lifetime sinnvoll zu beurteilen?",
-        "Wie sollen Nutzer langfristige Fotos bei Deinstallation/Gerätewechsel behalten; ist ein kleiner lokaler Export nötig?",
-        "Welche Store-Besuchsquellen und konkreten Rückmeldungen erklären die geringe Reichweite, und verbessert ein einzelner Verbreitungsweg echte Wiederkehr?",
-        "Welcher Track/Artefakt verursacht den API-Hinweis, und was bedeutet der kontoweite Zahlungskontohinweis tatsächlich?"
+        "Wie funktionieren drei Posen, Auto Capture, Retake und echtes Speichern mit erkanntem Gesicht auf einem Nutzergerät? Gezielte Reviewtests sind kein kompletter Kamerafluss.",
+        "Wie funktionieren realer Kauf/Restore, regionaler Preis und gemeinsame Freischaltung in bereits geöffneten Screens? Technische Fehler-/JVMtests ersetzen dies nicht.",
+        "Wie verhält sich ein echtes 13→14-Play-Upgrade mit vorhandenen Sessions? Lokale Testsignatur und AAB14-Onboardingstart sind kein Play-Upgrade.",
+        "Wann werden der am 10.10. gegen 22:31 MESZ eingereichte Produktionsrelease14 und die gespeicherten EN/DE-Texte von Google freigegeben und öffentlich aktiv? Bilder bleiben ausdrücklich unverändert.",
+        "Wie funktionieren natürliche Mitternacht, Zeitzonen/OEM-Resume und echte Sessionabschlüsse an zwei Tagen im Zielrelease?",
+        "Erleben passende Nutzer innerhalb von drei Gratis-Sessions genug Vergleichsnutzen und freiwillige Wiederkehr?",
+        "Ist ein kleiner Fotoexport für Gerätewechsel/Deinstallation sinnvoll? Exportversprechen entfernt; kein Export neu gewählt.",
+        "Welcher begrenzte Verbreitungsweg bringt passende Nutzer und echte Wiederkehr? Kein neuer Nutzerversuch/keine ASO-Wirkung bisher belegt.",
+        "Welcher Track/Artefakt und welche Ursache gehören zu API-/Zahlungskontohinweisen? Keine Kaufblockade allein aus Hinweisexistenz ableiten.",
+        "Wie künftig gecachten Lifetime-Zugang nach Erstattung/Widerruf/Kontowechsel abgleichen? Dies war kein Teil des kleinen Updates."
       ],
-      "nextStep": "Verbleibende Kamera-/Retake-/Review- und echte Play-Kauf-/Syncfälle gezielt prüfen. Bestätigte Restore-, Compare-, Guidance- und Review-Fehler für einen kleinen gesondert gewählten Updateumfang bündeln; keine Umsetzung oder Veröffentlichung beauftragt.",
+      "nextStep": "Google-Freigabe/öffentliche Aktivierung nach bestätigter Einreichung von Release14 und EN/DE-Texten getrennt kontrollieren. Vollständige Kamera-/Kauf-/Play-Upgradefälle separat offen; keine Tester automatisch anschreiben und keinen Bildtausch vornehmen.",
       "sourceFiles": [
         "analysen/mewtrack/MewTrack-Pilotanalyse.md",
         "analysen/mewtrack/MewTrack-code-review.md",
@@ -581,7 +587,9 @@
         "analysen/mewtrack/play-console-kpis.md",
         "analysen/mewtrack/Bestand-und-Zuordnung.md",
         "analysen/mewtrack/TEST-UMGEBUNG.md",
-        "analysen/mewtrack/Nachpruefung-2026-10-10.md"
+        "analysen/mewtrack/Nachpruefung-2026-10-10.md",
+        "analysen/mewtrack/MewTrack-Update-2026-10-10.md",
+        "analysen/mewtrack/MewTrack-Store-2026-10-10.md"
       ],
       "analysisId": "mewtrack"
     },
@@ -589,9 +597,9 @@
       "id": "mirror",
       "name": "Mirror / Heartvia",
       "area": "apps",
-      "description": "Bestehende Mirror-App, lokal neu als Heartvia: Love Tarot & Clarity 1.1.1+17 übernommen und passend geprüft. Symbolisches Love Tarot und kurzer antwortenbasierter Clarity Scan gemeinsam sichtbar; Free Early Access. Zwei von vier bestehenden Maßnahmen abgeschlossen. AAB 17 und englischer Name/Texte/Icon in Play gespeichert; Einreichung bestätigt, Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ). Öffentliche Aktivierung noch ausstehend.",
+      "description": "Bestehende Mirror-App als Heartvia: Love Tarot & Clarity 1.1.1+17 lokal übernommen, passend geprüft und öffentlich bei Google Play veröffentlicht. Symbolisches Love Tarot und kurzer antwortenbasierter Clarity Scan; Free Early Access. Drei von vier bestehenden Maßnahmen abgeschlossen. Console und öffentlicher Name/Texte/Icon am 10.10., 22:34 unabhängig abgeglichen; echter Nutzerversuch offen.",
       "status": "pilot_complete",
-      "statusLabel": "Pilotanalyse abgeschlossen",
+      "statusLabel": "Analyse abgeschlossen · Heartvia 17 öffentlich veröffentlicht",
       "repository": null,
       "paths": [
         "C:\\Users\\madde\\Documents\\Mirror"
@@ -603,7 +611,7 @@
           "framework": "Flutter",
           "packageId": "com.energycrafted.mirror",
           "version": "1.1.1+17",
-          "note": "Heartvia 1.1.1+17 im Original auf codex/heartvia-relaunch übernommen; Änderungen uncommitted, HEAD bleibt 27ff955611886951e832159b91bec4f3ceec14a4. 263 relevante Dateien bytegleich zur geprüften Kopie. Debug-APK auf Android 34 geprüft; signiertes Release-AAB gebaut, Manifest/Bundle/signierende Zertifikatsgleichheit zum alten lokalen AAB verifiziert. Anschließend AAB 17 in der richtigen bestehenden Play-App akzeptiert; noch kein echter Play-Upgradeversuch oder öffentlicher Aktivierungsnachweis."
+          "note": "Heartvia 1.1.1+17 im Original auf codex/heartvia-relaunch übernommen; Änderungen uncommitted, HEAD 27ff955611886951e832159b91bec4f3ceec14a4 unverändert. 263 relevante Dateien bytegleich zur geprüften Kopie, 195 Tests/analyze und begrenzte native Debug-/AAB17-Nachproben bestanden. Produktion Code 17/178 Länder und öffentlicher Name/Texte/Icon10.10., 22:34 bestätigt, veröffentlicht 10.10., 19:18. Echter Play-Install-/Upgradeversuch weiter offen."
         }
       ],
       "notes": [
@@ -618,15 +626,15 @@
         "Lokale Release-Lieferung: heartvia-1.1.1-17.aab gebaut/validiert/signiert; Zertifikatsabdruck gleich altem lokalen AAB, zu diesem lokalen Zeitpunkt noch keine bestätigte Play-Uploadannahme. Englische Felder 30/69/1.306 und 512px-Icon im Original-playstore-Verzeichnis exportiert; damaliger Stand vor dem anschließenden Upload.",
         "Begrenzte native Release-Nachprobe aus genau dem neuen AAB: separat testsigniertes Universal-APK, nicht debuggable; Home, Settings 1.1.1 (17) und Tarot bis The Moon-Lesung bedient. Kein vollständiger erneuter Clarity-/Lösch-/Datumsdurchlauf oder Play-Install.",
         "Play Console 10.10.2026: AAB 17 akzeptiert, Rollout 100 % für bisherige 178 Länder und englischer Name/Kurz-/Volltext/Icon gespeichert. Einreichung bestätigt, automatische Vorabprüfungen laufen; Google-Freigabe/öffentliche Aktivierung ausstehend. Managed Publishing aus. Sechs Telefon-Screenshots und Featuregrafik exakt verglichen: unverändert. Sechs 7-Zoll-/drei 10-Zoll-Tablet-Screenshots unangetastet und in Reviewvorschau vorhanden; kein separater Tablet-URL-Vergleich; nur neues Icon als KI-erstellt markiert.",
-        "Rein lesende Console-Nachkontrolle 10.10., 19:12 MESZ: Deine Änderungen werden jetzt überprüft. Google-Freigabe/öffentliche Aktivierung weiterhin offen; fünf bereits eingereichte Änderungen unverändert, keine neue Einreichung."
+        "Rein lesende Console-Nachkontrolle 10.10., 19:12 MESZ: Deine Änderungen werden jetzt überprüft. Google-Freigabe/öffentliche Aktivierung weiterhin offen; fünf bereits eingereichte Änderungen unverändert, keine neue Einreichung.",
+        "Aktuelle lesende Console-/öffentliche Prüfung 10.10., 22:34 MESZ bestätigt Heartvia-Veröffentlichung: keine unveröffentlichten Änderungen, Code 17/178 Länder bei Google Play verfügbar, veröffentlicht 10.10., 19:18. Öffentliche Seite zeigt Name/neues Herzicon, englische Kurz 69/Lang 1306 und AboutVersion 1.1.1/Updated Oct10. Frühere 19:12-Prüfung bleibt historische Überprüfungsetappe; kein Play-Install oder Nutzerwirkung aus Veröffentlichung ableiten."
       ],
       "openQuestions": [
-        "Sind nach Google-Freigabe Heartvia 1.1.1/17, Name, Icon und englische Texte tatsächlich öffentlich aktiv und stimmig sichtbar? Die bisherigen Screenshots bleiben auf Nutzerwunsch erhalten.",
         "Wie verhalten sich bestehende Play-Installationen beim späteren tatsächlichen Upgrade? Nur Updates zwischen lokalen Debug-17-Ständen wurden geprüft.",
         "Wie passen reale Cloud-/OEM-Transfers, Produktions-Analytics und finale Privacy-/Data-Safety-Angaben zum späteren Release?",
         "Hilft der konkrete nächste Schritt echten passenden Menschen, und kehren sie freiwillig zurück? Noch kein Nutzerversuch ausgeführt."
       ],
-      "nextStep": "Google-Freigabe und öffentliche Aktivierung nach bestätigter Einreichung prüfen: AAB 17 und englischer Name/Texte/Icon in Play gespeichert, Google-Überprüfung läuft (Nachkontrolle 19:12 MESZ). Managed Publishing aus, daher automatische Aktivierung nach Freigabe. Öffentlichen Release-/Storeabgleich belegen; echten Nutzerversuch gesondert planen.",
+      "nextStep": "Verbleibende tatsächliche Play-Install-/Upgrade-, Cloud-/OEM-/Analyticsfragen getrennt klären. Nutzerversuch nur bei eigener Auswahl planen; bisher proposed/nicht ausgewählt, keine Tester angeschrieben. Release/öffentlicher Store17 sind unabhängig bestätigt; keine belegte Wirkung auf Downloads oder Wiederkehr.",
       "sourceFiles": [
         "analysen/mirror/Mirror-Pilotanalyse.md",
         "analysen/mirror/runtime-review.md",
